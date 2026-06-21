@@ -3,6 +3,7 @@
 // index.astro — HOME de equiposcontraincendio.com
 // Sitio de cliente (sin modo guía). Datos 100% desde SSoT (src/config/site.ts)
 // y Content Collections. WhatsApp SIEMPRE vía waUrl() (regla D4).
+// Contenido HONESTO: sin reseñas/clientes/años fabricados (regla del sistema).
 // ============================================================================
 import PageLayout from "@layouts/PageLayout.astro";
 import Hero from "@components/Hero.astro";
@@ -10,6 +11,10 @@ import SectionMenu from "@components/SectionMenu.astro";
 import SectionHeading from "@components/SectionHeading.astro";
 import CategoryCard from "@components/CategoryCard.astro";
 import ServiceCard from "@components/ServiceCard.astro";
+import TrustBar from "@components/TrustBar.astro";
+import RiskGuide from "@components/RiskGuide.astro";
+import NormsTable from "@components/NormsTable.astro";
+import ProcessSteps from "@components/ProcessSteps.astro";
 import CompanyAbout from "@components/CompanyAbout.astro";
 import FAQAccordion from "@components/FAQAccordion.astro";
 import CTABanner from "@components/CTABanner.astro";
@@ -35,6 +40,14 @@ const menuCta = {
   sub: "Respuesta inmediata",
   external: true,
 };
+
+// ── Barra de confianza (pilares honestos: compromisos reales, sin métricas) ──
+const pillars = [
+  { icon: "shield", title: "Conforme a norma", desc: "Equipo y servicio alineados a la NOM-154-SCFI, la NOM-002-STPS y la NOM-003-SEGOB." },
+  { icon: "doc", title: "Listo para Protección Civil", desc: "Te entregamos ficha técnica y constancias de servicio para tu expediente ante PC y STPS." },
+  { icon: "chat", title: "Asesoría honesta", desc: "Te recomendamos el equipo que pide tu riesgo real, sin venderte de más." },
+  { icon: "pin", title: "CDMX y Estado de México", desc: "Atención y entrega en la Ciudad de México, el Estado de México y la zona metropolitana." },
+];
 
 // ── Servicios destacados (fichas en /servicios/<id>) ──
 const servicios = [
@@ -62,6 +75,49 @@ const servicios = [
     imageAlt: "Inspección y dictamen de equipo contra incendio",
     badge: "Reporte claro",
   },
+];
+
+// ── Guía de selección por nivel de riesgo (clasificación NOM-002-STPS) ──
+const riskRows = [
+  {
+    nivel: "Ordinario",
+    ejemplos: "Oficinas, escuelas, consultorios, comercios pequeños",
+    minimo: "Extintores PQS ABC, detección de humo, señalización NOM-003",
+    complementos: "Botiquín, lámparas de emergencia, capacitación de uso",
+  },
+  {
+    nivel: "Moderado",
+    ejemplos: "Restaurantes, talleres, hoteles, comercios medianos",
+    minimo: "Agente por clase de fuego, gabinetes con manguera, extintor clase K en cocina",
+    complementos: "Sistema de detección, EPP de brigada, constancias DC-3",
+  },
+  {
+    nivel: "Alto",
+    ejemplos: "Bodegas, naves industriales, gasolineras, laboratorios",
+    minimo: "Red hidráulica, rociadores, extintores móviles, tablero de detección",
+    complementos: "Monitores, agente limpio en áreas críticas, brigadas y simulacros",
+  },
+];
+
+// ── Respaldo normativo (NOM obligatorias + NFPA como referencia técnica) ──
+const normRows = [
+  { norma: "NOM-002-STPS-2010", alcance: "Prevención y protección contra incendios en centros de trabajo", aplica: "Toda empresa con trabajadores" },
+  { norma: "NOM-154-SCFI-2005", alcance: "Mantenimiento, recarga y prueba hidrostática de extintores", aplica: "Extintores y su servicio" },
+  { norma: "NOM-003-SEGOB-2011", alcance: "Señales y avisos para protección civil: colores, formas y símbolos", aplica: "Inmuebles con afluencia de personas" },
+  { norma: "NOM-026-STPS-2008", alcance: "Colores y señales de seguridad; identificación de fluidos en tubería", aplica: "Centros de trabajo" },
+  { norma: "NFPA 72 (ref.)", alcance: "Detección y alarma de incendio", aplica: "Sistemas de detectores y alarma" },
+  { norma: "NFPA 13 (ref.)", alcance: "Rociadores automáticos", aplica: "Supresión automática en edificios" },
+  { norma: "NFPA 20 (ref.)", alcance: "Bombas estacionarias contra incendio", aplica: "Redes hidráulicas con bomba" },
+  { norma: "NFPA 1970 (ref.)", alcance: "Equipo de protección para combate de incendios", aplica: "Trajes y equipo de brigada" },
+];
+
+// ── Proceso de trabajo (pasos reales, sin tiempos garantizados que no se cumplan) ──
+const steps = [
+  { num: "01", title: "Asesoría y diagnóstico", desc: "Nos cuentas tu giro, tamaño y lo que pide la inspección; identificamos el riesgo y lo que necesitas." },
+  { num: "02", title: "Cotización clara", desc: "Propuesta con producto, cantidad y precio. Si el presupuesto es acotado, proponemos por fases." },
+  { num: "03", title: "Suministro e instalación", desc: "Entregamos el equipo y, cuando aplica, lo instalamos: detección, hidrantes, extintores y señalización." },
+  { num: "04", title: "Documentación", desc: "Ficha técnica, constancias de servicio y, si lo necesitas, constancias DC-3 para tu expediente." },
+  { num: "05", title: "Mantenimiento y avisos", desc: "Te recordamos la revisión anual, la recarga y la prueba hidrostática (cada 5 años) para que no caduque tu protección." },
 ];
 
 // ── Sobre el negocio (qué / cómo) — sin cifras inventadas (regla del sistema) ──
@@ -96,9 +152,19 @@ const faqs = [
       "El servicio de mantenimiento y recarga se realiza conforme a la NOM-154-SCFI-2005 (de forma anual como práctica habitual). Además, en centros de trabajo la NOM-002-STPS-2010 pide una revisión mensual a cargo del personal.",
   },
   {
+    question: "¿Cada cuándo se hace la prueba hidrostática de un extintor?",
+    answer:
+      "En México la prueba hidrostática se realiza cada 5 años para extintores de agua, CO₂ y PQS, conforme a la NOM-154-SCFI-2005 (o antes si el cilindro se golpea o pierde su contraseña). Ojo con el dato de “12 años”: ese es de la NFPA 10 de Estados Unidos, no es norma mexicana.",
+  },
+  {
     question: "¿Solo venden equipo o también instalan?",
     answer:
       "Ambas cosas. Vendemos el equipo y también lo instalamos, damos mantenimiento, recargamos extintores y hacemos inspección y dictamen del sistema completo.",
+  },
+  {
+    question: "¿Me entregan la documentación para Protección Civil y STPS?",
+    answer:
+      "Sí. Cada equipo se entrega con su ficha técnica y, en los servicios, con la constancia correspondiente. Si lo necesitas, también gestionamos constancias DC-3 de capacitación — listo para integrar a tu expediente ante Protección Civil y STPS.",
   },
   {
     question: "¿En qué zonas dan servicio?",
@@ -120,17 +186,24 @@ const faqs = [
   schemaData={{ faqs }}
 >
   <Hero
-    badge="Equipo contra incendio en México"
+    badge="Equipo contra incendio · CDMX y Estado de México"
     title="Equipo contra incendio,"
-    accent="listo cuando más importa"
-    subtitle="Venta, instalación, mantenimiento y recarga de extintores, detección, hidrantes y señalización para empresas, comercios e inmuebles."
+    accent="con respaldo de norma"
+    subtitle="Venta, instalación, mantenimiento y recarga de extintores, detección, hidrantes y señalización — para empresas, comercios e inmuebles que necesitan cumplir y estar protegidos."
     descRight={[
       "Somos tu proveedor de equipo contra incendio: extintores, detección y alarma, hidrantes y mangueras, y señalización de emergencia. Vendemos, instalamos y damos mantenimiento — todo dimensionado al riesgo real de tu inmueble, no a un catálogo genérico.",
-      "Trabajamos conforme a la normatividad mexicana —NOM-002-STPS-2010 en centros de trabajo y NOM-154-SCFI-2005 para el servicio de extintores— y te asesoramos en lenguaje claro. Cotiza por WhatsApp y recibe una recomendación honesta.",
+      "Trabajamos conforme a la normatividad mexicana —NOM-002-STPS-2010 y NOM-154-SCFI-2005— y te entregamos la documentación lista para tu expediente de Protección Civil. Cotiza por WhatsApp y recibe una recomendación honesta.",
+    ]}
+    ctas={[
+      { text: "Ver catálogo", href: "/productos", variant: "outline" },
+      { text: "Cotizar por WhatsApp", href: waUrl(WA_MESSAGES.cotizar), variant: "primary", whatsapp: true },
     ]}
   />
 
   <SectionMenu items={menuSecciones} cta={menuCta} />
+
+  {/* ─── Barra de confianza (pilares honestos) ─── */}
+  <TrustBar items={pillars} />
 
   {/* ─── Catálogo: vitrina de categorías (SHOWCASE) ─── */}
   <section class="section section--surface">
@@ -140,7 +213,7 @@ const faqs = [
         eyebrow="Catálogo"
         title="Equipo para cada"
         titleAccent="riesgo"
-        desc="Cuatro familias que cubren la protección de la mayoría de los inmuebles."
+        desc="Seis familias que cubren la protección de la mayoría de los inmuebles, con la norma que respalda cada una."
         body={[
           "Cada inmueble tiene un riesgo distinto, así que el equipo correcto también lo es. Aquí están las familias con las que protegemos oficinas, comercios, cocinas, escuelas e industria.",
           "Si no sabes por dónde empezar, escríbenos: revisamos tu caso y te decimos exactamente qué necesitas, sin venderte de más.",
@@ -164,8 +237,24 @@ const faqs = [
     </div>
   </section>
 
+  {/* ─── Guía de selección por nivel de riesgo (NOM-002) ─── */}
+  <RiskGuide
+    eyebrow="Guía de selección"
+    title="Qué equipo necesitas"
+    titleAccent="según tu riesgo"
+    desc="Una recomendación base por nivel de riesgo, conforme a la NOM-002-STPS-2010."
+    body={[
+      "El equipo correcto parte de identificar el nivel de riesgo de tu inmueble y lo que puede quemarse. A mayor exposición, mayor densidad de equipo y sistemas más completos.",
+      "Esta tabla resume el punto de partida para cada nivel; el diagnóstico afina cantidad, agente y ubicación según tu instalación.",
+    ]}
+    rows={riskRows}
+    note="Cifras orientativas. La NOM-002-STPS pide al menos un extintor por cada 300 m² (riesgo ordinario) o 200 m² (riesgo alto), a no más de 1.5 m de altura. La cantidad exacta, el agente y la ubicación se definen con un diagnóstico según la distribución de tu inmueble."
+    ctaLabel="Pide tu diagnóstico por WhatsApp"
+    ctaHref={waUrl("Hola, quiero asesoría para saber qué equipo contra incendio necesito según mi riesgo.")}
+  />
+
   {/* ─── Servicios destacados ─── */}
-  <section class="section">
+  <section class="section section--surface">
     <div class="container">
       <SectionHeading
         layout="duo"
@@ -193,6 +282,33 @@ const faqs = [
       </div>
     </div>
   </section>
+
+  {/* ─── Respaldo normativo (vende cumplimiento) ─── */}
+  <NormsTable
+    eyebrow="Respaldo normativo"
+    title="Equipo que cumple,"
+    titleAccent="documentación que respalda"
+    desc="No vendemos solo equipo: vendemos que pases la inspección."
+    body={[
+      "En una inspección, la autoridad no solo verifica que tengas el equipo: revisa que esté certificado, vigente y documentado. Por eso cada entrega llega con su soporte.",
+      "Te ayudamos a mapear qué normas aplican a tu giro y a dejar el expediente en regla.",
+    ]}
+    rows={normRows}
+    note="Cada entrega incluye ficha técnica y la documentación de servicio para integrar a tu expediente ante Protección Civil y STPS. Las normas NFPA son referencia técnica internacional y, en su caso, requisito de tu aseguradora — no ley federal. Te ayudamos a verificar qué aplica según el giro y tamaño de tu empresa."
+  />
+
+  {/* ─── Cómo trabajamos (proceso, fondo oscuro) ─── */}
+  <ProcessSteps
+    eyebrow="Cómo trabajamos"
+    title="De la duda a estar"
+    titleAccent="protegido y en regla"
+    desc="Un solo proveedor para cotizar, recibir, instalar y mantener."
+    body={[
+      "Cada paso lo atiende quien sí sabe: desde el primer WhatsApp hasta la documentación en mano. Sin peloteo entre tres proveedores para un mismo expediente.",
+      "Y no termina en la entrega: te acompañamos con el mantenimiento para que tu protección siga vigente.",
+    ]}
+    steps={steps}
+  />
 
   {/* ─── Sobre el negocio (qué / cómo) ─── */}
   <section class="section section--surface">
@@ -226,7 +342,7 @@ const faqs = [
         titleAccent="equipo contra incendio"
         desc="Lo que más nos preguntan antes de cotizar."
         body={[
-          "Reunimos las preguntas más frecuentes sobre extintores, mantenimiento, instalación y cobertura.",
+          "Reunimos las preguntas más frecuentes sobre extintores, mantenimiento, instalación, normatividad y cobertura.",
           "¿Tu duda no está aquí? Escríbenos por WhatsApp y te respondemos.",
         ]}
       />
@@ -261,6 +377,6 @@ const faqs = [
   @media (min-width: 768px) { .svcs { grid-template-columns: repeat(3, 1fr); } }
   @media (min-width: 1024px) {
     .section { padding: var(--sp-10) 0; }
-    .showcase { grid-template-columns: repeat(4, 1fr); }
+    .showcase { grid-template-columns: repeat(3, 1fr); }
   }
 </style>

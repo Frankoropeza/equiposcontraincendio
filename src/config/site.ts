@@ -219,7 +219,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
     href: '/productos',
     image: '/images/showcase/extintores-pqs-co2-agua.svg',
     imageAlt: 'Extintores PQS, CO₂ y agua para distintas clases de fuego',
-    badge: 'Clases A · B · C · K',
+    badge: 'NOM-154 · A·B·C·K',
     blurb:
       'Extintores PQS, CO₂, agua y agentes especiales para cada clase de fuego. Te ayudamos a elegir el agente y la capacidad según tu riesgo, con recarga y mantenimiento conforme a la NOM-002-STPS.',
     subcategories: [
@@ -235,7 +235,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
     href: '/productos',
     image: '/images/showcase/deteccion-humo-alarma.svg',
     imageAlt: 'Detectores de humo y panel de alarma contra incendio',
-    badge: 'Detección temprana',
+    badge: 'NFPA 72',
     blurb:
       'Detectores de humo y calor, paneles, estaciones manuales y sirenas. Sistemas que avisan a tiempo para proteger personas y bienes, dimensionados a tu inmueble.',
     subcategories: [
@@ -251,7 +251,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
     href: '/productos',
     image: '/images/showcase/hidrantes-mangueras-gabinete.svg',
     imageAlt: 'Gabinete con manguera contra incendio e hidrante',
-    badge: 'Red contra incendio',
+    badge: 'Red NFPA 14',
     blurb:
       'Gabinetes, mangueras, hidrantes, válvulas y conexiones siamesas para tu red hidráulica contra incendio. Componentes para una respuesta efectiva ante conatos mayores.',
     subcategories: [
@@ -267,7 +267,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
     href: '/productos',
     image: '/images/showcase/senalizacion-rutas-evacuacion.svg',
     imageAlt: 'Señalización fotoluminiscente de ruta de evacuación y salida',
-    badge: 'Fotoluminiscente',
+    badge: 'NOM-003 · Fotoluminiscente',
     blurb:
       'Señalización fotoluminiscente, lámparas de emergencia, rutas de evacuación y equipo de apoyo. Lo que tu inmueble necesita para cumplir y guiar una evacuación segura.',
     subcategories: [
@@ -276,6 +276,38 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
       { label: 'Rutas de evacuación', href: '/productos' },
     ],
     ctaLabel: 'Ver señalización',
+  },
+  {
+    slug: 'sistemas-supresion',
+    label: 'Sistemas contra incendio',
+    href: '/productos',
+    image: '/images/showcase/sistemas-rociadores-supresion.svg',
+    imageAlt: 'Sistemas fijos contra incendio: rociadores y supresión de cocina',
+    badge: 'Rociadores · Cocina K',
+    blurb:
+      'Sistemas fijos que actúan solos: rociadores, supresión de cocina clase K en campana y agente limpio para sites y cuartos eléctricos. Proyecto e instalación dimensionados a tu inmueble.',
+    subcategories: [
+      { label: 'Rociadores', href: '/productos' },
+      { label: 'Supresión de cocina (K)', href: '/productos' },
+      { label: 'Agente limpio', href: '/productos' },
+    ],
+    ctaLabel: 'Ver sistemas',
+  },
+  {
+    slug: 'proteccion-primeros-auxilios',
+    label: 'Protección y primeros auxilios',
+    href: '/productos',
+    image: '/images/showcase/proteccion-primeros-auxilios.svg',
+    imageAlt: 'Botiquín de primeros auxilios y equipo de apoyo para brigada',
+    badge: 'Brigada',
+    blurb:
+      'Equipo de apoyo para tu brigada y botiquines conforme a la NOM-020-STPS: lo que tu personal necesita para responder mientras llega la ayuda.',
+    subcategories: [
+      { label: 'Botiquines', href: '/productos' },
+      { label: 'Equipo de brigada', href: '/productos' },
+      { label: 'Mantas y apoyo', href: '/productos' },
+    ],
+    ctaLabel: 'Ver protección',
   },
 ];
 

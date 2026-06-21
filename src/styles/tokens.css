@@ -11,7 +11,7 @@
   --c-primary-dark: #8e0000;
   --c-accent: var(--c-primary);
   /* Canal RGB del primario para rgba(var(--c-primary-rgb), a). Mantener
-     sincronizado con --c-primary (#5b3df5 = 91,61,245). Lo usan Header/CTA. */
+     sincronizado con --c-primary (#c62828 = 91,61,245). Lo usan Header/CTA. */
   --c-primary-rgb: 198, 40, 40;
 
   /* ---------- COLOR (tinta / neutros) ---------- */
