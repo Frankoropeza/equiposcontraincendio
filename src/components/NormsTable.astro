@@ -22,6 +22,8 @@ interface Props {
   desc?: string;
   body?: string[];
   rows: Norm[];
+  /** Encabezados de columna (3). Default orientado a normas; sobreescribe para otro vertical. */
+  columns?: [string, string, string];
   note?: string;
 }
 const {
@@ -31,6 +33,7 @@ const {
   desc,
   body = [],
   rows,
+  columns = ['Norma / estándar', 'Alcance', 'Aplica a'],
   note,
 } = Astro.props;
 ---
@@ -50,9 +53,9 @@ const {
       <table class="tbl">
         <thead>
           <tr>
-            <th scope="col">Norma / estándar</th>
-            <th scope="col">Alcance</th>
-            <th scope="col">Aplica a</th>
+            <th scope="col">{columns[0]}</th>
+            <th scope="col">{columns[1]}</th>
+            <th scope="col">{columns[2]}</th>
           </tr>
         </thead>
         <tbody>

@@ -23,6 +23,8 @@ interface Props {
   desc?: string;
   body?: string[];
   rows: Row[];
+  /** Encabezados de columna (4). Default orientado a riesgo/equipo; sobreescribe para otro vertical. */
+  columns?: [string, string, string, string];
   note?: string;
   ctaLabel?: string;
   ctaHref?: string;
@@ -34,6 +36,7 @@ const {
   desc,
   body = [],
   rows,
+  columns = ['Nivel de riesgo', 'Ejemplos de inmueble', 'Equipo base', 'Complementos recomendados'],
   note,
   ctaLabel,
   ctaHref,
@@ -55,10 +58,10 @@ const {
       <table class="tbl">
         <thead>
           <tr>
-            <th scope="col">Nivel de riesgo</th>
-            <th scope="col">Ejemplos de inmueble</th>
-            <th scope="col">Equipo base</th>
-            <th scope="col">Complementos recomendados</th>
+            <th scope="col">{columns[0]}</th>
+            <th scope="col">{columns[1]}</th>
+            <th scope="col">{columns[2]}</th>
+            <th scope="col">{columns[3]}</th>
           </tr>
         </thead>
         <tbody>
