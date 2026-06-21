@@ -1,0 +1,90 @@
+---
+// ============================================================================
+// /blog/ — Landing del Blog (lista de artículos).
+// ----------------------------------------------------------------------------
+// El grid NO se escribe a mano: sale de la colección `articulos` (.mdx), ordenada
+// por fecha de publicación. Cada tarjeta enlaza a su artículo /blog/<slug>,
+// generado por [...slug].astro con ArticleLayout.
+// ============================================================================
+import PageLayout from '@layouts/PageLayout.astro'
+import Hero from '@components/Hero.astro'
+import SectionHeading from '@components/SectionHeading.astro'
+import CategoryCard from '@components/CategoryCard.astro'
+import SectionMenu from '@components/SectionMenu.astro'
+import { getCollection } from 'astro:content'
+import { waUrl, WA_MESSAGES } from '@config/site'
+
+const articulos = (await getCollection('articulos', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+)
+
+const cierreItems = [
+  { label: 'Servicios', href: '/servicios', sub: 'Lo que ofrecemos' },
+  { label: 'Productos', href: '/productos', sub: 'Catálogo del sitio' },
+  { label: 'Nosotros', href: '/nosotros', sub: 'Cómo trabajamos' },
+  { label: 'Contacto', href: '/contacto', sub: 'Hablemos de tu proyecto' },
+]
+const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog), sub: 'Respuesta inmediata', external: true }
+---
+
+<PageLayout
+  title="Blog — guías y novedades"
+  description="Blog de Equipos Contra Incendio: guías y novedades sobre construir sitios Astro con contenido en Markdown. Guías y novedades sobre equipo contra incendio."
+  pageType="page"
+  breadcrumbs={[{ label: 'Blog' }]}
+  guia={false}
+>
+  <Hero
+    badge="Guías y novedades"
+    title="El"
+    accent="blog"
+    subtitle="Artículos sobre cómo se construye y se mantiene un sitio profesional: guías prácticas y novedades del sistema."
+    descRight={[
+      'El blog es el motor de contenido del sitio: cada artículo es una página nueva que puede responder a una búsqueda y atraer visitas que aún no te conocen. Bien hecho, es la forma más sostenible de crecer en orgánico —no depende de pagar por cada clic, sino de resolver dudas reales.',
+      'Aquí publicamos guías prácticas sobre equipo contra incendio: cómo elegir un extintor, qué pide la normatividad y cómo mantener tu equipo vigente. Contenido útil para decidir con información.',
+    ]}
+  />
+
+  <section class="section">
+    <div class="container">
+      
+
+      <SectionHeading
+        layout="duo"
+        eyebrow="Últimos artículos"
+        title="Contenido que trabaja por ti"
+        desc="Cada entrada es una puerta de entrada distinta al sitio desde el buscador."
+        body={[
+          'Un blog no es un diario: es una red de páginas que responden preguntas concretas de tu audiencia. Cada artículo bien enfocado capta una búsqueda específica y, desde ahí, conecta con tus productos y servicios mediante enlaces internos. Es contenido que sigue trabajando mucho después de publicarse.',
+          'Nuestro objetivo es que tomes mejores decisiones de protección contra incendio: información clara, sin tecnicismos innecesarios y orientada a tu caso.',
+        ]}
+      />
+
+      <div class="grid">
+        {articulos.map((a, i) => (
+          <CategoryCard
+            label={a.data.title}
+            href={`/blog/${a.id}`}
+            image={a.data.heroImage}
+            imageAlt={a.data.title}
+            badge={a.data.category}
+            blurb={a.data.description}
+            ctaLabel="Leer artículo"
+            index={i}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <SectionMenu items={cierreItems} cta={cierreCta} ariaLabel="Sigue explorando el sitio" />
+</PageLayout>
+
+<style>
+  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
+  .section { padding: var(--sp-8) 0; }
+  @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
+  .grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-5); margin-top: var(--sp-6); }
+  @media (min-width: 640px)  { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+</style>

@@ -1,0 +1,266 @@
+---
+// ============================================================================
+// index.astro — HOME de equiposcontraincendio.com
+// Sitio de cliente (sin modo guía). Datos 100% desde SSoT (src/config/site.ts)
+// y Content Collections. WhatsApp SIEMPRE vía waUrl() (regla D4).
+// ============================================================================
+import PageLayout from "@layouts/PageLayout.astro";
+import Hero from "@components/Hero.astro";
+import SectionMenu from "@components/SectionMenu.astro";
+import SectionHeading from "@components/SectionHeading.astro";
+import CategoryCard from "@components/CategoryCard.astro";
+import ServiceCard from "@components/ServiceCard.astro";
+import CompanyAbout from "@components/CompanyAbout.astro";
+import FAQAccordion from "@components/FAQAccordion.astro";
+import CTABanner from "@components/CTABanner.astro";
+import { KEYWORDS, NAV, SHOWCASE, WA_MESSAGES, waUrl } from "@config/site";
+
+const waLink = waUrl();
+
+// ── Menú de secciones bajo el hero (data-driven desde NAV; excluye Contacto) ──
+const menuSub: Record<string, string> = {
+  Productos: "Catálogo de equipo",
+  Servicios: "Instalación y mantenimiento",
+  Cobertura: "Zonas que atendemos",
+  Blog: "Guías y normatividad",
+};
+const menuSecciones = NAV.filter((n) => n.label !== "Contacto").map((n) => ({
+  label: n.label,
+  href: n.href,
+  sub: menuSub[n.label] ?? "Ver sección",
+}));
+const menuCta = {
+  label: "Cotizar por WhatsApp",
+  href: waUrl(WA_MESSAGES.cotizar),
+  sub: "Respuesta inmediata",
+  external: true,
+};
+
+// ── Servicios destacados (fichas en /servicios/<id>) ──
+const servicios = [
+  {
+    title: "Instalación de sistemas",
+    description: "Proyecto e instalación de detección, hidrantes, extintores y señalización, dimensionados al riesgo de tu inmueble.",
+    href: "/servicios/instalacion",
+    image: "/images/servicios/instalacion-sistemas-contra-incendio.svg",
+    imageAlt: "Instalación de sistemas contra incendio",
+    badge: "Proyecto a la medida",
+  },
+  {
+    title: "Mantenimiento y recarga",
+    description: "Mantenimiento y recarga de extintores conforme a la NOM-154-SCFI-2005, con etiqueta y collarín de servicio vigentes.",
+    href: "/servicios/mantenimiento",
+    image: "/images/servicios/mantenimiento-recarga-extintores.svg",
+    imageAlt: "Mantenimiento y recarga de extintores",
+    badge: "Conforme a norma",
+  },
+  {
+    title: "Inspección y dictamen",
+    description: "Revisión, pruebas y reporte del estado de tu equipo contra incendio: faltantes, vencimientos y recomendaciones.",
+    href: "/servicios/inspeccion",
+    image: "/images/servicios/inspeccion-dictamen-contra-incendio.svg",
+    imageAlt: "Inspección y dictamen de equipo contra incendio",
+    badge: "Reporte claro",
+  },
+];
+
+// ── Sobre el negocio (qué / cómo) — sin cifras inventadas (regla del sistema) ──
+const empresa = {
+  que: {
+    title: "Qué hacemos",
+    body: [
+      "Equipamos inmuebles contra incendio de principio a fin: extintores, detección y alarma, hidrantes y mangueras, y señalización de emergencia. Vendemos, instalamos y damos mantenimiento, siempre según el riesgo real del lugar y no según un catálogo genérico.",
+      "Atendemos a empresas, comercios, escuelas, restaurantes e inmuebles que necesitan estar protegidos y cumplir con la normatividad aplicable.",
+    ],
+  },
+  como: {
+    title: "Cómo trabajamos",
+    pillars: [
+      { title: "Asesoría real", desc: "Te recomendamos el equipo correcto en lenguaje claro, sin venderte de más." },
+      { title: "Conforme a norma", desc: "Trabajamos alineados a la NOM-002-STPS-2010 y la NOM-154-SCFI-2005." },
+      { title: "Respuesta por WhatsApp", desc: "Cotizas y resuelves dudas directo por WhatsApp, con atención personal." },
+    ],
+  },
+};
+
+// ── FAQ del negocio (alimenta el acordeón visible y el FAQPage del schema) ──
+const faqs = [
+  {
+    question: "¿Qué extintor necesito para mi negocio?",
+    answer:
+      "Depende de lo que pueda quemarse. Para la mayoría de oficinas y comercios, un extintor PQS ABC es la opción versátil; las cocinas requieren además un extintor clase K, y los cuartos eléctricos uno de CO₂. Escríbenos y te asesoramos según tu riesgo.",
+  },
+  {
+    question: "¿Cada cuándo se da mantenimiento o recarga a un extintor?",
+    answer:
+      "El servicio de mantenimiento y recarga se realiza conforme a la NOM-154-SCFI-2005 (de forma anual como práctica habitual). Además, en centros de trabajo la NOM-002-STPS-2010 pide una revisión mensual a cargo del personal.",
+  },
+  {
+    question: "¿Solo venden equipo o también instalan?",
+    answer:
+      "Ambas cosas. Vendemos el equipo y también lo instalamos, damos mantenimiento, recargamos extintores y hacemos inspección y dictamen del sistema completo.",
+  },
+  {
+    question: "¿En qué zonas dan servicio?",
+    answer:
+      "Atendemos la Ciudad de México, el Estado de México y la zona metropolitana. Cuéntanos dónde estás y te confirmamos cobertura y tiempos.",
+  },
+  {
+    question: "¿Cómo cotizo?",
+    answer:
+      "Por WhatsApp es lo más rápido: nos dices qué necesitas y te respondemos con opciones, disponibilidad y el proceso de cotización y facturación.",
+  },
+];
+---
+
+<PageLayout
+  keywords={KEYWORDS}
+  pageType="home"
+  guia={false}
+  schemaData={{ faqs }}
+>
+  <Hero
+    badge="Equipo contra incendio en México"
+    title="Equipo contra incendio,"
+    accent="listo cuando más importa"
+    subtitle="Venta, instalación, mantenimiento y recarga de extintores, detección, hidrantes y señalización para empresas, comercios e inmuebles."
+    descRight={[
+      "Somos tu proveedor de equipo contra incendio: extintores, detección y alarma, hidrantes y mangueras, y señalización de emergencia. Vendemos, instalamos y damos mantenimiento — todo dimensionado al riesgo real de tu inmueble, no a un catálogo genérico.",
+      "Trabajamos conforme a la normatividad mexicana —NOM-002-STPS-2010 en centros de trabajo y NOM-154-SCFI-2005 para el servicio de extintores— y te asesoramos en lenguaje claro. Cotiza por WhatsApp y recibe una recomendación honesta.",
+    ]}
+  />
+
+  <SectionMenu items={menuSecciones} cta={menuCta} />
+
+  {/* ─── Catálogo: vitrina de categorías (SHOWCASE) ─── */}
+  <section class="section section--surface">
+    <div class="container">
+      <SectionHeading
+        layout="duo"
+        eyebrow="Catálogo"
+        title="Equipo para cada"
+        titleAccent="riesgo"
+        desc="Cuatro familias que cubren la protección de la mayoría de los inmuebles."
+        body={[
+          "Cada inmueble tiene un riesgo distinto, así que el equipo correcto también lo es. Aquí están las familias con las que protegemos oficinas, comercios, cocinas, escuelas e industria.",
+          "Si no sabes por dónde empezar, escríbenos: revisamos tu caso y te decimos exactamente qué necesitas, sin venderte de más.",
+        ]}
+      />
+      <div class="showcase">
+        {SHOWCASE.map((c, i) => (
+          <CategoryCard
+            label={c.label}
+            href={c.href}
+            image={c.image}
+            imageAlt={c.imageAlt}
+            badge={c.badge}
+            blurb={c.blurb}
+            subcategories={c.subcategories}
+            ctaLabel={c.ctaLabel}
+            index={i}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ─── Servicios destacados ─── */}
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        layout="duo"
+        eyebrow="Servicios"
+        title="No solo vendemos:"
+        titleAccent="instalamos y mantenemos"
+        desc="Acompañamos tu protección contra incendio durante toda su vida útil."
+        body={[
+          "Un equipo contra incendio sirve si está bien elegido, bien instalado y vigente. Por eso ofrecemos el ciclo completo: instalación, mantenimiento, recarga e inspección.",
+          "Todo con servicio conforme a norma y un reporte claro de lo que se hizo.",
+        ]}
+      />
+      <div class="svcs">
+        {servicios.map((s) => (
+          <ServiceCard
+            title={s.title}
+            description={s.description}
+            href={s.href}
+            image={s.image}
+            imageAlt={s.imageAlt}
+            badge={s.badge}
+            ctaLabel="Ver servicio"
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ─── Sobre el negocio (qué / cómo) ─── */}
+  <section class="section section--surface">
+    <div class="container">
+      <SectionHeading
+        layout="duo"
+        eyebrow="Quiénes somos"
+        title="Protección bien hecha,"
+        titleAccent="explicada con claridad"
+        desc="Equipo correcto, conforme a norma y con asesoría honesta."
+        body={[
+          "Trabajamos para que tu inmueble esté realmente protegido y en regla, no solo para venderte un equipo. La diferencia está en la asesoría: te decimos qué necesitas y por qué.",
+          "Cotiza por WhatsApp y habla directo con quien resuelve.",
+        ]}
+      />
+      <CompanyAbout
+        que={empresa.que}
+        como={empresa.como}
+        cta={{ label: "Hablar por WhatsApp", href: waLink, external: true }}
+      />
+    </div>
+  </section>
+
+  {/* ─── FAQ ─── */}
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        layout="duo"
+        eyebrow="Preguntas frecuentes"
+        title="Dudas comunes sobre"
+        titleAccent="equipo contra incendio"
+        desc="Lo que más nos preguntan antes de cotizar."
+        body={[
+          "Reunimos las preguntas más frecuentes sobre extintores, mantenimiento, instalación y cobertura.",
+          "¿Tu duda no está aquí? Escríbenos por WhatsApp y te respondemos.",
+        ]}
+      />
+      <FAQAccordion items={faqs} />
+    </div>
+  </section>
+
+  {/* ─── Cierre / CTA ─── */}
+  <CTABanner
+    heading="¿Necesitas equipar o poner al día tu inmueble?"
+    desc="Cuéntanos qué necesitas y te respondemos con opciones, disponibilidad y tiempos. Asesoría sin compromiso."
+    btns={[
+      { label: "Cotizar por WhatsApp", href: waUrl(WA_MESSAGES.cotizar), icon: "wa", primary: true, external: true },
+      { label: "Ver catálogo", href: "/productos", icon: "catalog" },
+    ]}
+    badge="Respuesta rápida · Atención personalizada"
+    variant="red"
+  />
+</PageLayout>
+
+<style>
+  .container {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-px);
+  }
+  .section { padding: var(--sp-8) 0; }
+  .section--surface { background: var(--c-surface); }
+  .showcase { display: grid; grid-template-columns: 1fr; gap: var(--sp-5); }
+  .svcs { display: grid; grid-template-columns: 1fr; gap: var(--sp-5); margin-top: var(--sp-6); }
+  @media (min-width: 640px) { .showcase { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 768px) { .svcs { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 1024px) {
+    .section { padding: var(--sp-10) 0; }
+    .showcase { grid-template-columns: repeat(4, 1fr); }
+  }
+</style>

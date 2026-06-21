@@ -1,0 +1,12 @@
+{
+  "name": "Equipos Contra Incendio",
+  "short_name": "Equipos CI",
+  "description": "Venta, instalación y mantenimiento de equipo contra incendio en México: extintores, detección, hidrantes y señalización.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#c62828",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

@@ -1,0 +1,144 @@
+---
+// /productos/ — Catálogo (categoría L2). El grid sale de la colección `productos`.
+// pageType="category" → JSON-LD CollectionPage + ItemList (seo.ts). SSoT: site.ts.
+import PageLayout from '@layouts/PageLayout.astro';
+import Hero from '@components/Hero.astro';
+import SectionHeading from '@components/SectionHeading.astro';
+import ProductCard from '@components/ProductCard.astro';
+import RelatedLinks from '@components/RelatedLinks.astro';
+import FAQAccordion from '@components/FAQAccordion.astro';
+import CTABanner from '@components/CTABanner.astro';
+import { getCollection } from 'astro:content';
+import { waUrl, WA_MESSAGES } from '@config/site';
+
+const productos = (await getCollection('productos', ({ data }) => !data.draft)).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+
+const CAT_LABEL: Record<string, string> = {
+  extintores: 'Extintores',
+  'deteccion-alarmas': 'Detección',
+  'hidrantes-mangueras': 'Hidrantes',
+  senalizacion: 'Señalización',
+  accesorios: 'Accesorios',
+  general: 'General',
+};
+
+const items = productos.map((p) => ({
+  name: p.data.title,
+  path: `/productos/${p.id}`,
+  image: p.data.image,
+  description: p.data.description,
+}));
+
+const faqs = [
+  {
+    question: '¿Cómo sé qué equipo necesito?',
+    answer:
+      'Depende del riesgo de tu inmueble y de lo que pueda quemarse. Escríbenos por WhatsApp con tu giro y superficie y te recomendamos el equipo y las capacidades adecuadas, sin venderte de más.',
+  },
+  {
+    question: '¿Por qué las fichas no muestran precio?',
+    answer:
+      'Cotizamos según cantidades, capacidades y servicio (instalación o mantenimiento). Por eso trabajamos bajo cotización por WhatsApp en lugar de publicar una cifra que podría no aplicar a tu caso.',
+  },
+  {
+    question: '¿Venden con instalación y mantenimiento?',
+    answer:
+      'Sí. Además de la venta, instalamos, damos mantenimiento y recargamos extintores conforme a la NOM-154-SCFI-2005. Puedes cotizar producto y servicio juntos.',
+  },
+];
+
+const schemaData = {
+  list: {
+    name: 'Equipo contra incendio',
+    description:
+      'Catálogo de equipo contra incendio: extintores, detección y alarmas, hidrantes y mangueras, y señalización de emergencia.',
+    path: '/productos',
+    items,
+  },
+  faqs,
+};
+---
+
+<PageLayout
+  title="Equipo contra incendio | catálogo"
+  description="Catálogo de equipo contra incendio: extintores, detección y alarmas, hidrantes, mangueras y señalización de emergencia. Cotiza por WhatsApp."
+  pageType="category"
+  schemaData={schemaData}
+  breadcrumbs={[{ label: 'Productos' }]}
+>
+  <Hero
+    badge="Catálogo"
+    title="Equipo contra"
+    accent="incendio"
+    subtitle="Extintores, detección y alarmas, hidrantes y mangueras, y señalización de emergencia para proteger tu inmueble."
+  />
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Catálogo"
+        title="Nuestro"
+        titleAccent="equipo"
+        desc="Cada ficha enlaza a su detalle. El badge indica la familia: extintores, detección, hidrantes o señalización."
+      />
+
+      <div class="grid">
+        {
+          productos.map((p, i) => (
+            <ProductCard
+              title={p.data.title}
+              href={`/productos/${p.id}`}
+              image={p.data.image}
+              imageAlt={p.data.title}
+              badge={CAT_LABEL[p.data.category] ?? p.data.category}
+              description={p.data.description}
+              index={i}
+              priority={i === 0}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <RelatedLinks
+        current="productos"
+        title="Explora también"
+        desc="Otras familias de equipo contra incendio."
+      />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <FAQAccordion items={faqs} title="Preguntas frecuentes" openFirst />
+    </div>
+  </section>
+
+  <CTABanner
+    heading="¿Necesitas equipar tu inmueble?"
+    desc="Cuéntanos qué necesitas y te respondemos con opciones, disponibilidad y tiempos. Asesoría sin compromiso."
+    btns={[
+      { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.productos), icon: 'wa', primary: true, external: true },
+      { label: 'Ver servicios', href: '/servicios', icon: 'arrow' },
+    ]}
+    badge="Respuesta rápida · Atención personalizada"
+    variant="dark"
+    centered={true}
+  />
+</PageLayout>
+
+<style>
+  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
+  .section { padding: var(--sp-8) 0; }
+  .section--surface { background: var(--c-surface); }
+  .grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-5); margin-top: var(--sp-6); }
+  @media (min-width: 768px) {
+    .section { padding: var(--sp-10) 0; }
+    .grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+  }
+</style>
