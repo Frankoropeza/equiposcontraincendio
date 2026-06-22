@@ -25,7 +25,7 @@ export const SITE = {
   locale: 'es-MX',
   description:
     'Equipo contra incendio en México: venta de extintores, detección, hidrantes y señalización, con instalación, mantenimiento y recarga certificados. Cotiza por WhatsApp.',
-  defaultImage: '/images/og/default.svg',
+  defaultImage: '/images/og/default.png', // OG default 1200×630 PNG (SVG no renderiza en WhatsApp/FB/X).
 
   trailingSlash: 'never' as 'never' | 'always',
   searchUrl: undefined as string | undefined,
@@ -35,7 +35,7 @@ export const SITE = {
     title: 'Equipo contra incendio | extintores | mantenimiento', // ≤60, keyword-first sin marca.
     description:
       'Equipo contra incendio en México: venta de extintores, detección, hidrantes y señalización, con instalación, mantenimiento y recarga certificados. Cotiza por WhatsApp.',
-    image: '/images/og/default.svg',
+    image: '/images/og/default.png',
     titleMaxLength: 60,
     descriptionMaxLength: 160,
     appendBrand: false,
