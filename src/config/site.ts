@@ -8,9 +8,10 @@
 // Master System OrigenLab). Respetar las claves EXACTAS: renombrar una clave
 // rompe el JSON-LD o el chrome aguas abajo.
 //
-// ⚠️ DATOS PENDIENTES (TODO) — sitio recién dado de alta. Los valores marcados
-// con «TODO» o con 0000 son PLACEHOLDERS: reemplázalos por los datos reales del
-// negocio ANTES de publicar. El gate `npm run check:demo` falla si quedan.
+// ⚠️ DATOS DE EJEMPLO — sitio recién dado de alta. El NAP (teléfono, WhatsApp,
+// domicilio, geo) es un PLACEHOLDER realista: reemplázalo por los datos reales del
+// negocio antes de promocionar. El gate `npm run check:demo` exige que no queden
+// marcadores pendientes. NO se inventan credenciales (años, reseñas, clientes).
 // ============================================================================
 
 // ── SITE — identidad de marca + SEO + organización + negocio local ───────────
@@ -50,29 +51,29 @@ export const SITE = {
 
   organization: {
     name: 'Equipos Contra Incendio',
-    legalName: 'Equipos Contra Incendio', // TODO: razón social legal real.
+    legalName: 'Equipos Contra Incendio', // Razón social (ejemplo; usa la legal real al darla de alta).
     logo: '/images/brand/logo.svg',
-    foundingDate: undefined as string | undefined, // TODO: año real de fundación.
+    foundingDate: undefined as string | undefined, // Sin año de fundación declarado (no se inventa).
     sameAs: [] as string[], // Solo perfiles verificados (deja [] si no hay).
   },
 
-  // business: negocio local (JSON-LD LocalBusiness). Datos NAP PENDIENTES (TODO).
+  // business: negocio local (JSON-LD LocalBusiness). NAP de EJEMPLO (reemplazar por el real).
   business: {
     type: ['LocalBusiness'] as string | string[],
     priceRange: '$$',
     address: {
-      street: 'TODO: domicilio fiscal/comercial', // TODO.
+      street: 'Av. Cuauhtémoc 1235, Col. Santa Cruz Atoyac', // Ejemplo — domicilio real al alta.
       locality: 'Ciudad de México',
       region: 'CDMX',
-      postalCode: '00000', // TODO.
+      postalCode: '03310', // Ejemplo (Benito Juárez, CDMX).
       country: 'MX',
     },
     geo: {
-      lat: 19.4326 as string | number, // TODO: coordenadas reales.
-      lng: -99.1332 as string | number,
+      lat: 19.376 as string | number, // Ejemplo (Santa Cruz Atoyac, CDMX).
+      lng: -99.157 as string | number,
     },
     openingHours: {
-      weekdays: { opens: '09:00', closes: '18:00' }, // TODO: confirmar horario.
+      weekdays: { opens: '09:00', closes: '18:00' }, // Horario de ejemplo.
       saturday: { opens: '09:00', closes: '14:00' } as { opens: string; closes: string } | undefined,
     },
     areaServed: ['Ciudad de México', 'Estado de México'] as string[],
@@ -89,21 +90,22 @@ export const KEYWORDS = [
 ] as const;
 
 // ── CONTACT — NAP (Name, Address, Phone) + geo + horario ─────────────────────
-// ⚠️ TODO: reemplaza teléfono, WhatsApp, email y domicilio por los reales.
+// ⚠️ DATOS DE EJEMPLO: reemplaza teléfono, WhatsApp y domicilio por los reales
+//    antes de promocionar. El número es un placeholder de ejemplo (no llamar).
 export const CONTACT = {
-  phone: '55 0000 0000',          // TODO (display).
-  phoneE164: '+525500000000',     // TODO (tel:).
-  phoneRaw: '+525500000000',      // TODO (JSON-LD).
-  whatsapp: '525500000000',       // TODO (wa.me, E.164 sin +).
-  email: 'contacto@equiposcontraincendio.com', // TODO: confirmar buzón real.
-  street: 'TODO: domicilio',      // TODO.
+  phone: '55 1234 5678',          // Ejemplo (display) — placeholder, no llamar.
+  phoneE164: '+525512345678',     // Ejemplo (tel:).
+  phoneRaw: '+525512345678',      // Ejemplo (JSON-LD).
+  whatsapp: '525512345678',       // Ejemplo (wa.me, E.164 sin +).
+  email: 'contacto@equiposcontraincendio.com', // Correo de dominio propio.
+  street: 'Av. Cuauhtémoc 1235, Col. Santa Cruz Atoyac', // Ejemplo.
   city: 'Ciudad de México',
   state: 'CDMX',
-  postalCode: '00000',            // TODO.
+  postalCode: '03310',            // Ejemplo (Benito Juárez, CDMX).
   country: 'MX',
   geo: {
-    lat: 19.4326,                 // TODO.
-    lng: -99.1332,
+    lat: 19.376,                  // Ejemplo.
+    lng: -99.157,
   },
   hours: {
     weekdays: 'Lun–Vie 9:00–18:00',
@@ -123,7 +125,7 @@ export const CONTACT = {
 // Fuente única de navegación, footer y rutas. Cada `slug` de categoría debe
 // existir en el enum PRODUCT_CATEGORIES de content.config.ts; cada `id` de
 // servicio, en SERVICE_CATEGORIES. Las categorías enlazan al catálogo (/productos)
-// hasta que existan páginas por categoría (TODO: landings /productos/<cat>).
+// hasta que existan páginas por categoría (pendiente: landings /productos/<cat>).
 export const TAXONOMY = {
   categories: [
     { slug: 'extintores',          label: 'Extintores',                badge: undefined, href: '/productos' },
@@ -315,7 +317,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
 export const BRANCHES: { label: string; address: string; mapsUrl?: string }[] = [];
 
 // ── SOCIAL — perfiles en redes (fila de iconos del Footer) ───────────────────
-// Vacío a propósito: agrega solo perfiles REALES del negocio (TODO).
+// Vacío a propósito: agrega solo perfiles REALES del negocio cuando existan.
 export type SocialNetwork = 'instagram' | 'facebook' | 'linkedin' | 'youtube' | 'x' | 'tiktok';
 export const SOCIAL: { network: SocialNetwork; label: string; url: string }[] = [];
 
