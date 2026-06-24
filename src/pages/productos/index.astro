@@ -1,15 +1,19 @@
 ---
-// /productos/ — Catálogo (categoría L2). El grid sale de la colección `productos`.
-// pageType="category" → JSON-LD CollectionPage + ItemList (seo.ts). SSoT: site.ts.
+// /productos/ — Catálogo L2. HOMOLOGADO con el sistema de diseño del home:
+// usa los componentes compartidos (Hero, SectionMenu, TrustBar, SectionHeading,
+// CategoryCard, ProductCard, FAQWithContact) — sin hero ni pilares "a mano".
+// Estructura: Hero → SectionMenu → TrustBar → Categorías → Productos → Normas → FAQ.
 import PageLayout from '@layouts/PageLayout.astro';
 import Hero from '@components/Hero.astro';
+import SectionMenu from '@components/SectionMenu.astro';
+import TrustBar from '@components/TrustBar.astro';
 import SectionHeading from '@components/SectionHeading.astro';
+import CategoryCard from '@components/CategoryCard.astro';
+import CategoryFeature from '@components/CategoryFeature.astro';
 import ProductCard from '@components/ProductCard.astro';
-import RelatedLinks from '@components/RelatedLinks.astro';
-import FAQAccordion from '@components/FAQAccordion.astro';
-import CTABanner from '@components/CTABanner.astro';
+import FAQWithContact from '@components/FAQWithContact.astro';
 import { getCollection } from 'astro:content';
-import { waUrl, WA_MESSAGES } from '@config/site';
+import { SHOWCASE, CONTACT, NAV, waUrl, WA_MESSAGES } from '@config/site';
 
 const productos = (await getCollection('productos', ({ data }) => !data.draft)).sort(
   (a, b) => a.data.order - b.data.order,
@@ -24,69 +28,332 @@ const CAT_LABEL: Record<string, string> = {
   general: 'General',
 };
 
-const items = productos.map((p) => ({
-  name: p.data.title,
-  path: `/productos/${p.id}`,
-  image: p.data.image,
-  description: p.data.description,
+// ── Menú de secciones bajo el hero (data-driven desde NAV; excluye Contacto) ──
+// Mismo patrón que la home (index.astro): el hero presenta, la franja convierte.
+const menuSub: Record<string, string> = {
+  Productos: 'Catálogo de equipo',
+  Servicios: 'Instalación y mantenimiento',
+  Cobertura: 'Zonas que atendemos',
+  Blog: 'Guías y normatividad',
+};
+const menuSecciones = NAV.filter((n) => n.label !== 'Contacto').map((n) => ({
+  label: n.label,
+  href: n.href,
+  sub: menuSub[n.label] ?? 'Ver sección',
 }));
+const menuCta = {
+  label: 'Cotizar por WhatsApp',
+  href: waUrl(WA_MESSAGES.cotizar),
+  sub: 'Respuesta inmediata',
+  external: true,
+};
+
+// ── Barra de confianza (pilares honestos, vía componente TrustBar) ──
+const pillars = [
+  { icon: 'shield', title: 'Conforme a norma', desc: 'Equipo alineado a la NOM-002-STPS, la NOM-154-SCFI y la NOM-003-SEGOB.' },
+  { icon: 'doc', title: 'Documentación incluida', desc: 'Ficha técnica y constancias de servicio para tu expediente ante PC y STPS.' },
+  { icon: 'pin', title: 'Entrega en CDMX y EdoMex', desc: 'Ciudad de México, Estado de México y zona metropolitana.' },
+  { icon: 'chat', title: 'Asesoría sin compromiso', desc: 'Te recomendamos el equipo que pide tu riesgo real, sin venderte de más.' },
+];
+
+// ── Módulos de categoría (CategoryFeature) — copy PROPIO de /productos
+// (distinto al index para no duplicar). Normas, clases y marcas reales.
+// surface + flip alternan por índice para dar ritmo visual (zig-zag).
+const CATEGORY_FEATURES = [
+  {
+    eyebrow: 'Extintores · NOM-154-SCFI · Clases A B C K',
+    title: 'El extintor correcto para',
+    titleAccent: 'lo que puede arder',
+    description:
+      'No todos los fuegos se apagan igual y el agente equivocado puede empeorarlo. Te ayudamos a elegir entre PQS, CO₂ y agente K según el riesgo real de tu inmueble, con la capacidad adecuada y el servicio de recarga y prueba hidrostática conforme a la NOM-154-SCFI-2005.',
+    features: [
+      { label: 'PQS ABC multipropósito', desc: 'el más versátil para oficinas, comercios, bodegas y casa. Clase A, B y C.' },
+      { label: 'CO₂ para tableros y servidores', desc: 'no conduce ni deja residuo; ideal para cuartos eléctricos. Clase B y C.' },
+      { label: 'Agente K para cocina', desc: 'sofoca aceites y grasas calientes; obligatorio bajo campana industrial.' },
+      { label: 'Recarga y prueba hidrostática', desc: 'servicio anual con etiqueta y collarín; prueba de presión cada 5 años.' },
+    ],
+    brands: [{ name: 'Kidde' }, { name: 'Amerex' }, { name: 'Stelfire' }, { name: 'Buckeye' }, { name: 'Suprema' }],
+    ctaLabel: 'Cotizar extintores',
+    ctaMsg: 'Hola, quiero cotizar extintores (PQS, CO₂ o clase K). ¿Me ayudan a elegir la capacidad según mi riesgo?',
+    imgMain: { src: '/images/showcase/extintores-pqs-co2-agua.svg', alt: 'Extintores PQS, CO₂ y agente K contra incendio' },
+    imgA: { src: '/images/productos/extintor-pqs-6kg.svg', alt: 'Extintor PQS 6 kg multipropósito ABC' },
+    imgB: { src: '/images/productos/extintor-co2-45kg.svg', alt: 'Extintor CO₂ 4.5 kg para equipos eléctricos' },
+  },
+  {
+    eyebrow: 'Detección y alarma · NFPA 72',
+    title: 'Alarmas que avisan en',
+    titleAccent: 'los primeros segundos',
+    description:
+      'Un incendio detectado a tiempo todavía es controlable. Integramos detectores de humo y calor, paneles direccionables, estaciones manuales y sirenas para que tu inmueble alerte y se evacúe antes de que el fuego crezca.',
+    features: [
+      { label: 'Detectores de humo fotoeléctricos', desc: 'reaccionan rápido al humo lento de pasillos, oficinas y almacenes.' },
+      { label: 'Detectores térmicos', desc: 'para cocinas y zonas con vapor o polvo, donde el humo daría falsas alarmas.' },
+      { label: 'Paneles y estaciones manuales', desc: 'control centralizado y activación humana desde cualquier punto.' },
+      { label: 'Sirenas y estrobos', desc: 'alerta audible y visual para guiar una evacuación ordenada.' },
+    ],
+    brands: [{ name: 'System Sensor' }, { name: 'Honeywell' }, { name: 'Notifier' }, { name: 'Bosch' }],
+    ctaLabel: 'Cotizar detección',
+    ctaMsg: 'Hola, quiero cotizar un sistema de detección y alarma (detectores, panel y sirenas) para mi inmueble.',
+    imgMain: { src: '/images/showcase/deteccion-humo-alarma.svg', alt: 'Sistema de detección de humo y panel de alarma' },
+    imgA: { src: '/images/productos/detector-humo-fotoelectrico.svg', alt: 'Detector de humo fotoeléctrico de techo' },
+    imgB: { src: '/images/showcase/sistemas-rociadores-supresion.svg', alt: 'Panel de control de alarma contra incendio' },
+  },
+  {
+    eyebrow: 'Red hidráulica · NFPA 14',
+    title: 'Hidrantes y mangueras',
+    titleAccent: 'para conatos mayores',
+    description:
+      'Cuando el fuego supera a un extintor, la red hidráulica es tu segunda línea de defensa. Suministramos e instalamos gabinetes, mangueras, válvulas, hidrantes y conexiones siamesas dimensionados al caudal y la presión que pide tu inmueble.',
+    features: [
+      { label: 'Gabinetes tipo I y II', desc: 'con válvula angular, manguera y pitón, para personal capacitado o bomberos.' },
+      { label: 'Hidrantes y conexiones siamesas', desc: 'toma para el camión de bomberos; obligatorio en inmuebles grandes.' },
+      { label: 'Válvulas de control y check', desc: 'OS&Y, mariposa y retención para sectorizar y proteger la red.' },
+      { label: 'Proyecto e instalación', desc: 'cálculo hidráulico, planos y memoria de diseño incluidos.' },
+    ],
+    brands: [{ name: 'Potter' }, { name: 'Victaulic' }, { name: 'Nibco' }, { name: 'Dixon' }],
+    ctaLabel: 'Cotizar hidrantes',
+    ctaMsg: 'Hola, quiero cotizar gabinetes, mangueras o una red hidráulica contra incendio (NFPA 14).',
+    imgMain: { src: '/images/showcase/hidrantes-mangueras-gabinete.svg', alt: 'Gabinete con manguera contra incendio e hidrante' },
+    imgA: { src: '/images/productos/gabinete-manguera-contra-incendio.svg', alt: 'Gabinete tipo I con manguera y pitón' },
+    imgB: { src: '/images/showcase/sistemas-rociadores-supresion.svg', alt: 'Válvulas y conexiones para red hidráulica' },
+  },
+  {
+    eyebrow: 'Señalización · NOM-003-SEGOB · Fotoluminiscente',
+    title: 'Señalización que guía',
+    titleAccent: 'aunque se vaya la luz',
+    description:
+      'La señalización fotoluminiscente funciona sin electricidad y ordena la evacuación cuando más importa. Surtimos señales, lámparas de emergencia, planos de evacuación y botiquines conforme a la NOM-003-SEGOB-2011, obligatorios en inmuebles con afluencia de personas.',
+    features: [
+      { label: 'Señales fotoluminiscentes', desc: 'salida, ruta, punto de reunión, extintor e hidrante; brillan sin corriente.' },
+      { label: 'Lámparas de emergencia', desc: 'iluminación autónoma con al menos 90 minutos de respaldo de batería.' },
+      { label: 'Planos de evacuación', desc: 'elaborados para tu inmueble real; requisito de Protección Civil.' },
+      { label: 'Botiquín NOM-020-STPS', desc: 'dotación básica certificada para primeros auxilios.' },
+    ],
+    brands: [{ name: 'Brady' }, { name: 'Seton' }, { name: 'Luminart' }, { name: 'Indexx' }],
+    ctaLabel: 'Cotizar señalización',
+    ctaMsg: 'Hola, quiero cotizar señalización fotoluminiscente, lámparas de emergencia y plano de evacuación.',
+    imgMain: { src: '/images/showcase/senalizacion-rutas-evacuacion.svg', alt: 'Señalización fotoluminiscente de ruta de evacuación' },
+    imgA: { src: '/images/productos/senalizacion-fotoluminiscente.svg', alt: 'Señal fotoluminiscente de salida de emergencia' },
+    imgB: { src: '/images/showcase/proteccion-primeros-auxilios.svg', alt: 'Lámparas de emergencia y botiquín' },
+  },
+  {
+    eyebrow: 'Supresión automática · NFPA 13',
+    title: 'Sistemas fijos que',
+    titleAccent: 'actúan sin intervención',
+    description:
+      'Los sistemas automáticos atacan el fuego en segundos, antes de que alguien reaccione. Proyectamos e instalamos rociadores, supresión clase K en campana y agente limpio para sites y cuartos eléctricos, con cálculo y memoria de diseño para tu expediente.',
+    features: [
+      { label: 'Rociadores NFPA 13', desc: 'se activa solo el rociador expuesto al calor, no toda la red.' },
+      { label: 'Supresión de cocina clase K', desc: 'apaga grasas en campana y corta el suministro de gas automáticamente.' },
+      { label: 'Agente limpio (FM-200 / Novec)', desc: 'sin residuo ni daño a electrónicos; para servidores y tableros.' },
+      { label: 'Cálculo y puesta en marcha', desc: 'hidráulica, planos, memoria técnica y certificado de arranque.' },
+    ],
+    brands: [{ name: 'Tyco' }, { name: 'Viking' }, { name: 'Ansul' }, { name: 'Amerex' }],
+    ctaLabel: 'Cotizar sistemas fijos',
+    ctaMsg: 'Hola, quiero cotizar un sistema fijo de supresión (rociadores, clase K o agente limpio).',
+    imgMain: { src: '/images/showcase/sistemas-rociadores-supresion.svg', alt: 'Sistema de rociadores automáticos contra incendio' },
+    imgA: { src: '/images/productos/extintor-clase-k-6l.svg', alt: 'Sistema de supresión clase K para cocina industrial' },
+    imgB: { src: '/images/showcase/deteccion-humo-alarma.svg', alt: 'Sistema de agente limpio para cuarto eléctrico' },
+  },
+  {
+    eyebrow: 'Brigada · NOM-020-STPS',
+    title: 'Primeros auxilios para',
+    titleAccent: 'responder a tiempo',
+    description:
+      'Mientras llega la ayuda profesional, tu brigada necesita con qué actuar. Equipamos botiquines dotados conforme a la NOM-020-STPS, mantas ignífugas y material de respuesta inicial para los primeros minutos de una emergencia.',
+    features: [
+      { label: 'Botiquines NOM-020-STPS', desc: 'apósitos, torniquete, férulas y guía de primeros auxilios.' },
+      { label: 'Mantas ignífugas', desc: 'sofocan fuego en ropa o un conato pequeño sin necesidad de extintor.' },
+      { label: 'Equipo de brigada', desc: 'chalecos, linternas y megáfono para coordinar la evacuación.' },
+      { label: 'Punto de reunión', desc: 'señalización del área de concentración tras evacuar.' },
+    ],
+    brands: [{ name: '3M' }, { name: 'Cruz Roja' }, { name: 'Acme' }, { name: 'Duracell' }],
+    ctaLabel: 'Cotizar protección',
+    ctaMsg: 'Hola, quiero cotizar botiquines NOM-020 y equipo de primeros auxilios para mi brigada.',
+    imgMain: { src: '/images/showcase/proteccion-primeros-auxilios.svg', alt: 'Botiquín y equipo de primeros auxilios para brigada' },
+    imgA: { src: '/images/showcase/senalizacion-rutas-evacuacion.svg', alt: 'Equipo de protección para brigada de emergencia' },
+    imgB: { src: '/images/showcase/equipo-proteccion-personal.svg', alt: 'Manta ignífuga y equipo de respuesta inicial' },
+  },
+  {
+    eyebrow: 'EPP · NOM-115-STPS',
+    title: 'Protección personal para',
+    titleAccent: 'tu personal de respuesta',
+    description:
+      'Quien interviene en una emergencia no debe exponerse de más. Surtimos cascos, guantes térmicos, trajes de aproximación y protección respiratoria conforme a la NOM-115-STPS, para que tu brigada interna actúe con seguridad.',
+    features: [
+      { label: 'Cascos y caretas', desc: 'protección de cabeza y rostro frente a calor radiante e impactos.' },
+      { label: 'Guantes térmicos', desc: 'manipular extintores y equipo caliente sin riesgo de quemaduras.' },
+      { label: 'Trajes de aproximación', desc: 'protección frente a calor radiante a una distancia de seguridad.' },
+      { label: 'Protección respiratoria', desc: 'mascarillas y filtros para humo; no sustituyen al SCBA de bomberos.' },
+    ],
+    brands: [{ name: '3M' }, { name: 'MSA Safety' }, { name: 'Lakeland' }, { name: 'DuPont' }],
+    ctaLabel: 'Cotizar EPP',
+    ctaMsg: 'Hola, quiero cotizar equipo de protección personal (cascos, guantes, trajes) para mi brigada.',
+    imgMain: { src: '/images/showcase/equipo-proteccion-personal.svg', alt: 'Equipo de protección personal para brigadas' },
+    imgA: { src: '/images/showcase/proteccion-primeros-auxilios.svg', alt: 'Cascos y guantes de protección térmica' },
+    imgB: { src: '/images/showcase/hidrantes-mangueras-gabinete.svg', alt: 'Traje de aproximación para brigada' },
+  },
+  {
+    eyebrow: 'Mantenimiento · NOM-154-SCFI',
+    title: 'Refacciones para mantener',
+    titleAccent: 'tu equipo en regla',
+    description:
+      'Un extintor sin servicio no responde cuando se necesita. Tenemos las refacciones y accesorios para mantener tu equipo vigente: válvulas, manómetros, mangueras, collarines, soportes y herramienta de servicio conforme a la NOM-154-SCFI-2005.',
+    features: [
+      { label: 'Refacciones de extintor', desc: 'válvulas, manómetros, mangueras y pitones compatibles con marcas principales.' },
+      { label: 'Collarines y etiquetas', desc: 'evidencia física del servicio; requisito para acreditarlo ante Protección Civil.' },
+      { label: 'Soportes y porta-extintores', desc: 'pared, poste o gabinete; mantienen la altura reglamentaria (máx. 1.5 m).' },
+      { label: 'Herramienta de servicio', desc: 'adaptadores y equipo para recarga y prueba hidrostática.' },
+    ],
+    brands: [{ name: 'Kidde' }, { name: 'Amerex' }, { name: 'Stelfire' }, { name: 'Suprema' }],
+    ctaLabel: 'Cotizar accesorios',
+    ctaMsg: 'Hola, quiero cotizar refacciones y accesorios para mantenimiento de extintores (NOM-154).',
+    imgMain: { src: '/images/showcase/accesorios-refacciones.svg', alt: 'Accesorios y refacciones para extintores y sistemas' },
+    imgA: { src: '/images/productos/extintor-pqs-6kg.svg', alt: 'Válvulas y refacciones para extintor PQS' },
+    imgB: { src: '/images/productos/extintor-co2-45kg.svg', alt: 'Soportes y porta-extintores certificados' },
+  },
+];
 
 const faqs = [
   {
     question: '¿Cómo sé qué equipo necesito?',
-    answer:
-      'Depende del riesgo de tu inmueble y de lo que pueda quemarse. Escríbenos por WhatsApp con tu giro y superficie y te recomendamos el equipo y las capacidades adecuadas, sin venderte de más.',
+    answer: 'Depende del riesgo de tu inmueble y lo que pueda quemarse. Escríbenos con tu giro y superficie y te recomendamos el equipo y las capacidades adecuadas, sin venderte de más.',
   },
   {
-    question: '¿Por qué las fichas no muestran precio?',
-    answer:
-      'Cotizamos según cantidades, capacidades y servicio (instalación o mantenimiento). Por eso trabajamos bajo cotización por WhatsApp en lugar de publicar una cifra que podría no aplicar a tu caso.',
+    question: '¿Por qué no muestran precios en el catálogo?',
+    answer: 'Cotizamos según cantidades, capacidades y si incluye instalación o mantenimiento. Por eso trabajamos con cotización por WhatsApp en lugar de publicar un precio que podría no aplicar a tu caso real.',
   },
   {
-    question: '¿Venden con instalación y mantenimiento?',
-    answer:
-      'Sí. Además de la venta, instalamos, damos mantenimiento y recargamos extintores conforme a la NOM-154-SCFI-2005. Puedes cotizar producto y servicio juntos.',
+    question: '¿Venden con instalación y mantenimiento incluidos?',
+    answer: 'Sí. Además de la venta, instalamos, damos mantenimiento y recargamos extintores conforme a la NOM-154-SCFI-2005. Puedes cotizar producto y servicio juntos en un solo mensaje.',
+  },
+  {
+    question: '¿Tienen stock o trabajan bajo pedido?',
+    answer: 'Tenemos stock de los productos de mayor rotación (extintores PQS, CO₂, detectores y señalización básica). Equipos especializados o de gran capacidad pueden requerir tiempo de entrega; te lo confirmamos al cotizar.',
+  },
+  {
+    question: '¿Me entregan con factura?',
+    answer: 'Sí, facturamos con todos los RFC que nos proporciones. El equipo sale con su ficha técnica y, si incluye servicio, con la constancia correspondiente para Protección Civil y STPS.',
+  },
+  {
+    question: '¿Hacen entregas fuera de CDMX?',
+    answer: 'Atendemos CDMX, Estado de México y zona metropolitana. Para instalación y mantenimiento cubrimos esas mismas zonas. Cuéntanos dónde estás y te confirmamos cobertura y tiempos.',
   },
 ];
 
 const schemaData = {
   list: {
     name: 'Equipo contra incendio',
-    description:
-      'Catálogo de equipo contra incendio: extintores, detección y alarmas, hidrantes y mangueras, y señalización de emergencia.',
+    description: 'Catálogo de equipo contra incendio: extintores, detección y alarmas, hidrantes y mangueras, y señalización de emergencia.',
     path: '/productos',
-    items,
+    items: productos.map((p) => ({
+      name: p.data.title,
+      path: `/productos/${p.id}`,
+      image: p.data.image,
+      description: p.data.description,
+    })),
   },
   faqs,
 };
 ---
 
 <PageLayout
-  title="Equipo contra incendio | catálogo"
-  description="Catálogo de equipo contra incendio: extintores, detección y alarmas, hidrantes, mangueras y señalización de emergencia. Cotiza por WhatsApp."
+  title="Catálogo de equipo contra incendio"
+  description="Catálogo de equipo contra incendio: extintores, detección y alarmas, hidrantes, mangueras y señalización. Cotiza por WhatsApp — CDMX y Estado de México."
   pageType="category"
   schemaData={schemaData}
   breadcrumbs={[{ label: 'Productos' }]}
+  guia={false}
 >
+
+  {/* ─── Hero (componente compartido, idéntico al index) ─── */}
   <Hero
-    badge="Catálogo"
-    title="Equipo contra"
-    accent="incendio"
-    subtitle="Extintores, detección y alarmas, hidrantes y mangueras, y señalización de emergencia para proteger tu inmueble."
+    badge="Catálogo · CDMX y Estado de México"
+    title="Equipo contra incendio,"
+    accent="para cada riesgo"
+    subtitle="Extintores, detección y alarmas, hidrantes y mangueras, señalización, sistemas fijos y equipo de protección personal — con instalación, mantenimiento y documentación para Protección Civil y STPS."
+    descRight={[
+      'Reunimos en un solo catálogo el equipo contra incendio que tu inmueble necesita: extintores, detección y alarma, hidrantes y mangueras, señalización y sistemas fijos. Todo dimensionado al riesgo real del lugar, no a un catálogo genérico.',
+      'Cada equipo se entrega con ficha técnica y la documentación de servicio lista para tu expediente ante Protección Civil y STPS. Cotiza por WhatsApp y recibe una recomendación honesta.',
+    ]}
+    ctas={[
+      { text: 'Ver catálogo', href: '#categorias', variant: 'outline' },
+      { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.productos), variant: 'primary', whatsapp: true },
+    ]}
   />
 
-  <section class="section">
+  <SectionMenu items={menuSecciones} cta={menuCta} />
+
+  {/* ─── Barra de confianza (pilares honestos) ─── */}
+  <TrustBar items={pillars} />
+
+  {/* ─── Categorías (vitrina SHOWCASE) ─── */}
+  <section class="section section--surface" id="categorias">
     <div class="container">
       <SectionHeading
-        eyebrow="Catálogo"
-        title="Nuestro"
-        titleAccent="equipo"
-        desc="Cada ficha enlaza a su detalle. El badge indica la familia: extintores, detección, hidrantes o señalización."
+        layout="duo"
+        eyebrow="Catálogo por familia"
+        title="Ocho familias de"
+        titleAccent="equipo contra incendio"
+        desc="Selecciona la familia que necesitas o cotiza varias a la vez."
+        body={[
+          'Cada familia agrupa los equipos por función y tipo de riesgo que cubre. Puedes pedir equipo de varias familias en una sola cotización.',
+          'Si no sabes por dónde empezar, escríbenos: revisamos tu inmueble y te decimos exactamente qué necesitas, sin venderte de más.',
+        ]}
       />
+      <div class="showcase">
+        {SHOWCASE.map((c, i) => (
+          <CategoryCard
+            label={c.label}
+            href={c.href}
+            image={c.image}
+            imageAlt={c.imageAlt}
+            badge={c.badge}
+            blurb={c.blurb}
+            subcategories={c.subcategories}
+            ctaLabel={c.ctaLabel}
+            index={i}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
 
-      <div class="grid">
-        {
-          productos.map((p, i) => (
+  {/* ─── Módulos de categoría (CategoryFeature) — como el index, copy propio ─── */}
+  {CATEGORY_FEATURES.map((c) => (
+    <CategoryFeature
+      eyebrow={c.eyebrow}
+      title={c.title}
+      titleAccent={c.titleAccent}
+      description={c.description}
+      features={c.features}
+      brands={c.brands}
+      ctaLabel={c.ctaLabel}
+      ctaHref={waUrl(c.ctaMsg)}
+      ctaExternal
+      imgMain={c.imgMain}
+      imgA={c.imgA}
+      imgB={c.imgB}
+    />
+  ))}
+
+  {/* ─── Productos individuales ─── */}
+  {productos.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <SectionHeading
+          layout="duo"
+          eyebrow="Productos destacados"
+          title="Equipo disponible"
+          titleAccent="en stock"
+          desc="Fichas técnicas de los productos de mayor rotación."
+          body={[
+            'Cada ficha incluye especificaciones técnicas, norma aplicable y el agente o uso recomendado. El precio varía según cantidad y si incluye servicio.',
+            'Pide cotización por WhatsApp indicando el producto y la cantidad — te respondemos con precio, disponibilidad y tiempos de entrega.',
+          ]}
+        />
+        <div class="showcase">
+          {productos.map((p, i) => (
             <ProductCard
               title={p.data.title}
               href={`/productos/${p.id}`}
@@ -97,48 +364,70 @@ const schemaData = {
               index={i}
               priority={i === 0}
             />
-          ))
-        }
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {/* ─── Banda de normas ─── */}
+  <section class="norms-strip">
+    <div class="container">
+      <p class="norms-strip__label">Normatividad que respaldamos</p>
+      <div class="norms-strip__list">
+        {[
+          'NOM-002-STPS-2010',
+          'NOM-154-SCFI-2005',
+          'NOM-003-SEGOB-2011',
+          'NOM-026-STPS-2008',
+          'NFPA 10',
+          'NFPA 13',
+          'NFPA 14',
+          'NFPA 72',
+        ].map((n) => (
+          <span class="norms-strip__badge">{n}</span>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="section section--surface">
-    <div class="container">
-      <RelatedLinks
-        current="productos"
-        title="Explora también"
-        desc="Otras familias de equipo contra incendio."
-      />
-    </div>
-  </section>
+  {/* ─── FAQ + Contacto ─── */}
+  <FAQWithContact items={faqs} waNumber={CONTACT.whatsapp} />
 
-  <section class="section">
-    <div class="container">
-      <FAQAccordion items={faqs} title="Preguntas frecuentes" openFirst />
-    </div>
-  </section>
-
-  <CTABanner
-    heading="¿Necesitas equipar tu inmueble?"
-    desc="Cuéntanos qué necesitas y te respondemos con opciones, disponibilidad y tiempos. Asesoría sin compromiso."
-    btns={[
-      { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.productos), icon: 'wa', primary: true, external: true },
-      { label: 'Ver servicios', href: '/servicios', icon: 'arrow' },
-    ]}
-    badge="Respuesta rápida · Atención personalizada"
-    variant="dark"
-    centered={true}
-  />
 </PageLayout>
 
 <style>
-  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
+  /* Contenedores y secciones canónicos (idénticos al index.astro). */
+  .container {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-px);
+  }
   .section { padding: var(--sp-8) 0; }
   .section--surface { background: var(--c-surface); }
-  .grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-5); margin-top: var(--sp-6); }
-  @media (min-width: 768px) {
+
+  /* Grid de tarjetas: mismo patrón que la vitrina del home (.showcase). */
+  .showcase { display: grid; grid-template-columns: 1fr; gap: var(--sp-5); margin-top: var(--sp-6); }
+  @media (min-width: 640px) { .showcase { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 768px) { .showcase { grid-template-columns: repeat(4, 1fr); } }
+  @media (min-width: 1024px) {
     .section { padding: var(--sp-10) 0; }
-    .grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+    .showcase { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  /* Banda de normas (tira oscura sobre tokens de marca). */
+  .norms-strip { background: var(--c-ink); padding: var(--sp-6) 0; }
+  .norms-strip .container { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-4); }
+  .norms-strip__label {
+    font-size: var(--text-xs); font-weight: var(--weight-bold);
+    text-transform: uppercase; letter-spacing: .1em;
+    color: rgba(255,255,255,.45); margin: 0; flex-shrink: 0;
+  }
+  .norms-strip__list { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+  .norms-strip__badge {
+    font-size: var(--text-xs); font-weight: var(--weight-semibold);
+    color: rgba(255,255,255,.75);
+    background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+    border-radius: var(--radius-full); padding: .3rem .8rem; white-space: nowrap;
   }
 </style>

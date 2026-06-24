@@ -1,70 +1,90 @@
 ---
-// ============================================================================
-// /cobertura/<slug> — Detalle de zona (página de SEO local).
-// ----------------------------------------------------------------------------
-// Ruta dinámica generada desde COVERAGE_STATES (TAXONOMY en site.ts, SSoT) —
-// "manda el menú": los slugs son los de COVERAGE_STATES (cdmx · edomex), los
-// mismos que enlaza el dropdown del Header. Contenido de apoyo DEMO en el archivo.
-// ============================================================================
+// /cobertura/<slug> — Detalle de zona. Ruta dinámica generada desde
+// COVERAGE_STATES (cdmx · edomex). Copy de cara al cliente, específico por zona.
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
 import SectionHeading from '@components/SectionHeading.astro'
 import FAQAccordion from '@components/FAQAccordion.astro'
 import SectionMenu from '@components/SectionMenu.astro'
-import { COVERAGE_STATES, SERVICES, waUrl, WA_MESSAGES } from '@config/site'
+import { COVERAGE_STATES, SERVICES, waUrl } from '@config/site'
 
 export async function getStaticPaths() {
   return COVERAGE_STATES.map((z) => ({ params: { slug: z.slug }, props: { zona: z } }))
 }
 
 const { zona } = Astro.props
-const { slug, label, type } = zona
-const tipo = type === 'operativo' ? 'operativa' : 'comercial'
+const { slug, label } = zona
+
+// Detalle real por zona (alcaldías / municipios) para un copy específico, no genérico.
+const ZONE_DETAIL: Record<string, { areas: string; examples: string }> = {
+  cdmx: {
+    areas: 'las 16 alcaldías',
+    examples: 'Benito Juárez, Cuauhtémoc, Miguel Hidalgo, Álvaro Obregón, Coyoacán y más',
+  },
+  edomex: {
+    areas: 'los municipios conurbados',
+    examples: 'Naucalpan, Tlalnepantla, Ecatepec, Nezahualcóyotl, Cuautitlán y más',
+  },
+}
+const detail = ZONE_DETAIL[slug] ?? { areas: 'toda la zona', examples: 'consúltanos tu ubicación' }
+const waZona = waUrl(`Hola, estoy en ${label} y quiero cotizar equipo y/o servicio contra incendio.`)
 
 const faqs = [
-  { question: `¿Dan servicio en todo ${label}?`, answer: 'Atendemos esta zona y sus alrededores. Cuéntanos tu ubicación exacta por WhatsApp y te confirmamos cobertura y tiempos de respuesta.' },
-  { question: '¿Qué diferencia hay entre zona operativa y comercial?', answer: 'En una zona operativa damos servicio directo en sitio; en una comercial atendemos a distancia o con cobertura parcial. El tipo sale de COVERAGE_STATES en site.ts.' },
-  { question: `¿Atienden fuera de ${label}?`, answer: 'Escríbenos tu ubicación por WhatsApp y te confirmamos la cobertura. Muchos servicios se prestan a distancia sin importar la zona.' },
+  {
+    question: `¿Dan servicio en todo ${label}?`,
+    answer: `Sí, cubrimos ${detail.areas} de ${label} y sus alrededores. Cuéntanos tu ubicación exacta por WhatsApp y te confirmamos cobertura y tiempos de respuesta.`,
+  },
+  {
+    question: `¿Hacen entrega e instalación en sitio en ${label}?`,
+    answer: `Sí. Coordinamos día y hora para entrega de equipo, instalación, mantenimiento o inspección directamente en tu domicilio dentro de ${label}.`,
+  },
+  {
+    question: `¿Atienden fuera de ${label}?`,
+    answer: 'Escríbenos tu ubicación por WhatsApp y te confirmamos la cobertura. Para venta de equipo podemos coordinar envíos a otras zonas.',
+  },
 ]
 
 const otras = COVERAGE_STATES.filter((z) => z.slug !== slug)
 const cierreItems = [
   ...otras.map((z) => ({ label: z.label, href: `/cobertura/${z.slug}`, sub: 'Otra zona' })),
-  { label: 'Toda la cobertura', href: '/cobertura', sub: 'Volver al mapa' },
+  { label: 'Toda la cobertura', href: '/cobertura', sub: 'Volver a zonas' },
   { label: 'Servicios', href: '/servicios', sub: 'Lo que ofrecemos' },
 ]
-const cierreCta = { label: `Cotizar en ${label}`, href: waUrl(WA_MESSAGES.cotizar), sub: 'Respuesta inmediata', external: true }
+const cierreCta = { label: `Cotizar en ${label}`, href: waZona, sub: 'Respuesta inmediata', external: true }
 ---
 
 <PageLayout
-  title={`Cobertura en ${label}`}
-  description={`Cobertura ${tipo} en ${label}: servicios disponibles, alcance y contacto directo por WhatsApp. Cotiza en ${label}.`}
+  title={`Equipo contra incendio en ${label}`}
+  description={`Equipo contra incendio en ${label}: venta, instalación, mantenimiento e inspección con servicio en sitio. Cotiza por WhatsApp — CDMX y Estado de México.`}
   pageType="page"
   breadcrumbs={[{ label: 'Cobertura', href: '/cobertura' }, { label }]}
   guia={false}
 >
   <Hero
-    badge={`Zona ${tipo}`}
-    title="Cobertura en"
+    badge={`Cobertura · ${label}`}
+    title="Equipo contra incendio en"
     accent={label}
-    subtitle={`Atendemos ${label} con el mismo estándar de servicio. Esta es la página de zona: el patrón con el que un negocio cubre cada ubicación.`}
+    subtitle={`Venta, instalación, mantenimiento e inspección de equipo contra incendio en ${label}, con servicio en sitio y entrega con documentación.`}
     descRight={[
-      `Esta es una página de zona dedicada a ${label}. Su trabajo de SEO local es responder a quien busca un servicio en esta ubicación específica, con contenido propio en lugar de una mención genérica. Una URL por zona, con su nombre y sus datos, posiciona mejor que una sola página que intente cubrirlas todas.`,
-      'Aquí atendemos con venta, instalación, mantenimiento y recarga de equipo contra incendio. Cuéntanos tu ubicación y necesidad y te confirmamos cobertura, tiempos y la mejor opción para tu inmueble.',
+      `Damos servicio en ${label}: cubrimos ${detail.areas} con visita en sitio para instalar, dar mantenimiento o inspeccionar tu equipo, y entregamos extintores, detección, hidrantes y señalización con factura.`,
+      'Cuéntanos tu ubicación exacta y lo que necesitas, y te confirmamos cobertura, tiempos y la mejor opción para tu inmueble. Trabajamos conforme a la NOM-002-STPS y la NOM-154-SCFI.',
+    ]}
+    ctas={[
+      { text: 'Cotizar por WhatsApp', href: waZona, variant: 'primary', whatsapp: true },
+      { text: 'Ver catálogo', href: '/productos', variant: 'outline' },
     ]}
   />
 
   <section class="section">
     <div class="container">
-      
-
       <SectionHeading
         layout="duo"
         eyebrow="Qué cubrimos"
-        title={`Servicio en ${label}`}
-        desc="El alcance en esta zona y por qué una página dedicada importa para el SEO local."
+        title="Servicio en"
+        titleAccent={label}
+        desc={`Alcance y servicios disponibles en ${label}.`}
         body={[
-          `Atendemos ${label} como zona ${tipo}. En una implementación real, este bloque detalla el alcance concreto: colonias o municipios cubiertos, tiempos de respuesta y modalidad de atención. La especificidad es la que convierte y la que posiciona.`,
+          `Cubrimos ${detail.areas} —${detail.examples}— con servicio en sitio: instalación, mantenimiento, inspección y entrega de equipo contra incendio.`,
           'Atendemos cada zona con el mismo estándar de servicio y producto conforme a norma. Cambia la ubicación; la calidad y el cumplimiento, no.',
         ]}
       />

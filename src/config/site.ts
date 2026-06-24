@@ -311,6 +311,38 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
     ],
     ctaLabel: 'Ver protección',
   },
+  {
+    slug: 'equipo-proteccion-personal',
+    label: 'Equipo de protección personal',
+    href: '/productos',
+    image: '/images/showcase/equipo-proteccion-personal.svg',
+    imageAlt: 'Casco, guantes y equipo de protección personal contra incendio',
+    badge: 'EPP · NOM-115',
+    blurb:
+      'Cascos, guantes, trajes y equipo de protección personal para brigadas de emergencia. Cumplimiento a la NOM-115-STPS para el personal de respuesta interna.',
+    subcategories: [
+      { label: 'Cascos y caretas', href: '/productos' },
+      { label: 'Guantes térmicos', href: '/productos' },
+      { label: 'Trajes de aproximación', href: '/productos' },
+    ],
+    ctaLabel: 'Ver EPP',
+  },
+  {
+    slug: 'accesorios-refacciones',
+    label: 'Accesorios y refacciones',
+    href: '/productos',
+    image: '/images/showcase/accesorios-refacciones.svg',
+    imageAlt: 'Accesorios y refacciones para extintores y sistemas contra incendio',
+    badge: 'Mantenimiento',
+    blurb:
+      'Mangueras de descarga, válvulas, collarines, manómetros, soportes y todo lo necesario para el mantenimiento y recarga de extintores y sistemas.',
+    subcategories: [
+      { label: 'Refacciones de extintor', href: '/productos' },
+      { label: 'Soportes y señales', href: '/productos' },
+      { label: 'Herramienta de servicio', href: '/productos' },
+    ],
+    ctaLabel: 'Ver accesorios',
+  },
 ];
 
 // ── BRANCHES — sucursales (opcional). Vacío → el Footer omite el bloque. ──────

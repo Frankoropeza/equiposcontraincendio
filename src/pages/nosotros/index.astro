@@ -8,7 +8,7 @@ import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
 import SectionHeading from '@components/SectionHeading.astro'
 import SectionMenu from '@components/SectionMenu.astro'
-import { waUrl, WA_MESSAGES } from '@config/site'
+import { NAV, waUrl, WA_MESSAGES } from '@config/site'
 
 // Principios — data-driven (grid de valores). DEMO de la plantilla.
 const principios = [
@@ -18,13 +18,24 @@ const principios = [
   { t: 'Trato directo', d: 'Hablas con quien resuelve, no con un intermediario. Respuesta directa por WhatsApp.' },
 ]
 
-const cierreItems = [
-  { label: 'Servicios', href: '/servicios', sub: 'Cómo te ayudamos' },
-  { label: 'Productos', href: '/productos', sub: 'Catálogo del sitio' },
-  { label: 'Contacto', href: '/contacto', sub: 'Hablemos de tu proyecto' },
-  { label: 'Inicio', href: '/', sub: 'Volver a la home' },
-]
-const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.cotizar), sub: 'Respuesta inmediata', external: true }
+// ── Menú de secciones bajo el hero (data-driven desde NAV; excluye Contacto) ──
+const menuSub: Record<string, string> = {
+  Productos: 'Catálogo de equipo',
+  Servicios: 'Instalación y mantenimiento',
+  Cobertura: 'Zonas que atendemos',
+  Blog: 'Guías y normatividad',
+}
+const menuSecciones = NAV.filter((n) => n.label !== 'Contacto').map((n) => ({
+  label: n.label,
+  href: n.href,
+  sub: menuSub[n.label] ?? 'Ver sección',
+}))
+const menuCta = {
+  label: 'Cotizar por WhatsApp',
+  href: waUrl(WA_MESSAGES.cotizar),
+  sub: 'Respuesta inmediata',
+  external: true,
+}
 ---
 
 <PageLayout
@@ -40,10 +51,16 @@ const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.cotiz
     accent="cada instalación"
     subtitle="No solo vendemos equipo: nos aseguramos de que tu inmueble quede realmente protegido y en regla, con asesoría honesta y apego a la norma."
     descRight={[
-      'Antes de contratar conviene saber quién está detrás. Somos un proveedor de equipo contra incendio con un método claro: te decimos qué necesitas y por qué, no lo que más nos conviene vender.',
-      'Somos especialistas en equipo contra incendio: vendemos, instalamos y damos mantenimiento con asesoría honesta y apego a la normatividad. Nuestro objetivo es que tu inmueble esté realmente protegido y en regla, no solo equipado.',
+      'Somos un proveedor de equipo contra incendio con un método claro: te decimos qué necesitas y por qué, no lo que más nos conviene vender. Antes de cotizar, entendemos el riesgo real de tu inmueble.',
+      'Vendemos, instalamos y damos mantenimiento con asesoría honesta y apego a la normatividad. Nuestro objetivo es que tu inmueble esté realmente protegido y en regla, no solo equipado.',
+    ]}
+    ctas={[
+      { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.cotizar), variant: 'primary', whatsapp: true },
+      { text: 'Ver servicios', href: '/servicios', variant: 'outline' },
     ]}
   />
+
+  <SectionMenu items={menuSecciones} cta={menuCta} />
 
   <section class="section">
     <div class="container">
@@ -80,8 +97,6 @@ const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.cotiz
       </div>
     </div>
   </section>
-
-  <SectionMenu items={cierreItems} cta={cierreCta} ariaLabel="Sigue explorando el sitio" />
 </PageLayout>
 
 <style>

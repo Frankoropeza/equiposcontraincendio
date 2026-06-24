@@ -1,31 +1,149 @@
 ---
-// /servicios/ — Landing de Servicios (categoría L2). Lista SERVICES (SSoT site.ts).
-// Cada tarjeta enlaza a /servicios/<id>, generada por [...slug].astro.
+// /servicios/ — Landing de Servicios (categoría L2). HOMOLOGADA con /productos:
+// Hero → SectionMenu → TrustBar → tarjetas → módulos CategoryFeature → FAQ.
+// Mismos componentes compartidos; copy propio de servicios.
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
+import SectionMenu from '@components/SectionMenu.astro'
+import TrustBar from '@components/TrustBar.astro'
 import SectionHeading from '@components/SectionHeading.astro'
 import CategoryCard from '@components/CategoryCard.astro'
-import SectionMenu from '@components/SectionMenu.astro'
-import { SERVICES, waUrl, WA_MESSAGES } from '@config/site'
+import CategoryFeature from '@components/CategoryFeature.astro'
+import FAQWithContact from '@components/FAQWithContact.astro'
+import { SERVICES, NAV, CONTACT, waUrl, WA_MESSAGES } from '@config/site'
 
-const cierreItems = [
-  { label: 'Productos', href: '/productos', sub: 'Catálogo de equipo' },
-  { label: 'Cobertura', href: '/cobertura', sub: 'Zonas que atendemos' },
-  { label: 'Nosotros', href: '/nosotros', sub: 'Cómo trabajamos' },
-  { label: 'Contacto', href: '/contacto', sub: 'Hablemos de tu proyecto' },
+// ── Menú de secciones bajo el hero (data-driven desde NAV; excluye Contacto) ──
+const menuSub: Record<string, string> = {
+  Productos: 'Catálogo de equipo',
+  Servicios: 'Instalación y mantenimiento',
+  Cobertura: 'Zonas que atendemos',
+  Blog: 'Guías y normatividad',
+}
+const menuSecciones = NAV.filter((n) => n.label !== 'Contacto').map((n) => ({
+  label: n.label,
+  href: n.href,
+  sub: menuSub[n.label] ?? 'Ver sección',
+}))
+const menuCta = {
+  label: 'Cotizar por WhatsApp',
+  href: waUrl(WA_MESSAGES.servicios),
+  sub: 'Respuesta inmediata',
+  external: true,
+}
+
+// ── Barra de confianza (pilares honestos, vía componente TrustBar) ──
+const pillars = [
+  { icon: 'shield', title: 'Conforme a norma', desc: 'Servicio alineado a la NOM-154-SCFI y la NOM-002-STPS.' },
+  { icon: 'doc', title: 'Reporte y constancias', desc: 'Evidencia del servicio lista para tu expediente ante PC y STPS.' },
+  { icon: 'clock', title: 'Programa de vigencia', desc: 'Te avisamos cuándo toca recarga, prueba hidrostática y revisión.' },
+  { icon: 'chat', title: 'Atención por WhatsApp', desc: 'Agenda y resuelve dudas directo, con atención personal.' },
 ]
-const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.servicios), sub: 'Respuesta inmediata', external: true }
+
+// ── Imagen por servicio (para las tarjetas) ──
+const SERVICE_IMG: Record<string, string> = {
+  instalacion: '/images/servicios/instalacion-sistemas-contra-incendio.svg',
+  mantenimiento: '/images/servicios/mantenimiento-recarga-extintores.svg',
+  inspeccion: '/images/servicios/inspeccion-dictamen-contra-incendio.svg',
+}
+
+// ── Módulos de servicio (CategoryFeature) — copy PROPIO. Diseño uniforme
+// (sin surface ni flip): todos iguales, solo cambia la información. ──
+const SERVICE_FEATURES = [
+  {
+    eyebrow: 'Instalación · Proyecto a la medida · NOM-002-STPS',
+    title: 'Instalación de sistemas',
+    titleAccent: 'dimensionada a tu riesgo',
+    description:
+      'Proyectamos e instalamos tu protección contra incendio de principio a fin: detección y alarma, red de hidrantes y mangueras, extintores y señalización — todo calculado según el riesgo y la superficie de tu inmueble, no a partir de un paquete genérico.',
+    features: [
+      { label: 'Detección y alarma', desc: 'detectores, panel y sirenas dimensionados a tu inmueble.' },
+      { label: 'Hidrantes y red hidráulica', desc: 'gabinetes, mangueras y válvulas con cálculo conforme a NFPA 14.' },
+      { label: 'Extintores y señalización', desc: 'ubicación y capacidad según la NOM-002-STPS y la NOM-003-SEGOB.' },
+      { label: 'Planos y memoria de diseño', desc: 'documentación técnica lista para Protección Civil.' },
+    ],
+    ctaLabel: 'Cotizar instalación',
+    ctaMsg: 'Hola, quiero cotizar la instalación de un sistema contra incendio para mi inmueble.',
+    imgMain: { src: '/images/servicios/instalacion-sistemas-contra-incendio.svg', alt: 'Instalación de sistemas contra incendio' },
+    imgA: { src: '/images/servicios/diagnostico-riesgo-incendio.svg', alt: 'Diagnóstico de riesgo del inmueble' },
+    imgB: { src: '/images/servicios/suministro-equipo-contra-incendio.svg', alt: 'Suministro de equipo contra incendio' },
+  },
+  {
+    eyebrow: 'Mantenimiento · NOM-154-SCFI-2005',
+    title: 'Mantenimiento y recarga',
+    titleAccent: 'para equipo siempre vigente',
+    description:
+      'Un extintor sirve solo si está vigente. Damos mantenimiento preventivo y recarga conforme a la NOM-154-SCFI-2005, con etiqueta y collarín de servicio, y un programa anual para que tu equipo no caduque ni te tome por sorpresa una inspección.',
+    features: [
+      { label: 'Recarga conforme a norma', desc: 'con etiqueta y collarín de servicio que acreditan el mantenimiento.' },
+      { label: 'Prueba hidrostática', desc: 'prueba de presión cada 5 años para garantizar la integridad del cilindro.' },
+      { label: 'Programa anual', desc: 'te avisamos cuándo toca el servicio para no perder vigencia.' },
+      { label: 'Revisión mensual guiada', desc: 'te apoyamos con la verificación que pide la NOM-002-STPS al personal.' },
+    ],
+    ctaLabel: 'Cotizar mantenimiento',
+    ctaMsg: 'Hola, quiero cotizar el mantenimiento y recarga de mis extintores conforme a la NOM-154.',
+    imgMain: { src: '/images/servicios/mantenimiento-recarga-extintores.svg', alt: 'Mantenimiento y recarga de extintores' },
+    imgA: { src: '/images/servicios/prueba-hidrostatica-extintores.svg', alt: 'Prueba hidrostática de extintores' },
+    imgB: { src: '/images/servicios/suministro-equipo-contra-incendio.svg', alt: 'Suministro y refacciones para extintores' },
+  },
+  {
+    eyebrow: 'Inspección · Dictamen · Reporte claro',
+    title: 'Inspección y dictamen',
+    titleAccent: 'de tu equipo contra incendio',
+    description:
+      'Revisamos tu equipo y sistema completo, identificamos faltantes, vencimientos y riesgos, y te entregamos un dictamen claro con lo que hay que corregir para cumplir y estar realmente protegido — sin tecnicismos ni letras chiquitas.',
+    features: [
+      { label: 'Revisión integral', desc: 'extintores, detección, hidrantes y señalización en un solo recorrido.' },
+      { label: 'Faltantes y vencimientos', desc: 'qué falta, qué venció y qué no cumple con la norma.' },
+      { label: 'Dictamen por escrito', desc: 'reporte claro con prioridades y recomendaciones.' },
+      { label: 'Listo para Protección Civil', desc: 'base para integrar tu expediente ante PC y STPS.' },
+    ],
+    ctaLabel: 'Cotizar inspección',
+    ctaMsg: 'Hola, quiero cotizar una inspección y dictamen de mi equipo contra incendio.',
+    imgMain: { src: '/images/servicios/inspeccion-dictamen-contra-incendio.svg', alt: 'Inspección y dictamen de equipo contra incendio' },
+    imgA: { src: '/images/servicios/gestion-documental-proteccion-civil.svg', alt: 'Gestión documental para Protección Civil' },
+    imgB: { src: '/images/servicios/diagnostico-riesgo-incendio.svg', alt: 'Diagnóstico de riesgo contra incendio' },
+  },
+]
+
+const faqs = [
+  {
+    question: '¿Cada cuándo se da mantenimiento o recarga a un extintor?',
+    answer: 'El mantenimiento y recarga se realiza conforme a la NOM-154-SCFI-2005 (de forma anual como práctica habitual). Además, en centros de trabajo la NOM-002-STPS-2010 pide una revisión mensual a cargo del personal.',
+  },
+  {
+    question: '¿Cada cuándo se hace la prueba hidrostática?',
+    answer: 'En México la prueba hidrostática se realiza cada 5 años para extintores de agua, CO₂ y PQS, conforme a la NOM-154-SCFI-2005 (o antes si el cilindro se golpea). El dato de “12 años” es de la NFPA 10 de Estados Unidos, no es norma mexicana.',
+  },
+  {
+    question: '¿La instalación incluye planos y memoria de diseño?',
+    answer: 'Sí. El servicio de instalación incluye cálculo, planos y memoria técnica, para que tengas la documentación que pide Protección Civil y tu aseguradora.',
+  },
+  {
+    question: '¿Me entregan dictamen o constancia para Protección Civil y STPS?',
+    answer: 'Sí. Cada servicio se entrega con su reporte o constancia correspondiente, listos para integrar a tu expediente ante Protección Civil y STPS.',
+  },
+  {
+    question: '¿Puedo cotizar servicio y producto en el mismo mensaje?',
+    answer: 'Claro. Puedes pedir, por ejemplo, suministro de extintores junto con su instalación y mantenimiento en una sola cotización por WhatsApp.',
+  },
+  {
+    question: '¿En qué zonas dan servicio?',
+    answer: 'Atendemos la Ciudad de México, el Estado de México y la zona metropolitana. Cuéntanos dónde estás y te confirmamos cobertura y tiempos.',
+  },
+]
 ---
 
 <PageLayout
   title="Servicios contra incendio"
-  description="Servicios contra incendio: instalación de sistemas, mantenimiento y recarga de extintores, e inspección y dictamen. Cada servicio con su página de detalle."
+  description="Servicios contra incendio: instalación de sistemas, mantenimiento y recarga de extintores, e inspección y dictamen. Cotiza por WhatsApp — CDMX y Estado de México."
   pageType="category"
+  schemaData={{ faqs }}
   breadcrumbs={[{ label: 'Servicios' }]}
   guia={false}
 >
+  {/* ─── Hero (componente compartido, idéntico al index y a /productos) ─── */}
   <Hero
-    badge="Servicios"
+    badge="Servicios · CDMX y Estado de México"
     title="No solo vendemos:"
     accent="instalamos y mantenemos"
     subtitle="De la instalación al mantenimiento, la recarga y la inspección: acompañamos tu protección contra incendio durante toda su vida útil."
@@ -33,9 +151,19 @@ const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.servi
       'Un equipo contra incendio protege si está bien elegido, bien instalado y vigente. Por eso ofrecemos el ciclo completo y no solo la venta: proyecto e instalación, mantenimiento y recarga, e inspección con dictamen.',
       'Trabajamos conforme a la normatividad aplicable —NOM-002-STPS-2010 y NOM-154-SCFI-2005— y te entregamos un reporte claro de lo realizado.',
     ]}
+    ctas={[
+      { text: 'Ver servicios', href: '#servicios', variant: 'outline' },
+      { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.servicios), variant: 'primary', whatsapp: true },
+    ]}
   />
 
-  <section class="section">
+  <SectionMenu items={menuSecciones} cta={menuCta} />
+
+  {/* ─── Barra de confianza (pilares honestos) ─── */}
+  <TrustBar items={pillars} />
+
+  {/* ─── Tarjetas de servicio ─── */}
+  <section class="section section--surface" id="servicios">
     <div class="container">
       <SectionHeading
         layout="duo"
@@ -48,12 +176,13 @@ const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.servi
           'Cada tarjeta lleva a una página de detalle con lo que incluye, cómo se trabaja y las preguntas frecuentes.',
         ]}
       />
-
       <div class="grid">
         {SERVICES.map((s, i) => (
           <CategoryCard
             label={s.label}
             href={`/servicios/${s.id}`}
+            image={SERVICE_IMG[s.id]}
+            imageAlt={s.label}
             blurb={s.desc}
             badge="Servicio"
             ctaLabel="Ver detalle"
@@ -64,12 +193,31 @@ const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.servi
     </div>
   </section>
 
-  <SectionMenu items={cierreItems} cta={cierreCta} ariaLabel="Sigue explorando el sitio" />
+  {/* ─── Módulos de servicio (CategoryFeature) — diseño uniforme, copy propio ─── */}
+  {SERVICE_FEATURES.map((c) => (
+    <CategoryFeature
+      eyebrow={c.eyebrow}
+      title={c.title}
+      titleAccent={c.titleAccent}
+      description={c.description}
+      features={c.features}
+      ctaLabel={c.ctaLabel}
+      ctaHref={waUrl(c.ctaMsg)}
+      ctaExternal
+      imgMain={c.imgMain}
+      imgA={c.imgA}
+      imgB={c.imgB}
+    />
+  ))}
+
+  {/* ─── FAQ + Contacto ─── */}
+  <FAQWithContact items={faqs} waNumber={CONTACT.whatsapp} />
 </PageLayout>
 
 <style>
   .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
   .section { padding: var(--sp-8) 0; }
+  .section--surface { background: var(--c-surface); }
   @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
   .grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-5); margin-top: var(--sp-6); }
   @media (min-width: 640px)  { .grid { grid-template-columns: repeat(3, 1fr); } }

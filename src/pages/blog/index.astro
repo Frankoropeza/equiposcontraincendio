@@ -1,62 +1,83 @@
 ---
-// ============================================================================
-// /blog/ — Landing del Blog (lista de artículos).
-// ----------------------------------------------------------------------------
-// El grid NO se escribe a mano: sale de la colección `articulos` (.mdx), ordenada
-// por fecha de publicación. Cada tarjeta enlaza a su artículo /blog/<slug>,
-// generado por [...slug].astro con ArticleLayout.
-// ============================================================================
+// /blog/ — Landing del Blog (lista de artículos). L2 HOMOLOGADA con el sistema
+// del index: Hero → SectionMenu → tarjetas → CTABanner. Copy de cara al cliente.
+// El grid sale de la colección `articulos` (.mdx), ordenada por fecha.
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
+import SectionMenu from '@components/SectionMenu.astro'
 import SectionHeading from '@components/SectionHeading.astro'
 import CategoryCard from '@components/CategoryCard.astro'
-import SectionMenu from '@components/SectionMenu.astro'
 import { getCollection } from 'astro:content'
-import { waUrl, WA_MESSAGES } from '@config/site'
+import { NAV, waUrl, WA_MESSAGES } from '@config/site'
 
 const articulos = (await getCollection('articulos', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 )
 
-const cierreItems = [
-  { label: 'Servicios', href: '/servicios', sub: 'Lo que ofrecemos' },
-  { label: 'Productos', href: '/productos', sub: 'Catálogo del sitio' },
-  { label: 'Nosotros', href: '/nosotros', sub: 'Cómo trabajamos' },
-  { label: 'Contacto', href: '/contacto', sub: 'Hablemos de tu proyecto' },
-]
-const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog), sub: 'Respuesta inmediata', external: true }
+// Etiqueta legible para el badge de categoría de cada artículo.
+const CAT_LABEL: Record<string, string> = {
+  guias: 'Guía',
+  novedades: 'Novedad',
+  general: 'Artículo',
+}
+
+// ── Menú de secciones bajo el hero (data-driven desde NAV; excluye Contacto) ──
+const menuSub: Record<string, string> = {
+  Productos: 'Catálogo de equipo',
+  Servicios: 'Instalación y mantenimiento',
+  Cobertura: 'Zonas que atendemos',
+  Blog: 'Guías y normatividad',
+}
+const menuSecciones = NAV.filter((n) => n.label !== 'Contacto').map((n) => ({
+  label: n.label,
+  href: n.href,
+  sub: menuSub[n.label] ?? 'Ver sección',
+}))
+const menuCta = {
+  label: 'Cotizar por WhatsApp',
+  href: waUrl(WA_MESSAGES.blog),
+  sub: 'Respuesta inmediata',
+  external: true,
+}
 ---
 
 <PageLayout
-  title="Blog — guías y novedades"
-  description="Blog de Equipos Contra Incendio: guías y novedades sobre construir sitios Astro con contenido en Markdown. Guías y novedades sobre equipo contra incendio."
+  title="Blog — guías de seguridad contra incendio"
+  description="Guías prácticas sobre equipo contra incendio: cómo elegir un extintor, qué pide la NOM-154 para el mantenimiento y la recarga, y cómo mantener tu inmueble en regla."
   pageType="page"
   breadcrumbs={[{ label: 'Blog' }]}
   guia={false}
 >
+  {/* ─── Hero (componente compartido, copy de cara al cliente) ─── */}
   <Hero
-    badge="Guías y novedades"
-    title="El"
-    accent="blog"
-    subtitle="Artículos sobre cómo se construye y se mantiene un sitio profesional: guías prácticas y novedades del sistema."
+    badge="Guías y normatividad"
+    title="Guías de"
+    accent="seguridad contra incendio"
+    subtitle="Artículos prácticos para elegir, instalar y mantener tu equipo contra incendio, y entender qué pide la normatividad mexicana — explicado claro, sin tecnicismos de más."
     descRight={[
-      'El blog es el motor de contenido del sitio: cada artículo es una página nueva que puede responder a una búsqueda y atraer visitas que aún no te conocen. Bien hecho, es la forma más sostenible de crecer en orgánico —no depende de pagar por cada clic, sino de resolver dudas reales.',
-      'Aquí publicamos guías prácticas sobre equipo contra incendio: cómo elegir un extintor, qué pide la normatividad y cómo mantener tu equipo vigente. Contenido útil para decidir con información.',
+      'Aquí publicamos guías sobre equipo contra incendio: cómo elegir un extintor según la clase de fuego, qué exige la NOM-154-SCFI para el mantenimiento y la recarga, y cómo mantener tu inmueble protegido y en regla.',
+      'Contenido pensado para que tomes mejores decisiones de protección, con información confiable y aplicada a tu caso. ¿Tienes una duda puntual? Escríbenos por WhatsApp.',
+    ]}
+    ctas={[
+      { text: 'Ver catálogo', href: '/productos', variant: 'outline' },
+      { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog), variant: 'primary', whatsapp: true },
     ]}
   />
 
-  <section class="section">
-    <div class="container">
-      
+  <SectionMenu items={menuSecciones} cta={menuCta} />
 
+  {/* ─── Lista de artículos ─── */}
+  <section class="section section--surface">
+    <div class="container">
       <SectionHeading
         layout="duo"
         eyebrow="Últimos artículos"
-        title="Contenido que trabaja por ti"
-        desc="Cada entrada es una puerta de entrada distinta al sitio desde el buscador."
+        title="Guías y"
+        titleAccent="normatividad"
+        desc="Lo esencial sobre extintores, mantenimiento y cumplimiento, explicado claro."
         body={[
-          'Un blog no es un diario: es una red de páginas que responden preguntas concretas de tu audiencia. Cada artículo bien enfocado capta una búsqueda específica y, desde ahí, conecta con tus productos y servicios mediante enlaces internos. Es contenido que sigue trabajando mucho después de publicarse.',
-          'Nuestro objetivo es que tomes mejores decisiones de protección contra incendio: información clara, sin tecnicismos innecesarios y orientada a tu caso.',
+          'Reunimos guías prácticas sobre protección contra incendio: qué equipo necesitas según tu riesgo, cada cuándo darle servicio y qué pide la norma para pasar una inspección.',
+          'Cada artículo va al grano y, cuando aplica, te conecta con el producto o servicio que resuelve tu caso.',
         ]}
       />
 
@@ -67,7 +88,7 @@ const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog)
             href={`/blog/${a.id}`}
             image={a.data.heroImage}
             imageAlt={a.data.title}
-            badge={a.data.category}
+            badge={CAT_LABEL[a.data.category] ?? 'Artículo'}
             blurb={a.data.description}
             ctaLabel="Leer artículo"
             index={i}
@@ -76,13 +97,12 @@ const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog)
       </div>
     </div>
   </section>
-
-  <SectionMenu items={cierreItems} cta={cierreCta} ariaLabel="Sigue explorando el sitio" />
 </PageLayout>
 
 <style>
   .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
   .section { padding: var(--sp-8) 0; }
+  .section--surface { background: var(--c-surface); }
   @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
   .grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-5); margin-top: var(--sp-6); }
   @media (min-width: 640px)  { .grid { grid-template-columns: repeat(2, 1fr); } }

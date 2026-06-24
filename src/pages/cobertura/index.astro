@@ -1,68 +1,167 @@
 ---
-// ============================================================================
-// /cobertura/ — Landing de Cobertura (zonas atendidas).
-// ----------------------------------------------------------------------------
-// Lista las zonas desde COVERAGE_STATES (TAXONOMY en site.ts, SSoT) — la misma
-// fuente del dropdown «Cobertura» del Header. Cada tarjeta enlaza a su detalle
-// /cobertura/<slug>, generado por [...slug].astro. SEO local.
-// ============================================================================
+// /cobertura/ — Landing de Cobertura (zonas atendidas). L2 HOMOLOGADA con
+// /productos y /servicios: Hero → SectionMenu → TrustBar → tarjetas →
+// módulos CategoryFeature → FAQ. Copy de cara al cliente (sin meta-SEO).
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
+import SectionMenu from '@components/SectionMenu.astro'
+import TrustBar from '@components/TrustBar.astro'
 import SectionHeading from '@components/SectionHeading.astro'
 import CategoryCard from '@components/CategoryCard.astro'
-import SectionMenu from '@components/SectionMenu.astro'
-import { COVERAGE_STATES, waUrl, WA_MESSAGES } from '@config/site'
+import CategoryFeature from '@components/CategoryFeature.astro'
+import FAQWithContact from '@components/FAQWithContact.astro'
+import { COVERAGE_STATES, NAV, CONTACT, waUrl, WA_MESSAGES } from '@config/site'
 
-const cierreItems = [
-  { label: 'Servicios', href: '/servicios', sub: 'Lo que ofrecemos' },
-  { label: 'Productos', href: '/productos', sub: 'Catálogo del sitio' },
-  { label: 'Contacto', href: '/contacto', sub: '¿Estás en otra zona?' },
-  { label: 'Inicio', href: '/', sub: 'Volver a la home' },
+const tipoLabel = (t: string) => (t === 'operativo' ? 'Servicio en sitio' : 'Atención a distancia')
+
+// ── Menú de secciones bajo el hero (data-driven desde NAV; excluye Contacto) ──
+const menuSub: Record<string, string> = {
+  Productos: 'Catálogo de equipo',
+  Servicios: 'Instalación y mantenimiento',
+  Cobertura: 'Zonas que atendemos',
+  Blog: 'Guías y normatividad',
+}
+const menuSecciones = NAV.filter((n) => n.label !== 'Contacto').map((n) => ({
+  label: n.label,
+  href: n.href,
+  sub: menuSub[n.label] ?? 'Ver sección',
+}))
+const menuCta = {
+  label: 'Cotizar por WhatsApp',
+  href: waUrl(WA_MESSAGES.cotizar),
+  sub: 'Respuesta inmediata',
+  external: true,
+}
+
+// ── Barra de confianza (pilares honestos) ──
+const pillars = [
+  { icon: 'pin', title: 'CDMX y Estado de México', desc: 'Servicio en sitio en la ciudad, el EdoMex y la zona metropolitana.' },
+  { icon: 'clock', title: 'Visita y entrega en sitio', desc: 'Coordinamos día y hora para instalación, mantenimiento o entrega.' },
+  { icon: 'doc', title: 'Documentación local', desc: 'Constancias para Protección Civil de tu alcaldía o municipio.' },
+  { icon: 'chat', title: 'Cotiza por WhatsApp', desc: 'Dinos tu ubicación y te confirmamos cobertura y tiempos.' },
 ]
-const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.cotizar), sub: 'Respuesta inmediata', external: true }
 
-const tipoLabel = (t: string) => (t === 'operativo' ? 'Operativo' : 'Comercial')
+// ── Imagen por zona (para las tarjetas) ──
+const ZONE_IMG: Record<string, string> = {
+  cdmx: '/images/zonas/cobertura-cdmx.svg',
+  edomex: '/images/zonas/cobertura-edomex.svg',
+}
+
+// ── Módulos de zona (CategoryFeature) — copy propio, diseño uniforme ──
+const ZONE_FEATURES = [
+  {
+    eyebrow: 'Cobertura · Ciudad de México · Servicio en sitio',
+    title: 'Servicio directo en',
+    titleAccent: 'toda la Ciudad de México',
+    description:
+      'Operamos en la Ciudad de México con visita en sitio para venta, instalación, mantenimiento e inspección de equipo contra incendio. Cubrimos las 16 alcaldías y entregamos el equipo con la documentación que pide Protección Civil de la CDMX.',
+    features: [
+      { label: 'Las 16 alcaldías', desc: 'de Álvaro Obregón a Xochimilco; visita y entrega en sitio.' },
+      { label: 'Servicio directo en sitio', desc: 'instalación, mantenimiento e inspección presenciales.' },
+      { label: 'Entrega de equipo con factura', desc: 'extintores, detección, hidrantes y señalización.' },
+      { label: 'Trámite ante PC-CDMX', desc: 'documentación y constancias para tu expediente de Protección Civil.' },
+    ],
+    ctaLabel: 'Cotizar en CDMX',
+    ctaMsg: 'Hola, estoy en la Ciudad de México y quiero cotizar equipo y/o servicio contra incendio.',
+    imgMain: { src: '/images/zonas/cobertura-cdmx.svg', alt: 'Cobertura de equipo contra incendio en la Ciudad de México' },
+    imgA: { src: '/images/servicios/instalacion-sistemas-contra-incendio.svg', alt: 'Instalación de sistemas contra incendio en CDMX' },
+    imgB: { src: '/images/servicios/mantenimiento-recarga-extintores.svg', alt: 'Mantenimiento y recarga de extintores en CDMX' },
+  },
+  {
+    eyebrow: 'Cobertura · Estado de México · Servicio en sitio',
+    title: 'Cobertura en la zona',
+    titleAccent: 'metropolitana y EdoMex',
+    description:
+      'Atendemos el Estado de México y la zona metropolitana con servicio en sitio. Cubrimos los municipios conurbados —Naucalpan, Tlalnepantla, Ecatepec, Nezahualcóyotl, Cuautitlán y más— para venta, instalación, mantenimiento e inspección de tu equipo contra incendio.',
+    features: [
+      { label: 'Municipios conurbados', desc: 'Naucalpan, Tlalnepantla, Ecatepec, Neza, Cuautitlán y zona metropolitana.' },
+      { label: 'Servicio directo en sitio', desc: 'instalación, mantenimiento e inspección presenciales.' },
+      { label: 'Entrega y suministro', desc: 'equipo contra incendio con factura y ficha técnica.' },
+      { label: 'Documentación local', desc: 'constancias para Protección Civil municipal y STPS.' },
+    ],
+    ctaLabel: 'Cotizar en EdoMex',
+    ctaMsg: 'Hola, estoy en el Estado de México y quiero cotizar equipo y/o servicio contra incendio.',
+    imgMain: { src: '/images/zonas/cobertura-edomex.svg', alt: 'Cobertura de equipo contra incendio en el Estado de México' },
+    imgA: { src: '/images/servicios/inspeccion-dictamen-contra-incendio.svg', alt: 'Inspección de equipo contra incendio en EdoMex' },
+    imgB: { src: '/images/servicios/suministro-equipo-contra-incendio.svg', alt: 'Suministro de equipo contra incendio en EdoMex' },
+  },
+]
+
+const faqs = [
+  {
+    question: '¿Qué zonas atienden?',
+    answer: 'Damos servicio en sitio en la Ciudad de México, el Estado de México y la zona metropolitana. Si estás en otra ubicación, escríbenos y te confirmamos si podemos llegar o atenderte a distancia.',
+  },
+  {
+    question: '¿Cobran por el traslado o la visita?',
+    answer: 'Depende de la zona y del servicio. Para la mayoría de CDMX y EdoMex la visita va incluida en el servicio; si hay algún costo de traslado, te lo decimos claro al cotizar, antes de cualquier compromiso.',
+  },
+  {
+    question: '¿Hacen entregas a domicilio del equipo?',
+    answer: 'Sí. Entregamos extintores, detección, señalización e hidrantes en CDMX y Estado de México, con factura y ficha técnica. Coordinamos día y hora por WhatsApp.',
+  },
+  {
+    question: '¿En cuánto tiempo pueden ir?',
+    answer: 'Depende de la disponibilidad de agenda y de tu ubicación. Cuéntanos qué necesitas y dónde estás, y te confirmamos la fecha más próxima de visita o entrega.',
+  },
+  {
+    question: '¿Atienden fuera de CDMX y Estado de México?',
+    answer: 'Para venta de equipo podemos coordinar envíos a otras zonas; para instalación y mantenimiento en sitio, consúltanos según la ubicación. Escríbenos y lo revisamos.',
+  },
+]
 ---
 
 <PageLayout
-  title="Cobertura"
-  description="Zonas que atiende Equipos Contra Incendio: cobertura por ciudad y estado, cada una con su página de detalle. SEO local data-driven."
+  title="Cobertura — CDMX y Estado de México"
+  description="Cobertura de equipo contra incendio: servicio en sitio en la Ciudad de México, el Estado de México y la zona metropolitana. Cotiza por WhatsApp."
   pageType="category"
+  schemaData={{ faqs }}
   breadcrumbs={[{ label: 'Cobertura' }]}
   guia={false}
 >
+  {/* ─── Hero (componente compartido, copy de cara al cliente) ─── */}
   <Hero
-    badge="Categoría · Cobertura"
-    title="Dónde"
-    accent="atendemos"
-    subtitle="Las zonas donde operamos, cada una con su página propia: el patrón con el que un negocio cubre varias ubicaciones sin canibalizar su SEO."
+    badge="Cobertura · CDMX y Estado de México"
+    title="Estamos donde"
+    accent="está tu inmueble"
+    subtitle="Servicio en sitio en la Ciudad de México, el Estado de México y la zona metropolitana: venta, instalación, mantenimiento e inspección de equipo contra incendio."
     descRight={[
-      'La cobertura es clave para el SEO local: cada zona merece su propia página, con su nombre, sus colonias y sus datos, para responder a búsquedas como "servicio en <ciudad>". Una sola página genérica que mencione todas las zonas compite mal; varias páginas específicas posicionan cada una por su cuenta.',
-      'La lista sale de COVERAGE_STATES en site.ts, la misma fuente del menú. Cada tarjeta lleva a una página de zona generada automáticamente. Distinguimos zona "operativa" (donde damos servicio directo) de "comercial" (donde atendemos a distancia).',
+      'Atendemos donde está tu inmueble. Coordinamos la visita para instalar, dar mantenimiento o inspeccionar tu equipo contra incendio, y entregamos el producto con su documentación.',
+      'Cada zona tiene su página con el detalle de cobertura. Dinos tu alcaldía o municipio y te confirmamos servicio y tiempos por WhatsApp.',
+    ]}
+    ctas={[
+      { text: 'Ver zonas', href: '#zonas', variant: 'outline' },
+      { text: 'Cotizar por WhatsApp', href: waUrl('Hola, quiero confirmar si dan servicio en mi zona y cotizar equipo contra incendio.'), variant: 'primary', whatsapp: true },
     ]}
   />
 
-  <section class="section">
-    <div class="container">
-      
+  <SectionMenu items={menuSecciones} cta={menuCta} />
 
+  {/* ─── Barra de confianza (pilares honestos) ─── */}
+  <TrustBar items={pillars} />
+
+  {/* ─── Tarjetas de zona ─── */}
+  <section class="section section--surface" id="zonas">
+    <div class="container">
       <SectionHeading
         layout="duo"
-        eyebrow="Las zonas"
-        title="Una página por ubicación"
-        desc="Cada zona con su propia URL, su nombre y sus datos: así se posiciona el SEO local de verdad."
+        eyebrow="Zonas que atendemos"
+        title="Servicio en"
+        titleAccent="tu zona"
+        desc="Ciudad de México, Estado de México y zona metropolitana — cada una con su página."
         body={[
-          'Cuando un negocio atiende varias ubicaciones, la tentación es listarlas todas en una sola página. Pero el buscador premia la página específica: "servicio en CDMX" rankea mejor con una página dedicada a CDMX que con un párrafo perdido entre veinte ciudades. Una zona, una página, una intención.',
-          'Por eso cada tarjeta de abajo abre una página de zona con su contenido propio. Mantenerlas todas coherentes es fácil porque comparten la misma estructura; solo cambia el contenido específico de cada ubicación.',
+          'Damos servicio en sitio donde está tu inmueble: instalación, mantenimiento, inspección y entrega de equipo. Elige tu zona para ver el detalle de cobertura.',
+          '¿No ves tu ubicación? Escríbenos por WhatsApp y te confirmamos si llegamos a tu zona.',
         ]}
       />
-
       <div class="grid">
         {COVERAGE_STATES.map((z, i) => (
           <CategoryCard
             label={z.label}
             href={`/cobertura/${z.slug}`}
-            blurb={`Cobertura ${tipoLabel(z.type).toLowerCase()} en ${z.label}. Cobertura, alcance y servicios disponibles en la zona.`}
+            image={ZONE_IMG[z.slug]}
+            imageAlt={`Cobertura en ${z.label}`}
+            blurb={`Servicio en sitio en ${z.label}: venta, instalación, mantenimiento e inspección de equipo contra incendio.`}
             badge={tipoLabel(z.type)}
             ctaLabel="Ver zona"
             index={i}
@@ -72,12 +171,31 @@ const tipoLabel = (t: string) => (t === 'operativo' ? 'Operativo' : 'Comercial')
     </div>
   </section>
 
-  <SectionMenu items={cierreItems} cta={cierreCta} ariaLabel="Sigue explorando el sitio" />
+  {/* ─── Módulos de zona (CategoryFeature) — diseño uniforme, copy propio ─── */}
+  {ZONE_FEATURES.map((c) => (
+    <CategoryFeature
+      eyebrow={c.eyebrow}
+      title={c.title}
+      titleAccent={c.titleAccent}
+      description={c.description}
+      features={c.features}
+      ctaLabel={c.ctaLabel}
+      ctaHref={waUrl(c.ctaMsg)}
+      ctaExternal
+      imgMain={c.imgMain}
+      imgA={c.imgA}
+      imgB={c.imgB}
+    />
+  ))}
+
+  {/* ─── FAQ + Contacto ─── */}
+  <FAQWithContact items={faqs} waNumber={CONTACT.whatsapp} />
 </PageLayout>
 
 <style>
   .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
   .section { padding: var(--sp-8) 0; }
+  .section--surface { background: var(--c-surface); }
   @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
   .grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-5); margin-top: var(--sp-6); }
   @media (min-width: 640px)  { .grid { grid-template-columns: repeat(2, 1fr); } }

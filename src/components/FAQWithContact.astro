@@ -1,0 +1,470 @@
+---
+// FAQWithContact.astro — FAQ 2 columnas: acordeón izq + formulario WhatsApp der.
+// Header homologado con SectionHeading layout="duo" (patrón canónico del sitio).
+import FAQAccordion from '@components/FAQAccordion.astro'
+import SectionHeading from '@components/SectionHeading.astro'
+
+interface FAQItem {
+  question: string
+  answer: string
+}
+
+interface Props {
+  items: FAQItem[]
+  waNumber: string
+}
+
+const { items, waNumber } = Astro.props
+---
+
+<section class="fwc">
+  <div class="fwc__inner">
+
+    <!-- Encabezado homologado: patrón duo del sitio -->
+    <SectionHeading
+      layout="duo"
+      eyebrow="Preguntas frecuentes"
+      title="Resolvemos tus"
+      titleAccent="dudas antes de cotizar"
+      desc="Lo que más nos preguntan antes de cotizar — sobre extintores, mantenimiento, normatividad y cobertura."
+      body={[
+        "Reunimos las preguntas más frecuentes para que llegues a la cotización con todo claro: qué equipo necesitas, cada cuándo se da mantenimiento y qué documentación te entregamos.",
+        "¿Tu caso es diferente o no encuentras tu duda? Usa el formulario y te respondemos directo por WhatsApp.",
+      ]}
+    />
+
+    <!-- Grid 2 columnas -->
+    <div class="fwc__grid">
+
+      <!-- Col izquierda: acordeón FAQ -->
+      <div class="fwc__col-faq">
+        <FAQAccordion items={items} title="" bare openFirst />
+      </div>
+
+      <!-- Col derecha: tarjeta de contacto -->
+      <aside class="fwc__col-form">
+        <div class="fwc__card">
+
+          <!-- Header de la tarjeta -->
+          <div class="fwc__card-hd">
+            <div class="fwc__wa-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="fwc__card-title">¿Tu duda no está aquí?</h3>
+              <p class="fwc__card-sub">Te respondemos por WhatsApp en minutos.</p>
+            </div>
+          </div>
+
+          <!-- Formulario -->
+          <form id="fwc-form" class="fwc__form" novalidate>
+
+            <div class="fwc__field">
+              <label class="fwc__label" for="fwc-name">
+                Nombre <span class="fwc__opt">— opcional</span>
+              </label>
+              <input
+                id="fwc-name"
+                name="name"
+                type="text"
+                class="fwc__input"
+                placeholder="Tu nombre"
+                autocomplete="given-name"
+                maxlength="80"
+              />
+            </div>
+
+            <div class="fwc__field">
+              <label class="fwc__label" for="fwc-giro">
+                Tipo de negocio <span class="fwc__req" aria-hidden="true">*</span>
+              </label>
+              <div class="fwc__select-wrap">
+                <select id="fwc-giro" name="giro" class="fwc__input fwc__select" required>
+                  <option value="" disabled selected>Selecciona tu giro&hellip;</option>
+                  <option value="Oficina o consultorio">Oficina o consultorio</option>
+                  <option value="Restaurante o cocina">Restaurante o cocina</option>
+                  <option value="Comercio o tienda">Comercio o tienda</option>
+                  <option value="Bodega o nave industrial">Bodega o nave industrial</option>
+                  <option value="Hotel u hospedaje">Hotel u hospedaje</option>
+                  <option value="Escuela o institución">Escuela o institución</option>
+                  <option value="Inmueble residencial">Inmueble residencial</option>
+                  <option value="Otro">Otro tipo de inmueble</option>
+                </select>
+                <span class="fwc__chevron" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <div class="fwc__field">
+              <label class="fwc__label" for="fwc-msg">
+                Tu pregunta o necesidad <span class="fwc__req" aria-hidden="true">*</span>
+              </label>
+              <textarea
+                id="fwc-msg"
+                name="message"
+                class="fwc__input fwc__textarea"
+                placeholder="Ej: Tengo una cocina industrial y quiero saber qué extintores necesito y cada cuánto les doy mantenimiento."
+                rows="4"
+                required
+                maxlength="500"
+              ></textarea>
+              <span class="fwc__counter" id="fwc-counter" aria-live="polite">0 / 500</span>
+            </div>
+
+            <p id="fwc-error" class="fwc__error" role="alert" aria-live="assertive" hidden>
+              Por favor selecciona tu giro y escribe tu pregunta.
+            </p>
+
+            <button type="submit" class="fwc__btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Enviar por WhatsApp
+            </button>
+
+            <p class="fwc__privacy">
+              Al pulsar el botón se abre WhatsApp con tu mensaje. No guardamos ningún dato.
+            </p>
+
+          </form>
+
+          <!-- Pie de tarjeta: llamada directa -->
+          <div class="fwc__card-ft">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-2.95-8.72A2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-.44a2 2 0 012.11.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            <a href={`tel:+${waNumber}`} class="fwc__call-link">
+              Prefiero llamar directamente
+            </a>
+          </div>
+
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ waNumber }}>
+  const form     = document.getElementById('fwc-form')
+  const textarea = document.getElementById('fwc-msg')
+  const counter  = document.getElementById('fwc-counter')
+  const errBox   = document.getElementById('fwc-error')
+  const giroSel  = document.getElementById('fwc-giro')
+
+  // Contador de caracteres en tiempo real
+  textarea && textarea.addEventListener('input', function () {
+    const n = this.value.length
+    counter.textContent = n + ' / 500'
+    counter.style.color = n > 420 ? '#d97706' : ''
+  })
+
+  // Limpiar estado de error al corregir
+  giroSel && giroSel.addEventListener('change', function () {
+    this.classList.remove('fwc__input--error')
+    hideError()
+  })
+  textarea && textarea.addEventListener('input', function () {
+    this.classList.remove('fwc__input--error')
+    hideError()
+  })
+
+  function hideError () {
+    if (errBox) errBox.hidden = true
+  }
+
+  // Envío: construir mensaje y abrir WhatsApp
+  form && form.addEventListener('submit', function (e) {
+    e.preventDefault()
+    const name    = document.getElementById('fwc-name').value.trim()
+    const giro    = giroSel.value
+    const message = textarea.value.trim()
+    let valid = true
+
+    if (!giro) {
+      giroSel.classList.add('fwc__input--error')
+      valid = false
+    }
+    if (!message) {
+      textarea.classList.add('fwc__input--error')
+      valid = false
+    }
+
+    if (!valid) {
+      errBox.hidden = false
+      return
+    }
+
+    let text = 'Hola, tengo una pregunta sobre equipo contra incendio.\n\n'
+    if (name)    text += 'Nombre: ' + name + '\n'
+    if (giro)    text += 'Tipo de negocio: ' + giro + '\n'
+    text += '\nPregunta:\n' + message
+
+    window.open(
+      'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(text),
+      '_blank', 'noopener,noreferrer'
+    )
+  })
+</script>
+
+<style>
+/* ─────────────────────────────────────────────────────────────────
+   FAQWithContact — sección FAQ + formulario WhatsApp
+   Tokens canónicos: --c-primary, --c-ink, --c-ink-2, --c-muted,
+   --c-border, --c-surface, --c-white, --font-heading, --font-body,
+   --sp-*, --text-*, --weight-*, --radius-*, --shadow-*, --transition
+───────────────────────────────────────────────────────────────── */
+
+.fwc {
+  padding: var(--section-py) 0;
+  background: var(--c-surface);
+}
+
+.fwc__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-px);
+}
+
+/* SectionHeading ya tiene sus propios estilos scoped — no redefinir aquí */
+
+/* ── Grid ── */
+.fwc__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-8);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .fwc__grid {
+    grid-template-columns: 1fr 400px;
+    gap: var(--sp-10);
+  }
+}
+
+/* ── Columna derecha: tarjeta sticky ── */
+.fwc__card {
+  background: var(--c-white);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-6);
+  box-shadow: 0 4px 24px rgba(0,0,0,.10);
+}
+
+@media (min-width: 900px) {
+  .fwc__card {
+    position: sticky;
+    top: calc(var(--stack-height) + var(--sp-5));
+  }
+}
+
+/* Header de tarjeta */
+.fwc__card-hd {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  padding-bottom: var(--sp-5);
+  margin-bottom: var(--sp-5);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.fwc__wa-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #25D366;
+  color: #fff;
+  border-radius: var(--radius-lg);
+}
+
+.fwc__card-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--c-ink);
+  margin: 0 0 .25rem;
+  line-height: var(--leading-snug);
+}
+
+.fwc__card-sub {
+  font-size: var(--text-sm);
+  color: var(--c-muted);
+  margin: 0;
+}
+
+/* Formulario */
+.fwc__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.fwc__field {
+  display: flex;
+  flex-direction: column;
+  gap: .375rem;
+}
+
+.fwc__label {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--c-ink);
+}
+
+.fwc__opt {
+  font-weight: var(--weight-regular);
+  color: var(--c-muted);
+}
+
+.fwc__req {
+  color: var(--c-primary);
+  margin-left: .1em;
+}
+
+.fwc__input {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--c-ink);
+  background: var(--c-white);
+  border: 1.5px solid var(--c-border);
+  border-radius: var(--radius-md);
+  padding: .625rem var(--sp-4);
+  width: 100%;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.fwc__input:focus {
+  border-color: var(--c-primary);
+  box-shadow: 0 0 0 3px rgba(198, 40, 40, .15);
+}
+
+.fwc__input--error {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, .12);
+}
+
+/* Select con chevron SVG inline */
+.fwc__select-wrap {
+  position: relative;
+}
+
+.fwc__select {
+  cursor: pointer;
+  padding-right: 2.5rem;
+}
+
+.fwc__chevron {
+  position: absolute;
+  right: .75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--c-muted);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.fwc__textarea {
+  resize: vertical;
+  min-height: 108px;
+  line-height: var(--leading-relaxed);
+}
+
+.fwc__counter {
+  font-size: var(--text-xs);
+  color: var(--c-muted);
+  text-align: right;
+  margin-top: .125rem;
+}
+
+/* Error inline */
+.fwc__error {
+  font-size: var(--text-sm);
+  color: #dc2626;
+  background: rgba(220, 38, 38, .07);
+  border: 1px solid rgba(220, 38, 38, .25);
+  border-radius: var(--radius-md);
+  padding: var(--sp-3) var(--sp-4);
+  margin: 0;
+}
+
+/* Botón WhatsApp */
+.fwc__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  width: 100%;
+  padding: .75rem var(--sp-5);
+  background: #25D366;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background var(--transition), box-shadow var(--transition);
+  line-height: 1;
+}
+
+.fwc__btn:hover {
+  background: #1fba59;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, .35);
+}
+
+.fwc__btn:active {
+  background: #19a34a;
+}
+
+.fwc__privacy {
+  font-size: var(--text-xs);
+  color: var(--c-muted);
+  text-align: center;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Pie de tarjeta: llamar */
+.fwc__card-ft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  margin-top: var(--sp-5);
+  padding-top: var(--sp-5);
+  border-top: 1px solid var(--c-border);
+  color: var(--c-muted);
+}
+
+.fwc__call-link {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--c-ink-2);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.fwc__call-link:hover {
+  color: var(--c-primary);
+  text-decoration: underline;
+}
+
+/* ── Móvil: formulario primero ── */
+@media (max-width: 899px) {
+  .fwc__col-form {
+    order: -1;
+  }
+}
+</style>
