@@ -1,29 +1,28 @@
 ---
-// ============================================================================
-// /terminos/ — Términos y condiciones (página legal).
-// Serie LEGAL (privacidad · términos · cookies). Extiende PageLayout. Texto DEMO:
-// estructura lista; el clausulado debe revisarlo un profesional. NAP desde site.ts.
-// ============================================================================
+// /terminos/ — Términos y Condiciones de uso del sitio.
+//
+// ⚠️ ANTES DE PUBLICAR (no visible para el usuario): completa los datos reales
+// del titular en CONTACT / SITE.organization (src/config/site.ts) y haz que un
+// abogado revise el clausulado y lo ajuste a tu modelo de negocio real.
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
-import SectionHeading from '@components/SectionHeading.astro'
 import SectionMenu from '@components/SectionMenu.astro'
 import { SITE, CONTACT, waUrl, WA_MESSAGES } from '@config/site'
 
-const actualizado = '20 de junio de 2026'
+const actualizado = '23 de junio de 2026'
+const titular = SITE.organization.legalName || SITE.name
 
 const cierreItems = [
   { label: 'Aviso de privacidad', href: '/privacidad', sub: 'Cómo tratamos tus datos' },
   { label: 'Política de cookies', href: '/cookies', sub: 'Qué guardamos y por qué' },
   { label: 'Contacto', href: '/contacto', sub: '¿Dudas sobre el acuerdo?' },
-  { label: 'Inicio', href: '/', sub: 'Volver a la home' },
 ]
 const cierreCta = { label: 'Escríbenos por WhatsApp', href: waUrl(WA_MESSAGES.contacto), sub: 'Atención directa', external: true }
 ---
 
 <PageLayout
   title="Términos y condiciones"
-  description="Términos y condiciones de Equipos Contra Incendio: reglas de uso, propiedad intelectual, responsabilidades y ley aplicable."
+  description="Términos y condiciones de uso del sitio de Equipos Contra Incendio: alcance, cotizaciones, propiedad intelectual, responsabilidad y legislación aplicable."
   pageType="page"
   breadcrumbs={[{ label: 'Términos y condiciones' }]}
   guia={false}
@@ -32,68 +31,90 @@ const cierreCta = { label: 'Escríbenos por WhatsApp', href: waUrl(WA_MESSAGES.c
     badge="Legal · Términos"
     title="Términos y"
     accent="condiciones"
-    subtitle="Las reglas claras del uso del sitio y de la relación entre tú y nosotros: qué puedes esperar y qué esperamos a cambio."
+    subtitle="Las reglas del uso de este sitio y de la relación entre tú y nosotros: qué ofrecemos, cómo se usa el contenido, quién responde por qué y a qué ley nos sujetamos."
     descRight={[
-      'Unos términos bien escritos no buscan asustar con letra chica: ordenan la relación. Definen qué ofrece el sitio, cómo se usa su contenido, quién responde por qué y a qué ley se sujeta cualquier diferencia. Cuando las reglas son claras desde el inicio, hay menos malentendidos después.',
-      'El esqueleto de abajo cubre lo esencial de un acuerdo de uso estándar. ⚠️ Es un texto base: ajústalo a tu modelo de negocio y revísalo con un profesional antes de publicar. La identidad y el contacto del titular salen de site.ts (SSoT).',
+      `Estos Términos y Condiciones regulan el acceso y uso del sitio ${SITE.domain}. Al navegarlo, enviar un formulario o solicitar una cotización, aceptas las condiciones aquí descritas. Te recomendamos leerlas antes de utilizar el sitio.`,
     ]}
   />
 
   <section class="section">
     <div class="container">
-      
-
-      <SectionHeading
-        layout="duo"
-        eyebrow="El acuerdo"
-        title="Reglas claras, relación sana"
-        desc="Al usar el sitio aceptas estos términos. Por eso conviene que sean breves, legibles y justos."
-        body={[
-          'Estos términos rigen el acceso y uso del sitio: navegar, leer el contenido, enviar un formulario o solicitar una cotización. Usar el sitio implica aceptarlos, así que su valor está en ser comprensibles, no en acumular cláusulas que nadie lee.',
-          'Las secciones cubren lo estándar: objeto, propiedad intelectual del contenido, conducta esperada del usuario, límite de responsabilidad y la legislación que aplica. Sustituye cada bloque por las condiciones reales de tu servicio.',
-        ]}
-      />
-
       <div class="prose">
         <p class="legal-meta">Última actualización: <strong>{actualizado}</strong></p>
 
-        <h2>1. Objeto y aceptación</h2>
+        <h2>1. Identidad del titular</h2>
         <p>
-          Estos términos regulan el uso del sitio de <strong>{SITE.name}</strong>. Al acceder y utilizar
-          el sitio, declaras haber leído y aceptado estas condiciones. Si no estás de acuerdo, te pedimos
-          no utilizarlo.
+          El titular de este sitio es <strong>{titular}</strong> (en adelante, «{SITE.name}» o «nosotros»), con
+          domicilio en {CONTACT.street}, {CONTACT.city}, {CONTACT.state}, C.P. {CONTACT.postalCode}, México. Puedes
+          contactarnos en <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>.
         </p>
 
-        <h2>2. Uso del sitio</h2>
+        <h2>2. Objeto y aceptación</h2>
         <p>
-          Te comprometes a usar el sitio conforme a la ley y a la buena fe, sin realizar actividades que
-          puedan dañarlo, sobrecargarlo o impedir su normal funcionamiento. La información publicada tiene
-          fines informativos y comerciales y puede actualizarse sin previo aviso.
+          Estos términos regulan el uso del sitio, cuyo fin es informar sobre nuestros productos y servicios de
+          equipo contra incendio y facilitar el contacto para cotizaciones. Al acceder y utilizar el sitio declaras
+          haber leído y aceptado estas condiciones; si no estás de acuerdo, te pedimos no utilizarlo.
         </p>
 
-        <h2>3. Propiedad intelectual</h2>
+        <h2>3. Cotizaciones, productos y servicios</h2>
         <p>
-          Los textos, imágenes, marcas y demás elementos del sitio son propiedad de {SITE.name} o de sus
-          titulares y están protegidos por la legislación aplicable. No se permite su reproducción o uso
-          sin autorización previa por escrito.
+          La información del sitio tiene fines informativos y no constituye una oferta vinculante. Los precios,
+          disponibilidad, capacidades y características se confirman en la cotización formal correspondiente y pueden
+          variar según cantidades, especificaciones y condiciones de instalación o servicio.
+        </p>
+        <p>
+          Nuestros productos y servicios se suministran conforme a la normatividad mexicana aplicable (entre otras,
+          la NOM-002-STPS y la NOM-154-SCFI). Cualquier recomendación publicada en el sitio es de carácter general
+          y no sustituye un diagnóstico técnico de tu inmueble.
         </p>
 
-        <h2>4. Responsabilidad</h2>
+        <h2>4. Uso del sitio</h2>
         <p>
-          Procuramos que la información sea correcta y esté actualizada, pero no garantizamos la ausencia
-          de errores ni la disponibilidad ininterrumpida del sitio. En la medida que permita la ley, no
-          asumimos responsabilidad por daños derivados del uso o la imposibilidad de uso del sitio.
+          Te comprometes a usar el sitio conforme a la ley y a la buena fe, sin realizar actividades que puedan
+          dañarlo, sobrecargarlo, vulnerar su seguridad o impedir su normal funcionamiento. La información puede
+          actualizarse o modificarse en cualquier momento sin previo aviso.
         </p>
 
-        <h2>5. Ley aplicable</h2>
+        <h2>5. Propiedad intelectual</h2>
         <p>
-          Estos términos se rigen por la legislación mexicana. Para cualquier controversia, las partes se
-          someten a los tribunales competentes de {CONTACT.city}, salvo que la ley disponga otra cosa.
+          Los textos, imágenes, logotipos, marcas, diseño y demás elementos del sitio son propiedad de {SITE.name}
+          o de sus respectivos titulares y están protegidos por la legislación aplicable en materia de propiedad
+          intelectual e industrial. No se permite su reproducción, distribución o uso sin autorización previa y por
+          escrito.
         </p>
 
-        <p class="legal-note">
-          ⚠️ <strong>Texto base (borrador).</strong> Este clausulado es un punto de partida, no
-          asesoría legal. Adáptalo a tu negocio y revísalo con un profesional antes de publicar.
+        <h2>6. Enlaces a sitios de terceros</h2>
+        <p>
+          El sitio puede incluir enlaces a páginas o servicios de terceros (por ejemplo, WhatsApp). No controlamos
+          ni respondemos por el contenido, las políticas o las prácticas de dichos terceros; su uso se rige por sus
+          propios términos.
+        </p>
+
+        <h2>7. Limitación de responsabilidad</h2>
+        <p>
+          Procuramos que la información sea correcta y esté actualizada, pero no garantizamos la ausencia de errores
+          ni la disponibilidad ininterrumpida del sitio. En la medida que permita la ley, no asumimos responsabilidad
+          por daños o perjuicios derivados del uso o de la imposibilidad de uso del sitio o de su contenido.
+        </p>
+
+        <h2>8. Protección de datos personales</h2>
+        <p>
+          El tratamiento de los datos personales que nos proporciones se rige por nuestro
+          <a href="/privacidad"> Aviso de Privacidad</a>, que forma parte integral de estos términos.
+        </p>
+
+        <h2>9. Modificaciones</h2>
+        <p>
+          Podemos modificar estos términos en cualquier momento. La versión vigente será la publicada en esta página,
+          con su fecha de actualización. El uso del sitio posterior a una modificación implica la aceptación de los
+          términos actualizados.
+        </p>
+
+        <h2>10. Legislación aplicable y jurisdicción</h2>
+        <p>
+          Estos términos se rigen por la legislación mexicana. Para la interpretación y cumplimiento de los mismos,
+          las partes se someten a la jurisdicción de los tribunales competentes de {CONTACT.city}, renunciando a
+          cualquier otro fuero que pudiera corresponderles, salvo que la ley disponga lo contrario.
         </p>
       </div>
     </div>
@@ -106,11 +127,10 @@ const cierreCta = { label: 'Escríbenos por WhatsApp', href: waUrl(WA_MESSAGES.c
   .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
   .section { padding: var(--sp-8) 0; }
   @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
-  .prose { max-width: 72ch; margin-top: var(--sp-6); }
+  .prose { max-width: 72ch; margin-top: var(--sp-2); }
   .prose h2 { font-family: var(--font-heading); font-size: var(--text-xl); font-weight: var(--weight-bold); color: var(--c-ink); margin: var(--sp-6) 0 var(--sp-2); }
   .prose p { font-size: var(--text-base); line-height: var(--leading-relaxed); color: var(--c-ink-2); margin: 0 0 var(--sp-3); }
   .prose a { color: var(--c-primary); text-decoration: underline; text-underline-offset: 2px; }
   .prose a:hover { color: var(--c-primary-dark); }
   .legal-meta { font-size: var(--text-sm); color: var(--c-muted); }
-  .legal-note { margin-top: var(--sp-5); padding: var(--sp-4); border-radius: var(--radius-md); background: var(--c-surface); border: 1px solid var(--c-border); font-size: var(--text-sm); }
 </style>

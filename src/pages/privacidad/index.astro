@@ -1,32 +1,34 @@
 ---
-// ============================================================================
-// /privacidad/ — Aviso de privacidad (página legal).
-// ----------------------------------------------------------------------------
-// Página estática de la serie LEGAL (privacidad · términos · cookies). Extiende
-// PageLayout. El contenido es DEMO/placeholder: estructura y lenguaje listos,
-// pero los datos del responsable (NAP) salen de CONTACT (site.ts, SSoT) y el
-// texto legal debe revisarlo un profesional antes de publicar.
-// ============================================================================
+// /privacidad/ — Aviso de Privacidad Integral. Estructura conforme a la Ley
+// Federal de Protección de Datos Personales en Posesión de los Particulares
+// (nueva LFPDPPP, vigente desde el 21 de marzo de 2025) y su Reglamento.
+//
+// ⚠️ ANTES DE PUBLICAR (no visible para el usuario):
+//   1) Completa los datos REALES del responsable en CONTACT y SITE.organization
+//      de src/config/site.ts (razón social/persona física, RFC, domicilio fiscal,
+//      correo). Hoy son valores de EJEMPLO.
+//   2) Este documento es una base profesional, NO sustituye la revisión de un
+//      abogado. Ajústalo a tu operación real (datos que de verdad recabas,
+//      finalidades, encargados/transferencias) y valídalo legalmente.
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
-import SectionHeading from '@components/SectionHeading.astro'
 import SectionMenu from '@components/SectionMenu.astro'
 import { SITE, CONTACT, waUrl, WA_MESSAGES } from '@config/site'
 
-const actualizado = '20 de junio de 2026'
+const actualizado = '23 de junio de 2026'
+const responsable = SITE.organization.legalName || SITE.name
 
 const cierreItems = [
-  { label: 'Términos y condiciones', href: '/terminos', sub: 'El acuerdo de uso' },
+  { label: 'Términos y condiciones', href: '/terminos', sub: 'El acuerdo de uso del sitio' },
   { label: 'Política de cookies', href: '/cookies', sub: 'Qué guardamos y por qué' },
   { label: 'Contacto', href: '/contacto', sub: 'Ejerce tus derechos ARCO' },
-  { label: 'Inicio', href: '/', sub: 'Volver a la home' },
 ]
 const cierreCta = { label: 'Escríbenos por WhatsApp', href: waUrl(WA_MESSAGES.contacto), sub: 'Dudas de privacidad', external: true }
 ---
 
 <PageLayout
   title="Aviso de privacidad"
-  description="Aviso de privacidad de Equipos Contra Incendio: qué datos recabamos, con qué fin, cómo los protegemos y cómo ejercer tus derechos ARCO."
+  description="Aviso de privacidad de Equipos Contra Incendio: qué datos personales tratamos, con qué fin, cómo los protegemos y cómo ejercer tus derechos ARCO."
   pageType="page"
   breadcrumbs={[{ label: 'Aviso de privacidad' }]}
   guia={false}
@@ -35,71 +37,136 @@ const cierreCta = { label: 'Escríbenos por WhatsApp', href: waUrl(WA_MESSAGES.c
     badge="Legal · Privacidad"
     title="Aviso de"
     accent="privacidad"
-    subtitle="Cómo tratamos tus datos personales: qué recabamos, para qué, cómo los cuidamos y cómo ejerces tus derechos en todo momento."
+    subtitle="Cómo tratamos tus datos personales: qué recabamos, para qué los usamos, con quién los compartimos, cómo los protegemos y cómo ejerces tus derechos en todo momento."
     descRight={[
-      'Este aviso explica, en lenguaje claro, qué información personal pedimos, con qué finalidad la usamos y bajo qué reglas la compartimos o la resguardamos. La transparencia no es un trámite: es la base de la confianza con quien deja sus datos en un formulario o un mensaje.',
-      'El responsable del tratamiento y sus medios de contacto salen de una sola fuente de verdad (site.ts), así que el dato es siempre el mismo en cada página. ⚠️ Texto base: ajústalo a tu operación real y revísalo con un profesional antes de publicar.',
+      `Este Aviso de Privacidad Integral se emite conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares vigente en México. Aplica a los datos que nos proporcionas al contactarnos, solicitar una cotización o contratar nuestros productos y servicios.`,
     ]}
   />
 
   <section class="section">
     <div class="container">
-      
-
-      <SectionHeading
-        layout="duo"
-        eyebrow="El documento"
-        title="Tu información, tratada con cuidado"
-        desc="Un aviso de privacidad cumple la ley y, sobre todo, le dice a la persona qué pasa con sus datos."
-        body={[
-          'La ley exige informar quién trata los datos, para qué y cómo se protegen. Pero más allá del requisito, un aviso claro reduce la fricción: la persona entiende qué entrega y por qué, y decide con confianza. Por eso aquí el lenguaje es directo y sin letra chica innecesaria.',
-          'Las secciones de abajo son el esqueleto estándar de un aviso conforme a la legislación mexicana de protección de datos (LFPDPPP): identidad del responsable, finalidades, datos recabados, derechos ARCO y medios para ejercerlos. Reemplaza cada bloque con tu realidad operativa.',
-        ]}
-      />
-
       <div class="prose">
         <p class="legal-meta">Última actualización: <strong>{actualizado}</strong></p>
 
-        <h2>1. Responsable del tratamiento</h2>
+        <h2>1. Identidad y domicilio del responsable</h2>
         <p>
-          <strong>{SITE.organization.legalName}</strong> ({SITE.name}), con domicilio en
-          {CONTACT.street}, {CONTACT.city}, {CONTACT.state}, C.P. {CONTACT.postalCode}, es responsable
-          del tratamiento de tus datos personales. Para cualquier asunto relacionado con este aviso,
-          puedes contactarnos en <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>.
+          <strong>{responsable}</strong> (en adelante, «{SITE.name}», «nosotros» o «el Responsable»), con domicilio
+          en {CONTACT.street}, {CONTACT.city}, {CONTACT.state}, C.P. {CONTACT.postalCode}, México, es responsable
+          del tratamiento de tus datos personales. Para cualquier asunto relacionado con este aviso o con tus datos,
+          puedes escribirnos a <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>.
         </p>
 
-        <h2>2. Datos que recabamos</h2>
+        <h2>2. Datos personales que tratamos</h2>
+        <p>Para las finalidades descritas en este aviso tratamos las siguientes categorías de datos personales:</p>
+        <ul>
+          <li><strong>Datos de identificación y contacto:</strong> nombre, teléfono, correo electrónico y, en su caso, el nombre de tu empresa o razón social.</li>
+          <li><strong>Datos sobre tu solicitud:</strong> el contenido de tu mensaje, el giro y características de tu inmueble y la información necesaria para cotizar o prestar el servicio.</li>
+          <li><strong>Datos de facturación (solo si se contrata):</strong> los necesarios para emitir comprobantes fiscales (RFC, razón social y domicilio fiscal).</li>
+        </ul>
         <p>
-          Recabamos los datos que nos proporcionas de forma directa al llenar un formulario, escribirnos
-          por WhatsApp o correo: nombre, teléfono, correo electrónico y el contenido de tu mensaje.
-          No solicitamos datos personales sensibles.
+          <strong>No recabamos datos personales sensibles.</strong> Tampoco solicitamos datos de carácter financiero
+          o patrimonial distintos a los necesarios para la facturación. Recabamos los datos directamente de ti cuando
+          los proporcionas a través de nuestro formulario de contacto, WhatsApp, teléfono o correo electrónico.
         </p>
 
-        <h2>3. Finalidades</h2>
+        <h2>3. Finalidades del tratamiento</h2>
+        <p><strong>Finalidades primarias</strong> (necesarias para la relación con nosotros):</p>
+        <ul>
+          <li>Atender tus solicitudes, dudas y mensajes.</li>
+          <li>Elaborar cotizaciones y darles seguimiento.</li>
+          <li>Prestar, instalar y dar mantenimiento al producto o servicio contratado.</li>
+          <li>Emitir la facturación y los comprobantes correspondientes.</li>
+          <li>Dar cumplimiento a las obligaciones legales que nos resulten aplicables.</li>
+        </ul>
+        <p><strong>Finalidades secundarias</strong> (no necesarias, requieren tu consentimiento):</p>
+        <ul>
+          <li>Enviarte información sobre novedades, promociones o recordatorios de mantenimiento.</li>
+        </ul>
         <p>
-          Usamos tus datos para responder tu solicitud, elaborar cotizaciones, dar seguimiento comercial
-          y prestarte el servicio contratado. De forma secundaria, y solo si lo autorizas, podríamos
-          enviarte información sobre novedades. Puedes negarte a estas finalidades secundarias sin que
-          afecte la atención principal.
+          Puedes negarte al tratamiento de tus datos para las finalidades secundarias enviando un correo a
+          <a href={`mailto:${CONTACT.email}`}> {CONTACT.email}</a>. Tu negativa no será motivo para negarte los
+          servicios que solicites ni afectará la relación que tengas con nosotros.
         </p>
 
-        <h2>4. Tus derechos ARCO</h2>
+        <h2>4. Consentimiento</h2>
         <p>
-          Tienes derecho a <strong>Acceder</strong>, <strong>Rectificar</strong> y <strong>Cancelar</strong>
-          tus datos, así como a <strong>Oponerte</strong> a su tratamiento (derechos ARCO). También puedes
-          revocar el consentimiento que nos otorgaste. Para ejercerlos, escríbenos a
-          <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a> indicando tu nombre y la solicitud concreta.
+          Al proporcionarnos tus datos personales por cualquiera de nuestros medios de contacto, otorgas tu
+          consentimiento —libre, específico e informado— para que sean tratados conforme a este aviso. Tratándose de
+          datos que requieran consentimiento expreso, lo recabaremos por separado en el momento correspondiente.
         </p>
 
-        <h2>5. Cambios a este aviso</h2>
+        <h2>5. Transferencias de datos personales</h2>
         <p>
-          Podemos actualizar este aviso para reflejar cambios legales o de nuestra operación. Publicaremos
-          la versión vigente en esta misma página, con su fecha de actualización.
+          No vendemos, alquilamos ni transferimos tus datos personales a terceros para fines distintos a los de este
+          aviso. Únicamente podremos compartirlos cuando la ley lo permita sin requerir tu consentimiento (por
+          ejemplo, ante autoridad competente o por requerimiento legal). Asimismo, podemos apoyarnos en proveedores
+          que tratan datos por nuestra cuenta y bajo nuestras instrucciones (alojamiento del sitio, facturación,
+          mensajería); estos <em>encargados</em> no utilizan tus datos para fines propios y están obligados a
+          guardar confidencialidad.
         </p>
 
-        <p class="legal-note">
-          ⚠️ <strong>Texto base (borrador).</strong> Este texto es un punto de partida, no asesoría
-          legal. Adáptalo a tu operación y revísalo con un profesional antes de publicar tu sitio.
+        <h2>6. Uso de cookies y tecnologías de rastreo</h2>
+        <p>
+          Nuestro sitio puede utilizar cookies y tecnologías similares para su correcto funcionamiento. Puedes
+          conocer el detalle y cómo gestionarlas en nuestra <a href="/cookies">Política de Cookies</a>.
+        </p>
+
+        <h2>7. Derechos ARCO</h2>
+        <p>
+          Tienes derecho a <strong>Acceder</strong> a tus datos personales, a <strong>Rectificar</strong>los cuando
+          sean inexactos, a <strong>Cancelar</strong>los cuando consideres que no se requieren para las finalidades
+          señaladas y a <strong>Oponerte</strong> a su tratamiento para fines específicos (derechos ARCO).
+        </p>
+        <p>Para ejercerlos, envía tu solicitud a <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a> e incluye:</p>
+        <ul>
+          <li>Tu nombre y un medio para comunicarte la respuesta.</li>
+          <li>Copia de una identificación que acredite tu identidad (o la representación legal, en su caso).</li>
+          <li>La descripción clara y precisa de los datos y del derecho que deseas ejercer.</li>
+        </ul>
+        <p>
+          Daremos respuesta a tu solicitud por el mismo medio dentro de los plazos que establece la legislación
+          aplicable. El ejercicio de estos derechos es gratuito.
+        </p>
+
+        <h2>8. Revocación del consentimiento y limitación de uso</h2>
+        <p>
+          En cualquier momento puedes revocar el consentimiento que nos otorgaste, así como limitar el uso o
+          divulgación de tus datos, mediante una solicitud a <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+          con los mismos requisitos señalados para los derechos ARCO. Es posible que, por obligaciones legales,
+          debamos seguir tratando ciertos datos aun después de tu solicitud.
+        </p>
+
+        <h2>9. Medidas de seguridad</h2>
+        <p>
+          Implementamos medidas de seguridad administrativas, técnicas y físicas razonables para proteger tus datos
+          personales contra daño, pérdida, alteración, destrucción o uso, acceso o tratamiento no autorizados.
+        </p>
+
+        <h2>10. Conservación de los datos</h2>
+        <p>
+          Conservamos tus datos personales mientras dure la relación con nosotros y, posteriormente, durante los
+          plazos necesarios para atender responsabilidades y obligaciones legales (por ejemplo, fiscales). Concluidos
+          dichos plazos, los datos son cancelados conforme a la normatividad aplicable.
+        </p>
+
+        <h2>11. Datos de menores de edad</h2>
+        <p>
+          Nuestros productos, servicios y este sitio están dirigidos a personas mayores de edad. No recabamos de
+          forma intencional datos de menores; si consideras que un menor nos proporcionó datos, contáctanos para
+          eliminarlos.
+        </p>
+
+        <h2>12. Autoridad en materia de protección de datos</h2>
+        <p>
+          Si consideras que tu derecho a la protección de datos personales ha sido vulnerado, puedes acudir ante la
+          autoridad competente en la materia, la <strong>Secretaría Anticorrupción y Buen Gobierno</strong> del
+          Gobierno de México.
+        </p>
+
+        <h2>13. Cambios al aviso de privacidad</h2>
+        <p>
+          Podemos modificar o actualizar este aviso para reflejar cambios legales, regulatorios o de nuestra
+          operación. Publicaremos la versión vigente en esta misma página, indicando su fecha de actualización.
         </p>
       </div>
     </div>
@@ -114,14 +181,12 @@ const cierreCta = { label: 'Escríbenos por WhatsApp', href: waUrl(WA_MESSAGES.c
   @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
 
   /* Prose legal — lectura cómoda, ancho de medida controlado. */
-  .prose { max-width: 72ch; margin-top: var(--sp-6); }
+  .prose { max-width: 72ch; margin-top: var(--sp-2); }
   .prose h2 { font-family: var(--font-heading); font-size: var(--text-xl); font-weight: var(--weight-bold); color: var(--c-ink); margin: var(--sp-6) 0 var(--sp-2); }
   .prose p { font-size: var(--text-base); line-height: var(--leading-relaxed); color: var(--c-ink-2); margin: 0 0 var(--sp-3); }
+  .prose ul { margin: 0 0 var(--sp-3); padding-left: var(--sp-5); display: flex; flex-direction: column; gap: var(--sp-1); }
+  .prose li { font-size: var(--text-base); line-height: var(--leading-relaxed); color: var(--c-ink-2); }
   .prose a { color: var(--c-primary); text-decoration: underline; text-underline-offset: 2px; }
   .prose a:hover { color: var(--c-primary-dark); }
   .legal-meta { font-size: var(--text-sm); color: var(--c-muted); }
-  .legal-note {
-    margin-top: var(--sp-5); padding: var(--sp-4); border-radius: var(--radius-md);
-    background: var(--c-surface); border: 1px solid var(--c-border); font-size: var(--text-sm);
-  }
 </style>
