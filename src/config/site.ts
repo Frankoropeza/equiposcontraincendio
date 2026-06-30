@@ -57,20 +57,20 @@ export const SITE = {
     sameAs: [] as string[], // Solo perfiles verificados (deja [] si no hay).
   },
 
-  // business: negocio local (JSON-LD LocalBusiness). NAP de EJEMPLO (reemplazar por el real).
+  // business: negocio local (JSON-LD LocalBusiness).
   business: {
     type: ['LocalBusiness'] as string | string[],
     priceRange: '$$',
     address: {
-      street: 'Av. Cuauhtémoc 1235, Col. Santa Cruz Atoyac', // Ejemplo — domicilio real al alta.
+      street: 'Av. Homero 538-#303, Col. Polanco, Miguel Hidalgo',
       locality: 'Ciudad de México',
       region: 'CDMX',
-      postalCode: '03310', // Ejemplo (Benito Juárez, CDMX).
+      postalCode: '11560',
       country: 'MX',
     },
     geo: {
-      lat: 19.376 as string | number, // Ejemplo (Santa Cruz Atoyac, CDMX).
-      lng: -99.157 as string | number,
+      lat: 19.4307 as string | number, // Polanco, Miguel Hidalgo, CDMX.
+      lng: -99.1960 as string | number,
     },
     openingHours: {
       weekdays: { opens: '09:00', closes: '18:00' }, // Horario de ejemplo.
@@ -90,22 +90,20 @@ export const KEYWORDS = [
 ] as const;
 
 // ── CONTACT — NAP (Name, Address, Phone) + geo + horario ─────────────────────
-// ⚠️ DATOS DE EJEMPLO: reemplaza teléfono, WhatsApp y domicilio por los reales
-//    antes de promocionar. El número es un placeholder de ejemplo (no llamar).
 export const CONTACT = {
-  phone: '55 1234 5678',          // Ejemplo (display) — placeholder, no llamar.
-  phoneE164: '+525512345678',     // Ejemplo (tel:).
-  phoneRaw: '+525512345678',      // Ejemplo (JSON-LD).
-  whatsapp: '525512345678',       // Ejemplo (wa.me, E.164 sin +).
-  email: 'contacto@equiposcontraincendio.com', // Correo de dominio propio.
-  street: 'Av. Cuauhtémoc 1235, Col. Santa Cruz Atoyac', // Ejemplo.
+  phone: '55 1234 5678',          // Placeholder — reemplazar por el real.
+  phoneE164: '+525512345678',     // Placeholder (tel:).
+  phoneRaw: '+525512345678',      // Placeholder (JSON-LD).
+  whatsapp: '525512345678',       // Placeholder (wa.me, E.164 sin +).
+  email: 'equipocontraincendios737@gmail.com',
+  street: 'Av. Homero 538-#303, Col. Polanco, Miguel Hidalgo',
   city: 'Ciudad de México',
   state: 'CDMX',
-  postalCode: '03310',            // Ejemplo (Benito Juárez, CDMX).
+  postalCode: '11560',
   country: 'MX',
   geo: {
-    lat: 19.376,                  // Ejemplo.
-    lng: -99.157,
+    lat: 19.4307, // Polanco, Miguel Hidalgo, CDMX.
+    lng: -99.1960,
   },
   hours: {
     weekdays: 'Lun–Vie 9:00–18:00',
