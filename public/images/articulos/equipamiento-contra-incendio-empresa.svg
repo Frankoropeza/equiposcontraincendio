@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="Checklist de equipamiento contra incendio para empresas">
+  <defs>
+    <linearGradient id="pbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#f1f3f6"/>
+    </linearGradient>
+    <filter id="psh" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#14181f" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#pbg)"/>
+  <rect width="800" height="9" fill="#c62828"/>
+  <rect x="40" y="42" width="720" height="416" rx="20" fill="none" stroke="#d6dae1" stroke-width="3" stroke-dasharray="12 12"/>
+  <g transform="translate(400 215)">
+    <rect x="-90" y="-82" width="180" height="164" rx="26" fill="#ffffff" filter="url(#psh)"/>
+    <rect x="-42" y="-56" width="84" height="112" rx="10" fill="none" stroke="#c62828" stroke-width="8"/>
+    <rect x="-20" y="-66" width="40" height="20" rx="6" fill="#c62828"/>
+    <path d="M -24 -22 l 8 8 l 14 -16" fill="none" stroke="#c62828" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="6" y1="-22" x2="30" y2="-22" stroke="#d6dae1" stroke-width="7" stroke-linecap="round"/>
+    <path d="M -24 8 l 8 8 l 14 -16" fill="none" stroke="#c62828" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="6" y1="8" x2="30" y2="8" stroke="#d6dae1" stroke-width="7" stroke-linecap="round"/>
+    <line x1="-24" y1="38" x2="30" y2="38" stroke="#d6dae1" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <text x="400" y="392" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="26" font-weight="700" fill="#14181f">Checklist de equipamiento</text>
+  <text x="400" y="424" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="17" fill="#6b7280">Equipos Contra Incendio</text>
+</svg>
