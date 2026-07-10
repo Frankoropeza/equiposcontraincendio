@@ -37,6 +37,8 @@
  * ========================================================================== */
 
 import { SITE, CONTACT } from '@config/site';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 
 /* ──────────────────────────────────────────────────────────────────────────
  * @id de las entidades raíz del grafo. Todo nodo apunta a estos por @id, de
@@ -79,6 +81,45 @@ export function absUrl(path: string): string {
 function absImage(src?: string): string | undefined {
   if (!src) return undefined;
   return /^https?:\/\//.test(src) ? src : `${SITE.url}${src.startsWith('/') ? src : `/${src}`}`;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+ * OG compartible (SOP SEO Ola 2/2b · 2026-07-10). Los SVG del sitio NO
+ * renderizan como og:image en WhatsApp/FB/X (tampoco AVIF/WebP en varios
+ * scrapers). ogShareImage() reescribe /images/**&#47;<name>.svg|avif|webp →
+ * /images/og/<dir>-<name>.png (naming aplanado dir-a-guiones; PNG 1200×630
+ * pre-generado en public/images/og/). Verifica existencia en public/ en
+ * build-time; si el PNG no existe cae al default REAL del sitio — nunca un
+ * og roto. Solo afecta og:/twitter: del head; el JSON-LD conserva la imagen
+ * original (SVG es formato válido para Google Images).
+ * ────────────────────────────────────────────────────────────────────────── */
+// process.cwd() (raíz del repo en `astro build`), NO import.meta.url: Vite
+// bundlea este módulo y en build import.meta.url apunta al chunk generado.
+const PUBLIC_DIR = join(process.cwd(), 'public');
+
+function ogShareImage(abs: string): string {
+  const m = abs.match(/^https?:\/\/[^/]+(\/images\/.+)\.(svg|avif|webp)$/i);
+  if (!m) return abs;
+  const flat = (m[1] ?? '').replace(/^\/images\//, '').replace(/\//g, '-');
+  const candidate = `/images/og/${flat}.png`;
+  if (existsSync(join(PUBLIC_DIR, candidate))) return `${SITE.url}${candidate}`;
+  return absImage(SITE.seo?.image ?? '/images/og/default.png') ?? abs;
+}
+
+/** MIME del og:image final — og:image:type honesto (nunca hardcodear). */
+function ogImageMime(url: string): string | undefined {
+  const ext = (url.split('.').pop() ?? '').toLowerCase();
+  return (
+    {
+      png: 'image/png',
+      jpg: 'image/jpeg',
+      jpeg: 'image/jpeg',
+      webp: 'image/webp',
+      avif: 'image/avif',
+      svg: 'image/svg+xml',
+      gif: 'image/gif',
+    } as Record<string, string>
+  )[ext];
 }
 
 // Longitud máxima del <title> (Google trunca ~580px ≈ 60 caracteres).
@@ -336,6 +377,7 @@ export type MetaOutput = {
   description: string;
   canonical: string;
   image: string;
+  imageType?: string;      // MIME real del og:image (og:image:type honesto)
   type: 'website' | 'article';
   robots: string;
   locale: string;          // og:locale, p.ej. 'es_MX'
@@ -354,11 +396,17 @@ export type MetaOutput = {
  * - robots: 'noindex,nofollow' si noindex; si no, directiva index completa.
  */
 export function buildMeta(input: MetaInput): MetaOutput {
+  // og:image final: la resuelta por la página, reescrita a PNG compartible si
+  // era SVG/AVIF/WebP (ogShareImage). El MIME se deriva del archivo FINAL.
+  const image = ogShareImage(
+    absImage(input.image) ?? absImage(SITE.seo?.image) ?? `${SITE.url}/og.jpg`,
+  );
   return {
     title: formatTitle(input.title),
     description: truncateMetaDescription(input.description ?? SITE.seo?.description ?? ''),
     canonical: absUrl(input.canonical ?? '/'),
-    image: absImage(input.image) ?? absImage(SITE.seo?.image) ?? `${SITE.url}/og.jpg`,
+    image,
+    imageType: ogImageMime(image),
     type: input.type ?? 'website',
     robots: input.noindex
       ? 'noindex,nofollow'
@@ -397,7 +445,8 @@ export function orgSchema() {
     name: SITE.organization?.name ?? SITE.name,
     ...(SITE.organization?.legalName ? { legalName: SITE.organization.legalName } : {}),
     url: SITE.url,
-    logo: { '@type': 'ImageObject', '@id': LOGO_ID, url: absImage(SITE.organization?.logo) ?? `${SITE.url}/logo.png` },
+    // width/height REALES del asset (public/images/brand/logo.svg → 512×512).
+    logo: { '@type': 'ImageObject', '@id': LOGO_ID, url: absImage(SITE.organization?.logo) ?? `${SITE.url}/logo.png`, width: 512, height: 512 },
     image: { '@id': LOGO_ID },
     description: SITE.seo?.description ?? SITE.description ?? '',
     ...(SITE.organization?.foundingDate ? { foundingDate: SITE.organization.foundingDate } : {}),

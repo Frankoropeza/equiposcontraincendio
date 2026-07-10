@@ -13,6 +13,10 @@ jobs:
       deployments: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Historia completa: el lastmod dinámico del sitemap usa `git log`
+          # por archivo; con depth 1 todas las fechas serían las del HEAD.
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
