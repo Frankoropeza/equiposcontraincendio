@@ -40,3 +40,45 @@ SOP-SEO-MAESTRO-OLA (alcance TÉCNICO estricto). Astro ^6.1.1 · Cloudflare Page
 - Sitemap live: 26 `<lastmod>` con 4 fechas REALES distintas (2026-06-21 → 2026-07-09) — `fetch-depth: 0` verificado funcionando en CI ✅
 - www: sigue **200** (esperado hasta la Redirect Rule manual) ⚠️
 - Dominio sirve el build de Cloudflare Pages (mismo contenido que `equiposcontraincendio.pages.dev`) ✅
+
+---
+
+## Sesión 2 — verificación de conformidad alcance TÉCNICO (2026-07-10, LOCAL sin push)
+
+Re-auditoría estática del dist existente + source contra el Prompt Maestro **alcance T**
+(solo técnico; sin datos de negocio → se OMITE openingHours/foundingDate/aggregateRating/sameAs).
+`validate-dist.py dist equiposcontraincendio.com` → **LIMPIO** (0 canonical malos, 0 og avif/webp,
+0 og dim≠1200×630, 0 BreadcrumbList>1, 0 aggregateRating; 6 Product = 6 fichas, sin duplicado Service+Product).
+
+### Hallazgo aplicado (1)
+
+1. **`openingHoursSpecification` con horario de EJEMPLO → OMITIDO** (`src/config/site.ts`).
+   El dist emitía en el nodo LocalBusiness de la home `openingHoursSpecification` (2 entradas, `opens 09:00`)
+   derivado de `SITE.business.openingHours`, que era un horario placeholder ("Horario de ejemplo").
+   En alcance TÉCNICO esto es un dato de negocio NO verificado (contenido fabricado en el JSON-LD).
+   Fix data-only y quirúrgico: se elimina la clave `openingHours` de `SITE.business` (queda documentada
+   en comentario para reponerla con el horario REAL). Único consumidor = `localBusinessSchema()` en
+   `src/lib/seo.ts`, que ya omite el bloque cuando la clave está ausente (`...((b as any).openingHours ? … : {})`);
+   ningún componente/página lee `SITE.business.openingHours` (verificado por grep repo-wide). La librería
+   compartida `seo.ts` NO se tocó (sigue soportando horarios reales en otros sitios del portafolio).
+
+### Verificado conforme (sin cambios necesarios)
+
+- **Canonical non-www**: `absUrl()` usa `SITE.url` = `https://equiposcontraincendio.com` (sin www) + `trailingSlash:'never'`. Dist: `<link rel="canonical" href="https://equiposcontraincendio.com/…">` en todas las páginas. ✅
+- **`public/_redirects`**: primera (y única) línea `https://www.equiposcontraincendio.com/* https://equiposcontraincendio.com/:splat 301`. ✅
+- **OG PNG 1200×630**: las 55 páginas emiten `og:image` `.png` (0 svg/avif/webp) + `og:image:type image/png` + width/height 1200/630 + `og:image:alt` + `twitter:image`. `ogShareImage()` reescribe svg/avif/webp→png con fallback al default REAL. ✅
+- **Logo schema**: `ImageObject` 512×512 REALES (`identify` sobre `public/images/brand/logo.svg` = 512×512). ✅
+- **BreadcrumbList único**: exactamente 1 nodo JSON-LD por página (home 0). `Breadcrumbs.astro` emite SOLO microdata visible (itemscope/itemprop), NO `<script>` JSON-LD (documentado en el propio componente). El 2º match de la cadena en el HTML es la URL de microdata `schema.org/BreadcrumbList`, no un 2º nodo. ✅
+- **Product vs Service**: 6 nodos `Product` puros (fichas de producto) + 3 `Service` puros (servicios), entidades distintas — NO hay `["Service","Product"]` ni Product duplicando un Service. ✅
+- **Omitidos correctamente en alcance T**: `foundingDate` (undefined en config → ausente), `sameAs` (`[]` → ausente), `aggregateRating`/`review` (gate `emitReviews()` + `allowSelfReviews:false` → nunca emitidos). ✅
+- **Sitemap lastmod dinámico** (git log→mtime→OMITIR, nunca `new Date()`) ya implementado en Sesión 1 (`astro.config.mjs`). ✅
+
+### No aplicado / fuera de alcance
+
+- **NAP placeholder** (teléfono `+525512345678`, dirección Polanco, geo, email `equipocontraincendios737@gmail.com`): datos de ejemplo del scaffold, vigilados por `npm run check:demo`. Fuera del alcance técnico (contenido de negocio); se REPONEN 1:1 con datos reales. NO tocado.
+- **Regenerar dist**: no se pudo reconstruir en este entorno (sandbox sin binarios rollup nativos). El `dist/` y los chunks `.astro/.prerender/*.mjs` reflejan el estado PRE-edición (aún con openingHours); el fix toma efecto en el **próximo build de la Action** (Mac/CI). Gate REAL = Action verde.
+
+### Pendiente manual (sin cambios respecto a Sesión 1)
+
+- Cloudflare **Redirect Rule www→apex 301** (el `_redirects` solo actúa si `www` está adjunto al proyecto Pages; live sigue 200 en www).
+- Desactivar **GitHub Pages zombi** en `Frankoropeza/equiposcontraincendio`.

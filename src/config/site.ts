@@ -72,10 +72,14 @@ export const SITE = {
       lat: 19.4307 as string | number, // Polanco, Miguel Hidalgo, CDMX.
       lng: -99.1960 as string | number,
     },
-    openingHours: {
-      weekdays: { opens: '09:00', closes: '18:00' }, // Horario de ejemplo.
-      saturday: { opens: '09:00', closes: '14:00' } as { opens: string; closes: string } | undefined,
-    },
+    // openingHours OMITIDO a propósito (alcance SEO técnico · SOP 2026-07-10):
+    // el horario era de EJEMPLO (no verificado). Emitir OpeningHoursSpecification
+    // con horas placeholder = dato de negocio fabricado en el JSON-LD (rompe la
+    // regla del portafolio "cero contenido fabricado"). Cuando llegue el horario
+    // REAL del negocio, reponer el bloque:
+    //   openingHours: { weekdays: { opens: '09:00', closes: '18:00' },
+    //                   saturday: { opens: '09:00', closes: '14:00' } },
+    // y localBusinessSchema() en src/lib/seo.ts lo re-emitirá automáticamente.
     areaServed: ['Ciudad de México', 'Estado de México'] as string[],
   },
 } as const;
