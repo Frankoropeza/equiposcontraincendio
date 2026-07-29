@@ -108,6 +108,19 @@ const productos = defineCollection({
       sku: z.string().optional(),
       brand: z.string().optional(),
       gallery: z.array(imagePath).optional(),
+      variantes: z
+        .array(
+          z.object({
+            nombre: z.string().min(5).max(80),
+            badge: z.string().max(30).optional(),
+            desc: z.string().min(50).max(300),
+            specs: z.string().min(20).max(200),
+            imagen: imagePath.optional(),
+            waText: z.string().min(20),
+          }),
+        )
+        .min(1)
+        .optional(),
       // Interlinking tipado entre colecciones — reference() (D1).
       relatedProducts: z.array(reference('productos')).optional(),
       relatedServices: z.array(reference('servicios')).optional(),
