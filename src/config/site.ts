@@ -27,7 +27,9 @@ export const SITE = {
     'Equipo contra incendio en México: venta de extintores, detección, hidrantes y señalización, con instalación, mantenimiento y recarga certificados. Cotiza por WhatsApp.',
   defaultImage: '/images/og/default.png', // OG default 1200×630 PNG (SVG no renderiza en WhatsApp/FB/X).
 
-  trailingSlash: 'never' as 'never' | 'always',
+  // MEDIDO en vivo 2026-08-12: Cloudflare Pages sirve /ruta → 308 → /ruta/ (200).
+  // Debe coincidir con astro.config.mjs (trailingSlash: 'always' + build.format: 'directory').
+  trailingSlash: 'always' as 'never' | 'always',
   searchUrl: undefined as string | undefined,
   allowSelfReviews: false, // No se auto-emiten reseñas (Google penaliza self-serving).
 

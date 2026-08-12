@@ -1,4 +1,5 @@
-// astro.config.mjs — config Astro 6 SSG. Canónico: PROYECTORED/astro.config.mjs + MESECI (trailingSlash:'never')
+// astro.config.mjs — config Astro 6 SSG. trailingSlash:'always' + build.format:'directory'
+// MEDIDO en producción (Cloudflare Pages) 2026-08-12 — ver comentario junto a defineConfig.
 // @ts-check
 import { defineConfig } from 'astro/config';
 import { fileURLToPath } from 'node:url';
@@ -80,8 +81,8 @@ const r = (p) => fileURLToPath(new URL(p, import.meta.url));
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Opciones de sitemap. Origen del patrón: PROYECTORED (filter + serialize con
-// prioridades por sección). Política canónica B5: trailingSlash 'never' + site
-// correcto → canonical normalizado. Ajusta el regex de categorías a los slugs
+// prioridades por sección). trailingSlash 'always' (medido en Cloudflare Pages)
+// + site correcto → canonical normalizado. Ajusta el regex de categorías a los slugs
 // reales del cliente (deben coincidir con TAXONOMY en src/config/site.ts).
 // ─────────────────────────────────────────────────────────────────────────────
 /** @type {import('@astrojs/sitemap').SitemapOptions} */
@@ -144,7 +145,14 @@ const sitemapOptions = {
 export default defineConfig({
   site: 'https://equiposcontraincendio.com', // URL canónica con protocolo, sin slash final.
   output: 'static',
-  trailingSlash: 'never', // Canónico B5. Canonical normalizado sin slash final.
+  // MEDIDO en vivo 2026-08-12: Cloudflare Pages sirve /ruta → 308 → /ruta/ (200).
+  // El dominio real usa trailingSlash 'always' + build.format 'directory'
+  // (mismo patrón detectado y corregido en PODIUMEX). El valor 'never' anterior
+  // no coincidía con lo que el hosting sirve → canonicals/sitemap desalineados.
+  trailingSlash: 'always',
+  build: {
+    format: 'directory',
+  },
 
   integrations: [sitemap(sitemapOptions), mdx()],
 
