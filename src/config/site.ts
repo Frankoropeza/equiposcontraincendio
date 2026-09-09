@@ -192,6 +192,44 @@ export type Service = (typeof TAXONOMY.services)[number];
 export type Sector = (typeof TAXONOMY.sectors)[number];
 export type CoverageState = (typeof TAXONOMY.coverageStates)[number];
 
+// ── TOOLS — herramientas de utilidad pública (SSoT) ─────────────────────────
+// Origen: «2026-09-09 — Activos de utilidad pública para tráfico e interlinking».
+// Calculadoras y verificadores gratuitos, sin registro. Son el activo con más
+// potencial de conseguir enlaces del plan: una herramienta útil se enlaza y se
+// comparte; un artículo se lee y se olvida.
+//
+// REGLA: orientan, no dictaminan. Cada herramienta cita la norma de la que sale
+// su criterio y deja claro que el dictamen lo firma quien está facultado.
+export type Tool = {
+  slug: string;
+  label: string;
+  /** Frase de una línea para el hub y el menú. */
+  desc: string;
+  /** Norma de la que sale el criterio (se cita en la página). */
+  norm?: string;
+};
+
+export const TOOLS: readonly Tool[] = [
+  {
+    slug: 'riesgo-de-incendio',
+    label: 'Riesgo de incendio: ordinario o alto',
+    desc: 'Clasifica tu centro de trabajo con los mismos criterios que aplica la autoridad.',
+    norm: 'NOM-002-STPS-2010',
+  },
+  {
+    slug: 'cuantos-extintores-necesito',
+    label: 'Cuántos extintores necesito',
+    desc: 'Mínimo de extintores por superficie y qué agente corresponde a cada área.',
+    norm: 'NOM-002-STPS-2010',
+  },
+  {
+    slug: 'verifica-tu-extintor',
+    label: 'Verifica tu extintor',
+    desc: 'Doce puntos para saber si el servicio que te dieron es real y no una calcomanía.',
+    norm: 'NOM-154-SCFI-2005',
+  },
+] as const;
+
 // ── NAV — menú principal del Header (FUENTE ÚNICA: escritorio + móvil) ────────
 export type NavLink = { label: string; href: string; desc?: string };
 export type NavItem = {
@@ -232,6 +270,13 @@ export const NAV: readonly NavItem[] = [
         items: SECTORS.map((s) => ({ label: s.label, href: `/sectores/${s.slug}/` })),
       }]
     : []),
+  {
+    label: 'Herramientas',
+    href: '/herramientas/',
+    panel: 'dropdown',
+    allLabel: 'Ver todas las herramientas',
+    items: TOOLS.map((t) => ({ label: t.label, href: `/herramientas/${t.slug}/`, desc: t.desc })),
+  },
   { label: 'Blog', href: '/blog/' },
   { label: 'Contacto', href: '/contacto/' },
 ];

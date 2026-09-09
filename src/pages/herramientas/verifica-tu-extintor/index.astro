@@ -1,0 +1,255 @@
+---
+// ============================================================================
+// /herramientas/verifica-tu-extintor/ — Verificación en 12 puntos.
+// ----------------------------------------------------------------------------
+// El fraude más común del nicho es la calcomanía sin servicio detrás. Esta
+// herramienta le da al dueño del inmueble una forma de comprobarlo por su
+// cuenta, antes de que se lo diga un verificador.
+//
+// REGLA DE HONESTIDAD: el checklist sólo pregunta cosas OBSERVABLES por
+// cualquiera (fecha del servicio, manómetro, sello, corrosión, señalización,
+// altura, accesibilidad, capacitación). No afirma requisitos de etiqueta que no
+// podamos sostener con el texto de la norma, y para comprobar la acreditación
+// del prestador se enlaza a la fuente en vez de publicar un padrón que se mueve.
+//
+// Criterios: NOM-002-STPS-2010 (colocación, revisión y mantenimiento) y
+// NOM-154-SCFI-2005 (servicio de mantenimiento y recarga).
+// ============================================================================
+import PageLayout from '@layouts/PageLayout.astro'
+import FAQAccordion from '@components/FAQAccordion.astro'
+import CTABanner from '@components/CTABanner.astro'
+import RelatedLinks from '@components/RelatedLinks.astro'
+import { waUrl } from '@config/site'
+
+const PUNTOS = [
+  { id: 'fecha', txt: 'La etiqueta de servicio tiene una fecha y esa fecha es de hace menos de un año.' },
+  { id: 'comprobante', txt: 'Tienes el comprobante o reporte del servicio, con el nombre del prestador.' },
+  { id: 'manometro', txt: 'El manómetro marca dentro del rango de operación (la zona verde).' },
+  { id: 'sello', txt: 'El pasador y el sello de seguridad están puestos e íntegros.' },
+  { id: 'cilindro', txt: 'El cilindro no tiene golpes, abolladuras ni corrosión.' },
+  { id: 'manguera', txt: 'La manguera y la boquilla están completas, sin cuarteaduras ni obstrucciones.' },
+  { id: 'altura', txt: 'La parte más alta del extintor queda a 1.50 m o menos sobre el nivel del piso.' },
+  { id: 'visible', txt: 'Está a la vista, señalizado y sin nada que estorbe el acceso.' },
+  { id: 'clase', txt: 'El agente corresponde a lo que se puede quemar en esa área (clase K en cocina, CO₂ en cuarto eléctrico).' },
+  { id: 'hidrostatica', txt: 'Sabes cuándo le tocó o le toca la prueba hidrostática del cilindro.' },
+  { id: 'bitacora', txt: 'Llevas bitácora de la revisión mensual del equipo.' },
+  { id: 'capacitacion', txt: 'Hay personal capacitado para usarlo, con constancia.' },
+]
+
+const faqs = [
+  {
+    question: '¿Cómo sé si de verdad le dieron mantenimiento a mi extintor?',
+    answer:
+      'Por dos cosas que puedes exigir: la etiqueta de servicio con la fecha en la que se hizo y el comprobante o reporte que ampara el trabajo, con el nombre del prestador. Un extintor «recargado» sin documentación no acredita nada en una verificación, por muy nueva que se vea la calcomanía.',
+  },
+  {
+    question: '¿Cada cuándo se le da mantenimiento a un extintor?',
+    answer:
+      'La NOM-002-STPS-2010 obliga a proporcionar mantenimiento al menos una vez por año y a revisar los extintores cada mes. El servicio de mantenimiento y recarga en sí se rige por la NOM-154-SCFI-2005.',
+  },
+  {
+    question: '¿Qué pasa si el manómetro está fuera del rango?',
+    answer:
+      'El extintor no está en condiciones de operar: no descargará como debe. Sácalo de servicio, sustitúyelo mientras tanto y manda revisar el equipo. Un manómetro en cero o en la zona de sobrepresión no se «arregla» golpeando la válvula.',
+  },
+  {
+    question: '¿Cómo verifico que el prestador del servicio está acreditado?',
+    answer:
+      'Pide los datos del prestador y contrástalos con la fuente oficial: la entidad mexicana de acreditación (ema) publica quién está acreditado para las materias que evalúa. Desconfía de quien no quiere darte por escrito su razón social y sus datos de registro.',
+  },
+]
+
+const schemaData = { faqs }
+const waHref = waUrl('Hola, revisé mis extintores con su checklist y quiero que vengan a verlos.')
+---
+
+<PageLayout
+  title="Verifica tu extintor: 12 puntos para revisarlo"
+  description="Comprueba en 12 puntos si el mantenimiento de tus extintores es real y si están colocados como pide la norma, antes de que te lo diga un verificador."
+  pageType="page"
+  schemaData={schemaData}
+  breadcrumbs={[{ label: 'Herramientas', href: '/herramientas/' }, { label: 'Verifica tu extintor' }]}
+  guia={false}
+>
+  <section class="tool">
+    <div class="container">
+      <p class="tool__eyebrow">Herramienta gratuita · NOM-002-STPS-2010 y NOM-154-SCFI-2005</p>
+      <h1 class="tool__h1">Verifica tu extintor en 12 puntos</h1>
+      <p class="tool__lede">
+        El problema más común de este mercado no es el extintor: es la calcomanía sin servicio detrás.
+        Marca lo que se cumple en tu inmueble y sabrás en qué estás parado antes de que llegue una
+        verificación.
+      </p>
+
+      <form class="tool__form" id="chk-form">
+        <fieldset class="chk">
+          <legend>Marca lo que se cumple hoy</legend>
+          {PUNTOS.map((p) => (
+            <label class="chk__item">
+              <input type="checkbox" name="p" value={p.id} />
+              <span>{p.txt}</span>
+            </label>
+          ))}
+        </fieldset>
+
+        <div class="tool__actions">
+          <button type="submit" class="btn btn--primary">Ver resultado</button>
+          <button type="reset" class="btn btn--ghost">Limpiar</button>
+        </div>
+      </form>
+
+      <output class="res" id="chk-res" hidden></output>
+
+      <p class="tool__note">
+        <strong>Esto es una autoevaluación, no un dictamen.</strong> Sirve para detectar lo evidente y
+        para llegar con preguntas concretas a tu proveedor. La inspección formal la hace personal
+        capacitado y queda documentada.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container container--prose">
+      <h2>Las tres señales de un servicio que no existió</h2>
+      <ol>
+        <li>
+          <strong>Sólo hay calcomanía.</strong> Si no te entregaron comprobante ni reporte del
+          servicio, no tienes con qué acreditar el mantenimiento. Pídelo siempre por escrito.
+        </li>
+        <li>
+          <strong>El precio no cuadra.</strong> Una recarga real tiene costo de agente, mano de obra y
+          traslado. Cuando el precio es imposible, lo que se está cobrando es la etiqueta.
+        </li>
+        <li>
+          <strong>Nadie revisó el cilindro.</strong> Un servicio serio incluye revisar el estado
+          físico del cilindro y de la válvula, y advertirte cuándo toca la prueba hidrostática. Si el
+          equipo regresó en minutos y sin observaciones, pregunta qué se le hizo.
+        </li>
+      </ol>
+
+      <h2>Qué exige la norma, en corto</h2>
+      <ul>
+        <li><strong>Mantenimiento:</strong> al menos una vez por año (NOM-002-STPS-2010).</li>
+        <li><strong>Revisión:</strong> mensual, a cargo del centro de trabajo, con su registro.</li>
+        <li><strong>Colocación:</strong> parte más alta a no más de 1.50 m del piso, visible, señalizado y sin obstáculos.</li>
+        <li><strong>Servicio de mantenimiento y recarga:</strong> se rige por la NOM-154-SCFI-2005.</li>
+      </ul>
+      <p>
+        Para el detalle de la norma de mantenimiento, lee
+        <a href="/blog/mantenimiento-recarga-extintores-nom/">mantenimiento y recarga de extintores: qué pide la norma</a>.
+      </p>
+
+      <h2>Cómo comprobar al prestador</h2>
+      <p>
+        Pide por escrito la razón social y los datos de registro de quien te da el servicio, y
+        contrástalos con la fuente oficial: la
+        <a href="https://www.ema.org.mx/" target="_blank" rel="noopener">entidad mexicana de acreditación (ema)</a>
+        publica quién está acreditado en las materias que evalúa. No publicamos aquí un padrón propio
+        porque cambia: siempre conviene consultarlo en la fuente el día que lo necesitas.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--prose">
+      <FAQAccordion items={faqs} title="Preguntas frecuentes" openFirst bare />
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <RelatedLinks
+        title="Sigue por aquí"
+        links={[
+          { label: 'Cuántos extintores necesito', href: '/herramientas/cuantos-extintores-necesito/', desc: 'El mínimo por superficie y el agente por área.' },
+          { label: 'Clasifica tu riesgo de incendio', href: '/herramientas/riesgo-de-incendio/', desc: 'Ordinario o alto, con los criterios de la Tabla 1.' },
+          { label: 'Mantenimiento y recarga', href: '/servicios/mantenimiento/', desc: 'Servicio con comprobante, conforme a la NOM-154.' },
+          { label: 'Prueba hidrostática', href: '/servicios/prueba-hidrostatica/', desc: 'La prueba del cilindro que toca cada cinco años.' },
+        ]}
+        limit={4}
+      />
+    </div>
+  </section>
+
+  <CTABanner
+    heading="¿Te salieron puntos en rojo?"
+    desc="Vamos a tu inmueble, revisamos el equipo y te decimos qué necesita cada extintor: recarga, prueba hidrostática o reemplazo."
+    btns={[{ label: 'Agendar revisión por WhatsApp', href: waHref, icon: 'wa', primary: true, external: true }]}
+    badge="CDMX y Estado de México"
+    variant="dark"
+  />
+</PageLayout>
+
+<script>
+  const form = document.getElementById('chk-form') as HTMLFormElement | null
+  const out = document.getElementById('chk-res') as HTMLElement | null
+  if (form && out) {
+    const TOTAL = form.querySelectorAll('input[name="p"]').length
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault()
+      const marcados = new FormData(form).getAll('p').length
+      const faltan = TOTAL - marcados
+      const pct = Math.round((marcados / TOTAL) * 100)
+
+      let tag = ''
+      let msg = ''
+      let cls = ''
+      if (faltan === 0) {
+        tag = 'Todo en orden'
+        cls = 'res res--ok'
+        msg = 'Cumples los 12 puntos observables. Mantén la bitácora al día y agenda el mantenimiento anual antes de que venza: la vigencia es lo primero que se revisa.'
+      } else if (faltan <= 3) {
+        tag = `Casi: te faltan ${faltan} de ${TOTAL}`
+        cls = 'res res--warn'
+        msg = 'Estás cerca. Lo que falta suele resolverse con una visita de mantenimiento y con ordenar la documentación del equipo.'
+      } else {
+        tag = `Atención: te faltan ${faltan} de ${TOTAL}`
+        cls = 'res res--bad'
+        msg = 'Con estos huecos, una verificación te levantaría observaciones. Lo urgente es el estado y la vigencia del equipo; lo demás (bitácora, señalización, capacitación) se ordena después.'
+      }
+
+      out.hidden = false
+      out.className = cls
+      out.innerHTML = `
+        <p class="res__tag">${tag}</p>
+        <p><strong>${marcados} de ${TOTAL} puntos (${pct}%).</strong> ${msg}</p>
+        <p class="res__next">Siguiente paso: <a href="/servicios/inspeccion/">inspección y dictamen</a> o <a href="/servicios/mantenimiento/">mantenimiento y recarga</a>.</p>
+      `
+      out.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+    })
+
+    form.addEventListener('reset', () => {
+      out.hidden = true
+      out.innerHTML = ''
+    })
+  }
+</script>
+
+<style>
+  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
+  .container--prose { max-width: var(--container-prose, 72ch); }
+  .section { padding: var(--sp-8) 0; }
+  .section--surface { background: var(--c-surface); }
+  .tool { padding: var(--sp-9) 0 var(--sp-7); }
+  .tool__eyebrow { color: var(--c-accent); text-transform: uppercase; letter-spacing: .08em; font-size: var(--text-sm); margin: 0 0 var(--sp-2); }
+  .tool__h1 { font-family: var(--font-heading); font-size: var(--text-fluid-4xl, 2.25rem); line-height: 1.1; margin: 0 0 var(--sp-3); }
+  .tool__lede { color: var(--c-ink-2); max-width: 60ch; margin: 0 0 var(--sp-6); }
+  .tool__form { border: 1px solid var(--c-border); border-radius: var(--radius-lg, 12px); padding: var(--sp-6); background: var(--c-white); }
+  .chk { border: 0; margin: 0; padding: 0; }
+  .chk legend { padding: 0; margin-bottom: var(--sp-3); font-size: var(--text-sm); color: var(--c-ink-2); }
+  .chk__item { display: grid; grid-template-columns: auto 1fr; gap: var(--sp-3); align-items: start; padding: var(--sp-3) 0; border-bottom: 1px solid var(--c-border); color: var(--c-ink); }
+  .chk__item:last-of-type { border-bottom: 0; }
+  .chk__item input { margin-top: .2rem; width: 1.15rem; height: 1.15rem; }
+  .chk__item input:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
+  .tool__actions { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-top: var(--sp-5); }
+  .tool__note { margin-top: var(--sp-5); font-size: var(--text-sm); color: var(--c-ink-2); max-width: 70ch; }
+
+  .res { display: block; margin-top: var(--sp-6); padding: var(--sp-6); border-radius: var(--radius-lg, 12px); border: 1px solid var(--c-border); border-left-width: 4px; background: var(--c-white); }
+  .res--ok { border-left-color: #2e7d32; }
+  .res--warn { border-left-color: #b45309; }
+  .res--bad { border-left-color: var(--c-primary); }
+  .res :global(.res__tag) { font-family: var(--font-heading); font-size: var(--text-lg); margin: 0 0 var(--sp-3); }
+  .res :global(p) { margin: 0 0 var(--sp-3); }
+  .res :global(.res__next) { margin: 0; font-size: var(--text-sm); }
+</style>

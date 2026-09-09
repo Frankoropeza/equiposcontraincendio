@@ -1,0 +1,266 @@
+---
+// ============================================================================
+// /herramientas/cuantos-extintores-necesito/ — Calculadora de extintores.
+// ----------------------------------------------------------------------------
+// Devuelve el MÍNIMO normativo por superficie (NOM-002-STPS-2010: uno por cada
+// 300 m² o fracción en riesgo ordinario; uno por cada 200 m² o fracción en
+// riesgo alto) y, aparte, qué agente corresponde a las áreas con riesgo
+// específico (cocina, cuarto eléctrico, almacén de inflamables, metales).
+//
+// Los dos números se presentan SEPARADOS a propósito: el mínimo por superficie
+// es una obligación aritmética; la selección del agente depende de qué se puede
+// quemar en cada área. Mezclarlos es el error que lleva a comprar seis ABC para
+// un local que necesitaba además un clase K.
+//
+// Criterios verificados el 2026-09-09 contra el texto de la NOM-002-STPS-2010.
+// La herramienta ORIENTA; la distribución final depende del recorrido real.
+// ============================================================================
+import PageLayout from '@layouts/PageLayout.astro'
+import FAQAccordion from '@components/FAQAccordion.astro'
+import CTABanner from '@components/CTABanner.astro'
+import RelatedLinks from '@components/RelatedLinks.astro'
+import { waUrl } from '@config/site'
+
+const faqs = [
+  {
+    question: '¿Cuántos extintores pide la norma por metro cuadrado?',
+    answer:
+      'La NOM-002-STPS-2010 pide al menos un extintor por cada 300 m² de superficie o fracción cuando el riesgo de incendio es ordinario, y al menos uno por cada 200 m² o fracción cuando es alto. Es un mínimo: la distribución real depende del recorrido y de las clases de fuego presentes.',
+  },
+  {
+    question: '¿A qué altura se colocan los extintores?',
+    answer:
+      'La parte más alta del extintor debe quedar a una altura no mayor de 1.50 metros sobre el nivel del piso, en un lugar visible, señalizado y libre de obstáculos.',
+  },
+  {
+    question: '¿Un extintor ABC sirve para toda la empresa?',
+    answer:
+      'Cubre la mayoría de los riesgos comunes (clases A, B y C), pero no sustituye al extintor clase K en el área de freído de una cocina comercial ni a los agentes específicos para metales combustibles (clase D). En cuartos eléctricos y centros de datos se prefiere CO₂ porque no deja residuo.',
+  },
+  {
+    question: '¿Cada cuándo hay que darles mantenimiento?',
+    answer:
+      'La NOM-002-STPS-2010 obliga a proporcionar mantenimiento al menos una vez por año y a revisar los extintores mensualmente; el servicio de mantenimiento y recarga se rige por la NOM-154-SCFI-2005.',
+  },
+]
+
+const schemaData = { faqs }
+const waHref = waUrl('Hola, calculé los extintores de mi inmueble en su herramienta y quiero cotizar.')
+---
+
+<PageLayout
+  title="Calculadora: cuántos extintores necesito"
+  description="Calcula el mínimo de extintores que exige la NOM-002-STPS-2010 según la superficie y el grado de riesgo de tu inmueble, y qué agente corresponde a cada área."
+  pageType="page"
+  schemaData={schemaData}
+  breadcrumbs={[{ label: 'Herramientas', href: '/herramientas/' }, { label: 'Cuántos extintores necesito' }]}
+  guia={false}
+>
+  <section class="tool">
+    <div class="container">
+      <p class="tool__eyebrow">Herramienta gratuita · NOM-002-STPS-2010</p>
+      <h1 class="tool__h1">¿Cuántos extintores necesita tu inmueble?</h1>
+      <p class="tool__lede">
+        Te damos el mínimo que exige la norma según tu superficie y tu grado de riesgo, y además qué
+        agente corresponde a las áreas que tienen un riesgo propio: cocina, cuarto eléctrico, almacén
+        de inflamables o taller con metales.
+      </p>
+
+      <form class="tool__form" id="ext-form" novalidate>
+        <div class="tool__grid">
+          <label class="fld">
+            <span>Superficie construida (m²)</span>
+            <input type="number" name="superficie" min="1" step="any" inputmode="decimal" placeholder="Ej. 850" required />
+          </label>
+          <fieldset class="fld fld--radios">
+            <legend>Grado de riesgo de incendio</legend>
+            <label><input type="radio" name="riesgo" value="ordinario" checked /> Ordinario</label>
+            <label><input type="radio" name="riesgo" value="alto" /> Alto</label>
+            <p class="fld__hint">¿No lo sabes? <a href="/herramientas/riesgo-de-incendio/">Clasifícalo aquí</a>.</p>
+          </fieldset>
+        </div>
+
+        <fieldset class="fld fld--checks">
+          <legend>¿Tu inmueble tiene alguna de estas áreas?</legend>
+          <label><input type="checkbox" name="area" value="cocina" /> Cocina comercial con freidora o parrilla</label>
+          <label><input type="checkbox" name="area" value="electrico" /> Cuarto eléctrico, site o centro de datos</label>
+          <label><input type="checkbox" name="area" value="inflamables" /> Almacén o manejo de líquidos inflamables</label>
+          <label><input type="checkbox" name="area" value="metales" /> Taller con metales combustibles (magnesio, sodio, aluminio en polvo)</label>
+          <label><input type="checkbox" name="area" value="vehiculos" /> Flotilla o unidades vehiculares</label>
+        </fieldset>
+
+        <div class="tool__actions">
+          <button type="submit" class="btn btn--primary">Calcular</button>
+          <button type="reset" class="btn btn--ghost">Limpiar</button>
+        </div>
+      </form>
+
+      <output class="res" id="ext-res" hidden></output>
+
+      <p class="tool__note">
+        <strong>Es un mínimo, no un plano.</strong> El número por superficie es aritmética normativa;
+        la ubicación real depende del recorrido que tendría que hacer una persona para alcanzar el
+        extintor más cercano y de qué se puede quemar en cada área. Si quieres el levantamiento hecho,
+        escríbenos.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container container--prose">
+      <h2>Cómo se calcula</h2>
+      <ul>
+        <li><strong>Riesgo ordinario:</strong> al menos un extintor por cada 300 m² de superficie o fracción.</li>
+        <li><strong>Riesgo alto:</strong> al menos un extintor por cada 200 m² de superficie o fracción.</li>
+        <li><strong>Colocación:</strong> la parte más alta del extintor, a no más de 1.50 m sobre el nivel del piso, visible, señalizado y sin obstáculos.</li>
+        <li><strong>Conservación:</strong> revisión mensual y mantenimiento al menos una vez por año.</li>
+      </ul>
+      <p>
+        «O fracción» significa que se redondea hacia arriba: 850 m² en riesgo ordinario no son 2.8
+        extintores, son <strong>3</strong>.
+      </p>
+
+      <h2>Qué agente va en cada área</h2>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Área</th><th>Clase de fuego</th><th>Agente indicado</th></tr></thead>
+          <tbody>
+            <tr><td>Oficinas, comercio, pasillos</td><td>A, B y C</td><td>Polvo químico seco ABC</td></tr>
+            <tr><td>Cocina comercial (freído)</td><td>K</td><td>Agente húmedo clase K</td></tr>
+            <tr><td>Cuarto eléctrico, site, centro de datos</td><td>B y C</td><td>CO₂ (no deja residuo)</td></tr>
+            <tr><td>Almacén de líquidos inflamables</td><td>B</td><td>PQS o espuma, según el producto</td></tr>
+            <tr><td>Taller con metales combustibles</td><td>D</td><td>Agente específico para clase D</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Si quieres el detalle de cada clase de fuego, lee la guía de
+        <a href="/blog/como-elegir-extintor-clase-fuego/">cómo elegir un extintor según la clase de fuego</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--prose">
+      <FAQAccordion items={faqs} title="Preguntas frecuentes" openFirst bare />
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <RelatedLinks
+        title="Sigue por aquí"
+        links={[
+          { label: 'Clasifica tu riesgo de incendio', href: '/herramientas/riesgo-de-incendio/', desc: 'Ordinario o alto, con los criterios de la Tabla 1.' },
+          { label: 'Verifica tu extintor', href: '/herramientas/verifica-tu-extintor/', desc: 'Si el servicio que te dieron es real o sólo una calcomanía.' },
+          { label: 'Catálogo de extintores', href: '/productos/', desc: 'PQS, CO₂, clase K y accesorios.' },
+          { label: 'Mantenimiento y recarga', href: '/servicios/mantenimiento/', desc: 'Servicio conforme a la NOM-154-SCFI-2005.' },
+        ]}
+        limit={4}
+      />
+    </div>
+  </section>
+
+  <CTABanner
+    heading="¿Cotizamos el equipo de tu inmueble?"
+    desc="Mándanos el resultado del cálculo y te respondemos con precios, tiempos y opciones de instalación."
+    btns={[{ label: 'Cotizar por WhatsApp', href: waHref, icon: 'wa', primary: true, external: true }]}
+    badge="Entrega en CDMX y Estado de México"
+    variant="red"
+  />
+</PageLayout>
+
+<script>
+  const form = document.getElementById('ext-form') as HTMLFormElement | null
+  const out = document.getElementById('ext-res') as HTMLElement | null
+  if (form && out) {
+    const RECOMENDACIONES: Record<string, string> = {
+      cocina:
+        'Cocina comercial: extintor <strong>clase K</strong> de agente húmedo cerca del área de freído. El ABC del local no lo sustituye.',
+      electrico:
+        'Cuarto eléctrico, site o centro de datos: extintor de <strong>CO₂</strong>, que no deja residuo sobre el equipo.',
+      inflamables:
+        'Almacén o manejo de líquidos inflamables: extintor para <strong>clase B</strong> (PQS o espuma, según el producto almacenado).',
+      metales:
+        'Taller con metales combustibles: agente específico para <strong>clase D</strong>. Ningún ABC sirve aquí.',
+      vehiculos:
+        'Flotilla o unidades: extintor portátil <strong>ABC</strong> por unidad, sujeto con su soporte y accesible desde la cabina.',
+    }
+    const fmt = (n: number) => n.toLocaleString('es-MX')
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault()
+      const data = new FormData(form)
+      const sup = parseFloat(String(data.get('superficie') ?? '').replace(/,/g, ''))
+      if (!Number.isFinite(sup) || sup <= 0) {
+        out.hidden = false
+        out.className = 'res res--warn'
+        out.innerHTML = '<p class="res__tag">Falta la superficie</p><p>Captura la superficie construida en metros cuadrados para calcular el mínimo.</p>'
+        return
+      }
+      const alto = data.get('riesgo') === 'alto'
+      const porArea = alto ? 200 : 300
+      const minimo = Math.ceil(sup / porArea)
+      const areas = data.getAll('area').map(String)
+
+      out.hidden = false
+      out.className = 'res'
+      out.innerHTML = `
+        <p class="res__tag">Mínimo normativo: ${minimo} ${minimo === 1 ? 'extintor' : 'extintores'}</p>
+        <p>${fmt(sup)} m² con riesgo <strong>${alto ? 'alto' : 'ordinario'}</strong> → uno por cada ${porArea} m² o fracción.</p>
+        ${
+          areas.length
+            ? `<p><strong>Además, por las áreas que marcaste:</strong></p><ul>${areas
+                .map((a) => `<li>${RECOMENDACIONES[a] ?? ''}</li>`)
+                .join('')}</ul><p class="res__hint">Estos equipos se suman al mínimo por superficie: cubren un riesgo que el ABC general no resuelve.</p>`
+            : '<p>No marcaste áreas con riesgo específico. Si tienes cocina, cuarto eléctrico o almacén de inflamables, márcalos: cambian el tipo de agente.</p>'
+        }
+        <p class="res__next">Recuerda: a no más de 1.50 m de altura, visibles y señalizados, con revisión mensual y mantenimiento anual.</p>
+      `
+      out.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+    })
+
+    form.addEventListener('reset', () => {
+      out.hidden = true
+      out.innerHTML = ''
+    })
+  }
+</script>
+
+<style>
+  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
+  .container--prose { max-width: var(--container-prose, 72ch); }
+  .section { padding: var(--sp-8) 0; }
+  .section--surface { background: var(--c-surface); }
+  .tool { padding: var(--sp-9) 0 var(--sp-7); }
+  .tool__eyebrow { color: var(--c-accent); text-transform: uppercase; letter-spacing: .08em; font-size: var(--text-sm); margin: 0 0 var(--sp-2); }
+  .tool__h1 { font-family: var(--font-heading); font-size: var(--text-fluid-4xl, 2.25rem); line-height: 1.1; margin: 0 0 var(--sp-3); }
+  .tool__lede { color: var(--c-ink-2); max-width: 60ch; margin: 0 0 var(--sp-6); }
+  .tool__form { border: 1px solid var(--c-border); border-radius: var(--radius-lg, 12px); padding: var(--sp-6); background: var(--c-white); }
+  .tool__grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-4); }
+  @media (min-width: 700px) { .tool__grid { grid-template-columns: repeat(2, 1fr); } }
+  .fld { display: grid; gap: var(--sp-2); font-size: var(--text-sm); color: var(--c-ink-2); }
+  .fld input[type="number"] { font-size: 1rem; padding: var(--sp-3); border: 1px solid var(--c-border); border-radius: var(--radius-md, 8px); background: var(--c-white); color: var(--c-ink); width: 100%; }
+  .fld input:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 1px; }
+  .fld--radios, .fld--checks { border: 0; margin: 0; padding: 0; }
+  .fld--checks { margin-top: var(--sp-5); }
+  .fld--radios legend, .fld--checks legend { padding: 0; margin-bottom: var(--sp-2); font-size: var(--text-sm); color: var(--c-ink-2); }
+  .fld--radios label, .fld--checks label { display: flex; gap: var(--sp-2); align-items: flex-start; padding: var(--sp-2) 0; color: var(--c-ink); }
+  .fld--radios input, .fld--checks input { margin-top: .2rem; width: 1.15rem; height: 1.15rem; flex: none; }
+  .fld__hint { margin: var(--sp-2) 0 0; font-size: var(--text-xs); color: var(--c-muted); }
+  .tool__actions { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-top: var(--sp-5); }
+  .tool__note { margin-top: var(--sp-5); font-size: var(--text-sm); color: var(--c-ink-2); max-width: 70ch; }
+
+  .res { display: block; margin-top: var(--sp-6); padding: var(--sp-6); border-radius: var(--radius-lg, 12px); border: 1px solid var(--c-border); border-left: 4px solid var(--c-accent); background: var(--c-white); }
+  .res--warn { border-left-color: #b45309; }
+  .res :global(.res__tag) { font-family: var(--font-heading); font-size: var(--text-lg); margin: 0 0 var(--sp-3); }
+  .res :global(ul) { margin: 0 0 var(--sp-3); padding-left: 1.2rem; display: grid; gap: var(--sp-2); }
+  .res :global(p) { margin: 0 0 var(--sp-3); }
+  .res :global(.res__hint), .res :global(.res__next) { font-size: var(--text-sm); color: var(--c-ink-2); }
+  .res :global(.res__next) { margin: 0; }
+
+  .tbl-wrap { overflow-x: auto; margin: var(--sp-5) 0; }
+  .tbl { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+  .tbl th, .tbl td { border: 1px solid var(--c-border); padding: var(--sp-3); text-align: left; }
+  .tbl th { background: var(--c-white); }
+</style>

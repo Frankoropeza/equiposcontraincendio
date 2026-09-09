@@ -31,7 +31,7 @@ const EXTS = ['.astro', '.ts', '.md', '.mdx'];
 // Primer segmento de toda ruta de página del sitio. Al añadir una sección nueva
 // (p. ej. /sectores/ o /productos/<categoria>/), añádela aquí.
 const PAGE_SEGMENTS = [
-  'productos', 'servicios', 'blog', 'cobertura', 'sectores',
+  'productos', 'servicios', 'blog', 'cobertura', 'sectores', 'herramientas',
   'contacto', 'nosotros', 'privacidad', 'terminos', 'cookies',
 ];
 

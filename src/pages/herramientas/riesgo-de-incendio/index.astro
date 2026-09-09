@@ -1,0 +1,286 @@
+---
+// ============================================================================
+// /herramientas/riesgo-de-incendio/ — Clasificador de riesgo de incendio.
+// ----------------------------------------------------------------------------
+// Resuelve en una pantalla la pregunta de entrada de cualquier empresa: ¿mi
+// centro de trabajo es de riesgo ORDINARIO o ALTO? De esa respuesta cuelgan
+// casi todas las obligaciones de la NOM-002-STPS-2010.
+//
+// CRITERIO: Tabla 1 de la NOM-002-STPS-2010 (valores transcritos del texto
+// oficial, verificados el 2026-09-09 contra la copia publicada por la UAEM del
+// documento de la STPS). Si un solo renglón alcanza el umbral, el centro de
+// trabajo es de riesgo alto.
+//
+// La herramienta ORIENTA, no dictamina: la clasificación formal se documenta y
+// la firma quien está facultado. Eso se dice en la página, no sólo aquí.
+//
+// Sin JS la página sigue sirviendo: la tabla de criterios está en el HTML.
+// ============================================================================
+import PageLayout from '@layouts/PageLayout.astro'
+import FAQAccordion from '@components/FAQAccordion.astro'
+import CTABanner from '@components/CTABanner.astro'
+import RelatedLinks from '@components/RelatedLinks.astro'
+import { waUrl } from '@config/site'
+
+const faqs = [
+  {
+    question: '¿Qué determina que un centro de trabajo sea de riesgo alto?',
+    answer:
+      'Basta con que UNO de los conceptos de la Tabla 1 de la NOM-002-STPS-2010 alcance su umbral: 3,000 m² o más de superficie construida, 3,000 litros o más de gases inflamables, 1,400 litros o más de líquidos inflamables, 2,000 litros o más de líquidos combustibles, 15,000 kilogramos o más de sólidos combustibles, o cualquier cantidad de materiales pirofóricos o explosivos.',
+  },
+  {
+    question: '¿Qué cambia si mi centro de trabajo es de riesgo alto?',
+    answer:
+      'Cambian obligaciones concretas: el mínimo de extintores pasa de uno por cada 300 m² a uno por cada 200 m² de superficie o fracción, y se suman requisitos de brigada contra incendio y de simulacros, entre otros. Por eso conviene clasificar antes de comprar equipo.',
+  },
+  {
+    question: '¿Esta herramienta sustituye el estudio de clasificación?',
+    answer:
+      'No. La norma pide que la clasificación quede documentada en el centro de trabajo. Esta herramienta aplica los mismos criterios para que sepas de antemano en qué grado caes y qué te van a exigir, pero el estudio formal se elabora y se firma por quien está facultado.',
+  },
+  {
+    question: '¿La superficie construida es la del terreno o la de la construcción?',
+    answer:
+      'Es la superficie construida del centro de trabajo, sumando los niveles. Un terreno grande con una nave pequeña se clasifica por lo construido, no por el predio.',
+  },
+]
+
+const schemaData = { faqs }
+const waHref = waUrl('Hola, usé la herramienta de riesgo de incendio y quiero que revisen mi caso.')
+---
+
+<PageLayout
+  title="¿Riesgo de incendio ordinario o alto? Clasifícalo"
+  description="Clasifica tu centro de trabajo como riesgo de incendio ordinario o alto con los criterios de la Tabla 1 de la NOM-002-STPS-2010 y descubre qué te exige la norma en cada caso."
+  pageType="page"
+  schemaData={schemaData}
+  breadcrumbs={[{ label: 'Herramientas', href: '/herramientas/' }, { label: 'Riesgo de incendio' }]}
+  guia={false}
+>
+  <section class="tool">
+    <div class="container">
+      <p class="tool__eyebrow">Herramienta gratuita · NOM-002-STPS-2010</p>
+      <h1 class="tool__h1">¿Tu centro de trabajo es de riesgo de incendio ordinario o alto?</h1>
+      <p class="tool__lede">
+        De esta clasificación cuelgan casi todas tus obligaciones: cuántos extintores necesitas, si
+        debes integrar brigada y qué te va a pedir el verificador. Captura los datos de tu inmueble y
+        aplica los mismos criterios que aplica la autoridad.
+      </p>
+
+      <form class="tool__form" id="riesgo-form" novalidate>
+        <div class="tool__grid">
+          <label class="fld">
+            <span>Superficie construida (m²)</span>
+            <input type="number" name="superficie" min="0" step="any" inputmode="decimal" placeholder="Ej. 850" />
+          </label>
+          <label class="fld">
+            <span>Gases inflamables en inventario (litros)</span>
+            <input type="number" name="gases" min="0" step="any" inputmode="decimal" placeholder="0" />
+          </label>
+          <label class="fld">
+            <span>Líquidos inflamables (litros)</span>
+            <input type="number" name="liqInflamables" min="0" step="any" inputmode="decimal" placeholder="0" />
+          </label>
+          <label class="fld">
+            <span>Líquidos combustibles (litros)</span>
+            <input type="number" name="liqCombustibles" min="0" step="any" inputmode="decimal" placeholder="0" />
+          </label>
+          <label class="fld">
+            <span>Sólidos combustibles (kg)</span>
+            <input type="number" name="solidos" min="0" step="any" inputmode="decimal" placeholder="0" />
+          </label>
+          <label class="fld fld--check">
+            <input type="checkbox" name="pirofóricos" id="piro" />
+            <span>Manejamos materiales pirofóricos o explosivos (en cualquier cantidad)</span>
+          </label>
+        </div>
+
+        <div class="tool__actions">
+          <button type="submit" class="btn btn--primary">Clasificar mi centro de trabajo</button>
+          <button type="reset" class="btn btn--ghost">Limpiar</button>
+        </div>
+      </form>
+
+      <output class="res" id="riesgo-res" hidden></output>
+
+      <p class="tool__note">
+        <strong>Esta herramienta orienta, no dictamina.</strong> La NOM-002-STPS-2010 pide que la
+        clasificación quede documentada en el centro de trabajo; el estudio formal lo elabora y lo
+        firma quien está facultado. Si quieres que lo revisemos contigo, escríbenos.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container container--prose">
+      <h2>De dónde sale el criterio</h2>
+      <p>
+        La Tabla 1 de la <strong>NOM-002-STPS-2010</strong> clasifica el riesgo de incendio del centro
+        de trabajo por seis conceptos. <strong>Basta con que uno solo alcance su umbral</strong> para
+        que todo el centro de trabajo sea de riesgo alto.
+      </p>
+
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead>
+            <tr><th>Concepto</th><th>Riesgo ordinario</th><th>Riesgo alto</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Superficie construida</td><td>Menor de 3,000 m²</td><td>Igual o mayor de 3,000 m²</td></tr>
+            <tr><td>Inventario de gases inflamables</td><td>Menor de 3,000 L</td><td>Igual o mayor de 3,000 L</td></tr>
+            <tr><td>Inventario de líquidos inflamables</td><td>Menor de 1,400 L</td><td>Igual o mayor de 1,400 L</td></tr>
+            <tr><td>Inventario de líquidos combustibles</td><td>Menor de 2,000 L</td><td>Igual o mayor de 2,000 L</td></tr>
+            <tr><td>Inventario de sólidos combustibles</td><td>Menor de 15,000 kg</td><td>Igual o mayor de 15,000 kg</td></tr>
+            <tr><td>Materiales pirofóricos y explosivos</td><td>No aplica</td><td>Cualquier cantidad</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Qué cambia según el resultado</h2>
+      <ul>
+        <li>
+          <strong>Extintores:</strong> al menos uno por cada 300 m² de superficie o fracción en riesgo
+          ordinario; al menos uno por cada 200 m² o fracción en riesgo alto. Calcula el tuyo en la
+          herramienta de <a href="/herramientas/cuantos-extintores-necesito/">cuántos extintores necesitas</a>.
+        </li>
+        <li><strong>Brigada contra incendio:</strong> el riesgo alto suma requisitos de integración y capacitación de brigada.</li>
+        <li><strong>Simulacros:</strong> la periodicidad y el alcance dependen del grado de riesgo.</li>
+        <li><strong>Documentación:</strong> la clasificación es la base del expediente que revisa la STPS y Protección Civil.</li>
+      </ul>
+
+      <p>
+        Si quieres el panorama completo de la norma, lee la guía de
+        <a href="/blog/nom-002-stps-2010/">qué exige la NOM-002-STPS-2010 a tu centro de trabajo</a>, y si
+        prefieres que hagamos el levantamiento, mira el
+        <a href="/servicios/diagnostico-de-riesgo/">diagnóstico de riesgo</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--prose">
+      <FAQAccordion items={faqs} title="Preguntas frecuentes" openFirst bare />
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <RelatedLinks
+        title="Sigue por aquí"
+        links={[
+          { label: 'Cuántos extintores necesito', href: '/herramientas/cuantos-extintores-necesito/', desc: 'El mínimo por superficie y el agente que corresponde a cada área.' },
+          { label: 'Verifica tu extintor', href: '/herramientas/verifica-tu-extintor/', desc: 'Doce puntos para saber si el servicio que te dieron es real.' },
+          { label: 'Diagnóstico de riesgo', href: '/servicios/diagnostico-de-riesgo/', desc: 'Hacemos el levantamiento y documentamos la clasificación.' },
+          { label: 'Guía de la NOM-002-STPS-2010', href: '/blog/nom-002-stps-2010/', desc: 'Qué obliga, a quién aplica y cómo se acredita.' },
+        ]}
+        limit={4}
+      />
+    </div>
+  </section>
+
+  <CTABanner
+    heading="¿Quieres que revisemos tu caso?"
+    desc="Con la superficie y el giro de tu inmueble te decimos qué equipo es exigible y qué documentación te falta."
+    btns={[{ label: 'Escribir por WhatsApp', href: waHref, icon: 'wa', primary: true, external: true }]}
+    badge="CDMX y Estado de México"
+    variant="dark"
+  />
+</PageLayout>
+
+<script>
+  const form = document.getElementById('riesgo-form') as HTMLFormElement | null
+  const out = document.getElementById('riesgo-res') as HTMLElement | null
+  if (form && out) {
+    // Umbrales de la Tabla 1 de la NOM-002-STPS-2010.
+    const LIMITES = [
+      { campo: 'superficie', label: 'Superficie construida', limite: 3000, unidad: 'm²' },
+      { campo: 'gases', label: 'Gases inflamables', limite: 3000, unidad: 'L' },
+      { campo: 'liqInflamables', label: 'Líquidos inflamables', limite: 1400, unidad: 'L' },
+      { campo: 'liqCombustibles', label: 'Líquidos combustibles', limite: 2000, unidad: 'L' },
+      { campo: 'solidos', label: 'Sólidos combustibles', limite: 15000, unidad: 'kg' },
+    ]
+    const num = (v: FormDataEntryValue | null) => {
+      const n = parseFloat(String(v ?? '').replace(/,/g, ''))
+      return Number.isFinite(n) && n > 0 ? n : 0
+    }
+    const fmt = (n: number) => n.toLocaleString('es-MX')
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault()
+      const data = new FormData(form)
+      const piro = data.get('pirofóricos') !== null
+      const disparadores = LIMITES.filter((l) => num(data.get(l.campo)) >= l.limite).map(
+        (l) => `${l.label}: ${fmt(num(data.get(l.campo)))} ${l.unidad} (umbral ${fmt(l.limite)} ${l.unidad})`,
+      )
+      if (piro) disparadores.push('Materiales pirofóricos o explosivos: cualquier cantidad clasifica como riesgo alto')
+
+      const superficie = num(data.get('superficie'))
+      const alto = disparadores.length > 0
+      const porArea = alto ? 200 : 300
+      const minExt = superficie > 0 ? Math.ceil(superficie / porArea) : 0
+
+      out.hidden = false
+      out.className = alto ? 'res res--alto' : 'res res--ordinario'
+      out.innerHTML = `
+        <p class="res__tag">${alto ? 'Riesgo de incendio ALTO' : 'Riesgo de incendio ORDINARIO'}</p>
+        ${
+          alto
+            ? `<p>Al menos un concepto alcanza su umbral, y con uno basta:</p><ul>${disparadores
+                .map((d) => `<li>${d}</li>`)
+                .join('')}</ul>`
+            : `<p>Ninguno de los seis conceptos de la Tabla 1 alcanza su umbral con los datos capturados.</p>`
+        }
+        ${
+          minExt > 0
+            ? `<p><strong>Mínimo de extintores:</strong> ${minExt} (uno por cada ${porArea} m² o fracción, sobre ${fmt(
+                superficie,
+              )} m²). Es un mínimo normativo: la distribución real depende del recorrido y de las clases de fuego de cada área.</p>`
+            : `<p>Captura la superficie construida para estimar también el mínimo de extintores.</p>`
+        }
+        <p class="res__next">Siguiente paso: <a href="/herramientas/cuantos-extintores-necesito/">calcula el equipo por área</a> o pide el <a href="/servicios/diagnostico-de-riesgo/">diagnóstico de riesgo</a>.</p>
+      `
+      out.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+    })
+
+    form.addEventListener('reset', () => {
+      out.hidden = true
+      out.innerHTML = ''
+    })
+  }
+</script>
+
+<style>
+  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
+  .container--prose { max-width: var(--container-prose, 72ch); }
+  .section { padding: var(--sp-8) 0; }
+  .section--surface { background: var(--c-surface); }
+  .tool { padding: var(--sp-9) 0 var(--sp-7); }
+  .tool__eyebrow { color: var(--c-accent); text-transform: uppercase; letter-spacing: .08em; font-size: var(--text-sm); margin: 0 0 var(--sp-2); }
+  .tool__h1 { font-family: var(--font-heading); font-size: var(--text-fluid-4xl, 2.25rem); line-height: 1.1; margin: 0 0 var(--sp-3); }
+  .tool__lede { color: var(--c-ink-2); max-width: 60ch; margin: 0 0 var(--sp-6); }
+  .tool__form { border: 1px solid var(--c-border); border-radius: var(--radius-lg, 12px); padding: var(--sp-6); background: var(--c-white); }
+  .tool__grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-4); }
+  @media (min-width: 700px) { .tool__grid { grid-template-columns: repeat(2, 1fr); } }
+  .fld { display: grid; gap: var(--sp-2); font-size: var(--text-sm); color: var(--c-ink-2); }
+  /* 16px reales en el input: por debajo de eso iOS hace zoom al enfocar. */
+  .fld input[type="number"] { font-size: 1rem; padding: var(--sp-3); border: 1px solid var(--c-border); border-radius: var(--radius-md, 8px); background: var(--c-white); color: var(--c-ink); width: 100%; }
+  .fld input:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 1px; }
+  .fld--check { grid-template-columns: auto 1fr; align-items: start; gap: var(--sp-3); }
+  @media (min-width: 700px) { .fld--check { grid-column: 1 / -1; } }
+  .fld--check input { margin-top: .2rem; width: 1.15rem; height: 1.15rem; }
+  .tool__actions { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-top: var(--sp-5); }
+  .tool__note { margin-top: var(--sp-5); font-size: var(--text-sm); color: var(--c-ink-2); max-width: 70ch; }
+
+  .res { display: block; margin-top: var(--sp-6); padding: var(--sp-6); border-radius: var(--radius-lg, 12px); border: 1px solid var(--c-border); border-left-width: 4px; background: var(--c-white); }
+  .res--alto { border-left-color: var(--c-primary); }
+  .res--ordinario { border-left-color: #2e7d32; }
+  .res :global(.res__tag) { font-family: var(--font-heading); font-size: var(--text-lg); margin: 0 0 var(--sp-3); }
+  .res :global(ul) { margin: 0 0 var(--sp-3); padding-left: 1.2rem; }
+  .res :global(p) { margin: 0 0 var(--sp-3); }
+  .res :global(.res__next) { margin: 0; font-size: var(--text-sm); }
+
+  .tbl-wrap { overflow-x: auto; margin: var(--sp-5) 0; }
+  .tbl { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+  .tbl th, .tbl td { border: 1px solid var(--c-border); padding: var(--sp-3); text-align: left; }
+  .tbl th { background: var(--c-white); }
+</style>

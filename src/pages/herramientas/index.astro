@@ -1,0 +1,129 @@
+---
+// ============================================================================
+// /herramientas/ — Hub de herramientas de utilidad pública.
+// ----------------------------------------------------------------------------
+// Listado data-driven desde TOOLS (src/config/site.ts). Es una L2: agrupa las
+// calculadoras y verificadores gratuitos, y reparte enlaces hacia el catálogo,
+// los servicios y el blog.
+//
+// Schema: CollectionPage + ItemList con las herramientas publicadas.
+// ============================================================================
+import PageLayout from '@layouts/PageLayout.astro'
+import SectionHeading from '@components/SectionHeading.astro'
+import RelatedLinks from '@components/RelatedLinks.astro'
+import CTABanner from '@components/CTABanner.astro'
+import { TOOLS, waUrl, WA_MESSAGES } from '@config/site'
+
+const schemaData = {
+  list: {
+    name: 'Herramientas de seguridad contra incendio',
+    description:
+      'Calculadoras y verificadores gratuitos para clasificar el riesgo de incendio, calcular extintores y revisar el estado de tu equipo.',
+    path: '/herramientas/',
+    items: TOOLS.map((t) => ({
+      name: t.label,
+      path: `/herramientas/${t.slug}/`,
+      description: t.desc,
+    })),
+  },
+}
+---
+
+<PageLayout
+  title="Herramientas contra incendio gratuitas"
+  description="Calculadoras y verificadores gratuitos: clasifica el riesgo de incendio de tu centro de trabajo, calcula cuántos extintores necesitas y revisa si el mantenimiento de tu equipo es real."
+  pageType="category"
+  schemaData={schemaData}
+  breadcrumbs={[{ label: 'Herramientas' }]}
+  guia={false}
+>
+  <section class="hub">
+    <div class="container">
+      <p class="hub__eyebrow">Gratis y sin registro</p>
+      <h1 class="hub__h1">Herramientas para saber qué te exige la norma</h1>
+      <p class="hub__lede">
+        Tres herramientas para resolver las preguntas con las que empieza cualquier empresa: en qué
+        grado de riesgo estoy, cuánto equipo necesito y si el que ya tengo está en regla. Aplican los
+        criterios de la NOM-002-STPS-2010 y de la NOM-154-SCFI-2005, y citan de dónde sale cada
+        número.
+      </p>
+      <p class="hub__note">
+        Orientan, no dictaminan: el estudio o el dictamen formal lo elabora y lo firma quien está
+        facultado. Si quieres que lo hagamos nosotros, escríbenos.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <SectionHeading
+        layout="duo"
+        eyebrow="Herramientas"
+        title="Calcula, clasifica y"
+        titleAccent="verifica"
+        desc="Cada herramienta cita la norma de la que sale su criterio."
+        body={[
+          'Las hicimos porque son las tres preguntas que más nos llegan por WhatsApp antes de una cotización: qué grado de riesgo tengo, cuántos extintores me piden y si el servicio que me dieron el año pasado sirvió de algo.',
+          'Son gratuitas, no piden registro y funcionan igual si eres cliente nuestro o no.',
+        ]}
+      />
+
+      <ul class="tools" role="list">
+        {TOOLS.map((t) => (
+          <li class="tools__item">
+            <a class="tools__card" href={`/herramientas/${t.slug}/`}>
+              {t.norm && <span class="tools__badge">{t.norm}</span>}
+              <h2 class="tools__title">{t.label}</h2>
+              <p class="tools__desc">{t.desc}</p>
+              <span class="tools__cta">Abrir herramienta →</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <RelatedLinks
+        title="Y después de la herramienta"
+        links={[
+          { label: 'Catálogo de equipo', href: '/productos/', desc: 'Extintores, detección, gabinetes y señalización.' },
+          { label: 'Diagnóstico de riesgo', href: '/servicios/diagnostico-de-riesgo/', desc: 'El levantamiento del inmueble, documentado.' },
+          { label: 'Mantenimiento y recarga', href: '/servicios/mantenimiento/', desc: 'Servicio anual con comprobante.' },
+          { label: 'Guías del blog', href: '/blog/', desc: 'Normatividad, sistemas y prevención por giro.' },
+        ]}
+        limit={4}
+      />
+    </div>
+  </section>
+
+  <CTABanner
+    heading="¿Prefieres que lo revisemos contigo?"
+    desc="Cuéntanos el giro y el tamaño de tu inmueble y te decimos qué equipo es exigible y qué documentación te falta."
+    btns={[{ label: 'Escribir por WhatsApp', href: waUrl(WA_MESSAGES.default), icon: 'wa', primary: true, external: true }]}
+    badge="CDMX y Estado de México"
+    variant="red"
+  />
+</PageLayout>
+
+<style>
+  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
+  .section { padding: var(--sp-8) 0; }
+  .section--surface { background: var(--c-surface); }
+  .hub { padding: var(--sp-9) 0 var(--sp-6); }
+  .hub__eyebrow { color: var(--c-accent); text-transform: uppercase; letter-spacing: .08em; font-size: var(--text-sm); margin: 0 0 var(--sp-2); }
+  .hub__h1 { font-family: var(--font-heading); font-size: var(--text-fluid-4xl, 2.25rem); line-height: 1.1; margin: 0 0 var(--sp-3); }
+  .hub__lede { color: var(--c-ink-2); max-width: 65ch; margin: 0 0 var(--sp-4); }
+  .hub__note { font-size: var(--text-sm); color: var(--c-muted); max-width: 65ch; margin: 0; }
+
+  .tools { list-style: none; margin: var(--sp-6) 0 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: var(--sp-5); }
+  @media (min-width: 700px)  { .tools { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .tools { grid-template-columns: repeat(3, 1fr); } }
+  .tools__card { display: grid; gap: var(--sp-2); align-content: start; height: 100%; padding: var(--sp-6); border: 1px solid var(--c-border); border-radius: var(--radius-lg, 12px); background: var(--c-white); text-decoration: none; color: inherit; }
+  .tools__card:hover { border-color: var(--c-accent); }
+  .tools__badge { font-size: var(--text-xs); color: var(--c-muted); text-transform: uppercase; letter-spacing: .06em; }
+  .tools__title { font-family: var(--font-heading); font-size: var(--text-lg); margin: 0; }
+  .tools__desc { color: var(--c-ink-2); font-size: var(--text-sm); margin: 0; }
+  .tools__cta { margin-top: var(--sp-3); color: var(--c-accent); font-size: var(--text-sm); }
+</style>
