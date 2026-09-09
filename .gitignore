@@ -88,3 +88,6 @@ Thumbs.db
 # worktrees: copias de trabajo, nunca se versionan
 .worktrees/
 .claude/worktrees/
+
+# Papelera local (el shell de Cowork no puede borrar archivos en la carpeta montada)
+/_to_delete/

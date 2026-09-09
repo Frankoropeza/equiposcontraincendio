@@ -55,9 +55,9 @@ const faqs = [
 const otros = SERVICES.filter((s) => s.id !== id)
 
 const cierreItems = [
-  ...otros.map((s) => ({ label: s.label, href: `/servicios/${s.id}`, sub: 'Otro servicio' })),
-  { label: 'Todos los servicios', href: '/servicios', sub: 'Volver al catálogo' },
-  { label: 'Contacto', href: '/contacto', sub: 'Hablemos de tu proyecto' },
+  ...otros.map((s) => ({ label: s.label, href: `/servicios/${s.id}/`, sub: 'Otro servicio' })),
+  { label: 'Todos los servicios', href: '/servicios/', sub: 'Volver al catálogo' },
+  { label: 'Contacto', href: '/contacto/', sub: 'Hablemos de tu proyecto' },
 ]
 const cierreCta = { label: 'Cotizar este servicio', href: waUrl(WA_MESSAGES.servicios), sub: 'Respuesta inmediata', external: true }
 ---
@@ -66,7 +66,7 @@ const cierreCta = { label: 'Cotizar este servicio', href: waUrl(WA_MESSAGES.serv
   title={`${label} — servicio`}
   description={desc}
   pageType="page"
-  breadcrumbs={[{ label: 'Servicios', href: '/servicios' }, { label }]}
+  breadcrumbs={[{ label: 'Servicios', href: '/servicios/' }, { label }]}
   guia={false}
 >
   <Hero

@@ -18,7 +18,7 @@ export async function getStaticPaths() {
       .slice(0, 3)
       .map((p) => ({
         label: p.data.title,
-        href: `/productos/${p.id}`,
+        href: `/productos/${p.id}/`,
         description: p.data.description,
       }));
 

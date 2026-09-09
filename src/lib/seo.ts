@@ -368,6 +368,13 @@ export type MetaInput = {
   image?: string;          // ruta relativa o URL absoluta; default = SITE.seo.image
   type?: 'website' | 'article';
   noindex?: boolean;
+  /**
+   * Solo aplica junto a `noindex`. true → 'noindex,follow' (la página no se
+   * indexa pero SÍ transmite sus enlaces); por defecto 'noindex,nofollow'.
+   * Caso de uso (auditoría 2026-09-09 · P1-2): los archivos de etiqueta del
+   * blog no deben indexarse, pero sí deben seguir enlazando a los artículos.
+   */
+  follow?: boolean;
   publishedTime?: string;  // ISO — solo para type:'article'
   modifiedTime?: string;   // ISO — solo para type:'article'
 };
@@ -409,7 +416,7 @@ export function buildMeta(input: MetaInput): MetaOutput {
     imageType: ogImageMime(image),
     type: input.type ?? 'website',
     robots: input.noindex
-      ? 'noindex,nofollow'
+      ? (input.follow ? 'noindex,follow' : 'noindex,nofollow')
       : 'index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1',
     locale: SITE.locale?.replace('-', '_') ?? 'es_MX',
     siteName: SITE.name,

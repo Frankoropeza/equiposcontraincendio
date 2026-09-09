@@ -57,8 +57,10 @@ export interface Props {
   pageType?: PageType;
   /** Datos para el schema del tipo (product, service, article, faqs, list, breadcrumbs…). */
   schemaData?: SchemaData;
-  /** true → robots noindex,nofollow (drafts, /gracias, etc.). */
+  /** true → robots noindex (drafts, /gracias, archivos de etiqueta, 404). */
   noindex?: boolean;
+  /** Solo con `noindex`: true → 'noindex,follow' en vez de 'noindex,nofollow'. */
+  follow?: boolean;
 }
 
 const {
@@ -70,6 +72,7 @@ const {
   pageType = "page",
   schemaData = {},
   noindex = false,
+  follow = false,
 } = Astro.props;
 
 // Ruta canónica de la página actual (relativa; buildMeta la absolutiza).
@@ -95,6 +98,7 @@ const meta = buildMeta({
   image,
   type: ogType,
   noindex,
+  follow,
   publishedTime: (schemaData as any)?.article?.datePublished,
   modifiedTime: (schemaData as any)?.article?.dateModified,
 });

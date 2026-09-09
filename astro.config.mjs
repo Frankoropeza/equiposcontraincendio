@@ -88,8 +88,13 @@ const r = (p) => fileURLToPath(new URL(p, import.meta.url));
 /** @type {import('@astrojs/sitemap').SitemapOptions} */
 const sitemapOptions = {
   // Excluye rutas internas, drafts y páginas que no deben indexarse.
+  // AUDITORÍA 2026-09-09 · P1-2: fuera los archivos de etiqueta del blog.
+  // Eran 26 de las 56 URLs del sitemap (46 %) — listados casi vacíos que
+  // competían en el índice contra las 7 guías reales. La plantilla de tag
+  // emite `noindex, follow`: siguen navegables y siguen pasando enlaces.
   filter: (page) =>
     !page.includes('/404') &&
+    !page.includes('/blog/tag/') &&
     !page.includes('/_') &&
     !page.includes('/admin'),
 
@@ -103,12 +108,12 @@ const sitemapOptions = {
       item.changefreq = /** @type {any} */ ('weekly');
     }
     // Landing de categoría (L2) — reemplaza con los slugs reales del cliente.
-    else if (/\/(productos|servicios|blog|zonas)\/?$/.test(url)) {
+    else if (/\/(productos|servicios|blog|cobertura)\/?$/.test(url)) {
       item.priority = 0.9;
       item.changefreq = /** @type {any} */ ('monthly');
     }
     // Fichas internas (L3/L4): producto/servicio/zona individual.
-    else if (/\/(productos|servicios|blog|zonas)\/[^/]+\/?$/.test(url)) {
+    else if (/\/(productos|servicios|blog|cobertura)\/[^/]+\/?$/.test(url)) {
       item.priority = 0.8;
       item.changefreq = /** @type {any} */ ('monthly');
     }

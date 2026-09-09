@@ -2,9 +2,19 @@
 // ============================================================================
 // /blog/tag/<tag> — Archivo de etiqueta del blog.
 // ----------------------------------------------------------------------------
-// ArticleLayout enlaza cada tag de un artículo a /blog/tag/<tag>. Esta ruta
+// ArticleLayout enlaza cada tag de un artículo a /blog/tag/<slug>. Esta ruta
 // dinámica genera esos archivos: una página por etiqueta USADA, con sus
-// artículos. El slug es el tag tal cual (coincide con el href del layout).
+// artículos.
+//
+// AUDITORÍA 2026-09-09:
+//  · P1-3 — el slug ya NO es el tag tal cual: pasa por slugify() (@lib/slug).
+//    Antes, «protección contra incendio» generaba
+//    /blog/tag/protecci%C3%B3n%20contra%20incendio/ y un directorio con
+//    espacios en dist/. La etiqueta legible se conserva en props para pintarla.
+//  · P1-2 — estas páginas van `noindex, follow` y quedan fuera del sitemap
+//    (ver filter en astro.config.mjs): 26 archivos de etiqueta casi vacíos
+//    competían en el índice contra 7 guías reales. Siguen sirviendo para
+//    navegación y enlazado interno.
 // ============================================================================
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
@@ -13,6 +23,7 @@ import CategoryCard from '@components/CategoryCard.astro'
 import SectionMenu from '@components/SectionMenu.astro'
 import { getCollection } from 'astro:content'
 import { waUrl, WA_MESSAGES } from '@config/site'
+import { slugify } from '@lib/slug'
 
 export async function getStaticPaths() {
   const posts = (await getCollection('articulos', ({ data }) => !data.draft)).sort(
@@ -20,7 +31,7 @@ export async function getStaticPaths() {
   )
   const tags = [...new Set(posts.flatMap((p) => p.data.tags ?? []))]
   return tags.map((tag) => ({
-    params: { tag },
+    params: { tag: slugify(tag) },
     props: { tag, posts: posts.filter((p) => (p.data.tags ?? []).includes(tag)) },
   }))
 }
@@ -28,9 +39,9 @@ export async function getStaticPaths() {
 const { tag, posts } = Astro.props
 
 const cierreItems = [
-  { label: 'Todo el blog', href: '/blog', sub: 'Ver todos los artículos' },
-  { label: 'Servicios', href: '/servicios', sub: 'Lo que ofrecemos' },
-  { label: 'Contacto', href: '/contacto', sub: 'Hablemos de tu proyecto' },
+  { label: 'Todo el blog', href: '/blog/', sub: 'Ver todos los artículos' },
+  { label: 'Servicios', href: '/servicios/', sub: 'Lo que ofrecemos' },
+  { label: 'Contacto', href: '/contacto/', sub: 'Hablemos de tu proyecto' },
   { label: 'Inicio', href: '/', sub: 'Volver a la home' },
 ]
 const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog), sub: 'Respuesta inmediata', external: true }
@@ -40,7 +51,9 @@ const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog)
   title={`Tema: ${tag} — blog`}
   description={`Artículos del blog de Equipos Contra Incendio etiquetados con «${tag}». Archivo de etiqueta generado automáticamente desde la colección de artículos.`}
   pageType="page"
-  breadcrumbs={[{ label: 'Blog', href: '/blog' }, { label: `#${tag}` }]}
+  noindex={true}
+  follow={true}
+  breadcrumbs={[{ label: 'Blog', href: '/blog/' }, { label: `#${tag}` }]}
   guia={false}
 >
   <Hero
@@ -49,7 +62,7 @@ const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog)
     accent={`#${tag}`}
     subtitle={`Artículos etiquetados con «${tag}». Las etiquetas conectan artículos de distintas categorías que comparten un mismo asunto.`}
     descRight={[
-      'Las etiquetas son una segunda capa de organización, transversal a las categorías: un mismo tema (por ejemplo, «astro» o «markdown») puede aparecer en guías y en novedades. Agrupar por etiqueta ayuda a quien busca algo muy específico a encontrar todo lo relacionado, sin importar la sección.',
+      'Las etiquetas son una segunda capa de organización, transversal a las categorías: un mismo tema (por ejemplo, «extintores» o «NOM-002-STPS») puede aparecer en guías y en novedades. Agrupar por etiqueta ayuda a quien busca algo muy específico a encontrar todo lo relacionado, sin importar la sección.',
       'Esta página se genera sola desde la colección: lista los artículos que incluyen esta etiqueta. Conviene usar pocas etiquetas consistentes —no inventar una nueva por artículo— para que cada archivo tenga contenido suficiente y valor real.',
     ]}
   />
@@ -70,7 +83,7 @@ const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog)
         {posts.map((a, i) => (
           <CategoryCard
             label={a.data.title}
-            href={`/blog/${a.id}`}
+            href={`/blog/${a.id}/`}
             image={a.data.heroImage}
             imageAlt={a.data.title}
             badge={a.data.category}

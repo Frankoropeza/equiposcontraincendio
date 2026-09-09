@@ -245,10 +245,10 @@ const schemaData = {
   list: {
     name: 'Equipo contra incendio',
     description: 'Catálogo de equipo contra incendio: extintores, detección y alarmas, hidrantes y mangueras, y señalización de emergencia.',
-    path: '/productos',
+    path: '/productos/',
     items: productos.map((p) => ({
       name: p.data.title,
-      path: `/productos/${p.id}`,
+      path: `/productos/${p.id}/`,
       image: p.data.image,
       description: p.data.description,
     })),
@@ -356,7 +356,7 @@ const schemaData = {
           {productos.map((p, i) => (
             <ProductCard
               title={p.data.title}
-              href={`/productos/${p.id}`}
+              href={`/productos/${p.id}/`}
               image={p.data.image}
               imageAlt={p.data.title}
               badge={CAT_LABEL[p.data.category] ?? p.data.category}

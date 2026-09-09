@@ -28,9 +28,9 @@ export async function getStaticPaths() {
 const { categoria, posts } = Astro.props
 
 const cierreItems = [
-  { label: 'Todo el blog', href: '/blog', sub: 'Ver todos los artículos' },
-  { label: 'Servicios', href: '/servicios', sub: 'Lo que ofrecemos' },
-  { label: 'Contacto', href: '/contacto', sub: 'Hablemos de tu proyecto' },
+  { label: 'Todo el blog', href: '/blog/', sub: 'Ver todos los artículos' },
+  { label: 'Servicios', href: '/servicios/', sub: 'Lo que ofrecemos' },
+  { label: 'Contacto', href: '/contacto/', sub: 'Hablemos de tu proyecto' },
   { label: 'Inicio', href: '/', sub: 'Volver a la home' },
 ]
 const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog), sub: 'Respuesta inmediata', external: true }
@@ -40,7 +40,7 @@ const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog)
   title={`Categoría: ${categoria} — blog`}
   description={`Artículos del blog de Equipos Contra Incendio en la categoría ${categoria}. Archivo de categoría generado automáticamente desde la colección de artículos.`}
   pageType="page"
-  breadcrumbs={[{ label: 'Blog', href: '/blog' }, { label: categoria }]}
+  breadcrumbs={[{ label: 'Blog', href: '/blog/' }, { label: categoria }]}
   guia={false}
 >
   <Hero
@@ -70,7 +70,7 @@ const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog)
         {posts.map((a, i) => (
           <CategoryCard
             label={a.data.title}
-            href={`/blog/${a.id}`}
+            href={`/blog/${a.id}/`}
             image={a.data.heroImage}
             imageAlt={a.data.title}
             badge={a.data.category}

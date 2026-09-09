@@ -46,9 +46,9 @@ const faqs = [
 
 const otras = COVERAGE_STATES.filter((z) => z.slug !== slug)
 const cierreItems = [
-  ...otras.map((z) => ({ label: z.label, href: `/cobertura/${z.slug}`, sub: 'Otra zona' })),
-  { label: 'Toda la cobertura', href: '/cobertura', sub: 'Volver a zonas' },
-  { label: 'Servicios', href: '/servicios', sub: 'Lo que ofrecemos' },
+  ...otras.map((z) => ({ label: z.label, href: `/cobertura/${z.slug}/`, sub: 'Otra zona' })),
+  { label: 'Toda la cobertura', href: '/cobertura/', sub: 'Volver a zonas' },
+  { label: 'Servicios', href: '/servicios/', sub: 'Lo que ofrecemos' },
 ]
 const cierreCta = { label: `Cotizar en ${label}`, href: waZona, sub: 'Respuesta inmediata', external: true }
 ---
@@ -57,7 +57,7 @@ const cierreCta = { label: `Cotizar en ${label}`, href: waZona, sub: 'Respuesta 
   title={`Equipo contra incendio en ${label}`}
   description={`Equipo contra incendio en ${label}: venta, instalación, mantenimiento e inspección con servicio en sitio. Cotiza por WhatsApp — CDMX y Estado de México.`}
   pageType="page"
-  breadcrumbs={[{ label: 'Cobertura', href: '/cobertura' }, { label }]}
+  breadcrumbs={[{ label: 'Cobertura', href: '/cobertura/' }, { label }]}
   guia={false}
 >
   <Hero
@@ -71,7 +71,7 @@ const cierreCta = { label: `Cotizar en ${label}`, href: waZona, sub: 'Respuesta 
     ]}
     ctas={[
       { text: 'Cotizar por WhatsApp', href: waZona, variant: 'primary', whatsapp: true },
-      { text: 'Ver catálogo', href: '/productos', variant: 'outline' },
+      { text: 'Ver catálogo', href: '/productos/', variant: 'outline' },
     ]}
   />
 
@@ -93,7 +93,7 @@ const cierreCta = { label: `Cotizar en ${label}`, href: waZona, sub: 'Respuesta 
         <p class="servicios-zona__lead">Servicios disponibles en {label}:</p>
         <ul class="chips">
           {SERVICES.map((s) => (
-            <li><a class="chip" href={`/servicios/${s.id}`}>{s.label}</a></li>
+            <li><a class="chip" href={`/servicios/${s.id}/`}>{s.label}</a></li>
           ))}
         </ul>
       </div>

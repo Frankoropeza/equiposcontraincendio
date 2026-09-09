@@ -38,6 +38,8 @@ export interface Props {
   pageType?: PageType;
   schemaData?: SchemaData;
   noindex?: boolean;
+  /** Solo con `noindex`: true → 'noindex,follow' (no indexar, sí seguir enlaces). */
+  follow?: boolean;
   /**
    * Migas de pan (para el componente visual). { label, href }.
    * Si se omite o queda vacío, no se renderiza la barra ni el BreadcrumbList.

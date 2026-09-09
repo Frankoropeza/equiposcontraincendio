@@ -115,15 +115,22 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
+# ─── Herramientas SEO propias (PERMITIDAS) ───
+# AUDITORÍA 2026-09-09 · P1-6: AhrefsBot y SemrushBot estaban en Disallow, lo
+# que impedía auditar y monitorear NUESTRO PROPIO sitio con las herramientas
+# contratadas (Site Audit, enlaces internos, rank tracker). Se permiten con
+# crawl-delay para acotar la carga.
+User-agent: AhrefsBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: SemrushBot
+Allow: /
+Crawl-delay: 2
+
 # ─── Bots/scrapers bloqueados ───
 # Bytespider (ByteDance): histórico de scraping abusivo.
 User-agent: Bytespider
-Disallow: /
-
-User-agent: AhrefsBot
-Disallow: /
-
-User-agent: SemrushBot
 Disallow: /
 
 User-agent: MJ12bot

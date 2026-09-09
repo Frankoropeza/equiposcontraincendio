@@ -132,11 +132,11 @@ export const CONTACT = {
 // hasta que existan páginas por categoría (pendiente: landings /productos/<cat>).
 export const TAXONOMY = {
   categories: [
-    { slug: 'extintores',          label: 'Extintores',                badge: undefined, href: '/productos' },
-    { slug: 'deteccion-alarmas',   label: 'Detección y alarmas',       badge: undefined, href: '/productos' },
-    { slug: 'hidrantes-mangueras', label: 'Hidrantes y mangueras',     badge: undefined, href: '/productos' },
-    { slug: 'senalizacion',        label: 'Señalización y emergencia', badge: undefined, href: '/productos' },
-    { slug: 'accesorios',          label: 'Accesorios y refacciones',  badge: undefined, href: '/productos' },
+    { slug: 'extintores',          label: 'Extintores',                badge: undefined, href: '/productos/' },
+    { slug: 'deteccion-alarmas',   label: 'Detección y alarmas',       badge: undefined, href: '/productos/' },
+    { slug: 'hidrantes-mangueras', label: 'Hidrantes y mangueras',     badge: undefined, href: '/productos/' },
+    { slug: 'senalizacion',        label: 'Señalización y emergencia', badge: undefined, href: '/productos/' },
+    { slug: 'accesorios',          label: 'Accesorios y refacciones',  badge: undefined, href: '/productos/' },
   ],
   services: [
     { id: 'instalacion',   label: 'Instalación de sistemas', desc: 'Proyecto e instalación de sistemas y equipo contra incendio.' },
@@ -173,36 +173,36 @@ export type NavItem = {
 export const NAV: readonly NavItem[] = [
   {
     label: 'Productos',
-    href: '/productos',
+    href: '/productos/',
     panel: 'mega',
     allLabel: 'Ver catálogo completo',
     items: PRODUCT_CATEGORIES.map((c) => ({ label: c.label, href: c.href })),
   },
   {
     label: 'Servicios',
-    href: '/servicios',
+    href: '/servicios/',
     panel: 'dropdown',
     allLabel: 'Ver todos los servicios',
-    items: SERVICES.map((s) => ({ label: s.label, href: `/servicios/${s.id}`, desc: s.desc })),
+    items: SERVICES.map((s) => ({ label: s.label, href: `/servicios/${s.id}/`, desc: s.desc })),
   },
   {
     label: 'Cobertura',
-    href: '/cobertura',
+    href: '/cobertura/',
     panel: 'dropdown',
     allLabel: 'Ver toda la cobertura',
-    items: COVERAGE_STATES.map((s) => ({ label: s.label, href: `/cobertura/${s.slug}` })),
+    items: COVERAGE_STATES.map((s) => ({ label: s.label, href: `/cobertura/${s.slug}/` })),
   },
   ...(SECTORS.length > 0
     ? [{
         label: 'Sectores',
-        href: '/sectores',
+        href: '/sectores/',
         panel: 'dropdown' as const,
         allLabel: 'Ver todos los sectores',
-        items: SECTORS.map((s) => ({ label: s.label, href: `/sectores/${s.slug}` })),
+        items: SECTORS.map((s) => ({ label: s.label, href: `/sectores/${s.slug}/` })),
       }]
     : []),
-  { label: 'Blog', href: '/blog' },
-  { label: 'Contacto', href: '/contacto' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'Contacto', href: '/contacto/' },
 ];
 
 // ── SHOWCASE — vitrina de categorías de la home (cards con subcategorías) ─────
@@ -222,128 +222,128 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
   {
     slug: 'extintores',
     label: 'Extintores',
-    href: '/productos',
+    href: '/productos/',
     image: '/images/showcase/extintores-pqs-co2-agua.svg',
     imageAlt: 'Extintores PQS, CO₂ y agua para distintas clases de fuego',
     badge: 'NOM-154 · A·B·C·K',
     blurb:
       'Extintores PQS, CO₂, agua y agentes especiales para cada clase de fuego. Te ayudamos a elegir el agente y la capacidad según tu riesgo, con recarga y mantenimiento conforme a la NOM-002-STPS.',
     subcategories: [
-      { label: 'PQS multipropósito', href: '/productos' },
-      { label: 'CO₂', href: '/productos' },
-      { label: 'Agente K (cocinas)', href: '/productos' },
+      { label: 'PQS multipropósito', href: '/productos/' },
+      { label: 'CO₂', href: '/productos/' },
+      { label: 'Agente K (cocinas)', href: '/productos/' },
     ],
     ctaLabel: 'Ver extintores',
   },
   {
     slug: 'deteccion-alarmas',
     label: 'Detección y alarmas',
-    href: '/productos',
+    href: '/productos/',
     image: '/images/showcase/deteccion-humo-alarma.svg',
     imageAlt: 'Detectores de humo y panel de alarma contra incendio',
     badge: 'NFPA 72',
     blurb:
       'Detectores de humo y calor, paneles, estaciones manuales y sirenas. Sistemas que avisan a tiempo para proteger personas y bienes, dimensionados a tu inmueble.',
     subcategories: [
-      { label: 'Detectores de humo', href: '/productos' },
-      { label: 'Paneles de alarma', href: '/productos' },
-      { label: 'Estaciones manuales', href: '/productos' },
+      { label: 'Detectores de humo', href: '/productos/' },
+      { label: 'Paneles de alarma', href: '/productos/' },
+      { label: 'Estaciones manuales', href: '/productos/' },
     ],
     ctaLabel: 'Ver detección',
   },
   {
     slug: 'hidrantes-mangueras',
     label: 'Hidrantes y mangueras',
-    href: '/productos',
+    href: '/productos/',
     image: '/images/showcase/hidrantes-mangueras-gabinete.svg',
     imageAlt: 'Gabinete con manguera contra incendio e hidrante',
     badge: 'Red NFPA 14',
     blurb:
       'Gabinetes, mangueras, hidrantes, válvulas y conexiones siamesas para tu red hidráulica contra incendio. Componentes para una respuesta efectiva ante conatos mayores.',
     subcategories: [
-      { label: 'Gabinetes', href: '/productos' },
-      { label: 'Mangueras', href: '/productos' },
-      { label: 'Válvulas e hidrantes', href: '/productos' },
+      { label: 'Gabinetes', href: '/productos/' },
+      { label: 'Mangueras', href: '/productos/' },
+      { label: 'Válvulas e hidrantes', href: '/productos/' },
     ],
     ctaLabel: 'Ver hidrantes',
   },
   {
     slug: 'senalizacion',
     label: 'Señalización y emergencia',
-    href: '/productos',
+    href: '/productos/',
     image: '/images/showcase/senalizacion-rutas-evacuacion.svg',
     imageAlt: 'Señalización fotoluminiscente de ruta de evacuación y salida',
     badge: 'NOM-003 · Fotoluminiscente',
     blurb:
       'Señalización fotoluminiscente, lámparas de emergencia, rutas de evacuación y equipo de apoyo. Lo que tu inmueble necesita para cumplir y guiar una evacuación segura.',
     subcategories: [
-      { label: 'Señales fotoluminiscentes', href: '/productos' },
-      { label: 'Lámparas de emergencia', href: '/productos' },
-      { label: 'Rutas de evacuación', href: '/productos' },
+      { label: 'Señales fotoluminiscentes', href: '/productos/' },
+      { label: 'Lámparas de emergencia', href: '/productos/' },
+      { label: 'Rutas de evacuación', href: '/productos/' },
     ],
     ctaLabel: 'Ver señalización',
   },
   {
     slug: 'sistemas-supresion',
     label: 'Sistemas contra incendio',
-    href: '/productos',
+    href: '/productos/',
     image: '/images/showcase/sistemas-rociadores-supresion.svg',
     imageAlt: 'Sistemas fijos contra incendio: rociadores y supresión de cocina',
     badge: 'Rociadores · Cocina K',
     blurb:
       'Sistemas fijos que actúan solos: rociadores, supresión de cocina clase K en campana y agente limpio para sites y cuartos eléctricos. Proyecto e instalación dimensionados a tu inmueble.',
     subcategories: [
-      { label: 'Rociadores', href: '/productos' },
-      { label: 'Supresión de cocina (K)', href: '/productos' },
-      { label: 'Agente limpio', href: '/productos' },
+      { label: 'Rociadores', href: '/productos/' },
+      { label: 'Supresión de cocina (K)', href: '/productos/' },
+      { label: 'Agente limpio', href: '/productos/' },
     ],
     ctaLabel: 'Ver sistemas',
   },
   {
     slug: 'proteccion-primeros-auxilios',
     label: 'Protección y primeros auxilios',
-    href: '/productos',
+    href: '/productos/',
     image: '/images/showcase/proteccion-primeros-auxilios.svg',
     imageAlt: 'Botiquín de primeros auxilios y equipo de apoyo para brigada',
     badge: 'Brigada',
     blurb:
       'Equipo de apoyo para tu brigada y botiquines conforme a la NOM-020-STPS: lo que tu personal necesita para responder mientras llega la ayuda.',
     subcategories: [
-      { label: 'Botiquines', href: '/productos' },
-      { label: 'Equipo de brigada', href: '/productos' },
-      { label: 'Mantas y apoyo', href: '/productos' },
+      { label: 'Botiquines', href: '/productos/' },
+      { label: 'Equipo de brigada', href: '/productos/' },
+      { label: 'Mantas y apoyo', href: '/productos/' },
     ],
     ctaLabel: 'Ver protección',
   },
   {
     slug: 'equipo-proteccion-personal',
     label: 'Equipo de protección personal',
-    href: '/productos',
+    href: '/productos/',
     image: '/images/showcase/equipo-proteccion-personal.svg',
     imageAlt: 'Casco, guantes y equipo de protección personal contra incendio',
     badge: 'EPP · NOM-115',
     blurb:
       'Cascos, guantes, trajes y equipo de protección personal para brigadas de emergencia. Cumplimiento a la NOM-115-STPS para el personal de respuesta interna.',
     subcategories: [
-      { label: 'Cascos y caretas', href: '/productos' },
-      { label: 'Guantes térmicos', href: '/productos' },
-      { label: 'Trajes de aproximación', href: '/productos' },
+      { label: 'Cascos y caretas', href: '/productos/' },
+      { label: 'Guantes térmicos', href: '/productos/' },
+      { label: 'Trajes de aproximación', href: '/productos/' },
     ],
     ctaLabel: 'Ver EPP',
   },
   {
     slug: 'accesorios-refacciones',
     label: 'Accesorios y refacciones',
-    href: '/productos',
+    href: '/productos/',
     image: '/images/showcase/accesorios-refacciones.svg',
     imageAlt: 'Accesorios y refacciones para extintores y sistemas contra incendio',
     badge: 'Mantenimiento',
     blurb:
       'Mangueras de descarga, válvulas, collarines, manómetros, soportes y todo lo necesario para el mantenimiento y recarga de extintores y sistemas.',
     subcategories: [
-      { label: 'Refacciones de extintor', href: '/productos' },
-      { label: 'Soportes y señales', href: '/productos' },
-      { label: 'Herramienta de servicio', href: '/productos' },
+      { label: 'Refacciones de extintor', href: '/productos/' },
+      { label: 'Soportes y señales', href: '/productos/' },
+      { label: 'Herramienta de servicio', href: '/productos/' },
     ],
     ctaLabel: 'Ver accesorios',
   },
@@ -359,9 +359,9 @@ export const SOCIAL: { network: SocialNetwork; label: string; url: string }[] = 
 
 // ── LEGAL — enlaces legales de la barra inferior del Footer ──────────────────
 export const LEGAL: { label: string; href: string }[] = [
-  { label: 'Aviso de privacidad', href: '/privacidad' },
-  { label: 'Términos y condiciones', href: '/terminos' },
-  { label: 'Política de cookies', href: '/cookies' },
+  { label: 'Aviso de privacidad', href: '/privacidad/' },
+  { label: 'Términos y condiciones', href: '/terminos/' },
+  { label: 'Política de cookies', href: '/cookies/' },
   { label: 'Mapa del sitio', href: '/sitemap-index.xml' },
 ];
 

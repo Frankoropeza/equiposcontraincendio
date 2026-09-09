@@ -59,7 +59,7 @@ const menuCta = {
       'Contenido pensado para que tomes mejores decisiones de protección, con información confiable y aplicada a tu caso. ¿Tienes una duda puntual? Escríbenos por WhatsApp.',
     ]}
     ctas={[
-      { text: 'Ver catálogo', href: '/productos', variant: 'outline' },
+      { text: 'Ver catálogo', href: '/productos/', variant: 'outline' },
       { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog), variant: 'primary', whatsapp: true },
     ]}
   />
@@ -85,7 +85,7 @@ const menuCta = {
         {articulos.map((a, i) => (
           <CategoryCard
             label={a.data.title}
-            href={`/blog/${a.id}`}
+            href={`/blog/${a.id}/`}
             image={a.data.heroImage}
             imageAlt={a.data.title}
             badge={CAT_LABEL[a.data.category] ?? 'Artículo'}
