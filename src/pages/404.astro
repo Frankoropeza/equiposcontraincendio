@@ -1,0 +1,115 @@
+---
+// /404 — Página de error 404.
+//
+// POR QUÉ EXISTE (auditoría 2026-09-09 · hallazgo P0-3): sin este archivo Astro
+// no genera `dist/404.html` y Cloudflare Pages responde a CUALQUIER URL
+// inexistente con la home y HTTP 200 → soft-404 en un espacio de URLs infinito,
+// todos con el canonical de la home. Con `dist/404.html` presente, Pages lo
+// sirve automáticamente con status 404 real.
+//
+// REGLAS: `noindex` obligatorio (no debe indexarse) y enlaces de rescate a las
+// secciones que convierten. NO se emite breadcrumb (no hay ruta que describir).
+import PageLayout from '@layouts/PageLayout.astro'
+import Hero from '@components/Hero.astro'
+import { waUrl, WA_MESSAGES } from '@config/site'
+
+const destinos = [
+  { label: 'Catálogo de productos', href: '/productos/', sub: 'Extintores, detección, hidrantes y señalización' },
+  { label: 'Servicios',             href: '/servicios/',  sub: 'Instalación, mantenimiento, recarga e inspección' },
+  { label: 'Cobertura',             href: '/cobertura/',  sub: 'CDMX y Estado de México' },
+  { label: 'Blog',                  href: '/blog/',       sub: 'Guías de normatividad y selección de equipo' },
+  { label: 'Contacto',              href: '/contacto/',   sub: 'Cotizaciones y atención directa' },
+]
+---
+
+<PageLayout
+  title="Página no encontrada"
+  description="La página que buscas no existe o cambió de dirección. Te dejamos los accesos al catálogo, los servicios y el contacto."
+  pageType="page"
+  noindex={true}
+  guia={false}
+>
+  <Hero
+    badge="Error 404"
+    title="Esta página"
+    accent="no existe"
+    subtitle="Puede que el enlace esté roto, que la dirección se haya escrito con un error o que la página haya cambiado de sitio."
+    descRight={[
+      'Nada se perdió: el catálogo, los servicios y el contacto siguen donde estaban. Elige abajo a dónde quieres ir, o escríbenos y te decimos exactamente qué necesitas para tu inmueble.',
+    ]}
+    ctas={[
+      { text: 'Ir al inicio', href: '/', variant: 'outline' },
+      { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.cotizar), variant: 'primary', whatsapp: true },
+    ]}
+  />
+
+  <section class="section">
+    <div class="container">
+      <h2 class="nf__title">¿A dónde ibas?</h2>
+      <ul class="nf__list" role="list">
+        {destinos.map((d) => (
+          <li class="nf__item">
+            <a class="nf__link" href={d.href}>
+              <span class="nf__label">{d.label}</span>
+              <span class="nf__sub">{d.sub}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
+  .section { padding: var(--sp-8) 0; }
+
+  .nf__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-bold);
+    color: var(--c-ink);
+    margin: 0 0 var(--sp-5);
+  }
+
+  .nf__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: var(--sp-4);
+  }
+
+  .nf__link {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-1);
+    min-height: 44px;
+    height: 100%;
+    padding: var(--sp-4) var(--sp-5);
+    text-decoration: none;
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-left: 3px solid var(--c-primary);
+    border-radius: var(--radius-md);
+    transition: background var(--transition), border-color var(--transition);
+  }
+  .nf__link:hover { background: var(--c-surface); }
+  .nf__link:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 2px; }
+
+  .nf__label {
+    font-family: var(--font-heading);
+    font-weight: var(--weight-semibold);
+    color: var(--c-ink);
+  }
+  .nf__sub {
+    font-size: var(--text-sm);
+    color: var(--c-muted);
+    line-height: var(--leading-normal);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nf__link { transition: none; }
+  }
+</style>
