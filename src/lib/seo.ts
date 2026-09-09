@@ -101,8 +101,14 @@ function ogShareImage(abs: string): string {
   const m = abs.match(/^https?:\/\/[^/]+(\/images\/.+)\.(svg|avif|webp)$/i);
   if (!m) return abs;
   const flat = (m[1] ?? '').replace(/^\/images\//, '').replace(/\//g, '-');
-  const candidate = `/images/og/${flat}.png`;
-  if (existsSync(join(PUBLIC_DIR, candidate))) return `${SITE.url}${candidate}`;
+  // .jpg primero, .png como respaldo (revisión 2026-09-09): scripts/gen-og.mjs
+  // pasó a emitir JPEG porque con fotografía real el PNG superaba 1 MB, un peso
+  // que WhatsApp tiene que descargar antes de pintar la tarjeta. Los .png
+  // heredados siguen funcionando mientras no se regeneren.
+  for (const ext of ['jpg', 'png']) {
+    const candidate = `/images/og/${flat}.${ext}`;
+    if (existsSync(join(PUBLIC_DIR, candidate))) return `${SITE.url}${candidate}`;
+  }
   return absImage(SITE.seo?.image ?? '/images/og/default.png') ?? abs;
 }
 

@@ -1,18 +1,25 @@
 #!/usr/bin/env node
 // ============================================================================
-// scripts/gen-og.mjs — genera los PNG de Open Graph (1200×630) que faltan.
+// scripts/gen-og.mjs — genera las imágenes de Open Graph (1200×630) que faltan.
 // ----------------------------------------------------------------------------
 // POR QUÉ (auditoría 2026-09-09 · hallazgo P1-7): `ogShareImage()` de
 // src/lib/seo.ts reescribe la imagen de la página
-//     /images/<dir>/<name>.svg  →  /images/og/<dir>-<name>.png
+//     /images/<dir>/<name>.svg  →  /images/og/<dir>-<name>.jpg
 // y, si ese PNG no existe, cae al OG por defecto del sitio. Productos y
 // artículos tenían el suyo; servicios y zonas NO, así que al compartir un
 // servicio o una zona por WhatsApp —el canal principal del negocio— salía la
 // tarjeta genérica.
 //
-// QUÉ HACE: recorre las imágenes referenciadas por las colecciones `servicios`
-// y `zonas`, y por cada SVG sin su PNG de OG lo genera con el naming aplanado
-// que espera ogShareImage(). Idempotente: no toca los que ya existen.
+// QUÉ HACE: recorre las imágenes referenciadas por TODAS las colecciones y, por
+// cada una sin su PNG de OG, lo genera con el naming aplanado que espera
+// ogShareImage(). Idempotente: no toca los que ya existen (usa --force para
+// regenerar).
+//
+// SALTA LOS PLACEHOLDERS (revisión 2026-09-09): si la imagen de origen es un SVG
+// con el cartel «Imagen próximamente», NO se genera su OG. Generarlo sería peor
+// que no tenerlo: al compartir la ficha por WhatsApp saldría una tarjeta que
+// dice que la foto falta, en vez del OG de marca por defecto, que sí es digno.
+// En cuanto la ficha reciba su foto real, volver a correr el script la cubre.
 //
 // REQUIERE `sharp` (presente en el árbol de dependencias de Astro). No forma
 // parte del build: se corre a mano cuando se añaden imágenes.
@@ -39,14 +46,20 @@ try {
   process.exit(1);
 }
 
-/** /images/servicios/foo.svg → images/og/servicios-foo.png (naming de ogShareImage). */
+/** /images/servicios/foo.avif → images/og/servicios-foo.jpg (naming de ogShareImage).
+ *
+ *  JPEG, no PNG (revisión 2026-09-09): con los placeholders vectoriales el PNG
+ *  pesaba ~28 KB, pero con fotografía real se disparaba por encima de 1 MB —
+ *  demasiado para una tarjeta que WhatsApp tiene que descargar antes de pintar
+ *  la previsualización. En JPEG de calidad 82 la misma imagen ronda los 150 KB.
+ *  `ogShareImage()` en src/lib/seo.ts busca .jpg primero y .png como respaldo. */
 function ogNameFor(rel) {
-  const m = rel.match(/^\/images\/(.+)\.(svg|avif|webp)$/i);
+  const m = rel.match(/^\/images\/(.+)\.(svg|avif|webp|png|jpe?g)$/i);
   if (!m) return null;
-  return `${m[1].replace(/\//g, '-')}.png`;
+  return `${m[1].replace(/\//g, '-')}.jpg`;
 }
 
-/** Extrae los `image:` del frontmatter de una colección. */
+/** Extrae los `image:` / `heroImage:` del frontmatter de una colección. */
 function imagesOf(collection) {
   const dir = path.join(ROOT, 'src', 'content', collection);
   if (!fs.existsSync(dir)) return [];
@@ -60,7 +73,18 @@ function imagesOf(collection) {
     });
 }
 
-const targets = [...new Set([...imagesOf('servicios'), ...imagesOf('zonas')])];
+/** ¿El origen es un SVG con el cartel «Imagen próximamente»? */
+function esPlaceholder(absPath) {
+  if (!/\.svg$/i.test(absPath)) return false;
+  try {
+    return /pr[oó]ximamente/i.test(fs.readFileSync(absPath, 'utf8'));
+  } catch {
+    return false;
+  }
+}
+
+const COLECCIONES = ['productos', 'servicios', 'articulos', 'zonas', 'casos'];
+const targets = [...new Set(COLECCIONES.flatMap((c) => imagesOf(c)))];
 if (!targets.length) {
   console.log('gen-og — no hay imágenes de servicios/zonas que procesar.');
   process.exit(0);
@@ -68,6 +92,7 @@ if (!targets.length) {
 
 fs.mkdirSync(OG_DIR, { recursive: true });
 let hechos = 0, saltados = 0;
+const placeholders = [];
 
 for (const rel of targets) {
   const name = ogNameFor(rel);
@@ -78,6 +103,10 @@ for (const rel of targets) {
     console.warn(`  ! origen inexistente: ${rel}`);
     continue;
   }
+  if (esPlaceholder(src)) {
+    placeholders.push(rel);
+    continue;
+  }
   if (fs.existsSync(out) && !FORCE) {
     saltados++;
     continue;
@@ -85,10 +114,17 @@ for (const rel of targets) {
   // density alta: el SVG se rasteriza nítido antes de encajar en 1200×630.
   await sharp(src, { density: 220 })
     .resize(W, H, { fit: 'cover', position: 'centre' })
-    .png({ compressionLevel: 9 })
+    .flatten({ background: '#ffffff' }) // JPEG no tiene alfa: fondo blanco.
+    .jpeg({ quality: 82, mozjpeg: true, chromaSubsampling: '4:4:4' })
     .toFile(out);
   console.log(`  ✓ ${rel}  →  /images/og/${name}`);
   hechos++;
 }
 
 console.log(`\ngen-og — ${hechos} generado(s), ${saltados} ya existían.`);
+if (placeholders.length) {
+  console.log(`\n⚠  ${placeholders.length} ficha(s) SIN OG porque su imagen sigue siendo el cartel «Imagen próximamente»:`);
+  for (const rel of placeholders) console.log(`   · ${rel}`);
+  console.log('   Caen al OG por defecto del sitio, que es lo correcto. Vuelve a correr');
+  console.log('   este script (con --force) en cuanto reciban su foto real.');
+}
