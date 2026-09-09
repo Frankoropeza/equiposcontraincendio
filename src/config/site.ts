@@ -12,10 +12,13 @@
 //   ✓ Teléfono y WhatsApp REALES (55 3934 0581). Frank indicó que es la línea
 //     disponible por ahora; si más adelante llega una definitiva, se cambia aquí
 //     y se propaga sola a topbar, header, botón flotante, formulario y JSON-LD.
-//   ⚠ PENDIENTE de verificar: domicilio, código postal, geo y horario siguen sin
-//     confirmarse contra el negocio real, y `organization.legalName` es el nombre
-//     comercial, no una razón social. Eso afecta al aviso de privacidad y a los
-//     términos, que publican esa identidad. Ver hallazgo P0-4 de la auditoría.
+//   ✓ Domicilio REAL confirmado 2026-09-09: Lago Alberto 319, Piso 6, Col.
+//     Granada, Miguel Hidalgo, 11520 CDMX. Geo verificado por geocoding
+//     (OpenStreetMap/Nominatim, house_number 319 exacto).
+//   ⚠ PENDIENTE de verificar: horario sigue sin confirmarse contra el negocio
+//     real, y `organization.legalName` es el nombre comercial, no una razón
+//     social. Eso afecta al aviso de privacidad y a los términos, que publican
+//     esa identidad. Ver hallazgo P0-4 de la auditoría.
 // El gate `npm run check:demo` valida forma y coherencia del NAP en cada build.
 // NO se inventan credenciales (años, reseñas, clientes).
 // ============================================================================
@@ -70,15 +73,15 @@ export const SITE = {
     type: ['LocalBusiness'] as string | string[],
     priceRange: '$$',
     address: {
-      street: 'Av. Homero 538-#303, Col. Polanco, Miguel Hidalgo',
+      street: 'Lago Alberto 319, Piso 6, Col. Granada, Miguel Hidalgo',
       locality: 'Ciudad de México',
       region: 'CDMX',
-      postalCode: '11560',
+      postalCode: '11520',
       country: 'MX',
     },
     geo: {
-      lat: 19.4307 as string | number, // Polanco, Miguel Hidalgo, CDMX.
-      lng: -99.1960 as string | number,
+      lat: 19.439817 as string | number, // Lago Alberto 319, Col. Granada, Miguel Hidalgo, CDMX.
+      lng: -99.185217 as string | number,
     },
     // openingHours OMITIDO a propósito (alcance SEO técnico · SOP 2026-07-10):
     // el horario era de EJEMPLO (no verificado). Emitir OpeningHoursSpecification
@@ -108,14 +111,14 @@ export const CONTACT = {
   phoneRaw: '+525539340581',      // JSON-LD (idéntico a phoneE164).
   whatsapp: '525539340581',       // wa.me — E.164 sin '+'. MISMA línea que el teléfono.
   email: 'equipocontraincendios737@gmail.com',
-  street: 'Av. Homero 538-#303, Col. Polanco, Miguel Hidalgo',
+  street: 'Lago Alberto 319, Piso 6, Col. Granada, Miguel Hidalgo',
   city: 'Ciudad de México',
   state: 'CDMX',
-  postalCode: '11560',
+  postalCode: '11520',
   country: 'MX',
   geo: {
-    lat: 19.4307, // Polanco, Miguel Hidalgo, CDMX.
-    lng: -99.1960,
+    lat: 19.439817, // Lago Alberto 319, Col. Granada, Miguel Hidalgo, CDMX.
+    lng: -99.185217,
   },
   hours: {
     weekdays: 'Lun–Vie 9:00–18:00',
