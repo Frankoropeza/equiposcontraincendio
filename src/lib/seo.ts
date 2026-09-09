@@ -662,7 +662,17 @@ export function contactPointSchema(input: ContactPointInput): Record<string, unk
 
 export type Crumb = { name: string; path: string };
 
-/** BreadcrumbList — se emite UNA sola vez (ver REGLA DURA B3 arriba). */
+/**
+ * BreadcrumbList — se emite UNA sola vez (ver REGLA DURA B3 arriba).
+ *
+ * El ÚLTIMO nivel (la página actual) va sin `path`: PageLayout construye las
+ * migas con `path: b.href ?? ''` y el crumb final nunca lleva href porque no se
+ * enlaza a sí mismo. Con `absUrl('')` ese item resolvía a la RAÍZ del sitio, así
+ * que toda página con migas publicaba un breadcrumb cuyo último eslabón
+ * apuntaba a la home (detectado en vivo el 2026-09-09 en un artículo del blog).
+ * Google admite omitir `item` en el último elemento; eso hacemos, en vez de
+ * inventar una URL incorrecta.
+ */
 export function breadcrumbSchema(items: Crumb[]) {
   return {
     '@type': 'BreadcrumbList',
@@ -670,7 +680,7 @@ export function breadcrumbSchema(items: Crumb[]) {
       '@type': 'ListItem',
       position: i + 1,
       name: c.name,
-      item: absUrl(c.path),
+      ...(c.path ? { item: absUrl(c.path) } : {}),
     })),
   };
 }
