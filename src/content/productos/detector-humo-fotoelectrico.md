@@ -2,7 +2,7 @@
 title: "Detectores de humo y alarma contra incendio"
 description: "Familia de detectores fotoeléctricos para detección temprana: autónomos, interconectados, combinados con monóxido de carbono y modelos para panel de alarma."
 category: deteccion-alarmas
-image: /images/productos/detector-humo-fotoelectrico.svg
+image: /images/productos/dispositivos-deteccion-alarma.avif
 price: "Cotizar"
 brand: "Equipos Contra Incendio"
 order: 4

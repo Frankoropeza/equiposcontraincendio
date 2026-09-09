@@ -83,6 +83,11 @@ export const SERVICE_CATEGORIES = [
   'instalacion',
   'mantenimiento',
   'inspeccion',
+  // Añadidas en la auditoría 2026-09-09 · Fase 2 (hallazgo P2-4): la home
+  // promocionaba 8 servicios y solo 3 tenían página. Estas dos categorías dan
+  // cabida a los servicios que no encajaban en las tres originales.
+  'capacitacion',
+  'documentacion',
   'general',
 ] as const;
 
@@ -153,6 +158,11 @@ const servicios = defineCollection({
         })
         .optional(),
       includes: z.array(z.string()).optional(), // qué incluye el servicio (EVENTECH:85).
+      // badge — etiqueta corta para la card del servicio (home, /servicios).
+      // Añadido en la auditoría 2026-09-09 · Fase 2 (P2-5): la home tenía los
+      // servicios hardcodeados con su badge; al pasar a leer la colección, el
+      // badge necesita vivir en el frontmatter y no en el .astro.
+      badge: z.string().max(30).optional(),
       isHub: z.boolean().default(false), // página hub vs servicio individual (EVENTECH:120).
       relatedServices: z.array(reference('servicios')).optional(),
       relatedProducts: z.array(reference('productos')).optional(),

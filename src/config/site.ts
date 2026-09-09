@@ -138,10 +138,16 @@ export const TAXONOMY = {
     { slug: 'senalizacion',        label: 'Señalización y emergencia', badge: undefined, href: '/productos/' },
     { slug: 'accesorios',          label: 'Accesorios y refacciones',  badge: undefined, href: '/productos/' },
   ],
+  // Los `id` DEBEN coincidir con los nombres de archivo de src/content/servicios/
+  // (lo vigila tests/taxonomy-collections.test.mjs). Orden = orden del dropdown.
   services: [
-    { id: 'instalacion',   label: 'Instalación de sistemas', desc: 'Proyecto e instalación de sistemas y equipo contra incendio.' },
-    { id: 'mantenimiento', label: 'Mantenimiento y recarga', desc: 'Mantenimiento preventivo y recarga de extintores conforme a norma.' },
-    { id: 'inspeccion',    label: 'Inspección y dictamen',   desc: 'Revisión, pruebas y dictamen del equipo contra incendio.' },
+    { id: 'instalacion',           label: 'Instalación de sistemas',   desc: 'Proyecto e instalación de sistemas y equipo contra incendio.' },
+    { id: 'mantenimiento',         label: 'Mantenimiento y recarga',   desc: 'Mantenimiento preventivo y recarga de extintores conforme a norma.' },
+    { id: 'prueba-hidrostatica',   label: 'Prueba hidrostática',       desc: 'Prueba de presión del cilindro cada 5 años conforme a la NOM-154.' },
+    { id: 'inspeccion',            label: 'Inspección y dictamen',     desc: 'Revisión, pruebas y reporte del equipo contra incendio.' },
+    { id: 'diagnostico-de-riesgo', label: 'Diagnóstico de riesgo',     desc: 'Clasificación del grado de riesgo conforme a la NOM-002-STPS.' },
+    { id: 'capacitacion-dc3',      label: 'Capacitación y DC-3',       desc: 'Cursos de brigada y uso de extintores, con constancia DC-3.' },
+    { id: 'gestion-documental',    label: 'Gestión documental',        desc: 'Expediente para Protección Civil y STPS, ordenado y al día.' },
   ],
   sectors: [] as readonly { slug: string; label: string }[],
   coverageStates: [
@@ -223,7 +229,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
     slug: 'extintores',
     label: 'Extintores',
     href: '/productos/',
-    image: '/images/showcase/extintores-pqs-co2-agua.svg',
+    image: '/images/showcase/extintores-catalogo-profesional.avif',
     imageAlt: 'Extintores PQS, CO₂ y agua para distintas clases de fuego',
     badge: 'NOM-154 · A·B·C·K',
     blurb:
@@ -239,7 +245,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
     slug: 'deteccion-alarmas',
     label: 'Detección y alarmas',
     href: '/productos/',
-    image: '/images/showcase/deteccion-humo-alarma.svg',
+    image: '/images/servicios/instalacion-deteccion-alarma.avif',
     imageAlt: 'Detectores de humo y panel de alarma contra incendio',
     badge: 'NFPA 72',
     blurb:
@@ -255,7 +261,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
     slug: 'hidrantes-mangueras',
     label: 'Hidrantes y mangueras',
     href: '/productos/',
-    image: '/images/showcase/hidrantes-mangueras-gabinete.svg',
+    image: '/images/showcase/gabinete-manguera-hidrante.avif',
     imageAlt: 'Gabinete con manguera contra incendio e hidrante',
     badge: 'Red NFPA 14',
     blurb:
@@ -287,7 +293,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
     slug: 'sistemas-supresion',
     label: 'Sistemas contra incendio',
     href: '/productos/',
-    image: '/images/showcase/sistemas-rociadores-supresion.svg',
+    image: '/images/showcase/sistema-rociadores-industrial.avif',
     imageAlt: 'Sistemas fijos contra incendio: rociadores y supresión de cocina',
     badge: 'Rociadores · Cocina K',
     blurb:
@@ -319,7 +325,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
     slug: 'equipo-proteccion-personal',
     label: 'Equipo de protección personal',
     href: '/productos/',
-    image: '/images/showcase/equipo-proteccion-personal.svg',
+    image: '/images/showcase/equipo-proteccion-bomberos-epp.avif',
     imageAlt: 'Casco, guantes y equipo de protección personal contra incendio',
     badge: 'EPP · NOM-115',
     blurb:
@@ -335,7 +341,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
     slug: 'accesorios-refacciones',
     label: 'Accesorios y refacciones',
     href: '/productos/',
-    image: '/images/showcase/accesorios-refacciones.svg',
+    image: '/images/showcase/refacciones-equipo-contra-incendio.avif',
     imageAlt: 'Accesorios y refacciones para extintores y sistemas contra incendio',
     badge: 'Mantenimiento',
     blurb:

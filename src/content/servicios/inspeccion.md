@@ -2,8 +2,9 @@
 title: "Inspección y dictamen de equipo contra incendio"
 description: "Revisión, pruebas y reporte del estado del equipo contra incendio de tu inmueble: faltantes, vencimientos, incumplimientos normativos y recomendaciones priorizadas antes de una verificación."
 category: inspeccion
-image: /images/servicios/inspeccion-dictamen-contra-incendio.svg
+image: /images/servicios/inspeccion-tablero-alarma-gabinete-manguera.avif
 isHub: false
+badge: "Reporte claro"
 featured: false
 order: 3
 includes:
@@ -14,8 +15,9 @@ includes:
   - "Pruebas de funcionamiento del sistema de detección y alarma cuando existe."
   - "Reporte con faltantes, incumplimientos y recomendaciones priorizadas."
 relatedServices:
+  - diagnostico-de-riesgo
   - mantenimiento
-  - instalacion
+  - gestion-documental
 relatedProducts:
   - extintor-pqs
   - senalizacion-fotoluminiscente

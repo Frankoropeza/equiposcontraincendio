@@ -2,7 +2,7 @@
 title: "Señalización fotoluminiscente de evacuación y emergencia"
 description: "Familia de señales fotoluminiscentes para rutas, salidas, equipos contra incendio, puntos de reunión y primeros auxilios, con diseño según su función y ubicación."
 category: senalizacion
-image: /images/productos/senalizacion-fotoluminiscente.svg
+image: /images/productos/senalizacion-luces-emergencia.avif
 price: "Cotizar"
 brand: "Equipos Contra Incendio"
 order: 6

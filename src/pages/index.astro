@@ -5,6 +5,7 @@
 // y Content Collections. WhatsApp SIEMPRE vía waUrl() (regla D4).
 // Contenido HONESTO: sin reseñas/clientes/años fabricados (regla del sistema).
 // ============================================================================
+import { getCollection } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Hero from "@components/Hero.astro";
 import SectionMenu from "@components/SectionMenu.astro";
@@ -49,73 +50,21 @@ const pillars = [
   { icon: "pin", title: "CDMX y Estado de México", desc: "Atención y entrega en la Ciudad de México, el Estado de México y la zona metropolitana." },
 ];
 
-// ── Servicios destacados (fichas en /servicios/<id>) ──
-const servicios = [
-  {
-    title: "Instalación de sistemas",
-    description: "Proyecto e instalación de detección, hidrantes, extintores y señalización, dimensionados al riesgo de tu inmueble.",
-    href: "/servicios/instalacion/",
-    image: "/images/servicios/instalacion-sistemas-contra-incendio.svg",
-    imageAlt: "Instalación de sistemas contra incendio",
-    badge: "Proyecto a la medida",
-  },
-  {
-    title: "Mantenimiento y recarga",
-    description: "Mantenimiento y recarga de extintores conforme a la NOM-154-SCFI-2005, con etiqueta y collarín de servicio vigentes.",
-    href: "/servicios/mantenimiento/",
-    image: "/images/servicios/mantenimiento-recarga-extintores.svg",
-    imageAlt: "Mantenimiento y recarga de extintores",
-    badge: "Conforme a norma",
-  },
-  {
-    title: "Inspección y dictamen",
-    description: "Revisión, pruebas y reporte del estado de tu equipo contra incendio: faltantes, vencimientos y recomendaciones.",
-    href: "/servicios/inspeccion/",
-    image: "/images/servicios/inspeccion-dictamen-contra-incendio.svg",
-    imageAlt: "Inspección y dictamen de equipo contra incendio",
-    badge: "Reporte claro",
-  },
-  {
-    title: "Prueba hidrostática",
-    description: "Prueba de presión cada 5 años conforme a la NOM-154-SCFI-2005. Garantiza la integridad del cilindro y mantiene tu extintor en regla.",
-    href: "/servicios/mantenimiento/",
-    image: "/images/servicios/prueba-hidrostatica-extintores.svg",
-    imageAlt: "Prueba hidrostática de extintores",
-    badge: "Cada 5 años · NOM-154",
-  },
-  {
-    title: "Diagnóstico de riesgo",
-    description: "Evaluamos tu inmueble, identificamos el nivel de riesgo según la NOM-002-STPS y te decimos exactamente qué equipo necesitas y dónde colocarlo.",
-    href: "/servicios/",
-    image: "/images/servicios/diagnostico-riesgo-incendio.svg",
-    imageAlt: "Diagnóstico de riesgo contra incendio",
-    badge: "Sin costo",
-  },
-  {
-    title: "Capacitación y DC-3",
-    description: "Cursos de uso y manejo de extintores para tu brigada, con constancia DC-3 para tu expediente ante STPS y Protección Civil.",
-    href: "/servicios/",
-    image: "/images/servicios/capacitacion-brigada-dc3.svg",
-    imageAlt: "Capacitación de brigadas y constancia DC-3",
-    badge: "Constancia DC-3",
-  },
-  {
-    title: "Gestión documental",
-    description: "Te ayudamos a integrar el expediente para Protección Civil y STPS: fichas técnicas, constancias de servicio y certificados de norma.",
-    href: "/servicios/",
-    image: "/images/servicios/gestion-documental-proteccion-civil.svg",
-    imageAlt: "Gestión de documentación para Protección Civil",
-    badge: "PC · STPS",
-  },
-  {
-    title: "Suministro de equipo",
-    description: "Venta directa de extintores, detectores, señalización e hidrantes. Entrega en CDMX y Estado de México con factura y documentación incluida.",
-    href: "/productos/",
-    image: "/images/servicios/suministro-equipo-contra-incendio.svg",
-    imageAlt: "Suministro de equipo contra incendio",
-    badge: "Entrega inmediata",
-  },
-];
+// ── Servicios destacados — LEÍDOS DE LA COLECCIÓN ──────────────────────────
+// AUDITORÍA 2026-09-09 · P2-5: aquí vivía un array literal con los 8 servicios
+// (anti-patrón D3: entidad repetible hardcodeada en un .astro). La home y
+// /servicios podían divergir sin que nada fallara, y de hecho lo hacían: cinco
+// de esos ocho no tenían página propia. Ahora ambas leen la misma colección.
+const servicios = (await getCollection("servicios", ({ data }) => !data.draft))
+  .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0))
+  .map((s) => ({
+    title: s.data.title,
+    description: s.data.description,
+    href: `/servicios/${s.id}/`,
+    image: s.data.image,
+    imageAlt: s.data.title,
+    badge: s.data.badge,
+  }));
 
 // ── Guía de selección por nivel de riesgo (clasificación NOM-002-STPS) ──
 const riskRows = [
@@ -298,7 +247,7 @@ const faqs = [
     ]}
     ctaLabel="Ver catálogo de extintores"
     ctaHref="/productos/"
-    imgMain={{ src: "/images/showcase/extintores-pqs-co2-agua.svg", alt: "Extintores PQS, CO₂ y agente K contra incendio" }}
+    imgMain={{ src: "/images/showcase/extintores-catalogo-profesional.avif", alt: "Extintores PQS, CO₂ y agente K contra incendio" }}
     imgA={{ src: "/images/productos/extintor-pqs-6kg.svg", alt: "Extintor PQS 6 kg multipropósito ABC" }}
     imgB={{ src: "/images/productos/extintor-co2-45kg.svg", alt: "Extintor CO₂ 4.5 kg para equipos eléctricos" }}
   />
@@ -324,9 +273,9 @@ const faqs = [
     ]}
     ctaLabel="Ver catálogo de detección"
     ctaHref="/productos/"
-    imgMain={{ src: "/images/showcase/deteccion-humo-alarma.svg", alt: "Sistema de detección de humo y panel de alarma contra incendio" }}
-    imgA={{ src: "/images/productos/detector-humo-fotoelectrico.svg", alt: "Detector de humo fotoeléctrico de techo" }}
-    imgB={{ src: "/images/showcase/sistemas-rociadores-supresion.svg", alt: "Panel de control de alarma contra incendio" }}
+    imgMain={{ src: "/images/servicios/instalacion-deteccion-alarma.avif", alt: "Sistema de detección de humo y panel de alarma contra incendio" }}
+    imgA={{ src: "/images/productos/dispositivos-deteccion-alarma.avif", alt: "Detector de humo fotoeléctrico de techo" }}
+    imgB={{ src: "/images/showcase/sistema-rociadores-industrial.avif", alt: "Panel de control de alarma contra incendio" }}
   />
 
   {/* ─── Feature: Hidrantes y mangueras ─── */}
@@ -350,9 +299,9 @@ const faqs = [
     ]}
     ctaLabel="Ver catálogo de hidrantes"
     ctaHref="/productos/"
-    imgMain={{ src: "/images/showcase/hidrantes-mangueras-gabinete.svg", alt: "Gabinete con manguera contra incendio e hidrante" }}
-    imgA={{ src: "/images/productos/gabinete-manguera-contra-incendio.svg", alt: "Gabinete tipo I con manguera y pitón" }}
-    imgB={{ src: "/images/showcase/sistemas-rociadores-supresion.svg", alt: "Válvulas y conexiones para red hidráulica" }}
+    imgMain={{ src: "/images/showcase/gabinete-manguera-hidrante.avif", alt: "Gabinete con manguera contra incendio e hidrante" }}
+    imgA={{ src: "/images/productos/extintor-oficina-gabinete.avif", alt: "Gabinete tipo I con manguera y pitón" }}
+    imgB={{ src: "/images/showcase/sistema-rociadores-industrial.avif", alt: "Válvulas y conexiones para red hidráulica" }}
   />
 
   {/* ─── Feature: Señalización y emergencia ─── */}
@@ -377,7 +326,7 @@ const faqs = [
     ctaLabel="Ver catálogo de señalización"
     ctaHref="/productos/"
     imgMain={{ src: "/images/showcase/senalizacion-rutas-evacuacion.svg", alt: "Señalización fotoluminiscente de ruta de evacuación" }}
-    imgA={{ src: "/images/productos/senalizacion-fotoluminiscente.svg", alt: "Señal fotoluminiscente de salida de emergencia" }}
+    imgA={{ src: "/images/productos/senalizacion-luces-emergencia.avif", alt: "Señal fotoluminiscente de salida de emergencia" }}
     imgB={{ src: "/images/showcase/proteccion-primeros-auxilios.svg", alt: "Lámparas de emergencia y botiquín de primeros auxilios" }}
   />
 
@@ -401,9 +350,9 @@ const faqs = [
     ]}
     ctaLabel="Ver sistemas de supresión"
     ctaHref="/productos/"
-    imgMain={{ src: "/images/showcase/sistemas-rociadores-supresion.svg", alt: "Sistema de rociadores automáticos contra incendio" }}
+    imgMain={{ src: "/images/showcase/sistema-rociadores-industrial.avif", alt: "Sistema de rociadores automáticos contra incendio" }}
     imgA={{ src: "/images/productos/extintor-clase-k-6l.svg", alt: "Sistema de supresión clase K para cocina industrial" }}
-    imgB={{ src: "/images/showcase/deteccion-humo-alarma.svg", alt: "Sistema de agente limpio para cuarto eléctrico" }}
+    imgB={{ src: "/images/servicios/instalacion-deteccion-alarma.avif", alt: "Sistema de agente limpio para cuarto eléctrico" }}
   />
 
   {/* ─── Feature: Protección y primeros auxilios ─── */}
@@ -429,7 +378,7 @@ const faqs = [
     ctaHref="/productos/"
     imgMain={{ src: "/images/showcase/proteccion-primeros-auxilios.svg", alt: "Botiquín y equipo de primeros auxilios para brigada" }}
     imgA={{ src: "/images/showcase/senalizacion-rutas-evacuacion.svg", alt: "Equipo de protección para brigada de emergencia" }}
-    imgB={{ src: "/images/showcase/equipo-proteccion-personal.svg", alt: "Manta ignífuga y equipo de respuesta inicial" }}
+    imgB={{ src: "/images/showcase/equipo-proteccion-bomberos-epp.avif", alt: "Manta ignífuga y equipo de respuesta inicial" }}
   />
 
   {/* ─── Feature: Equipo de protección personal ─── */}
@@ -452,9 +401,9 @@ const faqs = [
     ]}
     ctaLabel="Ver equipo de protección"
     ctaHref="/productos/"
-    imgMain={{ src: "/images/showcase/equipo-proteccion-personal.svg", alt: "Equipo de protección personal para brigadas contra incendio" }}
+    imgMain={{ src: "/images/showcase/equipo-proteccion-bomberos-epp.avif", alt: "Equipo de protección personal para brigadas contra incendio" }}
     imgA={{ src: "/images/showcase/proteccion-primeros-auxilios.svg", alt: "Cascos y guantes de protección térmica" }}
-    imgB={{ src: "/images/showcase/hidrantes-mangueras-gabinete.svg", alt: "Traje de aproximación para brigada de emergencia" }}
+    imgB={{ src: "/images/showcase/gabinete-manguera-hidrante.avif", alt: "Traje de aproximación para brigada de emergencia" }}
   />
 
   {/* ─── Feature: Accesorios y refacciones ─── */}
@@ -478,7 +427,7 @@ const faqs = [
     ]}
     ctaLabel="Ver accesorios y refacciones"
     ctaHref="/productos/"
-    imgMain={{ src: "/images/showcase/accesorios-refacciones.svg", alt: "Accesorios y refacciones para extintores y sistemas contra incendio" }}
+    imgMain={{ src: "/images/showcase/refacciones-equipo-contra-incendio.avif", alt: "Accesorios y refacciones para extintores y sistemas contra incendio" }}
     imgA={{ src: "/images/productos/extintor-pqs-6kg.svg", alt: "Válvulas y refacciones para extintor PQS" }}
     imgB={{ src: "/images/productos/extintor-co2-45kg.svg", alt: "Soportes y porta-extintores certificados" }}
   />

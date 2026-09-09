@@ -2,7 +2,7 @@
 title: "Soportes, gabinetes y accesorios para extintor"
 description: "Accesorios para montar, proteger y señalizar extintores portátiles: soportes de pared, abrazaderas, bases vehiculares y gabinetes de sobreponer o empotrar."
 category: accesorios
-image: /images/showcase/accesorios-refacciones.svg
+image: /images/showcase/refacciones-equipo-contra-incendio.avif
 price: "Cotizar"
 brand: "Equipos Contra Incendio"
 order: 7

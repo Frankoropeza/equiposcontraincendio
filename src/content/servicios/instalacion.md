@@ -2,8 +2,9 @@
 title: "Instalación de sistemas contra incendio"
 description: "Proyecto e instalación de sistemas y equipo contra incendio: detección y alarma, red de hidrantes y mangueras, extintores y señalización, dimensionados al riesgo y la superficie de tu inmueble."
 category: instalacion
-image: /images/servicios/instalacion-sistemas-contra-incendio.svg
+image: /images/servicios/integracion-sistemas-contra-incendio.avif
 isHub: false
+badge: "Proyecto a la medida"
 featured: true
 order: 1
 includes:
@@ -14,6 +15,7 @@ includes:
   - "Pruebas de funcionamiento y puesta en marcha del sistema."
   - "Entrega de fichas técnicas y reporte de lo instalado para tu expediente."
 relatedServices:
+  - diagnostico-de-riesgo
   - inspeccion
   - mantenimiento
 relatedProducts:

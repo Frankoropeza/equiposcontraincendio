@@ -2,7 +2,7 @@
 title: "Gabinetes con manguera contra incendio"
 description: "Gabinetes de sobreponer, empotrar y combinados para alojar manguera de 1½ pulgadas, válvula, chiflón y, según el modelo, un extintor portátil."
 category: hidrantes-mangueras
-image: /images/productos/gabinete-manguera-contra-incendio.svg
+image: /images/productos/extintor-oficina-gabinete.avif
 price: "Cotizar"
 brand: "Equipos Contra Incendio"
 order: 5
