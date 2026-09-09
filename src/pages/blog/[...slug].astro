@@ -6,44 +6,89 @@
 // (.mdx). El cuerpo se renderiza con <Content />; la estructura, el Article
 // JSON-LD y los breadcrumbs viven en ArticleLayout. Para publicar, agrega un
 // .mdx en src/content/articulos/ — no se edita este archivo.
+//
+// ESTRATEGIA EDITORIAL 2026-09-09: esta ruta ahora RESUELVE el interlinking
+// tipado del frontmatter en vez de improvisarlo.
+//   • related    ← relatedPosts; respaldo: hermanos de la MISMA categoría
+//     (antes: articulos.slice(0,3), los tres primeros de la colección, sin
+//     relación temática con el artículo).
+//   • commercial ← relatedProducts + relatedServices (la ruta a producto o
+//     servicio que resuelve el tema; es lo que convierte al blog en soporte de
+//     venta y no en un silo).
+//   • headings   ← render(), para el índice del artículo.
 // ============================================================================
 import { getCollection, render } from 'astro:content'
 import ArticleLayout from '@layouts/ArticleLayout.astro'
+import { blogCategory } from '@config/site'
 
 export async function getStaticPaths() {
   const articulos = await getCollection('articulos', ({ data }) => !data.draft)
+  const productos = await getCollection('productos', ({ data }) => !data.draft)
+  const servicios = await getCollection('servicios', ({ data }) => !data.draft)
+
+  const byId = <T extends { id: string }>(list: T[], id: string) => list.find((e) => e.id === id)
 
   return articulos.map((articulo) => {
-    // Relacionados: hermanos de la colección (interlinking), excluye el actual.
-    const related = articulos
-      .filter((a) => a.id !== articulo.id)
-      .slice(0, 3)
-      .map((a) => ({
-        label: a.data.title,
-        href: `/blog/${a.id}/`,
-        description: a.data.description,
-      }))
+    const d = articulo.data
 
-    return { params: { slug: articulo.id }, props: { articulo, related } }
+    // ── Relacionados editoriales ──────────────────────────────────────────
+    // 1) los declarados en el frontmatter (curados); 2) respaldo por categoría;
+    // 3) último respaldo: cualquier otro artículo. Nunca el propio artículo.
+    const declared = (d.relatedPosts ?? [])
+      .map((ref) => byId(articulos, ref.id))
+      .filter((a): a is (typeof articulos)[number] => Boolean(a) && a!.id !== articulo.id)
+
+    const sameCategory = articulos.filter(
+      (a) => a.id !== articulo.id && a.data.category === d.category && !declared.some((x) => x.id === a.id),
+    )
+    const rest = articulos.filter(
+      (a) => a.id !== articulo.id && !declared.some((x) => x.id === a.id) && !sameCategory.some((x) => x.id === a.id),
+    )
+
+    const related = [...declared, ...sameCategory, ...rest].slice(0, 3).map((a) => ({
+      label: a.data.title,
+      href: `/blog/${a.id}/`,
+      description: a.data.description,
+    }))
+
+    // ── Ruta comercial del artículo ───────────────────────────────────────
+    const commercial = [
+      ...(d.relatedServices ?? [])
+        .map((ref) => byId(servicios, ref.id))
+        .filter(Boolean)
+        .map((s) => ({ label: s!.data.title, href: `/servicios/${s!.id}/`, description: s!.data.description })),
+      ...(d.relatedProducts ?? [])
+        .map((ref) => byId(productos, ref.id))
+        .filter(Boolean)
+        .map((p) => ({ label: p!.data.title, href: `/productos/${p!.id}/`, description: p!.data.description })),
+    ].slice(0, 3)
+
+    return { params: { slug: articulo.id }, props: { articulo, related, commercial } }
   })
 }
 
-const { articulo, related } = Astro.props
-const { Content } = await render(articulo)
+const { articulo, related, commercial } = Astro.props
+const { Content, headings } = await render(articulo)
 const d = articulo.data
+const cat = blogCategory(d.category)
 ---
 
 <ArticleLayout
   title={d.title}
   description={d.description}
   category={d.category}
+  categoryLabel={cat?.label}
   pubDate={d.pubDate}
   updatedDate={d.updatedDate}
   author={d.author}
   image={d.heroImage}
   imageAlt={d.title}
   tags={d.tags}
+  funnel={d.funnel}
+  headings={headings}
+  faqs={d.faqs}
   related={related}
+  commercial={commercial}
 >
   <Content />
 </ArticleLayout>

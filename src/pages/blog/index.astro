@@ -8,18 +8,23 @@ import SectionMenu from '@components/SectionMenu.astro'
 import SectionHeading from '@components/SectionHeading.astro'
 import CategoryCard from '@components/CategoryCard.astro'
 import { getCollection } from 'astro:content'
-import { NAV, waUrl, WA_MESSAGES } from '@config/site'
+import { NAV, waUrl, WA_MESSAGES, BLOG_CATEGORIES } from '@config/site'
 
 const articulos = (await getCollection('articulos', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 )
 
-// Etiqueta legible para el badge de categoría de cada artículo.
-const CAT_LABEL: Record<string, string> = {
-  guias: 'Guía',
-  novedades: 'Novedad',
-  general: 'Artículo',
-}
+// Etiqueta legible del badge de categoría — sale de BLOG_CATEGORIES (SSoT),
+// no de un mapa local: al añadir una categoría no hay que tocar esta página.
+const CAT_LABEL: Record<string, string> = Object.fromEntries(
+  BLOG_CATEGORIES.map((c) => [c.slug, c.label]),
+)
+
+// Chips de categoría: sólo las que ya tienen artículos publicados (regla
+// anti-archivo-delgado de la estrategia editorial: una categoría vacía es una
+// URL que compite contra sus propios artículos sin aportar nada).
+const usedCategories = new Set<string>(articulos.map((a) => a.data.category))
+const chips = BLOG_CATEGORIES.filter((c) => usedCategories.has(c.slug))
 
 // ── Menú de secciones bajo el hero (data-driven desde NAV; excluye Contacto) ──
 const menuSub: Record<string, string> = {
@@ -81,6 +86,14 @@ const menuCta = {
         ]}
       />
 
+      {chips.length > 1 && (
+        <nav class="chips" aria-label="Categorías del blog">
+          {chips.map((c) => (
+            <a class="chip" href={`/blog/categoria/${c.slug}/`}>{c.label}</a>
+          ))}
+        </nav>
+      )}
+
       <div class="grid">
         {articulos.map((a, i) => (
           <CategoryCard
@@ -104,6 +117,9 @@ const menuCta = {
   .section { padding: var(--sp-8) 0; }
   .section--surface { background: var(--c-surface); }
   @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
+  .chips { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-top: var(--sp-5); }
+  .chip { display: inline-block; padding: var(--sp-2) var(--sp-4); border: 1px solid var(--c-border); border-radius: 999px; font-size: var(--text-sm); text-decoration: none; color: var(--c-ink); }
+  .chip:hover { border-color: var(--c-accent); color: var(--c-accent); }
   .grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-5); margin-top: var(--sp-6); }
   @media (min-width: 640px)  { .grid { grid-template-columns: repeat(2, 1fr); } }
   @media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); } }

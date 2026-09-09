@@ -2,3 +2,12 @@
 /productos/extintor-co2-45kg /productos/extintor-co2 301
 /productos/extintor-clase-k-6l /productos/extintor-clase-k 301
 https://www.equiposcontraincendio.com/* https://equiposcontraincendio.com/:splat 301
+
+# Taxonomía editorial del blog (2026-09-09): las categorías de plantilla
+# desaparecen; sus archivos ya no existen. Al índice del blog, no a un 404.
+/blog/categoria/guias/ /blog/ 301
+/blog/categoria/guias /blog/ 301
+/blog/categoria/novedades/ /blog/ 301
+/blog/categoria/novedades /blog/ 301
+/blog/categoria/general/ /blog/ 301
+/blog/categoria/general /blog/ 301

@@ -1,21 +1,37 @@
 ---
-{/* ArticleLayout — artículo de blog (colección .mdx): hero, prose, autor/fechas, relacionados. L? blog | Origen: BOMBERO (BlogMdxLayout) + EVENTECH (Article schema) */}
+{/* ArticleLayout — artículo de blog (colección .mdx): hero, índice, prose, FAQ, CTA por embudo y relacionados curados. L3 blog */}
 
 // ============================================================================
 // ArticleLayout.astro — ARTÍCULO DE BLOG.
 //
-// Renderiza un post de la Content Collection `blog` (.mdx con frontmatter
+// Renderiza un post de la Content Collection `articulos` (.mdx con frontmatter
 // tipado). El blog SIEMPRE vive en colección .mdx, NUNCA como .astro sueltos
 // (anti-patrón D3 confirmado en MESASPICNIC/RENTADEILUMINACION).
 //
 // Extiende PageLayout. Schema: pageType="article" → buildSchema emite Article
-// (con datePublished/dateModified/author/publisher) + BreadcrumbList (una vez).
-// El cuerpo del artículo se inyecta por <slot/> (lo renderiza <Content /> en la
-// página de la ruta dinámica del blog).
+// (con datePublished/dateModified/author/publisher) + BreadcrumbList (una vez)
+// + FAQPage cuando el artículo trae `faqs` VISIBLES en la página.
+//
+// ESTRATEGIA EDITORIAL 2026-09-09 — qué cambió y por qué:
+//   1. Índice (TOC) desde los H2 del .mdx. Astro ya genera los `id`; solo hay
+//      que pintarlos. Sin índice no hay jump links en la SERP ni lectura
+//      decente en móvil a partir de 800 palabras.
+//   2. FAQ visible + FAQPage. El esquema de la colección admitía `faqs` y
+//      seo.ts sabía emitir FAQPage desde mayo, pero esta plantilla no
+//      consumía ninguno de los dos: las preguntas se quedaban en el markdown.
+//   3. CTA por etapa del embudo (`funnel`). Antes todos los artículos cerraban
+//      con el mismo botón de WhatsApp, diera igual si el lector estaba
+//      descubriendo el tema o comparando proveedores.
+//   4. Relacionados CURADOS. Antes la ruta pasaba `articulos.slice(0, 3)` —los
+//      tres primeros por orden de colección, sin relación temática—. Ahora la
+//      ruta resuelve relatedPosts/relatedProducts/relatedServices del
+//      frontmatter y sólo cae al respaldo por categoría si no hay nada.
+//   5. Miga con el nivel de categoría (Inicio › Blog › Categoría › Artículo).
 // ============================================================================
 
 import PageLayout from "./PageLayout.astro";
 import RelatedLinks from "@components/RelatedLinks.astro";
+import FAQAccordion from "@components/FAQAccordion.astro";
 import CTABanner from "@components/CTABanner.astro";
 import { SITE, waUrl } from "@config/site";
 import { slugify } from '@lib/slug'
@@ -23,7 +39,10 @@ import { slugify } from '@lib/slug'
 export interface Props {
   title: string;
   description: string;
+  /** Slug de categoría (enum ARTICLE_CATEGORIES). */
   category?: string;
+  /** Etiqueta legible de la categoría (BLOG_CATEGORIES). */
+  categoryLabel?: string;
   /** Fecha de publicación (ISO o Date). Alimenta el Article JSON-LD. */
   pubDate: string | Date;
   /** Fecha de última edición; default = pubDate. */
@@ -33,14 +52,23 @@ export interface Props {
   imageAlt?: string;
   canonical?: string;
   tags?: string[];
-  /** Artículos / servicios relacionados (interlinking). */
+  /** Etapa del embudo → decide el CTA de cierre. */
+  funnel?: 'tofu' | 'mofu' | 'bofu';
+  /** Encabezados del .mdx (Astro los devuelve en render()). Alimentan el índice. */
+  headings?: { depth: number; slug: string; text: string }[];
+  /** Preguntas frecuentes: se pintan Y se emiten como FAQPage. */
+  faqs?: { question: string; answer: string }[];
+  /** Artículos relacionados (interlinking editorial). */
   related?: { label: string; href: string; description?: string }[];
+  /** Producto / servicio que resuelve el tema del artículo (ruta comercial). */
+  commercial?: { label: string; href: string; description?: string }[];
 }
 
 const {
   title,
   description,
   category,
+  categoryLabel,
   pubDate,
   updatedDate,
   author = SITE.brand,
@@ -48,7 +76,11 @@ const {
   imageAlt,
   canonical,
   tags = [],
+  funnel = 'mofu',
+  headings = [],
+  faqs = [],
   related = [],
+  commercial = [],
 } = Astro.props;
 
 const published = new Date(pubDate);
@@ -56,14 +88,20 @@ const updated = updatedDate ? new Date(updatedDate) : published;
 const fmt = (d: Date) =>
   d.toLocaleDateString("es-MX", { year: "numeric", month: "long", day: "numeric" });
 
+// Índice: sólo H2. A partir de 3 secciones aporta; con menos, estorba.
+const toc = headings.filter((h) => h.depth === 2 && h.slug && h.text);
+const showToc = toc.length >= 3;
+
+const catLabel = categoryLabel ?? category;
 const breadcrumbs = [
   { label: "Blog", href: "/blog/" },
+  ...(category ? [{ label: catLabel ?? category, href: `/blog/categoria/${category}/` }] : []),
   { label: title },
 ];
 
-// schemaData → Article. Claves EXACTAS del contrato lib/seo.ts:
-// article { title, description, path, image?, datePublished, dateModified?,
-// author?, section? }. La fecha también va a og:article:* vía BaseLayout/buildMeta.
+// schemaData → Article (+ FAQPage si hay preguntas visibles). Claves EXACTAS del
+// contrato lib/seo.ts: article { title, description, path, image?,
+// datePublished, dateModified?, author?, section? } y faqs [{question,answer}].
 const schemaData = {
   article: {
     title,
@@ -73,11 +111,48 @@ const schemaData = {
     datePublished: published.toISOString(),
     dateModified: updated.toISOString(),
     author,
-    ...(category ? { section: category } : {}),
+    ...(category ? { section: catLabel ?? category } : {}),
   },
+  ...(faqs.length ? { faqs } : {}),
 };
 
-const waLink = waUrl(`Hola, leí "${title}" en su blog y tengo una pregunta.`);
+// ── CTA por etapa del embudo ────────────────────────────────────────────────
+// tofu: el lector descubre el tema → orientación, sin fricción de cotización.
+// mofu: evalúa qué le exige la norma → diagnóstico del inmueble.
+// bofu: ya sabe qué quiere → cotización directa.
+const waAsk = waUrl(`Hola, leí "${title}" en su blog y tengo una pregunta.`);
+const waQuote = waUrl(`Hola, leí "${title}" y quiero una cotización para mi inmueble.`);
+
+const CTA_BY_FUNNEL = {
+  tofu: {
+    heading: '¿Dudas sobre qué necesita tu inmueble?',
+    desc: 'Cuéntanos el giro y el tamaño del lugar y te orientamos sin compromiso.',
+    btns: [{ label: 'Preguntar por WhatsApp', href: waAsk, icon: 'wa' as const, primary: true, external: true }],
+    badge: 'Asesoría técnica · CDMX y Estado de México',
+    variant: 'light' as const,
+  },
+  mofu: {
+    heading: '¿Quieres saber qué te exige la norma en tu caso?',
+    desc: 'Hacemos el levantamiento de tu inmueble y te decimos qué equipo es exigible y qué documentación falta.',
+    btns: [
+      { label: 'Solicitar diagnóstico de riesgo', href: '/servicios/diagnostico-de-riesgo/', icon: 'quote' as const, primary: true },
+      { label: 'Preguntar por WhatsApp', href: waAsk, icon: 'wa' as const, external: true },
+    ],
+    badge: 'Diagnóstico conforme a la NOM-002-STPS-2010',
+    variant: 'dark' as const,
+  },
+  bofu: {
+    heading: '¿Listo para cotizar?',
+    desc: 'Mándanos la lista o las dudas de tu inmueble y te respondemos hoy mismo con precios y tiempos.',
+    btns: [
+      { label: 'Cotizar por WhatsApp', href: waQuote, icon: 'wa' as const, primary: true, external: true },
+      { label: 'Ver catálogo', href: '/productos/', icon: 'catalog' as const },
+    ],
+    badge: 'Respuesta el mismo día',
+    variant: 'red' as const,
+  },
+};
+const cta = CTA_BY_FUNNEL[funnel] ?? CTA_BY_FUNNEL.mofu;
 ---
 
 <PageLayout
@@ -92,7 +167,7 @@ const waLink = waUrl(`Hola, leí "${title}" en su blog y tengo una pregunta.`);
   <article class="post">
     <header class="post__header">
       <div class="container">
-        {category && <a class="post__cat" href={`/blog/categoria/${category}/`}>{category}</a>}
+        {category && <a class="post__cat" href={`/blog/categoria/${category}/`}>{catLabel}</a>}
         <h1 class="post__title">{title}</h1>
         <p class="post__lede">{description}</p>
         <p class="post__meta">
@@ -113,10 +188,33 @@ const waLink = waUrl(`Hola, leí "${title}" en su blog y tengo una pregunta.`);
     <div class="container post__body">
       {/* prose: el cuerpo del .mdx entra por el slot */}
       <div class="prose">
+        {showToc && (
+          <nav class="toc" aria-labelledby="toc-heading">
+            <h2 id="toc-heading" class="toc__title">En este artículo</h2>
+            <ol class="toc__list">
+              {toc.map((h) => (
+                <li><a href={`#${h.slug}`}>{h.text}</a></li>
+              ))}
+            </ol>
+          </nav>
+        )}
+
         <slot />
+
+        {faqs.length > 0 && (
+          <div class="post__faq">
+            <FAQAccordion items={faqs} title="Preguntas frecuentes" openFirst bare />
+          </div>
+        )}
       </div>
 
       <aside class="post__sidebar">
+        {commercial.length > 0 && (
+          <div class="post__widget">
+            <h2>Lo que resuelve tu caso</h2>
+            <RelatedLinks links={commercial.map((r) => ({ label: r.label, href: r.href, desc: r.description }))} />
+          </div>
+        )}
         {tags.length > 0 && (
           <div class="post__widget">
             <h2>Temas</h2>
@@ -132,17 +230,13 @@ const waLink = waUrl(`Hola, leí "${title}" en su blog y tengo una pregunta.`);
         <div class="post__widget post__widget--cta">
           <h2>¿Te quedó una duda?</h2>
           <p>Escríbenos y te orientamos sin compromiso.</p>
-          <a class="btn btn--primary btn--block" href={waLink}>Preguntar por WhatsApp</a>
+          <a class="btn btn--primary btn--block" href={waAsk}>Preguntar por WhatsApp</a>
         </div>
       </aside>
     </div>
   </article>
 
-  <CTABanner
-    heading="¿Listo para dar el siguiente paso?"
-    desc="Cuéntanos qué necesitas y te respondemos hoy mismo."
-    btns={[{ label: "Contáctanos", href: waLink, icon: "wa", primary: true, external: true }]}
-  />
+  <CTABanner {...cta} />
 </PageLayout>
 
 <style>
@@ -165,6 +259,15 @@ const waLink = waUrl(`Hola, leí "${title}" en su blog y tengo una pregunta.`);
   .post__tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2); }
   .post__tags a { font-size: var(--text-sm); color: var(--color-text-muted); text-decoration: none; }
   .btn--block { width: 100%; }
+
+  /* Índice del artículo — anclas a los H2 (Astro genera los id). */
+  .toc { margin: 0 0 var(--space-7); padding: var(--space-5); border: 1px solid var(--color-border); border-left: 3px solid var(--color-accent); border-radius: var(--radius-lg); background: var(--color-surface); }
+  .toc__title { font-size: var(--text-sm); text-transform: uppercase; letter-spacing: .08em; margin: 0 0 var(--space-3); color: var(--color-text-muted); }
+  .toc__list { margin: 0; padding-left: var(--space-5); display: grid; gap: var(--space-2); }
+  .toc__list a { text-decoration: none; }
+  .toc__list a:hover { text-decoration: underline; }
+
+  .post__faq { margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--color-border); }
 
   @media (min-width: 1024px) {
     .post__body { grid-template-columns: minmax(0, 1fr) 20rem; }

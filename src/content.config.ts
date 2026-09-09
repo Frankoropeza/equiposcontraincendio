@@ -91,11 +91,25 @@ export const SERVICE_CATEGORIES = [
   'general',
 ] as const;
 
+// Taxonomía editorial del blog (estrategia 2026-09-09). Sustituye a
+// ['guias','novedades','general'], que era la taxonomía de plantilla: seis de
+// los siete artículos vivían en `guias`, así que el archivo de categoría era un
+// duplicado del índice del blog y no acumulaba autoridad temática por ningún
+// tema. Cada slug de aquí DEBE tener copy en BLOG_CATEGORIES (src/config/site.ts);
+// lo vigila tests/blog-taxonomy.test.mjs.
 export const ARTICLE_CATEGORIES = [
-  'guias',
-  'novedades',
-  'general',
+  'extintores',      // C1-C2 — selección, clases de fuego, uso, cantidad
+  'mantenimiento',   // C3-C4 — recarga, prueba hidrostática, vigencias
+  'sistemas',        // C5-C7 — fijos, detección y alarma, hidrantes y gabinetes
+  'normatividad',    // C8-C9 — NOM aplicables, Protección Civil, expediente
+  'capacitacion',    // C10   — brigadas, DC-3, simulacros
+  'prevencion',      // C11-C12 — señalización, evacuación, protección por giro
+  'costos',          // guía de compra y decisión (sin publicar precios)
 ] as const;
+
+// Etapa del embudo del artículo. Decide qué CTA renderiza ArticleLayout:
+// tofu → orientación, mofu → diagnóstico/servicio, bofu → cotización directa.
+export const ARTICLE_FUNNELS = ['tofu', 'mofu', 'bofu'] as const;
 
 export const ZONE_TYPES = ['ciudad', 'estado', 'alcaldia', 'municipio', 'zona'] as const;
 
@@ -186,12 +200,18 @@ const articulos = defineCollection({
     .object({
       title: z.string().min(10).max(70), // ≤70 para SEO (convención de títulos).
       description: z.string().min(70).max(160),
-      category: z.enum(ARTICLE_CATEGORIES).default('general'), // enum cerrado — evita "Guias"/"Guías" (INFLAPY).
+      // Sin default: la categoría es una decisión editorial, no un descarte. El
+      // viejo default 'general' existía para una taxonomía de plantilla que ya no
+      // está; ahora publicar sin categoría debe fallar en build, no caer en un cajón.
+      category: z.enum(ARTICLE_CATEGORIES), // enum cerrado — evita "Guias"/"Guías" (INFLAPY).
       heroImage: imagePath, // imagen obligatoria.
       pubDate: z.coerce.date(),
       updatedDate: z.coerce.date().optional(),
       author: z.string().default('Equipos Contra Incendio'),
       tags: z.array(z.string()).max(10).optional(),
+      // funnel — etapa del embudo (estrategia editorial 2026-09-09). Gobierna el
+      // CTA del artículo; default 'mofu' porque es la etapa mayoritaria del blog.
+      funnel: z.enum(ARTICLE_FUNNELS).default('mofu'),
       // Interlinking blog ↔ catálogo (cross-sell). reference() tipado.
       relatedProducts: z.array(reference('productos')).optional(),
       relatedServices: z.array(reference('servicios')).optional(),

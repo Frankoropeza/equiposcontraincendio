@@ -2,9 +2,14 @@
 // ============================================================================
 // /blog/categoria/<categoria> — Archivo de categoría del blog.
 // ----------------------------------------------------------------------------
-// ArticleLayout enlaza la categoría de cada artículo a /blog/categoria/<cat>.
-// Esta ruta dinámica genera esos archivos: una página por categoría USADA por
-// los artículos (no por todo el enum), listando sus entradas. Data-driven.
+// Una página por categoría USADA por los artículos (no por todo el enum), con
+// el copy, el title y la meta de BLOG_CATEGORIES (src/config/site.ts).
+//
+// ESTRATEGIA EDITORIAL 2026-09-09: antes esta página improvisaba el texto a
+// partir del slug y le explicaba SEO al visitante («las páginas de categoría…
+// generan una URL de archivo que el buscador puede posicionar»). Ahora cada
+// categoría trae su propia entradilla, su meta y su DESTINO COMERCIAL, que es
+// lo que hace del archivo una página con función y no un duplicado del índice.
 // ============================================================================
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
@@ -12,7 +17,7 @@ import SectionHeading from '@components/SectionHeading.astro'
 import CategoryCard from '@components/CategoryCard.astro'
 import SectionMenu from '@components/SectionMenu.astro'
 import { getCollection } from 'astro:content'
-import { waUrl, WA_MESSAGES } from '@config/site'
+import { waUrl, WA_MESSAGES, blogCategory } from '@config/site'
 
 export async function getStaticPaths() {
   const posts = (await getCollection('articulos', ({ data }) => !data.draft)).sort(
@@ -27,6 +32,14 @@ export async function getStaticPaths() {
 
 const { categoria, posts } = Astro.props
 
+// Copy de la categoría. El respaldo sólo actúa si alguien publica un slug sin
+// entrada en BLOG_CATEGORIES; tests/blog-taxonomy.test.mjs impide que ocurra.
+const cat = blogCategory(categoria)
+const label = cat?.label ?? categoria
+const intro = cat?.intro ?? `Artículos del blog en la categoría ${label}.`
+const body: string[] = [...(cat?.body ?? [])]
+const cta = cat?.cta
+
 const cierreItems = [
   { label: 'Todo el blog', href: '/blog/', sub: 'Ver todos los artículos' },
   { label: 'Servicios', href: '/servicios/', sub: 'Lo que ofrecemos' },
@@ -37,20 +50,21 @@ const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog)
 ---
 
 <PageLayout
-  title={`Categoría: ${categoria} — blog`}
-  description={`Artículos del blog de Equipos Contra Incendio en la categoría ${categoria}. Archivo de categoría generado automáticamente desde la colección de artículos.`}
-  pageType="page"
-  breadcrumbs={[{ label: 'Blog', href: '/blog/' }, { label: categoria }]}
+  title={cat?.seoTitle ?? `${label} — blog`}
+  description={cat?.seoDescription ?? intro}
+  pageType="category"
+  breadcrumbs={[{ label: 'Blog', href: '/blog/' }, { label }]}
   guia={false}
 >
   <Hero
-    badge="Blog · Categoría"
-    title="Categoría:"
-    accent={categoria}
-    subtitle={`Todos los artículos agrupados bajo «${categoria}». Las categorías ordenan el contenido por tema y crean páginas de archivo que el buscador indexa.`}
-    descRight={[
-      'Las páginas de categoría agrupan los artículos por tema y, de paso, generan una URL de archivo que el buscador puede posicionar para búsquedas más amplias. Son un puente entre el artículo individual y el blog completo: ayudan a la persona a seguir leyendo sobre lo que le interesa.',
-      'Aquí se reúnen los artículos de esta categoría sobre equipo contra incendio. Si buscas un tema específico, también puedes navegar por etiquetas.',
+    badge="Blog"
+    title={label.split(' ')[0]}
+    accent={label.split(' ').slice(1).join(' ') || 'del blog'}
+    subtitle={intro}
+    descRight={body}
+    ctas={[
+      ...(cta ? [{ text: cta.label, href: cta.href, variant: 'outline' as const }] : []),
+      { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog), variant: 'primary' as const, whatsapp: true },
     ]}
   />
 
@@ -59,12 +73,9 @@ const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog)
       <SectionHeading
         layout="duo"
         eyebrow="Archivo de categoría"
-        title={`Artículos en «${categoria}»`}
+        title={`Artículos sobre ${label.toLowerCase()}`}
         desc={`${posts.length} ${posts.length === 1 ? 'artículo' : 'artículos'} en esta categoría.`}
-        body={[
-          'Agrupar por categoría no es solo orden: es estructura que el buscador entiende. Cada archivo de categoría refuerza el tema del sitio y reparte autoridad entre los artículos relacionados mediante enlaces internos.',
-          'Por eso conviene tener pocas categorías bien definidas en lugar de muchas dispersas. Cada una debe responder a un interés real de tu audiencia y acumular suficiente contenido para tener sentido como archivo.',
-        ]}
+        body={body}
       />
       <div class="grid">
         {posts.map((a, i) => (
@@ -73,7 +84,7 @@ const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog)
             href={`/blog/${a.id}/`}
             image={a.data.heroImage}
             imageAlt={a.data.title}
-            badge={a.data.category}
+            badge={label}
             blurb={a.data.description}
             ctaLabel="Leer artículo"
             index={i}
