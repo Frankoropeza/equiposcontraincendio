@@ -48,7 +48,7 @@ export const SITE = {
     // 60 % transaccional y `cdmx` está infraexplotado: solo el 30 % del contenido
     // y el 10 % de los H1 de la competencia lo usan. De ahí el verbo de compra y
     // la señal local. Ver el plan de contenido del index en el vault.
-    title: 'Equipos contra incendios | venta e instalación CDMX', // 51 chars.
+    title: 'Equipos contra incendios | venta de equipos contra incendios', // 60 chars — decisión de Frank 2026-09-09.
     description:
       'Equipos contra incendios con venta e instalación en CDMX y Edomex: extintores, detección, hidrantes y señalización certificados, listos para tu expediente.',
     image: '/images/og/default.png',
@@ -105,14 +105,19 @@ export const SITE = {
 // marca, ≤60); la description abre con kw1 y teje las 3 con naturalidad (≤160).
 // Actualizado 2026-09-09 tras el análisis NeuronWriter: la keyword de la SERP es
 // el PLURAL («equipos contra incendios»), no el singular que usaba el sitio.
-// buildKeywordTitle() ensambla kw1 | kw2 = 51 chars; añadir kw3 daría 76, así que
-// la descarta sola y el title queda exacto. kw3 sigue alimentando la description
-// y metaAudit(). El ángulo del sitio frente al resto del portafolio es el
+// buildKeywordTitle() ensambla kw1 | kw2 = 60 chars justos (el límite); añadir kw3
+// daría 85, así que la descarta sola. kw3 sigue alimentando la description y
+// metaAudit(). El ángulo del sitio frente al resto del portafolio es el
 // cumplimiento: proveedor integral para la empresa que tiene que estar en regla.
+//
+// kw2 repite kw1 completa a propósito (decisión de Frank, 2026-09-09). metaAudit()
+// lo marcará como token repetido en el title: es un aviso, no un error, y el
+// patrón lo usan varios competidores de esta SERP (p. ej. IND LEMER, rank 2:
+// «Extintores y equipos contra incendios - Equipos Contra Incendio»).
 export const KEYWORDS = [
-  'equipos contra incendios', // kw1 · principal (plural — así se busca)
-  'venta e instalación CDMX', // kw2 · transaccional + señal local
-  'equipo certificado NOM',   // kw3 · ángulo diferencial; no cabe en el title
+  'equipos contra incendios',          // kw1 · principal (plural — así se busca)
+  'venta de equipos contra incendios', // kw2 · transaccional; repite kw1 a propósito
+  'equipo certificado NOM',            // kw3 · ángulo diferencial; no cabe en el title
 ] as const;
 
 // ── CONTACT — NAP (Name, Address, Phone) + geo + horario ─────────────────────
