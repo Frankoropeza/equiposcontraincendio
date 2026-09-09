@@ -406,6 +406,7 @@ const { items, waNumber } = Astro.props
   justify-content: center;
   gap: var(--sp-2);
   width: 100%;
+  min-height: 44px;
   padding: .75rem var(--sp-5);
   background: #25D366;
   color: #fff;
@@ -426,6 +427,11 @@ const { items, waNumber } = Astro.props
 
 .fwc__btn:active {
   background: #19a34a;
+}
+
+.fwc__btn:focus-visible {
+  outline: 2px solid var(--c-primary);
+  outline-offset: 3px;
 }
 
 .fwc__privacy {
@@ -449,6 +455,9 @@ const { items, waNumber } = Astro.props
 }
 
 .fwc__call-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   font-size: var(--text-sm);
   font-weight: var(--weight-medium);
   color: var(--c-ink-2);
@@ -459,6 +468,11 @@ const { items, waNumber } = Astro.props
 .fwc__call-link:hover {
   color: var(--c-primary);
   text-decoration: underline;
+}
+
+.fwc__call-link:focus-visible {
+  outline: 2px solid var(--c-primary);
+  outline-offset: 2px;
 }
 
 /* ── Móvil: formulario primero ── */

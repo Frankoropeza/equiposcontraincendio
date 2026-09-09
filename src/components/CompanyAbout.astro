@@ -47,7 +47,7 @@ const { que, como, stats = [], cta } = Astro.props;
 
     <section class="company__card company__card--como">
       <h3 class="company__sub">{como.title}</h3>
-      <ol class="company__pillars">
+      <ol class="company__pillars" role="list">
         {como.pillars.map((p: Pillar, i: number) => (
           <li class="company__pillar">
             <span class="company__pillar-num" aria-hidden="true">{i + 1}</span>
@@ -62,7 +62,7 @@ const { que, como, stats = [], cta } = Astro.props;
   </div>
 
   {stats.length > 0 && (
-    <ul class="company__stats" aria-label="Cifras de la empresa">
+    <ul class="company__stats" role="list" aria-label="Cifras de la empresa">
       {stats.map((s: Stat) => (
         <li class="company__stat">
           <span class="company__stat-value">{s.value}</span>
@@ -131,6 +131,7 @@ const { que, como, stats = [], cta } = Astro.props;
   .company__cta {
     align-self: flex-start;
     display: inline-flex; align-items: center; gap: var(--sp-2);
+    min-height: 44px;
     padding: .7em 1.2em;
     font-family: var(--font-heading); font-weight: var(--weight-semibold); font-size: var(--text-sm);
     color: #fff; text-decoration: none;

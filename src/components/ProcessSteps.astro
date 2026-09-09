@@ -44,7 +44,7 @@ const {
       body={body}
     />
 
-    <ol class="process__grid" aria-label="Proceso de trabajo">
+    <ol class="process__grid" role="list" aria-label="Proceso de trabajo">
       {steps.map((p) => (
         <li class="step">
           <span class="step__num" aria-hidden="true">{p.num}</span>

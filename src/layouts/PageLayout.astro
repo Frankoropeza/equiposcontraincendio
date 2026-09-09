@@ -101,6 +101,7 @@ const schemaData: SchemaData = {
 ---
 
 <BaseLayout {...baseProps} schemaData={schemaData}>
+  <slot name="head" slot="head" />
   {/* TopBar: barra utilitaria. `guia` = modo plantilla-guía (anota cada punto). */}
   {/* En un sitio de cliente (o página de detalle), se pasa guia={false}. */}
   <TopBar guia={guia} />

@@ -59,7 +59,7 @@ const { title, description, href, icon, image, imageAlt, badge, ctaLabel = 'Ver 
   .scard__title { font-size: var(--text-lg, 1.125rem); font-weight: var(--weight-semibold, 600); line-height: var(--leading-snug, 1.35); color: var(--c-ink, var(--color-gray-900, #111827)); margin: 0 0 var(--sp-2, .5rem); }
   .scard__desc { font-size: var(--text-sm, .9375rem); color: var(--text-muted, var(--c-muted, #6b7280)); line-height: var(--leading-normal, 1.5); margin: 0 0 auto; }
   /* Único elemento que anima: el botón CTA. */
-  .scard__cta { display: inline-flex; align-items: center; gap: var(--sp-2, .5rem); margin-top: var(--sp-4, 1rem); font-size: var(--text-sm, .875rem); font-weight: var(--weight-semibold, 600); color: var(--color-red, var(--c-primary, #C41E24)); text-decoration: none; align-self: flex-start; transition: color var(--transition, .18s ease), gap var(--transition, .18s ease), background var(--transition, .18s ease); }
+  .scard__cta { display: inline-flex; align-items: center; gap: var(--sp-2, .5rem); min-height: 44px; margin-top: var(--sp-4, 1rem); font-size: var(--text-sm, .875rem); font-weight: var(--weight-semibold, 600); color: var(--color-red, var(--c-primary, #C41E24)); text-decoration: none; align-self: flex-start; transition: color var(--transition, .18s ease), gap var(--transition, .18s ease), background var(--transition, .18s ease); }
   .scard:hover .scard__cta:not(.scard__cta--wa) { gap: .65rem; color: var(--color-red-dark, var(--c-primary-dark, #A01820)); }
   .scard__cta--wa { color: #fff; background: #25D366; padding: .55rem 1rem; border-radius: var(--radius-md, 6px); }
   .scard__cta--wa:hover { background: #1ebe57; }

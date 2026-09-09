@@ -29,7 +29,12 @@ const Tag = as
   <div class="sech__head">
     {eyebrow && <p class="sech__eyebrow"><span class="sech__eyebrow-bar" aria-hidden="true"></span>{eyebrow}</p>}
     <Tag class="sech__title" id={id}>
-      {title}{titleAccent && <><br /><span class="sech__accent">{titleAccent}</span></>}
+      {/* El espacio antes del <br> es deliberado: sin él, el texto extraído del
+          heading queda pegado ("Catálogo de equiposcontra incendios") en la SERP,
+          en los lectores de pantalla y en cualquier cliente que ignore el salto.
+          El <br> sigue dando el corte visual; el espacio da el corte semántico.
+          Detectado en la optimización SEO del index, 2026-09-09. */}
+      {title}{titleAccent && <>{' '}<br /><span class="sech__accent">{titleAccent}</span></>}
     </Tag>
     {desc && <p class="sech__desc">{desc}</p>}
   </div>

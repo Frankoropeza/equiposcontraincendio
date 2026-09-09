@@ -33,7 +33,7 @@ export const SITE = {
   lang: 'es-MX',
   locale: 'es-MX',
   description:
-    'Equipo contra incendio en México: venta de extintores, detección, hidrantes y señalización, con instalación, mantenimiento y recarga certificados. Cotiza por WhatsApp.',
+    'Equipos contra incendios con venta e instalación en CDMX y Edomex: extintores, detección, hidrantes y señalización certificados, listos para tu expediente.',
   defaultImage: '/images/og/default.png', // OG default 1200×630 PNG (SVG no renderiza en WhatsApp/FB/X).
 
   // MEDIDO en vivo 2026-08-12: Cloudflare Pages sirve /ruta → 308 → /ruta/ (200).
@@ -43,9 +43,14 @@ export const SITE = {
   allowSelfReviews: false, // No se auto-emiten reseñas (Google penaliza self-serving).
 
   seo: {
-    title: 'Equipo contra incendio | extintores | mantenimiento', // ≤60, keyword-first sin marca.
+    // Title y description alineados al análisis NeuronWriter de «equipos contra
+    // incendios» (google.com.mx, 2026-09-09 · query 8b9220ebed40be2c). La SERP es
+    // 60 % transaccional y `cdmx` está infraexplotado: solo el 30 % del contenido
+    // y el 10 % de los H1 de la competencia lo usan. De ahí el verbo de compra y
+    // la señal local. Ver el plan de contenido del index en el vault.
+    title: 'Equipos contra incendios | venta e instalación CDMX', // 51 chars.
     description:
-      'Equipo contra incendio en México: venta de extintores, detección, hidrantes y señalización, con instalación, mantenimiento y recarga certificados. Cotiza por WhatsApp.',
+      'Equipos contra incendios con venta e instalación en CDMX y Edomex: extintores, detección, hidrantes y señalización certificados, listos para tu expediente.',
     image: '/images/og/default.png',
     titleMaxLength: 60,
     descriptionMaxLength: 160,
@@ -98,10 +103,16 @@ export const SITE = {
 // ── KEYWORDS — 3 palabras clave del sitio (kw1 principal → kw3 variante) ───────
 // Regla de metas (keyword-first): el title es "kw1 | kw2 | kw3" (kw1 primero, sin
 // marca, ≤60); la description abre con kw1 y teje las 3 con naturalidad (≤160).
+// Actualizado 2026-09-09 tras el análisis NeuronWriter: la keyword de la SERP es
+// el PLURAL («equipos contra incendios»), no el singular que usaba el sitio.
+// buildKeywordTitle() ensambla kw1 | kw2 = 51 chars; añadir kw3 daría 76, así que
+// la descarta sola y el title queda exacto. kw3 sigue alimentando la description
+// y metaAudit(). El ángulo del sitio frente al resto del portafolio es el
+// cumplimiento: proveedor integral para la empresa que tiene que estar en regla.
 export const KEYWORDS = [
-  'equipo contra incendio', // kw1 · principal
-  'extintores',             // kw2 · secundaria
-  'mantenimiento',          // kw3 · variante / long-tail
+  'equipos contra incendios', // kw1 · principal (plural — así se busca)
+  'venta e instalación CDMX', // kw2 · transaccional + señal local
+  'equipo certificado NOM',   // kw3 · ángulo diferencial; no cabe en el title
 ] as const;
 
 // ── CONTACT — NAP (Name, Address, Phone) + geo + horario ─────────────────────
@@ -379,6 +390,136 @@ export const LEGAL: { label: string; href: string }[] = [
   { label: 'Política de cookies', href: '/cookies/' },
   { label: 'Mapa del sitio', href: '/sitemap-index.xml' },
 ];
+
+// ── BLOG_CATEGORIES — taxonomía editorial del blog (SSoT) ────────────────────
+// Origen: «2026-09-09 — Estrategia editorial del blog (arquitectura SEO)».
+// Cada `slug` DEBE existir en ARTICLE_CATEGORIES (src/content.config.ts) y al
+// revés; lo vigila tests/blog-taxonomy.test.mjs. La página de archivo
+// /blog/categoria/<slug>/ lee de aquí su title, su meta y su copy: antes
+// improvisaba texto genérico que además le explicaba SEO al visitante.
+//
+// `cta` = destino comercial del cluster. Es lo que convierte al blog en soporte
+// de venta y no en un silo aislado: cada categoría empuja a una página que vende.
+export type BlogCategory = {
+  slug: string;
+  label: string;
+  /** Título de la página de archivo (≤60 caracteres). */
+  seoTitle: string;
+  /** Meta description de la página de archivo (140-160 caracteres). */
+  seoDescription: string;
+  /** Entradilla visible bajo el H1 del archivo. */
+  intro: string;
+  /** Párrafos de apoyo (columna derecha del hero). */
+  body: readonly string[];
+  /** Destino comercial del cluster. */
+  cta: { label: string; href: string };
+};
+
+export const BLOG_CATEGORIES: readonly BlogCategory[] = [
+  {
+    slug: 'extintores',
+    label: 'Extintores',
+    seoTitle: 'Extintores: guías de selección y uso',
+    seoDescription:
+      'Guías para elegir el extintor correcto según la clase de fuego, cuántos necesita tu inmueble, dónde colocarlos y cómo usarlos. Explicado para empresas en México.',
+    intro:
+      'Qué extintor necesita cada área, por qué el agente importa más que el tamaño y cómo distribuirlos para cumplir con la norma.',
+    body: [
+      'Elegir un extintor no es cuestión de tamaño: es cuestión de qué se puede quemar en el lugar. Aquí explicamos las clases de fuego, el agente que corresponde a cada una y los criterios de cantidad y colocación que revisa un verificador.',
+      'Si ya sabes qué necesitas, puedes pasar directo al catálogo; si no, escríbenos y te orientamos con el giro y el tamaño de tu inmueble.',
+    ],
+    cta: { label: 'Ver catálogo de extintores', href: '/productos/' },
+  },
+  {
+    slug: 'mantenimiento',
+    label: 'Mantenimiento y recarga',
+    seoTitle: 'Mantenimiento y recarga de extintores',
+    seoDescription:
+      'Cada cuándo se recarga un extintor, qué exige la NOM-154, qué incluye un servicio serio y cómo verificar que el mantenimiento se hizo bien.',
+    intro:
+      'Vigencias, recarga, prueba hidrostática e inspección: lo que mantiene tu equipo operativo y tu expediente en regla.',
+    body: [
+      'Un extintor sin mantenimiento vigente es un extintor que no cuenta en una verificación, aunque esté colgado en la pared. En esta sección explicamos las frecuencias que pide la norma, qué incluye un servicio profesional y cómo detectar a un proveedor que solo pinta el cilindro.',
+      'Damos servicio de mantenimiento, recarga, prueba hidrostática e inspección en CDMX y Estado de México.',
+    ],
+    cta: { label: 'Ver servicio de mantenimiento', href: '/servicios/mantenimiento/' },
+  },
+  {
+    slug: 'sistemas',
+    label: 'Sistemas contra incendio',
+    seoTitle: 'Sistemas contra incendio: guías técnicas',
+    seoDescription:
+      'Qué integra un sistema contra incendio: detección y alarma, hidrantes, gabinetes, mangueras y supresión. Criterios de selección e instalación para inmuebles en México.',
+    intro:
+      'Detección y alarma, red de hidrantes, gabinetes y sistemas de supresión: qué lleva cada uno y qué se revisa al instalarlo.',
+    body: [
+      'Un sistema contra incendio no es un equipo, es una cadena: detectar, alertar, evacuar y combatir. Aquí desglosamos cada eslabón, cuándo conviene un panel convencional o uno direccionable, qué detector va en cada área y qué exige la instalación de gabinetes e hidrantes.',
+      'Proyectamos e instalamos sistemas completos; si tienes obra nueva o remodelación, conviene revisarlo antes de cerrar el proyecto eléctrico.',
+    ],
+    cta: { label: 'Ver instalación de sistemas', href: '/servicios/instalacion/' },
+  },
+  {
+    slug: 'normatividad',
+    label: 'Normatividad y cumplimiento',
+    seoTitle: 'Normatividad contra incendio en México',
+    seoDescription:
+      'NOM-002-STPS, NOM-154-SCFI, NOM-026-STPS y Protección Civil explicadas: qué obliga cada norma, a quién aplica y cómo se acredita el cumplimiento.',
+    intro:
+      'Qué exige cada norma mexicana a tu centro de trabajo y cómo se demuestra ante la STPS o Protección Civil.',
+    body: [
+      'La mayoría de las empresas no compra equipo contra incendio por gusto: lo compra porque una norma o una verificación se lo exige. En esta sección traducimos las normas aplicables a acciones concretas y verificables, con la clave completa de cada una.',
+      'Si tienes una visita encima o un expediente incompleto, podemos hacer el diagnóstico y armar la documentación.',
+    ],
+    cta: { label: 'Ver inspección y dictamen', href: '/servicios/inspeccion/' },
+  },
+  {
+    slug: 'capacitacion',
+    label: 'Capacitación y brigadas',
+    seoTitle: 'Capacitación y brigadas contra incendio',
+    seoDescription:
+      'Cómo se forma una brigada contra incendios, qué exige la NOM-002-STPS, cuándo se necesita constancia DC-3 y cómo se documentan los simulacros.',
+    intro:
+      'Brigadas, cursos con constancia DC-3 y simulacros: la parte del cumplimiento que no se compra, se entrena.',
+    body: [
+      'El equipo sin personal capacitado no protege a nadie y tampoco acredita cumplimiento. Aquí explicamos cómo se integra una brigada, qué funciones tiene cada rol, con qué frecuencia debe capacitarse y cómo se documenta para que cuente en una verificación.',
+      'Impartimos cursos de brigada y manejo de extintores con constancia DC-3.',
+    ],
+    cta: { label: 'Ver capacitación y DC-3', href: '/servicios/capacitacion-dc3/' },
+  },
+  {
+    slug: 'prevencion',
+    label: 'Prevención por giro',
+    seoTitle: 'Prevención de incendios por giro de negocio',
+    seoDescription:
+      'Qué equipo contra incendio necesita un restaurante, una oficina, una bodega o un edificio, además de señalización y rutas de evacuación obligatorias.',
+    intro:
+      'Qué necesita tu giro en concreto: restaurantes, oficinas, bodegas y edificios, más señalización y evacuación.',
+    body: [
+      'El riesgo de una cocina no se parece al de una bodega ni al de un piso de oficinas, y el equipo exigible tampoco. En esta sección resolvemos la pregunta que de verdad hace el dueño de un negocio: qué me van a pedir a mí.',
+      'Hacemos el levantamiento del inmueble y proponemos el equipo mínimo exigible para tu giro, en CDMX y Estado de México.',
+    ],
+    cta: { label: 'Ver diagnóstico de riesgo', href: '/servicios/diagnostico-de-riesgo/' },
+  },
+  {
+    slug: 'costos',
+    label: 'Costos y decisión de compra',
+    seoTitle: 'Costos de equipo contra incendio',
+    seoDescription:
+      'De qué depende el precio de un extintor, qué debe incluir una cotización seria de equipo contra incendio y cómo comparar proveedores sin llevarte sorpresas.',
+    intro:
+      'De qué depende el precio, qué debe incluir una cotización y cómo comparar proveedores sin sorpresas.',
+    body: [
+      'Aquí no publicamos listas de precios: publicamos las variables que los mueven —capacidad, agente, certificación, volumen, si incluye instalación o traslado— para que puedas comparar cotizaciones con criterio.',
+      'Cuéntanos qué necesitas y te mandamos una cotización con el desglose completo.',
+    ],
+    cta: { label: 'Solicitar cotización', href: '/contacto/' },
+  },
+] as const;
+
+/** Busca una categoría del blog por slug. Devuelve undefined si no existe. */
+export function blogCategory(slug: string): BlogCategory | undefined {
+  return BLOG_CATEGORIES.find((c) => c.slug === slug);
+}
 
 // ── WA_MESSAGES — mensajes de WhatsApp pre-armados por intención ─────────────
 export const WA_MESSAGES = {
