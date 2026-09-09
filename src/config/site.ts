@@ -33,7 +33,7 @@ export const SITE = {
   lang: 'es-MX',
   locale: 'es-MX',
   description:
-    'Equipos contra incendios con venta e instalación en CDMX y Edomex: extintores, detección, hidrantes y señalización certificados, listos para tu expediente.',
+    'Equipos contra incendios en CDMX y Edomex: venta de equipos contra incendios, instalación y mantenimiento con equipo certificado y documentación en regla.',
   defaultImage: '/images/og/default.png', // OG default 1200×630 PNG (SVG no renderiza en WhatsApp/FB/X).
 
   // MEDIDO en vivo 2026-08-12: Cloudflare Pages sirve /ruta → 308 → /ruta/ (200).
@@ -50,7 +50,7 @@ export const SITE = {
     // la señal local. Ver el plan de contenido del index en el vault.
     title: 'Equipos contra incendios | venta de equipos contra incendios', // 60 chars — decisión de Frank 2026-09-09.
     description:
-      'Equipos contra incendios con venta e instalación en CDMX y Edomex: extintores, detección, hidrantes y señalización certificados, listos para tu expediente.',
+      'Equipos contra incendios en CDMX y Edomex: venta de equipos contra incendios, instalación y mantenimiento con equipo certificado y documentación en regla.',
     image: '/images/og/default.png',
     titleMaxLength: 60,
     descriptionMaxLength: 160,
