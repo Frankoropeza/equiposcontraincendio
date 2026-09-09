@@ -216,6 +216,11 @@ const zonas = defineCollection({
         })
         .optional(),
       colonias: z.array(z.string()).optional(), // SEGURIDADPRIVADA:283 — colonias de la zona.
+      // areas — subdivisiones administrativas que componen la zona (alcaldías de
+      // CDMX, municipios de un estado). Distinto de `colonias`, que es el nivel
+      // de barrio. Se usa para el copy de cobertura y para el interlinking local.
+      // Añadido en la auditoría 2026-09-09 · Fase 2.
+      areas: z.array(z.string()).optional(),
       // delivery/cobertura local (INFLAPY): tiempo y notas de entrega.
       delivery: z
         .object({

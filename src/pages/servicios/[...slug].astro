@@ -1,136 +1,168 @@
 ---
 // ============================================================================
-// /servicios/<id> — Detalle de servicio (Nivel L4).
+// /servicios/<slug> — Ficha de servicio (Nivel L4).
 // ----------------------------------------------------------------------------
-// Ruta dinámica generada desde SERVICES (TAXONOMY en site.ts, SSoT) — "manda el
-// menú": los slugs son los `id` de SERVICES (consultoria · implementacion ·
-// soporte), idénticos a los que enlaza el dropdown del Header. El contenido de
-// apoyo (qué incluye, proceso) es DEMO y vive en este archivo como mapa local.
+// AUDITORÍA 2026-09-09 · hallazgo NUEVO-3 (Fase 2):
+// Esta ruta NO leía la colección `servicios`. Generaba los slugs desde SERVICES
+// (TAXONOMY de site.ts) y sacaba el cuerpo de un mapa DEMO hardcodeado con los
+// servicios de una AGENCIA WEB —`consultoria`, `implementacion`, `soporte`, con
+// textos como «Construcción del sitio en Astro»—. Como los ids reales son
+// instalacion/mantenimiento/inspeccion, ninguno casaba y las tres fichas caían
+// al mismo fallback genérico («Alcance a medida · Acompañamiento técnico ·
+// Entrega documentada»). Consecuencias, verificadas en producción:
+//   · el markdown de src/content/servicios/*.md NUNCA se renderizaba;
+//   · las tres fichas eran prácticamente idénticas entre sí;
+//   · con pageType="page" no se emitía el schema Service.
+//
+// AHORA: rutas y contenido salen de la colección `servicios` (Zod .strict()),
+// el cuerpo markdown se renderiza, y el JSON-LD emite Service + FAQPage.
+// El menú del Header sigue viniendo de TAXONOMY.services: los `id` de allí y
+// los nombres de archivo de la colección DEBEN coincidir (lo vigila
+// tests/taxonomy-collections.test.mjs).
 // ============================================================================
+import { getCollection, render } from 'astro:content'
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
 import SectionHeading from '@components/SectionHeading.astro'
 import FAQAccordion from '@components/FAQAccordion.astro'
 import SectionMenu from '@components/SectionMenu.astro'
-import { SERVICES, waUrl, WA_MESSAGES } from '@config/site'
+import { waUrl, WA_MESSAGES } from '@config/site'
 
 export async function getStaticPaths() {
-  return SERVICES.map((s) => ({ params: { slug: s.id }, props: { servicio: s } }))
+  const servicios = (await getCollection('servicios', ({ data }) => !data.draft)).sort(
+    (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0),
+  )
+  const productos = await getCollection('productos', ({ data }) => !data.draft)
+
+  return servicios.map((servicio) => {
+    // Interlinking (B6). Preferencia: las relaciones declaradas en el
+    // frontmatter (reference() tipado); si no hay, los servicios hermanos.
+    // flatMap en vez de map+filter(Boolean): filter no estrecha el tipo en TS
+    // y `astro check` marcaba «possibly undefined» aguas abajo.
+    const declaredServices = (servicio.data.relatedServices ?? []).flatMap((ref) => {
+      const hit = servicios.find((s) => s.id === ref.id)
+      return hit ? [hit] : []
+    })
+    const declaredProducts = (servicio.data.relatedProducts ?? []).flatMap((ref) => {
+      const hit = productos.find((p) => p.id === ref.id)
+      return hit ? [hit] : []
+    })
+
+    const hermanos = servicios.filter((s) => s.id !== servicio.id)
+    const related = [
+      ...(declaredServices.length ? declaredServices : hermanos).map((s) => ({
+        label: s.data.title,
+        href: `/servicios/${s.id}/`,
+        sub: 'Otro servicio',
+      })),
+      ...declaredProducts.map((p) => ({
+        label: p.data.title,
+        href: `/productos/${p.id}/`,
+        sub: 'Producto relacionado',
+      })),
+    ]
+
+    return { params: { slug: servicio.id }, props: { servicio, related } }
+  })
 }
 
-const { servicio } = Astro.props
-const { id, label, desc } = servicio
+const { servicio, related } = Astro.props
+const { data, id } = servicio
+const { Content } = await render(servicio)
 
-// Contenido de apoyo DEMO por servicio (qué incluye). Reemplázalo por el real.
-const DETALLE: Record<string, { incluye: string[]; lede: string }> = {
-  consultoria: {
-    lede: 'Antes de construir, decidir bien. Definimos qué tiene que lograr tu sitio y cómo lo logrará.',
-    incluye: ['Diagnóstico del objetivo de negocio', 'Arquitectura de información y mapa de páginas', 'Definición de alcance, contenido y conversión'],
+const includes = data.includes ?? []
+const faqs = data.faqs ?? []
+
+// schemaData → Service (+ FAQPage si la ficha tiene preguntas visibles).
+// Claves EXACTAS del contrato de lib/seo.ts: service { name, description, path,
+// serviceType?, image?, areaServed?, priceRange? }.
+const schemaData = {
+  service: {
+    name: data.title,
+    description: data.description,
+    path: `/servicios/${id}/`,
+    serviceType: data.category,
+    image: data.image,
   },
-  implementacion: {
-    lede: 'De la definición al sitio publicado: construcción rápida, editable y lista para crecer.',
-    incluye: ['Construcción del sitio en Astro', 'Contenido en Markdown, separado del diseño', 'Publicación, dominio y puesta en marcha'],
-  },
-  soporte: {
-    lede: 'Un sitio vivo se cuida. Mantenemos, mejoramos y publicamos contigo después del lanzamiento.',
-    incluye: ['Mantenimiento técnico y mejoras', 'Publicación continua de contenido', 'Monitoreo, respaldos y soporte'],
-  },
+  ...(faqs.length ? { faqs } : {}),
 }
-const det = DETALLE[id] ?? { lede: desc, incluye: ['Alcance a medida', 'Acompañamiento técnico', 'Entrega documentada'] }
-
-// Proceso genérico (3 pasos) — mismo molde para todo servicio.
-const proceso = [
-  { n: '01', t: 'Diagnóstico', d: 'Entendemos el objetivo y el contexto para proponer con fundamento, no a ciegas.' },
-  { n: '02', t: 'Propuesta y ejecución', d: 'Definimos alcance y entregables claros, y ejecutamos sobre un sistema probado.' },
-  { n: '03', t: 'Entrega y seguimiento', d: 'Entregamos documentado y acompañamos para que puedas operar con autonomía.' },
-]
-
-const faqs = [
-  { question: '¿El servicio incluye algún comprobante de lo realizado?', answer: 'Sí. Según el servicio, entregamos evidencia: en recarga de extintores, la etiqueta y el collarín conforme a la NOM-154-SCFI-2005; en instalación e inspección, un reporte de lo realizado.' },
-  { question: '¿Cómo se cotiza?', answer: 'Cada proyecto se cotiza según su alcance. Escríbenos por WhatsApp con tu necesidad y te damos una propuesta con entregables y tiempos claros.' },
-  { question: '¿Puedo combinar varios servicios?', answer: 'Sí. Instalación, mantenimiento e inspección se complementan: equipamos tu inmueble, mantenemos vigente el equipo y revisamos que todo cumpla la norma.' },
-]
-
-// Relacionados — los otros servicios (interlinking).
-const otros = SERVICES.filter((s) => s.id !== id)
 
 const cierreItems = [
-  ...otros.map((s) => ({ label: s.label, href: `/servicios/${s.id}/`, sub: 'Otro servicio' })),
+  ...related.slice(0, 4),
   { label: 'Todos los servicios', href: '/servicios/', sub: 'Volver al catálogo' },
   { label: 'Contacto', href: '/contacto/', sub: 'Hablemos de tu proyecto' },
 ]
-const cierreCta = { label: 'Cotizar este servicio', href: waUrl(WA_MESSAGES.servicios), sub: 'Respuesta inmediata', external: true }
+const cierreCta = {
+  label: 'Cotizar este servicio',
+  href: waUrl(WA_MESSAGES.servicios),
+  sub: 'Respuesta inmediata',
+  external: true,
+}
 ---
 
 <PageLayout
-  title={`${label} — servicio`}
-  description={desc}
-  pageType="page"
-  breadcrumbs={[{ label: 'Servicios', href: '/servicios/' }, { label }]}
+  title={data.seoTitle ?? data.title}
+  description={data.seoDescription ?? data.description}
+  image={data.image}
+  pageType="service"
+  schemaData={schemaData}
+  breadcrumbs={[{ label: 'Servicios', href: '/servicios/' }, { label: data.title }]}
+  noindex={data.noindex}
   guia={false}
 >
   <Hero
-    badge="Servicio"
-    title={label}
-    accent=""
-    subtitle={det.lede}
+    badge={data.hero?.badge ?? 'Servicio'}
+    title={data.hero?.title ?? data.title}
+    subtitle={data.hero?.subtitle ?? data.description}
     descRight={[
-      desc,
-      'Aquí encuentras lo concreto de este servicio: qué incluye, cómo trabajamos y las dudas más frecuentes. Si te queda alguna pregunta, escríbenos por WhatsApp y te respondemos.',
+      'Aquí encuentras lo concreto del servicio: qué incluye, cómo trabajamos y las dudas más frecuentes. Si te queda alguna, escríbenos por WhatsApp y te respondemos.',
+    ]}
+    ctas={[
+      { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.servicios), variant: 'primary', whatsapp: true },
+      { text: 'Ver el catálogo', href: '/productos/', variant: 'outline' },
     ]}
   />
 
-  <section class="section">
-    <div class="container">
-      
-
-      <SectionHeading
-        layout="duo"
-        eyebrow="Qué incluye"
-        title={`Qué resuelve ${label}`}
-        desc="El alcance concreto del servicio: lo que recibes y por qué importa."
-        body={[
-          det.lede,
-          'La lista de la derecha resume el alcance del servicio: lo que se incluye y se entrega. Si tu caso necesita algo distinto, lo ajustamos en la cotización con entregables claros.',
-        ]}
-      />
-
-      <ul class="incluye">
-        {det.incluye.map((it) => (
-          <li class="incluye__item">
-            <span class="incluye__check" aria-hidden="true">✓</span>
-            <span>{it}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
+  {includes.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <SectionHeading
+          layout="duo"
+          eyebrow="Qué incluye"
+          title={`El alcance de ${data.title.toLowerCase()}`}
+          desc="Lo que recibes y por qué importa."
+          body={[
+            data.description,
+            'Si tu caso necesita algo distinto, lo ajustamos en la cotización con entregables y tiempos claros.',
+          ]}
+        />
+        <ul class="incluye">
+          {includes.map((it) => (
+            <li class="incluye__item">
+              <span class="incluye__check" aria-hidden="true">✓</span>
+              <span>{it}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
 
   <section class="section section--surface">
     <div class="container">
-      <SectionHeading
-        eyebrow="Cómo trabajamos"
-        title="Un proceso claro en tres"
-        titleAccent="pasos"
-        desc="El mismo método para todo servicio: diagnosticar, ejecutar y acompañar."
-      />
-      <div class="proceso">
-        {proceso.map((p) => (
-          <article class="paso">
-            <span class="paso__n">{p.n}</span>
-            <h3 class="paso__t">{p.t}</h3>
-            <p class="paso__d">{p.d}</p>
-          </article>
-        ))}
-      </div>
+      <article class="prose">
+        <Content />
+      </article>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <FAQAccordion items={faqs} title="Preguntas frecuentes" openFirst />
-    </div>
-  </section>
+  {faqs.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <FAQAccordion items={faqs} title="Preguntas frecuentes" openFirst />
+      </div>
+    </section>
+  )}
 
   <SectionMenu items={cierreItems} cta={cierreCta} ariaLabel="Otros servicios y contacto" />
 </PageLayout>
@@ -143,12 +175,18 @@ const cierreCta = { label: 'Cotizar este servicio', href: waUrl(WA_MESSAGES.serv
 
   .incluye { list-style: none; margin: var(--sp-6) 0 0; padding: 0; display: grid; gap: var(--sp-3); max-width: 60ch; }
   .incluye__item { display: flex; gap: var(--sp-3); align-items: start; font-size: var(--text-base); line-height: var(--leading-relaxed); color: var(--c-ink-2); }
-  .incluye__check { flex-shrink: 0; display: grid; place-items: center; width: 24px; height: 24px; border-radius: var(--radius-full); background: var(--c-primary-light); color: var(--c-primary); font-weight: var(--weight-bold); font-size: var(--text-sm); }
+  .incluye__check { flex-shrink: 0; display: grid; place-items: center; width: 24px; height: 24px; border-radius: var(--radius-full); background: var(--c-primary-light); color: #fff; font-weight: var(--weight-bold); font-size: var(--text-sm); }
 
-  .proceso { display: grid; grid-template-columns: 1fr; gap: var(--sp-4); margin-top: var(--sp-6); }
-  @media (min-width: 768px) { .proceso { grid-template-columns: repeat(3, 1fr); } }
-  .paso { padding: var(--sp-5); background: var(--c-white); border: 1px solid var(--c-border); border-radius: var(--radius-lg); }
-  .paso__n { font-family: var(--font-heading); font-size: var(--text-xl); font-weight: var(--weight-black); color: var(--c-primary); }
-  .paso__t { font-family: var(--font-heading); font-size: var(--text-lg); font-weight: var(--weight-bold); color: var(--c-ink); margin: var(--sp-2) 0; }
-  .paso__d { font-size: var(--text-base); line-height: var(--leading-relaxed); color: var(--c-ink-2); margin: 0; }
+  /* Cuerpo markdown de la ficha (colección `servicios`). */
+  .prose { max-width: var(--container-prose); margin-inline: auto; color: var(--c-ink-2); line-height: var(--leading-relaxed); }
+  .prose :global(h2) { font-family: var(--font-heading); font-size: var(--text-2xl); font-weight: var(--weight-bold); color: var(--c-ink); margin: var(--sp-6) 0 var(--sp-3); }
+  .prose :global(h3) { font-family: var(--font-heading); font-size: var(--text-xl); font-weight: var(--weight-semibold); color: var(--c-ink); margin: var(--sp-5) 0 var(--sp-2); }
+  .prose :global(p) { margin: 0 0 var(--sp-4); }
+  .prose :global(ul), .prose :global(ol) { margin: 0 0 var(--sp-4); padding-left: 1.25rem; }
+  .prose :global(li) { margin-bottom: var(--sp-2); }
+  .prose :global(strong) { color: var(--c-ink); font-weight: var(--weight-semibold); }
+  .prose :global(a) { color: var(--c-primary); }
+  .prose :global(table) { width: 100%; border-collapse: collapse; margin: 0 0 var(--sp-4); font-size: var(--text-sm); }
+  .prose :global(th), .prose :global(td) { border: 1px solid var(--c-border); padding: var(--sp-3); text-align: left; }
+  .prose :global(th) { background: var(--c-white); font-weight: var(--weight-semibold); color: var(--c-ink); }
 </style>
