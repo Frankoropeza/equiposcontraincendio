@@ -92,9 +92,15 @@ const sitemapOptions = {
   // Eran 26 de las 56 URLs del sitemap (46 %) — listados casi vacíos que
   // competían en el índice contra las 7 guías reales. La plantilla de tag
   // emite `noindex, follow`: siguen navegables y siguen pasando enlaces.
+  // Las páginas de paginación (/blog/pagina/N/, /blog/categoria/<x>/pagina/N/)
+  // quedan FUERA del sitemap: son indexables y se rastrean por los enlaces de la
+  // paginación, pero el sitemap debe listar contenido canónico —artículos,
+  // fichas y archivos— y no el índice troceado del mismo contenido. Mismo
+  // criterio que retiró los archivos de etiqueta en la Fase 1 (P1-2).
   filter: (page) =>
     !page.includes('/404') &&
     !page.includes('/blog/tag/') &&
+    !page.includes('/pagina/') &&
     !page.includes('/_') &&
     !page.includes('/admin'),
 

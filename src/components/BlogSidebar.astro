@@ -1,0 +1,158 @@
+---
+// ============================================================================
+// BlogSidebar.astro — columna lateral del blog (índice y archivos de categoría).
+// ----------------------------------------------------------------------------
+// POR QUÉ (estrategia editorial 2026-09-09 · §6 Enlazado interno): el blog no es
+// un archivo, es la red que reparte autoridad hacia las páginas que venden. El
+// listado del blog tenía CERO enlaces a producto o servicio: el visitante que
+// llegaba por una guía sólo podía seguir a otra guía.
+//
+// Cada widget es una arista del grafo hub-and-spoke:
+//   categorías → archivos de cluster · servicios y catálogo → páginas que venden
+//   guías destacadas → artículos pilar · cobertura → SEO local
+//
+// DATA-DRIVEN: todo sale de las colecciones y de site.ts (SSoT). Al publicar un
+// artículo o añadir un servicio, la barra se actualiza sola.
+//
+// NO incluye etiquetas a propósito: /blog/tag/ se sirve `noindex, follow` desde
+// la auditoría P1-2, y enlazarlas desde CADA página del blog gastaría rastreo en
+// archivos que no queremos en el índice.
+// ============================================================================
+import { getCollection } from 'astro:content'
+import { SERVICES, COVERAGE_STATES, BLOG_CATEGORIES, waUrl, WA_MESSAGES } from '@config/site'
+
+interface Props {
+  /** Categoría de la página actual: se marca como activa en el widget. */
+  currentCategory?: string
+  /** Slugs de artículos ya visibles en la página (no se repiten en «destacadas»). */
+  excludeSlugs?: string[]
+}
+const { currentCategory = '', excludeSlugs = [] } = Astro.props
+
+const articulos = await getCollection('articulos', ({ data }) => !data.draft)
+const productos = await getCollection('productos', ({ data }) => !data.draft)
+
+// ── Categorías con conteo (sólo las que ya tienen artículos) ────────────────
+const counts = new Map<string, number>()
+for (const a of articulos) counts.set(a.data.category, (counts.get(a.data.category) ?? 0) + 1)
+const categorias = BLOG_CATEGORIES.filter((c) => (counts.get(c.slug) ?? 0) > 0).map((c) => ({
+  ...c,
+  count: counts.get(c.slug) ?? 0,
+}))
+
+// ── Guías destacadas: featured primero, luego las más recientes ─────────────
+const destacadas = articulos
+  .filter((a) => !excludeSlugs.includes(a.id))
+  .sort((a, b) => {
+    if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1
+    return b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  })
+  .slice(0, 4)
+
+// ── Catálogo: destacados primero, luego por `order` ─────────────────────────
+const catalogo = productos
+  .sort((a, b) => {
+    if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1
+    return (a.data.order ?? 0) - (b.data.order ?? 0)
+  })
+  .slice(0, 6)
+
+const waHref = waUrl(WA_MESSAGES.blog)
+---
+
+<aside class="bsb" aria-label="Explora el blog y el catálogo">
+  {categorias.length > 0 && (
+    <section class="bsb__w">
+      <h2 class="bsb__t">Categorías</h2>
+      <ul class="bsb__list" role="list">
+        {categorias.map((c) => (
+          <li>
+            <a
+              class:list={['bsb__link', c.slug === currentCategory && 'is-active']}
+              href={`/blog/categoria/${c.slug}/`}
+              aria-current={c.slug === currentCategory ? 'page' : undefined}
+            >
+              <span>{c.label}</span>
+              <span class="bsb__count">{c.count}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  <section class="bsb__w">
+    <h2 class="bsb__t">Nuestros servicios</h2>
+    <ul class="bsb__list" role="list">
+      {SERVICES.map((s) => (
+        <li><a class="bsb__link" href={`/servicios/${s.id}/`}>{s.label}</a></li>
+      ))}
+    </ul>
+    <a class="bsb__all" href="/servicios/">Ver todos los servicios →</a>
+  </section>
+
+  {destacadas.length > 0 && (
+    <section class="bsb__w">
+      <h2 class="bsb__t">Guías destacadas</h2>
+      <ul class="bsb__posts" role="list">
+        {destacadas.map((a) => (
+          <li>
+            <a class="bsb__post" href={`/blog/${a.id}/`}>
+              <img src={a.data.heroImage} alt="" width="80" height="60" loading="lazy" decoding="async" />
+              <span>{a.data.title}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {catalogo.length > 0 && (
+    <section class="bsb__w">
+      <h2 class="bsb__t">Del catálogo</h2>
+      <ul class="bsb__list" role="list">
+        {catalogo.map((p) => (
+          <li><a class="bsb__link" href={`/productos/${p.id}/`}>{p.data.title}</a></li>
+        ))}
+      </ul>
+      <a class="bsb__all" href="/productos/">Ver catálogo completo →</a>
+    </section>
+  )}
+
+  <section class="bsb__w">
+    <h2 class="bsb__t">Dónde damos servicio</h2>
+    <ul class="bsb__list" role="list">
+      {COVERAGE_STATES.map((z) => (
+        <li><a class="bsb__link" href={`/cobertura/${z.slug}/`}>{z.label}</a></li>
+      ))}
+    </ul>
+    <a class="bsb__all" href="/cobertura/">Ver toda la cobertura →</a>
+  </section>
+
+  <section class="bsb__w bsb__w--cta">
+    <h2 class="bsb__t">¿Tienes una duda concreta?</h2>
+    <p class="bsb__p">Cuéntanos el giro y el tamaño de tu inmueble y te decimos qué equipo es exigible.</p>
+    <a class="btn btn--primary btn--block" href={waHref} rel="noopener" target="_blank">Preguntar por WhatsApp</a>
+    <a class="bsb__all" href="/contacto/">O escríbenos por correo →</a>
+  </section>
+</aside>
+
+<style>
+  .bsb { display: grid; gap: var(--sp-5); align-content: start; }
+  .bsb__w { padding: var(--sp-5); border: 1px solid var(--c-border); border-radius: var(--radius-lg, 12px); background: var(--c-white); }
+  .bsb__w--cta { background: var(--c-surface); }
+  .bsb__t { font-family: var(--font-heading); font-size: var(--text-base); margin: 0 0 var(--sp-3); }
+  .bsb__p { color: var(--c-ink-2); font-size: var(--text-sm); margin: 0 0 var(--sp-4); }
+  .bsb__list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-1); }
+  .bsb__link { display: flex; justify-content: space-between; gap: var(--sp-3); align-items: center; padding: var(--sp-2) 0; color: var(--c-ink-2); text-decoration: none; font-size: var(--text-sm); border-bottom: 1px solid transparent; }
+  .bsb__link:hover { color: var(--c-accent); }
+  .bsb__link.is-active { color: var(--c-accent); font-weight: 600; }
+  .bsb__count { flex: none; min-width: 1.5rem; text-align: center; font-size: var(--text-xs); color: var(--c-muted); border: 1px solid var(--c-border); border-radius: 999px; padding: 0 var(--sp-1); }
+  .bsb__posts { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-4); }
+  .bsb__post { display: grid; grid-template-columns: 5rem 1fr; gap: var(--sp-3); align-items: center; text-decoration: none; color: var(--c-ink); font-size: var(--text-sm); line-height: 1.35; }
+  .bsb__post img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-md, 8px); }
+  .bsb__post:hover span { color: var(--c-accent); }
+  .bsb__all { display: inline-block; margin-top: var(--sp-3); font-size: var(--text-sm); color: var(--c-accent); text-decoration: none; }
+  .bsb__all:hover { text-decoration: underline; }
+  .btn--block { width: 100%; }
+</style>

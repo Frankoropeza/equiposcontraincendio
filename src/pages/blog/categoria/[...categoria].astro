@@ -1,36 +1,52 @@
 ---
 // ============================================================================
-// /blog/categoria/<categoria> — Archivo de categoría del blog.
+// /blog/categoria/<slug>/ y /blog/categoria/<slug>/pagina/<n>/
 // ----------------------------------------------------------------------------
-// Una página por categoría USADA por los artículos (no por todo el enum), con
-// el copy, el title y la meta de BLOG_CATEGORIES (src/config/site.ts).
+// Archivo de categoría del blog, paginado. El copy, el title, la meta y el
+// destino comercial salen de BLOG_CATEGORIES (src/config/site.ts): antes esta
+// página improvisaba el texto a partir del slug y le explicaba SEO al visitante.
 //
-// ESTRATEGIA EDITORIAL 2026-09-09: antes esta página improvisaba el texto a
-// partir del slug y le explicaba SEO al visitante («las páginas de categoría…
-// generan una URL de archivo que el buscador puede posicionar»). Ahora cada
-// categoría trae su propia entradilla, su meta y su DESTINO COMERCIAL, que es
-// lo que hace del archivo una página con función y no un duplicado del índice.
+// POR QUÉ UN SOLO ARCHIVO CON REST PARAM: `[...categoria]` admite varios
+// segmentos, así que la misma ruta genera el archivo (`extintores`) y sus
+// páginas (`extintores/pagina/2`). Un directorio `[categoria]/pagina/[page]`
+// chocaría con este rest param.
+//
+// La página 1 nunca vive en /pagina/1/ (sería un duplicado del archivo).
 // ============================================================================
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
-import SectionHeading from '@components/SectionHeading.astro'
-import CategoryCard from '@components/CategoryCard.astro'
+import BlogArchive from '@components/BlogArchive.astro'
 import SectionMenu from '@components/SectionMenu.astro'
 import { getCollection } from 'astro:content'
-import { waUrl, WA_MESSAGES, blogCategory } from '@config/site'
+import { waUrl, WA_MESSAGES, blogCategory, BLOG_PAGE_SIZE } from '@config/site'
 
 export async function getStaticPaths() {
   const posts = (await getCollection('articulos', ({ data }) => !data.draft)).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
   )
   const cats = [...new Set(posts.map((p) => p.data.category))]
-  return cats.map((categoria) => ({
-    params: { categoria },
-    props: { categoria, posts: posts.filter((p) => p.data.category === categoria) },
-  }))
+
+  return cats.flatMap((categoria) => {
+    const all = posts.filter((p) => p.data.category === categoria)
+    const total = Math.max(1, Math.ceil(all.length / BLOG_PAGE_SIZE))
+
+    return Array.from({ length: total }, (_, i) => {
+      const page = i + 1
+      return {
+        // Página 1 → 'extintores'. Página N → 'extintores/pagina/N'.
+        params: { categoria: page === 1 ? categoria : `${categoria}/pagina/${page}` },
+        props: {
+          categoria,
+          page,
+          total,
+          posts: all.slice((page - 1) * BLOG_PAGE_SIZE, page * BLOG_PAGE_SIZE),
+        },
+      }
+    })
+  })
 }
 
-const { categoria, posts } = Astro.props
+const { categoria, page, total, posts } = Astro.props
 
 // Copy de la categoría. El respaldo sólo actúa si alguien publica un slug sin
 // entrada en BLOG_CATEGORIES; tests/blog-taxonomy.test.mjs impide que ocurra.
@@ -39,6 +55,27 @@ const label = cat?.label ?? categoria
 const intro = cat?.intro ?? `Artículos del blog en la categoría ${label}.`
 const body: string[] = [...(cat?.body ?? [])]
 const cta = cat?.cta
+
+const base = `/blog/categoria/${categoria}/`
+const path = page === 1 ? base : `${base}pagina/${page}/`
+const prevUrl = page === 2 ? base : `${base}pagina/${page - 1}/`
+const nextUrl = page < total ? `${base}pagina/${page + 1}/` : null
+
+const pageSuffix = page > 1 ? ` — página ${page}` : ''
+
+const schemaData = {
+  list: {
+    name: `${label}${pageSuffix}`,
+    description: cat?.seoDescription ?? intro,
+    path,
+    items: posts.map((a) => ({
+      name: a.data.title,
+      path: `/blog/${a.id}/`,
+      image: a.data.heroImage,
+      description: a.data.description,
+    })),
+  },
+}
 
 const cierreItems = [
   { label: 'Todo el blog', href: '/blog/', sub: 'Ver todos los artículos' },
@@ -50,12 +87,19 @@ const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog)
 ---
 
 <PageLayout
-  title={cat?.seoTitle ?? `${label} — blog`}
+  title={`${cat?.seoTitle ?? `${label} — blog`}${pageSuffix}`}
   description={cat?.seoDescription ?? intro}
   pageType="category"
-  breadcrumbs={[{ label: 'Blog', href: '/blog/' }, { label }]}
+  schemaData={schemaData}
+  breadcrumbs={[
+    { label: 'Blog', href: '/blog/' },
+    ...(page > 1 ? [{ label, href: base }, { label: `Página ${page}` }] : [{ label }]),
+  ]}
   guia={false}
 >
+  {page > 1 && <link slot="head" rel="prev" href={prevUrl} />}
+  {nextUrl && <link slot="head" rel="next" href={nextUrl} />}
+
   <Hero
     badge="Blog"
     title={label.split(' ')[0]}
@@ -68,40 +112,17 @@ const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog)
     ]}
   />
 
-  <section class="section">
-    <div class="container">
-      <SectionHeading
-        layout="duo"
-        eyebrow="Archivo de categoría"
-        title={`Artículos sobre ${label.toLowerCase()}`}
-        desc={`${posts.length} ${posts.length === 1 ? 'artículo' : 'artículos'} en esta categoría.`}
-        body={body}
-      />
-      <div class="grid">
-        {posts.map((a, i) => (
-          <CategoryCard
-            label={a.data.title}
-            href={`/blog/${a.id}/`}
-            image={a.data.heroImage}
-            imageAlt={a.data.title}
-            badge={label}
-            blurb={a.data.description}
-            ctaLabel="Leer artículo"
-            index={i}
-          />
-        ))}
-      </div>
-    </div>
-  </section>
+  <BlogArchive
+    posts={posts}
+    current={page}
+    total={total}
+    base={base}
+    currentCategory={categoria}
+    eyebrow={page > 1 ? `Página ${page} de ${total}` : 'Archivo de categoría'}
+    title={`Artículos sobre ${label.toLowerCase()}`}
+    desc={`${posts.length} ${posts.length === 1 ? 'artículo' : 'artículos'} en esta página.`}
+    body={body}
+  />
 
   <SectionMenu items={cierreItems} cta={cierreCta} ariaLabel="Sigue explorando el blog" />
 </PageLayout>
-
-<style>
-  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
-  .section { padding: var(--sp-8) 0; }
-  @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
-  .grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-5); margin-top: var(--sp-6); }
-  @media (min-width: 640px)  { .grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); } }
-</style>

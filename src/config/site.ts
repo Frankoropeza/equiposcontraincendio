@@ -521,6 +521,10 @@ export const BLOG_CATEGORIES: readonly BlogCategory[] = [
   },
 ] as const;
 
+// Artículos por página en el blog y en los archivos de categoría. Contrato de
+// URL: página 1 = /blog/ (o /blog/categoria/<slug>/), página N = <base>/pagina/N/.
+export const BLOG_PAGE_SIZE = 6;
+
 /** Busca una categoría del blog por slug. Devuelve undefined si no existe. */
 export function blogCategory(slug: string): BlogCategory | undefined {
   return BLOG_CATEGORIES.find((c) => c.slug === slug);

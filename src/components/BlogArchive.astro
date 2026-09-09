@@ -1,0 +1,107 @@
+---
+// ============================================================================
+// BlogArchive.astro — cuerpo compartido del blog: listado + barra lateral +
+// paginación.
+// ----------------------------------------------------------------------------
+// Lo usan las TRES rutas del archivo (/blog/, /blog/pagina/N/ y
+// /blog/categoria/<slug>/[pagina/N/]) para que el listado sea una sola pieza y
+// no tres copias que se van separando con el tiempo (mismo criterio que llevó
+// el blog a colección .mdx y la taxonomía a BLOG_CATEGORIES).
+// ============================================================================
+import SectionHeading from '@components/SectionHeading.astro'
+import CategoryCard from '@components/CategoryCard.astro'
+import BlogSidebar from '@components/BlogSidebar.astro'
+import Pagination from '@components/Pagination.astro'
+import { BLOG_CATEGORIES } from '@config/site'
+
+type Post = {
+  id: string
+  data: { title: string; description: string; heroImage: string; category: string }
+}
+
+interface Props {
+  /** Artículos de ESTA página (ya paginados). */
+  posts: Post[]
+  /** Página actual (1-based) y total de páginas. */
+  current: number
+  total: number
+  /** Ruta base del archivo, con barra final. */
+  base: string
+  /** Categoría del archivo, si lo es (marca el widget y quita el badge redundante). */
+  currentCategory?: string
+  eyebrow: string
+  title: string
+  titleAccent?: string
+  desc?: string
+  body?: string[]
+}
+const {
+  posts,
+  current,
+  total,
+  base,
+  currentCategory = '',
+  eyebrow,
+  title,
+  titleAccent,
+  desc,
+  body = [],
+} = Astro.props
+
+const CAT_LABEL: Record<string, string> = Object.fromEntries(
+  BLOG_CATEGORIES.map((c) => [c.slug, c.label]),
+)
+const excludeSlugs = posts.map((p) => p.id)
+---
+
+<section class="section">
+  <div class="container">
+    <SectionHeading
+      layout="duo"
+      eyebrow={eyebrow}
+      title={title}
+      titleAccent={titleAccent}
+      desc={desc}
+      body={body}
+    />
+
+    <div class="archive">
+      <div class="archive__main">
+        <div class="grid">
+          {posts.map((a, i) => (
+            <CategoryCard
+              label={a.data.title}
+              href={`/blog/${a.id}/`}
+              image={a.data.heroImage}
+              imageAlt={a.data.title}
+              badge={CAT_LABEL[a.data.category] ?? 'Artículo'}
+              blurb={a.data.description}
+              ctaLabel="Leer artículo"
+              index={i}
+            />
+          ))}
+        </div>
+
+        <Pagination current={current} total={total} base={base} />
+      </div>
+
+      <BlogSidebar currentCategory={currentCategory} excludeSlugs={excludeSlugs} />
+    </div>
+  </div>
+</section>
+
+<style>
+  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
+  .section { padding: var(--sp-8) 0; }
+  @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
+
+  /* Una columna en móvil: el listado primero, la barra al final. */
+  .archive { display: grid; grid-template-columns: 1fr; gap: var(--sp-7); margin-top: var(--sp-6); }
+  .archive__main { min-width: 0; }
+  .grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-5); }
+  @media (min-width: 640px)  { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) {
+    .archive { grid-template-columns: minmax(0, 1fr) 20rem; gap: var(--sp-8); }
+    .grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

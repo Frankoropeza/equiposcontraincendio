@@ -1,30 +1,28 @@
 ---
-// /blog/ — Landing del Blog (lista de artículos). L2 HOMOLOGADA con el sistema
-// del index: Hero → SectionMenu → tarjetas → CTABanner. Copy de cara al cliente.
-// El grid sale de la colección `articulos` (.mdx), ordenada por fecha.
+// ============================================================================
+// /blog/ — Landing del Blog (página 1 del archivo).
+// ----------------------------------------------------------------------------
+// L2 homologada: Hero → SectionMenu → listado con barra lateral → paginación.
+// El listado, la barra y la paginación viven en BlogArchive (pieza compartida
+// con /blog/pagina/N/ y con los archivos de categoría).
+//
+// SEO: pageType="category" + schemaData.list → CollectionPage + ItemList con los
+// artículos de ESTA página. Antes era pageType="page", así que el índice del
+// blog no declaraba qué listaba.
+// ============================================================================
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
 import SectionMenu from '@components/SectionMenu.astro'
-import SectionHeading from '@components/SectionHeading.astro'
-import CategoryCard from '@components/CategoryCard.astro'
+import BlogArchive from '@components/BlogArchive.astro'
 import { getCollection } from 'astro:content'
-import { NAV, waUrl, WA_MESSAGES, BLOG_CATEGORIES } from '@config/site'
+import { NAV, waUrl, WA_MESSAGES, BLOG_PAGE_SIZE } from '@config/site'
 
 const articulos = (await getCollection('articulos', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 )
 
-// Etiqueta legible del badge de categoría — sale de BLOG_CATEGORIES (SSoT),
-// no de un mapa local: al añadir una categoría no hay que tocar esta página.
-const CAT_LABEL: Record<string, string> = Object.fromEntries(
-  BLOG_CATEGORIES.map((c) => [c.slug, c.label]),
-)
-
-// Chips de categoría: sólo las que ya tienen artículos publicados (regla
-// anti-archivo-delgado de la estrategia editorial: una categoría vacía es una
-// URL que compite contra sus propios artículos sin aportar nada).
-const usedCategories = new Set<string>(articulos.map((a) => a.data.category))
-const chips = BLOG_CATEGORIES.filter((c) => usedCategories.has(c.slug))
+const total = Math.max(1, Math.ceil(articulos.length / BLOG_PAGE_SIZE))
+const posts = articulos.slice(0, BLOG_PAGE_SIZE)
 
 // ── Menú de secciones bajo el hero (data-driven desde NAV; excluye Contacto) ──
 const menuSub: Record<string, string> = {
@@ -44,12 +42,28 @@ const menuCta = {
   sub: 'Respuesta inmediata',
   external: true,
 }
+
+const schemaData = {
+  list: {
+    name: 'Blog de equipo contra incendio',
+    description:
+      'Guías sobre extintores, mantenimiento, sistemas contra incendio y normatividad mexicana aplicable a empresas.',
+    path: '/blog/',
+    items: posts.map((a) => ({
+      name: a.data.title,
+      path: `/blog/${a.id}/`,
+      image: a.data.heroImage,
+      description: a.data.description,
+    })),
+  },
+}
 ---
 
 <PageLayout
-  title="Blog — guías de seguridad contra incendio"
-  description="Guías sobre equipo contra incendio: cómo elegir un extintor según la clase de fuego, qué pide la NOM-154 y cómo mantener tu inmueble protegido y en regla."
-  pageType="page"
+  title="Blog de equipo contra incendio en México"
+  description="Guías sobre extintores, mantenimiento y recarga, sistemas contra incendio y qué exige la normatividad mexicana a tu empresa. Explicado claro y aplicado a tu caso."
+  pageType="category"
+  schemaData={schemaData}
   breadcrumbs={[{ label: 'Blog' }]}
   guia={false}
 >
@@ -71,56 +85,18 @@ const menuCta = {
 
   <SectionMenu items={menuSecciones} cta={menuCta} />
 
-  {/* ─── Lista de artículos ─── */}
-  <section class="section section--surface">
-    <div class="container">
-      <SectionHeading
-        layout="duo"
-        eyebrow="Últimos artículos"
-        title="Guías y"
-        titleAccent="normatividad"
-        desc="Lo esencial sobre extintores, mantenimiento y cumplimiento, explicado claro."
-        body={[
-          'Reunimos guías prácticas sobre protección contra incendio: qué equipo necesitas según tu riesgo, cada cuándo darle servicio y qué pide la norma para pasar una inspección.',
-          'Cada artículo va al grano y, cuando aplica, te conecta con el producto o servicio que resuelve tu caso.',
-        ]}
-      />
-
-      {chips.length > 1 && (
-        <nav class="chips" aria-label="Categorías del blog">
-          {chips.map((c) => (
-            <a class="chip" href={`/blog/categoria/${c.slug}/`}>{c.label}</a>
-          ))}
-        </nav>
-      )}
-
-      <div class="grid">
-        {articulos.map((a, i) => (
-          <CategoryCard
-            label={a.data.title}
-            href={`/blog/${a.id}/`}
-            image={a.data.heroImage}
-            imageAlt={a.data.title}
-            badge={CAT_LABEL[a.data.category] ?? 'Artículo'}
-            blurb={a.data.description}
-            ctaLabel="Leer artículo"
-            index={i}
-          />
-        ))}
-      </div>
-    </div>
-  </section>
+  <BlogArchive
+    posts={posts}
+    current={1}
+    total={total}
+    base="/blog/"
+    eyebrow="Últimos artículos"
+    title="Guías y"
+    titleAccent="normatividad"
+    desc="Lo esencial sobre extintores, mantenimiento y cumplimiento, explicado claro."
+    body={[
+      'Reunimos guías prácticas sobre protección contra incendio: qué equipo necesitas según tu riesgo, cada cuándo darle servicio y qué pide la norma para pasar una inspección.',
+      'Cada artículo va al grano y, cuando aplica, te conecta con el producto o servicio que resuelve tu caso.',
+    ]}
+  />
 </PageLayout>
-
-<style>
-  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
-  .section { padding: var(--sp-8) 0; }
-  .section--surface { background: var(--c-surface); }
-  @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
-  .chips { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-top: var(--sp-5); }
-  .chip { display: inline-block; padding: var(--sp-2) var(--sp-4); border: 1px solid var(--c-border); border-radius: 999px; font-size: var(--text-sm); text-decoration: none; color: var(--c-ink); }
-  .chip:hover { border-color: var(--c-accent); color: var(--c-accent); }
-  .grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-5); margin-top: var(--sp-6); }
-  @media (min-width: 640px)  { .grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); } }
-</style>

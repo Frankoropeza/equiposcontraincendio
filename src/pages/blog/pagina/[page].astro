@@ -1,0 +1,85 @@
+---
+// ============================================================================
+// /blog/pagina/<n>/ — Páginas 2..N del archivo del blog.
+// ----------------------------------------------------------------------------
+// La página 1 vive en /blog/ (index.astro) y NUNCA en /blog/pagina/1/: dos URLs
+// con el mismo listado serían contenido duplicado. Esta ruta arranca en la 2.
+//
+// SEO de la paginación:
+//   • Indexable con canonical propio (cada página lista artículos distintos).
+//   • title y meta description propios, con el número de página — nunca los
+//     mismos que la página 1.
+//   • rel=prev / rel=next en el <head> (PageLayout reenvía el slot "head").
+//   • CollectionPage + ItemList con los artículos de ESTA página.
+// ============================================================================
+import PageLayout from '@layouts/PageLayout.astro'
+import BlogArchive from '@components/BlogArchive.astro'
+import { getCollection } from 'astro:content'
+import { BLOG_PAGE_SIZE } from '@config/site'
+
+export async function getStaticPaths() {
+  const articulos = (await getCollection('articulos', ({ data }) => !data.draft)).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  )
+  const total = Math.max(1, Math.ceil(articulos.length / BLOG_PAGE_SIZE))
+
+  // Desde la 2: la 1 es /blog/.
+  return Array.from({ length: Math.max(0, total - 1) }, (_, i) => {
+    const page = i + 2
+    return {
+      params: { page: String(page) },
+      props: {
+        page,
+        total,
+        posts: articulos.slice((page - 1) * BLOG_PAGE_SIZE, page * BLOG_PAGE_SIZE),
+      },
+    }
+  })
+}
+
+const { page, total, posts } = Astro.props
+
+const prevUrl = page === 2 ? '/blog/' : `/blog/pagina/${page - 1}/`
+const nextUrl = page < total ? `/blog/pagina/${page + 1}/` : null
+
+const schemaData = {
+  list: {
+    name: `Blog de equipo contra incendio — página ${page}`,
+    description: `Artículos del blog de equipo contra incendio, página ${page} de ${total}.`,
+    path: `/blog/pagina/${page}/`,
+    items: posts.map((a) => ({
+      name: a.data.title,
+      path: `/blog/${a.id}/`,
+      image: a.data.heroImage,
+      description: a.data.description,
+    })),
+  },
+}
+---
+
+<PageLayout
+  title={`Blog de equipo contra incendio — página ${page}`}
+  description={`Guías sobre extintores, mantenimiento, sistemas contra incendio y normatividad mexicana. Página ${page} de ${total} del blog.`}
+  pageType="category"
+  schemaData={schemaData}
+  breadcrumbs={[{ label: 'Blog', href: '/blog/' }, { label: `Página ${page}` }]}
+  guia={false}
+>
+  <link slot="head" rel="prev" href={prevUrl} />
+  {nextUrl && <link slot="head" rel="next" href={nextUrl} />}
+
+  <BlogArchive
+    posts={posts}
+    current={page}
+    total={total}
+    base="/blog/"
+    eyebrow={`Página ${page} de ${total}`}
+    title="Guías y"
+    titleAccent="normatividad"
+    desc="Sigue explorando el archivo del blog."
+    body={[
+      'Estas son las guías anteriores del blog. El orden es cronológico: lo más reciente está en la primera página.',
+      '¿Buscas un tema en concreto? Filtra por categoría desde la barra lateral: extintores, mantenimiento, sistemas, normatividad, capacitación, prevención por giro y costos.',
+    ]}
+  />
+</PageLayout>
