@@ -296,6 +296,45 @@ const casos = defineCollection({
     .strict(),
 });
 
+// ── Colección: plantillas (formatos descargables) ────────────────────────────
+// Bloque E del plan de activos de utilidad pública (2026-09-09). Entidad
+// repetible con cuerpo propio → colección, nunca .astro sueltos (D1/D3).
+// Los archivos viven en /public/plantillas/ y se reproducen con los scripts de
+// scripts/plantillas/; aquí se declara qué se publica de cada uno.
+const plantillas = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/plantillas' }),
+  schema: z
+    .object({
+      title: z.string().min(10).max(110),
+      description: z.string().min(70).max(280),
+      /** Etiqueta corta para el hub y el menú. */
+      label: z.string().min(5).max(70),
+      /** Norma de la que sale el formato (se cita en la página). */
+      norm: z.string(),
+      /** Archivos publicados. Al menos uno; la ruta debe estar bajo /plantillas/. */
+      files: z
+        .array(
+          z.object({
+            ext: z.string(),
+            href: z.string().regex(/^\/plantillas\//, {
+              message: 'El archivo debe vivir bajo /plantillas/ (public/plantillas/…)',
+            }),
+            size: z.string(),
+          }),
+        )
+        .min(1),
+      /** Pasos de llenado, en orden. */
+      steps: z.array(z.string()).min(2).optional(),
+      faqs: faqSchema,
+      relatedServices: z.array(reference('servicios')).optional(),
+      relatedPosts: z.array(reference('articulos')).optional(),
+      order: z.number().default(0),
+      draft: z.boolean().default(false),
+      ...seoFields,
+    })
+    .strict(),
+});
+
 // ── Export ────────────────────────────────────────────────────────────────────
 // Borra las colecciones que el proyecto no use (un sitio puede no tener `zonas`
 // o `casos`). Mantén `articulos` si hay blog (siempre .mdx — D3).
@@ -304,4 +343,5 @@ export const collections = {
   servicios,
   articulos,
   zonas,
+  plantillas,
 };

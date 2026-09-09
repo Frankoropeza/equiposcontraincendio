@@ -230,6 +230,16 @@ export const TOOLS: readonly Tool[] = [
   },
 ] as const;
 
+// ── PLANTILLAS — nota de arquitectura ───────────────────────────────────────
+// Los formatos descargables (bitácora de extintores, acta de simulacro, censo
+// de brigada) NO viven aquí: son una Content Collection (`plantillas`), porque
+// son entidad repetible con cuerpo propio (regla D1). site.ts sólo aporta el
+// enlace de menú a /plantillas/.
+//
+// Y NO existe una sección /normas/ paralela: las fichas por norma son el
+// cluster `normatividad` del blog. Duplicarlas habría canibalizado los
+// artículos del mapa editorial — una URL por intención.
+
 // ── NAV — menú principal del Header (FUENTE ÚNICA: escritorio + móvil) ────────
 export type NavLink = { label: string; href: string; desc?: string };
 export type NavItem = {
@@ -275,7 +285,10 @@ export const NAV: readonly NavItem[] = [
     href: '/herramientas/',
     panel: 'dropdown',
     allLabel: 'Ver todas las herramientas',
-    items: TOOLS.map((t) => ({ label: t.label, href: `/herramientas/${t.slug}/`, desc: t.desc })),
+    items: [
+      ...TOOLS.map((t) => ({ label: t.label, href: `/herramientas/${t.slug}/`, desc: t.desc })),
+      { label: 'Formatos descargables', href: '/plantillas/', desc: 'Bitácora de extintores, acta de simulacro y censo de brigada.' },
+    ],
   },
   { label: 'Blog', href: '/blog/' },
   { label: 'Contacto', href: '/contacto/' },

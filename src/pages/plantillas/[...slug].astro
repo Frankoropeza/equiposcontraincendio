@@ -1,0 +1,127 @@
+---
+// ============================================================================
+// /plantillas/<slug>/ — Ficha de un formato descargable.
+// ----------------------------------------------------------------------------
+// Ruta dinámica única sobre la colección `plantillas`. La página explica de qué
+// norma sale el formato y cómo se llena; el archivo se descarga desde aquí.
+// Publicar sólo el archivo no serviría: un .xlsx no posiciona ni enseña nada.
+// ============================================================================
+import PageLayout from '@layouts/PageLayout.astro'
+import FAQAccordion from '@components/FAQAccordion.astro'
+import CTABanner from '@components/CTABanner.astro'
+import RelatedLinks from '@components/RelatedLinks.astro'
+import { getCollection, render } from 'astro:content'
+import { waUrl } from '@config/site'
+
+export async function getStaticPaths() {
+  const plantillas = await getCollection('plantillas', ({ data }) => !data.draft)
+  const servicios = await getCollection('servicios', ({ data }) => !data.draft)
+  const articulos = await getCollection('articulos', ({ data }) => !data.draft)
+
+  return plantillas.map((entry) => {
+    const otras = plantillas
+      .filter((p) => p.id !== entry.id)
+      .map((p) => ({ label: p.data.label, href: `/plantillas/${p.id}/`, description: p.data.description }))
+
+    const comerciales = [
+      ...(entry.data.relatedServices ?? [])
+        .map((r) => servicios.find((s) => s.id === r.id))
+        .filter(Boolean)
+        .map((s) => ({ label: s!.data.title, href: `/servicios/${s!.id}/`, description: s!.data.description })),
+      ...(entry.data.relatedPosts ?? [])
+        .map((r) => articulos.find((a) => a.id === r.id))
+        .filter(Boolean)
+        .map((a) => ({ label: a!.data.title, href: `/blog/${a!.id}/`, description: a!.data.description })),
+    ]
+
+    return { params: { slug: entry.id }, props: { entry, otras, comerciales } }
+  })
+}
+
+const { entry, otras, comerciales } = Astro.props
+const { Content } = await render(entry)
+const d = entry.data
+const waHref = waUrl(`Hola, descargué el formato "${d.label}" y quiero que me apoyen con mi inmueble.`)
+---
+
+<PageLayout
+  title={d.seoTitle ?? d.title}
+  description={d.seoDescription ?? d.description}
+  pageType="page"
+  schemaData={{ ...(d.faqs?.length ? { faqs: d.faqs } : {}) }}
+  breadcrumbs={[{ label: 'Formatos descargables', href: '/plantillas/' }, { label: d.label }]}
+  guia={false}
+>
+  <section class="pl">
+    <div class="container">
+      <p class="pl__eyebrow">Formato descargable · {d.norm}</p>
+      <h1 class="pl__h1">{d.label}</h1>
+      <p class="pl__lede">{d.description}</p>
+
+      <div class="dl">
+        <p class="dl__t">Descarga gratis, sin registro</p>
+        <div class="dl__row">
+          {d.files.map((f) => (
+            <a class="dl__btn" href={f.href} download>
+              <strong>{f.ext}</strong>
+              <span>{f.size}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--prose">
+      {d.steps && d.steps.length > 0 && (
+        <>
+          <h2>Cómo se llena</h2>
+          <ol class="steps">{d.steps.map((s) => <li>{s}</li>)}</ol>
+        </>
+      )}
+
+      <div class="prose"><Content /></div>
+    </div>
+  </section>
+
+  {d.faqs && d.faqs.length > 0 && (
+    <section class="section section--surface">
+      <div class="container container--prose">
+        <FAQAccordion items={d.faqs} title="Preguntas frecuentes" openFirst bare />
+      </div>
+    </section>
+  )}
+
+  <section class="section">
+    <div class="container">
+      <RelatedLinks title="Sigue por aquí" links={[...otras, ...comerciales].slice(0, 4)} limit={4} />
+    </div>
+  </section>
+
+  <CTABanner
+    heading="¿Quieres que lo llevemos nosotros?"
+    desc="Mantenimiento, inspección, capacitación y expediente al día, sin que tengas que perseguir papeles."
+    btns={[{ label: 'Hablar por WhatsApp', href: waHref, icon: 'wa', primary: true, external: true }]}
+    badge="CDMX y Estado de México"
+    variant="red"
+  />
+</PageLayout>
+
+<style>
+  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
+  .container--prose { max-width: var(--container-prose, 72ch); }
+  .section { padding: var(--sp-8) 0; }
+  .section--surface { background: var(--c-surface); }
+  .pl { padding: var(--sp-9) 0 var(--sp-6); }
+  .pl__eyebrow { color: var(--c-accent); text-transform: uppercase; letter-spacing: .08em; font-size: var(--text-sm); margin: 0 0 var(--sp-2); }
+  .pl__h1 { font-family: var(--font-heading); font-size: var(--text-fluid-4xl, 2.25rem); line-height: 1.1; margin: 0 0 var(--sp-3); }
+  .pl__lede { color: var(--c-ink-2); max-width: 65ch; margin: 0 0 var(--sp-6); }
+  .dl { padding: var(--sp-5) var(--sp-6); border: 1px solid var(--c-border); border-left: 4px solid var(--c-accent); border-radius: var(--radius-lg, 12px); background: var(--c-white); max-width: 40rem; }
+  .dl__t { margin: 0 0 var(--sp-3); font-size: var(--text-sm); color: var(--c-ink-2); }
+  .dl__row { display: flex; flex-wrap: wrap; gap: var(--sp-3); }
+  .dl__btn { display: grid; gap: 2px; padding: var(--sp-3) var(--sp-5); border-radius: var(--radius-md, 8px); background: var(--c-primary); color: #fff; text-decoration: none; text-align: center; }
+  .dl__btn:hover { background: var(--c-primary-dark); }
+  .dl__btn span { font-size: var(--text-xs); opacity: .85; }
+  .steps { display: grid; gap: var(--sp-2); padding-left: 1.2rem; }
+</style>

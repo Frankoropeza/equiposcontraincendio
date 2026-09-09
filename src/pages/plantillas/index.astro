@@ -1,0 +1,141 @@
+---
+// ============================================================================
+// /plantillas/ — Hub de formatos descargables.
+// ----------------------------------------------------------------------------
+// Bloque E del plan de activos de utilidad pública. Listado data-driven desde
+// la colección `plantillas`. Los archivos viven en /public/plantillas/.
+//
+// Cada formato tiene PÁGINA PROPIA además del archivo: una página posiciona y
+// explica cómo se llena; un .xlsx suelto no rankea ni enseña nada.
+// ============================================================================
+import PageLayout from '@layouts/PageLayout.astro'
+import SectionHeading from '@components/SectionHeading.astro'
+import RelatedLinks from '@components/RelatedLinks.astro'
+import CTABanner from '@components/CTABanner.astro'
+import { getCollection } from 'astro:content'
+import { waUrl, WA_MESSAGES } from '@config/site'
+
+const plantillas = (await getCollection('plantillas', ({ data }) => !data.draft)).sort(
+  (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0),
+)
+
+const schemaData = {
+  list: {
+    name: 'Formatos descargables de seguridad contra incendio',
+    description:
+      'Bitácora de revisión mensual de extintores, acta de simulacro de evacuación y censo de brigada de emergencia, gratis y listos para llenar.',
+    path: '/plantillas/',
+    items: plantillas.map((p) => ({
+      name: p.data.label,
+      path: `/plantillas/${p.id}/`,
+      description: p.data.description,
+    })),
+  },
+}
+---
+
+<PageLayout
+  title="Formatos descargables contra incendio"
+  description="Descarga gratis los formatos que toda empresa tiene que llenar: bitácora de revisión mensual de extintores, acta de simulacro de evacuación y censo de brigada, en Excel, Word y PDF."
+  pageType="category"
+  schemaData={schemaData}
+  breadcrumbs={[{ label: 'Formatos descargables' }]}
+  guia={false}
+>
+  <section class="hub">
+    <div class="container">
+      <p class="hub__eyebrow">Descarga gratis · sin registro</p>
+      <h1 class="hub__h1">Los formatos que toda empresa tiene que llenar</h1>
+      <p class="hub__lede">
+        La bitácora de los extintores, el acta del simulacro y el censo de la brigada son tres
+        documentos que la autoridad pide y que casi nadie tiene a la mano. Aquí están, listos para
+        llenar, en formato editable y en PDF para imprimir.
+      </p>
+      <p class="hub__note">
+        Son formatos de apoyo: no sustituyen el programa interno de protección civil ni la
+        documentación que exija la autoridad competente en cada caso.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <SectionHeading
+        layout="duo"
+        eyebrow="Formatos"
+        title="Descarga, llena y"
+        titleAccent="archiva"
+        desc="Cada formato explica de qué norma sale y cómo se llena."
+        body={[
+          'Los hicimos con lo que vemos en campo: bitácoras firmadas de golpe el día de la visita, simulacros sin acta y brigadas censadas hace tres años con la mitad de la gente que ya no trabaja ahí.',
+          'Cada archivo va acompañado de una página que explica qué se registra y con qué frecuencia, para que el papel refleje lo que de verdad pasa en el inmueble.',
+        ]}
+      />
+
+      <ul class="cards" role="list">
+        {plantillas.map((p) => (
+          <li>
+            <article class="card">
+              <span class="card__badge">{p.data.norm}</span>
+              <h2 class="card__title"><a href={`/plantillas/${p.id}/`}>{p.data.label}</a></h2>
+              <p class="card__desc">{p.data.description}</p>
+              <p class="card__files">
+                {p.data.files.map((f) => (
+                  <a class="card__file" href={f.href} download>{f.ext} · {f.size}</a>
+                ))}
+              </p>
+              <a class="card__cta" href={`/plantillas/${p.id}/`}>Cómo se llena →</a>
+            </article>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <RelatedLinks
+        title="Antes de llenar los formatos"
+        links={[
+          { label: 'Clasifica tu riesgo de incendio', href: '/herramientas/riesgo-de-incendio/', desc: 'Ordinario o alto: de ahí cuelga casi todo lo demás.' },
+          { label: 'Cuántos extintores necesito', href: '/herramientas/cuantos-extintores-necesito/', desc: 'El mínimo por superficie y el agente por área.' },
+          { label: 'Verifica tu extintor', href: '/herramientas/verifica-tu-extintor/', desc: 'Doce puntos para revisar el equipo que ya tienes.' },
+          { label: 'Capacitación y DC-3', href: '/servicios/capacitacion-dc3/', desc: 'Cursos de brigada con constancia.' },
+        ]}
+        limit={4}
+      />
+    </div>
+  </section>
+
+  <CTABanner
+    heading="¿Prefieres que lo llevemos nosotros?"
+    desc="Armamos el expediente, damos el mantenimiento y capacitamos a tu brigada, con la documentación al día."
+    btns={[{ label: 'Hablar por WhatsApp', href: waUrl(WA_MESSAGES.default), icon: 'wa', primary: true, external: true }]}
+    badge="CDMX y Estado de México"
+    variant="dark"
+  />
+</PageLayout>
+
+<style>
+  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
+  .section { padding: var(--sp-8) 0; }
+  .section--surface { background: var(--c-surface); }
+  .hub { padding: var(--sp-9) 0 var(--sp-6); }
+  .hub__eyebrow { color: var(--c-accent); text-transform: uppercase; letter-spacing: .08em; font-size: var(--text-sm); margin: 0 0 var(--sp-2); }
+  .hub__h1 { font-family: var(--font-heading); font-size: var(--text-fluid-4xl, 2.25rem); line-height: 1.1; margin: 0 0 var(--sp-3); }
+  .hub__lede { color: var(--c-ink-2); max-width: 65ch; margin: 0 0 var(--sp-4); }
+  .hub__note { font-size: var(--text-sm); color: var(--c-muted); max-width: 65ch; margin: 0; }
+  .cards { list-style: none; margin: var(--sp-6) 0 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: var(--sp-5); }
+  @media (min-width: 700px)  { .cards { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .cards { grid-template-columns: repeat(3, 1fr); } }
+  .card { height: 100%; display: grid; align-content: start; gap: var(--sp-2); padding: var(--sp-6); border: 1px solid var(--c-border); border-radius: var(--radius-lg, 12px); background: var(--c-white); }
+  .card__badge { font-size: var(--text-xs); color: var(--c-muted); text-transform: uppercase; letter-spacing: .06em; }
+  .card__title { font-family: var(--font-heading); font-size: var(--text-lg); margin: 0; }
+  .card__title a { color: inherit; text-decoration: none; }
+  .card__title a:hover { color: var(--c-accent); }
+  .card__desc { color: var(--c-ink-2); font-size: var(--text-sm); margin: 0; }
+  .card__files { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin: var(--sp-3) 0 0; }
+  .card__file { font-size: var(--text-xs); padding: var(--sp-1) var(--sp-3); border: 1px solid var(--c-border); border-radius: 999px; text-decoration: none; color: var(--c-ink-2); }
+  .card__file:hover { border-color: var(--c-accent); color: var(--c-accent); }
+  .card__cta { margin-top: var(--sp-3); color: var(--c-accent); font-size: var(--text-sm); text-decoration: none; }
+</style>
