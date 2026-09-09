@@ -8,10 +8,16 @@
 // Master System OrigenLab). Respetar las claves EXACTAS: renombrar una clave
 // rompe el JSON-LD o el chrome aguas abajo.
 //
-// ⚠️ DATOS DE EJEMPLO — sitio recién dado de alta. El NAP (teléfono, WhatsApp,
-// domicilio, geo) es un PLACEHOLDER realista: reemplázalo por los datos reales del
-// negocio antes de promocionar. El gate `npm run check:demo` exige que no queden
-// marcadores pendientes. NO se inventan credenciales (años, reseñas, clientes).
+// ESTADO DEL NAP (2026-09-09):
+//   ✓ Teléfono y WhatsApp REALES (55 3934 0581). Frank indicó que es la línea
+//     disponible por ahora; si más adelante llega una definitiva, se cambia aquí
+//     y se propaga sola a topbar, header, botón flotante, formulario y JSON-LD.
+//   ⚠ PENDIENTE de verificar: domicilio, código postal, geo y horario siguen sin
+//     confirmarse contra el negocio real, y `organization.legalName` es el nombre
+//     comercial, no una razón social. Eso afecta al aviso de privacidad y a los
+//     términos, que publican esa identidad. Ver hallazgo P0-4 de la auditoría.
+// El gate `npm run check:demo` valida forma y coherencia del NAP en cada build.
+// NO se inventan credenciales (años, reseñas, clientes).
 // ============================================================================
 
 // ── SITE — identidad de marca + SEO + organización + negocio local ───────────
@@ -97,10 +103,10 @@ export const KEYWORDS = [
 
 // ── CONTACT — NAP (Name, Address, Phone) + geo + horario ─────────────────────
 export const CONTACT = {
-  phone: '55 1234 5678',          // Placeholder — reemplazar por el real.
-  phoneE164: '+525512345678',     // Placeholder (tel:).
-  phoneRaw: '+525512345678',      // Placeholder (JSON-LD).
-  whatsapp: '525512345678',       // Placeholder (wa.me, E.164 sin +).
+  phone: '55 3934 0581',          // Línea de contacto del negocio (2026-09-09).
+  phoneE164: '+525539340581',     // tel:
+  phoneRaw: '+525539340581',      // JSON-LD (idéntico a phoneE164).
+  whatsapp: '525539340581',       // wa.me — E.164 sin '+'. MISMA línea que el teléfono.
   email: 'equipocontraincendios737@gmail.com',
   street: 'Av. Homero 538-#303, Col. Polanco, Miguel Hidalgo',
   city: 'Ciudad de México',
