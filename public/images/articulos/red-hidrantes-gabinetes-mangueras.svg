@@ -22,5 +22,5 @@
     <line x1="-40" y1="60" x2="40" y2="60" stroke="#d6dae1" stroke-width="8" stroke-linecap="round"/>
   </g>
   <text x="400" y="392" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="26" font-weight="700" fill="#14181f">Red de hidrantes y gabinetes</text>
-  <text x="400" y="424" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="17" fill="#6b7280">Equipos Contra Incendio</text>
+  <text x="400" y="424" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="17" fill="#6b7280">CONINC</text>
 </svg>

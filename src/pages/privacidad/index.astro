@@ -3,13 +3,7 @@
 // Federal de Protección de Datos Personales en Posesión de los Particulares
 // (nueva LFPDPPP, vigente desde el 21 de marzo de 2025) y su Reglamento.
 //
-// ⚠️ ANTES DE PUBLICAR (no visible para el usuario):
-//   1) Completa los datos REALES del responsable en CONTACT y SITE.organization
-//      de src/config/site.ts (razón social/persona física, RFC, domicilio fiscal,
-//      correo). Hoy son valores de EJEMPLO.
-//   2) Este documento es una base profesional, NO sustituye la revisión de un
-//      abogado. Ajústalo a tu operación real (datos que de verdad recabas,
-//      finalidades, encargados/transferencias) y valídalo legalmente.
+// El responsable se resuelve desde CONTACT y SITE.organization en site.ts.
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
 import SectionMenu from '@components/SectionMenu.astro'
@@ -28,7 +22,7 @@ const cierreCta = { label: 'Escríbenos por WhatsApp', href: waUrl(WA_MESSAGES.c
 
 <PageLayout
   title="Aviso de privacidad"
-  description="Aviso de privacidad de Equipos Contra Incendio: qué datos personales tratamos, con qué fin, cómo los protegemos y cómo ejercer tus derechos ARCO."
+  description={`Aviso de privacidad de ${SITE.name}: qué datos personales tratamos, con qué fin, cómo los protegemos y cómo ejercer tus derechos ARCO.`}
   pageType="page"
   breadcrumbs={[{ label: 'Aviso de privacidad' }]}
   guia={false}
@@ -53,7 +47,7 @@ const cierreCta = { label: 'Escríbenos por WhatsApp', href: waUrl(WA_MESSAGES.c
           <strong>{responsable}</strong> (en adelante, «{SITE.name}», «nosotros» o «el Responsable»), con domicilio
           en {CONTACT.street}, {CONTACT.city}, {CONTACT.state}, C.P. {CONTACT.postalCode}, México, es responsable
           del tratamiento de tus datos personales. Para cualquier asunto relacionado con este aviso o con tus datos,
-          puedes escribirnos a <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>.
+          puedes escribirnos al {CONTACT.phone} o a <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>.
         </p>
 
         <h2>2. Datos personales que tratamos</h2>

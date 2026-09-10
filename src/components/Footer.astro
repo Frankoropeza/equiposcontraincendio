@@ -15,7 +15,7 @@
 // transición (las listas de enlaces cambian de color al instante).
 import { getCollection } from 'astro:content'
 import {
-  SITE, CONTACT, BRANCHES, PRODUCT_CATEGORIES, SERVICES, SECTORS,
+  SITE, COMPANY, CONTACT, BRANCHES, PRODUCT_CATEGORIES, SERVICES, SECTORS,
   COVERAGE_STATES, SOCIAL, LEGAL, BLOG_CATEGORIES, waUrl, telUrl, WA_MESSAGES,
 } from '@config/site'
 
@@ -41,7 +41,7 @@ const currentYear = new Date().getFullYear()
 const waDefault = waUrl(WA_MESSAGES.cotizacion ?? WA_MESSAGES.default)
 const telLink = telUrl()
 const schedule = CONTACT.schedule as { weekdays?: string; saturday?: string; sunday?: string } | undefined
-const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${(CONTACT as any).geo?.lat},${(CONTACT as any).geo?.lng}`
+const mapsUrl = COMPANY.mapsUrl
 const fullAddress = `${CONTACT.street}, ${CONTACT.city}, ${CONTACT.state} ${CONTACT.postalCode}`
 
 // Productos destacados (2do piso del footer) — interlinking a fichas reales de
@@ -102,9 +102,12 @@ const ARROW = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" strok
       <div class="footer__brand">
         <a href="/" class="footer__logo" aria-label={`${SITE.name} — Ir al inicio`}>
           <span class="footer__logo-mark" aria-hidden="true">{SITE.brand.charAt(0)}</span>
-          <span class="footer__logo-word">{SITE.brand}<span class="footer__logo-tld">.mx</span></span>
+          <span class="footer__logo-lockup">
+            <span class="footer__logo-word">{SITE.brand}</span>
+            <span class="footer__logo-descriptor">Contra incendios</span>
+          </span>
         </a>
-        <p class="footer__brand-desc">{SITE.description}</p>
+          <p class="footer__brand-desc">{COMPANY.summary}</p>
 
         <address class="footer__contact" aria-label="Datos de contacto">
           <a href={waDefault} class="footer__contact-row footer__contact-row--cta" target="_blank" rel="noopener noreferrer" aria-label={`Abrir WhatsApp: ${CONTACT.phone}`}>
@@ -451,8 +454,19 @@ const ARROW = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" strok
     line-height: 1;
   }
 
-  .footer__logo-tld {
+  .footer__logo-lockup {
+    display: flex;
+    flex-direction: column;
+    gap: .18rem;
+  }
+
+  .footer__logo-descriptor {
     color: var(--ft-accent-2);
+    font-size: .62rem;
+    font-weight: var(--weight-bold, 700);
+    letter-spacing: .11em;
+    line-height: 1;
+    text-transform: uppercase;
   }
 
   .footer__brand-desc {

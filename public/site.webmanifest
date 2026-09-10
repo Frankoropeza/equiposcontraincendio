@@ -1,12 +1,15 @@
 {
-  "name": "Equipos Contra Incendio",
-  "short_name": "Equipos CI",
-  "description": "Venta, instalación y mantenimiento de equipo contra incendio en México: extintores, detección, hidrantes y señalización.",
+  "name": "CONINC — Equipos contra incendios",
+  "short_name": "CONINC",
+  "description": "CONINC: venta, instalación y mantenimiento de equipos contra incendios en CDMX y Estado de México, con más de 35 años en el mercado mexicano.",
+  "lang": "es-MX",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#c62828",
   "icons": [
-    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/images/brand/logo.png", "sizes": "512x512", "type": "image/png" }
   ]
 }

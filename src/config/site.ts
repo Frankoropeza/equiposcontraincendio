@@ -15,19 +15,24 @@
 //   ✓ Domicilio REAL confirmado 2026-09-09: Lago Alberto 319, Piso 6, Col.
 //     Granada, Miguel Hidalgo, 11520 CDMX. Geo verificado por geocoding
 //     (OpenStreetMap/Nominatim, house_number 319 exacto).
-//   ⚠ PENDIENTE de verificar: horario sigue sin confirmarse contra el negocio
-//     real, y `organization.legalName` es el nombre comercial, no una razón
-//     social. Eso afecta al aviso de privacidad y a los términos, que publican
-//     esa identidad. Ver hallazgo P0-4 de la auditoría.
+//   ✓ IDENTIDAD confirmada por Frank 2026-09-10: la empresa se llama CONINC
+//     («contra incendios» con INC), con más de 35 años vendiendo equipo contra
+//     incendio en el mercado mexicano. Se publica «más de 35 años» y NUNCA un año
+//     de fundación (no está declarado). Horario oficial Lun–Vie 9–18 y Sáb 9–14.
+//     Servicio, por ahora, en toda la CDMX y el Estado de México.
+//   ⚠ PENDIENTE: razón social y RFC. Hasta que lleguen, el responsable legal que
+//     publican privacidad/términos es el nombre comercial CONINC y
+//     `organization.legalName` queda sin definir (el JSON-LD no emite legalName).
 // El gate `npm run check:demo` valida forma y coherencia del NAP en cada build.
-// NO se inventan credenciales (años, reseñas, clientes).
+// NO se inventan credenciales (reseñas, clientes, certificaciones). La única
+// credencial de trayectoria es la que declaró el negocio: COMPANY.experience.
 // ============================================================================
 
 // ── SITE — identidad de marca + SEO + organización + negocio local ───────────
 export const SITE = {
-  name: 'Equipos Contra Incendio',          // Nombre comercial.
-  brand: 'Equipos Contra Incendio',         // Marca para footer/logo.
-  tagline: 'Venta, instalación y mantenimiento de equipo contra incendio',
+  name: 'CONINC',                           // Nombre comercial (confirmado 2026-09-10).
+  brand: 'CONINC',                          // Marca para header/footer/logo.
+  tagline: 'Equipos contra incendios con más de 35 años en el mercado mexicano',
   domain: 'equiposcontraincendio.com',
   url: 'https://equiposcontraincendio.com', // URL canónica, sin slash final.
   lang: 'es-MX',
@@ -66,10 +71,13 @@ export const SITE = {
   },
 
   organization: {
-    name: 'Equipos Contra Incendio',
-    legalName: 'Equipos Contra Incendio', // Razón social (ejemplo; usa la legal real al darla de alta).
-    logo: '/images/brand/logo.svg',
-    foundingDate: undefined as string | undefined, // Sin año de fundación declarado (no se inventa).
+    name: 'CONINC',
+    // Variantes con que el cliente puede buscar la marca (JSON-LD alternateName).
+    alternateName: ['CONINC Contra Incendios', 'Coninc'] as string[],
+    slogan: 'Equipos contra incendios con más de 35 años en el mercado mexicano',
+    legalName: undefined as string | undefined, // Razón social PENDIENTE (Frank la enviará). No se emite hasta tenerla.
+    logo: '/images/brand/logo.png',
+    foundingDate: undefined as string | undefined, // Solo «más de 35 años»: sin año exacto por decisión de Frank.
     sameAs: [] as string[], // Solo perfiles verificados (deja [] si no hay).
   },
 
@@ -88,14 +96,12 @@ export const SITE = {
       lat: 19.439817 as string | number, // Lago Alberto 319, Col. Granada, Miguel Hidalgo, CDMX.
       lng: -99.185217 as string | number,
     },
-    // openingHours OMITIDO a propósito (alcance SEO técnico · SOP 2026-07-10):
-    // el horario era de EJEMPLO (no verificado). Emitir OpeningHoursSpecification
-    // con horas placeholder = dato de negocio fabricado en el JSON-LD (rompe la
-    // regla del portafolio "cero contenido fabricado"). Cuando llegue el horario
-    // REAL del negocio, reponer el bloque:
-    //   openingHours: { weekdays: { opens: '09:00', closes: '18:00' },
-    //                   saturday: { opens: '09:00', closes: '14:00' } },
-    // y localBusinessSchema() en src/lib/seo.ts lo re-emitirá automáticamente.
+    // Horario REAL confirmado por Frank 2026-09-10 → se emite como
+    // OpeningHoursSpecification en localBusinessSchema() (src/lib/seo.ts).
+    openingHours: {
+      weekdays: { opens: '09:00', closes: '18:00' },
+      saturday: { opens: '09:00', closes: '14:00' },
+    },
     areaServed: ['Ciudad de México', 'Estado de México'] as string[],
   },
 } as const;
@@ -136,18 +142,49 @@ export const CONTACT = {
     lat: 19.439817, // Lago Alberto 319, Col. Granada, Miguel Hidalgo, CDMX.
     lng: -99.185217,
   },
+  // Horario oficial confirmado por Frank 2026-09-10.
   hours: {
-    weekdays: 'Lun–Vie 9:00–18:00',
-    saturday: 'Sáb 9:00–14:00',
-    sunday: 'Dom Cerrado',
-    display: 'Lun–Vie 9:00–18:00',
+    weekdays: 'Lunes a viernes 9:00–18:00',
+    saturday: 'Sábado 9:00–14:00',
+    sunday: 'Domingo cerrado',
+    display: 'Lun–Vie 9:00–18:00 · Sáb 9:00–14:00',
   },
   schedule: {
-    display: 'Lun–Vie 9:00–18:00',
+    display: 'Lun–Vie 9–18 · Sáb 9–14',
     weekdays: 'Lun–Vie  9:00–18:00',
     saturday: 'Sábado  9:00–14:00',
     sunday: 'Domingo  Cerrado',
   },
+} as const;
+
+// ── COMPANY — ficha de la empresa (FUENTE ÚNICA de identidad institucional) ──
+// Todo lo que el sitio afirma sobre QUIÉN es la empresa sale de aquí: /nosotros/,
+// el footer, la barra de confianza, el JSON-LD y los textos legales. Datos
+// confirmados por Frank el 2026-09-10. Regla: nada de este bloque se amplía sin
+// confirmación del negocio (ni año de fundación, ni clientes, ni certificaciones).
+export const COMPANY = {
+  name: 'CONINC',
+  /** Origen del nombre, tal como lo explica el negocio. */
+  nameOrigin: 'CONINC viene de «contra incendios»: CON de contra e INC de incendios.',
+  descriptor: 'Equipos contra incendios',
+  experience: {
+    years: 35,
+    /** Forma canónica de publicarlo. Nunca «desde 19xx»: no hay año declarado. */
+    label: 'Más de 35 años',
+    long: 'Más de 35 años vendiendo equipo contra incendio en el mercado mexicano',
+  },
+  market: 'México',
+  /** Cobertura vigente. «Por el momento»: se ampliará cuando el negocio lo decida. */
+  coverage: 'Toda la Ciudad de México y el Estado de México',
+  coverageShort: 'CDMX y Estado de México',
+  office: 'Lago Alberto 319, Piso 6, Col. Granada, Miguel Hidalgo, 11520, Ciudad de México',
+  mapsUrl: 'https://www.google.com/maps/search/?api=1&query=19.439817,-99.185217',
+  /** Qué hace la empresa, en una frase (footer, schema description de /nosotros/). */
+  summary:
+    'CONINC vende, instala y da mantenimiento a equipo contra incendio para empresas e inmuebles de la Ciudad de México y el Estado de México, con más de 35 años de experiencia en el mercado mexicano.',
+  /** Razón social y RFC: PENDIENTES. Mientras sean undefined no se publican. */
+  legalName: undefined as string | undefined,
+  rfc: undefined as string | undefined,
 } as const;
 
 // ── TAXONOMY — categorías de producto / servicios / cobertura (as const) ─────

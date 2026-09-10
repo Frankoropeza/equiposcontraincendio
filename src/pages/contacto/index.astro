@@ -3,8 +3,8 @@
 // /contacto/ — Página de contacto.
 // ----------------------------------------------------------------------------
 // Reúne los canales de contacto (WhatsApp, teléfono, correo) + NAP + horario,
-// TODO desde CONTACT/SITE en site.ts (SSoT). El WhatsApp se arma con waUrl() y el
-// teléfono con telUrl(); nunca se hardcodea un número. Datos DEMO en la plantilla.
+// Todo desde CONTACT/SITE en site.ts (SSoT). El WhatsApp se arma con waUrl() y el
+// teléfono con telUrl(); nunca se hardcodea un número.
 // ============================================================================
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
@@ -12,17 +12,17 @@ import SectionHeading from '@components/SectionHeading.astro'
 import SectionMenu from '@components/SectionMenu.astro'
 import TrustBar from '@components/TrustBar.astro'
 import RelatedLinks from '@components/RelatedLinks.astro'
-import { SITE, CONTACT, waUrl, telUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
+import { SITE, COMPANY, CONTACT, waUrl, telUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
 import { homePillars } from '@data/home'
 
 // Canales de contacto — data-driven. Cada uno con su acción (href) y su ícono.
 const canales = [
   {
-    k: 'wa', titulo: 'WhatsApp', dato: CONTACT.phone, sub: 'Respuesta inmediata en horario hábil',
+    k: 'wa', titulo: 'WhatsApp', dato: CONTACT.phone, sub: 'Respuesta en horario de atención',
     href: waUrl(WA_MESSAGES.contacto), external: true, cta: 'Abrir chat',
   },
   {
-    k: 'tel', titulo: 'Teléfono', dato: CONTACT.phone, sub: 'Llámanos de lunes a viernes',
+    k: 'tel', titulo: 'Teléfono', dato: CONTACT.phone, sub: 'Lun–Vie 9–18 · Sáb 9–14',
     href: telUrl(), external: false, cta: 'Llamar ahora',
   },
   {
@@ -50,19 +50,19 @@ const ICON = {
 
 <PageLayout
   title="Contacto"
-  description="Contacta a Equipos Contra Incendio por WhatsApp, teléfono o correo. Horario de atención y domicilio para cotizaciones."
+  description="Contacta a CONINC por WhatsApp, teléfono o correo. Oficinas en Miguel Hidalgo, CDMX; horario de lunes a sábado y servicio en toda la CDMX y el Estado de México."
   pageType="page"
   breadcrumbs={[{ label: 'Contacto' }]}
   guia={false}
 >
   <Hero
-    badge="Hablemos · CDMX y Estado de México"
+    badge="CONINC · CDMX y Estado de México"
     title="Ponte en"
     accent="contacto"
     subtitle="Elige el canal que te resulte más cómodo: WhatsApp para respuesta inmediata, teléfono para hablarlo o correo para enviarnos documentos."
     descRight={[
       'Atendemos por WhatsApp, teléfono y correo en horario hábil. Cada canal te conecta directo con nosotros, sin formularios ni pasos de más; el WhatsApp ya lleva un mensaje listo para que la conversación arranque con contexto.',
-      'Cuéntanos qué necesitas —una cotización, una duda técnica o agendar una visita— y te orientamos con gusto. Damos servicio en la Ciudad de México, el Estado de México y la zona metropolitana.',
+      'Cuéntanos qué necesitas —una cotización, una duda técnica o agendar una visita— y te orientamos con gusto. Damos servicio en toda la Ciudad de México y el Estado de México.',
     ]}
     ctas={[
       { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.contacto), variant: 'primary', whatsapp: true },
@@ -113,14 +113,14 @@ const ICON = {
         desc="La referencia física del negocio y las horas en que respondemos."
         body={[
           'Aquí tienes nuestra referencia física y las horas en que respondemos. Si prefieres visitarnos o coordinar una entrega, escríbenos antes por WhatsApp y confirmamos disponibilidad.',
-          'Atendemos la Ciudad de México, el Estado de México y la zona metropolitana. Cuéntanos dónde estás y te confirmamos cobertura y tiempos para tu caso.',
+          'Atendemos toda la Ciudad de México y el Estado de México. Cuéntanos dónde estás y te confirmamos cobertura y tiempos para tu caso.',
         ]}
       />
 
       <div class="nap">
         <div class="nap__block">
-          <h3 class="nap__title">Domicilio</h3>
-          <p class="nap__text">{CONTACT.street}<br />{CONTACT.city}, {CONTACT.state}, C.P. {CONTACT.postalCode}</p>
+          <h3 class="nap__title">CONINC · Domicilio</h3>
+          <p class="nap__text">{CONTACT.street}<br />{CONTACT.city}, {CONTACT.state}, C.P. {CONTACT.postalCode}<br /><a href={COMPANY.mapsUrl} target="_blank" rel="noopener noreferrer">Ver en Google Maps</a></p>
         </div>
         <div class="nap__block">
           <h3 class="nap__title">Horario</h3>

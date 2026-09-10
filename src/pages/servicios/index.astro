@@ -23,6 +23,7 @@ import {
   serviciosCompany,
   serviciosRelated,
 } from '@data/servicios'
+import { companyStats } from '@data/home'
 import ServiceCard from '@components/ServiceCard.astro'
 import { getCollection } from 'astro:content'
 import { SERVICES, SERVICE_ANCHOR, CONTACT, waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
@@ -237,6 +238,7 @@ const faqs = [
       <CompanyAbout
         que={serviciosCompany.que}
         como={serviciosCompany.como}
+        stats={companyStats}
         cta={{ label: 'Agendar por WhatsApp', href: waUrl(WA_MESSAGES.servicios), external: true }}
       />
     </div>

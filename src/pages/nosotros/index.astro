@@ -1,131 +1,107 @@
 ---
 // ============================================================================
-// /nosotros/ — Página "Nosotros" (acerca de).
-// Página estática con PageLayout. Presenta la empresa, su forma de trabajar y sus
-// principios. Contenido DEMO de la plantilla; identidad desde SITE (site.ts).
+// /nosotros/ — Página institucional de CONINC.
+// ----------------------------------------------------------------------------
+// La estructura y el copy se alimentan de src/data/nosotros.ts; esta página
+// únicamente compone los módulos canónicos del sitio.
 // ============================================================================
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
-import SectionHeading from '@components/SectionHeading.astro'
 import SectionMenu from '@components/SectionMenu.astro'
 import TrustBar from '@components/TrustBar.astro'
+import DataTable from '@components/DataTable.astro'
+import SectionHeading from '@components/SectionHeading.astro'
+import QuoteCard from '@components/QuoteCard.astro'
+import CategoryCard from '@components/CategoryCard.astro'
+import ProcessSteps from '@components/ProcessSteps.astro'
 import CompanyAbout from '@components/CompanyAbout.astro'
 import RelatedLinks from '@components/RelatedLinks.astro'
-import { waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
-import { homeCompany, homePillars } from '@data/home'
+import FAQWithContact from '@components/FAQWithContact.astro'
+import { COMPANY, CONTACT, SHOWCASE, WA_MESSAGES, sectionMenuItems, telUrl, waUrl } from '@config/site'
+import { companyStats, homeCompany, homePillars, homeSteps } from '@data/home'
+import {
+  fichaEmpresa, loQueNoHacemos, nosotrosFaqs, nosotrosHero, nosotrosMeta,
+  principios, serviciosTabla, trayectoria,
+} from '@data/nosotros'
 
-// Principios — data-driven (grid de valores). DEMO de la plantilla.
-const principios = [
-  { t: 'Asesoría honesta', d: 'Te recomendamos el equipo que pide tu riesgo real, en lenguaje claro y sin venderte de más.' },
-  { t: 'Conforme a norma', d: 'Trabajamos alineados a la NOM-002-STPS y la NOM-154-SCFI, con la documentación lista para tu expediente.' },
-  { t: 'Servicio documentado', d: 'Cada equipo y cada servicio se entregan con su soporte: ficha técnica y constancias para Protección Civil.' },
-  { t: 'Trato directo', d: 'Hablas con quien resuelve, no con un intermediario. Respuesta directa por WhatsApp.' },
-]
-
-// Menú de secciones: subtítulos desde SECTION_MENU_SUB (site.ts), no un mapa
-// local — así todas las páginas describen las secciones igual.
 const menuSecciones = sectionMenuItems()
 const menuCta = {
-  label: 'Cotizar por WhatsApp',
-  href: waUrl(WA_MESSAGES.cotizar),
-  sub: 'Respuesta inmediata',
-  external: true,
+  label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.cotizar),
+  sub: 'Respuesta inmediata', external: true,
 }
 ---
 
-<PageLayout
-  title="Nosotros — quiénes somos"
-  description="Conoce a Equipos Contra Incendio: cómo trabajamos y en qué creemos. Asesoría honesta, apego a la norma y trato directo para proteger tu inmueble."
-  pageType="page"
-  breadcrumbs={[{ label: 'Nosotros' }]}
-  guia={false}
->
-  <Hero
-    badge="Quiénes somos"
-    title="Detrás de"
-    accent="cada instalación"
-    subtitle="No solo vendemos equipo: nos aseguramos de que tu inmueble quede realmente protegido y en regla, con asesoría honesta y apego a la norma."
-    descRight={[
-      'Somos un proveedor de equipo contra incendio con un método claro: te decimos qué necesitas y por qué, no lo que más nos conviene vender. Antes de cotizar, entendemos el riesgo real de tu inmueble.',
-      'Vendemos, instalamos y damos mantenimiento con asesoría honesta y apego a la normatividad. Nuestro objetivo es que tu inmueble esté realmente protegido y en regla, no solo equipado.',
-    ]}
-    ctas={[
-      { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.cotizar), variant: 'primary', whatsapp: true },
-      { text: 'Nuestros servicios', href: '/servicios/', variant: 'outline' },
-    ]}
-  />
-
+<PageLayout title={nosotrosMeta.title} description={nosotrosMeta.description} pageType="page" schemaData={{ faqs: nosotrosFaqs }} breadcrumbs={[{ label: 'Nosotros' }]} guia={false}>
+  <Hero badge={nosotrosHero.badge} title={nosotrosHero.title} accent={nosotrosHero.accent} subtitle={nosotrosHero.subtitle} descRight={nosotrosHero.descRight} ctas={[
+    { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.contacto), variant: 'primary', whatsapp: true },
+    { text: 'Nuestros servicios', href: '/servicios/', variant: 'outline' },
+  ]} />
   <SectionMenu items={menuSecciones} cta={menuCta} />
   <TrustBar items={homePillars} />
 
-  <section class="section">
-    <div class="container">
-      <SectionHeading
-        layout="duo"
-        eyebrow="Cómo trabajamos"
-        title="Método, no improvisación"
-        desc="Un proceso claro que va del riesgo de tu inmueble al equipo instalado y en regla, sin sorpresas."
-        body={[
-          'Empezamos por entender tu riesgo: qué puede quemarse, qué exige la norma para tu giro y qué pide la inspección. Con eso definimos el equipo correcto antes de cotizar. Asesorar bien evita gastar de más.',
-          'Suministramos, instalamos y damos mantenimiento conforme a norma, y te entregamos la documentación lista para tu expediente. Quedamos al pendiente para que tu protección siga vigente.',
-        ]}
-      />
-    </div>
-  </section>
+  <DataTable {...fichaEmpresa} />
 
   <section class="section section--surface">
     <div class="container">
-      <SectionHeading
-        eyebrow="En qué creemos"
-        title="Los principios que guían el"
-        titleAccent="trabajo"
-        desc="Cuatro convicciones que se notan en cómo atendemos a cada cliente."
-      />
-      <div class="principios">
-        {principios.map((p) => (
-          <article class="principio">
-            <h3 class="principio__t">{p.t}</h3>
-            <p class="principio__d">{p.d}</p>
-          </article>
-        ))}
+      <div class="about-grid">
+        <article class="prose">
+          <SectionHeading eyebrow={trayectoria.eyebrow} title={trayectoria.title} titleAccent={trayectoria.titleAccent} />
+          {trayectoria.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        </article>
+        <QuoteCard title={trayectoria.quote.title} eyebrow={trayectoria.quote.eyebrow} items={trayectoria.quote.items} itemsLabel={trayectoria.quote.itemsLabel} ctaLabel={trayectoria.quote.ctaLabel} showPrice={false} waLink={waUrl(WA_MESSAGES.contacto)} telHref={telUrl()} />
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <SectionHeading
-        layout="duo"
-        eyebrow="Sobre la empresa"
-        title="Equipo y servicio"
-        titleAccent="con contexto"
-        desc="Lo que hacemos y cómo trabajamos, con el contenido editorial central del sitio."
-      />
-      <CompanyAbout que={homeCompany.que} como={homeCompany.como} />
+      <SectionHeading eyebrow="Vitrina" title="Qué vende" titleAccent="CONINC" desc="Ocho familias de equipo para proteger empresas e inmuebles según su riesgo real." />
+      <div class="card-grid">
+        {SHOWCASE.map((category, index) => <CategoryCard {...category} index={index} priority={index === 0} />)}
+      </div>
     </div>
   </section>
 
-  <RelatedLinks
-    title="Sigue por aquí"
-    links={[
-      { label: 'Servicios', href: '/servicios/', desc: 'Instalación, mantenimiento, inspección y capacitación.' },
-      { label: 'Productos', href: '/productos/', desc: 'Equipos contra incendio para cada tipo de inmueble.' },
-      { label: 'Cobertura', href: '/cobertura/', desc: 'Zonas que atendemos en CDMX y Estado de México.' },
-      { label: 'Contacto', href: '/contacto/', desc: 'WhatsApp, teléfono, correo y horario.' },
-    ]}
-    limit={4}
-  />
+  <DataTable {...serviciosTabla} surface />
+  <ProcessSteps eyebrow="Cómo trabajamos" title="Del diagnóstico" titleAccent="a la continuidad" desc="El mismo proceso claro que usamos para orientar cada proyecto y cada servicio." steps={homeSteps} />
+
+  <section class="section section--surface">
+    <div class="container">
+      <SectionHeading eyebrow="Principios" title="Cómo trabaja" titleAccent="CONINC" desc="Cuatro convicciones que guían la asesoría, el suministro y el servicio." />
+      <div class="card-grid principles-grid">
+        {principios.map((principio) => <article class="principle-card"><h3>{principio.t}</h3><p>{principio.d}</p></article>)}
+      </div>
+    </div>
+  </section>
+
+  <DataTable {...loQueNoHacemos} />
+
+  <section class="section section--surface">
+    <div class="container">
+      <SectionHeading layout="duo" eyebrow="Sobre la empresa" title="Equipo y servicio" titleAccent="con contexto" desc={COMPANY.summary} />
+      <CompanyAbout que={homeCompany.que} como={homeCompany.como} stats={companyStats} cta={{ label: 'Hablar por WhatsApp', href: waUrl(WA_MESSAGES.contacto), external: true }} />
+    </div>
+  </section>
+
+  <RelatedLinks title="Sigue por aquí" links={[
+    { label: 'Servicios', href: '/servicios/', desc: 'Instalación, mantenimiento, inspección y capacitación.' },
+    { label: 'Productos', href: '/productos/', desc: 'Equipos contra incendio para cada tipo de inmueble.' },
+    { label: 'Cobertura', href: '/cobertura/', desc: 'Zonas que atendemos en CDMX y Estado de México.' },
+    { label: 'Contacto', href: '/contacto/', desc: 'WhatsApp, teléfono, correo y horario.' },
+  ]} limit={4} />
+  <FAQWithContact items={nosotrosFaqs} waNumber={CONTACT.whatsapp} />
 </PageLayout>
 
 <style>
   .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
-  .section { padding: var(--sp-8) 0; }
+  .section { padding: var(--section-py) 0; }
   .section--surface { background: var(--c-surface); }
-  @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
-
-  .principios { display: grid; grid-template-columns: 1fr; gap: var(--sp-4); margin-top: var(--sp-6); }
-  @media (min-width: 640px)  { .principios { grid-template-columns: repeat(2, 1fr); } }
-  .principio { padding: var(--sp-5); background: var(--c-white); border: 1px solid var(--c-border); border-radius: var(--radius-lg); }
-  .principio__t { font-family: var(--font-heading); font-size: var(--text-lg); font-weight: var(--weight-bold); color: var(--c-ink); margin: 0 0 var(--sp-2); }
-  .principio__d { font-size: var(--text-base); line-height: var(--leading-relaxed); color: var(--c-ink-2); margin: 0; }
+  .about-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--sp-8); align-items: start; }
+  .prose { max-width: 68ch; color: var(--c-ink-2); line-height: var(--leading-relaxed); }
+  .prose p { margin: 0 0 var(--sp-4); }
+  .principle-card { display: flex; flex-direction: column; gap: var(--sp-2); height: 100%; padding: var(--sp-5); background: var(--c-white); border: 1px solid var(--c-border); border-radius: var(--radius-lg); }
+  .principle-card h3, .principle-card p { margin: 0; }
+  .principle-card h3 { font-family: var(--font-heading); font-size: var(--text-lg); color: var(--c-ink); }
+  .principle-card p { color: var(--c-ink-2); line-height: var(--leading-relaxed); }
+  @media (min-width: 900px) { .about-grid { grid-template-columns: minmax(0, 1fr) minmax(18rem, 25rem); } }
 </style>

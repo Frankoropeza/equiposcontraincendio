@@ -22,7 +22,7 @@ import SectionHeading from '@components/SectionHeading.astro'
 import CategoryCard from '@components/CategoryCard.astro'
 import SectionMenu from '@components/SectionMenu.astro'
 import { getCollection } from 'astro:content'
-import { waUrl, WA_MESSAGES } from '@config/site'
+import { SITE, waUrl, WA_MESSAGES } from '@config/site'
 import { slugify } from '@lib/slug'
 
 export async function getStaticPaths() {
@@ -49,7 +49,7 @@ const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog)
 
 <PageLayout
   title={`Tema: ${tag} — blog`}
-  description={`Artículos del blog de Equipos Contra Incendio etiquetados con «${tag}». Archivo de etiqueta generado automáticamente desde la colección de artículos.`}
+  description={`Artículos del blog de ${SITE.name} etiquetados con «${tag}». Archivo de etiqueta generado automáticamente desde la colección de artículos.`}
   pageType="page"
   noindex={true}
   follow={true}

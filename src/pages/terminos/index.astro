@@ -1,9 +1,7 @@
 ---
 // /terminos/ — Términos y Condiciones de uso del sitio.
 //
-// ⚠️ ANTES DE PUBLICAR (no visible para el usuario): completa los datos reales
-// del titular en CONTACT / SITE.organization (src/config/site.ts) y haz que un
-// abogado revise el clausulado y lo ajuste a tu modelo de negocio real.
+// El titular se resuelve desde CONTACT y SITE.organization en site.ts.
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
 import SectionMenu from '@components/SectionMenu.astro'
@@ -22,7 +20,7 @@ const cierreCta = { label: 'Escríbenos por WhatsApp', href: waUrl(WA_MESSAGES.c
 
 <PageLayout
   title="Términos y condiciones"
-  description="Términos y condiciones de uso del sitio de Equipos Contra Incendio: alcance, cotizaciones, propiedad intelectual, responsabilidad y legislación aplicable."
+  description={`Términos y condiciones de uso del sitio de ${SITE.name}: alcance, cotizaciones, propiedad intelectual, responsabilidad y legislación aplicable.`}
   pageType="page"
   breadcrumbs={[{ label: 'Términos y condiciones' }]}
   guia={false}
@@ -46,7 +44,7 @@ const cierreCta = { label: 'Escríbenos por WhatsApp', href: waUrl(WA_MESSAGES.c
         <p>
           El titular de este sitio es <strong>{titular}</strong> (en adelante, «{SITE.name}» o «nosotros»), con
           domicilio en {CONTACT.street}, {CONTACT.city}, {CONTACT.state}, C.P. {CONTACT.postalCode}, México. Puedes
-          contactarnos en <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>.
+          contactarnos al {CONTACT.phone} o en <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>.
         </p>
 
         <h2>2. Objeto y aceptación</h2>

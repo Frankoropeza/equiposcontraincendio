@@ -4,7 +4,7 @@ description: "Accesorios para montar, proteger y señalizar extintores portátil
 category: accesorios
 image: /images/showcase/refacciones-equipo-contra-incendio.avif
 price: "Cotizar"
-brand: "Equipos Contra Incendio"
+brand: "CONINC"
 order: 9
 seoTitle: "Soportes y gabinetes para extintor | accesorios"
 seoDescription: "Compara soportes, abrazaderas y gabinetes para instalar o proteger extintores portátiles en muro, vehículo o gabinete."

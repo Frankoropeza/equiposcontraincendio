@@ -382,6 +382,11 @@ const PUNTOS = [
     }
   }
 
+  /* El horario largo cede espacio antes de que comprima los canales. */
+  @media (min-width: 901px) and (max-width: 1199px) {
+    .tb-schedule { display: none; }
+  }
+
   @media (max-width: 640px) {
     .tb-schedule {
       display: none;

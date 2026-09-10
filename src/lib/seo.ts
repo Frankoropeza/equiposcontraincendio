@@ -1,5 +1,5 @@
 /* ============================================================================
- * src/lib/seo.ts — Librería SEO canónica (Vault Maestro · EJEMPLOS)
+ * src/lib/seo.ts — Librería SEO canónica de CONINC
  * ----------------------------------------------------------------------------
  * PROPÓSITO: única fuente de verdad para <head> (metadatos) y JSON-LD del sitio.
  *   - buildMeta()   → datos normalizados para <head> (title, description, OG, Twitter).
@@ -36,7 +36,7 @@
  *   RENTADEILUMINACION: breadcrumb duplicado en layout + componente).
  * ========================================================================== */
 
-import { SITE, CONTACT } from '@config/site';
+import { SITE, COMPANY, CONTACT } from '@config/site';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -458,10 +458,22 @@ export function orgSchema() {
     name: SITE.organization?.name ?? SITE.name,
     ...(SITE.organization?.legalName ? { legalName: SITE.organization.legalName } : {}),
     url: SITE.url,
-    // width/height REALES del asset (public/images/brand/logo.svg → 512×512).
+    // width/height REALES del asset (public/images/brand/logo.png → 512×512).
     logo: { '@type': 'ImageObject', '@id': LOGO_ID, url: absImage(SITE.organization?.logo) ?? `${SITE.url}/logo.png`, width: 512, height: 512 },
     image: { '@id': LOGO_ID },
-    description: SITE.seo?.description ?? SITE.description ?? '',
+    description: COMPANY.summary,
+    ...(SITE.organization?.alternateName ? { alternateName: SITE.organization.alternateName } : {}),
+    ...(SITE.organization?.slogan ? { slogan: SITE.organization.slogan } : {}),
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: SITE.business.address.street,
+      addressLocality: SITE.business.address.locality,
+      addressRegion: SITE.business.address.region,
+      postalCode: SITE.business.address.postalCode,
+      addressCountry: SITE.business.address.country,
+    },
+    // Entidades federativas atendidas: misma fuente que LocalBusiness.
+    areaServed: SITE.business.areaServed.map((name) => ({ '@type': 'AdministrativeArea', name })),
     ...(SITE.organization?.foundingDate ? { foundingDate: SITE.organization.foundingDate } : {}),
     contactPoint: {
       '@type': 'ContactPoint',
@@ -502,7 +514,7 @@ export function websiteSchema() {
     '@id': WEBSITE_ID,
     name: SITE.name,
     url: SITE.url,
-    description: SITE.seo?.description ?? SITE.description ?? '',
+    description: COMPANY.summary,
     inLanguage: SITE.locale ?? 'es-MX',
     publisher: { '@id': ORG_ID },
     ...(search
@@ -568,7 +580,7 @@ export function localBusinessSchema(overrides?: { areaServed?: string[] }) {
           ],
         }
       : {}),
-    areaServed: (overrides?.areaServed ?? (b as any).areaServed ?? ['Ciudad de México']).map((name: string) => ({ '@type': 'City', name })),
+    areaServed: (overrides?.areaServed ?? (b as any).areaServed ?? ['Ciudad de México', 'Estado de México']).map((name: string) => ({ '@type': 'AdministrativeArea', name })),
     ...(SITE.organization?.sameAs?.length ? { sameAs: SITE.organization.sameAs } : {}),
   };
 }

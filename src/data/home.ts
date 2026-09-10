@@ -1,6 +1,8 @@
 // Datos editoriales repetibles de la HOME.
 // Los valores se mantienen aquí para que index.astro solo componga componentes.
 
+import { COVERAGE_STATES, SERVICES, SHOWCASE } from "@config/site";
+
 export type HomePillar = {
   icon: string;
   title: string;
@@ -83,10 +85,13 @@ export const homeMenuSub: Record<string, string> = {
   Blog: "Guías y normatividad",
 };
 
+// La trayectoria va PRIMERO: es la credencial institucional de CONINC confirmada
+// por el negocio (2026-09-10) y esta barra se repite en home, nosotros, contacto
+// y cobertura. «Asesoría honesta» pasa a /nosotros/ (principios).
 export const homePillars: HomePillar[] = [
+  { icon: "clock", title: "Más de 35 años", desc: "CONINC vende equipo contra incendio en el mercado mexicano desde hace más de 35 años." },
   { icon: "shield", title: "Conforme a norma", desc: "Equipo y servicio alineados a la NOM-154-SCFI, la NOM-002-STPS y la NOM-003-SEGOB." },
   { icon: "doc", title: "Listo para Protección Civil", desc: "Te entregamos ficha técnica y constancias de servicio para tu expediente ante PC y STPS." },
-  { icon: "chat", title: "Asesoría honesta", desc: "Te recomendamos el equipo que pide tu riesgo real, sin venderte de más." },
   { icon: "pin", title: "CDMX y Estado de México", desc: "Atención y entrega en la Ciudad de México, el Estado de México y la zona metropolitana." },
 ];
 
@@ -134,8 +139,8 @@ export const homeCompany: HomeCompany = {
   que: {
     title: "Qué hacemos",
     body: [
-      "Equipamos inmuebles contra incendio de principio a fin: extintores, detección y alarma, hidrantes y mangueras, y señalización de emergencia. Vendemos, instalamos y damos mantenimiento, siempre según el riesgo real del lugar y no según un catálogo genérico.",
-      "Atendemos a empresas, comercios, escuelas, restaurantes e inmuebles que necesitan estar protegidos y cumplir con la normatividad aplicable.",
+      "CONINC equipa inmuebles contra incendio de principio a fin: extintores, detección y alarma, hidrantes y mangueras, y señalización de emergencia. Vendemos, instalamos y damos mantenimiento, siempre según el riesgo real del lugar y no según un catálogo genérico.",
+      "Llevamos más de 35 años en el mercado mexicano atendiendo a empresas, comercios, escuelas, restaurantes e inmuebles que necesitan estar protegidos y cumplir con la normatividad aplicable, hoy en toda la Ciudad de México y el Estado de México.",
     ],
   },
   como: {
@@ -147,6 +152,18 @@ export const homeCompany: HomeCompany = {
     ],
   },
 };
+
+// ── Cifras de CONINC para CompanyAbout (tira de confianza) ──────────────────
+// Solo cifras REALES: la trayectoria la declaró el negocio (2026-09-10) y las
+// otras tres se cuentan en el propio sitio (entidades de COVERAGE_STATES,
+// servicios de TAXONOMY.services y familias de SHOWCASE). Si una de esas listas
+// cambia, esta cifra se actualiza sola. Siempre 4 (regla de múltiplos de 4).
+export const companyStats: { value: string; label: string }[] = [
+  { value: "+35", label: "años en el mercado mexicano" },
+  { value: String(COVERAGE_STATES.length), label: "entidades: CDMX y Estado de México" },
+  { value: String(SERVICES.length), label: "servicios contra incendio" },
+  { value: String(SHOWCASE.length), label: "familias de equipo" },
+];
 
 export const homeFaqs: HomeFaq[] = [
   // Las cuatro primeras son las «People Also Ask» LITERALES de Google para

@@ -48,6 +48,7 @@ import {
   extintoresRelated,
   extintoresFaqs,
 } from '@data/extintores';
+import { companyStats } from '@data/home';
 
 const fichas = (
   await getCollection('productos', ({ data }) => !data.draft && data.category === 'extintores')
@@ -252,6 +253,7 @@ const schemaData = {
       <CompanyAbout
         que={extintoresCompany.que}
         como={extintoresCompany.como}
+        stats={companyStats}
         cta={{ label: 'Cotizar por WhatsApp', href: waUrl(WA_EXTINTORES), external: true }}
       />
     </div>

@@ -1,5 +1,5 @@
 # ═══════════════════════════════════════════════════════════════════════════
-# robots.txt — Plantilla canónica (Vault Maestro · EJEMPLOS)
+# robots.txt — Directivas de rastreo de CONINC
 # PROPÓSITO: permitir indexación de buscadores y motores de IA (GEO), permitir
 #   bots de redes sociales (OG/cards), bloquear scrapers SEO abusivos, y declarar
 #   el/los sitemap(s). Copiar a `public/robots.txt` y reemplazar el dominio.

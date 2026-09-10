@@ -10,7 +10,7 @@
 // El BreadcrumbList JSON-LD lo genera seo.ts/el Layout en UN SOLO lugar (anti-patrón B3:
 // breadcrumb duplicado). Aquí sólo microdata visible para no duplicar.
 //
-// MODO GUÍA (prop `guia`): numera cada parte de una ruta de EJEMPLO y añade debajo una
+// MODO GUÍA (prop `guia`): numera cada parte de una ruta de referencia y añade debajo una
 // leyenda que explica qué es cada eslabón y de dónde sale el dato — mismo molde que TopBar/Header.
 // En un sitio de cliente (o página de detalle) se usa <Breadcrumbs items={...} /> sin `guia`:
 // se pinta la ruta REAL, sin marcadores ni leyenda.
@@ -34,9 +34,9 @@ const { items = [], guia = false } = Astro.props
 const trail: BreadcrumbItem[] =
   items[0]?.href === '/' ? items : [{ label: 'Inicio', href: '/' }, ...items]
 
-// Ruta de EJEMPLO para el modo guía (la ruta real cambia en cada página; aquí se
+// Ruta de referencia para el modo guía (la ruta real cambia en cada página; aquí se
 // muestra la anatomía canónica: raíz → eslabón intermedio → página actual).
-const DEMO: BreadcrumbItem[] = [
+const GUIDE_REFERENCE: BreadcrumbItem[] = [
   { label: 'Inicio', href: '/', mark: 1 },
   { label: 'Servicios', href: '/servicios/', mark: 2 },
   { label: 'Diseño de logotipo', mark: 4 },
@@ -74,18 +74,18 @@ const PUNTOS = [
 <div class="breadcrumb-bar">
   <nav aria-label={guia ? 'Migas de pan (ejemplo de la guía)' : 'Migas de pan'} class="breadcrumb">
     {guia ? (
-      /* Modo guía: ruta de EJEMPLO con marcadores (sin microdata: el JSON-LD real lo emite el Layout). */
+      /* Modo guía: ruta de referencia con marcadores (sin microdata: el JSON-LD real lo emite el Layout). */
       <ol class="breadcrumb__list">
-        {DEMO.map((item, index) => (
+        {GUIDE_REFERENCE.map((item, index) => (
           <li class="breadcrumb__item">
             {item.href ? (
               <a href={item.href} class="breadcrumb__link"><span class="bc-mark" aria-hidden="true">{item.mark}</span>{item.label}</a>
             ) : (
               <span class="breadcrumb__current" aria-current="page"><span class="bc-mark" aria-hidden="true">{item.mark}</span>{item.label}</span>
             )}
-            {index < DEMO.length - 1 && (
+            {index < GUIDE_REFERENCE.length - 1 && (
               <span class="breadcrumb__sepwrap">
-                {index === DEMO.length - 2 && <span class="bc-mark" aria-hidden="true">3</span>}
+                {index === GUIDE_REFERENCE.length - 2 && <span class="bc-mark" aria-hidden="true">3</span>}
                 <svg class="breadcrumb__sep" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
               </span>
             )}

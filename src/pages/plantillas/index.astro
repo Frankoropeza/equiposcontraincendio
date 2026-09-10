@@ -40,6 +40,7 @@ import {
   plantillasRelated,
   plantillasFaqs,
 } from '@data/plantillas'
+import { companyStats } from '@data/home'
 
 const plantillas = (await getCollection('plantillas', ({ data }) => !data.draft)).sort(
   (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0),
@@ -211,6 +212,7 @@ const schemaData = {
       <CompanyAbout
         que={plantillasCompany.que}
         como={plantillasCompany.como}
+        stats={companyStats}
         cta={{ label: 'Que lo llevemos nosotros', href: waUrl('Hola, quiero que ustedes lleven el mantenimiento y el expediente de mi inmueble.'), external: true }}
       />
     </div>

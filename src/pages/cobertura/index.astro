@@ -24,6 +24,7 @@ import {
   coberturaCompany,
   coberturaRelated,
 } from '@data/cobertura'
+import { companyStats } from '@data/home'
 import { COVERAGE_STATES, CONTACT, waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
 
 const tipoLabel = (t: string) => (t === 'operativo' ? 'Servicio en sitio' : 'Atención a distancia')
@@ -212,6 +213,7 @@ const faqs = [
       <CompanyAbout
         que={coberturaCompany.que}
         como={coberturaCompany.como}
+        stats={companyStats}
         cta={{ label: 'Confirmar cobertura', href: waUrl('Hola, quiero confirmar si dan servicio en sitio en mi ubicación.'), external: true }}
       />
     </div>

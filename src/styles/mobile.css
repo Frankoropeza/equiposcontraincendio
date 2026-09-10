@@ -1,6 +1,6 @@
 /* ============================================================================
 mobile.css — FUENTE ÚNICA de overrides responsive de layout del sistema
-Equipos Contra Incendio. Se importa en BaseLayout DESPUÉS de tokens.css (último en el
+CONINC. Se importa en BaseLayout DESPUÉS de tokens.css (último en el
 cascade global). tokens.css ya es mobile-first y casi todo el sitio colapsa
 bien por sí solo; esta hoja UNIFICA los breakpoints dispersos (antes 480/520/
 560/640/760/768/900/1024/1100) en la escala canónica y añade el pulido pro de

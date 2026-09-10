@@ -37,6 +37,7 @@ import {
   pcRelated,
   pcFaqs,
 } from '@data/proteccion-civil'
+import { companyStats } from '@data/home'
 
 const tramites = (await getCollection('tramites', ({ data }) => !data.draft)).sort(
   (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0),
@@ -210,6 +211,7 @@ const schemaData = {
       <CompanyAbout
         que={pcCompany.que}
         como={pcCompany.como}
+        stats={companyStats}
         cta={{ label: 'Tengo un requerimiento', href: waUrl('Hola, tengo un requerimiento de Protección Civil y necesito poner mi inmueble en regla.'), external: true }}
       />
     </div>

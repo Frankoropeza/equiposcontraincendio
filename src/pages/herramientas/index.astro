@@ -39,6 +39,7 @@ import {
   herramientasCompany,
   herramientasRelated,
 } from '@data/herramientas'
+import { companyStats } from '@data/home'
 
 // ── Tarjetas del hub (4, homologadas con el header: 3 herramientas + formatos).
 // Copy propio por tarjeta (no reutiliza t.desc de TOOLS): título de venta,
@@ -208,6 +209,7 @@ const schemaData = {
       <CompanyAbout
         que={herramientasCompany.que}
         como={herramientasCompany.como}
+        stats={companyStats}
         cta={{ label: 'Consultar mi resultado', href: waUrl('Hola, usé sus herramientas y quiero revisar mi resultado.'), external: true }}
       />
     </div>

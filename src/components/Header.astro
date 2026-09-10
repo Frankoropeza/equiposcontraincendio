@@ -69,7 +69,10 @@ const PHONE_SVG = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" s
     <a href="/" class="hdr-logo" aria-label={`${SITE.name} — Inicio`}>
       {guia && <span class="hdr-mark" aria-hidden="true">1</span>}
       <span class="hdr-logo__mark" aria-hidden="true">{SITE.brand.charAt(0)}</span>
-      <span class="hdr-logo__word">{SITE.brand}<span class="hdr-logo__tld">.mx</span></span>
+      <span class="hdr-logo__lockup">
+        <span class="hdr-logo__word">{SITE.brand}</span>
+        <span class="hdr-logo__descriptor">Contra incendios</span>
+      </span>
     </a>
 
     <nav class="hdr-nav" aria-label="Navegación principal">
@@ -255,6 +258,12 @@ const PHONE_SVG = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" s
     box-shadow: 0 4px 12px rgba(var(--c-primary-rgb), .35);
   }
 
+  .hdr-logo__lockup {
+    display: flex;
+    flex-direction: column;
+    gap: .18rem;
+  }
+
   .hdr-logo__word {
     font-family: var(--font-heading);
     font-weight: var(--weight-black, 800);
@@ -264,9 +273,15 @@ const PHONE_SVG = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" s
     line-height: 1;
   }
 
-  .hdr-logo__tld {
+  .hdr-logo__descriptor {
     color: var(--c-primary);
+    font-size: .62rem;
+    font-weight: var(--weight-bold, 700);
+    letter-spacing: .11em;
+    line-height: 1;
+    text-transform: uppercase;
   }
+
 
   /* ── Nav escritorio ── */
   .hdr-nav {

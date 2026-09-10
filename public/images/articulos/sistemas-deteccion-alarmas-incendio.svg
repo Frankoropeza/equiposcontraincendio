@@ -19,5 +19,5 @@
     <path d="M -44 -16 a 50 50 0 0 1 88 0" fill="none" stroke="#c62828" stroke-width="8" stroke-linecap="round"/>
   </g>
   <text x="400" y="392" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="26" font-weight="700" fill="#14181f">Detección y alarmas</text>
-  <text x="400" y="424" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="17" fill="#6b7280">Equipos Contra Incendio</text>
+  <text x="400" y="424" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="17" fill="#6b7280">CONINC</text>
 </svg>

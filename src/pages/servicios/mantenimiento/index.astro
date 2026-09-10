@@ -40,6 +40,7 @@ import {
   mantRelated,
   mantFaqs,
 } from '@data/mantenimiento';
+import { companyStats } from '@data/home';
 
 const menuCta = {
   label: 'Cotizar por WhatsApp',
@@ -223,6 +224,7 @@ const schemaData = {
       <CompanyAbout
         que={mantCompany.que}
         como={mantCompany.como}
+        stats={companyStats}
         cta={{ label: 'Cotizar por WhatsApp', href: waUrl(WA_MANTENIMIENTO), external: true }}
       />
     </div>

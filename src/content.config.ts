@@ -28,6 +28,7 @@
 
 import { defineCollection, reference, z } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { SITE } from './config/site';
 
 // ── Helpers reutilizables ────────────────────────────────────────────────────
 
@@ -229,7 +230,14 @@ const articulos = defineCollection({
       heroImage: imagePath, // imagen obligatoria.
       pubDate: z.coerce.date(),
       updatedDate: z.coerce.date().optional(),
-      author: z.string().default('Equipos Contra Incendio'),
+      // Autor institucional = la marca (SITE.name). Los artículos anteriores al
+      // cambio de nombre (2026-09-10) traen «Equipos Contra Incendio» en el
+      // frontmatter; se normalizan aquí a CONINC para no reescribir los .mdx
+      // mientras otra sesión los edita. Cuando el árbol se calme, basta un sed.
+      author: z
+        .string()
+        .default(SITE.name)
+        .transform((a) => (a === 'Equipos Contra Incendio' ? SITE.name : a)),
       tags: z.array(z.string()).max(10).optional(),
       // funnel — etapa del embudo (estrategia editorial 2026-09-09). Gobierna el
       // CTA del artículo; default 'mofu' porque es la etapa mayoritaria del blog.
