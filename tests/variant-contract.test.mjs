@@ -17,22 +17,25 @@ test('el schema de productos declara el contrato estricto de variantes', () => {
   assert.match(schema, /waText:\s*z\.string\(\)\.min\(20\)/);
 });
 
-test('el componente renderiza variantes con fallback y waUrl sin JavaScript cliente', () => {
-  const file = 'src/components/VariantesProducto.astro';
+test('el render de variantes evita repetir la imagen de ficha y conserva waUrl sin JavaScript cliente', () => {
+  const file = 'src/layouts/ProductLayout.astro';
   assert.equal(fs.existsSync(file), true, `Falta ${file}`);
   const component = read(file);
+  const card = read('src/components/ExtintorCard.astro');
+  const genericCard = read('src/components/ProductVariantCard.astro');
 
-  assert.match(component, /waUrl\(variante\.waText\)/);
-  assert.match(component, /variante\.imagen\s*\?\?\s*fallbackImage/);
+  assert.match(component, /<ExtintorCard[\s\S]*showFicha=\{false\}/);
+  // La imagen de la ficha ya vive en la vitrina; repetirla en cada card dispara su alto.
+  assert.doesNotMatch(component, /variante\.imagen\s*\?\?\s*image/);
+  assert.doesNotMatch(genericCard, /imagen\s*\?\?\s*image/);
+  assert.match(card, /waUrl\(item\.waText\)/);
   assert.doesNotMatch(component, /<script(?:\s|>)/);
 });
 
-test('la página dinámica monta el componente solo cuando hay variantes', () => {
+test('la página dinámica entrega variantes al layout solo cuando hay variantes', () => {
   const detail = read('src/pages/productos/[...slug].astro');
 
-  assert.match(detail, /import VariantesProducto from ['"]@components\/VariantesProducto\.astro['"]/);
-  assert.match(detail, /d\.variantes\?\.length/);
-  assert.match(detail, /<VariantesProducto variantes=\{d\.variantes\} fallbackImage=\{d\.image\}/);
+  assert.match(detail, /variantes=\{d\.variantes \?\? \[\]\}/);
 });
 
 test('los extintores usan slugs de familia y conservan redirects 301', () => {

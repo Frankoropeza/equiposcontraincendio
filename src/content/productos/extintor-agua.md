@@ -90,19 +90,19 @@ faqs:
 
 La familia de **extintores de agua** reúne tres equipos que se parecen por fuera y trabajan distinto: el de agua a presión, el de agua nebulizada y el de espuma AFFF. Los tres apagan enfriando, que es lo que mejor funciona contra lo que deja brasa, como papel, madera, cartón o tela. La diferencia está en qué más pueden atacar.
 
-## Tres extintores, tres usos
+### Tres extintores, tres usos
 
 - **Agua a presión (clase A).** Para archivos, bodegas de material seco, carpinterías y áreas con textiles, sin polvo que limpiar después. Una ficha técnica de referencia del mercado reporta, para el portátil de 9 L, 45 segundos de descarga y 9 m de alcance mínimo.
 - **Agua nebulizada (clases A y C).** Agua desionizada que sale en una niebla muy fina. El fabricante la clasifica 2A:C, así que puede usarse donde hay equipo eléctrico. Se ve en hospitales, telecomunicaciones y cuartos limpios. No es para líquidos inflamables.
 - **Espuma AFFF (clases A y B).** El espumante forma una película sobre el líquido y corta los vapores que alimentan la flama. Sirve en talleres, patios de maniobra y almacenes de combustibles. No es apta para alcoholes ni solventes polares.
 
-## La advertencia que no se negocia
+### La advertencia que no se negocia
 
 El agua a presión y la espuma AFFF conducen la electricidad. Nunca se dirigen a un tablero, un motor o un cable con corriente.
 
 Si en la misma zona hay material combustible y equipo eléctrico, se protege por partes: agua o espuma donde está la carga combustible, y un [extintor de CO₂](/productos/extintor-co2/) o agua nebulizada con clasificación C junto al equipo.
 
-## Cómo elegir la capacidad
+### Cómo elegir la capacidad
 
 - **Agua a presión:** portátil de 9 L o unidad móvil de 50 L para naves y patios.
 - **Agua nebulizada:** 6 L (1.75 gal) o 9.46 L (2.5 gal).
@@ -110,15 +110,15 @@ Si en la misma zona hay material combustible y equipo eléctrico, se protege por
 
 Para saber cuántos necesitas según la superficie y el riesgo, usa la calculadora de [cuántos extintores necesitas](/herramientas/cuantos-extintores-necesito/).
 
-## Dónde colocarlo
+### Dónde colocarlo
 
 La parte más alta del extintor no debe quedar a más de 1.50 m del piso, y tiene que estar visible, señalizado y sin obstáculos. La distancia máxima de recorrido es de 23 m para riesgos de clase A y C. Si protege líquidos inflamables (clase B), baja a 15 m en riesgo ordinario y a 10 m en riesgo alto, o hasta 15 m si es una unidad móvil. Los [soportes para extintor](/productos/soportes-accesorios-extintor/) y la [señalización](/productos/senalizacion-fotoluminiscente/) completan el punto.
 
-## Mantenimiento y recarga
+### Mantenimiento y recarga
 
 Se revisan cada mes, llevan mantenimiento al menos una vez al año y se recargan después de cualquier uso. El servicio lo presta un proveedor conforme a la NOM-154-SCFI-2005, y el cilindro pasa [prueba hidrostática](/servicios/prueba-hidrostatica/) al menos cada cinco años. También damos [recarga de extintores](/servicios/mantenimiento/) a los que ya tienes instalados.
 
-## Norma aplicable
+### Norma aplicable
 
 La **NOM-103-STPS-1994** regula los extintores a base de agua con presión contenida, incluidos los que llevan aditivos espumantes, para fuegos de clase A y B. En el agua nebulizada, la clase C la da la clasificación de su fabricante.
 

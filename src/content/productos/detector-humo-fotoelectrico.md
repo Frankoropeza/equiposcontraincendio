@@ -41,12 +41,12 @@ variantes:
 
 La **detección temprana** permite alertar antes de que un incendio se desarrolle. El **detector fotoeléctrico** es una opción habitual para percibir partículas de humo de combustión lenta.
 
-## Opciones
+### Opciones
 
 - **Autónomo** con alarma sonora integrada para espacios sin panel.
 - **Interconectado** para propagar la alerta entre equipos compatibles.
 - **Conectado a panel** como parte de un sistema diseñado para el inmueble.
 
-## Integración
+### Integración
 
 Los modelos para panel se seleccionan junto con bases, estaciones manuales, sirenas y fuente de alimentación compatibles. En centros de trabajo, los medios de detección y alarma forman parte del programa de revisión previsto por la **NOM-002-STPS-2010**.

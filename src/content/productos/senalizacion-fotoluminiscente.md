@@ -39,12 +39,12 @@ variantes:
 
 La **señalización fotoluminiscente** almacena energía de la iluminación ambiental y emite luz durante un tiempo al quedar a oscuras. Su desempeño depende del material, la carga luminosa previa, la instalación y las condiciones del lugar.
 
-## Tipos
+### Tipos
 
 - Condición segura y evacuación: fondo verde.
 - Ubicación de equipo contra incendio: fondo rojo.
 - Mensajes, flechas y dimensiones definidos por distancia de observación.
 
-## Cumplimiento
+### Cumplimiento
 
 La **NOM-003-SEGOB-2011** establece colores, formas, símbolos, materiales y criterios de visibilidad para señales de protección civil. El levantamiento del inmueble permite definir mensaje, tamaño, orientación y cantidad antes de producirlas.

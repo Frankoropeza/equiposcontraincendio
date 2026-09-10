@@ -34,9 +34,10 @@ interface Item {
 interface Props {
   item: Item;
   index?: number;
+  showFicha?: boolean;
 }
 
-const { item, index = 0 } = Astro.props as Props;
+const { item, index = 0, showFicha = true } = Astro.props as Props;
 const info = EXT_AGENTE_INFO[item.agente as keyof typeof EXT_AGENTE_INFO];
 const accesorios = item.formato
   ? EXT_ACCESORIOS[item.formato as keyof typeof EXT_ACCESORIOS]
@@ -150,9 +151,9 @@ const accesorios = item.formato
       >
         Cotizar
       </a>
-      <a class="ecard__secondary" href={item.fichaHref}>
+      {showFicha && <a class="ecard__secondary" href={item.fichaHref}>
         Ficha técnica <span aria-hidden="true">→</span>
-      </a>
+      </a>}
     </div>
   </div>
 </article>

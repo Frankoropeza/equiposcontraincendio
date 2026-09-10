@@ -108,13 +108,13 @@ faqs:
 
 Los **extintores PQS ABC** son los que más vas a ver en oficinas, comercios, bodegas y camionetas de reparto, y hay una razón práctica: con un solo equipo cubres sólidos como papel o cartón (clase A), líquidos inflamables como gasolina o solventes (clase B) y equipo eléctrico con corriente (clase C). Si en tu negocio hay un poco de todo, casi siempre se empieza por aquí.
 
-## Dónde conviene y dónde no
+### Dónde conviene y dónde no
 
 Es el extintor de área: el que protege el piso de venta, la recepción, los pasillos de una oficina, la bodega con tarimas y el vehículo de trabajo.
 
 Hay dos lugares donde no conviene. El primero es junto a servidores, tableros de control o equipo de laboratorio. El polvo es muy fino, se mete en contactos y ventiladores, y después de usarlo hay que limpiar a fondo. Ahí se prefiere un [extintor de CO₂](/productos/extintor-co2/) o de [agente limpio](/productos/extintor-agente-limpio/). El segundo es la línea de cocción de una cocina comercial: contra el aceite de una freidora el PQS no es el agente indicado y va un [extintor tipo K](/productos/extintor-clase-k/).
 
-## Cómo elegir la capacidad
+### Cómo elegir la capacidad
 
 Piensa primero en quién lo va a usar. Un PQS de 9 kg lleva más agente, pero si en el turno de la noche la persona a cargo no puede descolgarlo con soltura, uno de 6 kg es mejor decisión.
 
@@ -127,19 +127,19 @@ Como referencia rápida:
 
 La cantidad la marcan la superficie y el riesgo. La NOM-002-STPS-2010 pide al menos un extintor por cada 300 m² en riesgo ordinario y uno por cada 200 m² en riesgo alto. Para tener un primer número, calcula [cuántos extintores necesitas](/herramientas/cuantos-extintores-necesito/).
 
-## Dónde colocarlo
+### Dónde colocarlo
 
 La parte más alta del extintor no debe quedar a más de 1.50 m del piso, y el equipo tiene que estar visible, señalizado y sin nada que lo tape. Parece obvio, pero en una inspección es de lo que más se observa: extintores detrás de cajas, de un exhibidor o de la puerta abierta.
 
 La distancia también cuenta. Según la Tabla 1 de la NOM-002, nadie debería recorrer más de 23 m para llegar a un extintor en áreas con riesgo de clase A o C. Con líquidos inflamables (clase B) el límite es de 15 m en riesgo ordinario y de 10 m en riesgo alto, o hasta 15 m si se trata de una unidad móvil. Para completar el punto, revisa los [soportes para extintor](/productos/soportes-accesorios-extintor/) y la [señalización fotoluminiscente](/productos/senalizacion-fotoluminiscente/).
 
-## Mantenimiento y recarga
+### Mantenimiento y recarga
 
 Un extintor que no está al día cuenta como si no existiera. La NOM-002 pide revisarlo cada mes, y esa revisión la puede hacer tu propio personal. También pide darle mantenimiento al menos una vez al año y recargarlo después de cualquier uso, aunque haya sido un disparo corto.
 
 El mantenimiento y la [recarga de extintores](/servicios/mantenimiento/) los hace un proveedor conforme a la NOM-154-SCFI-2005. Al terminar, el equipo lleva una etiqueta con los datos del prestador, el agente, la fecha del servicio y la contraseña oficial. En los PQS, además, se coloca un collarín que no se puede quitar sin abrir el extintor: es la prueba física de que se le dio servicio. El cilindro pasa [prueba hidrostática](/servicios/prueba-hidrostatica/) al menos cada cinco años.
 
-## Norma aplicable
+### Norma aplicable
 
 La norma de producto del polvo químico seco es la **NOM-100-STPS-1994**. La contraseña oficial que identifica al producto certificado se rige por la **NOM-106-SCFI-2017**, y el servicio, por la **NOM-154-SCFI-2005**.
 

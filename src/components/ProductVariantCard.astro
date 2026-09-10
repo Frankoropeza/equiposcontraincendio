@@ -1,0 +1,55 @@
+---
+// ProductVariantCard — card genérica para variantes sin agente de extintor.
+// Contrato: presenta datos del frontmatter y enlaza la cotización por WhatsApp.
+import { waUrl } from '@config/site';
+import { slugify } from '@lib/slug';
+
+interface Item {
+  nombre: string;
+  badge?: string;
+  desc: string;
+  resumen?: string;
+  specs: string;
+  imagen?: string;
+  waText: string;
+  capacidad?: string;
+  formato?: string;
+  clases?: string[];
+  id?: string;
+}
+
+interface Props {
+  item: Item;
+  index?: number;
+}
+const { item, index = 0 } = Astro.props as Props;
+const id = item.id ?? slugify(item.nombre);
+const chips = [...item.specs.split(' · '), item.capacidad, item.formato, ...(item.clases ?? [])].filter(Boolean) as string[];
+---
+<article class="pvcard" id={id} style={`--card-index: ${index}`}>
+  {/* ─── Imagen opcional de la variante ─── */}
+  {item.imagen && (
+    <img class="pvcard__image" src={item.imagen} alt={item.nombre} width="640" height="400" loading="lazy" decoding="async" />
+  )}
+  <div class="pvcard__body">
+    {/* ─── Información y especificaciones ─── */}
+    {item.badge && <span class="pvcard__badge">{item.badge}</span>}
+    <h3>{item.nombre}</h3>
+    <p>{item.resumen ?? item.desc}</p>
+    <ul class="pvcard__specs" aria-label={`Especificaciones de ${item.nombre}`}>
+      {chips.map((chip) => <li>{chip}</li>)}
+    </ul>
+    <a class="btn btn--primary pvcard__cta" href={waUrl(item.waText)} target="_blank" rel="noopener noreferrer">Cotizar</a>
+  </div>
+</article>
+<style>
+  .pvcard { display: flex; flex-direction: column; height: 100%; min-width: 0; overflow: hidden; border: 1px solid var(--c-border); border-radius: var(--radius-lg); background: var(--c-white); box-shadow: var(--shadow-sm); }
+  .pvcard__image { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: var(--c-surface); }
+  .pvcard__body { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: var(--sp-5); }
+  .pvcard__badge { display: inline-flex; margin-bottom: var(--sp-2); padding: .3em .65em; border-radius: var(--radius-sm); background: var(--c-primary); color: #fff; font-size: var(--text-xs); font-weight: var(--weight-bold); letter-spacing: .03em; text-transform: uppercase; }
+  .pvcard h3 { margin: 0 0 var(--sp-3); font-family: var(--font-heading); font-size: var(--text-lg); line-height: var(--leading-snug); }
+  .pvcard p { margin: 0 0 var(--sp-4); color: var(--c-ink-2); font-size: var(--text-sm); line-height: var(--leading-relaxed); }
+  .pvcard__specs { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin: 0 0 var(--sp-5); padding: 0; list-style: none; }
+  .pvcard__specs li { padding: .25rem .5rem; border-radius: var(--radius-sm); background: var(--c-surface); color: var(--c-muted); font-size: var(--text-xs); }
+  .pvcard__cta { width: 100%; margin-top: auto; }
+</style>

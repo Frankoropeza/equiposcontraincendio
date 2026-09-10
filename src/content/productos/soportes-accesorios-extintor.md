@@ -40,12 +40,12 @@ variantes:
 
 El montaje correcto mantiene el extintor visible, accesible y protegido de golpes o movimientos. Un accesorio no es universal: debe seleccionarse por **diámetro, peso cargado, geometría del cilindro, ambiente y tipo de anclaje**.
 
-## Compatibilidad antes de comprar
+### Compatibilidad antes de comprar
 
 - Comparte la capacidad, marca o medidas del extintor.
 - Indica si se instalará en muro, vehículo, maquinaria o gabinete.
 - Para ambientes húmedos o corrosivos, define el material y acabado necesarios.
 
-## Instalación
+### Instalación
 
 La altura, señalización y acceso forman parte de la ubicación del equipo. En vehículos y maquinaria también deben revisarse vibración, retención y liberación manual sin herramientas.

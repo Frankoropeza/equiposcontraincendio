@@ -1,0 +1,32 @@
+---
+// QuoteCard — contacto contextual para cotizar una ficha L4.
+// Contrato: recibe nombre, precio público opcional y enlaces de contacto.
+interface Props {
+  title: string;
+  price?: string;
+  waLink: string;
+  telHref: string;
+}
+const { title, price, waLink, telHref } = Astro.props as Props;
+---
+<aside class="quote-card">
+  {/* ─── Datos requeridos para cotizar ─── */}
+  <p class="quote-card__eyebrow">Cotiza por WhatsApp</p>
+  <h3>{title}</h3>
+  <p class="quote-card__price">{price ?? 'Precio bajo cotización'}</p>
+  <p class="quote-card__label">Para cotizar, envíanos:</p>
+  <ul><li>Giro del negocio</li><li>Superficie aproximada</li><li>Presentación y cantidad</li></ul>
+  <a class="btn btn--primary btn--block" href={waLink} target="_blank" rel="noopener noreferrer">Cotizar por WhatsApp</a>
+  <a class="btn btn--ghost btn--block" href={telHref}>Llamar</a>
+</aside>
+<style>
+  .quote-card { position: sticky; top: calc(var(--header-height, 72px) + var(--sp-4)); padding: var(--sp-6); border: 1px solid var(--c-border); border-radius: var(--radius-lg); background: var(--c-white); box-shadow: var(--shadow-sm); }
+  .quote-card__eyebrow { margin: 0 0 var(--sp-2); color: var(--c-primary); font-size: var(--text-xs); font-weight: var(--weight-bold); letter-spacing: .08em; text-transform: uppercase; }
+  .quote-card h3 { margin: 0; font-family: var(--font-heading); font-size: var(--text-xl); line-height: var(--leading-snug); }
+  .quote-card__price { margin: var(--sp-3) 0 var(--sp-5); color: var(--c-ink-2); }
+  .quote-card__label { margin: 0 0 var(--sp-2); font-weight: var(--weight-semibold); }
+  .quote-card ul { margin: 0 0 var(--sp-5); padding-left: 1.25rem; color: var(--c-ink-2); }
+  .quote-card li + li { margin-top: var(--sp-2); }
+  .quote-card .btn + .btn { margin-top: var(--sp-2); }
+  @media (max-width: 899px) { .quote-card { position: static; } }
+</style>

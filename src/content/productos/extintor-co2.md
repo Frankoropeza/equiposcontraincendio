@@ -83,7 +83,7 @@ faqs:
 
 Los **extintores de CO₂** son los que se ponen junto a tableros eléctricos, sites y equipo electrónico. El dióxido de carbono le quita el oxígeno a la flama, no conduce la electricidad y se disipa sin dejar residuo. Después de usarlo no hay polvo que limpiar ni equipo dañado por el agente.
 
-## Dónde conviene y dónde no
+### Dónde conviene y dónde no
 
 Rinde en cuartos eléctricos, tableros de distribución, sites, laboratorios y áreas con maquinaria o líquidos inflamables, porque está clasificado para fuegos de clase B y C. En una oficina suele ir junto al rack o al no-break, mientras un [extintor PQS ABC](/productos/extintor-pqs/) protege el resto del piso.
 
@@ -91,7 +91,7 @@ No es para papel, cartón, madera ni tela. Sobre sólidos apaga la flama, pero l
 
 Dos precauciones más. En recintos pequeños o mal ventilados, el CO₂ reduce el oxígeno disponible también para quien lo usa. Y la descarga es muy fría, así que el extintor se sujeta por las zonas de agarre que indica el fabricante.
 
-## Cómo elegir la capacidad
+### Cómo elegir la capacidad
 
 - **5 lb (2.27 kg):** un tablero o un equipo en particular.
 - **10 lb (4.54 kg):** la medida habitual para tableros, sites y laboratorios.
@@ -100,19 +100,19 @@ Dos precauciones más. En recintos pequeños o mal ventilados, el CO₂ reduce e
 
 La cantidad total la definen la superficie y el grado de riesgo del inmueble. Para un primer cálculo, revisa [cuántos extintores necesitas](/herramientas/cuantos-extintores-necesito/).
 
-## Dónde colocarlo
+### Dónde colocarlo
 
 Cerca del riesgo que protege, pero sin estorbar el acceso al tablero ni al rack. La parte más alta del extintor no debe quedar a más de 1.50 m del piso, y tiene que estar visible y señalizado.
 
 La distancia máxima de recorrido hasta el extintor es de 23 m cuando el riesgo es eléctrico (clase C). Con líquidos inflamables (clase B) baja a 15 m en riesgo ordinario y a 10 m en riesgo alto. Completa el punto con un [soporte para extintor](/productos/soportes-accesorios-extintor/) y su [señalización](/productos/senalizacion-fotoluminiscente/).
 
-## Mantenimiento y recarga
+### Mantenimiento y recarga
 
 Como cualquier extintor, el de CO₂ se revisa cada mes, lleva mantenimiento al menos una vez al año y se recarga después de cualquier uso. En su caso, la NOM-002-STPS-2010 añade un punto: verificar que conserve la capacidad nominal indicada en la etiqueta.
 
 El servicio lo presta un proveedor conforme a la NOM-154-SCFI-2005, que deja la etiqueta con los datos del servicio. El cilindro pasa [prueba hidrostática](/servicios/prueba-hidrostatica/) al menos cada cinco años. Si ya tienes extintores de CO₂ instalados, también les damos [recarga y mantenimiento](/servicios/mantenimiento/).
 
-## Norma aplicable
+### Norma aplicable
 
 La norma de producto es la **NOM-102-STPS-1994**, que regula los recipientes de los extintores a base de bióxido de carbono. El servicio se rige por la **NOM-154-SCFI-2005**.
 

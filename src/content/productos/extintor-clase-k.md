@@ -56,13 +56,13 @@ faqs:
 
 Una freidora encendida es de los fuegos más traicioneros de un negocio. El aceite llega a temperaturas tan altas que el agua lo hace saltar y el polvo químico no alcanza a enfriarlo. Para eso existe el **extintor tipo K** (clase K): su agente, un químico húmedo, sale en forma de niebla, no salpica el aceite y forma una capa que lo separa del aire mientras lo enfría.
 
-## Dónde conviene y dónde no
+### Dónde conviene y dónde no
 
 Va junto a la línea de cocción de restaurantes, cocinas industriales, comedores de empresa, hoteles y cualquier cocina con freidoras, planchas o recipientes con aceite caliente. El resto del restaurante (comedor, pasillos y bodega) se protege con [extintores PQS ABC](/productos/extintor-pqs/).
 
 Lo que no hace es sustituir al sistema fijo de supresión de la campana. Si tu cocina lo tiene, el extintor clase K es el complemento para que el personal actúe mientras el sistema hace su trabajo. Si no lo tiene, conviene revisar el caso completo.
 
-## Cómo elegir la capacidad
+### Cómo elegir la capacidad
 
 - **4 L:** cocinas con poco espacio o una sola freidora.
 - **6 L:** la medida común en cocinas comerciales y restaurantes.
@@ -70,15 +70,15 @@ Lo que no hace es sustituir al sistema fijo de supresión de la campana. Si tu c
 
 La elección depende de cuántos equipos hay, cuánto aceite manejan y cómo está distribuida la cocina.
 
-## Dónde colocarlo
+### Dónde colocarlo
 
 A la mano de quien cocina, pero no justo encima del equipo de cocción, para que se pueda tomar sin acercarse al aceite encendido. La NOM-002-STPS-2010 fija en 10 m la distancia máxima de recorrido hasta un extintor clase K, y la parte más alta del equipo no debe quedar a más de 1.50 m del piso. Móntalo con su [soporte](/productos/soportes-accesorios-extintor/) y márcalo con [señalización fotoluminiscente](/productos/senalizacion-fotoluminiscente/).
 
-## Mantenimiento y recarga
+### Mantenimiento y recarga
 
 Se revisa cada mes, se le da mantenimiento al menos una vez al año y se recarga después de cualquier uso. El servicio lo presta un proveedor conforme a la NOM-154-SCFI-2005 y deja la etiqueta con los datos del servicio; el cilindro pasa prueba hidrostática al menos cada cinco años. Puedes cotizar la [recarga de extintores](/servicios/mantenimiento/) junto con el resto del equipo de tu cocina.
 
-## Norma aplicable
+### Norma aplicable
 
 El clase K no tiene una norma mexicana de producto específica. Como referencia técnica se usa la **NFPA 10**, que no es ley federal, pero define la clase K y cómo seleccionar el extintor. El servicio se rige por la **NOM-154-SCFI-2005** y la colocación, por la **NOM-002-STPS-2010**.
 

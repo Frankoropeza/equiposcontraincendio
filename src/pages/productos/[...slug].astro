@@ -5,7 +5,6 @@
 // (frontmatter validado con Zod .strict()). Toda la estructura, el JSON-LD
 // Product+Offer, los breadcrumbs y la conversión WhatsApp viven en ProductLayout.
 import { getCollection, render } from 'astro:content';
-import VariantesProducto from '@components/VariantesProducto.astro';
 import ProductLayout from '@layouts/ProductLayout.astro';
 
 export async function getStaticPaths() {
@@ -53,9 +52,7 @@ const faqs = d.faqs;
   price={d.price}
   faqs={faqs}
   related={related}
+  variantes={d.variantes ?? []}
 >
-  
-
   <Content />
-  {d.variantes?.length && <VariantesProducto variantes={d.variantes} fallbackImage={d.image} />}
 </ProductLayout>

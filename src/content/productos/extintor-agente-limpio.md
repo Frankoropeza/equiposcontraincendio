@@ -92,30 +92,30 @@ faqs:
 
 Apagar un conato en un site con polvo químico tiene un costo que llega después: el polvo se queda en cada servidor. Los **extintores de agente limpio** resuelven ese problema. El agente sale como gas o como un líquido que se evapora, no conduce la electricidad y no deja residuo, así que el equipo que proteges no termina dañado por el agente.
 
-## Dos agentes: Halotron I y FE-36
+### Dos agentes: Halotron I y FE-36
 
 - **Halotron I:** presentaciones de 2.5, 5, 11 y 15.5 lb (de 1.1 a 7 kg). El fabricante clasifica las de 2.5 y 5 lb solo para fuegos de clase B y C; las de 11 y 15.5 lb suman la clase A (1-A:10-B:C y 2-A:10-B:C).
 - **FE-36 (HFC-236fa):** presentaciones de 9.5 y 13.25 lb (4.3 y 6 kg), clasificadas 1-A:10-B:C y 2-A:10-B:C.
 
-## Dónde conviene y dónde no
+### Dónde conviene y dónde no
 
 En salas de servidores, cuartos de telecomunicaciones, centros de control, laboratorios y áreas con equipo de alto valor. También en cuartos donde conviven equipo eléctrico y material de clase A (papel, cajas o mobiliario), siempre que elijas una presentación con clase A.
 
 Donde no hace falta es como extintor general de un piso de oficinas o de una bodega: ahí un [extintor PQS ABC](/productos/extintor-pqs/) cumple la función. Y las presentaciones chicas no deben usarse para cubrir un riesgo de clase A, porque su clasificación no lo incluye.
 
-## Cómo elegir la capacidad
+### Cómo elegir la capacidad
 
 Empieza por la clasificación que necesitas. Si en el área solo hay equipo eléctrico, una presentación B:C puede bastar. Si también hay papel o mobiliario, elige desde 4.3 kg (FE-36) o 5 kg (Halotron I). Después ajusta por superficie y por quién lo va a operar, con ayuda de la calculadora de [cuántos extintores necesitas](/herramientas/cuantos-extintores-necesito/).
 
-## Dónde colocarlo
+### Dónde colocarlo
 
 Cerca de la entrada del cuarto que protege y sin estorbar el acceso a los racks o al tablero, a no más de 1.50 m del piso, visible y señalizado. Para riesgos de clase A y C, la distancia máxima de recorrido es de 23 m. Completa el punto con un [soporte para extintor](/productos/soportes-accesorios-extintor/) y su [señalización](/productos/senalizacion-fotoluminiscente/).
 
-## Mantenimiento y recarga
+### Mantenimiento y recarga
 
 Igual que el resto de los extintores: revisión mensual, mantenimiento al menos una vez al año y recarga después de cualquier uso. El servicio se presta conforme a la NOM-154-SCFI-2005, y el cilindro pasa [prueba hidrostática](/servicios/prueba-hidrostatica/) al menos cada cinco años. Cotiza la [recarga de extintores](/servicios/mantenimiento/) junto con el resto de tu equipo.
 
-## Norma aplicable
+### Norma aplicable
 
 No existe una NOM mexicana de producto específica para agente limpio. La referencia es la clasificación del fabricante, que viene en la etiqueta de cada modelo. En el centro de trabajo aplican la **NOM-002-STPS-2010** (colocación y revisiones) y la **NOM-154-SCFI-2005** (servicio).
 

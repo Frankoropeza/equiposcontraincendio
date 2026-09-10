@@ -35,12 +35,12 @@ variantes:
 
 El gabinete protege y mantiene accesibles los elementos de una **red hidráulica contra incendio**. Una configuración habitual integra manguera, válvula angular y chiflón en un punto visible; no sustituye el cálculo de la red ni la capacitación de la brigada.
 
-## Incluye
+### Incluye
 
 - Cuerpo y puerta con acabado a definir según el ambiente.
 - Manguera de 1½ pulgadas con la longitud seleccionada.
 - Válvula y chiflón compatibles con el diseño hidráulico.
 
-## Instalación
+### Instalación
 
 Forma parte de la red del inmueble. El caudal, la presión, la válvula, el diámetro, el alcance y la ubicación deben definirse mediante un proyecto específico; la **NFPA 14** puede servir como referencia cuando sea aplicable.
