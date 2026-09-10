@@ -30,15 +30,17 @@ interface Props {
   ctaHref?: string
   /** CTA externo (ej. WhatsApp): abre en pestaña nueva con rel seguro. */
   ctaExternal?: boolean
+  /* GEOMETRÍA FIJA — no se parametriza a propósito (2026-09-10).
+     El módulo es SIEMPRE texto a la izquierda y galería a la derecha, sobre
+     fondo blanco. Existían props `flip` y `surface` que alternaban ambas cosas
+     en /servicios/mantenimiento/ y /productos/extintores/, y ese zig-zag era la
+     única desviación del patrón en todo el sitio. Se eliminaron las props, no
+     solo sus llamadas, para que la alternancia no pueda reintroducirse. */
   /** Imagen grande (principal) */
   imgMain: GalleryImage
   /** 2 imágenes pequeñas debajo */
   imgA: GalleryImage
   imgB: GalleryImage
-  /** Fondo alternado: true = fondo surface, false = blanco */
-  surface?: boolean
-  /** Imagen a la derecha (default) o a la izquierda */
-  flip?: boolean
   /** id del <section> → destino de las anclas del SHOWCASE (/productos/#slug). */
   anchorId?: string
   /** CTA secundario (contorno). Da salida a la otra intención del bloque:
@@ -61,8 +63,6 @@ const {
   imgMain,
   imgA,
   imgB,
-  surface = false,
-  flip = false,
   anchorId,
   ctaSecondaryLabel,
   ctaSecondaryHref,
@@ -70,7 +70,7 @@ const {
 } = Astro.props
 ---
 
-<section id={anchorId} class:list={['cf', surface && 'cf--surface', flip && 'cf--flip']}>
+<section id={anchorId} class="cf">
   <div class="cf__inner">
 
     <!-- Columna izquierda: contenido -->
@@ -193,10 +193,6 @@ const {
   padding: var(--section-py) 0;
   background: var(--c-white);
 }
-.cf--surface {
-  background: var(--c-surface);
-}
-
 .cf__inner {
   max-width: var(--container-max);
   margin-inline: auto;
@@ -206,9 +202,6 @@ const {
   gap: clamp(2.5rem, 5vw, 5rem);
   align-items: center;
 }
-
-/* Flip: galería a la izquierda, texto a la derecha */
-.cf--flip .cf__gallery { order: -1; }
 
 /* ── Contenido (col izq) ── */
 .cf__eyebrow {
@@ -280,7 +273,6 @@ const {
   font-size: var(--text-sm);
   line-height: var(--leading-normal);
 }
-.cf--surface .cf__feature { background: var(--c-surface); }
 .cf__feature-dot {
   grid-row: 1;
   width: 28px;
@@ -345,9 +337,6 @@ const {
   border-radius: var(--radius-md);
   padding: .35rem .8rem;
 }
-.cf--surface .cf__brand {
-  background: var(--c-surface);
-}
 .cf__brand-note {
   font-size: var(--text-xs);
   font-weight: var(--weight-regular);
@@ -377,7 +366,7 @@ const {
   border: 1.5px solid var(--c-primary);
   border-radius: var(--radius-md);
   text-decoration: none;
-  transition: background var(--transition), color var(--transition);
+  transition: background-color var(--transition), border-color var(--transition), color var(--transition);
 }
 .cf__cta:hover {
   background: var(--c-primary-dark);
@@ -436,9 +425,6 @@ const {
     grid-template-columns: 1fr;
     gap: var(--sp-8);
   }
-  .cf--flip .cf__gallery {
-    order: 0;
-  }
   .cf__desc { max-width: none; }
 }
 
@@ -448,7 +434,4 @@ const {
   .cf__actions { flex-direction: column; align-items: stretch; }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .cf__cta { transition: none; }
-}
 </style>

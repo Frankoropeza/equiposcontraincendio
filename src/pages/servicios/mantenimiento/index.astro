@@ -143,8 +143,12 @@ const schemaData = {
     surface
   />
 
-  {/* ─── Módulos por agente (fondo blanco primero: la tabla previa es surface) ─── */}
-  {mantFeatures.map((feature, i) => (
+  {/* ─── Módulos por agente ───
+      Todos idénticos: texto en la columna izquierda, galería en la derecha, fondo
+      blanco. NO se alterna `flip` ni `surface`. El zig-zag rompía la homologación
+      con el resto del sitio (2026-09-10): el ojo tiene que encontrar el texto
+      siempre en el mismo lugar al bajar por una pila de módulos. ─── */}
+  {mantFeatures.map((feature) => (
     <CategoryFeature
       anchorId={feature.id}
       eyebrow={feature.eyebrow}
@@ -160,8 +164,6 @@ const schemaData = {
       imgMain={feature.imgMain}
       imgA={feature.imgA}
       imgB={feature.imgB}
-      surface={i % 2 === 1}
-      flip={i % 2 === 1}
     />
   ))}
 
