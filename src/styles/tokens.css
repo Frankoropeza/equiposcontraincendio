@@ -188,3 +188,85 @@ img, picture, video, canvas { max-width: 100%; }
 @media (prefers-reduced-motion: reduce) {
   .skip-link { transition: none; }
 }
+
+/* ═════════════════════════════════════════════════════════════════════════════
+ * BOTONES (.btn) — utilidad global, homologación 2026-09-10.
+ * Hasta ahora cada componente pintaba su propio botón (.hero__btn, el CTA de
+ * CTABanner, SectionMenu…) y no existía ninguna clase compartida. Las páginas
+ * que no son de esos componentes —el CTA lateral del blog, los formularios de
+ * las herramientas— usaban `class="btn btn--primary"` contra una clase que NO
+ * ESTABA DEFINIDA: se veían como botones nativos del navegador, sin marca.
+ *
+ * Esta utilidad reproduce el mismo lenguaje visual del hero: mismo radio, mismo
+ * peso y los mismos tokens de color. Sirve para <a> y para <button>.
+ * ═════════════════════════════════════════════════════════════════════════════ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2, .5rem);
+  padding: var(--sp-3, .75rem) var(--sp-5, 1.25rem);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md, 8px);
+  font-family: var(--font-body, system-ui);
+  font-size: var(--text-sm, .9rem);
+  font-weight: var(--weight-semibold, 600);
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+}
+.btn:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 2px; }
+
+.btn--primary { background: var(--c-primary); color: var(--c-white, #fff); }
+.btn--primary:hover { background: var(--c-primary-dark, #8e0000); color: var(--c-white, #fff); }
+
+.btn--outline { background: transparent; color: var(--c-ink); border-color: var(--c-border); }
+.btn--outline:hover { border-color: var(--c-primary); color: var(--c-primary); }
+
+/* Ghost: acción secundaria dentro de un formulario (limpiar, cancelar). */
+.btn--ghost { background: transparent; color: var(--c-ink-2); border-color: var(--c-border); }
+.btn--ghost:hover { color: var(--c-ink); border-color: var(--c-ink-2); }
+
+.btn--block { width: 100%; }
+
+/* Botones deshabilitados: sin cambio de color al pasar el cursor. */
+.btn[disabled], .btn[aria-disabled="true"] { opacity: .55; cursor: not-allowed; }
+
+/* ═════════════════════════════════════════════════════════════════════════════
+ * UTILIDADES DE MAQUETA (.container, .section, .prose) — homologación 2026-09-10.
+ * Cada página repetía estas tres reglas en su bloque <style> scoped. El problema
+ * no era la duplicación: era que ArticleLayout usaba `.container` y `.prose` SIN
+ * definirlas, así que TODOS los artículos del blog se publicaban a sangre
+ * completa (sin ancho máximo ni padding lateral) y con el markdown pintado con
+ * los estilos por defecto del navegador, sin ritmo tipográfico.
+ *
+ * Al vivir aquí, cualquier página o componente nuevo hereda la misma maqueta.
+ * Las definiciones scoped que ya existen en las páginas ganan por especificidad
+ * y siguen mandando: esto es el piso, no una imposición.
+ * ═════════════════════════════════════════════════════════════════════════════ */
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-px);
+}
+.container--prose { max-width: var(--container-prose); }
+
+.section { padding: var(--sp-8) 0; }
+.section--surface { background: var(--c-surface); }
+@media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
+
+/* Ritmo tipográfico del contenido largo (markdown de artículos, fichas y legales). */
+.prose { max-width: var(--container-prose); color: var(--c-ink-2); line-height: var(--leading-relaxed); }
+.prose h2 { font-family: var(--font-heading); font-size: var(--text-2xl); font-weight: var(--weight-bold); color: var(--c-ink); margin: var(--sp-6) 0 var(--sp-3); }
+.prose h3 { font-family: var(--font-heading); font-size: var(--text-xl); font-weight: var(--weight-semibold); color: var(--c-ink); margin: var(--sp-5) 0 var(--sp-2); }
+.prose p { margin: 0 0 var(--sp-4); }
+.prose ul, .prose ol { margin: 0 0 var(--sp-4); padding-left: 1.25rem; }
+.prose li { margin-bottom: var(--sp-2); }
+.prose strong { color: var(--c-ink); font-weight: var(--weight-semibold); }
+.prose a { color: var(--c-primary); }
+.prose table { width: 100%; border-collapse: collapse; margin: 0 0 var(--sp-4); font-size: var(--text-sm); }
+.prose th, .prose td { border: 1px solid var(--c-border); padding: var(--sp-3); text-align: left; }
+.prose th { background: var(--c-white); font-weight: var(--weight-semibold); color: var(--c-ink); }
+.prose blockquote { margin: 0 0 var(--sp-4); padding-left: var(--sp-4); border-left: 3px solid var(--c-primary); color: var(--c-ink-2); }
+.prose img { max-width: 100%; height: auto; border-radius: var(--radius-lg, 12px); }

@@ -7,6 +7,7 @@
 // Publicar sólo el archivo no serviría: un .xlsx no posiciona ni enseña nada.
 // ============================================================================
 import PageLayout from '@layouts/PageLayout.astro'
+import Hero from '@components/Hero.astro'
 import FAQAccordion from '@components/FAQAccordion.astro'
 import CTABanner from '@components/CTABanner.astro'
 import RelatedLinks from '@components/RelatedLinks.astro'
@@ -52,12 +53,22 @@ const waHref = waUrl(`Hola, descargué el formato "${d.label}" y quiero que me a
   breadcrumbs={[{ label: 'Formatos descargables', href: '/plantillas/' }, { label: d.label }]}
   guia={false}
 >
-  <section class="pl">
-    <div class="container">
-      <p class="pl__eyebrow">Formato descargable · {d.norm}</p>
-      <h1 class="pl__h1">{d.label}</h1>
-      <p class="pl__lede">{d.description}</p>
+  <Hero
+    badge={`Formato descargable · ${d.norm}`}
+    title={d.label}
+    subtitle={d.description}
+    descRight={[
+      'Descárgalo gratis, sin registro, en formato editable y en PDF para imprimir. Abajo está el paso a paso de llenado y de qué norma sale cada dato.',
+      'Es un formato de apoyo: no sustituye el programa interno de protección civil ni la documentación que exija la autoridad competente en cada caso.',
+    ]}
+    ctas={[
+      { text: 'Ver todos los formatos', href: '/plantillas/', variant: 'outline' },
+      { text: 'Que lo llevemos nosotros', href: waHref, variant: 'primary', whatsapp: true },
+    ]}
+  />
 
+  <section class="section">
+    <div class="container container--prose">
       <div class="dl">
         <p class="dl__t">Descarga gratis, sin registro</p>
         <div class="dl__row">
@@ -88,7 +99,7 @@ const waHref = waUrl(`Hola, descargué el formato "${d.label}" y quiero que me a
   {d.faqs && d.faqs.length > 0 && (
     <section class="section section--surface">
       <div class="container container--prose">
-        <FAQAccordion items={d.faqs} title="Preguntas frecuentes" openFirst bare />
+        <FAQAccordion items={d.faqs} title="Preguntas frecuentes" openFirst />
       </div>
     </section>
   )}
@@ -112,11 +123,8 @@ const waHref = waUrl(`Hola, descargué el formato "${d.label}" y quiero que me a
   .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
   .container--prose { max-width: var(--container-prose, 72ch); }
   .section { padding: var(--sp-8) 0; }
+  @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
   .section--surface { background: var(--c-surface); }
-  .pl { padding: var(--sp-9) 0 var(--sp-6); }
-  .pl__eyebrow { color: var(--c-accent); text-transform: uppercase; letter-spacing: .08em; font-size: var(--text-sm); margin: 0 0 var(--sp-2); }
-  .pl__h1 { font-family: var(--font-heading); font-size: var(--text-fluid-4xl, 2.25rem); line-height: 1.1; margin: 0 0 var(--sp-3); }
-  .pl__lede { color: var(--c-ink-2); max-width: 65ch; margin: 0 0 var(--sp-6); }
   .dl { padding: var(--sp-5) var(--sp-6); border: 1px solid var(--c-border); border-left: 4px solid var(--c-accent); border-radius: var(--radius-lg, 12px); background: var(--c-white); max-width: 40rem; }
   .dl__t { margin: 0 0 var(--sp-3); font-size: var(--text-sm); color: var(--c-ink-2); }
   .dl__row { display: flex; flex-wrap: wrap; gap: var(--sp-3); }

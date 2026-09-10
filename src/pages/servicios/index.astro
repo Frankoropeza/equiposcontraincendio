@@ -10,20 +10,11 @@ import SectionHeading from '@components/SectionHeading.astro'
 import CategoryCard from '@components/CategoryCard.astro'
 import CategoryFeature from '@components/CategoryFeature.astro'
 import FAQWithContact from '@components/FAQWithContact.astro'
-import { SERVICES, NAV, CONTACT, waUrl, WA_MESSAGES } from '@config/site'
+import { SERVICES, CONTACT, waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
 
-// ── Menú de secciones bajo el hero (data-driven desde NAV; excluye Contacto) ──
-const menuSub: Record<string, string> = {
-  Productos: 'Catálogo de equipo',
-  Servicios: 'Instalación y mantenimiento',
-  Cobertura: 'Zonas que atendemos',
-  Blog: 'Guías y normatividad',
-}
-const menuSecciones = NAV.filter((n) => n.label !== 'Contacto').map((n) => ({
-  label: n.label,
-  href: n.href,
-  sub: menuSub[n.label] ?? 'Ver sección',
-}))
+// Menú de secciones: subtítulos desde SECTION_MENU_SUB (site.ts), no un mapa
+// local — así todas las páginas describen las secciones igual.
+const menuSecciones = sectionMenuItems()
 const menuCta = {
   label: 'Cotizar por WhatsApp',
   href: waUrl(WA_MESSAGES.servicios),
@@ -152,7 +143,7 @@ const faqs = [
       'Trabajamos conforme a la normatividad aplicable —NOM-002-STPS-2010 y NOM-154-SCFI-2005— y te entregamos un reporte claro de lo realizado.',
     ]}
     ctas={[
-      { text: 'Ver servicios', href: '#servicios', variant: 'outline' },
+      { text: 'Nuestros servicios', href: '#servicios', variant: 'outline' },
       { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.servicios), variant: 'primary', whatsapp: true },
     ]}
   />
@@ -185,7 +176,7 @@ const faqs = [
             imageAlt={s.label}
             blurb={s.desc}
             badge="Servicio"
-            ctaLabel="Ver detalle"
+            ctaLabel="Detalle del servicio"
             index={i}
           />
         ))}

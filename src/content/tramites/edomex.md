@@ -29,6 +29,8 @@ sources:
     url: "https://retys.edomex.gob.mx/cedulainfo/1254"
   - label: "Coordinación General de Protección Civil y GIR — Trámites y servicios"
     url: "https://cgproteccioncivil.edomex.gob.mx/tramites_servicios"
+image: "/images/general/inventario-proveedor-equipo-contra-incendio.avif"
+imageAlt: "Inventario de equipo contra incendio listo para entrega en el Estado de México"
 verifiedAt: 2026-09-09
 seoTitle: "Programa de Protección Civil Estado de México"
 seoDescription: "Requisitos, plazo y fundamento del trámite estatal para inscribir o revalidar un Programa Específico de Protección Civil en el Estado de México."

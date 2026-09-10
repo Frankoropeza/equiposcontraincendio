@@ -8,7 +8,7 @@ import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
 import SectionHeading from '@components/SectionHeading.astro'
 import SectionMenu from '@components/SectionMenu.astro'
-import { NAV, waUrl, WA_MESSAGES } from '@config/site'
+import { waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
 
 // Principios — data-driven (grid de valores). DEMO de la plantilla.
 const principios = [
@@ -18,18 +18,9 @@ const principios = [
   { t: 'Trato directo', d: 'Hablas con quien resuelve, no con un intermediario. Respuesta directa por WhatsApp.' },
 ]
 
-// ── Menú de secciones bajo el hero (data-driven desde NAV; excluye Contacto) ──
-const menuSub: Record<string, string> = {
-  Productos: 'Catálogo de equipo',
-  Servicios: 'Instalación y mantenimiento',
-  Cobertura: 'Zonas que atendemos',
-  Blog: 'Guías y normatividad',
-}
-const menuSecciones = NAV.filter((n) => n.label !== 'Contacto').map((n) => ({
-  label: n.label,
-  href: n.href,
-  sub: menuSub[n.label] ?? 'Ver sección',
-}))
+// Menú de secciones: subtítulos desde SECTION_MENU_SUB (site.ts), no un mapa
+// local — así todas las páginas describen las secciones igual.
+const menuSecciones = sectionMenuItems()
 const menuCta = {
   label: 'Cotizar por WhatsApp',
   href: waUrl(WA_MESSAGES.cotizar),
@@ -56,7 +47,7 @@ const menuCta = {
     ]}
     ctas={[
       { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.cotizar), variant: 'primary', whatsapp: true },
-      { text: 'Ver servicios', href: '/servicios/', variant: 'outline' },
+      { text: 'Nuestros servicios', href: '/servicios/', variant: 'outline' },
     ]}
   />
 

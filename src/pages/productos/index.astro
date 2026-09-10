@@ -13,7 +13,7 @@ import CategoryFeature from '@components/CategoryFeature.astro';
 import ProductCard from '@components/ProductCard.astro';
 import FAQWithContact from '@components/FAQWithContact.astro';
 import { getCollection } from 'astro:content';
-import { SHOWCASE, CONTACT, NAV, waUrl, WA_MESSAGES } from '@config/site';
+import { SHOWCASE, CONTACT, waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site';
 
 const productos = (await getCollection('productos', ({ data }) => !data.draft)).sort(
   (a, b) => a.data.order - b.data.order,
@@ -30,17 +30,9 @@ const CAT_LABEL: Record<string, string> = {
 
 // ── Menú de secciones bajo el hero (data-driven desde NAV; excluye Contacto) ──
 // Mismo patrón que la home (index.astro): el hero presenta, la franja convierte.
-const menuSub: Record<string, string> = {
-  Productos: 'Catálogo de equipo',
-  Servicios: 'Instalación y mantenimiento',
-  Cobertura: 'Zonas que atendemos',
-  Blog: 'Guías y normatividad',
-};
-const menuSecciones = NAV.filter((n) => n.label !== 'Contacto').map((n) => ({
-  label: n.label,
-  href: n.href,
-  sub: menuSub[n.label] ?? 'Ver sección',
-}));
+// Menú de secciones: subtítulos desde SECTION_MENU_SUB (site.ts), no un mapa
+// local — así todas las páginas describen las secciones igual.
+const menuSecciones = sectionMenuItems()
 const menuCta = {
   label: 'Cotizar por WhatsApp',
   href: waUrl(WA_MESSAGES.cotizar),
@@ -65,19 +57,21 @@ const CATEGORY_FEATURES = [
     title: 'El extintor correcto para',
     titleAccent: 'lo que puede arder',
     description:
-      'No todos los fuegos se apagan igual y el agente equivocado puede empeorarlo. Te ayudamos a elegir entre PQS, CO₂ y agente K según el riesgo real de tu inmueble, con la capacidad adecuada y el servicio de recarga y prueba hidrostática conforme a la NOM-154-SCFI-2005.',
+      'No todos los fuegos se apagan igual y el agente equivocado puede empeorarlo. Te ayudamos a elegir entre PQS, CO₂ y agente K según el riesgo real de tu inmueble, con la capacidad adecuada y el servicio de recarga conforme a norma.',
     features: [
-      { label: 'PQS ABC multipropósito', desc: 'el más versátil para oficinas, comercios, bodegas y casa. Clase A, B y C.' },
-      { label: 'CO₂ para tableros y servidores', desc: 'no conduce ni deja residuo; ideal para cuartos eléctricos. Clase B y C.' },
-      { label: 'Agente K para cocina', desc: 'sofoca aceites y grasas calientes; obligatorio bajo campana industrial.' },
-      { label: 'Recarga y prueba hidrostática', desc: 'servicio anual con etiqueta y collarín; prueba de presión cada 5 años.' },
+      { label: 'PQS ABC multipropósito', desc: 'El más versátil: oficinas, comercios, bodegas y casa. Clases A, B y C.' },
+      { label: 'CO₂ para tableros y sites', desc: 'No conduce ni deja residuo en cuartos eléctricos. Clases B y C.' },
+      { label: 'Agente K para cocina', desc: 'Sofoca aceites y grasas calientes; obligatorio bajo campana.' },
+      { label: 'Recarga y mantenimiento', desc: 'Servicio anual con etiqueta y collarín; prueba de presión cada 5 años.' },
     ],
     brands: [{ name: 'Kidde' }, { name: 'Amerex' }, { name: 'Stelfire' }, { name: 'Buckeye' }, { name: 'Suprema' }],
     ctaLabel: 'Cotizar extintores',
     ctaMsg: 'Hola, quiero cotizar extintores (PQS, CO₂ o clase K). ¿Me ayudan a elegir la capacidad según mi riesgo?',
-    imgMain: { src: '/images/showcase/extintores-catalogo-profesional.avif', alt: 'Extintores PQS, CO₂ y agente K contra incendio' },
-    imgA: { src: '/images/productos/extintor-pqs-6kg.svg', alt: 'Extintor PQS 6 kg multipropósito ABC' },
-    imgB: { src: '/images/productos/extintor-co2-45kg.svg', alt: 'Extintor CO₂ 4.5 kg para equipos eléctricos' },
+    ctaSecondaryLabel: 'Ficha de extintores PQS',
+    ctaSecondaryHref: '/productos/extintor-pqs/',
+    imgMain: { src: '/images/showcase/extintores-catalogo-profesional.avif', alt: 'Extintores PQS, CO₂ y agente K de distintas capacidades' },
+    imgA: { src: '/images/showcase/extintores-variedad-colores-catalogo.avif', alt: 'Extintores de PQS, CO₂, agua y agente K comparados por agente' },
+    imgB: { src: '/images/servicios/prueba-hidrostatica-extintor.avif', alt: 'Prueba hidrostática de extintor en el taller de servicio' },
   },
   {
     eyebrow: 'Detección y alarma · NFPA 72',
@@ -86,74 +80,82 @@ const CATEGORY_FEATURES = [
     description:
       'Un incendio detectado a tiempo todavía es controlable. Integramos detectores de humo y calor, paneles direccionables, estaciones manuales y sirenas para que tu inmueble alerte y se evacúe antes de que el fuego crezca.',
     features: [
-      { label: 'Detectores de humo fotoeléctricos', desc: 'reaccionan rápido al humo lento de pasillos, oficinas y almacenes.' },
-      { label: 'Detectores térmicos', desc: 'para cocinas y zonas con vapor o polvo, donde el humo daría falsas alarmas.' },
-      { label: 'Paneles y estaciones manuales', desc: 'control centralizado y activación humana desde cualquier punto.' },
-      { label: 'Sirenas y estrobos', desc: 'alerta audible y visual para guiar una evacuación ordenada.' },
+      { label: 'Detectores fotoeléctricos', desc: 'Reaccionan al humo lento de pasillos, oficinas y almacenes.' },
+      { label: 'Detectores térmicos', desc: 'Para cocinas y zonas con vapor o polvo, donde el humo daría falsas alarmas.' },
+      { label: 'Paneles y estaciones', desc: 'Control centralizado y activación humana desde cualquier punto.' },
+      { label: 'Sirenas y estrobos', desc: 'Alerta audible y visual para guiar una evacuación ordenada.' },
     ],
     brands: [{ name: 'System Sensor' }, { name: 'Honeywell' }, { name: 'Notifier' }, { name: 'Bosch' }],
     ctaLabel: 'Cotizar detección',
     ctaMsg: 'Hola, quiero cotizar un sistema de detección y alarma (detectores, panel y sirenas) para mi inmueble.',
-    imgMain: { src: '/images/servicios/instalacion-deteccion-alarma.avif', alt: 'Sistema de detección de humo y panel de alarma' },
-    imgA: { src: '/images/productos/dispositivos-deteccion-alarma.avif', alt: 'Detector de humo fotoeléctrico de techo' },
-    imgB: { src: '/images/showcase/sistema-rociadores-industrial.avif', alt: 'Panel de control de alarma contra incendio' },
+    ctaSecondaryLabel: 'Ficha de detectores de humo',
+    ctaSecondaryHref: '/productos/detector-humo-fotoelectrico/',
+    imgMain: { src: '/images/servicios/instalacion-deteccion-alarma.avif', alt: 'Instalación de detectores de humo en pasillo de oficinas' },
+    imgA: { src: '/images/productos/dispositivos-deteccion-alarma.avif', alt: 'Detectores, estación manual y sirena estroboscópica sobre banco de trabajo' },
+    imgB: { src: '/images/productos/panel-alarma-contra-incendio.avif', alt: 'Panel direccionable de alarma contra incendio abierto para servicio' },
   },
   {
     eyebrow: 'Red hidráulica · NFPA 14',
     title: 'Hidrantes y mangueras',
     titleAccent: 'para conatos mayores',
     description:
-      'Cuando el fuego supera a un extintor, la red hidráulica es tu segunda línea de defensa. Suministramos e instalamos gabinetes, mangueras, válvulas, hidrantes y conexiones siamesas dimensionados al caudal y la presión que pide tu inmueble.',
+      'Cuando el fuego supera a un extintor, la red hidráulica es tu segunda línea de defensa. Suministramos e instalamos gabinetes, mangueras, válvulas, hidrantes y siamesas dimensionados al caudal y la presión que pide tu inmueble.',
     features: [
-      { label: 'Gabinetes tipo I y II', desc: 'con válvula angular, manguera y pitón, para personal capacitado o bomberos.' },
-      { label: 'Hidrantes y conexiones siamesas', desc: 'toma para el camión de bomberos; obligatorio en inmuebles grandes.' },
+      { label: 'Gabinetes tipo I y II', desc: 'Con válvula angular, manguera y pitón, para brigada o para bomberos.' },
+      { label: 'Hidrantes y siamesas', desc: 'Toma para el camión de bomberos; obligatorio en inmuebles grandes.' },
       { label: 'Válvulas de control y check', desc: 'OS&Y, mariposa y retención para sectorizar y proteger la red.' },
-      { label: 'Proyecto e instalación', desc: 'cálculo hidráulico, planos y memoria de diseño incluidos.' },
+      { label: 'Proyecto e instalación', desc: 'Cálculo hidráulico, planos y memoria de diseño incluidos.' },
     ],
     brands: [{ name: 'Potter' }, { name: 'Victaulic' }, { name: 'Nibco' }, { name: 'Dixon' }],
     ctaLabel: 'Cotizar hidrantes',
     ctaMsg: 'Hola, quiero cotizar gabinetes, mangueras o una red hidráulica contra incendio (NFPA 14).',
-    imgMain: { src: '/images/showcase/gabinete-manguera-hidrante.avif', alt: 'Gabinete con manguera contra incendio e hidrante' },
-    imgA: { src: '/images/productos/extintor-oficina-gabinete.avif', alt: 'Gabinete tipo I con manguera y pitón' },
-    imgB: { src: '/images/showcase/sistema-rociadores-industrial.avif', alt: 'Válvulas y conexiones para red hidráulica' },
+    ctaSecondaryLabel: 'Ficha de gabinetes',
+    ctaSecondaryHref: '/productos/gabinete-manguera-contra-incendio/',
+    imgMain: { src: '/images/showcase/gabinete-manguera-hidrante.avif', alt: 'Gabinete con manguera contra incendio e hidrante de muro' },
+    imgA: { src: '/images/productos/extintor-oficina-gabinete.avif', alt: 'Gabinete tipo I con manguera, pitón y extintor' },
+    imgB: { src: '/images/servicios/inspeccion-gabinete-manguera-contra-incendio.avif', alt: 'Inspección de gabinete y manguera contra incendio en sitio' },
   },
   {
     eyebrow: 'Señalización · NOM-003-SEGOB · Fotoluminiscente',
     title: 'Señalización que guía',
     titleAccent: 'aunque se vaya la luz',
     description:
-      'La señalización fotoluminiscente funciona sin electricidad y ordena la evacuación cuando más importa. Surtimos señales, lámparas de emergencia, planos de evacuación y botiquines conforme a la NOM-003-SEGOB-2011, obligatorios en inmuebles con afluencia de personas.',
+      'La señalización fotoluminiscente funciona sin electricidad y ordena la evacuación cuando más importa. Surtimos señales, lámparas de emergencia y planos conforme a la NOM-003-SEGOB, obligatorios donde hay afluencia de personas.',
     features: [
-      { label: 'Señales fotoluminiscentes', desc: 'salida, ruta, punto de reunión, extintor e hidrante; brillan sin corriente.' },
-      { label: 'Lámparas de emergencia', desc: 'iluminación autónoma con al menos 90 minutos de respaldo de batería.' },
-      { label: 'Planos de evacuación', desc: 'elaborados para tu inmueble real; requisito de Protección Civil.' },
-      { label: 'Botiquín NOM-020-STPS', desc: 'dotación básica certificada para primeros auxilios.' },
+      { label: 'Señales fotoluminiscentes', desc: 'Salida, ruta, punto de reunión, extintor e hidrante; brillan sin corriente.' },
+      { label: 'Lámparas de emergencia', desc: 'Iluminación autónoma con al menos 90 minutos de respaldo de batería.' },
+      { label: 'Planos de evacuación', desc: 'Elaborados para tu inmueble real; requisito de Protección Civil.' },
+      { label: 'Botiquín NOM-020-STPS', desc: 'Dotación básica certificada para primeros auxilios en el trabajo.' },
     ],
     brands: [{ name: 'Brady' }, { name: 'Seton' }, { name: 'Luminart' }, { name: 'Indexx' }],
     ctaLabel: 'Cotizar señalización',
     ctaMsg: 'Hola, quiero cotizar señalización fotoluminiscente, lámparas de emergencia y plano de evacuación.',
-    imgMain: { src: '/images/showcase/senalizacion-rutas-evacuacion.svg', alt: 'Señalización fotoluminiscente de ruta de evacuación' },
-    imgA: { src: '/images/productos/senalizacion-luces-emergencia.avif', alt: 'Señal fotoluminiscente de salida de emergencia' },
-    imgB: { src: '/images/showcase/proteccion-primeros-auxilios.svg', alt: 'Lámparas de emergencia y botiquín' },
+    ctaSecondaryLabel: 'Ficha de señalización',
+    ctaSecondaryHref: '/productos/senalizacion-fotoluminiscente/',
+    imgMain: { src: '/images/servicios/integracion-sistemas-contra-incendio.avif', alt: 'Pasillo con gabinete de manguera y señalética de emergencia' },
+    imgA: { src: '/images/servicios/inspeccion-sistema-alarma-extintor.avif', alt: 'Ruta de evacuación señalizada junto a extintor en nave industrial' },
+    imgB: { src: '/images/servicios/prueba-electrica-panel-alarma-incendio.avif', alt: 'Señalética de emergencia y estación manual en muro de planta' },
   },
   {
     eyebrow: 'Supresión automática · NFPA 13',
     title: 'Sistemas fijos que',
     titleAccent: 'actúan sin intervención',
     description:
-      'Los sistemas automáticos atacan el fuego en segundos, antes de que alguien reaccione. Proyectamos e instalamos rociadores, supresión clase K en campana y agente limpio para sites y cuartos eléctricos, con cálculo y memoria de diseño para tu expediente.',
+      'Los sistemas automáticos atacan el fuego en segundos, antes de que alguien reaccione. Proyectamos e instalamos rociadores, supresión clase K en campana y agente limpio para sites, con cálculo y memoria de diseño para tu expediente.',
     features: [
-      { label: 'Rociadores NFPA 13', desc: 'se activa solo el rociador expuesto al calor, no toda la red.' },
-      { label: 'Supresión de cocina clase K', desc: 'apaga grasas en campana y corta el suministro de gas automáticamente.' },
-      { label: 'Agente limpio (FM-200 / Novec)', desc: 'sin residuo ni daño a electrónicos; para servidores y tableros.' },
-      { label: 'Cálculo y puesta en marcha', desc: 'hidráulica, planos, memoria técnica y certificado de arranque.' },
+      { label: 'Rociadores NFPA 13', desc: 'Se activa solo el rociador expuesto al calor, no toda la red.' },
+      { label: 'Supresión de cocina clase K', desc: 'Apaga grasas en campana y corta el suministro de gas automáticamente.' },
+      { label: 'Agente limpio FM-200', desc: 'Sin residuo ni daño a electrónicos; para servidores y tableros.' },
+      { label: 'Cálculo y puesta en marcha', desc: 'Hidráulica, planos, memoria técnica y certificado de arranque.' },
     ],
     brands: [{ name: 'Tyco' }, { name: 'Viking' }, { name: 'Ansul' }, { name: 'Amerex' }],
     ctaLabel: 'Cotizar sistemas fijos',
     ctaMsg: 'Hola, quiero cotizar un sistema fijo de supresión (rociadores, clase K o agente limpio).',
-    imgMain: { src: '/images/showcase/sistema-rociadores-industrial.avif', alt: 'Sistema de rociadores automáticos contra incendio' },
-    imgA: { src: '/images/productos/extintor-clase-k-6l.svg', alt: 'Sistema de supresión clase K para cocina industrial' },
-    imgB: { src: '/images/servicios/instalacion-deteccion-alarma.avif', alt: 'Sistema de agente limpio para cuarto eléctrico' },
+    ctaSecondaryLabel: 'Instalación de sistemas',
+    ctaSecondaryHref: '/servicios/instalacion/',
+    imgMain: { src: '/images/showcase/sistema-rociadores-industrial.avif', alt: 'Red de rociadores automáticos contra incendio en techo industrial' },
+    imgA: { src: '/images/servicios/supresion-cocina-comercial.avif', alt: 'Supresión clase K instalada en campana de cocina comercial' },
+    imgB: { src: '/images/servicios/supresion-agente-limpio-data-center.avif', alt: 'Cilindros de agente limpio protegiendo un data center' },
   },
   {
     eyebrow: 'Brigada · NOM-020-STPS',
@@ -162,17 +164,19 @@ const CATEGORY_FEATURES = [
     description:
       'Mientras llega la ayuda profesional, tu brigada necesita con qué actuar. Equipamos botiquines dotados conforme a la NOM-020-STPS, mantas ignífugas y material de respuesta inicial para los primeros minutos de una emergencia.',
     features: [
-      { label: 'Botiquines NOM-020-STPS', desc: 'apósitos, torniquete, férulas y guía de primeros auxilios.' },
-      { label: 'Mantas ignífugas', desc: 'sofocan fuego en ropa o un conato pequeño sin necesidad de extintor.' },
-      { label: 'Equipo de brigada', desc: 'chalecos, linternas y megáfono para coordinar la evacuación.' },
-      { label: 'Punto de reunión', desc: 'señalización del área de concentración tras evacuar.' },
+      { label: 'Botiquines NOM-020-STPS', desc: 'Apósitos, torniquete, férulas y guía de primeros auxilios.' },
+      { label: 'Mantas ignífugas', desc: 'Sofocan fuego en ropa o un conato pequeño sin necesidad de extintor.' },
+      { label: 'Equipo de brigada', desc: 'Chalecos, linternas y megáfono para coordinar la evacuación.' },
+      { label: 'Punto de reunión', desc: 'Señalización del área de concentración tras evacuar el inmueble.' },
     ],
     brands: [{ name: '3M' }, { name: 'Cruz Roja' }, { name: 'Acme' }, { name: 'Duracell' }],
     ctaLabel: 'Cotizar protección',
     ctaMsg: 'Hola, quiero cotizar botiquines NOM-020 y equipo de primeros auxilios para mi brigada.',
-    imgMain: { src: '/images/showcase/proteccion-primeros-auxilios.svg', alt: 'Botiquín y equipo de primeros auxilios para brigada' },
-    imgA: { src: '/images/showcase/senalizacion-rutas-evacuacion.svg', alt: 'Equipo de protección para brigada de emergencia' },
-    imgB: { src: '/images/showcase/equipo-proteccion-bomberos-epp.avif', alt: 'Manta ignífuga y equipo de respuesta inicial' },
+    ctaSecondaryLabel: 'Capacitación DC-3',
+    ctaSecondaryHref: '/servicios/capacitacion-dc3/',
+    imgMain: { src: '/images/servicios/capacitacion-brigada-extintores.avif', alt: 'Brigada practicando con extintores durante la capacitación' },
+    imgA: { src: '/images/casos/entrega-servicio-equipo-contra-incendio.avif', alt: 'Entrega de equipo contra incendio y material de brigada en sitio' },
+    imgB: { src: '/images/servicios/inspeccion-gabinete-hidrante-extintor.avif', alt: 'Revisión de gabinete y extintor con el coordinador de brigada' },
   },
   {
     eyebrow: 'EPP · NOM-115-STPS',
@@ -181,36 +185,40 @@ const CATEGORY_FEATURES = [
     description:
       'Quien interviene en una emergencia no debe exponerse de más. Surtimos cascos, guantes térmicos, trajes de aproximación y protección respiratoria conforme a la NOM-115-STPS, para que tu brigada interna actúe con seguridad.',
     features: [
-      { label: 'Cascos y caretas', desc: 'protección de cabeza y rostro frente a calor radiante e impactos.' },
-      { label: 'Guantes térmicos', desc: 'manipular extintores y equipo caliente sin riesgo de quemaduras.' },
-      { label: 'Trajes de aproximación', desc: 'protección frente a calor radiante a una distancia de seguridad.' },
-      { label: 'Protección respiratoria', desc: 'mascarillas y filtros para humo; no sustituyen al SCBA de bomberos.' },
+      { label: 'Cascos y caretas', desc: 'Protección de cabeza y rostro frente a calor radiante e impactos.' },
+      { label: 'Guantes térmicos', desc: 'Manipular extintores y equipo caliente sin riesgo de quemaduras.' },
+      { label: 'Trajes de aproximación', desc: 'Protección frente a calor radiante a una distancia de seguridad.' },
+      { label: 'Protección respiratoria', desc: 'Mascarillas y filtros para humo; no sustituyen al SCBA de bomberos.' },
     ],
     brands: [{ name: '3M' }, { name: 'MSA Safety' }, { name: 'Lakeland' }, { name: 'DuPont' }],
     ctaLabel: 'Cotizar EPP',
     ctaMsg: 'Hola, quiero cotizar equipo de protección personal (cascos, guantes, trajes) para mi brigada.',
-    imgMain: { src: '/images/showcase/equipo-proteccion-bomberos-epp.avif', alt: 'Equipo de protección personal para brigadas' },
-    imgA: { src: '/images/showcase/proteccion-primeros-auxilios.svg', alt: 'Cascos y guantes de protección térmica' },
-    imgB: { src: '/images/showcase/gabinete-manguera-hidrante.avif', alt: 'Traje de aproximación para brigada' },
+    ctaSecondaryLabel: 'Diagnóstico de riesgo',
+    ctaSecondaryHref: '/servicios/diagnostico-de-riesgo/',
+    imgMain: { src: '/images/showcase/equipo-proteccion-bomberos-epp.avif', alt: 'Casco, guantes, chaquetón y botas de protección contra incendio' },
+    imgA: { src: '/images/general/hero-proveedor-equipo-contra-incendio.avif', alt: 'Técnico uniformado revisando equipo contra incendio en almacén' },
+    imgB: { src: '/images/general/inventario-proveedor-equipo-contra-incendio.avif', alt: 'Inventario de equipo de protección y extintores en bodega' },
   },
   {
     eyebrow: 'Mantenimiento · NOM-154-SCFI',
     title: 'Refacciones para mantener',
     titleAccent: 'tu equipo en regla',
     description:
-      'Un extintor sin servicio no responde cuando se necesita. Tenemos las refacciones y accesorios para mantener tu equipo vigente: válvulas, manómetros, mangueras, collarines, soportes y herramienta de servicio conforme a la NOM-154-SCFI-2005.',
+      'Un extintor sin servicio no responde cuando se necesita. Tenemos las refacciones y accesorios para mantener tu equipo vigente: válvulas, manómetros, mangueras, collarines, soportes y herramienta conforme a la NOM-154-SCFI.',
     features: [
-      { label: 'Refacciones de extintor', desc: 'válvulas, manómetros, mangueras y pitones compatibles con marcas principales.' },
-      { label: 'Collarines y etiquetas', desc: 'evidencia física del servicio; requisito para acreditarlo ante Protección Civil.' },
-      { label: 'Soportes y porta-extintores', desc: 'pared, poste o gabinete; mantienen la altura reglamentaria (máx. 1.5 m).' },
-      { label: 'Herramienta de servicio', desc: 'adaptadores y equipo para recarga y prueba hidrostática.' },
+      { label: 'Refacciones de extintor', desc: 'Válvulas, manómetros, mangueras y pitones de las marcas principales.' },
+      { label: 'Collarines y etiquetas', desc: 'Evidencia física del servicio ante Protección Civil.' },
+      { label: 'Soportes y porta-extintores', desc: 'Pared, poste o gabinete; mantienen la altura reglamentaria de 1.50 m.' },
+      { label: 'Herramienta de servicio', desc: 'Adaptadores y equipo para recarga y prueba hidrostática.' },
     ],
     brands: [{ name: 'Kidde' }, { name: 'Amerex' }, { name: 'Stelfire' }, { name: 'Suprema' }],
     ctaLabel: 'Cotizar accesorios',
     ctaMsg: 'Hola, quiero cotizar refacciones y accesorios para mantenimiento de extintores (NOM-154).',
-    imgMain: { src: '/images/showcase/refacciones-equipo-contra-incendio.avif', alt: 'Accesorios y refacciones para extintores y sistemas' },
-    imgA: { src: '/images/productos/extintor-pqs-6kg.svg', alt: 'Válvulas y refacciones para extintor PQS' },
-    imgB: { src: '/images/productos/extintor-co2-45kg.svg', alt: 'Soportes y porta-extintores certificados' },
+    ctaSecondaryLabel: 'Ficha de soportes',
+    ctaSecondaryHref: '/productos/soportes-accesorios-extintor/',
+    imgMain: { src: '/images/showcase/refacciones-equipo-contra-incendio.avif', alt: 'Válvulas, manómetros, collarines y refacciones para extintor' },
+    imgA: { src: '/images/servicios/inspeccion-recarga-extintores.avif', alt: 'Recarga y mantenimiento de extintores en taller de servicio' },
+    imgB: { src: '/images/servicios/etiquetado-inspeccion-extintor.avif', alt: 'Colocación de etiqueta y collarín de servicio en el extintor' },
   },
 ];
 
@@ -277,7 +285,7 @@ const schemaData = {
       'Cada equipo se entrega con ficha técnica y la documentación de servicio lista para tu expediente ante Protección Civil y STPS. Cotiza por WhatsApp y recibe una recomendación honesta.',
     ]}
     ctas={[
-      { text: 'Ver catálogo', href: '#categorias', variant: 'outline' },
+      { text: 'Catálogo de equipo', href: '#categorias', variant: 'outline' },
       { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.productos), variant: 'primary', whatsapp: true },
     ]}
   />
@@ -320,8 +328,9 @@ const schemaData = {
   </section>
 
   {/* ─── Módulos de categoría (CategoryFeature) — como el index, copy propio ─── */}
-  {CATEGORY_FEATURES.map((c) => (
+  {CATEGORY_FEATURES.map((c, i) => (
     <CategoryFeature
+      anchorId={SHOWCASE[i]?.slug}
       eyebrow={c.eyebrow}
       title={c.title}
       titleAccent={c.titleAccent}
@@ -331,6 +340,8 @@ const schemaData = {
       ctaLabel={c.ctaLabel}
       ctaHref={waUrl(c.ctaMsg)}
       ctaExternal
+      ctaSecondaryLabel={c.ctaSecondaryLabel}
+      ctaSecondaryHref={c.ctaSecondaryHref}
       imgMain={c.imgMain}
       imgA={c.imgA}
       imgB={c.imgB}

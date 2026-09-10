@@ -15,7 +15,7 @@ import Hero from '@components/Hero.astro'
 import SectionMenu from '@components/SectionMenu.astro'
 import BlogArchive from '@components/BlogArchive.astro'
 import { getCollection } from 'astro:content'
-import { NAV, waUrl, WA_MESSAGES, BLOG_PAGE_SIZE } from '@config/site'
+import { waUrl, WA_MESSAGES, BLOG_PAGE_SIZE, sectionMenuItems } from '@config/site'
 
 const articulos = (await getCollection('articulos', ({ data }) => !data.draft)).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -24,18 +24,9 @@ const articulos = (await getCollection('articulos', ({ data }) => !data.draft)).
 const total = Math.max(1, Math.ceil(articulos.length / BLOG_PAGE_SIZE))
 const posts = articulos.slice(0, BLOG_PAGE_SIZE)
 
-// ── Menú de secciones bajo el hero (data-driven desde NAV; excluye Contacto) ──
-const menuSub: Record<string, string> = {
-  Productos: 'Catálogo de equipo',
-  Servicios: 'Instalación y mantenimiento',
-  Cobertura: 'Zonas que atendemos',
-  Blog: 'Guías y normatividad',
-}
-const menuSecciones = NAV.filter((n) => n.label !== 'Contacto').map((n) => ({
-  label: n.label,
-  href: n.href,
-  sub: menuSub[n.label] ?? 'Ver sección',
-}))
+// Menú de secciones: subtítulos desde SECTION_MENU_SUB (site.ts), no un mapa
+// local — así todas las páginas describen las secciones igual.
+const menuSecciones = sectionMenuItems()
 const menuCta = {
   label: 'Cotizar por WhatsApp',
   href: waUrl(WA_MESSAGES.blog),
@@ -78,7 +69,7 @@ const schemaData = {
       'Contenido pensado para que tomes mejores decisiones de protección, con información confiable y aplicada a tu caso. ¿Tienes una duda puntual? Escríbenos por WhatsApp.',
     ]}
     ctas={[
-      { text: 'Ver catálogo', href: '/productos/', variant: 'outline' },
+      { text: 'Catálogo de equipo', href: '/productos/', variant: 'outline' },
       { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog), variant: 'primary', whatsapp: true },
     ]}
   />

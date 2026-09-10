@@ -2,6 +2,8 @@
 title: "Bitácora de revisión mensual de extintores (formato descargable)"
 description: "Descarga gratis la bitácora para registrar la revisión mensual de tus extintores: una fila por equipo, una casilla por mes y el detalle de qué se revisa cada vez."
 label: "Bitácora de revisión mensual de extintores"
+image: "/images/servicios/inspeccion-gabinete-manguera-contra-incendio.avif"
+imageAlt: "Revisión de gabinete y manguera contra incendio en sitio"
 norm: "NOM-002-STPS-2010"
 files:
   - ext: "XLSX"

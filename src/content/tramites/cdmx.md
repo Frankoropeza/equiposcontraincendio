@@ -18,6 +18,8 @@ sources:
     url: "https://tramites.cdmx.gob.mx/proteccion-civil-programas-internos/public/"
   - label: "SGIRPC — Responsables Oficiales de Protección Civil (ROPC)"
     url: "https://www.proteccioncivil.cdmx.gob.mx/responsables-oficiales"
+image: "/images/general/hero-proveedor-equipo-contra-incendio.avif"
+imageAlt: "Inmueble equipado con protección contra incendio en la Ciudad de México"
 verifiedAt: 2026-09-09
 seoTitle: "Programa Interno de Protección Civil CDMX"
 seoDescription: "Cómo se presenta hoy el Programa Interno de Protección Civil en CDMX: plataforma digital de la SGIRPC, quién lo firma y cómo validar si estás obligado."

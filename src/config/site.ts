@@ -207,6 +207,9 @@ export type Tool = {
   desc: string;
   /** Norma de la que sale el criterio (se cita en la página). */
   norm?: string;
+  /** Imagen de la tarjeta (CategoryCard) y del hero de la sección. */
+  image: string;
+  imageAlt: string;
 };
 
 export const TOOLS: readonly Tool[] = [
@@ -215,18 +218,24 @@ export const TOOLS: readonly Tool[] = [
     label: 'Riesgo de incendio: ordinario o alto',
     desc: 'Clasifica tu centro de trabajo con los mismos criterios que aplica la autoridad.',
     norm: 'NOM-002-STPS-2010',
+    image: '/images/servicios/inspeccion-sistema-alarma-extintor.avif',
+    imageAlt: 'Inspección de sistema de alarma y extintor en un centro de trabajo',
   },
   {
     slug: 'cuantos-extintores-necesito',
     label: 'Cuántos extintores necesito',
     desc: 'Mínimo de extintores por superficie y qué agente corresponde a cada área.',
     norm: 'NOM-002-STPS-2010',
+    image: '/images/showcase/extintores-variedad-colores-catalogo.avif',
+    imageAlt: 'Extintores de distintos agentes y capacidades en catálogo',
   },
   {
     slug: 'verifica-tu-extintor',
     label: 'Verifica tu extintor',
     desc: 'Doce puntos para saber si el servicio que te dieron es real y no una calcomanía.',
     norm: 'NOM-154-SCFI-2005',
+    image: '/images/servicios/inspeccion-gabinete-hidrante-extintor.avif',
+    imageAlt: 'Revisión de gabinete de hidrante y extintor en sitio',
   },
 ] as const;
 
@@ -304,6 +313,30 @@ export const NAV: readonly NavItem[] = [
   { label: 'Contacto', href: '/contacto/' },
 ];
 
+// ── SECTION_MENU — subtítulos del menú de secciones (FUENTE ÚNICA) ───────────
+// El <SectionMenu> bajo el hero se pinta en seis páginas y cada una repetía su
+// propio mapa de subtítulos. Al añadir Herramientas y Protección Civil al NAV,
+// esas copias empezaron a mostrar «Ver sección» para las secciones nuevas: la
+// misma barra decía cosas distintas según dónde estuvieras. Un solo mapa aquí y
+// un helper que arma los items resuelve el drift de raíz.
+export const SECTION_MENU_SUB: Record<string, string> = {
+  Productos: 'Catálogo de equipo',
+  Servicios: 'Instalación y mantenimiento',
+  Cobertura: 'Zonas que atendemos',
+  Herramientas: 'Calculadoras y formatos',
+  'Protección Civil': 'Qué exige por entidad',
+  Blog: 'Guías y normatividad',
+};
+
+/** Items del menú de secciones: el NAV completo menos Contacto, con subtítulo. */
+export function sectionMenuItems(): { label: string; href: string; sub: string }[] {
+  return NAV.filter((n) => n.label !== 'Contacto').map((n) => ({
+    label: n.label,
+    href: n.href,
+    sub: SECTION_MENU_SUB[n.label] ?? 'Ver sección',
+  }));
+}
+
 // ── SHOWCASE — vitrina de categorías de la home (cards con subcategorías) ─────
 export type ShowcaseSub = { label: string; href: string };
 export type ShowcaseCategory = {
@@ -318,11 +351,14 @@ export type ShowcaseCategory = {
   ctaLabel?: string;
 };
 // Reglas de contenido (las asume CategoryCard para mantener la simetría):
-//   • blurb de 92–102 caracteres → 3 líneas exactas, sin elipsis, en el grid
-//     de 4 columnas (medido en la vitrina de la home a 1440 px).
+//   • blurb de 77–90 caracteres. La caja reserva 3 líneas; por encima de ~95
+//     caracteres la elipsis aparece en las tarjetas cuyo texto rompe peor
+//     (medido en la vitrina de la home a 1440 px de ancho de ventana).
 //   • exactamente 3 subcategorías, con etiqueta ≤ 24 caracteres (sin wrap).
 //   • ctaLabel con palabra clave y SIN el verbo "ver"; estructura paralela
 //     («Catálogo de …») para que las 8 tarjetas lean como un mismo sistema.
+//     Tope de 26 caracteres: a partir de ahí el botón parte en dos líneas y
+//     estira TODA su fila del grid (el CSS lo recorta, pero mejor no llegar).
 //   • href → ancla real del módulo de categoría en /productos/ (no la URL pelada).
 export const SHOWCASE: readonly ShowcaseCategory[] = [
   {
@@ -333,7 +369,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
     imageAlt: 'Extintores PQS, CO₂ y agente K para distintas clases de fuego',
     badge: 'NOM-154 · Clases A B C K',
     blurb:
-      'Extintores de PQS, CO₂, agua y agente K para cada clase de fuego, con recarga y mantenimiento anual.',
+      'Extintores de PQS, CO₂, agua y agente K para cada clase de fuego, con recarga anual.',
     subcategories: [
       { label: 'Extintores PQS ABC', href: '/productos/extintor-pqs/' },
       { label: 'Extintores de CO₂', href: '/productos/extintor-co2/' },
@@ -349,7 +385,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
     imageAlt: 'Detectores de humo y panel de alarma contra incendio',
     badge: 'NFPA 72 · Detección temprana',
     blurb:
-      'Detectores de humo y calor, paneles direccionables, estaciones manuales y sirenas para tu inmueble.',
+      'Detectores de humo y calor, paneles direccionables, estaciones manuales y sirenas NFPA.',
     subcategories: [
       { label: 'Detectores de humo', href: '/productos/detector-humo-fotoelectrico/' },
       { label: 'Paneles direccionables', href: '/productos/#deteccion-alarmas' },
@@ -365,7 +401,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
     imageAlt: 'Gabinete con manguera contra incendio e hidrante',
     badge: 'NFPA 14 · Red hidráulica',
     blurb:
-      'Gabinetes, mangueras contra incendio, hidrantes, válvulas y siamesas para tu red hidráulica.',
+      'Gabinetes, mangueras contra incendio, hidrantes, válvulas y siamesas para tu red.',
     subcategories: [
       { label: 'Gabinetes y mangueras', href: '/productos/gabinete-manguera-contra-incendio/' },
       { label: 'Hidrantes y siamesas', href: '/productos/#hidrantes-mangueras' },
@@ -377,11 +413,11 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
     slug: 'senalizacion',
     label: 'Señalización y emergencia',
     href: '/productos/#senalizacion',
-    image: '/images/showcase/senalizacion-rutas-evacuacion.svg',
-    imageAlt: 'Señalización fotoluminiscente de ruta de evacuación y salida',
+    image: '/images/productos/senalizacion-luces-emergencia.avif',
+    imageAlt: 'Señal de salida de emergencia, lámpara autónoma y plano de evacuación',
     badge: 'NOM-003 · Fotoluminiscente',
     blurb:
-      'Señalización fotoluminiscente, lámparas de emergencia y rutas de evacuación para una salida segura.',
+      'Señalización fotoluminiscente, lámparas de emergencia y rutas de evacuación NOM-003.',
     subcategories: [
       { label: 'Señales de evacuación', href: '/productos/senalizacion-fotoluminiscente/' },
       { label: 'Lámparas de emergencia', href: '/productos/#senalizacion' },
@@ -397,7 +433,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
     imageAlt: 'Sistemas fijos contra incendio: rociadores y supresión de cocina',
     badge: 'Rociadores · Agente limpio',
     blurb:
-      'Rociadores automáticos, supresión de cocina clase K y agente limpio para sites y cuartos eléctricos.',
+      'Rociadores automáticos, supresión de cocina clase K y agente limpio para tu site.',
     subcategories: [
       { label: 'Rociadores automáticos', href: '/productos/#sistemas-supresion' },
       { label: 'Supresión de cocina K', href: '/productos/#sistemas-supresion' },
@@ -409,17 +445,17 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
     slug: 'proteccion-primeros-auxilios',
     label: 'Protección y primeros auxilios',
     href: '/productos/#proteccion-primeros-auxilios',
-    image: '/images/showcase/proteccion-primeros-auxilios.svg',
-    imageAlt: 'Botiquín de primeros auxilios y equipo de apoyo para brigada',
+    image: '/images/servicios/auditoria-seguridad-contra-incendio.avif',
+    imageAlt: 'Brigada revisando el equipo contra incendio de la planta',
     badge: 'NOM-020 · Brigadas',
     blurb:
-      'Botiquines conforme a la NOM-020-STPS y equipo de apoyo para que tu brigada responda a tiempo.',
+      'Botiquines NOM-020-STPS y equipo de apoyo para que tu brigada responda a tiempo.',
     subcategories: [
       { label: 'Botiquines NOM-020', href: '/productos/#proteccion-primeros-auxilios' },
       { label: 'Equipo de brigada', href: '/productos/#proteccion-primeros-auxilios' },
       { label: 'Mantas y camillas', href: '/productos/#proteccion-primeros-auxilios' },
     ],
-    ctaLabel: 'Catálogo de primeros auxilios',
+    ctaLabel: 'Catálogo de botiquines',
   },
   {
     slug: 'equipo-proteccion-personal',
@@ -429,7 +465,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
     imageAlt: 'Casco, guantes y equipo de protección personal contra incendio',
     badge: 'EPP · NOM-115',
     blurb:
-      'Cascos, guantes térmicos y trajes de aproximación para tu personal de respuesta, según la NOM-115.',
+      'Cascos, guantes térmicos y trajes de aproximación conforme a la NOM-115-STPS.',
     subcategories: [
       { label: 'Cascos y caretas', href: '/productos/#equipo-proteccion-personal' },
       { label: 'Guantes térmicos', href: '/productos/#equipo-proteccion-personal' },
@@ -445,7 +481,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
     imageAlt: 'Accesorios y refacciones para extintores y sistemas contra incendio',
     badge: 'Mantenimiento · Recarga',
     blurb:
-      'Mangueras de descarga, válvulas, collarines, manómetros y soportes para mantenimiento y recarga.',
+      'Mangueras de descarga, válvulas, collarines, manómetros y soportes de extintor.',
     subcategories: [
       { label: 'Refacciones de extintor', href: '/productos/#accesorios-refacciones' },
       { label: 'Soportes y bases', href: '/productos/soportes-accesorios-extintor/' },

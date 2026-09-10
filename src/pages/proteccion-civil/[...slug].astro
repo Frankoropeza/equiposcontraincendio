@@ -11,6 +11,7 @@
 // Publicar trámites sin eso es cómo se envejece mal y se pierde credibilidad.
 // ============================================================================
 import PageLayout from '@layouts/PageLayout.astro'
+import Hero from '@components/Hero.astro'
 import FAQAccordion from '@components/FAQAccordion.astro'
 import CTABanner from '@components/CTABanner.astro'
 import RelatedLinks from '@components/RelatedLinks.astro'
@@ -65,20 +66,27 @@ const waHref = waUrl(`Hola, tengo un requerimiento de Protección Civil en ${d.e
   breadcrumbs={[{ label: 'Protección Civil', href: '/proteccion-civil/' }, { label: d.label }]}
   guia={false}
 >
-  <section class="tr">
-    <div class="container">
-      <p class="tr__eyebrow">{d.entidad}</p>
-      <h1 class="tr__h1">{d.title}</h1>
-      <p class="tr__lede">{d.description}</p>
+  <Hero
+    badge={`Protección Civil · ${d.entidad}`}
+    title={d.title}
+    subtitle={d.description}
+    descRight={[
+      'Resumimos el trámite con la fuente oficial de cada dato y la fecha en que lo verificamos. Lo que no pudimos confirmar aparece marcado como pendiente, con el enlace para consultarlo directo.',
+      'No gestionamos el trámite ante la autoridad ni firmamos programas: preparamos el inmueble y la documentación técnica para que lo pases.',
+    ]}
+    ctas={[
+      { text: 'Clasificar mi riesgo', href: '/herramientas/riesgo-de-incendio/', variant: 'outline' },
+      { text: 'Hablar por WhatsApp', href: waHref, variant: 'primary', whatsapp: true },
+    ]}
+  />
+
+  <section class="section">
+    <div class="container container--prose">
       <p class="tr__verify">
         Verificado el <time datetime={d.verifiedAt.toISOString()}>{fmt(d.verifiedAt)}</time> en la fuente oficial.
         Los trámites cambian: confirma en el enlace antes de iniciar.
       </p>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="container container--prose">
       <h2>Ficha del trámite</h2>
       <div class="tbl-wrap">
         <table class="tbl">
@@ -132,7 +140,7 @@ const waHref = waUrl(`Hola, tengo un requerimiento de Protección Civil en ${d.e
   {d.faqs && d.faqs.length > 0 && (
     <section class="section section--surface">
       <div class="container container--prose">
-        <FAQAccordion items={d.faqs} title="Preguntas frecuentes" openFirst bare />
+        <FAQAccordion items={d.faqs} title="Preguntas frecuentes" openFirst />
       </div>
     </section>
   )}
@@ -156,12 +164,9 @@ const waHref = waUrl(`Hola, tengo un requerimiento de Protección Civil en ${d.e
   .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
   .container--prose { max-width: var(--container-prose, 72ch); }
   .section { padding: var(--sp-8) 0; }
+  @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
   .section--surface { background: var(--c-surface); }
-  .tr { padding: var(--sp-9) 0 var(--sp-5); }
-  .tr__eyebrow { color: var(--c-accent); text-transform: uppercase; letter-spacing: .08em; font-size: var(--text-sm); margin: 0 0 var(--sp-2); }
-  .tr__h1 { font-family: var(--font-heading); font-size: var(--text-fluid-4xl, 2.25rem); line-height: 1.1; margin: 0 0 var(--sp-3); }
-  .tr__lede { color: var(--c-ink-2); max-width: 65ch; margin: 0 0 var(--sp-4); }
-  .tr__verify { font-size: var(--text-sm); color: var(--c-muted); max-width: 65ch; margin: 0; padding-left: var(--sp-3); border-left: 3px solid var(--c-border); }
+  .tr__verify { font-size: var(--text-sm); color: var(--c-muted); max-width: 65ch; margin: 0 0 var(--sp-6); padding-left: var(--sp-3); border-left: 3px solid var(--c-accent); }
   .tbl-wrap { overflow-x: auto; margin: var(--sp-4) 0 var(--sp-7); }
   .tbl { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
   .tbl th, .tbl td { border: 1px solid var(--c-border); padding: var(--sp-3); text-align: left; vertical-align: top; }

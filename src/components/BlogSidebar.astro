@@ -88,7 +88,7 @@ const waHref = waUrl(WA_MESSAGES.blog)
         <li><a class="bsb__link" href={`/servicios/${s.id}/`}>{s.label}</a></li>
       ))}
     </ul>
-    <a class="bsb__all" href="/servicios/">Ver todos los servicios →</a>
+    <a class="bsb__all" href="/servicios/">Todos los servicios →</a>
   </section>
 
   {destacadas.length > 0 && (
@@ -115,7 +115,7 @@ const waHref = waUrl(WA_MESSAGES.blog)
           <li><a class="bsb__link" href={`/productos/${p.id}/`}>{p.data.title}</a></li>
         ))}
       </ul>
-      <a class="bsb__all" href="/productos/">Ver catálogo completo →</a>
+      <a class="bsb__all" href="/productos/">Catálogo completo →</a>
     </section>
   )}
 
@@ -126,7 +126,7 @@ const waHref = waUrl(WA_MESSAGES.blog)
         <li><a class="bsb__link" href={`/cobertura/${z.slug}/`}>{z.label}</a></li>
       ))}
     </ul>
-    <a class="bsb__all" href="/cobertura/">Ver toda la cobertura →</a>
+    <a class="bsb__all" href="/cobertura/">Toda la cobertura →</a>
   </section>
 
   <section class="bsb__w bsb__w--cta">
@@ -154,5 +154,4 @@ const waHref = waUrl(WA_MESSAGES.blog)
   .bsb__post:hover span { color: var(--c-accent); }
   .bsb__all { display: inline-block; margin-top: var(--sp-3); font-size: var(--text-sm); color: var(--c-accent); text-decoration: none; }
   .bsb__all:hover { text-decoration: underline; }
-  .btn--block { width: 100%; }
 </style>

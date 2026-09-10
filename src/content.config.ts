@@ -309,6 +309,9 @@ const plantillas = defineCollection({
       description: z.string().min(70).max(280),
       /** Etiqueta corta para el hub y el menú. */
       label: z.string().min(5).max(70),
+      /** Imagen de la tarjeta (CategoryCard) — el sitio lista con foto real. */
+      image: imagePath,
+      imageAlt: z.string(),
       /** Norma de la que sale el formato (se cita en la página). */
       norm: z.string(),
       /** Archivos publicados. Al menos uno; la ruta debe estar bajo /plantillas/. */
@@ -377,6 +380,7 @@ const tramites = defineCollection({
       /** Fecha de la última verificación contra la fuente. Obligatorio. */
       verifiedAt: z.coerce.date(),
       image: imagePath.optional(),
+      imageAlt: z.string().optional(),
       faqs: faqSchema,
       relatedServices: z.array(reference('servicios')).optional(),
       relatedZones: z.array(reference('zonas')).optional(),

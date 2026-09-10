@@ -10,7 +10,7 @@ import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
 import SectionHeading from '@components/SectionHeading.astro'
 import SectionMenu from '@components/SectionMenu.astro'
-import { SITE, CONTACT, NAV, waUrl, telUrl, WA_MESSAGES } from '@config/site'
+import { SITE, CONTACT, waUrl, telUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
 
 // Canales de contacto — data-driven. Cada uno con su acción (href) y su ícono.
 const canales = [
@@ -28,18 +28,9 @@ const canales = [
   },
 ]
 
-// ── Menú de secciones bajo el hero (data-driven desde NAV; excluye Contacto) ──
-const menuSub: Record<string, string> = {
-  Productos: 'Catálogo de equipo',
-  Servicios: 'Instalación y mantenimiento',
-  Cobertura: 'Zonas que atendemos',
-  Blog: 'Guías y normatividad',
-}
-const menuSecciones = NAV.filter((n) => n.label !== 'Contacto').map((n) => ({
-  label: n.label,
-  href: n.href,
-  sub: menuSub[n.label] ?? 'Ver sección',
-}))
+// Menú de secciones: subtítulos desde SECTION_MENU_SUB (site.ts), no un mapa
+// local — así todas las páginas describen las secciones igual.
+const menuSecciones = sectionMenuItems()
 const menuCta = {
   label: 'Cotizar por WhatsApp',
   href: waUrl(WA_MESSAGES.cotizar),
@@ -72,7 +63,7 @@ const ICON = {
     ]}
     ctas={[
       { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.contacto), variant: 'primary', whatsapp: true },
-      { text: 'Ver catálogo', href: '/productos/', variant: 'outline' },
+      { text: 'Catálogo de equipo', href: '/productos/', variant: 'outline' },
     ]}
   />
 

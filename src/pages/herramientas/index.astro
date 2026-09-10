@@ -1,18 +1,42 @@
 ---
 // ============================================================================
-// /herramientas/ — Hub de herramientas de utilidad pública.
+// /herramientas/ — Hub de herramientas de utilidad pública (L2).
 // ----------------------------------------------------------------------------
-// Listado data-driven desde TOOLS (src/config/site.ts). Es una L2: agrupa las
-// calculadoras y verificadores gratuitos, y reparte enlaces hacia el catálogo,
-// los servicios y el blog.
+// HOMOLOGADA con /productos y /servicios: Hero → SectionMenu → SectionHeading +
+// tarjetas CategoryCard → SectionMenu de cierre. Mismos componentes
+// compartidos; copy propio. Antes esta página tenía su propio encabezado y sus
+// propias tarjetas, así que se veía como de otro sitio.
 //
+// Listado data-driven desde TOOLS (src/config/site.ts).
 // Schema: CollectionPage + ItemList con las herramientas publicadas.
 // ============================================================================
 import PageLayout from '@layouts/PageLayout.astro'
+import Hero from '@components/Hero.astro'
+import SectionMenu from '@components/SectionMenu.astro'
 import SectionHeading from '@components/SectionHeading.astro'
-import RelatedLinks from '@components/RelatedLinks.astro'
-import CTABanner from '@components/CTABanner.astro'
-import { TOOLS, waUrl, WA_MESSAGES } from '@config/site'
+import CategoryCard from '@components/CategoryCard.astro'
+import { TOOLS, waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
+
+const menuSecciones = sectionMenuItems()
+const menuCta = {
+  label: 'Cotizar por WhatsApp',
+  href: waUrl(WA_MESSAGES.default),
+  sub: 'Respuesta inmediata',
+  external: true,
+}
+
+const cierreItems = [
+  { label: 'Formatos descargables', href: '/plantillas/', sub: 'Bitácora, acta y censo' },
+  { label: 'Protección Civil', href: '/proteccion-civil/', sub: 'Qué exige por entidad' },
+  { label: 'Catálogo', href: '/productos/', sub: 'Equipo contra incendio' },
+  { label: 'Blog', href: '/blog/', sub: 'Guías y normatividad' },
+]
+const cierreCta = {
+  label: 'Pedir diagnóstico',
+  href: waUrl('Hola, usé sus herramientas y quiero un diagnóstico de mi inmueble.'),
+  sub: 'CDMX y Estado de México',
+  external: true,
+}
 
 const schemaData = {
   list: {
@@ -23,6 +47,7 @@ const schemaData = {
     items: TOOLS.map((t) => ({
       name: t.label,
       path: `/herramientas/${t.slug}/`,
+      image: t.image,
       description: t.desc,
     })),
   },
@@ -37,22 +62,22 @@ const schemaData = {
   breadcrumbs={[{ label: 'Herramientas' }]}
   guia={false}
 >
-  <section class="hub">
-    <div class="container">
-      <p class="hub__eyebrow">Gratis y sin registro</p>
-      <h1 class="hub__h1">Herramientas para saber qué te exige la norma</h1>
-      <p class="hub__lede">
-        Tres herramientas para resolver las preguntas con las que empieza cualquier empresa: en qué
-        grado de riesgo estoy, cuánto equipo necesito y si el que ya tengo está en regla. Aplican los
-        criterios de la NOM-002-STPS-2010 y de la NOM-154-SCFI-2005, y citan de dónde sale cada
-        número.
-      </p>
-      <p class="hub__note">
-        Orientan, no dictaminan: el estudio o el dictamen formal lo elabora y lo firma quien está
-        facultado. Si quieres que lo hagamos nosotros, escríbenos.
-      </p>
-    </div>
-  </section>
+  <Hero
+    badge="Gratis y sin registro"
+    title="Herramientas para saber"
+    accent="qué te exige la norma"
+    subtitle="Tres herramientas que resuelven las preguntas con las que empieza cualquier empresa: en qué grado de riesgo estoy, cuánto equipo necesito y si el que ya tengo está en regla."
+    descRight={[
+      'Aplican los criterios de la NOM-002-STPS-2010 y de la NOM-154-SCFI-2005, y cada una cita de dónde sale su número. Sin registro, sin correo y sin letras chiquitas.',
+      'Orientan, no dictaminan: el estudio o el dictamen formal lo elabora y lo firma quien está facultado. Si prefieres que lo hagamos nosotros, escríbenos.',
+    ]}
+    ctas={[
+      { text: 'Ver catálogo', href: '/productos/', variant: 'outline' },
+      { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.default), variant: 'primary', whatsapp: true },
+    ]}
+  />
+
+  <SectionMenu items={menuSecciones} cta={menuCta} />
 
   <section class="section section--surface">
     <div class="container">
@@ -68,62 +93,32 @@ const schemaData = {
         ]}
       />
 
-      <ul class="tools" role="list">
-        {TOOLS.map((t) => (
-          <li class="tools__item">
-            <a class="tools__card" href={`/herramientas/${t.slug}/`}>
-              {t.norm && <span class="tools__badge">{t.norm}</span>}
-              <h2 class="tools__title">{t.label}</h2>
-              <p class="tools__desc">{t.desc}</p>
-              <span class="tools__cta">Abrir herramienta →</span>
-            </a>
-          </li>
+      <div class="grid">
+        {TOOLS.map((t, i) => (
+          <CategoryCard
+            label={t.label}
+            href={`/herramientas/${t.slug}/`}
+            image={t.image}
+            imageAlt={t.imageAlt}
+            badge={t.norm}
+            blurb={t.desc}
+            ctaLabel="Abrir herramienta"
+            index={i}
+          />
         ))}
-      </ul>
+      </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <RelatedLinks
-        title="Y después de la herramienta"
-        links={[
-          { label: 'Catálogo de equipo', href: '/productos/', desc: 'Extintores, detección, gabinetes y señalización.' },
-          { label: 'Diagnóstico de riesgo', href: '/servicios/diagnostico-de-riesgo/', desc: 'El levantamiento del inmueble, documentado.' },
-          { label: 'Mantenimiento y recarga', href: '/servicios/mantenimiento/', desc: 'Servicio anual con comprobante.' },
-          { label: 'Guías del blog', href: '/blog/', desc: 'Normatividad, sistemas y prevención por giro.' },
-        ]}
-        limit={4}
-      />
-    </div>
-  </section>
-
-  <CTABanner
-    heading="¿Prefieres que lo revisemos contigo?"
-    desc="Cuéntanos el giro y el tamaño de tu inmueble y te decimos qué equipo es exigible y qué documentación te falta."
-    btns={[{ label: 'Escribir por WhatsApp', href: waUrl(WA_MESSAGES.default), icon: 'wa', primary: true, external: true }]}
-    badge="CDMX y Estado de México"
-    variant="red"
-  />
+  <SectionMenu items={cierreItems} cta={cierreCta} ariaLabel="Sigue explorando el sitio" />
 </PageLayout>
 
 <style>
   .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
   .section { padding: var(--sp-8) 0; }
   .section--surface { background: var(--c-surface); }
-  .hub { padding: var(--sp-9) 0 var(--sp-6); }
-  .hub__eyebrow { color: var(--c-accent); text-transform: uppercase; letter-spacing: .08em; font-size: var(--text-sm); margin: 0 0 var(--sp-2); }
-  .hub__h1 { font-family: var(--font-heading); font-size: var(--text-fluid-4xl, 2.25rem); line-height: 1.1; margin: 0 0 var(--sp-3); }
-  .hub__lede { color: var(--c-ink-2); max-width: 65ch; margin: 0 0 var(--sp-4); }
-  .hub__note { font-size: var(--text-sm); color: var(--c-muted); max-width: 65ch; margin: 0; }
-
-  .tools { list-style: none; margin: var(--sp-6) 0 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: var(--sp-5); }
-  @media (min-width: 700px)  { .tools { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 1024px) { .tools { grid-template-columns: repeat(3, 1fr); } }
-  .tools__card { display: grid; gap: var(--sp-2); align-content: start; height: 100%; padding: var(--sp-6); border: 1px solid var(--c-border); border-radius: var(--radius-lg, 12px); background: var(--c-white); text-decoration: none; color: inherit; }
-  .tools__card:hover { border-color: var(--c-accent); }
-  .tools__badge { font-size: var(--text-xs); color: var(--c-muted); text-transform: uppercase; letter-spacing: .06em; }
-  .tools__title { font-family: var(--font-heading); font-size: var(--text-lg); margin: 0; }
-  .tools__desc { color: var(--c-ink-2); font-size: var(--text-sm); margin: 0; }
-  .tools__cta { margin-top: var(--sp-3); color: var(--c-accent); font-size: var(--text-sm); }
+  @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
+  .grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-5); margin-top: var(--sp-6); }
+  @media (min-width: 640px)  { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); } }
 </style>
