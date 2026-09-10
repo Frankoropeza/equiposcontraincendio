@@ -4,7 +4,7 @@ description: "Venta, instalación, mantenimiento e inspección de equipo contra 
 zoneName: "Estado de México"
 type: estado
 state: "Estado de México"
-image: /images/zonas/cobertura-edomex.svg
+image: /images/servicios/instalacion-equipo-almacen.avif
 areas:
   - Naucalpan de Juárez
   - Tlalnepantla de Baz

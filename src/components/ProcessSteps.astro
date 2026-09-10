@@ -93,19 +93,33 @@ const {
     letter-spacing: -.04em;
     line-height: 1;
   }
+  /* Título de paso: ALTURA FIJA de 2 líneas. Con altura libre, los pasos de
+     título largo empujaban su descripción hacia abajo y la fila quedaba
+     dentada — el mismo defecto que se corrigió en las tarjetas. Es `height` y
+     no `min-height` a propósito: un glifo alto (subíndices, acentos) agranda
+     la caja de línea y volvería a descuadrar la retícula. */
   .step__title {
     margin: 0;
+    height: calc(var(--text-base) * var(--leading-snug) * 2);
     font-family: var(--font-heading);
     font-size: var(--text-base);
     font-weight: var(--weight-bold);
     color: #fff;
     line-height: var(--leading-snug);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   .step__desc {
     margin: 0;
     font-size: var(--text-sm);
     color: rgba(255,255,255,.62);
     line-height: var(--leading-relaxed);
+  }
+  /* En una sola columna (móvil) el título no necesita reservar dos líneas. */
+  @media (max-width: 767px) {
+    .step__title { height: auto; -webkit-line-clamp: none; display: block; }
   }
 
   @media (min-width: 640px) {

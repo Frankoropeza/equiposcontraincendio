@@ -10,6 +10,19 @@ import SectionHeading from '@components/SectionHeading.astro'
 import CategoryCard from '@components/CategoryCard.astro'
 import CategoryFeature from '@components/CategoryFeature.astro'
 import FAQWithContact from '@components/FAQWithContact.astro'
+import RiskGuide from '@components/RiskGuide.astro'
+import NormsTable from '@components/NormsTable.astro'
+import ProcessSteps from '@components/ProcessSteps.astro'
+import CompanyAbout from '@components/CompanyAbout.astro'
+import RelatedLinks from '@components/RelatedLinks.astro'
+import {
+  serviceFeatures,
+  serviciosCalendario,
+  serviciosNormRows,
+  serviciosSteps,
+  serviciosCompany,
+  serviciosRelated,
+} from '@data/servicios'
 import ServiceCard from '@components/ServiceCard.astro'
 import { getCollection } from 'astro:content'
 import { SERVICES, SERVICE_ANCHOR, CONTACT, waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
@@ -41,65 +54,6 @@ const serviciosCol = await getCollection('servicios', ({ data }) => !data.draft)
 const SERVICE_META = Object.fromEntries(
   serviciosCol.map((s) => [s.id, { image: s.data.image, badge: s.data.badge }]),
 ) as Record<string, { image?: string; badge?: string }>
-
-// ── Módulos de servicio (CategoryFeature) — copy PROPIO. Diseño uniforme
-// (sin surface ni flip): todos iguales, solo cambia la información. ──
-const SERVICE_FEATURES = [
-  {
-    eyebrow: 'Instalación · Proyecto a la medida · NOM-002-STPS',
-    title: 'Instalación de sistemas',
-    titleAccent: 'dimensionada a tu riesgo',
-    description:
-      'Proyectamos e instalamos tu protección contra incendio de principio a fin: detección y alarma, red de hidrantes y mangueras, extintores y señalización — todo calculado según el riesgo y la superficie de tu inmueble, no a partir de un paquete genérico.',
-    features: [
-      { label: 'Detección y alarma', desc: 'detectores, panel y sirenas dimensionados a tu inmueble.' },
-      { label: 'Hidrantes y red hidráulica', desc: 'gabinetes, mangueras y válvulas con cálculo conforme a NFPA 14.' },
-      { label: 'Extintores y señalización', desc: 'ubicación y capacidad según la NOM-002-STPS y la NOM-003-SEGOB.' },
-      { label: 'Planos y memoria de diseño', desc: 'documentación técnica lista para Protección Civil.' },
-    ],
-    ctaLabel: 'Cotizar instalación',
-    ctaMsg: 'Hola, quiero cotizar la instalación de un sistema contra incendio para mi inmueble.',
-    imgMain: { src: '/images/servicios/integracion-sistemas-contra-incendio.avif', alt: 'Instalación de sistemas contra incendio' },
-    imgA: { src: '/images/servicios/auditoria-seguridad-contra-incendio.avif', alt: 'Diagnóstico de riesgo del inmueble' },
-    imgB: { src: '/images/servicios/instalacion-equipo-almacen.avif', alt: 'Suministro de equipo contra incendio' },
-  },
-  {
-    eyebrow: 'Mantenimiento · NOM-154-SCFI-2005',
-    title: 'Mantenimiento y recarga',
-    titleAccent: 'para equipo siempre vigente',
-    description:
-      'Un extintor sirve solo si está vigente. Damos mantenimiento preventivo y recarga conforme a la NOM-154-SCFI-2005, con etiqueta y collarín de servicio, y un programa anual para que tu equipo no caduque ni te tome por sorpresa una inspección.',
-    features: [
-      { label: 'Recarga conforme a norma', desc: 'con etiqueta y collarín de servicio que acreditan el mantenimiento.' },
-      { label: 'Prueba hidrostática', desc: 'prueba de presión cada 5 años para garantizar la integridad del cilindro.' },
-      { label: 'Programa anual', desc: 'te avisamos cuándo toca el servicio para no perder vigencia.' },
-      { label: 'Revisión mensual guiada', desc: 'te apoyamos con la verificación que pide la NOM-002-STPS al personal.' },
-    ],
-    ctaLabel: 'Cotizar mantenimiento',
-    ctaMsg: 'Hola, quiero cotizar el mantenimiento y recarga de mis extintores conforme a la NOM-154.',
-    imgMain: { src: '/images/servicios/inspeccion-recarga-extintores.avif', alt: 'Mantenimiento y recarga de extintores' },
-    imgA: { src: '/images/servicios/prueba-hidrostatica-extintor.avif', alt: 'Prueba hidrostática de extintores' },
-    imgB: { src: '/images/servicios/instalacion-equipo-almacen.avif', alt: 'Suministro y refacciones para extintores' },
-  },
-  {
-    eyebrow: 'Inspección · Dictamen · Reporte claro',
-    title: 'Inspección y dictamen',
-    titleAccent: 'de tu equipo contra incendio',
-    description:
-      'Revisamos tu equipo y sistema completo, identificamos faltantes, vencimientos y riesgos, y te entregamos un dictamen claro con lo que hay que corregir para cumplir y estar realmente protegido — sin tecnicismos ni letras chiquitas.',
-    features: [
-      { label: 'Revisión integral', desc: 'extintores, detección, hidrantes y señalización en un solo recorrido.' },
-      { label: 'Faltantes y vencimientos', desc: 'qué falta, qué venció y qué no cumple con la norma.' },
-      { label: 'Dictamen por escrito', desc: 'reporte claro con prioridades y recomendaciones.' },
-      { label: 'Listo para Protección Civil', desc: 'base para integrar tu expediente ante PC y STPS.' },
-    ],
-    ctaLabel: 'Cotizar inspección',
-    ctaMsg: 'Hola, quiero cotizar una inspección y dictamen de mi equipo contra incendio.',
-    imgMain: { src: '/images/servicios/inspeccion-tablero-alarma-gabinete-manguera.avif', alt: 'Inspección y dictamen de equipo contra incendio' },
-    imgA: { src: '/images/servicios/etiquetado-inspeccion-extintor.avif', alt: 'Gestión documental para Protección Civil' },
-    imgB: { src: '/images/servicios/auditoria-seguridad-contra-incendio.avif', alt: 'Diagnóstico de riesgo contra incendio' },
-  },
-]
 
 const faqs = [
   {
@@ -164,12 +118,12 @@ const faqs = [
       <SectionHeading
         layout="duo"
         eyebrow="Lo que hacemos"
-        title="Tres formas de"
-        titleAccent="protegerte"
-        desc="Instalación para construir, mantenimiento para conservar e inspección para verificar."
+        title="Siete servicios,"
+        titleAccent="un ciclo completo"
+        desc="Del proyecto y la instalación al expediente en regla, con la vigencia siempre al día."
         body={[
-          'Cada servicio se presenta como una etapa con un resultado claro, para que sepas en cuál estás y qué sigue. La claridad reduce la fricción y mejora el resultado.',
-          'Cada tarjeta lleva a una página de detalle con lo que incluye, cómo se trabaja y las preguntas frecuentes.',
+          'La protección contra incendio no se compra una vez: se instala, se revisa, se recarga, se prueba y se documenta. Cada uno de esos momentos tiene su servicio y su periodicidad.',
+          'Cada tarjeta lleva a la página del servicio, con lo que incluye, cómo se trabaja y las preguntas que más nos hacen.',
         ]}
       />
       <div class="grid">
@@ -202,8 +156,9 @@ const faqs = [
   </section>
 
   {/* ─── Módulos de servicio (CategoryFeature) — diseño uniforme, copy propio ─── */}
-  {SERVICE_FEATURES.map((c) => (
+  {serviceFeatures.map((c) => (
     <CategoryFeature
+      anchorId={c.id}
       eyebrow={c.eyebrow}
       title={c.title}
       titleAccent={c.titleAccent}
@@ -212,11 +167,88 @@ const faqs = [
       ctaLabel={c.ctaLabel}
       ctaHref={waUrl(c.ctaMsg)}
       ctaExternal
+      ctaSecondaryLabel={c.ctaSecondaryLabel}
+      ctaSecondaryHref={c.ctaSecondaryHref}
       imgMain={c.imgMain}
       imgA={c.imgA}
       imgB={c.imgB}
     />
   ))}
+
+  {/* ─── Calendario de servicio: cada cuándo toca cada cosa ─── */}
+  <RiskGuide
+    eyebrow="Calendario de servicio"
+    title="Cada cuándo toca"
+    titleAccent="y qué papel te deja"
+    desc="La periodicidad no la fija el proveedor: la fija la norma."
+    body={[
+      'La pregunta que más se repite no es cuánto cuesta, sino cada cuándo toca. Aquí está el calendario completo, con la norma que obliga cada servicio y la evidencia que debe quedar en tu expediente.',
+      'Si no sabes en qué punto del calendario estás, el levantamiento inicial lo resuelve: se revisa qué equipo hay y cuándo venció cada pieza.',
+    ]}
+    rows={serviciosCalendario}
+    columns={['Servicio', 'Cada cuándo', 'Qué lo obliga', 'Evidencia que queda']}
+    note="La revisión mensual la hace tu propio personal y solo requiere bitácora; el mantenimiento anual y la prueba hidrostática los presta un proveedor. La brigada es obligatoria únicamente en centros de trabajo de riesgo alto, y la constancia DC-3 no tiene vigencia fijada por norma."
+    ctaLabel="Verifica tu extintor"
+    ctaHref="/herramientas/verifica-tu-extintor/"
+  />
+
+  {/* ─── Respaldo normativo del servicio ─── */}
+  <NormsTable
+    eyebrow="Respaldo normativo"
+    title="Qué le exige la norma"
+    titleAccent="a cada servicio"
+    desc="Un servicio sin evidencia es, para la autoridad, un servicio que no ocurrió."
+    body={[
+      'La norma no solo manda dar mantenimiento: manda cómo hacerlo y qué rastro debe dejar. Aquí está qué exige cada una y a qué parte del servicio aplica.',
+      'Las NFPA se listan como referencia técnica internacional. No son ley federal en México, aunque tu aseguradora o tu corporativo sí pueden pedirlas.',
+    ]}
+    rows={serviciosNormRows}
+    columns={['Norma / formato', 'Qué exige', 'Aplica a']}
+    note="Cada servicio deja etiqueta y collarín sobre el equipo, reporte por escrito y, cuando corresponde, constancia DC-3 a nombre del trabajador. Ese conjunto es lo que se presenta en una verificación."
+  />
+
+  {/* ─── Cómo se contrata (proceso, fondo oscuro) ─── */}
+  <ProcessSteps
+    eyebrow="Cómo se contrata"
+    title="Del levantamiento"
+    titleAccent="al aviso de vencimiento"
+    desc="Primero se revisa qué tienes; cotizar sin eso es dar un número al aire."
+    body={[
+      'El servicio no termina cuando se firma el reporte: termina cuando te avisamos que toca el siguiente, para que la vigencia no se pierda por olvido.',
+      'El proceso es el mismo para tres extintores de oficina que para una red hidráulica completa; solo cambia el tamaño del programa.',
+    ]}
+    steps={serviciosSteps}
+  />
+
+  {/* ─── Sobre el servicio (qué cubre / cómo se agenda) ─── */}
+  <section class="section section--surface">
+    <div class="container">
+      <SectionHeading
+        layout="duo"
+        eyebrow="Sobre el servicio"
+        title="Siete servicios,"
+        titleAccent="un solo interlocutor"
+        desc="Del proyecto al expediente, sin pelotear entre tres proveedores."
+        body={[
+          'Cubrimos el ciclo completo de la protección contra incendio, así que la misma persona que instaló sabe qué toca revisar y cuándo vence.',
+          'Agenda por WhatsApp y habla directo con quien resuelve.',
+        ]}
+      />
+      <CompanyAbout
+        que={serviciosCompany.que}
+        como={serviciosCompany.como}
+        cta={{ label: 'Agendar por WhatsApp', href: waUrl(WA_MESSAGES.servicios), external: true }}
+      />
+    </div>
+  </section>
+
+  {/* ─── Interlinking a las otras secciones ─── */}
+  <RelatedLinks
+    title="Sigue por aquí"
+    desc="Lo que suele hacer falta junto con el servicio."
+    links={serviciosRelated}
+    limit={4}
+  />
 
   {/* ─── FAQ + Contacto ─── */}
   <FAQWithContact items={faqs} waNumber={CONTACT.whatsapp} />

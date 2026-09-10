@@ -4,7 +4,7 @@ description: "Venta, instalación, mantenimiento e inspección de equipo contra 
 zoneName: "Ciudad de México"
 type: ciudad
 state: "CDMX"
-image: /images/zonas/cobertura-cdmx.svg
+image: /images/servicios/instalacion-deteccion-alarma.avif
 areas:
   - Álvaro Obregón
   - Azcapotzalco

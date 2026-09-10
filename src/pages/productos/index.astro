@@ -13,6 +13,18 @@ import CategoryFeature from '@components/CategoryFeature.astro';
 import ProductCard from '@components/ProductCard.astro';
 import ServiceCard from '@components/ServiceCard.astro';
 import FAQWithContact from '@components/FAQWithContact.astro';
+import RiskGuide from '@components/RiskGuide.astro';
+import NormsTable from '@components/NormsTable.astro';
+import ProcessSteps from '@components/ProcessSteps.astro';
+import CompanyAbout from '@components/CompanyAbout.astro';
+import RelatedLinks from '@components/RelatedLinks.astro';
+import {
+  productosRiskRows,
+  productosNormRows,
+  productosSteps,
+  productosCompany,
+  productosRelated,
+} from '@data/productos';
 import { getCollection } from 'astro:content';
 import { SHOWCASE, CONTACT, waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site';
 
@@ -396,26 +408,80 @@ const schemaData = {
     </section>
   )}
 
-  {/* ─── Banda de normas ─── */}
-  <section class="norms-strip">
+  {/* ─── Guía de selección: agente y capacidad por tipo de inmueble ─── */}
+  <RiskGuide
+    eyebrow="Guía de selección"
+    title="Qué extintor pide"
+    titleAccent="cada tipo de inmueble"
+    desc="El agente y la capacidad se eligen por lo que puede arder, no por el tamaño del local."
+    body={[
+      'Un extintor de PQS no sirve bajo una campana de cocina y uno de CO₂ no apaga una tarima de cartón. Esta tabla traduce el giro del inmueble al agente correcto y a la capacidad con la que conviene arrancar.',
+      'La distancia de recorrido cambia con la clase de fuego: 23 m para sólidos y riesgo eléctrico, 15 m para líquidos inflamables (10 m si el riesgo es alto) y 10 m para cocina.',
+    ]}
+    rows={productosRiskRows}
+    columns={['Tipo de inmueble', 'Qué puede arder', 'Agente y capacidad base', 'A considerar']}
+    note="Punto de partida, no dictamen. La NOM-002-STPS pide al menos un extintor por cada 300 m² en riesgo ordinario y por cada 200 m² en riesgo alto, colocado a no más de 1.50 m del piso. La cantidad exacta y la ubicación salen del plano de tu inmueble."
+    ctaLabel="Calcular cuántos necesito"
+    ctaHref="/herramientas/cuantos-extintores-necesito/"
+  />
+
+  {/* ─── Respaldo normativo por familia (reemplaza la banda hecha a mano) ─── */}
+  <NormsTable
+    eyebrow="Respaldo normativo"
+    title="Qué norma certifica"
+    titleAccent="cada familia del catálogo"
+    desc="Lo que revisa el inspector cuando levanta el equipo y busca la contraseña oficial."
+    body={[
+      'No basta con tener el equipo: tiene que estar certificado, colocado como manda la norma y con su servicio al día. Aquí está qué exige cada norma y a qué parte del catálogo aplica.',
+      'Las NFPA se listan como referencia técnica internacional. No son ley federal en México, aunque tu aseguradora o tu corporativo sí pueden exigirlas.',
+    ]}
+    rows={productosNormRows}
+    columns={['Norma / estándar', 'Qué exige', 'Aplica a']}
+    note="Cada entrega incluye ficha técnica y la documentación de servicio para integrar a tu expediente ante Protección Civil y STPS. Si no sabes qué normas te aplican por giro y tamaño, se revisa contigo antes de cotizar."
+  />
+
+  {/* ─── Cómo se compra (proceso, fondo oscuro) ─── */}
+  <ProcessSteps
+    eyebrow="Cómo se compra"
+    title="Del catálogo a tu inmueble"
+    titleAccent="en cinco pasos"
+    desc="Sin carrito y sin precios a la vista, porque el equipo correcto depende de tu riesgo."
+    body={[
+      'Cotizar por WhatsApp no es un trámite más lento: es lo que evita que compres de más o que compres lo que no aplica a tu inmueble.',
+      'El proceso es el mismo para una oficina con tres extintores que para una nave con red hidráulica; solo cambia el tamaño de la propuesta.',
+    ]}
+    steps={productosSteps}
+  />
+
+  {/* ─── Sobre el catálogo (qué encuentras / cómo se cotiza) ─── */}
+  <section class="section section--surface">
     <div class="container">
-      <p class="norms-strip__label">Normatividad que respaldamos</p>
-      <div class="norms-strip__list">
-        {[
-          'NOM-002-STPS-2010',
-          'NOM-154-SCFI-2005',
-          'NOM-003-SEGOB-2011',
-          'NOM-026-STPS-2008',
-          'NFPA 10',
-          'NFPA 13',
-          'NFPA 14',
-          'NFPA 72',
-        ].map((n) => (
-          <span class="norms-strip__badge">{n}</span>
-        ))}
-      </div>
+      <SectionHeading
+        layout="duo"
+        eyebrow="Sobre este catálogo"
+        title="Ocho familias,"
+        titleAccent="un solo proveedor"
+        desc="Equipo certificado, con su documentación y con quien te explique cuál te toca."
+        body={[
+          'Reunimos en un mismo catálogo todo lo que un inmueble necesita para estar protegido y en regla, para que no tengas que pelotear entre tres proveedores un mismo expediente.',
+          'Cotiza por WhatsApp y habla directo con quien resuelve.',
+        ]}
+      />
+      <CompanyAbout
+        que={productosCompany.que}
+        como={productosCompany.como}
+        cta={{ label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.productos), external: true }}
+      />
     </div>
   </section>
+
+  {/* ─── Interlinking a las otras secciones ─── */}
+  <RelatedLinks
+    title="Sigue por aquí"
+    desc="Lo que suele hacer falta después de elegir el equipo."
+    links={productosRelated}
+    limit={4}
+  />
 
   {/* ─── FAQ + Contacto ─── */}
   <FAQWithContact items={faqs} waNumber={CONTACT.whatsapp} />

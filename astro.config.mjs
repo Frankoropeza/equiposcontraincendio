@@ -178,6 +178,7 @@ export default defineConfig({
         '@layouts': r('./src/layouts'),
         '@components': r('./src/components'),
         '@content': r('./src/content'),
+        '@data': r('./src/data'),
       },
     },
   },

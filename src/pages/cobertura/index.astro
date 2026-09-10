@@ -10,6 +10,20 @@ import SectionHeading from '@components/SectionHeading.astro'
 import CategoryCard from '@components/CategoryCard.astro'
 import CategoryFeature from '@components/CategoryFeature.astro'
 import FAQWithContact from '@components/FAQWithContact.astro'
+import RiskGuide from '@components/RiskGuide.astro'
+import NormsTable from '@components/NormsTable.astro'
+import ProcessSteps from '@components/ProcessSteps.astro'
+import CompanyAbout from '@components/CompanyAbout.astro'
+import RelatedLinks from '@components/RelatedLinks.astro'
+import {
+  zoneCard,
+  zoneFeatures,
+  coberturaAlcance,
+  coberturaNormRows,
+  coberturaSteps,
+  coberturaCompany,
+  coberturaRelated,
+} from '@data/cobertura'
 import { COVERAGE_STATES, CONTACT, waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
 
 const tipoLabel = (t: string) => (t === 'operativo' ? 'Servicio en sitio' : 'Atención a distancia')
@@ -30,52 +44,6 @@ const pillars = [
   { icon: 'clock', title: 'Visita y entrega en sitio', desc: 'Coordinamos día y hora para instalación, mantenimiento o entrega.' },
   { icon: 'doc', title: 'Documentación local', desc: 'Constancias para Protección Civil de tu alcaldía o municipio.' },
   { icon: 'chat', title: 'Cotiza por WhatsApp', desc: 'Dinos tu ubicación y te confirmamos cobertura y tiempos.' },
-]
-
-// ── Imagen por zona (para las tarjetas) ──
-const ZONE_IMG: Record<string, string> = {
-  cdmx: '/images/zonas/cobertura-cdmx.svg',
-  edomex: '/images/zonas/cobertura-edomex.svg',
-}
-
-// ── Módulos de zona (CategoryFeature) — copy propio, diseño uniforme ──
-const ZONE_FEATURES = [
-  {
-    eyebrow: 'Cobertura · Ciudad de México · Servicio en sitio',
-    title: 'Servicio directo en',
-    titleAccent: 'toda la Ciudad de México',
-    description:
-      'Operamos en la Ciudad de México con visita en sitio para venta, instalación, mantenimiento e inspección de equipo contra incendio. Cubrimos las 16 alcaldías y entregamos el equipo con la documentación que pide Protección Civil de la CDMX.',
-    features: [
-      { label: 'Las 16 alcaldías', desc: 'de Álvaro Obregón a Xochimilco; visita y entrega en sitio.' },
-      { label: 'Servicio directo en sitio', desc: 'instalación, mantenimiento e inspección presenciales.' },
-      { label: 'Entrega de equipo con factura', desc: 'extintores, detección, hidrantes y señalización.' },
-      { label: 'Trámite ante PC-CDMX', desc: 'documentación y constancias para tu expediente de Protección Civil.' },
-    ],
-    ctaLabel: 'Cotizar en CDMX',
-    ctaMsg: 'Hola, estoy en la Ciudad de México y quiero cotizar equipo y/o servicio contra incendio.',
-    imgMain: { src: '/images/zonas/cobertura-cdmx.svg', alt: 'Cobertura de equipo contra incendio en la Ciudad de México' },
-    imgA: { src: '/images/servicios/integracion-sistemas-contra-incendio.avif', alt: 'Instalación de sistemas contra incendio en CDMX' },
-    imgB: { src: '/images/servicios/inspeccion-recarga-extintores.avif', alt: 'Mantenimiento y recarga de extintores en CDMX' },
-  },
-  {
-    eyebrow: 'Cobertura · Estado de México · Servicio en sitio',
-    title: 'Cobertura en la zona',
-    titleAccent: 'metropolitana y EdoMex',
-    description:
-      'Atendemos el Estado de México y la zona metropolitana con servicio en sitio. Cubrimos los municipios conurbados —Naucalpan, Tlalnepantla, Ecatepec, Nezahualcóyotl, Cuautitlán y más— para venta, instalación, mantenimiento e inspección de tu equipo contra incendio.',
-    features: [
-      { label: 'Municipios conurbados', desc: 'Naucalpan, Tlalnepantla, Ecatepec, Neza, Cuautitlán y zona metropolitana.' },
-      { label: 'Servicio directo en sitio', desc: 'instalación, mantenimiento e inspección presenciales.' },
-      { label: 'Entrega y suministro', desc: 'equipo contra incendio con factura y ficha técnica.' },
-      { label: 'Documentación local', desc: 'constancias para Protección Civil municipal y STPS.' },
-    ],
-    ctaLabel: 'Cotizar en EdoMex',
-    ctaMsg: 'Hola, estoy en el Estado de México y quiero cotizar equipo y/o servicio contra incendio.',
-    imgMain: { src: '/images/zonas/cobertura-edomex.svg', alt: 'Cobertura de equipo contra incendio en el Estado de México' },
-    imgA: { src: '/images/servicios/inspeccion-tablero-alarma-gabinete-manguera.avif', alt: 'Inspección de equipo contra incendio en EdoMex' },
-    imgB: { src: '/images/servicios/instalacion-equipo-almacen.avif', alt: 'Suministro de equipo contra incendio en EdoMex' },
-  },
 ]
 
 const faqs = [
@@ -150,11 +118,11 @@ const faqs = [
           <CategoryCard
             label={z.label}
             href={`/cobertura/${z.slug}/`}
-            image={ZONE_IMG[z.slug]}
-            imageAlt={`Cobertura en ${z.label}`}
-            blurb={`Servicio en sitio en ${z.label}: venta, instalación, mantenimiento e inspección de equipo contra incendio.`}
-            badge={tipoLabel(z.type)}
-            ctaLabel="Cobertura de la zona"
+            image={zoneCard[z.slug]?.src}
+            imageAlt={zoneCard[z.slug]?.alt ?? `Cobertura en ${z.label}`}
+            blurb={zoneCard[z.slug]?.blurb ?? `Servicio en sitio en ${z.label}.`}
+            badge={zoneCard[z.slug]?.badge ?? tipoLabel(z.type)}
+            ctaLabel={zoneCard[z.slug]?.cta ?? `Cobertura en ${z.label}`}
             index={i}
           />
         ))}
@@ -163,8 +131,9 @@ const faqs = [
   </section>
 
   {/* ─── Módulos de zona (CategoryFeature) — diseño uniforme, copy propio ─── */}
-  {ZONE_FEATURES.map((c) => (
+  {zoneFeatures.map((c) => (
     <CategoryFeature
+      anchorId={c.id}
       eyebrow={c.eyebrow}
       title={c.title}
       titleAccent={c.titleAccent}
@@ -173,11 +142,88 @@ const faqs = [
       ctaLabel={c.ctaLabel}
       ctaHref={waUrl(c.ctaMsg)}
       ctaExternal
+      ctaSecondaryLabel={c.ctaSecondaryLabel}
+      ctaSecondaryHref={c.ctaSecondaryHref}
       imgMain={c.imgMain}
       imgA={c.imgA}
       imgB={c.imgB}
     />
   ))}
+
+  {/* ─── Alcance por zona ─── */}
+  <RiskGuide
+    eyebrow="Alcance por zona"
+    title="Hasta dónde llegamos"
+    titleAccent="y con qué alcance"
+    desc="Antes de cotizar conviene saber si hay servicio en sitio en tu ubicación."
+    body={[
+      'No todas las zonas tienen el mismo alcance, y decirlo de frente evita agendar una visita que no se puede cumplir. Aquí está qué incluye cada zona y cómo se coordina.',
+      'No publicamos tiempos de respuesta porque dependen de la agenda del día y de la ubicación exacta. La fecha se confirma al agendar, no antes.',
+    ]}
+    rows={coberturaAlcance}
+    columns={['Zona', 'Qué comprende', 'Servicio en sitio', 'Cómo se coordina']}
+    note="Si tu inmueble queda fuera del área conurbada, escríbenos con la ubicación exacta: se revisa caso por caso y te decimos si hay servicio en sitio o si conviene resolverlo con envío de equipo."
+    ctaLabel="Confirmar mi zona"
+    ctaHref={waUrl('Hola, quiero confirmar si dan servicio en sitio en mi ubicación.')}
+  />
+
+  {/* ─── Qué pide cada autoridad ─── */}
+  <NormsTable
+    eyebrow="Norma federal, trámite local"
+    title="La norma es la misma,"
+    titleAccent="el trámite no"
+    desc="Las NOM aplican igual en las dos entidades; el Programa Interno cambia."
+    body={[
+      'La confusión más común de esta página: cumplir la NOM-002 no es lo mismo que tener el Programa Interno en regla. Lo primero es federal; lo segundo lo pide tu entidad, con su propio procedimiento.',
+      'Por eso el expediente que sirve en la Ciudad de México no se arma igual que el del Estado de México, aunque el equipo instalado sea idéntico.',
+    ]}
+    rows={coberturaNormRows}
+    columns={['Norma o trámite', 'Qué exige', 'Dónde aplica']}
+    note="Los datos del Programa Interno de cada entidad, con su fuente y la fecha en que se verificaron, están en la sección de Protección Civil del sitio."
+  />
+
+  {/* ─── Cómo se agenda (proceso, fondo oscuro) ─── */}
+  <ProcessSteps
+    eyebrow="Cómo se agenda"
+    title="De tu ubicación"
+    titleAccent="a la visita en sitio"
+    desc="Primero se confirma la cobertura; después se cotiza y se agenda."
+    body={[
+      'Confirmar la zona antes de cotizar evita el problema clásico: una propuesta aceptada que después no se puede ejecutar porque el inmueble queda fuera de ruta.',
+      'La fecha se fija con la disponibilidad real del día. Preferimos decir «el jueves» y cumplirlo, a prometer «hoy mismo» y fallar.',
+    ]}
+    steps={coberturaSteps}
+  />
+
+  {/* ─── Sobre la cobertura ─── */}
+  <section class="section section--surface">
+    <div class="container">
+      <SectionHeading
+        layout="duo"
+        eyebrow="Sobre la cobertura"
+        title="Dos entidades,"
+        titleAccent="un mismo estándar"
+        desc="El mismo criterio técnico para una oficina en la ciudad que para una nave en el estado."
+        body={[
+          'Servicio en sitio significa que el técnico va a tu inmueble con el equipo y la herramienta, no que se resuelve por teléfono.',
+          'Dinos tu ubicación por WhatsApp y te confirmamos cobertura antes de cualquier compromiso.',
+        ]}
+      />
+      <CompanyAbout
+        que={coberturaCompany.que}
+        como={coberturaCompany.como}
+        cta={{ label: 'Confirmar cobertura', href: waUrl('Hola, quiero confirmar si dan servicio en sitio en mi ubicación.'), external: true }}
+      />
+    </div>
+  </section>
+
+  {/* ─── Interlinking a las otras secciones ─── */}
+  <RelatedLinks
+    title="Sigue por aquí"
+    desc="Lo que suele preguntarse junto con la cobertura."
+    links={coberturaRelated}
+    limit={4}
+  />
 
   {/* ─── FAQ + Contacto ─── */}
   <FAQWithContact items={faqs} waNumber={CONTACT.whatsapp} />
