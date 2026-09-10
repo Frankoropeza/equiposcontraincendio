@@ -517,7 +517,9 @@ const AREAS = [
   .panel--res :global(.res__flag) { margin: 0 0 var(--sp-4); padding: var(--sp-3); border-radius: var(--radius-md, 8px); background: var(--c-surface); font-size: var(--text-xs); color: var(--c-ink-2); }
   .panel--res :global(.res__flag a) { color: var(--c-primary); }
   .panel--res :global(.res__cta) { display: flex; flex-wrap: wrap; gap: var(--sp-3); padding-top: var(--sp-4); border-top: 1px solid var(--c-border); }
-  @media (max-width: 640px) { .panel--res :global(.res__cta) .btn { width: 100%; } }
+  /* El .btn del resultado se inyecta por JS: la regla tiene que ir COMPLETA
+     dentro de :global(), o Astro le añade el atributo de scope y no aplica. */
+  @media (max-width: 640px) { .panel--res :global(.res__cta .btn) { width: 100%; } }
 
   /* ── Listas de criterio y tabla de agentes ───────────────────────────────── */
   .crit { list-style: none; margin: var(--sp-5) 0 0; padding: 0; display: grid; gap: var(--sp-3); font-size: var(--text-sm); color: var(--c-ink-2); }

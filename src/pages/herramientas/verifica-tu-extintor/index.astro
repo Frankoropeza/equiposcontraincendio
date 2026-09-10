@@ -2,25 +2,26 @@
 // ============================================================================
 // /herramientas/verifica-tu-extintor/ — Verificación en 12 puntos.
 // ----------------------------------------------------------------------------
-// El fraude más común del nicho es la calcomanía sin servicio detrás. Esta
-// herramienta le da al dueño del inmueble una forma de comprobarlo por su
-// cuenta, antes de que se lo diga un verificador.
+// MISMA ESTRUCTURA que las otras dos herramientas (2026-09-10): una retícula
+// —columna principal + barra lateral pegajosa— y paneles del mismo ancho.
 //
-// REGLA DE HONESTIDAD: el checklist sólo pregunta cosas OBSERVABLES por
-// cualquiera (fecha del servicio, manómetro, sello, corrosión, señalización,
-// altura, accesibilidad, capacitación). No afirma requisitos de etiqueta que no
-// podamos sostener con el texto de la norma, y para comprobar la acreditación
-// del prestador se enlaza a la fuente en vez de publicar un padrón que se mueve.
+// El fraude más común del nicho es la calcomanía sin servicio detrás. El
+// checklist sólo pregunta cosas OBSERVABLES por cualquiera; no afirma
+// requisitos de etiqueta que no podamos sostener con el texto de la norma, y
+// para comprobar la acreditación del prestador enlaza a la fuente en vez de
+// publicar un padrón que se mueve.
 //
 // Criterios: NOM-002-STPS-2010 (colocación, revisión y mantenimiento) y
 // NOM-154-SCFI-2005 (servicio de mantenimiento y recarga).
 // ============================================================================
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
+import SectionMenu from '@components/SectionMenu.astro'
+import SectionHeading from '@components/SectionHeading.astro'
+import ToolSidebar from '@components/ToolSidebar.astro'
 import FAQAccordion from '@components/FAQAccordion.astro'
 import CTABanner from '@components/CTABanner.astro'
-import RelatedLinks from '@components/RelatedLinks.astro'
-import { waUrl } from '@config/site'
+import { waUrl, WA_MESSAGES, CONTACT, sectionMenuItems } from '@config/site'
 
 const PUNTOS = [
   { id: 'fecha', txt: 'La etiqueta de servicio tiene una fecha y esa fecha es de hace menos de un año.' },
@@ -62,6 +63,15 @@ const faqs = [
 
 const schemaData = { faqs }
 const waHref = waUrl('Hola, revisé mis extintores con su checklist y quiero que vengan a verlos.')
+const waBase = `https://wa.me/${CONTACT.whatsapp}?text=`
+
+const menuSecciones = sectionMenuItems()
+const menuCta = {
+  label: 'Agendar revisión',
+  href: waUrl(WA_MESSAGES.servicios),
+  sub: 'CDMX y Estado de México',
+  external: true,
+}
 ---
 
 <PageLayout
@@ -82,100 +92,123 @@ const waHref = waUrl('Hola, revisé mis extintores con su checklist y quiero que
       'Es una autoevaluación, no un dictamen. Sirve para detectar lo evidente y para llegar con preguntas concretas a tu proveedor.',
     ]}
     ctas={[
-      { text: 'Mantenimiento de extintores', href: '/servicios/mantenimiento/', variant: 'outline' },
+      { text: 'Ver mantenimiento', href: '/servicios/mantenimiento/', variant: 'outline' },
       { text: 'Agendar revisión', href: waHref, variant: 'primary', whatsapp: true },
     ]}
   />
 
-  <section class="section">
-    <div class="container">
-      <form class="tool__form" id="chk-form">
-        <fieldset class="chk">
-          <legend>Marca lo que se cumple hoy</legend>
-          {PUNTOS.map((p) => (
-            <label class="chk__item">
-              <input type="checkbox" name="p" value={p.id} />
-              <span>{p.txt}</span>
-            </label>
-          ))}
-        </fieldset>
+  <SectionMenu items={menuSecciones} cta={menuCta} />
 
-        <div class="tool__actions">
-          <button type="submit" class="btn btn--primary">Calcular resultado</button>
-          <button type="reset" class="btn btn--ghost">Limpiar</button>
+  <section class="section section--surface">
+    <div class="container">
+      <div class="tool">
+        <div class="tool__main">
+          <article class="panel">
+            <SectionHeading
+              layout="simple"
+              align="left"
+              eyebrow="Autoevaluación"
+              title="Marca lo que se"
+              titleAccent="cumple hoy"
+              desc="Doce puntos observables. Si dudas de alguno, déjalo sin marcar."
+            />
+
+            <form class="form" id="chk-form" data-wa={waBase}>
+              <ul class="chk" role="list">
+                {PUNTOS.map((p, i) => (
+                  <li class="chk__item">
+                    <label>
+                      <input type="checkbox" name="p" value={p.id} />
+                      <span class="chk__n">{i + 1}</span>
+                      <span class="chk__txt">{p.txt}</span>
+                    </label>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="form__actions">
+                <button type="submit" class="btn btn--primary">Ver mi resultado</button>
+                <button type="reset" class="btn btn--ghost">Limpiar</button>
+              </div>
+            </form>
+          </article>
+
+          <article class="panel panel--res res--empty" id="chk-res" aria-live="polite">
+            <p class="res__placeholder">
+              Tu resultado aparece aquí: cuántos puntos cumples, qué significa y qué conviene
+              atender primero.
+            </p>
+          </article>
+
+          <article class="panel">
+            <SectionHeading
+              layout="simple"
+              align="left"
+              eyebrow="Señales de alarma"
+              title="Las tres señales de"
+              titleAccent="un servicio que no existió"
+              desc="Lo que vemos en campo cuando alguien sólo vendió la calcomanía."
+            />
+            <ol class="senales">
+              <li>
+                <strong>Sólo hay calcomanía.</strong> Si no te entregaron comprobante ni reporte del
+                servicio, no tienes con qué acreditar el mantenimiento. Pídelo siempre por escrito.
+              </li>
+              <li>
+                <strong>El precio no cuadra.</strong> Una recarga real tiene costo de agente, mano de
+                obra y traslado. Cuando el precio es imposible, lo que se está cobrando es la etiqueta.
+              </li>
+              <li>
+                <strong>Nadie revisó el cilindro.</strong> Un servicio serio revisa el estado físico
+                del cilindro y de la válvula, y te advierte cuándo toca la prueba hidrostática. Si el
+                equipo regresó en minutos y sin observaciones, pregunta qué se le hizo.
+              </li>
+            </ol>
+          </article>
+
+          <article class="panel">
+            <SectionHeading
+              layout="simple"
+              align="left"
+              eyebrow="La norma, en corto"
+              title="Qué exige"
+              titleAccent="y quién responde"
+              desc="Dos normas distintas que suelen confundirse."
+            />
+            <ul class="crit" role="list">
+              <li><strong>Mantenimiento:</strong> al menos una vez por año (NOM-002-STPS-2010).</li>
+              <li><strong>Revisión:</strong> mensual, a cargo del centro de trabajo, con su registro.</li>
+              <li><strong>Colocación:</strong> parte más alta a no más de 1.50 m del piso, visible, señalizado y sin obstáculos.</li>
+              <li><strong>Servicio de mantenimiento y recarga:</strong> se rige por la NOM-154-SCFI-2005.</li>
+            </ul>
+            <p class="panel__note">
+              Pide por escrito la razón social y los datos de registro de quien te da el servicio, y
+              contrástalos con la fuente oficial: la
+              <a href="https://www.ema.org.mx/" target="_blank" rel="noopener">entidad mexicana de acreditación (ema)</a>
+              publica quién está acreditado en las materias que evalúa. No publicamos aquí un padrón
+              propio porque cambia: conviene consultarlo en la fuente el día que lo necesitas.
+            </p>
+            <p class="panel__note">
+              Para el detalle de la norma de mantenimiento, lee
+              <a href="/blog/mantenimiento-recarga-extintores-nom/">mantenimiento y recarga de extintores: qué pide la norma</a>.
+            </p>
+          </article>
+
+          <article class="panel">
+            <FAQAccordion items={faqs} title="Preguntas frecuentes" openFirst bare />
+          </article>
         </div>
-      </form>
 
-      <output class="res" id="chk-res" hidden></output>
-
-      <p class="tool__note">
-        <strong>Esto es una autoevaluación, no un dictamen.</strong> Sirve para detectar lo evidente y
-        para llegar con preguntas concretas a tu proveedor. La inspección formal la hace personal
-        capacitado y queda documentada.
-      </p>
-    </div>
-  </section>
-
-  <section class="section section--surface">
-    <div class="container container--prose">
-      <h2>Las tres señales de un servicio que no existió</h2>
-      <ol>
-        <li>
-          <strong>Sólo hay calcomanía.</strong> Si no te entregaron comprobante ni reporte del
-          servicio, no tienes con qué acreditar el mantenimiento. Pídelo siempre por escrito.
-        </li>
-        <li>
-          <strong>El precio no cuadra.</strong> Una recarga real tiene costo de agente, mano de obra y
-          traslado. Cuando el precio es imposible, lo que se está cobrando es la etiqueta.
-        </li>
-        <li>
-          <strong>Nadie revisó el cilindro.</strong> Un servicio serio incluye revisar el estado
-          físico del cilindro y de la válvula, y advertirte cuándo toca la prueba hidrostática. Si el
-          equipo regresó en minutos y sin observaciones, pregunta qué se le hizo.
-        </li>
-      </ol>
-
-      <h2>Qué exige la norma, en corto</h2>
-      <ul>
-        <li><strong>Mantenimiento:</strong> al menos una vez por año (NOM-002-STPS-2010).</li>
-        <li><strong>Revisión:</strong> mensual, a cargo del centro de trabajo, con su registro.</li>
-        <li><strong>Colocación:</strong> parte más alta a no más de 1.50 m del piso, visible, señalizado y sin obstáculos.</li>
-        <li><strong>Servicio de mantenimiento y recarga:</strong> se rige por la NOM-154-SCFI-2005.</li>
-      </ul>
-      <p>
-        Para el detalle de la norma de mantenimiento, lee
-        <a href="/blog/mantenimiento-recarga-extintores-nom/">mantenimiento y recarga de extintores: qué pide la norma</a>.
-      </p>
-
-      <h2>Cómo comprobar al prestador</h2>
-      <p>
-        Pide por escrito la razón social y los datos de registro de quien te da el servicio, y
-        contrástalos con la fuente oficial: la
-        <a href="https://www.ema.org.mx/" target="_blank" rel="noopener">entidad mexicana de acreditación (ema)</a>
-        publica quién está acreditado en las materias que evalúa. No publicamos aquí un padrón propio
-        porque cambia: siempre conviene consultarlo en la fuente el día que lo necesitas.
-      </p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container container--prose">
-      <FAQAccordion items={faqs} title="Preguntas frecuentes" openFirst bare />
-    </div>
-  </section>
-
-  <section class="section section--surface">
-    <div class="container">
-      <RelatedLinks
-        title="Sigue por aquí"
-        links={[
-          { label: 'Cuántos extintores necesito', href: '/herramientas/cuantos-extintores-necesito/', desc: 'El mínimo por superficie y el agente por área.' },
-          { label: 'Clasifica tu riesgo de incendio', href: '/herramientas/riesgo-de-incendio/', desc: 'Ordinario o alto, con los criterios de la Tabla 1.' },
-          { label: 'Mantenimiento y recarga', href: '/servicios/mantenimiento/', desc: 'Servicio con comprobante, conforme a la NOM-154.' },
-          { label: 'Prueba hidrostática', href: '/servicios/prueba-hidrostatica/', desc: 'La prueba del cilindro que toca cada cinco años.' },
-        ]}
-        limit={4}
-      />
+        <ToolSidebar
+          current="verifica-tu-extintor"
+          waMessage="Hola, revisé mis extintores con su checklist y quiero agendar una revisión en sitio."
+          posts={[
+            'mantenimiento-recarga-extintores-nom',
+            'programa-mantenimiento-contra-incendio',
+            'como-elegir-extintor-clase-fuego',
+          ]}
+        />
+      </div>
     </div>
   </section>
 
@@ -191,75 +224,150 @@ const waHref = waUrl('Hola, revisé mis extintores con su checklist y quiero que
 <script>
   const form = document.getElementById('chk-form') as HTMLFormElement | null
   const out = document.getElementById('chk-res') as HTMLElement | null
+
   if (form && out) {
+    const waBase = form.dataset.wa ?? ''
     const TOTAL = form.querySelectorAll('input[name="p"]').length
+    const PLACEHOLDER =
+      '<p class="res__placeholder">Tu resultado aparece aquí: cuántos puntos cumples, qué significa y qué conviene atender primero.</p>'
+
+    // Etiqueta legible de cada punto, para listar lo que falta.
+    const ETIQUETAS: Record<string, string> = {}
+    form.querySelectorAll<HTMLInputElement>('input[name="p"]').forEach((cb) => {
+      ETIQUETAS[cb.value] = cb.parentElement?.querySelector('.chk__txt')?.textContent?.trim() ?? cb.value
+    })
 
     form.addEventListener('submit', (e) => {
       e.preventDefault()
-      const marcados = new FormData(form).getAll('p').length
-      const faltan = TOTAL - marcados
-      const pct = Math.round((marcados / TOTAL) * 100)
+      const marcados = (new FormData(form).getAll('p') as string[])
+      const faltan = Object.keys(ETIQUETAS).filter((k) => !marcados.includes(k))
+      const pct = Math.round((marcados.length / TOTAL) * 100)
 
       let tag = ''
       let msg = ''
-      let cls = ''
-      if (faltan === 0) {
+      let mod = ''
+      if (faltan.length === 0) {
         tag = 'Todo en orden'
-        cls = 'res res--ok'
-        msg = 'Cumples los 12 puntos observables. Mantén la bitácora al día y agenda el mantenimiento anual antes de que venza: la vigencia es lo primero que se revisa.'
-      } else if (faltan <= 3) {
-        tag = `Casi: te faltan ${faltan} de ${TOTAL}`
-        cls = 'res res--warn'
-        msg = 'Estás cerca. Lo que falta suele resolverse con una visita de mantenimiento y con ordenar la documentación del equipo.'
+        mod = 'res--ok'
+        msg =
+          'Cumples los doce puntos observables. Mantén la bitácora al día y agenda el mantenimiento anual antes de que venza: la vigencia es lo primero que se revisa.'
+      } else if (faltan.length <= 3) {
+        tag = 'Casi'
+        mod = 'res--warn'
+        msg =
+          'Estás cerca. Lo que falta suele resolverse con una visita de mantenimiento y ordenando la documentación del equipo.'
       } else {
-        tag = `Atención: te faltan ${faltan} de ${TOTAL}`
-        cls = 'res res--bad'
-        msg = 'Con estos huecos, una verificación te levantaría observaciones. Lo urgente es el estado y la vigencia del equipo; lo demás (bitácora, señalización, capacitación) se ordena después.'
+        tag = 'Atención'
+        mod = 'res--bad'
+        msg =
+          'Con estos huecos, una verificación te levantaría observaciones. Lo urgente es el estado y la vigencia del equipo; la bitácora, la señalización y la capacitación se ordenan después.'
       }
 
-      out.hidden = false
-      out.className = cls
+      out.className = `panel panel--res ${mod}`
       out.innerHTML = `
-        <p class="res__tag">${tag}</p>
-        <p><strong>${marcados} de ${TOTAL} puntos (${pct}%).</strong> ${msg}</p>
-        <p class="res__next">Siguiente paso: <a href="/servicios/inspeccion/">inspección y dictamen</a> o <a href="/servicios/mantenimiento/">mantenimiento y recarga</a>.</p>
+        <div class="res__head">
+          <p class="res__eyebrow">Resultado</p>
+          <p class="res__kpi"><strong>${marcados.length}/${TOTAL}</strong> <span>${tag}</span></p>
+          <p class="res__sub">${pct}% de los puntos observables. ${msg}</p>
+        </div>
+
+        <div class="res__body">
+          <div>
+            <h3 class="res__h">${faltan.length ? 'Lo que falta' : 'Siguiente revisión'}</h3>
+            ${
+              faltan.length
+                ? `<ul class="res__list">${faltan.map((k) => `<li>${ETIQUETAS[k]}</li>`).join('')}</ul>`
+                : '<p class="res__p">Anota en tu calendario la fecha del próximo mantenimiento anual y la de la prueba hidrostática del cilindro.</p>'
+            }
+          </div>
+          <ul class="res__rules">
+            <li><strong>Vigencia primero:</strong> sin mantenimiento anual y comprobante, lo demás no cuenta.</li>
+            <li><strong>Bitácora mensual:</strong> descarga el <a href="/plantillas/bitacora-revision-extintores/">formato</a> y llénalo cuando hagas el recorrido.</li>
+            <li><strong>Capacitación:</strong> la constancia es lo que la acredita ante una verificación.</li>
+          </ul>
+        </div>
+
+        <div class="res__cta">
+          <a class="btn btn--primary" id="res-wa" href="#" target="_blank" rel="noopener">Agendar revisión con este resultado</a>
+          <a class="btn btn--ghost" href="/servicios/mantenimiento/">Ver mantenimiento y recarga</a>
+        </div>
       `
+
+      const texto = [
+        'Autoevaluación de extintores (equiposcontraincendio.com)',
+        `Resultado: ${marcados.length} de ${TOTAL} puntos (${pct}%)`,
+        ...(faltan.length ? ['Puntos que faltan:', ...faltan.map((k) => `- ${ETIQUETAS[k]}`)] : []),
+        'Quiero agendar una revisión.',
+      ].join('\n')
+
+      const wa = out.querySelector<HTMLAnchorElement>('#res-wa')
+      if (wa) wa.href = waBase + encodeURIComponent(texto)
+
       out.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
     })
 
     form.addEventListener('reset', () => {
-      out.hidden = true
-      out.innerHTML = ''
+      out.className = 'panel panel--res res--empty'
+      out.innerHTML = PLACEHOLDER
     })
   }
 </script>
 
 <style>
-  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
-  .container--prose { max-width: var(--container-prose, 72ch); }
-  .section { padding: var(--sp-8) 0; }
-  @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
-  .section--surface { background: var(--c-surface); }
-  .tool__form { border: 1px solid var(--c-border); border-radius: var(--radius-lg, 12px); padding: var(--sp-6); background: var(--c-white); }
-  .chk { border: 0; margin: 0; padding: 0; }
-  .chk legend { padding: 0; margin-bottom: var(--sp-3); font-size: var(--text-sm); color: var(--c-ink-2); }
-  .chk__item { display: grid; grid-template-columns: auto 1fr; gap: var(--sp-3); align-items: start; padding: var(--sp-3) 0; border-bottom: 1px solid var(--c-border); color: var(--c-ink); }
-  .chk__item:last-of-type { border-bottom: 0; }
-  .chk__item input { margin-top: .2rem; width: 1.15rem; height: 1.15rem; }
-  .chk__item input:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
-  .tool__actions { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-top: var(--sp-5); }
-  /* Móvil: CTA a todo el ancho, como el resto del sitio (mobile.css). */
-  @media (max-width: 640px) { .tool__actions .btn { width: 100%; } }
-  .tool__note { margin-top: var(--sp-5); font-size: var(--text-sm); color: var(--c-ink-2); max-width: 70ch; }
+  /* .container / .section / .btn vienen de tokens.css (piso común del sitio). */
+  .tool { display: grid; grid-template-columns: 1fr; gap: var(--sp-6); }
+  .tool__main { display: grid; gap: var(--sp-5); min-width: 0; }
+  @media (min-width: 1024px) {
+    .tool { grid-template-columns: minmax(0, 1fr) 21rem; gap: var(--sp-7); align-items: start; }
+    .tool__main { gap: var(--sp-6); }
+    .tool > :global(.tsb) { position: sticky; top: calc(var(--header-height, 72px) + var(--sp-4)); max-height: calc(100vh - var(--header-height, 72px) - var(--sp-6)); overflow-y: auto; }
+  }
 
-  /* El atributo hidden debe ganarle al display:block, o la caja de
-     resultado se ve vacía antes de calcular nada. */
-  .res[hidden] { display: none; }
-  .res { display: block; margin-top: var(--sp-6); padding: var(--sp-6); border-radius: var(--radius-lg, 12px); border: 1px solid var(--c-border); border-left-width: 4px; background: var(--c-white); }
-  .res--ok { border-left-color: #2e7d32; }
-  .res--warn { border-left-color: #b45309; }
-  .res--bad { border-left-color: var(--c-primary); }
-  .res :global(.res__tag) { font-family: var(--font-heading); font-size: var(--text-lg); margin: 0 0 var(--sp-3); }
-  .res :global(p) { margin: 0 0 var(--sp-3); }
-  .res :global(.res__next) { margin: 0; font-size: var(--text-sm); }
+  .panel { padding: var(--sp-6); border: 1px solid var(--c-border); border-radius: var(--radius-lg, 12px); background: var(--c-white); }
+  @media (min-width: 768px) { .panel { padding: var(--sp-7); } }
+  .panel__note { margin: var(--sp-4) 0 0; font-size: var(--text-sm); color: var(--c-ink-2); }
+  .panel__note a { color: var(--c-primary); }
+
+  .form { display: grid; gap: var(--sp-5); margin-top: var(--sp-5); }
+  .chk { list-style: none; margin: 0; padding: 0; display: grid; }
+  .chk__item { border-bottom: 1px solid var(--c-border); }
+  .chk__item:last-child { border-bottom: 0; }
+  .chk__item label { display: grid; grid-template-columns: auto auto 1fr; align-items: start; gap: var(--sp-3); padding: var(--sp-3) 0; cursor: pointer; }
+  .chk__item input { margin-top: .15rem; width: 1.15rem; height: 1.15rem; accent-color: var(--c-primary); }
+  .chk__n { display: inline-flex; align-items: center; justify-content: center; width: 1.5rem; height: 1.5rem; flex: none; border-radius: 999px; background: var(--c-surface); color: var(--c-muted); font-size: var(--text-xs); font-weight: var(--weight-semibold); }
+  .chk__item input:checked ~ .chk__n { background: var(--c-primary); color: #fff; }
+  .chk__txt { font-size: var(--text-sm); color: var(--c-ink); line-height: 1.4; }
+
+  .form__actions { display: flex; flex-wrap: wrap; gap: var(--sp-3); }
+  @media (max-width: 640px) { .form__actions .btn { width: 100%; } }
+
+  /* ── Resultado ───────────────────────────────────────────────────────────── */
+  .panel--res { border-left: 4px solid var(--c-primary); }
+  .panel--res.res--empty { border-left-color: var(--c-border); background: var(--c-surface); }
+  .panel--res.res--ok { border-left-color: #2e7d32; }
+  .panel--res.res--warn { border-left-color: #b45309; }
+  .panel--res :global(.res__placeholder) { margin: 0; font-size: var(--text-sm); color: var(--c-muted); }
+  .panel--res :global(.res__head) { padding-bottom: var(--sp-4); border-bottom: 1px solid var(--c-border); }
+  .panel--res :global(.res__eyebrow) { margin: 0; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .08em; color: var(--c-muted); }
+  .panel--res :global(.res__kpi) { margin: var(--sp-2) 0; font-family: var(--font-heading); line-height: 1.05; }
+  .panel--res :global(.res__kpi strong) { font-size: 2.5rem; color: var(--c-primary); }
+  .panel--res.res--ok :global(.res__kpi strong) { color: #2e7d32; }
+  .panel--res.res--warn :global(.res__kpi strong) { color: #b45309; }
+  .panel--res :global(.res__kpi span) { font-size: var(--text-lg); color: var(--c-ink); }
+  .panel--res :global(.res__sub) { margin: 0; font-size: var(--text-sm); color: var(--c-ink-2); }
+  .panel--res :global(.res__body) { display: grid; gap: var(--sp-5); padding: var(--sp-5) 0; }
+  @media (min-width: 768px) { .panel--res :global(.res__body) { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: var(--sp-6); } }
+  .panel--res :global(.res__h) { margin: 0 0 var(--sp-3); font-family: var(--font-heading); font-size: var(--text-base); color: var(--c-ink); }
+  .panel--res :global(.res__list) { margin: 0; padding-left: 1.1rem; display: grid; gap: var(--sp-2); font-size: var(--text-sm); color: var(--c-ink-2); }
+  .panel--res :global(.res__p) { margin: 0; font-size: var(--text-sm); color: var(--c-ink-2); }
+  .panel--res :global(.res__rules) { margin: 0; padding: var(--sp-4); border-radius: var(--radius-md, 8px); background: var(--c-surface); list-style: none; display: grid; gap: var(--sp-3); font-size: var(--text-xs); color: var(--c-ink-2); }
+  .panel--res :global(.res__rules a) { color: var(--c-primary); }
+  .panel--res :global(.res__cta) { display: flex; flex-wrap: wrap; gap: var(--sp-3); padding-top: var(--sp-4); border-top: 1px solid var(--c-border); }
+  @media (max-width: 640px) { .panel--res :global(.res__cta .btn) { width: 100%; } }
+
+  .senales { margin: var(--sp-5) 0 0; padding-left: 1.2rem; display: grid; gap: var(--sp-3); font-size: var(--text-sm); color: var(--c-ink-2); }
+  .senales strong { color: var(--c-ink); }
+  .crit { list-style: none; margin: var(--sp-5) 0 0; padding: 0; display: grid; gap: var(--sp-3); font-size: var(--text-sm); color: var(--c-ink-2); }
+  .crit li { padding-left: var(--sp-4); border-left: 2px solid var(--c-primary); }
+  .crit strong { color: var(--c-ink); }
 </style>

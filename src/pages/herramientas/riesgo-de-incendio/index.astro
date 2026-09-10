@@ -2,9 +2,10 @@
 // ============================================================================
 // /herramientas/riesgo-de-incendio/ — Clasificador de riesgo de incendio.
 // ----------------------------------------------------------------------------
-// Resuelve en una pantalla la pregunta de entrada de cualquier empresa: ¿mi
-// centro de trabajo es de riesgo ORDINARIO o ALTO? De esa respuesta cuelgan
-// casi todas las obligaciones de la NOM-002-STPS-2010.
+// MISMA ESTRUCTURA que las otras dos herramientas (2026-09-10): una sola
+// retícula —columna principal + barra lateral pegajosa— y, dentro, PANELES del
+// mismo ancho y mismo encabezado. La barra lateral (ToolSidebar) reparte
+// enlaces hacia herramientas, formatos, servicios, catálogo, trámites y blog.
 //
 // CRITERIO: Tabla 1 de la NOM-002-STPS-2010 (valores transcritos del texto
 // oficial, verificados el 2026-09-09 contra la copia publicada por la UAEM del
@@ -12,16 +13,17 @@
 // trabajo es de riesgo alto.
 //
 // La herramienta ORIENTA, no dictamina: la clasificación formal se documenta y
-// la firma quien está facultado. Eso se dice en la página, no sólo aquí.
-//
-// Sin JS la página sigue sirviendo: la tabla de criterios está en el HTML.
+// la firma quien está facultado. Sin JS la página sigue sirviendo: la tabla de
+// criterios está en el HTML.
 // ============================================================================
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
+import SectionMenu from '@components/SectionMenu.astro'
+import SectionHeading from '@components/SectionHeading.astro'
+import ToolSidebar from '@components/ToolSidebar.astro'
 import FAQAccordion from '@components/FAQAccordion.astro'
 import CTABanner from '@components/CTABanner.astro'
-import RelatedLinks from '@components/RelatedLinks.astro'
-import { waUrl } from '@config/site'
+import { waUrl, WA_MESSAGES, CONTACT, sectionMenuItems } from '@config/site'
 
 const faqs = [
   {
@@ -48,6 +50,24 @@ const faqs = [
 
 const schemaData = { faqs }
 const waHref = waUrl('Hola, usé la herramienta de riesgo de incendio y quiero que revisen mi caso.')
+const waBase = `https://wa.me/${CONTACT.whatsapp}?text=`
+
+const menuSecciones = sectionMenuItems()
+const menuCta = {
+  label: 'Pedir diagnóstico',
+  href: waUrl(WA_MESSAGES.default),
+  sub: 'CDMX y Estado de México',
+  external: true,
+}
+
+// Campos de la Tabla 1. El orden es el de la norma.
+const CAMPOS = [
+  { name: 'superficie', label: 'Superficie construida', unidad: 'm²', umbral: '3,000', ph: 'Ej. 850' },
+  { name: 'gases', label: 'Gases inflamables en inventario', unidad: 'litros', umbral: '3,000', ph: '0' },
+  { name: 'liqInflamables', label: 'Líquidos inflamables', unidad: 'litros', umbral: '1,400', ph: '0' },
+  { name: 'liqCombustibles', label: 'Líquidos combustibles', unidad: 'litros', umbral: '2,000', ph: '0' },
+  { name: 'solidos', label: 'Sólidos combustibles', unidad: 'kg', umbral: '15,000', ph: '0' },
+]
 ---
 
 <PageLayout
@@ -60,7 +80,7 @@ const waHref = waUrl('Hola, usé la herramienta de riesgo de incendio y quiero q
 >
   <Hero
     badge="Herramienta gratuita · NOM-002-STPS-2010"
-    title="¿Tu centro de trabajo es de riesgo de incendio"
+    title="¿Tu centro de trabajo es de riesgo"
     accent="ordinario o alto?"
     subtitle="De esta clasificación cuelgan casi todas tus obligaciones: cuántos extintores necesitas, si debes integrar brigada y qué te va a pedir el verificador."
     descRight={[
@@ -73,116 +93,119 @@ const waHref = waUrl('Hola, usé la herramienta de riesgo de incendio y quiero q
     ]}
   />
 
-  <section class="section">
-    <div class="container">
-      <form class="tool__form" id="riesgo-form" novalidate>
-        <div class="tool__grid">
-          <label class="fld">
-            <span>Superficie construida (m²)</span>
-            <input type="number" name="superficie" min="0" step="any" inputmode="decimal" placeholder="Ej. 850" />
-          </label>
-          <label class="fld">
-            <span>Gases inflamables en inventario (litros)</span>
-            <input type="number" name="gases" min="0" step="any" inputmode="decimal" placeholder="0" />
-          </label>
-          <label class="fld">
-            <span>Líquidos inflamables (litros)</span>
-            <input type="number" name="liqInflamables" min="0" step="any" inputmode="decimal" placeholder="0" />
-          </label>
-          <label class="fld">
-            <span>Líquidos combustibles (litros)</span>
-            <input type="number" name="liqCombustibles" min="0" step="any" inputmode="decimal" placeholder="0" />
-          </label>
-          <label class="fld">
-            <span>Sólidos combustibles (kg)</span>
-            <input type="number" name="solidos" min="0" step="any" inputmode="decimal" placeholder="0" />
-          </label>
-          <label class="fld fld--check">
-            <input type="checkbox" name="pirofóricos" id="piro" />
-            <span>Manejamos materiales pirofóricos o explosivos (en cualquier cantidad)</span>
-          </label>
-        </div>
-
-        <div class="tool__actions">
-          <button type="submit" class="btn btn--primary">Clasificar mi centro de trabajo</button>
-          <button type="reset" class="btn btn--ghost">Limpiar</button>
-        </div>
-      </form>
-
-      <output class="res" id="riesgo-res" hidden></output>
-
-      <p class="tool__note">
-        <strong>Esta herramienta orienta, no dictamina.</strong> La NOM-002-STPS-2010 pide que la
-        clasificación quede documentada en el centro de trabajo; el estudio formal lo elabora y lo
-        firma quien está facultado. Si quieres que lo revisemos contigo, escríbenos.
-      </p>
-    </div>
-  </section>
+  <SectionMenu items={menuSecciones} cta={menuCta} />
 
   <section class="section section--surface">
-    <div class="container container--prose">
-      <h2>De dónde sale el criterio</h2>
-      <p>
-        La Tabla 1 de la <strong>NOM-002-STPS-2010</strong> clasifica el riesgo de incendio del centro
-        de trabajo por seis conceptos. <strong>Basta con que uno solo alcance su umbral</strong> para
-        que todo el centro de trabajo sea de riesgo alto.
-      </p>
+    <div class="container">
+      <div class="tool">
+        <div class="tool__main">
+          <article class="panel">
+            <SectionHeading
+              layout="simple"
+              align="left"
+              eyebrow="Clasificador"
+              title="Captura lo que hay"
+              titleAccent="en tu inmueble"
+              desc="Sólo lo que aplique. Los campos vacíos cuentan como cero."
+            />
 
-      <div class="tbl-wrap">
-        <table class="tbl">
-          <thead>
-            <tr><th>Concepto</th><th>Riesgo ordinario</th><th>Riesgo alto</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Superficie construida</td><td>Menor de 3,000 m²</td><td>Igual o mayor de 3,000 m²</td></tr>
-            <tr><td>Inventario de gases inflamables</td><td>Menor de 3,000 L</td><td>Igual o mayor de 3,000 L</td></tr>
-            <tr><td>Inventario de líquidos inflamables</td><td>Menor de 1,400 L</td><td>Igual o mayor de 1,400 L</td></tr>
-            <tr><td>Inventario de líquidos combustibles</td><td>Menor de 2,000 L</td><td>Igual o mayor de 2,000 L</td></tr>
-            <tr><td>Inventario de sólidos combustibles</td><td>Menor de 15,000 kg</td><td>Igual o mayor de 15,000 kg</td></tr>
-            <tr><td>Materiales pirofóricos y explosivos</td><td>No aplica</td><td>Cualquier cantidad</td></tr>
-          </tbody>
-        </table>
+            <form class="form" id="riesgo-form" novalidate data-wa={waBase}>
+              <div class="grid2">
+                {CAMPOS.map((c) => (
+                  <label class="fld">
+                    <span class="fld__l">{c.label} <em>({c.unidad})</em></span>
+                    <input type="number" name={c.name} min="0" step="any" inputmode="decimal" placeholder={c.ph} />
+                    <span class="fld__h">Umbral de riesgo alto: {c.umbral} {c.unidad}</span>
+                  </label>
+                ))}
+                <label class="fld fld--check">
+                  <input type="checkbox" name="piro" />
+                  <span class="fld__l">Manejamos materiales pirofóricos o explosivos<span class="fld__h">Cualquier cantidad clasifica como riesgo alto</span></span>
+                </label>
+              </div>
+
+              <div class="form__actions">
+                <button type="submit" class="btn btn--primary">Clasificar mi centro de trabajo</button>
+                <button type="reset" class="btn btn--ghost">Limpiar</button>
+              </div>
+            </form>
+          </article>
+
+          <article class="panel panel--res res--empty" id="riesgo-res" aria-live="polite">
+            <p class="res__placeholder">
+              Tu resultado aparece aquí: el grado de riesgo, qué concepto lo determinó y qué
+              obligaciones cambian, listo para copiar o mandar por WhatsApp.
+            </p>
+          </article>
+
+          <article class="panel">
+            <SectionHeading
+              layout="simple"
+              align="left"
+              eyebrow="El criterio"
+              title="La Tabla 1 de la"
+              titleAccent="NOM-002-STPS-2010"
+              desc="Seis conceptos. Basta con que uno alcance su umbral."
+            />
+            <div class="tbl-wrap">
+              <table class="tbl">
+                <thead>
+                  <tr><th scope="col">Concepto</th><th scope="col">Riesgo ordinario</th><th scope="col">Riesgo alto</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Superficie construida</td><td>Menor de 3,000 m²</td><td>Igual o mayor de 3,000 m²</td></tr>
+                  <tr><td>Inventario de gases inflamables</td><td>Menor de 3,000 L</td><td>Igual o mayor de 3,000 L</td></tr>
+                  <tr><td>Inventario de líquidos inflamables</td><td>Menor de 1,400 L</td><td>Igual o mayor de 1,400 L</td></tr>
+                  <tr><td>Inventario de líquidos combustibles</td><td>Menor de 2,000 L</td><td>Igual o mayor de 2,000 L</td></tr>
+                  <tr><td>Inventario de sólidos combustibles</td><td>Menor de 15,000 kg</td><td>Igual o mayor de 15,000 kg</td></tr>
+                  <tr><td>Materiales pirofóricos y explosivos</td><td>No aplica</td><td>Cualquier cantidad</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="panel">
+            <SectionHeading
+              layout="simple"
+              align="left"
+              eyebrow="Consecuencias"
+              title="Qué cambia según"
+              titleAccent="el resultado"
+              desc="La clasificación no es un trámite: define lo que te van a exigir."
+            />
+            <ul class="crit" role="list">
+              <li>
+                <strong>Extintores:</strong> uno por cada 300 m² o fracción en riesgo ordinario; uno
+                por cada 200 m² en riesgo alto. Calcula el tuyo en la
+                <a href="/herramientas/cuantos-extintores-necesito/">calculadora de extintores</a>.
+              </li>
+              <li><strong>Brigada contra incendio:</strong> el riesgo alto suma requisitos de integración y capacitación.</li>
+              <li><strong>Simulacros:</strong> la periodicidad y el alcance dependen del grado de riesgo.</li>
+              <li><strong>Documentación:</strong> la clasificación es la base del expediente que revisan la STPS y Protección Civil.</li>
+            </ul>
+            <p class="panel__note">
+              Si quieres el panorama completo, lee la guía de
+              <a href="/blog/nom-002-stps-2010/">qué exige la NOM-002-STPS-2010 a tu centro de trabajo</a>,
+              y si prefieres que hagamos el levantamiento, mira el
+              <a href="/servicios/diagnostico-de-riesgo/">diagnóstico de riesgo</a>.
+            </p>
+          </article>
+
+          <article class="panel">
+            <FAQAccordion items={faqs} title="Preguntas frecuentes" openFirst bare />
+          </article>
+        </div>
+
+        <ToolSidebar
+          current="riesgo-de-incendio"
+          waMessage="Hola, clasifiqué mi riesgo de incendio en su herramienta y quiero un diagnóstico del inmueble."
+          posts={[
+            'nom-002-stps-2010',
+            'equipamiento-contra-incendio-empresa',
+            'programa-mantenimiento-contra-incendio',
+          ]}
+        />
       </div>
-
-      <h2>Qué cambia según el resultado</h2>
-      <ul>
-        <li>
-          <strong>Extintores:</strong> al menos uno por cada 300 m² de superficie o fracción en riesgo
-          ordinario; al menos uno por cada 200 m² o fracción en riesgo alto. Calcula el tuyo en la
-          herramienta de <a href="/herramientas/cuantos-extintores-necesito/">cuántos extintores necesitas</a>.
-        </li>
-        <li><strong>Brigada contra incendio:</strong> el riesgo alto suma requisitos de integración y capacitación de brigada.</li>
-        <li><strong>Simulacros:</strong> la periodicidad y el alcance dependen del grado de riesgo.</li>
-        <li><strong>Documentación:</strong> la clasificación es la base del expediente que revisa la STPS y Protección Civil.</li>
-      </ul>
-
-      <p>
-        Si quieres el panorama completo de la norma, lee la guía de
-        <a href="/blog/nom-002-stps-2010/">qué exige la NOM-002-STPS-2010 a tu centro de trabajo</a>, y si
-        prefieres que hagamos el levantamiento, mira el
-        <a href="/servicios/diagnostico-de-riesgo/">diagnóstico de riesgo</a>.
-      </p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container container--prose">
-      <FAQAccordion items={faqs} title="Preguntas frecuentes" openFirst bare />
-    </div>
-  </section>
-
-  <section class="section section--surface">
-    <div class="container">
-      <RelatedLinks
-        title="Sigue por aquí"
-        links={[
-          { label: 'Cuántos extintores necesito', href: '/herramientas/cuantos-extintores-necesito/', desc: 'El mínimo por superficie y el agente que corresponde a cada área.' },
-          { label: 'Verifica tu extintor', href: '/herramientas/verifica-tu-extintor/', desc: 'Doce puntos para saber si el servicio que te dieron es real.' },
-          { label: 'Diagnóstico de riesgo', href: '/servicios/diagnostico-de-riesgo/', desc: 'Hacemos el levantamiento y documentamos la clasificación.' },
-          { label: 'Guía de la NOM-002-STPS-2010', href: '/blog/nom-002-stps-2010/', desc: 'Qué obliga, a quién aplica y cómo se acredita.' },
-        ]}
-        limit={4}
-      />
     </div>
   </section>
 
@@ -198,7 +221,10 @@ const waHref = waUrl('Hola, usé la herramienta de riesgo de incendio y quiero q
 <script>
   const form = document.getElementById('riesgo-form') as HTMLFormElement | null
   const out = document.getElementById('riesgo-res') as HTMLElement | null
+
   if (form && out) {
+    const waBase = form.dataset.wa ?? ''
+
     // Umbrales de la Tabla 1 de la NOM-002-STPS-2010.
     const LIMITES = [
       { campo: 'superficie', label: 'Superficie construida', limite: 3000, unidad: 'm²' },
@@ -207,16 +233,24 @@ const waHref = waUrl('Hola, usé la herramienta de riesgo de incendio y quiero q
       { campo: 'liqCombustibles', label: 'Líquidos combustibles', limite: 2000, unidad: 'L' },
       { campo: 'solidos', label: 'Sólidos combustibles', limite: 15000, unidad: 'kg' },
     ]
+
     const num = (v: FormDataEntryValue | null) => {
       const n = parseFloat(String(v ?? '').replace(/,/g, ''))
       return Number.isFinite(n) && n > 0 ? n : 0
     }
     const fmt = (n: number) => n.toLocaleString('es-MX')
+    const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+
+    const PLACEHOLDER =
+      '<p class="res__placeholder">Tu resultado aparece aquí: el grado de riesgo, qué concepto lo determinó y qué obligaciones cambian, listo para copiar o mandar por WhatsApp.</p>'
+
+    let ultimoTexto = ''
 
     form.addEventListener('submit', (e) => {
       e.preventDefault()
       const data = new FormData(form)
-      const piro = data.get('pirofóricos') !== null
+      const piro = data.get('piro') !== null
+
       const disparadores = LIMITES.filter((l) => num(data.get(l.campo)) >= l.limite).map(
         (l) => `${l.label}: ${fmt(num(data.get(l.campo)))} ${l.unidad} (umbral ${fmt(l.limite)} ${l.unidad})`,
       )
@@ -227,70 +261,126 @@ const waHref = waUrl('Hola, usé la herramienta de riesgo de incendio y quiero q
       const porArea = alto ? 200 : 300
       const minExt = superficie > 0 ? Math.ceil(superficie / porArea) : 0
 
-      out.hidden = false
-      out.className = alto ? 'res res--alto' : 'res res--ordinario'
+      out.className = alto ? 'panel panel--res res--alto' : 'panel panel--res res--ordinario'
       out.innerHTML = `
-        <p class="res__tag">${alto ? 'Riesgo de incendio ALTO' : 'Riesgo de incendio ORDINARIO'}</p>
-        ${
-          alto
-            ? `<p>Al menos un concepto alcanza su umbral, y con uno basta:</p><ul>${disparadores
-                .map((d) => `<li>${d}</li>`)
-                .join('')}</ul>`
-            : `<p>Ninguno de los seis conceptos de la Tabla 1 alcanza su umbral con los datos capturados.</p>`
-        }
-        ${
-          minExt > 0
-            ? `<p><strong>Mínimo de extintores:</strong> ${minExt} (uno por cada ${porArea} m² o fracción, sobre ${fmt(
-                superficie,
-              )} m²). Es un mínimo normativo: la distribución real depende del recorrido y de las clases de fuego de cada área.</p>`
-            : `<p>Captura la superficie construida para estimar también el mínimo de extintores.</p>`
-        }
-        <p class="res__next">Siguiente paso: <a href="/herramientas/cuantos-extintores-necesito/">calcula el equipo por área</a> o pide el <a href="/servicios/diagnostico-de-riesgo/">diagnóstico de riesgo</a>.</p>
+        <div class="res__head">
+          <p class="res__eyebrow">Resultado</p>
+          <p class="res__kpi"><strong>${alto ? 'Alto' : 'Ordinario'}</strong> <span>riesgo de incendio</span></p>
+          <p class="res__sub">${
+            alto
+              ? 'Al menos un concepto de la Tabla 1 alcanza su umbral, y con uno basta.'
+              : 'Ninguno de los seis conceptos de la Tabla 1 alcanza su umbral con los datos capturados.'
+          }</p>
+        </div>
+
+        <div class="res__body">
+          <div>
+            <h3 class="res__h">${alto ? 'Qué lo determinó' : 'Cómo se leyó'}</h3>
+            ${
+              alto
+                ? `<ul class="res__list">${disparadores.map((d) => `<li>${esc(d)}</li>`).join('')}</ul>`
+                : '<p class="res__p">Todos los conceptos capturados quedaron por debajo de su umbral. Si cambia tu inventario o creces en superficie, vuelve a clasificar.</p>'
+            }
+          </div>
+          <ul class="res__rules">
+            ${
+              minExt > 0
+                ? `<li><strong>Mínimo de extintores:</strong> ${minExt} (uno por cada ${porArea} m² o fracción sobre ${fmt(superficie)} m²).</li>`
+                : '<li>Captura la superficie construida para estimar también el mínimo de extintores.</li>'
+            }
+            <li><strong>Brigada y simulacros:</strong> requisitos ${alto ? 'reforzados por el riesgo alto' : 'según el grado de riesgo'}.</li>
+            <li>La clasificación debe quedar <strong>documentada</strong> en el centro de trabajo.</li>
+          </ul>
+        </div>
+
+        <div class="res__cta">
+          <a class="btn btn--primary" id="res-wa" href="#" target="_blank" rel="noopener">Pedir diagnóstico con este resultado</a>
+          <a class="btn btn--ghost" href="/herramientas/cuantos-extintores-necesito/">Calcular mis extintores</a>
+        </div>
       `
+
+      ultimoTexto = [
+        'Clasificación de riesgo de incendio (equiposcontraincendio.com)',
+        `Resultado: riesgo ${alto ? 'ALTO' : 'ORDINARIO'}`,
+        ...(alto ? disparadores.map((d) => `- ${d}`) : []),
+        ...(minExt > 0 ? [`Mínimo de extintores: ${minExt}`] : []),
+        'Quiero un diagnóstico de mi inmueble.',
+      ].join('\n')
+
+      const wa = out.querySelector<HTMLAnchorElement>('#res-wa')
+      if (wa) wa.href = waBase + encodeURIComponent(ultimoTexto)
+
       out.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
     })
 
     form.addEventListener('reset', () => {
-      out.hidden = true
-      out.innerHTML = ''
+      out.className = 'panel panel--res res--empty'
+      out.innerHTML = PLACEHOLDER
     })
   }
 </script>
 
 <style>
-  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
-  .container--prose { max-width: var(--container-prose, 72ch); }
-  .section { padding: var(--sp-8) 0; }
-  @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
-  .section--surface { background: var(--c-surface); }
-  .tool__form { border: 1px solid var(--c-border); border-radius: var(--radius-lg, 12px); padding: var(--sp-6); background: var(--c-white); }
-  .tool__grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-4); }
-  @media (min-width: 700px) { .tool__grid { grid-template-columns: repeat(2, 1fr); } }
-  .fld { display: grid; gap: var(--sp-2); font-size: var(--text-sm); color: var(--c-ink-2); }
-  /* 16px reales en el input: por debajo de eso iOS hace zoom al enfocar. */
+  /* .container / .section / .btn vienen de tokens.css (piso común del sitio). */
+  .tool { display: grid; grid-template-columns: 1fr; gap: var(--sp-6); }
+  .tool__main { display: grid; gap: var(--sp-5); min-width: 0; }
+  @media (min-width: 1024px) {
+    .tool { grid-template-columns: minmax(0, 1fr) 21rem; gap: var(--sp-7); align-items: start; }
+    .tool__main { gap: var(--sp-6); }
+    .tool > :global(.tsb) { position: sticky; top: calc(var(--header-height, 72px) + var(--sp-4)); max-height: calc(100vh - var(--header-height, 72px) - var(--sp-6)); overflow-y: auto; }
+  }
+
+  .panel { padding: var(--sp-6); border: 1px solid var(--c-border); border-radius: var(--radius-lg, 12px); background: var(--c-white); }
+  @media (min-width: 768px) { .panel { padding: var(--sp-7); } }
+  .panel__note { margin: var(--sp-4) 0 0; font-size: var(--text-sm); color: var(--c-ink-2); }
+  .panel__note a { color: var(--c-primary); }
+
+  .form { display: grid; gap: var(--sp-6); margin-top: var(--sp-5); }
+  .grid2 { display: grid; grid-template-columns: 1fr; gap: var(--sp-4); }
+  @media (min-width: 640px) { .grid2 { grid-template-columns: repeat(2, 1fr); } }
+
+  .fld { display: grid; gap: var(--sp-2); }
+  .fld__l { font-size: var(--text-sm); font-weight: var(--weight-semibold); color: var(--c-ink); }
+  .fld__l em { font-style: normal; font-weight: 400; color: var(--c-muted); }
+  .fld__h { display: block; font-size: var(--text-xs); font-weight: 400; color: var(--c-muted); }
+  /* 16px reales: por debajo de eso iOS hace zoom al enfocar el campo. */
   .fld input[type="number"] { font-size: 1rem; padding: var(--sp-3); border: 1px solid var(--c-border); border-radius: var(--radius-md, 8px); background: var(--c-white); color: var(--c-ink); width: 100%; }
-  .fld input:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 1px; }
-  .fld--check { grid-template-columns: auto 1fr; align-items: start; gap: var(--sp-3); }
-  @media (min-width: 700px) { .fld--check { grid-column: 1 / -1; } }
-  .fld--check input { margin-top: .2rem; width: 1.15rem; height: 1.15rem; }
-  .tool__actions { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-top: var(--sp-5); }
-  /* Móvil: CTA a todo el ancho, como el resto del sitio (mobile.css). */
-  @media (max-width: 640px) { .tool__actions .btn { width: 100%; } }
-  .tool__note { margin-top: var(--sp-5); font-size: var(--text-sm); color: var(--c-ink-2); max-width: 70ch; }
+  .fld input:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 1px; }
+  .fld--check { grid-template-columns: auto 1fr; align-items: start; gap: var(--sp-3); padding-top: var(--sp-2); }
+  @media (min-width: 640px) { .fld--check { grid-column: 1 / -1; } }
+  .fld--check input { margin-top: .2rem; width: 1.15rem; height: 1.15rem; accent-color: var(--c-primary); }
 
-  /* El atributo hidden debe ganarle al display:block, o la caja de
-     resultado se ve vacía antes de calcular nada. */
-  .res[hidden] { display: none; }
-  .res { display: block; margin-top: var(--sp-6); padding: var(--sp-6); border-radius: var(--radius-lg, 12px); border: 1px solid var(--c-border); border-left-width: 4px; background: var(--c-white); }
-  .res--alto { border-left-color: var(--c-primary); }
-  .res--ordinario { border-left-color: #2e7d32; }
-  .res :global(.res__tag) { font-family: var(--font-heading); font-size: var(--text-lg); margin: 0 0 var(--sp-3); }
-  .res :global(ul) { margin: 0 0 var(--sp-3); padding-left: 1.2rem; }
-  .res :global(p) { margin: 0 0 var(--sp-3); }
-  .res :global(.res__next) { margin: 0; font-size: var(--text-sm); }
+  .form__actions { display: flex; flex-wrap: wrap; gap: var(--sp-3); }
+  @media (max-width: 640px) { .form__actions .btn { width: 100%; } }
 
-  .tbl-wrap { overflow-x: auto; margin: var(--sp-5) 0; }
+  /* ── Resultado ───────────────────────────────────────────────────────────── */
+  .panel--res { border-left: 4px solid var(--c-primary); }
+  .panel--res.res--empty { border-left-color: var(--c-border); background: var(--c-surface); }
+  .panel--res.res--ordinario { border-left-color: #2e7d32; }
+  .panel--res :global(.res__placeholder) { margin: 0; font-size: var(--text-sm); color: var(--c-muted); }
+  .panel--res :global(.res__head) { padding-bottom: var(--sp-4); border-bottom: 1px solid var(--c-border); }
+  .panel--res :global(.res__eyebrow) { margin: 0; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .08em; color: var(--c-muted); }
+  .panel--res :global(.res__kpi) { margin: var(--sp-2) 0; font-family: var(--font-heading); line-height: 1.05; }
+  .panel--res :global(.res__kpi strong) { font-size: 2.5rem; color: var(--c-primary); }
+  .panel--res.res--ordinario :global(.res__kpi strong) { color: #2e7d32; }
+  .panel--res :global(.res__kpi span) { font-size: var(--text-lg); color: var(--c-ink); }
+  .panel--res :global(.res__sub) { margin: 0; font-size: var(--text-sm); color: var(--c-ink-2); }
+  .panel--res :global(.res__body) { display: grid; gap: var(--sp-5); padding: var(--sp-5) 0; }
+  @media (min-width: 768px) { .panel--res :global(.res__body) { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: var(--sp-6); } }
+  .panel--res :global(.res__h) { margin: 0 0 var(--sp-3); font-family: var(--font-heading); font-size: var(--text-base); color: var(--c-ink); }
+  .panel--res :global(.res__list) { margin: 0; padding-left: 1.1rem; display: grid; gap: var(--sp-2); font-size: var(--text-sm); color: var(--c-ink-2); }
+  .panel--res :global(.res__p) { margin: 0; font-size: var(--text-sm); color: var(--c-ink-2); }
+  .panel--res :global(.res__rules) { margin: 0; padding: var(--sp-4); border-radius: var(--radius-md, 8px); background: var(--c-surface); list-style: none; display: grid; gap: var(--sp-3); font-size: var(--text-xs); color: var(--c-ink-2); }
+  .panel--res :global(.res__cta) { display: flex; flex-wrap: wrap; gap: var(--sp-3); padding-top: var(--sp-4); border-top: 1px solid var(--c-border); }
+  @media (max-width: 640px) { .panel--res :global(.res__cta .btn) { width: 100%; } }
+
+  .crit { list-style: none; margin: var(--sp-5) 0 0; padding: 0; display: grid; gap: var(--sp-3); font-size: var(--text-sm); color: var(--c-ink-2); }
+  .crit li { padding-left: var(--sp-4); border-left: 2px solid var(--c-primary); }
+  .crit strong { color: var(--c-ink); }
+  .crit a { color: var(--c-primary); }
+
+  .tbl-wrap { overflow-x: auto; margin-top: var(--sp-5); }
   .tbl { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
   .tbl th, .tbl td { border: 1px solid var(--c-border); padding: var(--sp-3); text-align: left; }
-  .tbl th { background: var(--c-white); }
+  .tbl th { background: var(--c-surface); font-weight: var(--weight-semibold); color: var(--c-ink); }
 </style>
