@@ -17,8 +17,9 @@
 // quedar documentada; se revisa cuando cambian las condiciones); hoja de
 // umbrales NOM-002 (23 m A, 10 m K, 1.50 m, brigada obligatoria solo en
 // riesgo alto).
-// NO se afirma: que firmemos como tercero facultado, frecuencias de simulacro
-// por grado de riesgo, ni requisitos de detección o hidrantes por norma.
+// Simulacros (≥1/año ordinario, ≥2 alto, NOM-002 5.7): /blog/brigada-contra-incendios/.
+// NO se afirma: que firmemos como tercero facultado, ni requisitos de
+// detección o hidrantes por norma.
 // ============================================================================
 import type { ServiceL3Data, Tarjeta } from './l3-types';
 
@@ -216,6 +217,7 @@ export const diagnosticoL3: ServiceL3Data = {
     rows: [
       { nivel: 'Mínimo de extintores', ejemplos: '1 por cada 300 m² o fracción', minimo: '1 por cada 200 m² o fracción', complementos: 'Inventario con ubicación de cada equipo' },
       { nivel: 'Brigada contra incendio', ejemplos: 'No obligatoria por la NOM-002', minimo: 'Obligatoria', complementos: 'Integración de la brigada y constancias de capacitación' },
+      { nivel: 'Simulacros al año', ejemplos: 'Al menos uno', minimo: 'Al menos dos', complementos: 'Registro de cada simulacro (NOM-002, 5.7)' },
       { nivel: 'Distancia de recorrido', ejemplos: '23 m en clase A; 10 m en clase K', minimo: 'La misma', complementos: 'Plano con la ubicación de cada extintor' },
       { nivel: 'Altura del extintor', ejemplos: 'Máximo 1.50 m', minimo: 'La misma', complementos: 'Revisión en el recorrido' },
       { nivel: 'Revisión y mantenimiento', ejemplos: 'Revisión mensual y mantenimiento anual', minimo: 'Los mismos', complementos: 'Bitácora, etiqueta y collarín' },
