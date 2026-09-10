@@ -39,6 +39,13 @@ interface Props {
   surface?: boolean
   /** Imagen a la derecha (default) o a la izquierda */
   flip?: boolean
+  /** id del <section> → destino de las anclas del SHOWCASE (/productos/#slug). */
+  anchorId?: string
+  /** CTA secundario (contorno). Da salida a la otra intención del bloque:
+      donde el primario lleva al catálogo, el secundario cotiza, y al revés. */
+  ctaSecondaryLabel?: string
+  ctaSecondaryHref?: string
+  ctaSecondaryExternal?: boolean
 }
 
 const {
@@ -48,7 +55,7 @@ const {
   description,
   features,
   brands = [],
-  ctaLabel = 'Ver catálogo',
+  ctaLabel = 'Catálogo completo',
   ctaHref = '/productos/',
   ctaExternal = false,
   imgMain,
@@ -56,10 +63,14 @@ const {
   imgB,
   surface = false,
   flip = false,
+  anchorId,
+  ctaSecondaryLabel,
+  ctaSecondaryHref,
+  ctaSecondaryExternal = false,
 } = Astro.props
 ---
 
-<section class:list={['cf', surface && 'cf--surface', flip && 'cf--flip']}>
+<section id={anchorId} class:list={['cf', surface && 'cf--surface', flip && 'cf--flip']}>
   <div class="cf__inner">
 
     <!-- Columna izquierda: contenido -->
@@ -85,10 +96,8 @@ const {
                   <polyline points="20 6 9 17 4 12"/>
                 </svg>
               </span>
-              <span>
-                <strong class="cf__feature-label">{f.label}</strong>
-                {f.desc && <span class="cf__feature-desc"> — {f.desc}</span>}
-              </span>
+              <strong class="cf__feature-label">{f.label}</strong>
+              {f.desc && <span class="cf__feature-desc">{f.desc}</span>}
             </li>
           ))}
         </ul>
@@ -108,17 +117,32 @@ const {
         </div>
       )}
 
-      <a
-        href={ctaHref}
-        class="cf__cta"
-        target={ctaExternal ? '_blank' : undefined}
-        rel={ctaExternal ? 'noopener noreferrer' : undefined}
-      >
-        {ctaLabel}
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </a>
+      <div class="cf__actions">
+        <a
+          href={ctaHref}
+          class="cf__cta"
+          target={ctaExternal ? '_blank' : undefined}
+          rel={ctaExternal ? 'noopener noreferrer' : undefined}
+        >
+          {ctaLabel}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        {ctaSecondaryLabel && ctaSecondaryHref && (
+          <a
+            href={ctaSecondaryHref}
+            class="cf__cta cf__cta--ghost"
+            target={ctaSecondaryExternal ? '_blank' : undefined}
+            rel={ctaSecondaryExternal ? 'noopener noreferrer' : undefined}
+          >
+            {ctaSecondaryLabel}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        )}
+      </div>
     </div>
 
     <!-- Columna derecha: galería -->
@@ -227,25 +251,38 @@ const {
   max-width: 52ch;
 }
 
-/* Features / bullets */
+/* ── Features · REJILLA DE CELDAS (rediseño 2026-09-10) ──────────────────────
+   ANTES: lista vertical con `label — desc` en línea corrida. Cada bullet medía
+   1 o 2 líneas según el largo del texto, así que el bloque quedaba dentado y
+   sin ritmo. AHORA: cuatro celdas iguales en rejilla 2×2, cada una con
+   etiqueta en su propia línea y descripción de altura reservada (2 líneas).
+   El resultado es simétrico módulo a módulo, no solo dentro del bloque.
+   Contrato de contenido: label ≤ 32 caracteres, desc ≤ 78 caracteres (≈3 líneas). */
 .cf__features {
   list-style: none;
   margin: 0 0 var(--sp-5);
   padding: 0;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--sp-3);
 }
 .cf__feature {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--sp-3);
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: var(--sp-3);
+  row-gap: var(--sp-1);
+  align-content: start;
+  padding: var(--sp-4);
+  background: var(--c-white);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
   font-size: var(--text-sm);
-  color: var(--c-ink-2);
   line-height: var(--leading-normal);
 }
+.cf--surface .cf__feature { background: var(--c-surface); }
 .cf__feature-dot {
-  flex-shrink: 0;
+  grid-row: 1;
   width: 28px;
   height: 28px;
   display: flex;
@@ -254,14 +291,28 @@ const {
   background: rgba(198, 40, 40, .10);
   color: var(--c-primary);
   border-radius: var(--radius-sm);
-  margin-top: .05rem;
 }
 .cf__feature-label {
+  grid-column: 2;
+  align-self: center;
   color: var(--c-ink);
   font-weight: var(--weight-semibold);
+  /* Una sola línea: la elipsis protege la retícula de una etiqueta larga. */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .cf__feature-desc {
+  grid-column: 2;
+  /* Altura reservada de 3 líneas → todas las celdas miden igual. Con la celda
+     a ~230 px caben ~33 caracteres por línea, así que 3 líneas cubren de sobra
+     el tope de 78 caracteres del contrato y ninguna descripción se corta. */
+  min-height: calc(var(--text-sm) * var(--leading-normal) * 3);
   color: var(--c-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* Marcas */
@@ -284,6 +335,7 @@ const {
 .cf__brand {
   display: inline-flex;
   align-items: center;
+  min-height: 34px;
   gap: var(--sp-1);
   font-size: var(--text-sm);
   font-weight: var(--weight-semibold);
@@ -302,28 +354,48 @@ const {
   color: var(--c-muted);
 }
 
-/* CTA */
+/* ── CTA · fila de acciones ──────────────────────────────────────────────────
+   Dos botones del MISMO alto (48 px): el primario resuelve la intención
+   principal del bloque y el fantasma la otra (catálogo ↔ cotización). */
+.cf__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
 .cf__cta {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: var(--sp-2);
+  min-height: 48px;
   padding: .75rem 1.5rem;
   background: var(--c-primary);
   color: #fff;
   font-family: var(--font-heading);
   font-size: var(--text-base);
   font-weight: var(--weight-semibold);
+  border: 1.5px solid var(--c-primary);
   border-radius: var(--radius-md);
   text-decoration: none;
-  transition: background var(--transition), gap var(--transition);
+  transition: background var(--transition), color var(--transition);
 }
 .cf__cta:hover {
   background: var(--c-primary-dark);
-  gap: var(--sp-3);
+  border-color: var(--c-primary-dark);
 }
 .cf__cta:focus-visible {
   outline: 2px solid var(--c-primary);
   outline-offset: 3px;
+}
+.cf__cta--ghost {
+  background: transparent;
+  color: var(--c-primary);
+  border-color: var(--c-border);
+}
+.cf__cta--ghost:hover {
+  background: var(--c-primary);
+  color: #fff;
+  border-color: var(--c-primary);
 }
 
 /* ── Galería (col der) ── */
@@ -368,6 +440,12 @@ const {
     order: 0;
   }
   .cf__desc { max-width: none; }
+}
+
+@media (max-width: 560px) {
+  /* Una columna: dos celdas de 50 % no caben sin partir palabras. */
+  .cf__features { grid-template-columns: 1fr; }
+  .cf__actions { flex-direction: column; align-items: stretch; }
 }
 
 @media (prefers-reduced-motion: reduce) {
