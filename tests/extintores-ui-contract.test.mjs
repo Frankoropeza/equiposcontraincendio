@@ -34,6 +34,7 @@ const L3 = [
   { page: 'src/pages/servicios/mantenimiento/index.astro', data: 'src/data/mantenimiento.ts', list: 'mantTarjetas' },
   { page: 'src/pages/servicios/prueba-hidrostatica/index.astro', data: 'src/data/prueba-hidrostatica.ts', list: 'phTarjetas' },
   { page: 'src/pages/servicios/inspeccion/index.astro', data: 'src/data/inspeccion.ts', list: 'inspTarjetas' },
+  { page: 'src/pages/servicios/diagnostico-de-riesgo/index.astro', data: 'src/data/diagnostico-de-riesgo.ts', list: 'diagTarjetas' },
 ];
 
 test('las L3 no usan retículas de 3 ni de 2 columnas', () => {
