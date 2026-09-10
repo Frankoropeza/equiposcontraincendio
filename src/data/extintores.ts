@@ -1,0 +1,266 @@
+// ============================================================================
+// src/data/extintores.ts — Datos de la L3 /productos/extintores/.
+// ----------------------------------------------------------------------------
+// PRIMERA L3 DEL SITIO (2026-09-10). Jerarquía de productos:
+//   L2 /productos/  →  L3 /productos/extintores/  →  L4 /productos/<ficha>/
+// Las fichas se quedan en URL plana (/productos/extintor-pqs/, etc.): la
+// jerarquía la dan las migas y el BreadcrumbList, sin redirecciones.
+//
+// PATRÓN: el mismo esqueleto de las L2 (paridad de diseño), página .astro
+// fina y todo el contenido aquí:
+//   Hero → SectionMenu → TrustBar → vitrina de fichas → módulos
+//   CategoryFeature (uno por ficha) → RiskGuide → NormsTable → ProcessSteps
+//   → CompanyAbout → RelatedLinks → FAQ + Contacto
+//
+// ÁNGULO DE ESTA L3 — cada nivel responde una pregunta distinta:
+//   · /                  «¿con quién me equipo?»
+//   · /productos/        «¿qué equipo pide mi TIPO DE INMUEBLE y de qué capacidad?»
+//   · /productos/extintores/  «¿QUÉ AGENTE apaga mi fuego, dónde NO se usa
+//                              y qué le toca al extintor después de comprarlo?»
+//   · la ficha L4        «¿qué presentación exacta cotizo?»
+// Por eso la tabla de esta página es por CLASE DE FUEGO (la de /productos/ es
+// por tipo de inmueble) y el proceso es el CICLO DE VIDA del extintor (el de
+// /productos/ es el proceso de compra). No copiar copy entre niveles.
+//
+// Deslinde con el blog: el pilar informativo «tipos de extintores» vive en
+// /blog/como-elegir-extintor-clase-fuego/. Esta L3 es comercial (venta y
+// servicio); lo enlaza en RelatedLinks en lugar de competir con él.
+//
+// Normas de producto verificadas el 2026-09-10 en el catálogo de normas de la
+// Secretaría de Economía (platiica.economia.gob.mx): NOM-100, NOM-102 y
+// NOM-103-STPS-1994 figuran VIGENTES, confirmadas en la revisión sistemática
+// del 29-09-2022. La NOM-103 cubre agua con presión contenida INCLUIDOS los
+// aditivos espumantes (AFFF/FFFP), para fuegos clase A y B. La clase K no
+// tiene NOM de producto: se cita NFPA 10 como referencia técnica.
+// ============================================================================
+
+export type Feature = { label: string; desc: string };
+export type GalleryImage = { src: string; alt: string };
+export type RiskRow = { nivel: string; ejemplos: string; minimo: string; complementos: string };
+export type NormRow = { norma: string; alcance: string; aplica: string };
+export type Step = { num: string; title: string; desc: string };
+
+// ── Barra de confianza ───────────────────────────────────────────────────────
+export const extintoresPillars = [
+  { icon: 'check', title: 'Cuatro agentes', desc: 'PQS, CO₂, agua y agente K: se elige por lo que puede arder, no por costumbre.' },
+  { icon: 'doc', title: 'Ficha y etiqueta', desc: 'Cada equipo sale con su ficha técnica y la etiqueta de servicio para tu expediente.' },
+  { icon: 'clock', title: 'Servicio de por vida', desc: 'Mantenimiento anual y prueba hidrostática a 5 años con quien te lo vendió.' },
+  { icon: 'chat', title: 'Te decimos cuál no', desc: 'Si el agente que pides no sirve para tu riesgo, te lo decimos antes de cotizar.' },
+];
+
+// ── Vitrina: badge, texto y anchor de cada ficha L4 ──────────────────────────
+// blurb ≤ 90 caracteres (contrato de tarjeta: la caja reserva 3 líneas). No se
+// usa la `description` del frontmatter porque mide 180–230 caracteres y la
+// tarjeta la cortaba con elipsis — medido en el navegador el 2026-09-10.
+// ctaLabel = keyword limpia del destino (regla de anchor text, tope ~24 car.).
+export const extintoresFichas: Record<string, { badge: string; blurb: string; ctaLabel: string }> = {
+  'extintor-pqs': { badge: 'Clases A · B · C', blurb: 'Un solo agente para sólidos, líquidos inflamables y equipo eléctrico. De 1 a 50 kg.', ctaLabel: 'Extintores PQS ABC' },
+  'extintor-co2': { badge: 'Clases B · C', blurb: 'Sin residuo para tableros, sites y electrónica. Portátil y móvil sobre ruedas.', ctaLabel: 'Extintores de CO₂' },
+  'extintor-clase-k': { badge: 'Clase K · Cocina', blurb: 'Químico húmedo para aceites y grasas de cocción. Complementa el sistema de la campana.', ctaLabel: 'Extintores clase K' },
+  'extintor-agua': { badge: 'Clases A · B', blurb: 'Agua a presión, nebulizada y espuma AFFF para sólidos y líquidos inflamables.', ctaLabel: 'Extintores de agua' },
+};
+
+// ── Módulos por agente (CategoryFeature) ─────────────────────────────────────
+// Uno por ficha, en el orden de la colección. El CTA primario lleva a la
+// ficha L4 (anchor = keyword del destino); el secundario cotiza por WhatsApp.
+export const extintoresFeatures = [
+  {
+    id: 'extintor-pqs',
+    eyebrow: 'PQS ABC · Clases A, B y C · NOM-100-STPS',
+    title: 'Polvo químico seco,',
+    titleAccent: 'el multipropósito',
+    description:
+      'Es el extintor que más se instala porque cubre sólidos, líquidos inflamables y equipo eléctrico con un solo agente. Su límite es el residuo: el polvo es fino, se deposita en los equipos y obliga a limpiar a fondo después de usarlo. Donde lo que se protege es electrónica o una cocina, conviene otro agente.',
+    features: [
+      { label: 'Tres clases en un equipo', desc: 'Sólidos, líquidos inflamables y riesgo eléctrico con el mismo extintor.' },
+      { label: 'De 1 a 50 kg', desc: 'Del vehículo a la nave industrial: cinco portátiles y un móvil sobre ruedas.' },
+      { label: 'Deja residuo', desc: 'El polvo cubre el área y puede dañar electrónica; hay que limpiar después.' },
+      { label: 'No va en la cocina', desc: 'Contra aceite de cocción no basta: bajo la campana va agente K.' },
+    ],
+    ctaLabel: 'Extintores PQS ABC',
+    ctaHref: '/productos/extintor-pqs/',
+    ctaSecondaryLabel: 'Cotizar PQS',
+    ctaMsg: 'Hola, quiero cotizar extintores PQS ABC. ¿Me ayudan a elegir la capacidad?',
+    imgMain: { src: '/images/showcase/extintores-catalogo-profesional.avif', alt: 'Extintores PQS, CO₂ y agente K de distintas capacidades' },
+    imgA: { src: '/images/general/inventario-proveedor-equipo-contra-incendio.avif', alt: 'Inventario de equipo de protección y extintores en bodega' },
+    imgB: { src: '/images/servicios/instalacion-equipo-almacen.avif', alt: 'Instalación de extintor y gabinete en almacén' },
+  },
+  {
+    id: 'extintor-co2',
+    eyebrow: 'CO₂ · Clases B y C · NOM-102-STPS',
+    title: 'Dióxido de carbono,',
+    titleAccent: 'sin residuo',
+    description:
+      'El CO₂ desplaza el oxígeno alrededor de la flama y se disipa sin dejar rastro, por eso es el agente habitual junto a tableros, sites y equipo electrónico. No está clasificado para sólidos: sobre papel o madera apaga la flama, pero deja la brasa, que puede reavivarse cuando el gas se disipa.',
+    features: [
+      { label: 'Clases B y C', desc: 'Líquidos inflamables y equipo eléctrico energizado.' },
+      { label: 'No deja residuo', desc: 'El gas se disipa: no hay que limpiar tableros ni servidores.' },
+      { label: 'No es para sólidos', desc: 'Sobre papel o madera la brasa puede volver a encender.' },
+      { label: 'Cuidado en cuartos chicos', desc: 'En un recinto cerrado reduce el oxígeno disponible para quien lo usa.' },
+    ],
+    ctaLabel: 'Extintores de CO₂',
+    ctaHref: '/productos/extintor-co2/',
+    ctaSecondaryLabel: 'Cotizar CO₂',
+    ctaMsg: 'Hola, quiero cotizar extintores de CO₂ para riesgo eléctrico. ¿Qué capacidad me recomiendan?',
+    imgMain: { src: '/images/servicios/supresion-agente-limpio-data-center.avif', alt: 'Site de servidores, el tipo de área donde se prefiere un agente sin residuo' },
+    imgA: { src: '/images/servicios/inspeccion-tablero-alarma-gabinete-manguera.avif', alt: 'Revisión del tablero de alarma en una planta industrial' },
+    imgB: { src: '/images/servicios/prueba-electrica-panel-alarma-incendio.avif', alt: 'Señalética de emergencia, extintor y estación manual en muro de planta' },
+  },
+  {
+    id: 'extintor-clase-k',
+    eyebrow: 'Agente K · Clase K · Cocinas comerciales',
+    title: 'Químico húmedo',
+    titleAccent: 'para aceite caliente',
+    description:
+      'El aceite de cocción arde a temperaturas a las que el agua lo proyecta y el polvo no alcanza a enfriarlo. El químico húmedo reacciona con la grasa y forma una capa que la aísla del aire mientras baja su temperatura. Complementa al sistema fijo de la campana; no lo sustituye.',
+    features: [
+      { label: 'Hecho para freidoras', desc: 'Aceites y grasas de cocción, donde los demás agentes fallan.' },
+      { label: 'Descarga en niebla', desc: 'Aplica el agente sin salpicar el aceite encendido.' },
+      { label: 'A 10 m como máximo', desc: 'Distancia máxima de recorrido para la clase K en la NOM-002-STPS.' },
+      { label: 'No sustituye la campana', desc: 'El sistema fijo de supresión sigue siendo la primera línea.' },
+    ],
+    ctaLabel: 'Extintores clase K',
+    ctaHref: '/productos/extintor-clase-k/',
+    ctaSecondaryLabel: 'Cotizar clase K',
+    ctaMsg: 'Hola, quiero cotizar extintores clase K para una cocina comercial.',
+    imgMain: { src: '/images/servicios/supresion-cocina-comercial.avif', alt: 'Cocina comercial con campana y supresión clase K' },
+    imgA: { src: '/images/showcase/extintores-variedad-colores-catalogo.avif', alt: 'Extintores de PQS, CO₂, agua y agente K comparados por agente' },
+    imgB: { src: '/images/servicios/etiquetado-inspeccion-extintor.avif', alt: 'Colocación de etiqueta y collarín de servicio en el extintor' },
+  },
+  {
+    id: 'extintor-agua',
+    eyebrow: 'Agua y espuma AFFF · Clases A y B · NOM-103-STPS',
+    title: 'A base de agua,',
+    titleAccent: 'para lo que deja brasa',
+    description:
+      'El agua apaga por enfriamiento, el mecanismo más eficaz contra papel, madera, cartón y textiles. Con espumante AFFF cubre además líquidos inflamables, y en su versión nebulizada desionizada puede usarse donde hay riesgo eléctrico. El agua a presión y la espuma, en cambio, nunca van contra equipo energizado.',
+    features: [
+      { label: 'Agua a presión', desc: 'Sólidos combustibles, sin polvo que limpiar después.' },
+      { label: 'Agua nebulizada', desc: 'Desionizada y con clasificación 2A:C, para sólidos junto a equipo eléctrico.' },
+      { label: 'Espuma AFFF', desc: 'Forma una película sobre el líquido inflamable; cubre clases A y B.' },
+      { label: 'Portátil y sobre ruedas', desc: 'De 6 a 9.46 L en portátil y unidades móviles de 50 L.' },
+    ],
+    ctaLabel: 'Extintores de agua',
+    ctaHref: '/productos/extintor-agua/',
+    ctaSecondaryLabel: 'Cotizar agua o espuma',
+    ctaMsg: 'Hola, quiero cotizar extintores de agua o de espuma AFFF. ¿Cuál me conviene?',
+    imgMain: { src: '/images/general/hero-proveedor-equipo-contra-incendio.avif', alt: 'Técnico uniformado revisando equipo contra incendio en almacén' },
+    imgA: { src: '/images/servicios/inspeccion-recarga-extintores.avif', alt: 'Recarga y mantenimiento de extintores en taller de servicio' },
+    imgB: { src: '/images/servicios/prueba-hidrostatica-extintor.avif', alt: 'Prueba hidrostática de extintor en el taller de servicio' },
+  },
+];
+
+// ── Qué agente apaga cada clase de fuego ─────────────────────────────────────
+// La tabla de esta L3. En /productos/ la guía va por TIPO DE INMUEBLE; aquí va
+// por CLASE DE FUEGO e incluye la columna que casi nadie publica: con qué
+// agente NO se debe atacar cada fuego.
+export const extintoresClases: RiskRow[] = [
+  {
+    nivel: 'Clase A',
+    ejemplos: 'Papel, madera, cartón, textiles y plásticos',
+    minimo: 'Agua a presión, agua nebulizada, espuma AFFF o PQS ABC',
+    complementos: 'CO₂: apaga la flama, pero la brasa puede reavivarse',
+  },
+  {
+    nivel: 'Clase B',
+    ejemplos: 'Gasolina, diésel, solventes, pinturas y gas',
+    minimo: 'PQS ABC, CO₂ o espuma AFFF',
+    complementos: 'Agua a presión: esparce el líquido encendido',
+  },
+  {
+    nivel: 'Clase C',
+    ejemplos: 'Tableros, motores y cableado energizados',
+    minimo: 'CO₂, PQS ABC o agua nebulizada con clasificación C',
+    complementos: 'Agua a presión y espuma AFFF: conducen la corriente',
+  },
+  {
+    nivel: 'Clase K',
+    ejemplos: 'Aceites y grasas de cocción',
+    minimo: 'Agente K de químico húmedo',
+    complementos: 'Agua: proyecta el aceite; el PQS no lo enfría lo suficiente',
+  },
+  {
+    nivel: 'Clase D',
+    ejemplos: 'Metales combustibles: magnesio, sodio o titanio',
+    minimo: 'Polvo especial para el metal de que se trate',
+    complementos: 'Ninguno de los cuatro agentes de este catálogo',
+  },
+];
+
+// ── Qué norma certifica cada agente ─────────────────────────────────────────
+// En /productos/ la tabla dice qué norma aplica a cada FAMILIA del catálogo;
+// aquí baja un nivel: la norma de producto de cada AGENTE.
+export const extintoresNormRows: NormRow[] = [
+  { norma: 'NOM-100-STPS-1994', alcance: 'Especificaciones de seguridad de los extintores de polvo químico seco con presión contenida', aplica: 'Extintores PQS' },
+  { norma: 'NOM-102-STPS-1994', alcance: 'Seguridad de los extintores a base de bióxido de carbono, parte 1: recipientes', aplica: 'Extintores de CO₂' },
+  { norma: 'NOM-103-STPS-1994', alcance: 'Extintores a base de agua con presión contenida, incluidos los aditivos espumantes, para clases A y B', aplica: 'Agua a presión y espuma AFFF' },
+  { norma: 'NFPA 10 (ref.)', alcance: 'Clasificación de fuegos, incluida la clase K, y criterios de selección y ubicación de extintores', aplica: 'Extintores clase K' },
+  { norma: 'NOM-106-SCFI-2017', alcance: 'Diseño y uso de la contraseña oficial que identifica al producto certificado', aplica: 'Extintores sujetos a norma de producto' },
+  { norma: 'NOM-002-STPS-2010', alcance: 'Extintor acorde a la clase de fuego, distancia máxima de recorrido y revisión mensual (7.18)', aplica: 'Selección y colocación en el centro de trabajo' },
+  { norma: 'NOM-154-SCFI-2005', alcance: 'Mantenimiento, recarga y prueba hidrostática del cilindro cada 5 años (5.6)', aplica: 'Los cuatro agentes' },
+];
+
+// ── Ciclo de vida del extintor ───────────────────────────────────────────────
+// En /productos/ el proceso es la COMPRA; aquí es lo que le toca al extintor
+// desde que se elige hasta que se retimbra o se da de baja.
+export const extintoresSteps: Step[] = [
+  { num: '01', title: 'Se elige por clase de fuego', desc: 'El agente sale de lo que puede arder en cada zona; la capacidad, de la superficie y del nivel de riesgo.' },
+  { num: '02', title: 'Se coloca donde se alcanza', desc: 'A no más de 1.50 m del piso, señalizado, sin obstáculos y dentro de la distancia de recorrido de su clase.' },
+  { num: '03', title: 'Se revisa cada mes', desc: 'Lo hace tu propio personal: presión, seguro, manguera y acceso libre, con registro en la bitácora.' },
+  { num: '04', title: 'Se mantiene cada año', desc: 'Un proveedor lo revisa y recarga conforme a la NOM-154, y deja etiqueta y collarín. También tras cualquier descarga.' },
+  { num: '05', title: 'Prueba hidrostática a 5 años', desc: 'Si el cilindro pasa la prueba, se retimbra y sigue en servicio; si no la pasa, se da de baja.' },
+];
+
+export const extintoresCompany = {
+  que: {
+    title: 'Qué encuentras en esta familia',
+    body: [
+      'Cuatro agentes extintores, en portátil y sobre ruedas: polvo químico seco ABC, dióxido de carbono, agente K para cocina y la familia a base de agua, que reúne agua a presión, agua nebulizada y espuma AFFF. Cada agente tiene su ficha con todas sus presentaciones.',
+      'Además de venderlos, damos el servicio que la norma pide durante toda su vida útil: mantenimiento anual, recarga y prueba hidrostática. El extintor que compras aquí tiene a quién volver.',
+    ],
+  },
+  como: {
+    title: 'Cómo lo elegimos contigo',
+    pillars: [
+      { title: 'Primero la clase de fuego', desc: 'El agente se decide por lo que arde en cada zona, no por el que ya tienes instalado.' },
+      { title: 'Luego la capacidad', desc: 'Superficie, nivel de riesgo y quién lo va a operar definen el tamaño.' },
+      { title: 'Y el servicio desde la entrega', desc: 'Sale con la fecha de su mantenimiento y de su prueba hidrostática.' },
+    ],
+  },
+};
+
+export const extintoresRelated = [
+  { label: 'Recarga de extintores', href: '/servicios/mantenimiento/', desc: 'Mantenimiento anual y recarga conforme a la NOM-154.' },
+  { label: 'Prueba hidrostática', href: '/servicios/prueba-hidrostatica/', desc: 'Retimbrado del cilindro cada 5 años.' },
+  { label: 'Cuántos extintores necesito', href: '/herramientas/cuantos-extintores-necesito/', desc: 'Cálculo por superficie y nivel de riesgo.' },
+  { label: 'Tipos de extintores', href: '/blog/como-elegir-extintor-clase-fuego/', desc: 'La guía completa de clases de fuego y agentes.' },
+];
+
+// ── FAQ propio de la L3 ──────────────────────────────────────────────────────
+// Sin repetir el de /productos/ (stock, factura, entregas) ni el de las fichas.
+export const extintoresFaqs = [
+  {
+    question: '¿Hay un extintor que sirva para todo?',
+    answer: 'El que más se acerca es el PQS ABC, que cubre sólidos, líquidos inflamables y equipo eléctrico. Pero no es adecuado para aceite de cocina, donde va el agente K, y deja un residuo que puede dañar electrónica. Por eso casi ningún inmueble se protege con un solo agente.',
+  },
+  {
+    question: '¿Por qué el CO₂ no sirve para papel o madera?',
+    answer: 'Porque no enfría lo suficiente. Desplaza el oxígeno y apaga la flama, pero la brasa de un sólido conserva el calor y puede volver a encender cuando el gas se disipa. Por eso el CO₂ está clasificado para las clases B y C, y no para la A.',
+  },
+  {
+    question: '¿El polvo químico seco daña los equipos?',
+    answer: 'Puede dañarlos. Es un polvo muy fino que se deposita en contactos, ventiladores y tarjetas, y con la humedad puede corroerlos. Junto a servidores, tableros o equipo de laboratorio se prefiere CO₂ o agua nebulizada con clasificación C.',
+  },
+  {
+    question: '¿Tengo que recargar un extintor que usé solo un poco?',
+    answer: 'Sí. Una descarga parcial deja al extintor con menos agente y menos presión de la que necesita para trabajar completo, así que después de cualquier uso debe pasar a servicio y recargarse, aunque parezca que le queda carga.',
+  },
+  {
+    question: '¿Cuánto dura un extintor?',
+    answer: 'En México el cilindro no tiene una fecha de caducidad fija: sigue en servicio mientras pase la prueba hidrostática cada 5 años (NOM-154-SCFI-2005, 5.6) y no presente corrosión, golpes o deformación. Los 12 años que a veces se citan son el intervalo de prueba hidrostática del PQS en la NFPA 10, que no aplica en México.',
+  },
+  {
+    question: '¿Venden extintores para metales combustibles (clase D)?',
+    answer: 'No forman parte de este catálogo, porque el agente depende del metal: magnesio, sodio o titanio piden polvos distintos. Si tu proceso los maneja, se revisa el caso y se cotiza como equipo especializado.',
+  },
+];

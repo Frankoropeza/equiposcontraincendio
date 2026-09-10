@@ -1,5 +1,5 @@
 ---
-// Ficha de producto — Nivel L4 (Inicio → Categoría → Ficha)
+// Ficha de producto — Nivel L4 (Inicio → Productos → Categoría L3 → Ficha)
 // Ruta dinámica ÚNICA: sirve TODAS las fichas de la colección `productos`.
 // No se edita por producto; el contenido sale de src/content/productos/<slug>.md
 // (frontmatter validado con Zod .strict()). Toda la estructura, el JSON-LD
@@ -12,9 +12,16 @@ export async function getStaticPaths() {
   const productos = await getCollection('productos', ({ data }) => !data.draft);
 
   return productos.map((producto) => {
-    // Interlinking (B6): relacionados = hermanos de la colección (excluye el actual).
+    // Interlinking (B6): relacionados = primero los hermanos de la MISMA
+    // categoría (las otras fichas de su L3), luego el resto; excluye el actual.
     const related = productos
       .filter((p) => p.id !== producto.id)
+      .sort(
+        (a, b) =>
+          Number(b.data.category === producto.data.category) -
+            Number(a.data.category === producto.data.category) ||
+          a.data.order - b.data.order,
+      )
       .slice(0, 3)
       .map((p) => ({
         label: p.data.title,

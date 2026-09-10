@@ -70,7 +70,7 @@ const CATEGORY_FEATURES = [
     title: 'El extintor correcto para',
     titleAccent: 'lo que puede arder',
     description:
-      'No todos los fuegos se apagan igual y el agente equivocado puede empeorarlo. Te ayudamos a elegir entre PQS, CO₂ y agente K según el riesgo real de tu inmueble, con la capacidad adecuada y el servicio de recarga conforme a norma.',
+      'No todos los fuegos se apagan igual y el agente equivocado puede empeorarlo. Te ayudamos a elegir entre PQS, CO₂, agua y agente K según el riesgo real de tu inmueble, con la capacidad adecuada y el servicio de recarga conforme a norma.',
     features: [
       { label: 'PQS ABC multipropósito', desc: 'El más versátil: oficinas, comercios, bodegas y casa. Clases A, B y C.' },
       { label: 'CO₂ para tableros y sites', desc: 'No conduce ni deja residuo en cuartos eléctricos. Clases B y C.' },
@@ -80,8 +80,8 @@ const CATEGORY_FEATURES = [
     brands: [{ name: 'Kidde' }, { name: 'Amerex' }, { name: 'Stelfire' }, { name: 'Buckeye' }, { name: 'Suprema' }],
     ctaLabel: 'Cotizar extintores',
     ctaMsg: 'Hola, quiero cotizar extintores (PQS, CO₂ o clase K). ¿Me ayudan a elegir la capacidad según mi riesgo?',
-    ctaSecondaryLabel: 'Extintores PQS ABC',
-    ctaSecondaryHref: '/productos/extintor-pqs/',
+    ctaSecondaryLabel: 'Extintores portátiles',
+    ctaSecondaryHref: '/productos/extintores/',
     imgMain: { src: '/images/showcase/extintores-catalogo-profesional.avif', alt: 'Extintores PQS, CO₂ y agente K de distintas capacidades' },
     imgA: { src: '/images/showcase/extintores-variedad-colores-catalogo.avif', alt: 'Extintores de PQS, CO₂, agua y agente K comparados por agente' },
     imgB: { src: '/images/servicios/prueba-hidrostatica-extintor.avif', alt: 'Prueba hidrostática de extintor en el taller de servicio' },
@@ -389,11 +389,12 @@ const schemaData = {
               priority={i === 0}
             />
           ))}
-          {/* Celda de cierre: las fichas son 7 y el grid es de 4 columnas, así
-              que la segunda fila quedaba con un hueco. La octava celda recoge
-              a quien no encontró su equipo — el catálogo publica solo lo de
-              mayor rotación, no todo lo que se surte. */}
-          <ServiceCard
+          {/* Celda de cierre: recoge a quien no encontró su equipo (el catálogo
+              publica solo lo de mayor rotación). Solo se pinta cuando el número
+              de fichas deja hueco en la retícula de 4 columnas: con 7 fichas
+              completaba la segunda fila; con 8 (desde la ficha de agua,
+              2026-09-10) la fila ya está llena y la celda la dejaría huérfana. */}
+          {productos.length % 4 !== 0 && <ServiceCard
             title="¿No encuentras el equipo que buscas?"
             description="El catálogo publica lo de mayor rotación. Surtimos más marcas, capacidades y equipo especializado: dinos qué necesitas y te cotizamos con disponibilidad y tiempo de entrega."
             href={waUrl('Hola, busco un equipo contra incendio que no vi en el catálogo. ¿Me ayudan a cotizarlo?')}
@@ -402,7 +403,7 @@ const schemaData = {
             badge="Cotización a medida"
             ctaLabel="Cotizar por WhatsApp"
             whatsapp
-          />
+          />}
         </div>
       </div>
     </section>

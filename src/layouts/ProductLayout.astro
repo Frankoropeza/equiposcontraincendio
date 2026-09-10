@@ -19,7 +19,7 @@ import SectionHeading from "@components/SectionHeading.astro";
 import FAQAccordion from "@components/FAQAccordion.astro";
 import CTABanner from "@components/CTABanner.astro";
 import RelatedLinks from "@components/RelatedLinks.astro";
-import { waUrl, telUrl } from "@config/site";
+import { waUrl, telUrl, TAXONOMY } from "@config/site";
 
 export interface Props {
   slug: string;
@@ -66,8 +66,15 @@ const {
 
 const waLink = waUrl(`Hola, quiero cotizar: ${title}. ¿Precio y disponibilidad?`);
 
+// Migas: Productos (L2) → categoría (L3, solo si ya tiene página propia) →
+// ficha (L4). La categoría entra cuando su `href` en TAXONOMY apunta a una L3
+// real; mientras apunte al catálogo genérico se omite, para no duplicar la
+// miga «Productos» con otro nombre.
+const cat = TAXONOMY.categories.find((c) => c.slug === category);
+const catLabel = cat?.label ?? "equipo contra incendio";
 const breadcrumbs = [
   { label: "Productos", href: "/productos/" },
+  ...(cat && cat.href !== "/productos/" ? [{ label: cat.label, href: cat.href }] : []),
   { label: title },
 ];
 
@@ -182,7 +189,7 @@ const schemaData = {
   </div>
 
   <CTABanner
-    heading={`¿Necesitas ${category} para tu proyecto?`}
+    heading={`¿Necesitas ${catLabel.toLowerCase()} para tu proyecto?`}
     desc="Mándanos lo que buscas y te cotizamos con precio, disponibilidad y tiempos de entrega."
     btns={[{ label: "Cotizar por WhatsApp", href: waLink, icon: "wa", primary: true, external: true }]}
   />

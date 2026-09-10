@@ -5,7 +5,7 @@ category: accesorios
 image: /images/showcase/refacciones-equipo-contra-incendio.avif
 price: "Cotizar"
 brand: "Equipos Contra Incendio"
-order: 7
+order: 8
 seoTitle: "Soportes y gabinetes para extintor | accesorios"
 seoDescription: "Compara soportes, abrazaderas y gabinetes para instalar o proteger extintores portátiles en muro, vehículo o gabinete."
 variantes:

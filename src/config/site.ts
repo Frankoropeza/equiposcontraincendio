@@ -153,11 +153,13 @@ export const CONTACT = {
 // ── TAXONOMY — categorías de producto / servicios / cobertura (as const) ─────
 // Fuente única de navegación, footer y rutas. Cada `slug` de categoría debe
 // existir en el enum PRODUCT_CATEGORIES de content.config.ts; cada `id` de
-// servicio, en SERVICE_CATEGORIES. Las categorías enlazan al catálogo (/productos)
-// hasta que existan páginas por categoría (pendiente: landings /productos/<cat>).
+// servicio, en SERVICE_CATEGORIES. Cada categoría enlaza a su página L3
+// (/productos/<cat>/) cuando existe; mientras no, al catálogo (/productos/).
+// ProductLayout usa este `href` para decidir si la ficha lleva la miga de
+// categoría: solo cuando apunta a una L3 real, nunca al catálogo genérico.
 export const TAXONOMY = {
   categories: [
-    { slug: 'extintores',          label: 'Extintores',                badge: undefined, href: '/productos/' },
+    { slug: 'extintores',          label: 'Extintores portátiles',     badge: undefined, href: '/productos/extintores/' },
     { slug: 'deteccion-alarmas',   label: 'Detección y alarmas',       badge: undefined, href: '/productos/' },
     { slug: 'hidrantes-mangueras', label: 'Hidrantes y mangueras',     badge: undefined, href: '/productos/' },
     { slug: 'senalizacion',        label: 'Señalización y emergencia', badge: undefined, href: '/productos/' },
@@ -364,12 +366,13 @@ export type ShowcaseCategory = {
 //     glifos, no del conteo: «Extintores contra incendio» (26) entra y
 //     «Señalización de emergencia» (26) no. Si se roza el tope, hay que
 //     medirlo en el navegador antes de darlo por bueno.
-//   • href → ancla real del módulo de categoría en /productos/ (no la URL pelada).
+//   • href → la página L3 de la categoría cuando existe (/productos/extintores/);
+//     si todavía no existe, el ancla real de su módulo en /productos/.
 export const SHOWCASE: readonly ShowcaseCategory[] = [
   {
     slug: 'extintores',
     label: 'Extintores portátiles',
-    href: '/productos/#extintores',
+    href: '/productos/extintores/',
     image: '/images/showcase/extintores-catalogo-profesional.avif',
     imageAlt: 'Extintores PQS, CO₂ y agente K para distintas clases de fuego',
     badge: 'NOM-154 · Clases A B C K',

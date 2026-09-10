@@ -244,7 +244,7 @@ export const homeCategoryFeatures: HomeCategoryFeature[] = [
       { name: "Suprema" },
     ],
     ctaLabel: "Extintores portátiles",
-    ctaHref: "/productos/#extintores",
+    ctaHref: "/productos/extintores/",
     ctaSecondaryMsg: "Hola, quiero cotizar extintores (PQS, CO₂ o clase K). ¿Me ayudan a elegir la capacidad según mi riesgo?",
     imgMain: { src: "/images/showcase/extintores-catalogo-profesional.avif", alt: "Extintores PQS, CO₂ y agente K listos para entrega" },
     imgA: { src: "/images/showcase/extintores-variedad-colores-catalogo.avif", alt: "Extintores de PQS, CO₂, agua y agente K uno junto a otro" },
