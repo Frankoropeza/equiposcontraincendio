@@ -34,7 +34,7 @@ Idioma: español (es-MX). País: México.
 - [Mantenimiento y recarga](https://equiposcontraincendio.com/servicios/mantenimiento/): recarga de extintores conforme a la NOM-154-SCFI-2005.
 - [Blog](https://equiposcontraincendio.com/blog/): guías técnicas y de normatividad.
 - [Tipos de extintores por clase de fuego y agente](https://equiposcontraincendio.com/blog/como-elegir-extintor-clase-fuego/): pilar de selección de extintores.
-- [NOM-002-STPS-2010 explicada](https://equiposcontraincendio.com/blog/nom-002-stps-2010/): pilar de normatividad, obligaciones del patrón y registros exigibles.
+- [STPS y Protección Civil: las dos verificaciones](https://equiposcontraincendio.com/blog/cumplimiento-stps-proteccion-civil/): pilar de normatividad, qué exige cada autoridad y qué evidencia sirve para ambas.
 - [Recarga y mantenimiento de extintores](https://equiposcontraincendio.com/blog/mantenimiento-recarga-extintores-nom/): qué exige la NOM-154 y cómo verificar al proveedor.
 - [Cobertura](https://equiposcontraincendio.com/cobertura/): CDMX y Estado de México.
 - [Herramientas](https://equiposcontraincendio.com/herramientas/): clasificador de riesgo, calculadora de extintores y verificador en 12 puntos.
