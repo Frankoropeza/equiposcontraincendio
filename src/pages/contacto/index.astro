@@ -10,7 +10,10 @@ import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
 import SectionHeading from '@components/SectionHeading.astro'
 import SectionMenu from '@components/SectionMenu.astro'
+import TrustBar from '@components/TrustBar.astro'
+import RelatedLinks from '@components/RelatedLinks.astro'
 import { SITE, CONTACT, waUrl, telUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
+import { homePillars } from '@data/home'
 
 // Canales de contacto — data-driven. Cada uno con su acción (href) y su ícono.
 const canales = [
@@ -68,6 +71,7 @@ const ICON = {
   />
 
   <SectionMenu items={menuSecciones} cta={menuCta} />
+  <TrustBar items={homePillars} />
 
   <section class="section">
     <div class="container">
@@ -129,6 +133,17 @@ const ICON = {
       </div>
     </div>
   </section>
+
+  <RelatedLinks
+    title="Sigue por aquí"
+    links={[
+      { label: 'Servicios', href: '/servicios/', desc: 'Instalación, mantenimiento, inspección y capacitación.' },
+      { label: 'Productos', href: '/productos/', desc: 'Extintores, detección, hidrantes y señalización.' },
+      { label: 'Cobertura', href: '/cobertura/', desc: 'CDMX, Estado de México y zona metropolitana.' },
+      { label: 'Herramientas', href: '/herramientas/', desc: 'Calculadoras y verificaciones para tu inmueble.' },
+    ]}
+    limit={4}
+  />
 </PageLayout>
 
 <style>

@@ -1,70 +1,54 @@
 ---
 // ============================================================================
-// /cobertura/<slug> — Ficha de zona (SEO local).
+// /cobertura/<slug> — Ficha de zona homologada al patrón L2/L3.
 // ----------------------------------------------------------------------------
-// AUDITORÍA 2026-09-09 · hallazgo NUEVO-3 (Fase 2):
-// Esta ruta generaba sus páginas desde COVERAGE_STATES (TAXONOMY de site.ts) con
-// un mapa de detalle hardcodeado, así que el markdown de la colección `zonas`
-// NUNCA se renderizaba —igual que pasaba en /servicios/<slug>—. Los archivos se
-// renombraron a cdmx.md / edomex.md para que el nombre del archivo SEA el slug
-// (las URLs vivas no cambian) y ahora todo el contenido sale de la colección.
-//
-// SCHEMA: se mantiene pageType="page" y se pasa `areaServed` a schemaData, que
-// lib/seo.ts usa para acotar el LocalBusiness de esta página a la zona; si la
-// ficha declara `faqs`, buildSchema añade el FAQPage.
+// La zona, sus áreas y sus FAQs salen de la colección `zonas`; la plantilla
+// añade navegación, confianza, orientación comercial y enlaces internos.
 // ============================================================================
 import { getCollection, render } from 'astro:content'
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
-import SectionHeading from '@components/SectionHeading.astro'
-import FAQAccordion from '@components/FAQAccordion.astro'
 import SectionMenu from '@components/SectionMenu.astro'
-import { waUrl } from '@config/site'
+import TrustBar from '@components/TrustBar.astro'
+import SectionHeading from '@components/SectionHeading.astro'
+import QuoteCard from '@components/QuoteCard.astro'
+import RelatedLinks from '@components/RelatedLinks.astro'
+import FAQWithContact from '@components/FAQWithContact.astro'
+import { CONTACT, sectionMenuItems, telUrl, waUrl } from '@config/site'
+import { homePillars } from '@data/home'
+import { relDesc } from '@data/related-desc'
 
 export async function getStaticPaths() {
   const zonas = await getCollection('zonas', ({ data }) => !data.draft)
   const servicios = await getCollection('servicios', ({ data }) => !data.draft)
 
   return zonas.map((zona) => {
-    // Servicios disponibles en la zona: los declarados en el frontmatter
-    // (reference() tipado) o, si no hay, todo el catálogo de servicios.
-    // flatMap en vez de map+filter(Boolean): filter no estrecha el tipo en TS.
-    const declarados = (zona.data.availableServices ?? []).flatMap((ref) => {
-      const hit = servicios.find((s) => s.id === ref.id)
-      return hit ? [hit] : []
+    const disponibles = (zona.data.availableServices ?? []).flatMap((ref) => {
+      const hit = servicios.find((service) => service.id === ref.id)
+      return hit ? [{ label: hit.data.title, href: `/servicios/${hit.id}/`, desc: relDesc('servicios', hit.id) }] : []
     })
-    const disponibles = (declarados.length ? declarados : servicios).map((s) => ({
-      label: s.data.title,
-      href: `/servicios/${s.id}/`,
-    }))
     const otras = zonas
-      .filter((z) => z.id !== zona.id)
-      .map((z) => ({ label: z.data.zoneName, href: `/cobertura/${z.id}/`, sub: 'Otra zona' }))
+      .filter((other) => other.id !== zona.id)
+      .map((other) => ({ label: other.data.zoneName, href: `/cobertura/${other.id}/`, desc: relDesc('zonas', other.id) }))
 
     return { params: { slug: zona.id }, props: { zona, disponibles, otras } }
   })
 }
 
 const { zona, disponibles, otras } = Astro.props
-const { data, id } = zona
+const { data } = zona
 const { Content } = await render(zona)
-
 const label = data.zoneName
 const areas = data.areas ?? []
 const faqs = data.faqs ?? []
 const waZona = waUrl(`Hola, estoy en ${label} y quiero cotizar equipo y/o servicio contra incendio.`)
-
-const schemaData = {
-  areaServed: [label],
-  ...(faqs.length ? { faqs } : {}),
-}
-
-const cierreItems = [
+const schemaData = { areaServed: [label], ...(faqs.length ? { faqs } : {}) }
+const related = [
   ...otras,
-  { label: 'Toda la cobertura', href: '/cobertura/', sub: 'Volver a zonas' },
-  { label: 'Servicios', href: '/servicios/', sub: 'Lo que ofrecemos' },
+  ...disponibles,
+  { label: 'Productos contra incendio', href: '/productos/', desc: 'Extintores, detección, hidrantes y señalización.' },
 ]
-const cierreCta = { label: `Cotizar en ${label}`, href: waZona, sub: 'Respuesta inmediata', external: true }
+
 ---
 
 <PageLayout
@@ -83,8 +67,8 @@ const cierreCta = { label: `Cotizar en ${label}`, href: waZona, sub: 'Respuesta 
     accent={data.hero?.title ? undefined : label}
     subtitle={data.hero?.subtitle ?? data.description}
     descRight={[
-      `Damos servicio en ${label} con visita en sitio para instalar, dar mantenimiento o inspeccionar tu equipo, y entregamos extintores, detección, hidrantes y señalización con documentación.`,
-      'Cuéntanos tu ubicación exacta y lo que necesitas, y te confirmamos cobertura, tiempos y la mejor opción para tu inmueble. Trabajamos conforme a la NOM-002-STPS y la NOM-154-SCFI.',
+      `Cuéntanos tu ubicación exacta en ${label} y el tipo de inmueble que necesitas atender.`,
+      'Te orientamos sobre el siguiente paso y confirmamos el alcance antes de cotizar.',
     ]}
     ctas={[
       { text: 'Cotizar por WhatsApp', href: waZona, variant: 'primary', whatsapp: true },
@@ -92,49 +76,53 @@ const cierreCta = { label: `Cotizar en ${label}`, href: waZona, sub: 'Respuesta 
     ]}
   />
 
-  <section class="section">
-    <div class="container">
-      <article class="prose">
-        <Content />
-      </article>
-    </div>
-  </section>
+  <SectionMenu
+    items={sectionMenuItems()}
+    cta={{ label: `Cotizar en ${label}`, href: waZona, sub: 'Respuesta por WhatsApp', external: true }}
+  />
+  <TrustBar items={homePillars} />
 
   <section class="section section--surface">
     <div class="container">
-      <SectionHeading
-        eyebrow="Dónde damos servicio"
-        title="Alcance en"
-        titleAccent={label}
-        desc={areas.length ? `${areas.length} ${data.type === 'ciudad' ? 'alcaldías' : 'municipios'} con servicio en sitio.` : `Servicio en sitio en ${label}.`}
-      />
-
-      {areas.length > 0 && (
-        <ul class="chips chips--areas">
-          {areas.map((a) => <li><span class="chip chip--static">{a}</span></li>)}
-        </ul>
-      )}
-
-      <div class="servicios-zona">
-        <p class="servicios-zona__lead">Servicios disponibles en {label}:</p>
-        <ul class="chips">
-          {disponibles.map((s) => (
-            <li><a class="chip" href={s.href}>{s.label}</a></li>
-          ))}
-        </ul>
+      <div class="guide-grid">
+        <article class="prose"><Content /></article>
+        <QuoteCard
+          title={`Cotiza en ${label}`}
+          waLink={waZona}
+          telHref={telUrl()}
+          eyebrow={`Cotiza en ${label}`}
+          items={['Dirección o alcaldía', 'Tipo de inmueble', 'Equipo o servicio que necesitas']}
+          showPrice={false}
+          ctaLabel="Cotizar por WhatsApp"
+        />
       </div>
     </div>
   </section>
 
-  {faqs.length > 0 && (
-    <section class="section">
-      <div class="container">
-        <FAQAccordion items={faqs} title={`Preguntas sobre la cobertura en ${label}`} openFirst />
-      </div>
-    </section>
-  )}
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        layout="duo"
+        eyebrow="Alcance"
+        title="Alcance en"
+        titleAccent={label}
+        desc={areas.length ? `${areas.length} ${data.type === 'ciudad' ? 'alcaldías' : 'municipios'} publicados en esta ficha.` : `Servicio en sitio en ${label}.`}
+      />
+      {areas.length > 0 && (
+        <ul class="chips chips--areas">{areas.map((area) => <li><span class="chip chip--static">{area}</span></li>)}</ul>
+      )}
+      {disponibles.length > 0 && (
+        <div class="servicios-zona">
+          <p class="servicios-zona__lead">Servicios relacionados:</p>
+          <ul class="chips">{disponibles.map((service) => <li><a class="chip" href={service.href}>{service.label}</a></li>)}</ul>
+        </div>
+      )}
+    </div>
+  </section>
 
-  <SectionMenu items={cierreItems} cta={cierreCta} ariaLabel="Otras zonas y servicios" />
+  <RelatedLinks title="Sigue por aquí" desc="La otra zona, servicios y productos relacionados." links={related} limit={4} />
+
+  {faqs.length > 0 && <FAQWithContact items={faqs} waNumber={CONTACT.whatsapp} eyebrow="Preguntas frecuentes" title="Preguntas frecuentes" titleAccent={`sobre ${label}`} />}
 </PageLayout>
 
 <style>
@@ -142,23 +130,14 @@ const cierreCta = { label: `Cotizar en ${label}`, href: waZona, sub: 'Respuesta 
   .section { padding: var(--sp-8) 0; }
   .section--surface { background: var(--c-surface); }
   @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
-
+  .guide-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--sp-8); align-items: start; }
+  .guide-grid .prose { max-width: 68ch; }
+  @media (min-width: 900px) { .guide-grid { grid-template-columns: minmax(0, 1fr) minmax(18rem, 25rem); } }
   .chips { list-style: none; display: flex; flex-wrap: wrap; gap: var(--sp-2); margin: var(--sp-5) 0 0; padding: 0; }
   .chip { display: inline-flex; align-items: center; min-height: 36px; padding: .4em 1em; font-size: var(--text-sm); font-weight: var(--weight-medium); color: var(--c-ink-2); text-decoration: none; background: var(--c-white); border: 1px solid var(--c-border); border-radius: var(--radius-full); }
   a.chip:hover, a.chip:focus-visible { color: #fff; background: var(--c-primary); border-color: var(--c-primary); outline: none; }
   a.chip:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 2px; }
   .chip--static { color: var(--c-muted); }
-
   .servicios-zona { margin-top: var(--sp-6); }
   .servicios-zona__lead { margin: 0; font-weight: var(--weight-semibold); color: var(--c-ink); }
-
-  /* Cuerpo markdown de la ficha (colección `zonas`). */
-  .prose { max-width: var(--container-prose); margin-inline: auto; color: var(--c-ink-2); line-height: var(--leading-relaxed); }
-  .prose :global(h2) { font-family: var(--font-heading); font-size: var(--text-2xl); font-weight: var(--weight-bold); color: var(--c-ink); margin: var(--sp-6) 0 var(--sp-3); }
-  .prose :global(h3) { font-family: var(--font-heading); font-size: var(--text-xl); font-weight: var(--weight-semibold); color: var(--c-ink); margin: var(--sp-5) 0 var(--sp-2); }
-  .prose :global(p) { margin: 0 0 var(--sp-4); }
-  .prose :global(ul), .prose :global(ol) { margin: 0 0 var(--sp-4); padding-left: 1.25rem; }
-  .prose :global(li) { margin-bottom: var(--sp-2); }
-  .prose :global(strong) { color: var(--c-ink); font-weight: var(--weight-semibold); }
-  .prose :global(a) { color: var(--c-primary); }
 </style>

@@ -8,6 +8,15 @@ brand: "Equipos Contra Incendio"
 order: 8
 seoTitle: "Señalización fotoluminiscente de emergencia"
 seoDescription: "Compara señales fotoluminiscentes para evacuación, salida, extintor, hidrante, punto de reunión y primeros auxilios."
+faqs:
+  - question: "¿Qué señales puedo pedir para mi inmueble?"
+    answer: "Puedes pedir señales para rutas, salidas, extintores, hidrantes, puntos de reunión y primeros auxilios. Cada mensaje orienta, identifica un equipo o marca una condición segura durante una emergencia."
+  - question: "¿Qué color corresponde a cada función?"
+    answer: "Usa fondo verde para condición segura y evacuación; el fondo rojo identifica equipo contra incendio. Así distingues rutas y salidas de los puntos donde están extintores o hidrantes."
+  - question: "¿Qué define el tamaño y la ubicación?"
+    answer: "El levantamiento del inmueble define el mensaje, tamaño, orientación y cantidad de cada señal. La distancia de observación y la función del punto ayudan a determinar esa configuración."
+  - question: "¿Qué debo considerar para que las señales se vean durante una evacuación?"
+    answer: "Que respeten colores, formas y símbolos de la NOM-003-SEGOB-2011 y que el material fotoluminiscente reciba luz suficiente para cargarse. En el levantamiento confirmamos mensaje, tamaño y altura de cada señal."
 variantes:
   - nombre: "Señal de ruta de evacuación"
     badge: "Orientación"

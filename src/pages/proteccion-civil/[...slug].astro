@@ -1,22 +1,23 @@
 ---
 // ============================================================================
-// /proteccion-civil/<entidad>/ — Ficha de trámite verificada.
+// /proteccion-civil/<entidad>/ — Ficha de trámite homologada al patrón L2/L3.
 // ----------------------------------------------------------------------------
-// Renderiza una entrada de la colección `tramites`. Tres elementos NO son
-// decorativos y por eso están en la plantilla y no en el cuerpo del markdown:
-//   • el sello «Verificado el <fecha>» con enlace a las fuentes,
-//   • el bloque de PENDIENTES (lo que no pudimos confirmar), a la vista,
-//   • el aviso de que los trámites cambian y de que no gestionamos ante la
-//     autoridad.
-// Publicar trámites sin eso es cómo se envejece mal y se pierde credibilidad.
+// Los requisitos, fundamentos, pendientes y fuentes salen de la colección
+// `tramites`; la plantilla solo ordena los datos y conserva sus enlaces.
 // ============================================================================
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
-import FAQAccordion from '@components/FAQAccordion.astro'
-import CTABanner from '@components/CTABanner.astro'
+import SectionMenu from '@components/SectionMenu.astro'
+import TrustBar from '@components/TrustBar.astro'
+import SectionHeading from '@components/SectionHeading.astro'
+import DataTable from '@components/DataTable.astro'
+import QuoteCard from '@components/QuoteCard.astro'
 import RelatedLinks from '@components/RelatedLinks.astro'
+import FAQWithContact from '@components/FAQWithContact.astro'
 import { getCollection, render } from 'astro:content'
-import { waUrl } from '@config/site'
+import { CONTACT, sectionMenuItems, telUrl, waUrl } from '@config/site'
+import { pcPillars } from '@data/proteccion-civil'
+import { relDesc } from '@data/related-desc'
 
 export async function getStaticPaths() {
   const tramites = await getCollection('tramites', ({ data }) => !data.draft)
@@ -26,11 +27,10 @@ export async function getStaticPaths() {
     const comerciales = (entry.data.relatedServices ?? [])
       .map((r) => servicios.find((s) => s.id === r.id))
       .filter(Boolean)
-      .map((s) => ({ label: s!.data.title, href: `/servicios/${s!.id}/`, description: s!.data.description }))
-
+      .map((s) => ({ label: s!.data.title, href: `/servicios/${s!.id}/`, desc: relDesc('servicios', s!.id) }))
     const otras = tramites
       .filter((t) => t.id !== entry.id)
-      .map((t) => ({ label: t.data.title, href: `/proteccion-civil/${t.id}/`, description: t.data.description }))
+      .map((t) => ({ label: t.data.title, href: `/proteccion-civil/${t.id}/`, desc: relDesc('tramites', t.id) }))
 
     return { params: { slug: entry.id }, props: { entry, comerciales, otras } }
   })
@@ -39,11 +39,7 @@ export async function getStaticPaths() {
 const { entry, comerciales, otras } = Astro.props
 const { Content } = await render(entry)
 const d = entry.data
-// timeZone UTC: la fecha del frontmatter es medianoche UTC; formatearla en
-// local restaba un día (ver la misma corrección en ArticleLayout).
 const fmt = (date: Date) => date.toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })
-
-// Ficha técnica: sólo los campos que existen. Un campo vacío no se inventa.
 const ficha = [
   ['Autoridad', d.autoridad],
   ['Trámite oficial', d.tramiteOficial],
@@ -53,14 +49,23 @@ const ficha = [
   ['Costo', d.costo],
   ['Resultado', d.resultado],
   ['Vigencia', d.vigencia],
-].filter(([, v]) => Boolean(v)) as [string, string][]
-
+].filter(([, value]) => Boolean(value)) as [string, string][]
+const bloqueIds = [
+  ...(d.requisitos && d.requisitos.length > 0 ? ['requisitos'] : []),
+  ...(d.fundamento && d.fundamento.length > 0 ? ['fundamento'] : []),
+  'contenido',
+  ...(d.pending && d.pending.length > 0 ? ['pendientes'] : []),
+  'fuentes',
+]
+const usaSurface = (id: string) => bloqueIds.indexOf(id) % 2 === 0
 const waHref = waUrl(`Hola, tengo un requerimiento de Protección Civil en ${d.entidad} y necesito poner mi inmueble en regla.`)
+
 ---
 
 <PageLayout
   title={d.seoTitle ?? d.title}
   description={d.seoDescription ?? d.description}
+  image={d.image}
   pageType="page"
   schemaData={{ ...(d.faqs?.length ? { faqs: d.faqs } : {}) }}
   breadcrumbs={[{ label: 'Protección Civil', href: '/proteccion-civil/' }, { label: d.label }]}
@@ -71,8 +76,8 @@ const waHref = waUrl(`Hola, tengo un requerimiento de Protección Civil en ${d.e
     title={d.title}
     subtitle={d.description}
     descRight={[
-      'Resumimos el trámite con la fuente oficial de cada dato y la fecha en que lo verificamos. Lo que no pudimos confirmar aparece marcado como pendiente, con el enlace para consultarlo directo.',
-      'No gestionamos el trámite ante la autoridad ni firmamos programas: preparamos el inmueble y la documentación técnica para que lo pases.',
+      'Cada dato viene de la fuente oficial y lleva su fecha de verificación.',
+      'Lo que no pudimos confirmar lo marcamos como pendiente, con el enlace para que lo consultes directo.',
     ]}
     ctas={[
       { text: 'Clasificar mi riesgo', href: '/herramientas/riesgo-de-incendio/', variant: 'outline' },
@@ -80,102 +85,108 @@ const waHref = waUrl(`Hola, tengo un requerimiento de Protección Civil en ${d.e
     ]}
   />
 
-  <section class="section">
-    <div class="container container--prose">
-      <p class="tr__verify">
-        Verificado el <time datetime={d.verifiedAt.toISOString()}>{fmt(d.verifiedAt)}</time> en la fuente oficial.
-        Los trámites cambian: confirma en el enlace antes de iniciar.
-      </p>
+  <SectionMenu
+    items={sectionMenuItems()}
+    cta={{ label: 'Preparar el inmueble', href: waHref, sub: 'Equipo y expediente', external: true }}
+  />
+  <TrustBar items={pcPillars} />
 
-      <h2>Ficha del trámite</h2>
-      <div class="tbl-wrap">
-        <table class="tbl">
-          <tbody>
-            {ficha.map(([k, v]) => (
-              <tr><th scope="row">{k}</th><td>{v}</td></tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+  <DataTable
+    eyebrow="Datos del trámite"
+    title="Datos del"
+    titleAccent="trámite"
+    desc={`Verificado el ${fmt(d.verifiedAt)} en la fuente oficial. Los trámites cambian: confirma en el enlace antes de iniciar.`}
+    columns={['Dato', 'Detalle']}
+    rows={ficha}
+  />
 
-      {d.requisitos && d.requisitos.length > 0 && (
-        <>
-          <h2>Requisitos</h2>
-          <ul class="req">{d.requisitos.map((r) => <li>{r}</li>)}</ul>
-        </>
-      )}
-
-      {d.fundamento && d.fundamento.length > 0 && (
-        <>
-          <h2>Fundamento jurídico</h2>
-          <ul>{d.fundamento.map((f) => <li>{f}</li>)}</ul>
-        </>
-      )}
-
-      <div class="prose"><Content /></div>
-
-      {d.pending && d.pending.length > 0 && (
-        <div class="pend">
-          <h2 class="pend__t">Lo que todavía no publicamos</h2>
-          <ul>{d.pending.map((p) => <li>{p}</li>)}</ul>
-          <p class="pend__n">Preferimos decirte que falta confirmarlo antes que darte un dato que te haga perder una cita.</p>
-        </div>
-      )}
-
-      <div class="src">
-        <h2 class="src__t">Fuentes oficiales</h2>
-        <ul>
-          {d.sources.map((s) => (
-            <li><a href={s.url} target="_blank" rel="noopener">{s.label}</a></li>
+  {d.requisitos && d.requisitos.length > 0 && (
+    <section class:list={['section', usaSurface('requisitos') && 'section--surface']}>
+      <div class="container">
+        <SectionHeading layout="duo" eyebrow="Requisitos" title="Lo que debes" titleAccent="reunir" desc="Lo que pide la autoridad para ingresar el trámite." />
+        <div class="info-grid">
+          {d.requisitos.map((item, index) => (
+            <article class="info-card"><span class="info-card__num">{String(index + 1).padStart(2, '0')}</span><p>{item}</p></article>
           ))}
-        </ul>
-        <p class="src__n">
-          No gestionamos el trámite ante la autoridad ni firmamos programas: preparamos el inmueble y
-          la documentación técnica para que lo pases.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  {d.faqs && d.faqs.length > 0 && (
-    <section class="section section--surface">
-      <div class="container container--prose">
-        <FAQAccordion items={d.faqs} title="Preguntas frecuentes" openFirst />
+        </div>
       </div>
     </section>
   )}
 
-  <section class="section">
+  {d.fundamento && d.fundamento.length > 0 && (
+    <section class:list={['section', usaSurface('fundamento') && 'section--surface']}>
+      <div class="container">
+        <SectionHeading layout="duo" eyebrow="Fundamento jurídico" title="La base del" titleAccent="trámite" desc="Las leyes y reglamentos en los que se apoya." />
+        <div class="info-grid">
+          {d.fundamento.map((item, index) => (
+            <article class="info-card"><span class="info-card__num">{String(index + 1).padStart(2, '0')}</span><p>{item}</p></article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class:list={['section', usaSurface('contenido') && 'section--surface']}>
     <div class="container">
-      <RelatedLinks title="Lo que sí hacemos nosotros" links={[...comerciales, ...otras].slice(0, 4)} limit={4} />
+      <div class="guide-grid">
+        <article class="prose"><Content /></article>
+        <QuoteCard
+          title={`Tu inmueble en regla · ${d.entidad}`}
+          waLink={waHref}
+          telHref={telUrl()}
+          eyebrow="Lo que sí hacemos"
+          items={['Equipo contra incendio en regla', 'Mantenimiento con etiqueta y collarín', 'Capacitación con DC-3']}
+          showPrice={false}
+          ctaLabel="Preparar por WhatsApp"
+        />
+      </div>
     </div>
   </section>
 
-  <CTABanner
-    heading="¿Te falta poner el inmueble en regla?"
-    desc="Diagnóstico de riesgo, equipo conforme a norma, capacitación de brigada y expediente ordenado."
-    btns={[{ label: 'Hablar por WhatsApp', href: waHref, icon: 'wa', primary: true, external: true }]}
-    badge={d.entidad}
-    variant="dark"
-  />
+  {d.pending && d.pending.length > 0 && (
+    <section class:list={['section', usaSurface('pendientes') && 'section--surface']}>
+      <div class="container">
+        <SectionHeading layout="duo" eyebrow="Pendientes" title="Lo que todavía" titleAccent="no publicamos" desc="Si un dato no está confirmado, no lo adivinamos." />
+        <ul class="pending-list">{d.pending.map((item) => <li>{item}</li>)}</ul>
+      </div>
+    </section>
+  )}
+
+  <section class:list={['section', usaSurface('fuentes') && 'section--surface']}>
+    <div class="container">
+      <SectionHeading layout="duo" eyebrow="Fuentes oficiales" title="Consulta la fuente" titleAccent="antes de iniciar" desc="Los trámites pueden cambiar; revisa siempre la información oficial." />
+      <ul class="sources-list">
+        {d.sources.map((source) => <li><a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a></li>)}
+      </ul>
+    </div>
+  </section>
+
+  <RelatedLinks title="Lo que sí hacemos nosotros" links={[...comerciales, ...otras]} limit={4} />
+
+  {d.faqs && d.faqs.length > 0 && (
+    <FAQWithContact
+      items={d.faqs}
+      waNumber={CONTACT.whatsapp}
+      eyebrow="Preguntas frecuentes"
+      title="Preguntas frecuentes"
+      titleAccent="sobre este trámite"
+    />
+  )}
 </PageLayout>
 
 <style>
   .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
-  .container--prose { max-width: var(--container-prose, 72ch); }
   .section { padding: var(--sp-8) 0; }
-  @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
   .section--surface { background: var(--c-surface); }
-  .tr__verify { font-size: var(--text-sm); color: var(--c-muted); max-width: 65ch; margin: 0 0 var(--sp-6); padding-left: var(--sp-3); border-left: 3px solid var(--c-accent); }
-  .tbl-wrap { overflow-x: auto; margin: var(--sp-4) 0 var(--sp-7); }
-  .tbl { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
-  .tbl th, .tbl td { border: 1px solid var(--c-border); padding: var(--sp-3); text-align: left; vertical-align: top; }
-  .tbl th { width: 32%; background: var(--c-surface); }
-  .req { display: grid; gap: var(--sp-2); }
-  .pend { margin: var(--sp-7) 0; padding: var(--sp-5); border: 1px solid var(--c-border); border-left: 4px solid #b45309; border-radius: var(--radius-lg, 12px); background: var(--c-white); }
-  .pend__t { margin: 0 0 var(--sp-3); font-size: var(--text-base); }
-  .pend__n { margin: var(--sp-3) 0 0; font-size: var(--text-sm); color: var(--c-ink-2); }
-  .src { margin: var(--sp-7) 0 0; padding: var(--sp-5); border: 1px solid var(--c-border); border-radius: var(--radius-lg, 12px); background: var(--c-surface); }
-  .src__t { margin: 0 0 var(--sp-3); font-size: var(--text-base); }
-  .src__n { margin: var(--sp-3) 0 0; font-size: var(--text-sm); color: var(--c-ink-2); }
+  @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
+  .info-grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-4); }
+  @media (min-width: 768px) { .info-grid { grid-template-columns: repeat(2, 1fr); } }
+  .info-card { display: flex; gap: var(--sp-4); padding: var(--sp-5); background: var(--c-white); border: 1px solid var(--c-border); border-radius: var(--radius-lg); }
+  .info-card__num { flex: none; color: var(--c-primary); font-family: var(--font-heading); font-weight: var(--weight-black); }
+  .info-card p { margin: 0; color: var(--c-ink-2); line-height: var(--leading-relaxed); }
+  .guide-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--sp-8); align-items: start; }
+  .guide-grid .prose { max-width: 68ch; }
+  @media (min-width: 900px) { .guide-grid { grid-template-columns: minmax(0, 1fr) minmax(18rem, 25rem); } }
+  .pending-list, .sources-list { display: grid; gap: var(--sp-3); margin: 0; padding-left: 1.25rem; color: var(--c-ink-2); line-height: var(--leading-relaxed); }
+  .sources-list a { color: var(--c-primary); }
 </style>

@@ -13,11 +13,11 @@ files:
     href: "/plantillas/censo-brigada-emergencia.pdf"
     size: "26 KB"
 steps:
-  - "Llena el encabezado con los datos del centro de trabajo y el año."
-  - "Anota una fila por persona: si alguien participa en dos brigadas, usa dos filas."
-  - "Registra el rol (jefe o integrante) y un teléfono de contacto por persona."
-  - "Anota el curso recibido, la fecha y si se emitió constancia."
-  - "Actualízalo cuando entre o salga personal: una brigada con gente que ya no trabaja ahí no protege a nadie."
+  - "Datos del centro: llena el encabezado con la información del centro de trabajo y el año."
+  - "Una fila por persona: anota a cada integrante; si participa en dos brigadas, usa dos filas."
+  - "Rol y contacto: registra si es jefe o integrante y un teléfono de contacto por persona."
+  - "Registro de capacitación: anota el curso recibido, la fecha y si se emitió constancia."
+  - "Actualización de personal: modifícalo cuando entre o salga personal; una brigada desactualizada no protege a nadie."
 seoTitle: "Censo de brigada de emergencia (descarga)"
 seoDescription: "Formato gratis para censar tu brigada: integrantes, rol, brigada asignada, contacto y capacitación con constancia. Excel y PDF."
 relatedServices: ["capacitacion-dc3", "gestion-documental"]

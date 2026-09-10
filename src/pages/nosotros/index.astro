@@ -8,7 +8,11 @@ import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
 import SectionHeading from '@components/SectionHeading.astro'
 import SectionMenu from '@components/SectionMenu.astro'
+import TrustBar from '@components/TrustBar.astro'
+import CompanyAbout from '@components/CompanyAbout.astro'
+import RelatedLinks from '@components/RelatedLinks.astro'
 import { waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
+import { homeCompany, homePillars } from '@data/home'
 
 // Principios — data-driven (grid de valores). DEMO de la plantilla.
 const principios = [
@@ -52,6 +56,7 @@ const menuCta = {
   />
 
   <SectionMenu items={menuSecciones} cta={menuCta} />
+  <TrustBar items={homePillars} />
 
   <section class="section">
     <div class="container">
@@ -86,6 +91,30 @@ const menuCta = {
       </div>
     </div>
   </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeading
+        layout="duo"
+        eyebrow="Sobre la empresa"
+        title="Equipo y servicio"
+        titleAccent="con contexto"
+        desc="Lo que hacemos y cómo trabajamos, con el contenido editorial central del sitio."
+      />
+      <CompanyAbout que={homeCompany.que} como={homeCompany.como} />
+    </div>
+  </section>
+
+  <RelatedLinks
+    title="Sigue por aquí"
+    links={[
+      { label: 'Servicios', href: '/servicios/', desc: 'Instalación, mantenimiento, inspección y capacitación.' },
+      { label: 'Productos', href: '/productos/', desc: 'Equipos contra incendio para cada tipo de inmueble.' },
+      { label: 'Cobertura', href: '/cobertura/', desc: 'Zonas que atendemos en CDMX y Estado de México.' },
+      { label: 'Contacto', href: '/contacto/', desc: 'WhatsApp, teléfono, correo y horario.' },
+    ]}
+    limit={4}
+  />
 </PageLayout>
 
 <style>

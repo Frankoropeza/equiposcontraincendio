@@ -13,11 +13,11 @@ files:
     href: "/plantillas/acta-simulacro-evacuacion.pdf"
     size: "59 KB"
 steps:
-  - "Antes del ejercicio: llena los datos del centro de trabajo y define la hipótesis y el alcance."
-  - "Durante: registra la hora de activación de la alarma y la hora en que terminó la evacuación."
-  - "Al terminar: marca los puntos observados con el jefe de brigada, en caliente."
-  - "Cierra con las áreas de oportunidad, cada una con responsable y fecha compromiso."
-  - "Recaba firmas y archívala con el resto del expediente."
+  - "Datos del ejercicio: llena los datos del centro de trabajo y define la hipótesis y el alcance."
+  - "Registro de tiempos: registra la hora de activación de la alarma y la hora en que terminó la evacuación."
+  - "Registro de hallazgos: marca los puntos observados con el jefe de brigada, en caliente."
+  - "Acciones correctivas: cierra con las áreas de oportunidad, cada una con responsable y fecha compromiso."
+  - "Firmas y archivo: recaba firmas y archívala con el resto del expediente."
 seoTitle: "Acta de simulacro de evacuación (descarga)"
 seoDescription: "Formato gratis para documentar un simulacro: tiempos, puntos observados, acciones correctivas y firmas. En Word editable y en PDF."
 relatedServices: ["capacitacion-dc3", "gestion-documental"]

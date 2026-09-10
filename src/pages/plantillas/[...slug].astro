@@ -1,18 +1,23 @@
 ---
 // ============================================================================
-// /plantillas/<slug>/ — Ficha de un formato descargable.
+// /plantillas/<slug>/ — Ficha de un formato descargable homologada al patrón L4.
 // ----------------------------------------------------------------------------
-// Ruta dinámica única sobre la colección `plantillas`. La página explica de qué
-// norma sale el formato y cómo se llena; el archivo se descarga desde aquí.
-// Publicar sólo el archivo no serviría: un .xlsx no posiciona ni enseña nada.
+// El contenido técnico proviene de la colección `plantillas`; esta página solo
+// compone Hero, navegación, descarga, proceso, cuerpo, enlaces y FAQ.
 // ============================================================================
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
-import FAQAccordion from '@components/FAQAccordion.astro'
-import CTABanner from '@components/CTABanner.astro'
+import SectionMenu from '@components/SectionMenu.astro'
+import SectionHeading from '@components/SectionHeading.astro'
+import TrustBar from '@components/TrustBar.astro'
+import ProcessSteps from '@components/ProcessSteps.astro'
+import QuoteCard from '@components/QuoteCard.astro'
 import RelatedLinks from '@components/RelatedLinks.astro'
+import FAQWithContact from '@components/FAQWithContact.astro'
 import { getCollection, render } from 'astro:content'
-import { waUrl } from '@config/site'
+import { CONTACT, sectionMenuItems, telUrl, waUrl } from '@config/site'
+import { plantillasPillars } from '@data/plantillas'
+import { relDesc } from '@data/related-desc'
 
 export async function getStaticPaths() {
   const plantillas = await getCollection('plantillas', ({ data }) => !data.draft)
@@ -22,17 +27,16 @@ export async function getStaticPaths() {
   return plantillas.map((entry) => {
     const otras = plantillas
       .filter((p) => p.id !== entry.id)
-      .map((p) => ({ label: p.data.label, href: `/plantillas/${p.id}/`, description: p.data.description }))
-
+      .map((p) => ({ label: p.data.label, href: `/plantillas/${p.id}/`, desc: relDesc('plantillas', p.id) }))
     const comerciales = [
       ...(entry.data.relatedServices ?? [])
         .map((r) => servicios.find((s) => s.id === r.id))
         .filter(Boolean)
-        .map((s) => ({ label: s!.data.title, href: `/servicios/${s!.id}/`, description: s!.data.description })),
+        .map((s) => ({ label: s!.data.title, href: `/servicios/${s!.id}/`, desc: relDesc('servicios', s!.id) })),
       ...(entry.data.relatedPosts ?? [])
         .map((r) => articulos.find((a) => a.id === r.id))
         .filter(Boolean)
-        .map((a) => ({ label: a!.data.title, href: `/blog/${a!.id}/`, description: a!.data.description })),
+        .map((a) => ({ label: a!.data.title, href: `/blog/${a!.id}/`, desc: relDesc('articulos', a!.id) })),
     ]
 
     return { params: { slug: entry.id }, props: { entry, otras, comerciales } }
@@ -43,93 +47,130 @@ const { entry, otras, comerciales } = Astro.props
 const { Content } = await render(entry)
 const d = entry.data
 const waHref = waUrl(`Hola, descargué el formato "${d.label}" y quiero que me apoyen con mi inmueble.`)
+const steps = (d.steps ?? []).map((step, index) => {
+  const match = step.match(/^([^:]+):\s*(.*)$/)
+  return {
+    num: String(index + 1).padStart(2, '0'),
+    title: match?.[1] ?? step,
+    desc: match?.[2] || 'Completa este paso y continúa con el siguiente.',
+  }
+})
+
 ---
 
 <PageLayout
   title={d.seoTitle ?? d.title}
   description={d.seoDescription ?? d.description}
+  image={d.image}
   pageType="page"
   schemaData={{ ...(d.faqs?.length ? { faqs: d.faqs } : {}) }}
   breadcrumbs={[{ label: 'Formatos descargables', href: '/plantillas/' }, { label: d.label }]}
   guia={false}
 >
   <Hero
-    badge={`Formato descargable · ${d.norm}`}
+    badge={d.files.map((file) => file.ext).join(' · ')}
     title={d.label}
     subtitle={d.description}
     descRight={[
-      'Descárgalo gratis, sin registro, en formato editable y en PDF para imprimir. Abajo está el paso a paso de llenado y de qué norma sale cada dato.',
-      'Es un formato de apoyo: no sustituye el programa interno de protección civil ni la documentación que exija la autoridad competente en cada caso.',
+      'Descárgalo gratis, sin registro, en formato editable y en PDF para imprimir.',
+      'Si prefieres no llenarlo tú, podemos apoyarte con la gestión documental de tu inmueble.',
     ]}
     ctas={[
-      { text: 'Formatos descargables', href: '/plantillas/', variant: 'outline' },
+      { text: `Descargar ${d.files[0].ext}`, href: d.files[0].href, variant: 'outline' },
       { text: 'Que lo llevemos nosotros', href: waHref, variant: 'primary', whatsapp: true },
     ]}
   />
 
-  <section class="section">
-    <div class="container container--prose">
-      <div class="dl">
-        <p class="dl__t">Descarga gratis, sin registro</p>
-        <div class="dl__row">
-          {d.files.map((f) => (
-            <a class="dl__btn" href={f.href} download>
-              <strong>{f.ext}</strong>
-              <span>{f.size}</span>
-            </a>
-          ))}
-        </div>
+  <SectionMenu
+    items={sectionMenuItems()}
+    cta={{ label: 'Gestión documental', href: waHref, sub: 'Que lo llevemos nosotros', external: true }}
+  />
+  <TrustBar items={plantillasPillars} />
+
+  <section class="section section--surface" id="descarga">
+    <div class="container">
+      <SectionHeading
+        layout="duo"
+        eyebrow="Descarga"
+        title="Descarga el"
+        titleAccent="formato"
+        desc="Elige el archivo que se adapte a tu forma de trabajo."
+      />
+      <div class:list={['card-grid', d.files.length === 2 ? 'card-grid--duo' : 'card-grid--trio']}>
+        {d.files.map((file) => (
+          <a class="download-card" href={file.href} download>
+            <span class="download-card__ext">{file.ext}</span>
+            <span class="download-card__label">Descargar archivo</span>
+            <span class="download-card__size">{file.size}</span>
+          </a>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container container--prose">
-      {d.steps && d.steps.length > 0 && (
-        <>
-          <h2>Cómo se llena</h2>
-          <ol class="steps">{d.steps.map((s) => <li>{s}</li>)}</ol>
-        </>
-      )}
-
-      <div class="prose"><Content /></div>
-    </div>
-  </section>
-
-  {d.faqs && d.faqs.length > 0 && (
-    <section class="section section--surface">
-      <div class="container container--prose">
-        <FAQAccordion items={d.faqs} title="Preguntas frecuentes" openFirst />
-      </div>
-    </section>
+  {steps.length > 0 && (
+    <ProcessSteps
+      eyebrow="Cómo se llena"
+      title="Del archivo"
+      titleAccent="al expediente"
+      desc="Sigue los pasos en el orden del formato y conserva la evidencia junto al resto de tu documentación."
+      steps={steps}
+    />
   )}
 
-  <section class="section">
+  <section class="section section--surface">
     <div class="container">
-      <RelatedLinks title="Sigue por aquí" links={[...otras, ...comerciales].slice(0, 4)} limit={4} />
+      <SectionHeading
+        layout="duo"
+        eyebrow="Contenido del formato"
+        title="Lo que debes"
+        titleAccent="tener presente"
+        desc="Para qué sirve, qué no sustituye y cómo conservarlo."
+      />
+      <div class="guide-grid">
+        <article class="prose"><Content /></article>
+        <QuoteCard
+          title={d.label}
+          waLink={waHref}
+          telHref={telUrl()}
+          eyebrow="¿Prefieres no llenarlo tú?"
+          items={['Bitácora al día', 'Etiqueta y collarín en regla', 'Expediente listo para la visita']}
+          showPrice={false}
+          ctaLabel="Gestión documental por WhatsApp"
+        />
+      </div>
     </div>
   </section>
 
-  <CTABanner
-    heading="¿Quieres que lo llevemos nosotros?"
-    desc="Mantenimiento, inspección, capacitación y expediente al día, sin que tengas que perseguir papeles."
-    btns={[{ label: 'Hablar por WhatsApp', href: waHref, icon: 'wa', primary: true, external: true }]}
-    badge="CDMX y Estado de México"
-    variant="red"
+  <RelatedLinks
+    title="Sigue por aquí"
+    desc="Otras plantillas y enlaces comerciales relacionados."
+    links={[...otras, ...comerciales]}
+    limit={4}
   />
+
+  {d.faqs && d.faqs.length > 0 && (
+    <FAQWithContact
+      items={d.faqs}
+      waNumber={CONTACT.whatsapp}
+      eyebrow="Preguntas frecuentes"
+      title="Preguntas frecuentes"
+      titleAccent="sobre este formato"
+    />
+  )}
 </PageLayout>
 
 <style>
   .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
-  .container--prose { max-width: var(--container-prose, 72ch); }
   .section { padding: var(--sp-8) 0; }
-  @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
   .section--surface { background: var(--c-surface); }
-  .dl { padding: var(--sp-5) var(--sp-6); border: 1px solid var(--c-border); border-left: 4px solid var(--c-accent); border-radius: var(--radius-lg, 12px); background: var(--c-white); max-width: 40rem; }
-  .dl__t { margin: 0 0 var(--sp-3); font-size: var(--text-sm); color: var(--c-ink-2); }
-  .dl__row { display: flex; flex-wrap: wrap; gap: var(--sp-3); }
-  .dl__btn { display: grid; gap: 2px; padding: var(--sp-3) var(--sp-5); border-radius: var(--radius-md, 8px); background: var(--c-primary); color: #fff; text-decoration: none; text-align: center; }
-  .dl__btn:hover { background: var(--c-primary-dark); }
-  .dl__btn span { font-size: var(--text-xs); opacity: .85; }
-  .steps { display: grid; gap: var(--sp-2); padding-left: 1.2rem; }
+  @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
+  .download-card { display: flex; flex-direction: column; gap: var(--sp-2); padding: var(--sp-6); border: 1px solid var(--c-border); border-radius: var(--radius-lg); background: var(--c-white); color: var(--c-ink); text-decoration: none; }
+  .download-card:hover { border-color: var(--c-primary); box-shadow: var(--shadow-sm); }
+  .download-card__ext { font-family: var(--font-heading); font-size: var(--text-2xl); font-weight: var(--weight-black); color: var(--c-primary); }
+  .download-card__label { font-weight: var(--weight-semibold); }
+  .download-card__size { color: var(--c-muted); font-size: var(--text-sm); }
+  .guide-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--sp-8); align-items: start; }
+  .guide-grid .prose { max-width: 68ch; }
+  @media (min-width: 900px) { .guide-grid { grid-template-columns: minmax(0, 1fr) minmax(18rem, 25rem); } }
 </style>

@@ -6,17 +6,32 @@ interface Props {
   price?: string;
   waLink: string;
   telHref: string;
+  eyebrow?: string;
+  items?: string[];
+  itemsLabel?: string;
+  showPrice?: boolean;
+  ctaLabel?: string;
 }
-const { title, price, waLink, telHref } = Astro.props as Props;
+const {
+  title,
+  price,
+  waLink,
+  telHref,
+  eyebrow = 'Cotiza por WhatsApp',
+  items = ['Giro del negocio', 'Superficie aproximada', 'Presentación y cantidad'],
+  itemsLabel = 'Para cotizar, envíanos:',
+  showPrice = true,
+  ctaLabel = 'Cotizar por WhatsApp',
+} = Astro.props as Props;
 ---
 <aside class="quote-card">
   {/* ─── Datos requeridos para cotizar ─── */}
-  <p class="quote-card__eyebrow">Cotiza por WhatsApp</p>
+  <p class="quote-card__eyebrow">{eyebrow}</p>
   <h3>{title}</h3>
-  <p class="quote-card__price">{price ?? 'Precio bajo cotización'}</p>
-  <p class="quote-card__label">Para cotizar, envíanos:</p>
-  <ul><li>Giro del negocio</li><li>Superficie aproximada</li><li>Presentación y cantidad</li></ul>
-  <a class="btn btn--primary btn--block" href={waLink} target="_blank" rel="noopener noreferrer">Cotizar por WhatsApp</a>
+  {showPrice && <p class="quote-card__price">{price ?? 'Precio bajo cotización'}</p>}
+  <p class="quote-card__label">{itemsLabel}</p>
+  <ul>{items.map((item) => <li>{item}</li>)}</ul>
+  <a class="btn btn--primary btn--block" href={waLink} target="_blank" rel="noopener noreferrer">{ctaLabel}</a>
   <a class="btn btn--ghost btn--block" href={telHref}>Llamar</a>
 </aside>
 <style>

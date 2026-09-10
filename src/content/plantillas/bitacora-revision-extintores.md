@@ -13,11 +13,11 @@ files:
     href: "/plantillas/bitacora-revision-mensual-extintores.pdf"
     size: "35 KB"
 steps:
-  - "Llena el encabezado: razón social, domicilio del centro de trabajo, grado de riesgo de incendio y año."
-  - "Da de alta una fila por extintor, con su ubicación, agente, capacidad e identificación."
-  - "Anota la fecha de la última recarga y la de la prueba hidrostática del cilindro."
-  - "Cada mes, recorre los equipos, marca la casilla del mes y anota en Observaciones lo que encuentres mal."
-  - "Corrige lo observado y guarda el comprobante del servicio junto a la bitácora."
+  - "Datos del encabezado: llena la razón social, domicilio del centro de trabajo, grado de riesgo de incendio y año."
+  - "Una fila por equipo: da de alta cada extintor con su ubicación, agente, capacidad e identificación."
+  - "Fechas de servicio: anota la fecha de la última recarga y la de la prueba hidrostática del cilindro."
+  - "Revisión mensual: recorre los equipos, marca la casilla del mes y anota en Observaciones lo que encuentres mal."
+  - "Archivo de comprobantes: corrige lo observado y guarda el comprobante del servicio junto a la bitácora."
 seoTitle: "Bitácora de revisión de extintores (descarga)"
 seoDescription: "Formato gratis para registrar la revisión mensual de extintores, con la lista de qué revisar cada mes. En Excel y en PDF para imprimir."
 relatedServices: ["mantenimiento", "inspeccion"]

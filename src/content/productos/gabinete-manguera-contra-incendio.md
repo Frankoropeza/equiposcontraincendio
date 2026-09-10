@@ -8,6 +8,15 @@ brand: "Equipos Contra Incendio"
 order: 7
 seoTitle: "Gabinetes con manguera contra incendio 1½\""
 seoDescription: "Compara gabinetes de sobreponer, empotrar y combinados para manguera contra incendio de 1½ pulgadas."
+faqs:
+  - question: "¿Qué longitud de manguera puedo elegir?"
+    answer: "Puedes elegir manguera de 15 o 30 metros, según el recorrido previsto en el inmueble. El modelo combinado también admite manguera de hasta 30 metros y un extintor portátil."
+  - question: "¿Qué diferencia hay entre sobreponer y empotrar?"
+    answer: "El sobrepuesto va sobre el muro y deja el gabinete proyectado hacia el pasillo. El empotrable reduce esa proyección, pero requiere coordinar vano y profundidad con la obra."
+  - question: "¿Qué incluye el conjunto hidráulico?"
+    answer: "El conjunto puede integrar cuerpo, puerta, manguera, válvula angular y chiflón compatibles con la red hidráulica. La configuración final depende del diseño hidráulico existente y de los accesorios seleccionados."
+  - question: "¿El gabinete sustituye el cálculo de la red?"
+    answer: "El gabinete mantiene accesibles los elementos, pero no reemplaza el cálculo de la red hidráulica. También necesitas considerar la capacitación de la brigada para operar el sistema correctamente."
 variantes:
   - nombre: "Gabinete de sobreponer con manguera de 15 m"
     badge: "Compacto"

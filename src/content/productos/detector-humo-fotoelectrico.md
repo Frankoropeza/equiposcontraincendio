@@ -8,6 +8,15 @@ brand: "Equipos Contra Incendio"
 order: 6
 seoTitle: "Detectores de humo | autónomos y para panel"
 seoDescription: "Compara detectores de humo fotoeléctricos: batería, interconectados, humo y CO, o para panel de alarma."
+faqs:
+  - question: "¿Qué detector de humo se adapta mejor a mi instalación?"
+    answer: "Puedes elegir un modelo autónomo con batería AA, batería sellada de 10 años o alimentación de 120 V. También hay opciones interconectadas, combinadas con monóxido de carbono y de dos hilos para panel."
+  - question: "¿Qué detector funciona sin panel de alarma?"
+    answer: "Si no tienes panel, te conviene un detector autónomo con batería AA o batería sellada. También puedes elegir uno combinado con monóxido de carbono; todos incorporan alarma sonora autónoma."
+  - question: "¿Qué necesito para conectar un detector a un panel?"
+    answer: "Un detector fotoeléctrico de dos hilos con base compatible con tu panel. Antes de pedirlo, confirma marca y modelo del panel, tensión y dispositivos de notificación: se revisan como un solo sistema."
+  - question: "¿Mi centro de trabajo tiene que revisar los detectores?"
+    answer: "Sí. La NOM-002-STPS-2010 incluye los medios de detección y las alarmas de incendio en el programa de revisión del centro de trabajo. Guarda el registro de cada revisión junto con el de tus extintores."
 variantes:
   - nombre: "Detector fotoeléctrico con batería AA"
     badge: "Autónomo"
