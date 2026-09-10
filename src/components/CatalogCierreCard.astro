@@ -1,0 +1,131 @@
+---
+// CatalogCierreCard.astro — ficha de servicio que completa la última fila del catálogo.
+import { waUrl } from '@config/site';
+import type { FichaCierre } from '@data/extintores-catalogo';
+
+interface Props {
+  ficha: FichaCierre;
+}
+
+const { ficha } = Astro.props as Props;
+const href = ficha.whatsapp ? waUrl(ficha.href) : ficha.href;
+---
+
+<article class="catalog-cierre" hidden data-cierre>
+  <img
+    class="catalog-cierre__image"
+    src={ficha.image}
+    alt={ficha.imageAlt}
+    width="640"
+    height="400"
+    loading="lazy"
+    decoding="async"
+  />
+
+  <div class="catalog-cierre__body">
+    <span class="catalog-cierre__badge">{ficha.badge}</span>
+    <h3 class="catalog-cierre__title">{ficha.title}</h3>
+    <p class="catalog-cierre__description">{ficha.description}</p>
+    <a
+      class:list={[
+        'catalog-cierre__cta',
+        { 'catalog-cierre__cta--whatsapp': ficha.whatsapp },
+      ]}
+      href={href}
+      target={ficha.whatsapp ? '_blank' : undefined}
+      rel={ficha.whatsapp ? 'noopener noreferrer' : undefined}
+    >
+      {ficha.ctaLabel}
+    </a>
+  </div>
+</article>
+
+<style>
+  .catalog-cierre {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    background: var(--c-white);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .catalog-cierre[hidden] {
+    display: none;
+  }
+
+  .catalog-cierre__image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    background: var(--c-surface);
+  }
+
+  .catalog-cierre__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: var(--sp-5);
+    background: var(--c-surface);
+  }
+
+  .catalog-cierre__badge {
+    display: inline-flex;
+    align-self: flex-start;
+    max-width: 100%;
+    margin-bottom: var(--sp-4);
+    padding: .3em .65em;
+    border: 1px solid var(--c-primary);
+    border-radius: var(--radius-sm);
+    background: var(--c-primary);
+    color: #fff;
+    font-size: var(--text-xs);
+    font-weight: var(--weight-bold);
+    letter-spacing: .03em;
+    text-transform: uppercase;
+  }
+
+  .catalog-cierre__title {
+    margin: 0 0 var(--sp-3);
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    line-height: var(--leading-snug);
+  }
+
+  .catalog-cierre__description {
+    margin: 0;
+    color: var(--c-ink-2);
+    font-size: var(--text-sm);
+    line-height: var(--leading-relaxed);
+  }
+
+  .catalog-cierre__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    margin-top: auto;
+    padding: var(--sp-3) var(--sp-4);
+    border-radius: var(--radius-sm);
+    background: var(--c-primary);
+    color: #fff;
+    font-weight: var(--weight-semibold);
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .catalog-cierre__cta:hover {
+    background: var(--c-primary-dark);
+  }
+
+  .catalog-cierre__cta--whatsapp {
+    background: var(--c-whatsapp);
+  }
+
+  .catalog-cierre__cta--whatsapp:hover {
+    background: var(--c-whatsapp-dark);
+  }
+</style>

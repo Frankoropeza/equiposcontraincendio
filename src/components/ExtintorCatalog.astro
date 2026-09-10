@@ -1,13 +1,17 @@
 ---
 // ExtintorCatalog.astro — catálogo filtrable de presentaciones.
 // Contrato: recibe items normalizados y el copy de extSecciones.catalogo.
+// Regla de cierre: toda fila debe completar cuatro tarjetas; las fichas de servicio
+// rellenan únicamente los espacios faltantes y no cuentan como presentaciones.
 import SectionHeading from './SectionHeading.astro';
 import ExtintorCard from './ExtintorCard.astro';
+import CatalogCierreCard from './CatalogCierreCard.astro';
 import {
   EXT_AGENTE_FILTRO,
   EXT_FORMATO_LABEL,
   EXT_USO_LABEL,
   EXT_CLASE_LABEL,
+  extCatalogoCierre,
 } from '@data/extintores-catalogo';
 import { waUrl } from '@config/site';
 
@@ -111,6 +115,7 @@ const groups: FilterGroup[] = [
 
     <div class="catalog__grid card-grid">
       {items.map((item, index) => <ExtintorCard item={item} index={index} />)}
+      {extCatalogoCierre.map((ficha) => <CatalogCierreCard ficha={ficha} />)}
     </div>
 
     <div class="catalog__empty" hidden>
@@ -136,9 +141,22 @@ const groups: FilterGroup[] = [
     const count = root.querySelector<HTMLElement>('.catalog__count');
     const clear = root.querySelector<HTMLButtonElement>('.catalog__clear');
     const empty = root.querySelector<HTMLElement>('.catalog__empty');
+    const grid = root.querySelector<HTMLElement>('.catalog__grid');
     const cards = [...root.querySelectorAll<HTMLElement>('.ecard')];
+    const closureCards = [...root.querySelectorAll<HTMLElement>('[data-cierre]')];
     const groups = [...root.querySelectorAll<HTMLElement>('[data-filter-group]')];
     const state: Record<FilterKey, string> = { agente: '', formato: '', uso: '', clase: '' };
+    let visibleCount = 0;
+
+    const updateClosures = (visible: number) => {
+      if (!grid) return;
+      const columns = getComputedStyle(grid).gridTemplateColumns.split(' ').filter(Boolean).length;
+      const cols = columns || 1;
+      const missing = visible === 0 ? 0 : (cols - (visible % cols)) % cols;
+      closureCards.forEach((card, index) => {
+        card.hidden = index >= missing;
+      });
+    };
 
     const readUrl = () => {
       const params = new URLSearchParams(window.location.search);
@@ -173,6 +191,9 @@ const groups: FilterGroup[] = [
         card.hidden = !matches;
         if (matches) visible += 1;
       });
+
+      visibleCount = visible;
+      updateClosures(visible);
 
       if (count) count.textContent = `Mostrando ${visible} de ${cards.length} presentaciones`;
       if (empty) empty.hidden = visible !== 0;
@@ -218,6 +239,10 @@ const groups: FilterGroup[] = [
       readUrl();
       apply();
     });
+
+    if (grid && 'ResizeObserver' in window) {
+      new ResizeObserver(() => updateClosures(visibleCount)).observe(grid);
+    }
 
     if (interactive) interactive.hidden = false;
     readUrl();

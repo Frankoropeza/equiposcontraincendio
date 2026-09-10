@@ -292,3 +292,50 @@ export const extSecciones = {
     ],
   },
 };
+
+// ── Fichas de cierre del catálogo (regla de 4 por fila, 2026-09-10) ─────────
+// El catálogo tiene 29 presentaciones reales y los filtros cambian el total,
+// así que la última fila casi nunca cierra en 4. Frank eligió completarla con
+// fichas de cierre: el componente muestra solo las que falten para llenar la
+// fila (0 a 3 a 4 columnas; 0 o 1 a 2 columnas), en este orden, y las recalcula
+// con cada filtro. Nunca se inventa una presentación para rellenar.
+export type FichaCierre = {
+  badge: string;
+  title: string;
+  description: string;
+  href: string;
+  ctaLabel: string;
+  image: string;
+  imageAlt: string;
+  whatsapp?: boolean;
+};
+export const extCatalogoCierre: FichaCierre[] = [
+  {
+    badge: 'Cotización a la medida',
+    title: '¿No ves la capacidad que buscas?',
+    description: 'Dinos el agente, la capacidad y la cantidad. Si se consigue en el mercado, te la cotizamos.',
+    href: 'Hola, busco un extintor con una capacidad o un agente que no vi en el catálogo. ¿Me ayudan a cotizarlo?',
+    ctaLabel: 'Cotizar por WhatsApp',
+    image: '/images/general/inventario-proveedor-equipo-contra-incendio.avif',
+    imageAlt: 'Inventario de extintores y equipo contra incendio en bodega',
+    whatsapp: true,
+  },
+  {
+    badge: 'Calculadora gratis',
+    title: '¿Cuántos extintores necesito?',
+    description: 'Calcula el mínimo que pide la NOM-002 según la superficie y el nivel de riesgo.',
+    href: '/herramientas/cuantos-extintores-necesito/',
+    ctaLabel: 'Cuántos extintores',
+    image: '/images/servicios/auditoria-seguridad-contra-incendio.avif',
+    imageAlt: 'Levantamiento de riesgo de incendio en una planta',
+  },
+  {
+    badge: 'Servicio NOM-154',
+    title: 'Recarga de extintores',
+    description: 'Mantenimiento anual, recarga tras cualquier uso y prueba hidrostática del cilindro.',
+    href: '/servicios/mantenimiento/',
+    ctaLabel: 'Recarga de extintores',
+    image: '/images/servicios/inspeccion-recarga-extintores.avif',
+    imageAlt: 'Recarga y mantenimiento de extintores en taller de servicio',
+  },
+];

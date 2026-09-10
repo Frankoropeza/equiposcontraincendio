@@ -53,3 +53,10 @@ test('cada vitrina L3 tiene fichas en múltiplos de 4, con 3 specs cada una', ()
     assert.equal(specs, fichas * 3, `${list}: cada ficha lleva exactamente 3 specs`);
   }
 });
+
+test('el catálogo completa su última fila con fichas de cierre, no con presentaciones', () => {
+  const catalog = fs.readFileSync(path.join(ROOT, 'src/components/ExtintorCatalog.astro'), 'utf8');
+  assert.match(catalog, /extCatalogoCierre/, 'el catálogo debe leer las fichas de cierre de @data');
+  assert.match(catalog, /data-cierre/, 'las fichas de cierre se marcan con data-cierre');
+  assert.match(catalog, /gridTemplateColumns/, 'las columnas se leen de la retícula real, sin duplicar breakpoints');
+});
