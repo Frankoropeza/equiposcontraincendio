@@ -97,12 +97,31 @@ const {
     margin-inline: auto;
     padding-inline: var(--container-px);
   }
-  .riskguide { padding: var(--section-py) 0; background: var(--c-white); }
+
+  .riskguide {
+    padding: var(--section-py) 0;
+    background: var(--c-white);
+  }
 
   /* Tabla con scroll horizontal en móvil (robusto, sin reflow frágil). */
-  .tbl-wrap { overflow-x: auto; border: 1px solid var(--c-border); border-radius: var(--radius-md); }
-  .tbl-wrap:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 2px; }
-  .tbl { width: 100%; min-width: 720px; border-collapse: collapse; font-size: var(--text-sm); }
+  .tbl-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+  }
+
+  .tbl-wrap:focus-visible {
+    outline: 2px solid var(--c-primary);
+    outline-offset: 2px;
+  }
+
+  .tbl {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+    font-size: var(--text-sm);
+  }
+
   .tbl thead th {
     text-align: left;
     background: var(--c-surface);
@@ -116,6 +135,7 @@ const {
     border-bottom: 1px solid var(--c-border);
     white-space: nowrap;
   }
+
   .tbl tbody td {
     padding: var(--sp-3) var(--sp-4);
     border-bottom: 1px solid var(--c-border);
@@ -123,8 +143,15 @@ const {
     line-height: var(--leading-normal);
     vertical-align: top;
   }
-  .tbl tbody tr:last-child td { border-bottom: none; }
-  .tbl tbody td strong { color: var(--c-primary); white-space: nowrap; }
+
+  .tbl tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .tbl tbody td strong {
+    color: var(--c-primary);
+    white-space: nowrap;
+  }
 
   .riskguide__footer {
     display: flex;
@@ -133,6 +160,7 @@ const {
     flex-wrap: wrap;
     margin-top: var(--sp-5);
   }
+
   .riskguide__note {
     flex: 1;
     min-width: 280px;
@@ -141,6 +169,7 @@ const {
     color: var(--c-muted);
     line-height: var(--leading-relaxed);
   }
+
   .riskguide__cta {
     display: inline-flex;
     align-items: center;
@@ -154,9 +183,15 @@ const {
     text-decoration: none;
     background: var(--c-primary);
     border-radius: var(--radius-md);
-    transition: background var(--transition), gap var(--transition);
+    transition: background-color var(--transition);
   }
-  .riskguide__cta:hover { background: var(--c-primary-dark); gap: var(--sp-3); }
-  .riskguide__cta:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 2px; }
-  @media (prefers-reduced-motion: reduce) { .riskguide__cta { transition: none; } }
+
+  .riskguide__cta:hover {
+    background: var(--c-primary-dark);
+  }
+
+  .riskguide__cta:focus-visible {
+    outline: 2px solid var(--c-primary);
+    outline-offset: 2px;
+  }
 </style>

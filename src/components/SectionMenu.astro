@@ -93,44 +93,75 @@ const {
 
 <style>
   /* Barra de secciones FULL-WIDTH (de borde a borde del viewport). A diferencia
-     del resto del sitio (contenido al 90%), aquí los botones se REPARTEN POR % a
-     lo largo del 100% del ancho —como meseci.com.mx—: cada botón = una fracción
-     igual del total, sin caja ni margen propios. */
+  del resto del sitio (contenido al 90%), aquí los botones se REPARTEN POR % a
+  lo largo del 100% del ancho —como meseci.com.mx—: cada botón = una fracción
+  igual del total, sin caja ni margen propios. */
   .secmenu {
     width: 100%;
     background: var(--c-white);
     border-top: 1px solid var(--c-border);
     border-bottom: 1px solid var(--c-border);
   }
-  .secmenu__inner { width: 100%; }
+
+  .secmenu__inner {
+    width: 100%;
+  }
 
   /* Mobile-first: apilados, cada botón ocupa el 100% del ancho. */
   .secmenu__bar {
-    list-style: none; margin: 0; padding: 0;
-    display: flex; flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
   }
+
   .secmenu__cell {
     display: flex;
     border-bottom: 1px solid var(--c-border);
   }
-  .secmenu__cell:last-child { border-bottom: none; }
+
+  .secmenu__cell:last-child {
+    border-bottom: none;
+  }
 
   /* Botón: llena su celda, contenido centrado. Sin borde ni redondeo propios
-     (la barra es continua); los divisores los ponen las celdas. */
+  (la barra es continua); los divisores los ponen las celdas. */
   .secbtn {
     flex: 1;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 2px; text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    text-align: center;
     padding: var(--sp-4);
     background: var(--c-white);
     text-decoration: none;
     transition: background var(--transition), color var(--transition);
   }
-  .secbtn:hover { background: var(--c-surface); }
-  .secbtn:focus-visible { outline: 2px solid var(--c-primary); outline-offset: -2px; }
 
-  .secbtn__top { display: flex; align-items: center; gap: var(--sp-2); }
-  .secbtn__icon { display: inline-flex; color: var(--c-primary); flex: none; }
+  .secbtn:hover {
+    background: var(--c-surface);
+  }
+
+  .secbtn:focus-visible {
+    outline: 2px solid var(--c-primary);
+    outline-offset: -2px;
+  }
+
+  .secbtn__top {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2);
+  }
+
+  .secbtn__icon {
+    display: inline-flex;
+    color: var(--c-primary);
+    flex: none;
+  }
+
   .secbtn__label {
     font-family: var(--font-heading);
     font-weight: var(--weight-semibold);
@@ -138,7 +169,11 @@ const {
     color: var(--c-ink);
     line-height: var(--leading-snug);
   }
-  .secbtn:hover .secbtn__label { color: var(--c-primary-dark); }
+
+  .secbtn:hover .secbtn__label {
+    color: var(--c-primary-dark);
+  }
+
   .secbtn__sub {
     font-size: var(--text-xs);
     color: var(--c-muted);
@@ -146,28 +181,50 @@ const {
   }
 
   /* CTA de conversión: relleno en color de marca para que destaque del resto. */
-  .secbtn--cta { background: var(--c-primary); }
-  .secbtn--cta .secbtn__icon { color: #fff; }
-  .secbtn--cta .secbtn__label { color: #fff; }
-  .secbtn--cta .secbtn__sub { color: rgba(255, 255, 255, .85); }
-  .secbtn--cta:hover { background: var(--c-primary-dark); }
-  .secbtn--cta:hover .secbtn__label { color: #fff; }
+  .secbtn--cta {
+    background: var(--c-primary);
+  }
+
+  .secbtn--cta .secbtn__icon {
+    color: #fff;
+  }
+
+  .secbtn--cta .secbtn__label {
+    color: #fff;
+  }
+
+  .secbtn--cta .secbtn__sub {
+    color: rgba(255, 255, 255, .85);
+  }
+
+  .secbtn--cta:hover {
+    background: var(--c-primary-dark);
+  }
+
+  .secbtn--cta:hover .secbtn__label {
+    color: #fff;
+  }
 
   /* ≥768px: UNA sola fila; las celdas se reparten el 100% del ancho por igual
-     (flex:1 1 0 → cada una el mismo %) y se separan con divisores verticales. */
+  (flex:1 1 0 → cada una el mismo %) y se separan con divisores verticales. */
   @media (min-width: 768px) {
-    .secmenu__bar { flex-direction: row; }
+    .secmenu__bar {
+      flex-direction: row;
+    }
+
     .secmenu__cell {
-      flex: 1 1 0; min-width: 0;
+      flex: 1 1 0;
+      min-width: 0;
       border-bottom: none;
       border-right: 1px solid var(--c-border);
     }
-    .secmenu__cell:last-child { border-right: none; }
-    .secbtn { padding: var(--sp-5) var(--sp-4); }
-  }
 
-  /* Respeta usuarios que prefieren menos movimiento. */
-  @media (prefers-reduced-motion: reduce) {
-    .secbtn { transition: none; }
+    .secmenu__cell:last-child {
+      border-right: none;
+    }
+
+    .secbtn {
+      padding: var(--sp-5) var(--sp-4);
+    }
   }
 </style>

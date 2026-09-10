@@ -32,17 +32,87 @@ const { marcas, nota, copy } = Astro.props as { marcas: Marca[]; nota: string; c
 </section>
 
 <style>
-  .brands { background: var(--c-white); }
-  .brands__note { display: flex; align-items: flex-start; gap: var(--sp-3); margin-bottom: var(--sp-6); padding: var(--sp-4); border: 1px solid var(--c-border); border-radius: var(--radius-md); background: var(--c-surface); color: var(--c-ink-2); }
-  .brands__note span { color: var(--c-primary); font-size: var(--text-xl); line-height: 1; }
-  .brands__note p { margin: 0; font-size: var(--text-sm); }
-  .brands__grid { grid-template-columns: repeat(2, 1fr); }
-  .brands__card { height: 100%; padding: var(--sp-4); border: 1px solid var(--c-border); border-radius: var(--radius-md); background: var(--c-white); }
-  .brands__top { display: flex; flex-direction: column; align-items: flex-start; gap: var(--sp-2); }
-  .brands__card h3 { margin: 0; font-family: var(--font-heading); font-size: var(--text-lg); }
-  .brands__type { padding: .25em .45em; border-radius: var(--radius-sm); background: var(--c-surface); color: var(--c-muted); font-size: var(--text-xs); }
-  .brands__card p { margin: var(--sp-3) 0 0; color: var(--c-ink-2); font-size: var(--text-sm); }
-  .brands__card .brands__origin { color: var(--c-primary); font-weight: var(--weight-semibold); }
-  .brands__card small { display: block; margin-top: var(--sp-3); color: var(--c-muted); font-size: var(--text-xs); }
-  @media (min-width: 1024px) { .brands__grid { grid-template-columns: repeat(5, 1fr); } }
+  .brands {
+    background: var(--c-white);
+  }
+
+  .brands__note {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--sp-3);
+    margin-bottom: var(--sp-6);
+    padding: var(--sp-4);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    background: var(--c-surface);
+    color: var(--c-ink-2);
+  }
+
+  .brands__note span {
+    color: var(--c-primary);
+    font-size: var(--text-xl);
+    line-height: 1;
+  }
+
+  .brands__note p {
+    margin: 0;
+    font-size: var(--text-sm);
+  }
+
+  .brands__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .brands__card {
+    height: 100%;
+    padding: var(--sp-4);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    background: var(--c-white);
+  }
+
+  .brands__top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-2);
+  }
+
+  .brands__card h3 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+  }
+
+  .brands__type {
+    padding: .25em .45em;
+    border-radius: var(--radius-sm);
+    background: var(--c-surface);
+    color: var(--c-muted);
+    font-size: var(--text-xs);
+  }
+
+  .brands__card p {
+    margin: var(--sp-3) 0 0;
+    color: var(--c-ink-2);
+    font-size: var(--text-sm);
+  }
+
+  .brands__card .brands__origin {
+    color: var(--c-primary);
+    font-weight: var(--weight-semibold);
+  }
+
+  .brands__card small {
+    display: block;
+    margin-top: var(--sp-3);
+    color: var(--c-muted);
+    font-size: var(--text-xs);
+  }
+
+  @media (min-width: 1024px) {
+    .brands__grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
 </style>

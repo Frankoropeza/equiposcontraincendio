@@ -1,73 +1,97 @@
 /* tokens.css — FUENTE ÚNICA de design tokens del sistema Equipos Contra Incendio.
-   Canónico: familia --c-* / --sp-* (origen PROYECTORED). Importar UNA sola vez en BaseLayout.
-   Resuelve el anti-patrón C2 (doble fuente de tokens). NO redefinir estos valores en otro archivo.
-   El bloque "PUENTE DE ALIAS" mapea nombres heredados (MESECI --color-*, --space-*) al canónico
-   para que los componentes extraídos rendericen sin reescritura. Migrar a nombres canónicos es deuda de roadmap. */
-
+Canónico: familia --c-* / --sp-* (origen PROYECTORED). Importar UNA sola vez en BaseLayout.
+Resuelve el anti-patrón C2 (doble fuente de tokens). NO redefinir estos valores en otro archivo.
+El bloque "PUENTE DE ALIAS" mapea nombres heredados (MESECI --color-*, --space-*) al canónico
+para que los componentes extraídos rendericen sin reescritura. Migrar a nombres canónicos es deuda de roadmap. */
 :root {
   /* ---------- COLOR (marca) ---------- */
-  --c-primary: #c62828;          /* Rojo seguridad — equiposcontraincendio.com */
+  --c-primary: #c62828;
+  /* Rojo seguridad — equiposcontraincendio.com */
   --c-primary-light: #e53935;
   --c-primary-dark: #8e0000;
   --c-accent: var(--c-primary);
   /* Canal RGB del primario para rgba(var(--c-primary-rgb), a). Mantener
-     sincronizado con --c-primary (#c62828 = 91,61,245). Lo usan Header/CTA. */
+  sincronizado con --c-primary (#c62828 = 91,61,245). Lo usan Header/CTA. */
   --c-primary-rgb: 198, 40, 40;
-
   /* ---------- COLOR (tinta / neutros) ---------- */
-  --c-ink: #14181f;              /* texto principal */
-  --c-ink-2: #3a424e;            /* texto secundario */
-  --c-muted: #6b7280;            /* texto tenue / captions */
+  --c-ink: #14181f;
+  /* texto principal */
+  --c-ink-2: #3a424e;
+  /* texto secundario */
+  --c-muted: #6b7280;
+  /* texto tenue / captions */
   --c-border: #e5e7eb;
-  --c-surface: #f7f8fa;          /* fondos de sección */
+  --c-surface: #f7f8fa;
+  /* fondos de sección */
   --c-white: #ffffff;
+  --c-whatsapp: #25D366;
+  --c-whatsapp-rgb: 37, 211, 102;
+  --c-whatsapp-dark: #1ebe57;
+  --c-whatsapp-active: #19a34a;
   --c-bg: #ffffff;
-  --color-bg: #ffffff;           /* alias usado por ServiceLayout (fondo de dl/toc) */
-
+  --color-bg: #ffffff;
+  /* alias usado por ServiceLayout (fondo de dl/toc) */
   /* ---------- TIPOGRAFÍA ---------- */
   --font-heading: 'Outfit', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-
-  --text-xs: .75rem;   --text-sm: .875rem;  --text-base: 1rem;
-  --text-lg: 1.125rem; --text-xl: 1.25rem;  --text-2xl: 1.5rem;
-  --text-3xl: 1.875rem; --text-4xl: 2.25rem;
+  --text-xs: .75rem;
+  --text-sm: .875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
   --text-fluid-3xl: clamp(1.6rem, 1.1rem + 2.2vw, 2.25rem);
   --text-fluid-4xl: clamp(2rem, 1.3rem + 3vw, 3rem);
-
-  --weight-regular: 400; --weight-medium: 500; --weight-semibold: 600;
-  --weight-bold: 700; --weight-black: 800;
-  --leading-tight: 1.2; --leading-snug: 1.35; --leading-normal: 1.5; --leading-relaxed: 1.7;
-
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-black: 800;
+  --leading-tight: 1.2;
+  --leading-snug: 1.35;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.7;
   /* ---------- ESPACIADO (escala canónica --sp-*) ---------- */
-  --sp-1: .25rem; --sp-2: .5rem;  --sp-3: .75rem; --sp-4: 1rem;
-  --sp-5: 1.5rem; --sp-6: 2rem;   --sp-8: 3rem;   --sp-10: 4rem; --sp-12: 6rem;
-
+  --sp-1: .25rem;
+  --sp-2: .5rem;
+  --sp-3: .75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-8: 3rem;
+  --sp-10: 4rem;
+  --sp-12: 6rem;
   /* ---------- RADIOS / BORDES ---------- */
-  --radius-sm: 6px; --radius-md: 10px; --radius-lg: 16px; --radius-xl: 20px; --radius-full: 999px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 999px;
   --border: 1px solid var(--c-border);
-
   /* ---------- LAYOUT ---------- */
-  --container-max: 90%;          /* Ancho del sitio = 90% del viewport, centrado con margin-inline:auto → gutters ~5% izq/der. %-based (antes 1200px fijo). */
-  --container-prose: 720px;      /* Ancho de lectura (prose en artículos). Se mantiene en px por legibilidad (line-length); NO es el ancho del sitio. */
-  --container-px: clamp(1rem, 4vw, 2rem);  /* Padding interior dentro del 90%. */
+  --container-max: 90%;
+  /* Ancho del sitio = 90% del viewport, centrado con margin-inline:auto → gutters ~5% izq/der. %-based (antes 1200px fijo). */
+  --container-prose: 720px;
+  /* Ancho de lectura (prose en artículos). Se mantiene en px por legibilidad (line-length); NO es el ancho del sitio. */
+  --container-px: clamp(1rem, 4vw, 2rem);
+  /* Padding interior dentro del 90%. */
   --topbar-height: 36px;
   --header-height: 64px;
   /* Alto del «stack» del chrome sticky (topbar + header). Se recalcula solo en
-     cada breakpoint porque depende de los dos tokens de arriba. Lo consumen el
-     drawer móvil (top), el scroll-padding de anclas y los offsets de sticky. */
+  cada breakpoint porque depende de los dos tokens de arriba. Lo consumen el
+  drawer móvil (top), el scroll-padding de anclas y los offsets de sticky. */
   --stack-height: calc(var(--topbar-height) + var(--header-height));
   /* Padding vertical estándar de sección (RelatedLinks/FAQAccordion). */
   --section-py: clamp(3rem, 6vw, 5rem);
-
   /* ---------- Z-INDEX ---------- */
-  --z-sticky: 50;                /* barras sticky internas (TOC de servicio, etc.) */
-
+  --z-sticky: 50;
+  /* barras sticky internas (TOC de servicio, etc.) */
   /* ---------- SOMBRAS / TRANSICIONES ---------- */
   --shadow-sm: 0 1px 2px rgba(0,0,0,.06);
   --shadow-md: 0 4px 16px rgba(0,0,0,.10);
   --transition: .2s ease;
-  --transition-base: .2s ease;   /* alias usado por pagina-directorio (hover cards) */
-
   /* ============ PUENTE DE ALIAS (heredados → canónico) ============ */
   /* Permite que componentes extraídos de MESECI/otros funcionen sin reescritura. */
   --color-red: var(--c-primary);
@@ -79,29 +103,45 @@
   --text-muted: var(--c-muted);
   --color-border: var(--c-border);
   --color-surface: var(--c-surface);
-  --color-gray-50: #f9fafb; --color-gray-100: #f3f4f6; --color-gray-200: #e5e7eb;
-  --color-gray-400: #9ca3af; --color-gray-500: #6b7280;
-  --color-gray-700: #374151; --color-gray-900: #111827;
-  --space-1: var(--sp-1); --space-2: var(--sp-2); --space-3: var(--sp-3);
-  --space-4: var(--sp-4); --space-5: var(--sp-5); --space-6: var(--sp-6);
-  --space-8: var(--sp-8); --space-10: var(--sp-10); --space-12: var(--sp-12);
-  --ft-accent: var(--font-heading); --ft-text: var(--font-body); --ft-border: var(--c-border);
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-700: #374151;
+  --color-gray-900: #111827;
+  --space-1: var(--sp-1);
+  --space-2: var(--sp-2);
+  --space-3: var(--sp-3);
+  --space-4: var(--sp-4);
+  --space-5: var(--sp-5);
+  --space-6: var(--sp-6);
+  --space-8: var(--sp-8);
+  --space-10: var(--sp-10);
+  --space-12: var(--sp-12);
+  --ft-accent: var(--font-heading);
+  --ft-text: var(--font-body);
+  --ft-border: var(--c-border);
 }
 
 /* ============================================================================
-   RESET BASE (global) — homologación. Único reset del sistema; vive aquí porque
-   tokens.css es la ÚNICA hoja global (se importa una vez en BaseLayout).
-   - box-sizing:border-box → el 90% del sitio incluye el padding (gutters exactos).
-   - body margin:0 → sin el margen de 8px del navegador.
-   - font/color base → aplica la pila --font-body a todo (antes el texto sin
-     componente caía a serif del navegador).
-   ============================================================================ */
-*, *::before, *::after { box-sizing: border-box; }
+RESET BASE (global) — homologación. Único reset del sistema; vive aquí porque
+tokens.css es la ÚNICA hoja global (se importa una vez en BaseLayout).
+- box-sizing:border-box → el 90% del sitio incluye el padding (gutters exactos).
+- body margin:0 → sin el margen de 8px del navegador.
+- font/color base → aplica la pila --font-body a todo (antes el texto sin
+componente caía a serif del navegador).
+============================================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 html {
   -webkit-text-size-adjust: 100%;
   /* El chrome (topbar + header) es sticky: al saltar a un ancla, deja su altura
-     de aire arriba para que el título no quede tapado. */
+  de aire arriba para que el título no quede tapado. */
   scroll-padding-top: calc(var(--stack-height) + 0.75rem);
 }
 
@@ -114,28 +154,35 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img, picture, video, canvas { max-width: 100%; }
+img,
+picture,
+video,
+canvas {
+  max-width: 100%;
+}
 
 /* ============================================================================
-   TOKENS RESPONSIVE — overrides de tokens GLOBALES por breakpoint. Viven aquí
-   porque tokens.css es la FUENTE ÚNICA de tokens (C2). Unifican la cascada en la
-   escala canónica 1024 / 768 / 640 / 480 / 380. Los overrides de LAYOUT puntuales
-   viven en src/styles/mobile.css (se importa DESPUÉS en BaseLayout). Todo en
-   % / vw / clamp.
-   ============================================================================ */
+TOKENS RESPONSIVE — overrides de tokens GLOBALES por breakpoint. Viven aquí
+porque tokens.css es la FUENTE ÚNICA de tokens (C2). Unifican la cascada en la
+escala canónica 1024 / 768 / 640 / 480 / 380. Los overrides de LAYOUT puntuales
+viven en src/styles/mobile.css (se importa DESPUÉS en BaseLayout). Todo en
+% / vw / clamp.
+============================================================================ */
 @media (max-width: 1024px) {
   :root {
     --header-height: 60px;
     --section-py: clamp(2.75rem, 6vw, 4rem);
   }
 }
+
 @media (max-width: 768px) {
   :root {
     /* Ancho del container a 100%: en móvil el único margen lo da --container-px.
-       Antes (90% + padding) había gutter DOBLE que comía ~19% del ancho. */
+    Antes (90% + padding) había gutter DOBLE que comía ~19% del ancho. */
     --container-max: 100%;
   }
 }
+
 @media (max-width: 640px) {
   :root {
     --topbar-height: 34px;
@@ -143,11 +190,13 @@ img, picture, video, canvas { max-width: 100%; }
     --section-py: clamp(2.5rem, 7vw, 3.25rem);
   }
 }
+
 @media (max-width: 480px) {
   :root {
     --section-py: 2.5rem;
   }
 }
+
 @media (max-width: 380px) {
   :root {
     --topbar-height: 32px;
@@ -157,13 +206,13 @@ img, picture, video, canvas { max-width: 100%; }
 }
 
 /* ═════════════════════════════════════════════════════════════════════════════
- * SKIP-LINK (accesibilidad — WCAG 2.4.1 Bypass Blocks).
- * Lo emite BaseLayout justo después de <body>. Oculto fuera de pantalla hasta
- * recibir foco (Tab desde el inicio); cuando se enfoca, baja al borde superior.
- * Patrón canónico «oculto-hasta-foco» recomendado por WCAG/MDN: NO usar
- * display:none (lo saca del orden de tab); el position negativo lo mantiene
- * accesible al teclado y a lectores de pantalla.
- * ═════════════════════════════════════════════════════════════════════════════ */
+* SKIP-LINK (accesibilidad — WCAG 2.4.1 Bypass Blocks).
+* Lo emite BaseLayout justo después de <body>. Oculto fuera de pantalla hasta
+* recibir foco (Tab desde el inicio); cuando se enfoca, baja al borde superior.
+* Patrón canónico «oculto-hasta-foco» recomendado por WCAG/MDN: NO usar
+* display:none (lo saca del orden de tab); el position negativo lo mantiene
+* accesible al teclado y a lectores de pantalla.
+* ═════════════════════════════════════════════════════════════════════════════ */
 .skip-link {
   position: absolute;
   top: -100px;
@@ -177,66 +226,78 @@ img, picture, video, canvas { max-width: 100%; }
   font-weight: var(--weight-semibold, 600);
   text-decoration: none;
   z-index: 9999;
-  transition: top .15s ease-out;
 }
+
 .skip-link:focus,
 .skip-link:focus-visible {
   top: var(--sp-2, .5rem);
   outline: 2px solid var(--c-primary);
   outline-offset: 2px;
 }
-@media (prefers-reduced-motion: reduce) {
-  .skip-link { transition: none; }
-}
 
 /* ═════════════════════════════════════════════════════════════════════════════
- * RETÍCULA DE TARJETAS (.card-grid) — utilidad global, homologación 2026-09-10.
- * Cada página declaraba la suya, con distinto nombre y en su propio <style>:
- * `.showcase` en el index y en /productos/, `.svcs` también en el index, y
- * `.grid` en /servicios/ y /cobertura/ — la MISMA regla copiada cinco veces.
- * El precio de esa duplicación se veía a simple vista: a /cobertura/ le faltaba
- * el breakpoint de 768 px, así que era la única sección del sitio que nunca
- * pasaba de dos columnas.
- *
- * NO BORRAR creyéndola duplicada de los <style> de página: los estilos de Astro
- * son SCOPED, así que una retícula compartida solo puede vivir aquí, en el CSS
- * global. (Mismo motivo por el que .container vive aquí; ver el incidente de
- * 2026-09-09, cuando se borró de index.astro por "deduplicar".)
- * ═════════════════════════════════════════════════════════════════════════════ */
+* RETÍCULA DE TARJETAS (.card-grid) — utilidad global, homologación 2026-09-10.
+* Cada página declaraba la suya, con distinto nombre y en su propio <style>:
+* `.showcase` en el index y en /productos/, `.svcs` también en el index, y
+* `.grid` en /servicios/ y /cobertura/ — la MISMA regla copiada cinco veces.
+* El precio de esa duplicación se veía a simple vista: a /cobertura/ le faltaba
+* el breakpoint de 768 px, así que era la única sección del sitio que nunca
+* pasaba de dos columnas.
+*
+* NO BORRAR creyéndola duplicada de los <style> de página: los estilos de Astro
+* son SCOPED, así que una retícula compartida solo puede vivir aquí, en el CSS
+* global. (Mismo motivo por el que .container vive aquí; ver el incidente de
+* 2026-09-09, cuando se borró de index.astro por "deduplicar".)
+* ═════════════════════════════════════════════════════════════════════════════ */
 .card-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--sp-5);
   margin-top: var(--sp-6);
 }
-@media (min-width: 640px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+
+@media (min-width: 640px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* 4 por fila desde 1280 px (regla del sitio, 2026-09-10). Medido en
-   /servicios/mantenimiento/: a 1024 px la tarjeta queda en ~215 px y a 1200 en
-   ~230, y en ambos se cortan título, descripción, specs y CTA; a 1280 mide
-   250 px y no se corta nada. Entre 640 y 1279 px van 2 por fila (4 = 2×2). */
-@media (min-width: 1280px) { .card-grid { grid-template-columns: repeat(4, 1fr); } }
+/servicios/mantenimiento/: a 1024 px la tarjeta queda en ~215 px y a 1200 en
+~230, y en ambos se cortan título, descripción, specs y CTA; a 1280 mide
+250 px y no se corta nada. Entre 640 y 1279 px van 2 por fila (4 = 2×2). */
+@media (min-width: 1280px) {
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 
 /* Variantes para retículas con pocos elementos: a 4 columnas dejarían huecos.
-   En retiro — regla de 4 por fila (2026-09-10); no usar en páginas nuevas.
-   --duo → /cobertura/ (2 zonas) y /proteccion-civil/ (2 entidades).
-   --trio → /plantillas/ (3 formatos descargables).
-   Con 4 o más elementos se usa la base, sin variante. */
+En retiro — regla de 4 por fila (2026-09-10); no usar en páginas nuevas.
+--duo → /cobertura/ (2 zonas) y /proteccion-civil/ (2 entidades).
+--trio → /plantillas/ (3 formatos descargables).
+Con 4 o más elementos se usa la base, sin variante. */
 @media (min-width: 768px) {
-  .card-grid--duo  { grid-template-columns: repeat(2, 1fr); }
-  .card-grid--trio { grid-template-columns: repeat(3, 1fr); }
+  .card-grid--duo {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-grid--trio {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* ═════════════════════════════════════════════════════════════════════════════
- * BOTONES (.btn) — utilidad global, homologación 2026-09-10.
- * Hasta ahora cada componente pintaba su propio botón (.hero__btn, el CTA de
- * CTABanner, SectionMenu…) y no existía ninguna clase compartida. Las páginas
- * que no son de esos componentes —el CTA lateral del blog, los formularios de
- * las herramientas— usaban `class="btn btn--primary"` contra una clase que NO
- * ESTABA DEFINIDA: se veían como botones nativos del navegador, sin marca.
- *
- * Esta utilidad reproduce el mismo lenguaje visual del hero: mismo radio, mismo
- * peso y los mismos tokens de color. Sirve para <a> y para <button>.
- * ═════════════════════════════════════════════════════════════════════════════ */
+* BOTONES (.btn) — utilidad global, homologación 2026-09-10.
+* Hasta ahora cada componente pintaba su propio botón (.hero__btn, el CTA de
+* CTABanner, SectionMenu…) y no existía ninguna clase compartida. Las páginas
+* que no son de esos componentes —el CTA lateral del blog, los formularios de
+* las herramientas— usaban `class="btn btn--primary"` contra una clase que NO
+* ESTABA DEFINIDA: se veían como botones nativos del navegador, sin marca.
+*
+* Esta utilidad reproduce el mismo lenguaje visual del hero: mismo radio, mismo
+* peso y los mismos tokens de color. Sirve para <a> y para <button>.
+* ═════════════════════════════════════════════════════════════════════════════ */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -251,59 +312,169 @@ img, picture, video, canvas { max-width: 100%; }
   line-height: 1.2;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+  transition: var(--transition);
 }
-.btn:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 2px; }
 
-.btn--primary { background: var(--c-primary); color: var(--c-white, #fff); }
-.btn--primary:hover { background: var(--c-primary-dark, #8e0000); color: var(--c-white, #fff); }
+.btn:focus-visible {
+  outline: 2px solid var(--c-primary);
+  outline-offset: 2px;
+}
 
-.btn--outline { background: transparent; color: var(--c-ink); border-color: var(--c-border); }
-.btn--outline:hover { border-color: var(--c-primary); color: var(--c-primary); }
+.btn--primary {
+  background: var(--c-primary);
+  color: var(--c-white, #fff);
+}
+
+.btn--primary:hover {
+  background: var(--c-primary-dark, #8e0000);
+  color: var(--c-white, #fff);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--c-ink);
+  border-color: var(--c-border);
+}
+
+.btn--outline:hover {
+  border-color: var(--c-primary);
+  color: var(--c-primary);
+}
 
 /* Ghost: acción secundaria dentro de un formulario (limpiar, cancelar). */
-.btn--ghost { background: transparent; color: var(--c-ink-2); border-color: var(--c-border); }
-.btn--ghost:hover { color: var(--c-ink); border-color: var(--c-ink-2); }
+.btn--ghost {
+  background: transparent;
+  color: var(--c-ink-2);
+  border-color: var(--c-border);
+}
 
-.btn--block { width: 100%; }
+.btn--ghost:hover {
+  color: var(--c-ink);
+  border-color: var(--c-ink-2);
+}
+
+.btn--block {
+  width: 100%;
+}
 
 /* Botones deshabilitados: sin cambio de color al pasar el cursor. */
-.btn[disabled], .btn[aria-disabled="true"] { opacity: .55; cursor: not-allowed; }
+.btn[disabled],
+.btn[aria-disabled="true"] {
+  opacity: .55;
+  cursor: not-allowed;
+}
 
 /* ═════════════════════════════════════════════════════════════════════════════
- * UTILIDADES DE MAQUETA (.container, .section, .prose) — homologación 2026-09-10.
- * Cada página repetía estas tres reglas en su bloque <style> scoped. El problema
- * no era la duplicación: era que ArticleLayout usaba `.container` y `.prose` SIN
- * definirlas, así que TODOS los artículos del blog se publicaban a sangre
- * completa (sin ancho máximo ni padding lateral) y con el markdown pintado con
- * los estilos por defecto del navegador, sin ritmo tipográfico.
- *
- * Al vivir aquí, cualquier página o componente nuevo hereda la misma maqueta.
- * Las definiciones scoped que ya existen en las páginas ganan por especificidad
- * y siguen mandando: esto es el piso, no una imposición.
- * ═════════════════════════════════════════════════════════════════════════════ */
+* UTILIDADES DE MAQUETA (.container, .section, .prose) — homologación 2026-09-10.
+* Cada página repetía estas tres reglas en su bloque <style> scoped. El problema
+* no era la duplicación: era que ArticleLayout usaba `.container` y `.prose` SIN
+* definirlas, así que TODOS los artículos del blog se publicaban a sangre
+* completa (sin ancho máximo ni padding lateral) y con el markdown pintado con
+* los estilos por defecto del navegador, sin ritmo tipográfico.
+*
+* Al vivir aquí, cualquier página o componente nuevo hereda la misma maqueta.
+* Las definiciones scoped que ya existen en las páginas ganan por especificidad
+* y siguen mandando: esto es el piso, no una imposición.
+* ═════════════════════════════════════════════════════════════════════════════ */
 .container {
   max-width: var(--container-max);
   margin-inline: auto;
   padding-inline: var(--container-px);
 }
-.container--prose { max-width: var(--container-prose); }
 
-.section { padding: var(--sp-8) 0; }
-.section--surface { background: var(--c-surface); }
-@media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
+.container--prose {
+  max-width: var(--container-prose);
+}
+
+.section {
+  padding: var(--sp-8) 0;
+}
+
+.section--surface {
+  background: var(--c-surface);
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: var(--sp-10) 0;
+  }
+}
 
 /* Ritmo tipográfico del contenido largo (markdown de artículos, fichas y legales). */
-.prose { max-width: var(--container-prose); color: var(--c-ink-2); line-height: var(--leading-relaxed); }
-.prose h2 { font-family: var(--font-heading); font-size: var(--text-2xl); font-weight: var(--weight-bold); color: var(--c-ink); margin: var(--sp-6) 0 var(--sp-3); }
-.prose h3 { font-family: var(--font-heading); font-size: var(--text-xl); font-weight: var(--weight-semibold); color: var(--c-ink); margin: var(--sp-5) 0 var(--sp-2); }
-.prose p { margin: 0 0 var(--sp-4); }
-.prose ul, .prose ol { margin: 0 0 var(--sp-4); padding-left: 1.25rem; }
-.prose li { margin-bottom: var(--sp-2); }
-.prose strong { color: var(--c-ink); font-weight: var(--weight-semibold); }
-.prose a { color: var(--c-primary); }
-.prose table { width: 100%; border-collapse: collapse; margin: 0 0 var(--sp-4); font-size: var(--text-sm); }
-.prose th, .prose td { border: 1px solid var(--c-border); padding: var(--sp-3); text-align: left; }
-.prose th { background: var(--c-white); font-weight: var(--weight-semibold); color: var(--c-ink); }
-.prose blockquote { margin: 0 0 var(--sp-4); padding-left: var(--sp-4); border-left: 3px solid var(--c-primary); color: var(--c-ink-2); }
-.prose img { max-width: 100%; height: auto; border-radius: var(--radius-lg, 12px); }
+.prose {
+  max-width: var(--container-prose);
+  color: var(--c-ink-2);
+  line-height: var(--leading-relaxed);
+}
+
+.prose h2 {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--c-ink);
+  margin: var(--sp-6) 0 var(--sp-3);
+}
+
+.prose h3 {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  color: var(--c-ink);
+  margin: var(--sp-5) 0 var(--sp-2);
+}
+
+.prose p {
+  margin: 0 0 var(--sp-4);
+}
+
+.prose ul,
+.prose ol {
+  margin: 0 0 var(--sp-4);
+  padding-left: 1.25rem;
+}
+
+.prose li {
+  margin-bottom: var(--sp-2);
+}
+
+.prose strong {
+  color: var(--c-ink);
+  font-weight: var(--weight-semibold);
+}
+
+.prose a {
+  color: var(--c-primary);
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 var(--sp-4);
+  font-size: var(--text-sm);
+}
+
+.prose th,
+.prose td {
+  border: 1px solid var(--c-border);
+  padding: var(--sp-3);
+  text-align: left;
+}
+
+.prose th {
+  background: var(--c-white);
+  font-weight: var(--weight-semibold);
+  color: var(--c-ink);
+}
+
+.prose blockquote {
+  margin: 0 0 var(--sp-4);
+  padding-left: var(--sp-4);
+  border-left: 3px solid var(--c-primary);
+  color: var(--c-ink-2);
+}
+
+.prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg, 12px);
+}

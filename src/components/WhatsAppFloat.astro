@@ -30,21 +30,33 @@ const href = waUrl(WA_MESSAGES[message])
     align-items: center;
     gap: var(--sp-2, .5rem);
     padding: var(--sp-3, .75rem) var(--sp-4, 1rem);
-    background: #25D366;
+    background: var(--c-whatsapp);
     color: #fff;
     border-radius: var(--radius-full, 9999px);
-    box-shadow: 0 4px 16px rgba(37,211,102,.4);
+    box-shadow: 0 4px 16px rgba(var(--c-whatsapp-rgb), .4);
     font-size: var(--text-sm, .875rem);
     font-weight: var(--weight-semibold, 600);
-    transition: transform .2s ease, box-shadow .2s ease;
     text-decoration: none;
     /* respeta el notch / barra inferior iOS */
     margin-bottom: env(safe-area-inset-bottom, 0px);
   }
-  .wa-float:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 6px 20px rgba(37,211,102,.5); }
-  .wa-float:focus-visible { outline: 3px solid rgba(37,211,102,.5); outline-offset: 2px; }
+
+  .wa-float:hover {
+    box-shadow: 0 6px 20px rgba(var(--c-whatsapp-rgb), .5);
+  }
+
+  .wa-float:focus-visible {
+    outline: 3px solid rgba(var(--c-whatsapp-rgb), .5);
+    outline-offset: 2px;
+  }
+
   @media (max-width: 640px) {
-    .wa-float__label { display: none; }
-    .wa-float { padding: var(--sp-3, .75rem); }
+    .wa-float__label {
+      display: none;
+    }
+
+    .wa-float {
+      padding: var(--sp-3, .75rem);
+    }
   }
 </style>

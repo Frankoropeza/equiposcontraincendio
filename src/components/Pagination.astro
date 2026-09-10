@@ -68,12 +68,65 @@ pages.forEach((n, i) => {
 )}
 
 <style>
-  .pg { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--sp-2); margin-top: var(--sp-8); }
-  .pg__list { display: flex; flex-wrap: wrap; gap: var(--sp-2); list-style: none; margin: 0; padding: 0; }
-  .pg__n, .pg__step { display: inline-flex; align-items: center; justify-content: center; min-width: 2.5rem; height: 2.5rem; padding: 0 var(--sp-3); border: 1px solid var(--c-border); border-radius: var(--radius-md, 8px); text-decoration: none; color: var(--c-ink-2); font-size: var(--text-sm); }
-  .pg__n:hover, .pg__step:hover { border-color: var(--c-accent); color: var(--c-accent); }
-  .pg__n.is-current { background: var(--c-accent); border-color: var(--c-accent); color: #fff; font-weight: 600; }
-  .pg__step.is-off { opacity: .4; }
-  .pg__step.is-off:hover { border-color: var(--c-border); color: var(--c-ink-2); }
-  .pg__gap { display: inline-flex; align-items: center; padding: 0 var(--sp-1); color: var(--c-muted); }
+  .pg {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--sp-2);
+    margin-top: var(--sp-8);
+  }
+
+  .pg__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .pg__n,
+  .pg__step {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    padding: 0 var(--sp-3);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md, 8px);
+    text-decoration: none;
+    color: var(--c-ink-2);
+    font-size: var(--text-sm);
+  }
+
+  .pg__n:hover,
+  .pg__step:hover {
+    border-color: var(--c-accent);
+    color: var(--c-accent);
+  }
+
+  .pg__n.is-current {
+    background: var(--c-accent);
+    border-color: var(--c-accent);
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .pg__step.is-off {
+    opacity: .4;
+  }
+
+  .pg__step.is-off:hover {
+    border-color: var(--c-border);
+    color: var(--c-ink-2);
+  }
+
+  .pg__gap {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 var(--sp-1);
+    color: var(--c-muted);
+  }
 </style>

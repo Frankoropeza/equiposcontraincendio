@@ -55,11 +55,13 @@ const ICONS: Record<string, string> = {
     margin-inline: auto;
     padding-inline: var(--container-px);
   }
+
   .trustbar {
     background: var(--c-white);
     border-bottom: 1px solid var(--c-border);
     padding: var(--sp-5) 0;
   }
+
   .trustbar__grid {
     list-style: none;
     margin: 0;
@@ -68,11 +70,13 @@ const ICONS: Record<string, string> = {
     grid-template-columns: 1fr;
     gap: var(--sp-4);
   }
+
   .tb-item {
     display: flex;
     align-items: flex-start;
     gap: var(--sp-3);
   }
+
   .tb-item__icon {
     flex-shrink: 0;
     display: inline-flex;
@@ -85,6 +89,7 @@ const ICONS: Record<string, string> = {
     background: color-mix(in srgb, var(--c-primary) 8%, transparent);
     border: 1px solid color-mix(in srgb, var(--c-primary) 18%, transparent);
   }
+
   .tb-item__title {
     margin: 0;
     font-family: var(--font-heading);
@@ -93,16 +98,24 @@ const ICONS: Record<string, string> = {
     color: var(--c-ink);
     line-height: var(--leading-snug);
   }
+
   .tb-item__desc {
     margin: .2rem 0 0;
     font-size: var(--text-sm);
     color: var(--c-muted);
     line-height: var(--leading-normal);
   }
+
   @media (min-width: 640px) {
-    .trustbar__grid { grid-template-columns: repeat(2, 1fr); gap: var(--sp-5); }
+    .trustbar__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--sp-5);
+    }
   }
+
   @media (min-width: 1024px) {
-    .trustbar__grid { grid-template-columns: repeat(4, 1fr); }
+    .trustbar__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 </style>

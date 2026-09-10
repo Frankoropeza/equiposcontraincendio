@@ -226,24 +226,122 @@ const groups: FilterGroup[] = [
 </script>
 
 <style>
-  .catalog { background: var(--c-surface); }
-  .catalog__interactive[hidden], .catalog__empty[hidden] { display: none; }
-  .catalog__filters { display: grid; gap: var(--sp-4); margin-bottom: var(--sp-5); padding: var(--sp-4); border: 1px solid var(--c-border); border-radius: var(--radius-lg); background: var(--c-white); }
+  .catalog {
+    background: var(--c-surface);
+  }
+
+  .catalog__interactive[hidden],
+  .catalog__empty[hidden] {
+    display: none;
+  }
+
+  .catalog__filters {
+    display: grid;
+    gap: var(--sp-4);
+    margin-bottom: var(--sp-5);
+    padding: var(--sp-4);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    background: var(--c-white);
+  }
+
   /* minmax(0,1fr) + min-width:0: sin esto la fila de chips empuja el grid
-     al ancho de su contenido y desborda la página en móvil (medido a 390 px). */
-  .catalog__filters { grid-template-columns: minmax(0, 1fr); }
-  .catalog__group { min-width: 0; }
-  .catalog__group > strong { display: block; margin-bottom: var(--sp-2); font-size: var(--text-xs); letter-spacing: .06em; text-transform: uppercase; }
-  .catalog__chips { display: flex; gap: var(--sp-2); overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; scroll-snap-type: x proximity; }
-  .catalog__chips::-webkit-scrollbar { display: none; }
-  .catalog__chips button { flex: none; padding: .5em .85em; border: 1px solid var(--c-border); border-radius: var(--radius-full); background: var(--c-white); color: var(--c-ink-2); font: inherit; font-size: var(--text-sm); cursor: pointer; scroll-snap-align: start; }
-  .catalog__chips button[aria-pressed="true"] { border-color: var(--c-primary); background: var(--c-primary); color: #fff; }
-  .catalog__meta { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4); margin-bottom: var(--sp-4); }
-  .catalog__count { margin: 0; color: var(--c-muted); font-size: var(--text-sm); }
-  .catalog__clear { font-size: var(--text-sm); }
-  .catalog__grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-5); align-items: stretch; }
-  .catalog__empty { padding: var(--sp-8); border: 1px dashed var(--c-border); border-radius: var(--radius-lg); background: var(--c-white); text-align: center; }
-  .catalog__empty p { margin: 0 0 var(--sp-4); color: var(--c-muted); }
-  @media (min-width: 640px) { .catalog__grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 1200px) { .catalog__grid { grid-template-columns: repeat(3, 1fr); } }
+  al ancho de su contenido y desborda la página en móvil (medido a 390 px). */
+  .catalog__filters {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .catalog__group {
+    min-width: 0;
+  }
+
+  .catalog__group > strong {
+    display: block;
+    margin-bottom: var(--sp-2);
+    font-size: var(--text-xs);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+
+  .catalog__chips {
+    display: flex;
+    gap: var(--sp-2);
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+    scroll-snap-type: x proximity;
+  }
+
+  .catalog__chips::-webkit-scrollbar {
+    display: none;
+  }
+
+  .catalog__chips button {
+    flex: none;
+    padding: .5em .85em;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-full);
+    background: var(--c-white);
+    color: var(--c-ink-2);
+    font: inherit;
+    font-size: var(--text-sm);
+    cursor: pointer;
+    scroll-snap-align: start;
+  }
+
+  .catalog__chips button[aria-pressed="true"] {
+    border-color: var(--c-primary);
+    background: var(--c-primary);
+    color: #fff;
+  }
+
+  .catalog__meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-4);
+    margin-bottom: var(--sp-4);
+  }
+
+  .catalog__count {
+    margin: 0;
+    color: var(--c-muted);
+    font-size: var(--text-sm);
+  }
+
+  .catalog__clear {
+    font-size: var(--text-sm);
+  }
+
+  .catalog__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+    align-items: stretch;
+  }
+
+  .catalog__empty {
+    padding: var(--sp-8);
+    border: 1px dashed var(--c-border);
+    border-radius: var(--radius-lg);
+    background: var(--c-white);
+    text-align: center;
+  }
+
+  .catalog__empty p {
+    margin: 0 0 var(--sp-4);
+    color: var(--c-muted);
+  }
+
+  @media (min-width: 640px) {
+    .catalog__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .catalog__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
 </style>

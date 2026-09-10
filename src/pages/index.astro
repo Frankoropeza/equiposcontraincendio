@@ -258,19 +258,28 @@ const servicios = (await getCollection("servicios", ({ data }) => !data.draft))
 
 <style>
   /* NO borrar por "duplicada": los estilos de Astro son SCOPED. Esta regla se
-     repite en cada página porque cada una tiene su propio data-astro-cid, no
-     porque sobre. Se eliminó en el refactor del 2026-09-09 y dejó tres bloques
-     de la home sin max-width, sin centrado y sin padding lateral —a todo el
-     ancho del viewport— porque el scope de index.astro se quedó sin definición.
-     Verificado en el HTML: 3 de los 7 .container de la home dependen de aquí. */
+  repite en cada página porque cada una tiene su propio data-astro-cid, no
+  porque sobre. Se eliminó en el refactor del 2026-09-09 y dejó tres bloques
+  de la home sin max-width, sin centrado y sin padding lateral —a todo el
+  ancho del viewport— porque el scope de index.astro se quedó sin definición.
+  Verificado en el HTML: 3 de los 7 .container de la home dependen de aquí. */
   .container {
     max-width: var(--container-max);
     margin-inline: auto;
     padding-inline: var(--container-px);
   }
-  .section { padding: var(--sp-8) 0; }
-  .section--surface { background: var(--c-surface); }
+
+  .section {
+    padding: var(--sp-8) 0;
+  }
+
+  .section--surface {
+    background: var(--c-surface);
+  }
+
   @media (min-width: 1024px) {
-    .section { padding: var(--sp-10) 0; }
+    .section {
+      padding: var(--sp-10) 0;
+    }
   }
 </style>

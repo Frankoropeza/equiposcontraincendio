@@ -61,8 +61,15 @@ const destinos = [
 </PageLayout>
 
 <style>
-  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
-  .section { padding: var(--sp-8) 0; }
+  .container {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-px);
+  }
+
+  .section {
+    padding: var(--sp-8) 0;
+  }
 
   .nf__title {
     font-family: var(--font-heading);
@@ -93,23 +100,26 @@ const destinos = [
     border: 1px solid var(--c-border);
     border-left: 3px solid var(--c-primary);
     border-radius: var(--radius-md);
-    transition: background var(--transition), border-color var(--transition);
   }
-  .nf__link:hover { background: var(--c-surface); }
-  .nf__link:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 2px; }
+
+  .nf__link:hover {
+    background: var(--c-surface);
+  }
+
+  .nf__link:focus-visible {
+    outline: 2px solid var(--c-primary);
+    outline-offset: 2px;
+  }
 
   .nf__label {
     font-family: var(--font-heading);
     font-weight: var(--weight-semibold);
     color: var(--c-ink);
   }
+
   .nf__sub {
     font-size: var(--text-sm);
     color: var(--c-muted);
     line-height: var(--leading-normal);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .nf__link { transition: none; }
   }
 </style>

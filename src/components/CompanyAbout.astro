@@ -86,68 +86,174 @@ const { que, como, stats = [], cta } = Astro.props;
 </div>
 
 <style>
-  .company { display: flex; flex-direction: column; gap: var(--sp-6); }
+  .company {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-6);
+  }
 
   /* ── Dos columnas: Qué / Cómo ── */
-  .company__cols { display: grid; grid-template-columns: 1fr; gap: var(--sp-5); }
+  .company__cols {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
   .company__card {
-    background: var(--c-surface); border: 1px solid var(--c-border);
-    border-radius: var(--radius-lg); padding: var(--sp-6);
-    display: flex; flex-direction: column; gap: var(--sp-3);
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-3);
   }
-  .company__card--como { background: var(--c-white); }
+
+  .company__card--como {
+    background: var(--c-white);
+  }
+
   .company__sub {
-    margin: 0 0 var(--sp-1); font-family: var(--font-heading);
-    font-size: var(--text-xl); font-weight: var(--weight-bold); color: var(--c-ink);
+    margin: 0 0 var(--sp-1);
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: var(--weight-bold);
+    color: var(--c-ink);
   }
-  .company__p { margin: 0; font-size: var(--text-base); line-height: var(--leading-relaxed); color: var(--c-ink-2); }
+
+  .company__p {
+    margin: 0;
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    color: var(--c-ink-2);
+  }
 
   /* ── Pilares numerados (Cómo lo hacemos) ── */
-  .company__pillars { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--sp-4); }
-  .company__pillar { display: flex; align-items: flex-start; gap: var(--sp-3); }
-  .company__pillar-num {
-    flex-shrink: 0; display: grid; place-items: center; width: 30px; height: 30px;
-    border-radius: var(--radius-full); background: var(--c-primary); color: #fff;
-    font-family: var(--font-heading); font-weight: var(--weight-bold); font-size: var(--text-sm);
+  .company__pillars {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-4);
   }
-  .company__pillar-body { display: flex; flex-direction: column; gap: 2px; }
-  .company__pillar-title { margin: 0; font-weight: var(--weight-semibold); color: var(--c-ink); }
-  .company__pillar-desc { margin: 0; font-size: var(--text-sm); line-height: var(--leading-normal); color: var(--c-muted); }
+
+  .company__pillar {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+
+  .company__pillar-num {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: var(--radius-full);
+    background: var(--c-primary);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: var(--weight-bold);
+    font-size: var(--text-sm);
+  }
+
+  .company__pillar-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .company__pillar-title {
+    margin: 0;
+    font-weight: var(--weight-semibold);
+    color: var(--c-ink);
+  }
+
+  .company__pillar-desc {
+    margin: 0;
+    font-size: var(--text-sm);
+    line-height: var(--leading-normal);
+    color: var(--c-muted);
+  }
 
   /* ── Cifras de confianza ── */
   .company__stats {
-    list-style: none; margin: 0; padding: var(--sp-6);
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-5);
-    background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius-lg);
+    list-style: none;
+    margin: 0;
+    padding: var(--sp-6);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-5);
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
   }
-  .company__stat { display: flex; flex-direction: column; gap: 2px; text-align: center; }
+
+  .company__stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-align: center;
+  }
+
   .company__stat-value {
-    font-family: var(--font-heading); font-weight: var(--weight-black);
-    font-size: var(--text-3xl); line-height: 1; color: var(--c-primary);
+    font-family: var(--font-heading);
+    font-weight: var(--weight-black);
+    font-size: var(--text-3xl);
+    line-height: 1;
+    color: var(--c-primary);
   }
-  .company__stat-label { font-size: var(--text-sm); color: var(--c-muted); }
+
+  .company__stat-label {
+    font-size: var(--text-sm);
+    color: var(--c-muted);
+  }
 
   /* ── CTA ── */
   .company__cta {
     align-self: flex-start;
-    display: inline-flex; align-items: center; gap: var(--sp-2);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2);
     min-height: 44px;
     padding: .7em 1.2em;
-    font-family: var(--font-heading); font-weight: var(--weight-semibold); font-size: var(--text-sm);
-    color: #fff; text-decoration: none;
-    background: var(--c-primary); border-radius: var(--radius-md);
-    transition: background var(--transition), gap var(--transition);
+    font-family: var(--font-heading);
+    font-weight: var(--weight-semibold);
+    font-size: var(--text-sm);
+    color: #fff;
+    text-decoration: none;
+    background: var(--c-primary);
+    border-radius: var(--radius-md);
+    transition: background-color var(--transition);
   }
-  .company__cta:hover { background: var(--c-primary-dark); gap: var(--sp-3); }
-  .company__cta:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 2px; }
+
+  .company__cta:hover {
+    background: var(--c-primary-dark);
+  }
+
+  .company__cta:focus-visible {
+    outline: 2px solid var(--c-primary);
+    outline-offset: 2px;
+  }
 
   /* ── Escritorio ── */
   @media (min-width: 768px) {
-    .company__cols { grid-template-columns: 1fr 1fr; gap: var(--sp-6); }
-    .company__stats { grid-template-columns: repeat(4, 1fr); }
-    .company__stat { border-left: 1px solid var(--c-border); }
-    .company__stat:first-child { border-left: 0; }
-  }
+    .company__cols {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-6);
+    }
 
-  @media (prefers-reduced-motion: reduce) { .company__cta { transition: none; } }
+    .company__stats {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .company__stat {
+      border-left: 1px solid var(--c-border);
+    }
+
+    .company__stat:first-child {
+      border-left: 0;
+    }
+  }
 </style>
