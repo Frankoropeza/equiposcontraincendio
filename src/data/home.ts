@@ -243,7 +243,7 @@ export const homeCategoryFeatures: HomeCategoryFeature[] = [
       { name: "Buckeye" },
       { name: "Ansul" },
     ],
-    ctaLabel: "Extintores portátiles",
+    ctaLabel: "Venta de extintores",
     ctaHref: "/productos/extintores/",
     ctaSecondaryMsg: "Hola, quiero cotizar extintores (PQS, CO₂ o clase K). ¿Me ayudan a elegir la capacidad según mi riesgo?",
     imgMain: { src: "/images/showcase/extintores-catalogo-profesional.avif", alt: "Extintores PQS, CO₂ y agente K listos para entrega" },

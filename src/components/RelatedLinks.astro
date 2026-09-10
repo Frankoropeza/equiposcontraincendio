@@ -28,12 +28,16 @@ const items = source.filter((l) => l.slug !== current).slice(0, limit)
 ---
 
 {items.length > 0 && (
-  <section class="rel" aria-label={title}>
+  <section class="rel" aria-label={title || 'Enlaces relacionados'}>
     <div class="rel__inner">
-      <header class="rel__head">
-        <h2 class="rel__title">{title}</h2>
-        {desc && <p class="rel__desc">{desc}</p>}
-      </header>
+      {/* title="" omite el encabezado: lo usa la barra lateral de la ficha,
+          que ya tiene su propio h2 («También te puede servir»). */}
+      {title && (
+        <header class="rel__head">
+          <h2 class="rel__title">{title}</h2>
+          {desc && <p class="rel__desc">{desc}</p>}
+        </header>
+      )}
       <ul class="rel__grid" role="list">
         {items.map((item) => (
           <li>

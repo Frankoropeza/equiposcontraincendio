@@ -66,6 +66,12 @@ const {
 
 const waLink = waUrl(`Hola, quiero cotizar: ${title}. ¿Precio y disponibilidad?`);
 
+// «Cotizar» (valor por defecto en el frontmatter) NO es un precio: se trata
+// como ausencia de precio. Antes se pintaba «Cotizar» en rojo donde va el
+// importe. Sin precio público → «Precio bajo cotización» y Offer sin precio
+// (seo.ts ya lo omitía del JSON-LD).
+const publicPrice = price && !/^\s*cotizar\s*$/i.test(price) ? price : undefined;
+
 // Migas: Productos (L2) → categoría (L3, solo si ya tiene página propia) →
 // ficha (L4). La categoría entra cuando su `href` en TAXONOMY apunta a una L3
 // real; mientras apunte al catálogo genérico se omite, para no duplicar la
@@ -91,7 +97,7 @@ const schemaData = {
     images: productImages,
     sku: slug,
     category,
-    ...(price ? { price } : {}),
+    ...(publicPrice ? { price: publicPrice } : {}),
   },
   ...(faqs.length ? { faqs } : {}),
 };
@@ -124,7 +130,7 @@ const schemaData = {
         {features.length > 0 && (
           <ul class="prod-features">{features.map((f) => <li>{f}</li>)}</ul>
         )}
-        <p class="prod-price">{price ?? "Precio bajo cotización"}</p>
+        <p class="prod-price">{publicPrice ?? "Precio bajo cotización"}</p>
         <div class="prod-hero__actions">
           <a class="btn btn--primary" href={waLink}>Cotizar por WhatsApp</a>
           <a class="btn btn--ghost" href="/contacto/">Más información</a>
@@ -136,7 +142,7 @@ const schemaData = {
   <div class="container prod-body">
     <article class="prod-content">
       <section class="prod-section">
-        <SectionHeading eyebrow="Descripción" title={`Acerca de ${title}`} />
+        <SectionHeading eyebrow="Guía de compra" title="Lo que conviene saber antes de comprar" />
         <slot />{/* contenido libre de la ficha (markdown/MDX) */}
       </section>
 
@@ -166,7 +172,8 @@ const schemaData = {
       {faqs.length > 0 && (
         <section class="prod-section">
           <SectionHeading eyebrow="Dudas" title="Preguntas frecuentes" />
-          <FAQAccordion items={faqs} />
+          {/* title="": el SectionHeading de arriba ya dice «Preguntas frecuentes»; sin esto salía duplicado. */}
+          <FAQAccordion items={faqs} title="" />
         </section>
       )}
     </article>
@@ -174,15 +181,16 @@ const schemaData = {
     {/* Sidebar sticky: CTA + interlinking (productos relacionados) */}
     <aside class="prod-sidebar">
       <div class="prod-widget prod-widget--cta">
-        <h2>Cotiza {title}</h2>
-        <p class="prod-widget__price">{price ?? "Precio bajo cotización"}</p>
+        <h2>Cotiza por WhatsApp</h2>
+        <p class="prod-widget__name">{title}</p>
+        <p class="prod-widget__price">{publicPrice ?? "Precio bajo cotización"}</p>
         <a class="btn btn--primary btn--block" href={waLink}>Pedir cotización</a>
         <a class="btn btn--ghost btn--block" href={telUrl()}>Llamar</a>
       </div>
       {related.length > 0 && (
         <div class="prod-widget">
           <h2>También te puede servir</h2>
-          <RelatedLinks links={related.map((r) => ({ label: r.label, href: r.href, desc: r.description }))} />
+          <RelatedLinks title="" links={related.map((r) => ({ label: r.label, href: r.href, desc: r.description }))} />
         </div>
       )}
     </aside>
@@ -218,6 +226,7 @@ const schemaData = {
   .prod-sidebar { display: grid; gap: var(--space-5); align-content: start; }
   .prod-widget { padding: var(--space-5); border: 1px solid var(--color-border); border-radius: var(--radius-lg); }
   .prod-widget--cta { background: var(--color-surface); }
+  .prod-widget__name { margin: var(--space-1) 0 0; color: var(--color-text-muted); font-size: var(--text-sm); }
   .prod-widget__price { font-size: var(--text-lg); font-weight: 700; color: var(--color-primary); margin: var(--space-2) 0 var(--space-3); }
   .btn--block { width: 100%; margin-top: var(--space-2); }
 

@@ -12,9 +12,25 @@ interface FAQItem {
 interface Props {
   items: FAQItem[]
   waNumber: string
+  eyebrow?: string
+  title?: string
+  titleAccent?: string
+  desc?: string
+  body?: string[]
 }
 
-const { items, waNumber } = Astro.props
+const {
+  items,
+  waNumber,
+  eyebrow = 'Preguntas frecuentes',
+  title = 'Resolvemos tus',
+  titleAccent = 'dudas antes de cotizar',
+  desc = 'Lo que más nos preguntan antes de cotizar — sobre extintores, mantenimiento, normatividad y cobertura.',
+  body = [
+    'Reunimos las preguntas más frecuentes para que llegues a la cotización con todo claro: qué equipo necesitas, cada cuándo se da mantenimiento y qué documentación te entregamos.',
+    '¿Tu caso es diferente o no encuentras tu duda? Usa el formulario y te respondemos directo por WhatsApp.',
+  ],
+} = Astro.props
 ---
 
 <section class="fwc">
@@ -23,14 +39,11 @@ const { items, waNumber } = Astro.props
     <!-- Encabezado homologado: patrón duo del sitio -->
     <SectionHeading
       layout="duo"
-      eyebrow="Preguntas frecuentes"
-      title="Resolvemos tus"
-      titleAccent="dudas antes de cotizar"
-      desc="Lo que más nos preguntan antes de cotizar — sobre extintores, mantenimiento, normatividad y cobertura."
-      body={[
-        "Reunimos las preguntas más frecuentes para que llegues a la cotización con todo claro: qué equipo necesitas, cada cuándo se da mantenimiento y qué documentación te entregamos.",
-        "¿Tu caso es diferente o no encuentras tu duda? Usa el formulario y te respondemos directo por WhatsApp.",
-      ]}
+      eyebrow={eyebrow}
+      title={title}
+      titleAccent={titleAccent}
+      desc={desc}
+      body={body}
     />
 
     <!-- Grid 2 columnas -->
@@ -54,7 +67,7 @@ const { items, waNumber } = Astro.props
             </div>
             <div>
               <h3 class="fwc__card-title">¿Tu duda no está aquí?</h3>
-              <p class="fwc__card-sub">Te respondemos por WhatsApp en minutos.</p>
+              <p class="fwc__card-sub">Escríbenos por WhatsApp y te respondemos directo.</p>
             </div>
           </div>
 

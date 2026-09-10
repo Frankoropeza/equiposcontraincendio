@@ -16,6 +16,7 @@ interface Item {
   id: string;
   nombre: string;
   badge?: string;
+  resumen?: string;
   desc: string;
   specs: string;
   agente: string;
@@ -105,7 +106,7 @@ const accesorios = item.formato
     </div>
 
     <h3 class="ecard__title">{item.nombre}</h3>
-    <p class="ecard__desc">{item.desc}</p>
+    <p class="ecard__desc">{item.resumen ?? item.desc}</p>
 
     {item.usos?.length ? (
       <div class="ecard__use-row">
@@ -117,27 +118,26 @@ const accesorios = item.formato
     ) : null}
 
     {info && (
-      <div class="ecard__block">
-        <strong>Ventajas</strong>
-        <ul class="ecard__checks">
-          {info.ventajas.map((ventaja) => <li>{ventaja}</li>)}
-        </ul>
-      </div>
-    )}
-
-    {info && (
       <p class="ecard__limit">
         <strong>Limitación:</strong> {info.limitacion}
       </p>
     )}
 
-    {info && accesorios.length > 0 && (
+    {info && (
       <details class="ecard__more">
-        <summary>Mantenimiento y accesorios</summary>
-        <p><strong>Mantenimiento:</strong> {info.mantenimiento}</p>
-        <div class="ecard__links">
-          {accesorios.map((link) => <a href={link.href}>{link.label}</a>)}
+        <summary>Ventajas, mantenimiento y accesorios</summary>
+        <div class="ecard__block">
+          <strong>Ventajas</strong>
+          <ul class="ecard__checks">
+            {info.ventajas.map((ventaja) => <li>{ventaja}</li>)}
+          </ul>
         </div>
+        <p><strong>Mantenimiento:</strong> {info.mantenimiento}</p>
+        {accesorios.length > 0 && (
+          <div class="ecard__links">
+            {accesorios.map((link) => <a href={link.href}>{link.label}</a>)}
+          </div>
+        )}
       </details>
     )}
 

@@ -35,13 +35,14 @@ export type LinkItem = { label: string; href: string };
 // mantenimiento de extintores. La cobertura de entrega e instalación es
 // CDMX y Edomex: se dice explícitamente para no prometer servicio nacional.
 export const extSeo = {
-  title: 'Extintores en México: venta de PQS, CO₂ y clase K', // 49 car.
+  // NeuronWriter «venta de extintores» (2026-09-10, top 10 MX): el title de
+  // la SERP usa extintor / incendio / México / venta de extintores / CDMX.
+  title: 'Venta de extintores contra incendio en México y CDMX', // 51 car.
   description:
-    'Catálogo de extintores PQS, CO₂, clase K, agua, espuma y agente limpio, portátiles y sobre ruedas. Venta, recarga y mantenimiento con entrega en CDMX y Edomex.',
-  heroTitle: 'Venta de extintores en México,',
-  heroAccent: 'por agente y capacidad',
+    'Venta de extintores contra incendio para empresas y negocios: PQS, CO₂, clase K, agua y agente limpio. Recarga y mantenimiento en CDMX y Edomex.',
+  heroTitle: 'Venta de extintores contra incendio',
+  heroAccent: 'para empresas y negocios',
 };
-
 // ── Etiquetas de los ejes de filtro ─────────────────────────────────────────
 export const EXT_AGENTE_LABEL: Record<ExtAgente, string> = {
   pqs: 'PQS ABC',
@@ -87,17 +88,21 @@ export const EXT_USO_LABEL: Record<ExtUso, string> = {
 // Mantenimiento: NOM-002-STPS-2010 7.18 (revisión mensual y mantenimiento
 // anual), 7.19 (recarga después de su uso) y NOM-154-SCFI-2005 5.6 (prueba
 // hidrostática al menos cada 5 años); collarín solo en PQS (NOM-002 7.2 m).
-const MANT_BASE = 'Revisión mensual, mantenimiento anual y recarga después de cualquier uso; prueba hidrostática cada 5 años.';
+// Solo lo PROPIO de cada agente: el calendario común (revisión mensual,
+// mantenimiento anual, recarga tras uso, prueba hidrostática a 5 años) se dice
+// una vez en la nota del catálogo y en la sección de mantenimiento. Repetirlo
+// en las 29 cards era texto duplicado.
+const MANT_BASE = 'Mismo calendario que el resto: revisión mensual, mantenimiento anual y recarga tras cualquier uso.';
 export const EXT_AGENTE_INFO: Record<ExtAgente, { ventajas: [string, string]; limitacion: string; mantenimiento: string }> = {
   pqs: {
     ventajas: ['Cubre clases A, B y C con un solo equipo', 'La gama más amplia: de 1 kg a unidades móviles'],
     limitacion: 'Deja un polvo fino que daña electrónica; no apto bajo campana de cocina.',
-    mantenimiento: `${MANT_BASE} Lleva collarín de servicio.`,
+    mantenimiento: 'Al darle servicio se le coloca collarín, que no se retira sin abrir el extintor.',
   },
   co2: {
     ventajas: ['No deja residuo ni conduce electricidad', 'Indicado junto a tableros y equipo electrónico'],
     limitacion: 'No está clasificado para clase A; en cuartos cerrados reduce el oxígeno.',
-    mantenimiento: `${MANT_BASE} Se verifica que conserve su capacidad nominal.`,
+    mantenimiento: 'En la revisión se comprueba que conserve la capacidad nominal de su etiqueta.',
   },
   'clase-k': {
     ventajas: ['Formulado para aceites y grasas de cocción', 'Descarga suave que no salpica el aceite'],
@@ -144,35 +149,36 @@ export const EXT_ACCESORIOS: Record<ExtFormato, LinkItem[]> = {
 // filtro del catálogo (enlace ?uso=<key>#catalogo).
 export type UsoRow = { uso: ExtUso; titulo: string; arde: string; recomendado: string; nota: string; guia?: LinkItem };
 export const extUsos: UsoRow[] = [
-  { uso: 'oficina', titulo: 'Extintores para oficinas', arde: 'Papel, mobiliario, equipo de cómputo y contactos', recomendado: 'PQS ABC de 4.5 a 6 kg en áreas comunes; CO₂ o agente limpio junto al site', nota: 'El polvo del PQS daña equipo: junto a servidores conviene un agente sin residuo.' },
-  { uso: 'comercio', titulo: 'Extintores para comercios', arde: 'Mercancía, empaque, mobiliario y tablero eléctrico', recomendado: 'PQS ABC de 6 kg en piso de venta; CO₂ junto al tablero', nota: 'La ruta al extintor no debe quedar bloqueada por mercancía ni exhibidores.' },
-  { uso: 'restaurante', titulo: 'Extintores para restaurantes', arde: 'Aceites de cocción, gas, comedor y mobiliario', recomendado: 'Clase K de 6 L junto a la línea de cocción; PQS ABC en comedor y pasillo', nota: 'El recorrido máximo a un extintor clase K es de 10 m (NOM-002, Tabla 1).', guia: { label: 'Guía de Protección Civil para restaurantes', href: '/blog/proteccion-civil-restaurantes/' } },
-  { uso: 'hotel', titulo: 'Extintores para hoteles', arde: 'Habitaciones, textiles, cocina, lavandería y cuartos de máquinas', recomendado: 'PQS ABC o agua en pasillos; clase K en cocina; CO₂ en cuartos eléctricos', nota: 'Cada área se protege por lo que arde en ella, no con un solo agente para todo el edificio.' },
-  { uso: 'bodega', titulo: 'Extintores para bodegas', arde: 'Tarima, cartón, plástico, montacargas y cargadores', recomendado: 'PQS ABC de 9 kg; unidades móviles de PQS o agua en naves amplias', nota: 'Con riesgo alto, la NOM-002 pide un extintor por cada 200 m² (7.17).' },
-  { uso: 'industria', titulo: 'Extintores industriales', arde: 'Procesos, solventes, combustibles y tableros', recomendado: 'PQS ABC de 9 kg y móviles; espuma AFFF con líquidos inflamables; CO₂ en tableros', nota: 'En riesgo alto y clase B, un extintor móvil puede ubicarse hasta a 15 m (Tabla 1, nota).' },
-  { uso: 'vehiculo', titulo: 'Extintores para vehículo', arde: 'Motor, combustible y cableado', recomendado: 'PQS ABC de 1 a 2 kg, sujeto con su soporte', nota: 'En el Estado de México el Reglamento de Tránsito pide portar extinguidor (art. 17, fr. V).' },
-  { uso: 'site', titulo: 'Extintores para site y telecom', arde: 'Servidores, UPS, baterías y cableado', recomendado: 'CO₂ o agente limpio; agua nebulizada con clasificación C', nota: 'Un agente sin residuo evita que el remedio dañe el equipo que se quería salvar.' },
+  { uso: 'oficina', titulo: 'Extintores para oficinas', arde: 'Papel, mobiliario, equipo de cómputo y contactos', recomendado: 'PQS ABC de 4.5 a 6 kg en pasillos y áreas comunes; CO₂ o agente limpio junto al site', nota: 'El polvo del PQS se mete en los equipos: junto a los servidores va un agente sin residuo.' },
+  { uso: 'comercio', titulo: 'Extintores para comercios', arde: 'Mercancía, empaques, mobiliario y el tablero eléctrico', recomendado: 'PQS ABC de 6 kg en el piso de venta; CO₂ junto al tablero', nota: 'Que la mercancía y los exhibidores nunca tapen el camino al extintor.' },
+  { uso: 'restaurante', titulo: 'Extintores para restaurantes', arde: 'Aceite de la freidora, gas, comedor y mobiliario', recomendado: 'Clase K de 6 L junto a la línea de cocción; PQS ABC en comedor y pasillos', nota: 'El extintor clase K debe quedar a no más de 10 m de recorrido (NOM-002, Tabla 1).', guia: { label: 'Guía de Protección Civil para restaurantes', href: '/blog/proteccion-civil-restaurantes/' } },
+  { uso: 'hotel', titulo: 'Extintores para hoteles', arde: 'Habitaciones, blancos, cocina, lavandería y cuarto de máquinas', recomendado: 'PQS ABC o agua en pasillos; clase K en cocina; CO₂ en cuartos eléctricos', nota: 'Un hotel tiene varios riesgos bajo el mismo techo: cada área lleva el agente de lo que ahí arde.' },
+  { uso: 'bodega', titulo: 'Extintores para bodegas', arde: 'Tarimas, cartón, plástico, montacargas y cargadores', recomendado: 'PQS ABC de 9 kg; unidades móviles de PQS o agua en naves amplias', nota: 'Si la bodega es de riesgo alto, la NOM-002 pide un extintor por cada 200 m² (7.17).' },
+  { uso: 'industria', titulo: 'Extintores industriales', arde: 'Procesos, solventes, combustibles y tableros', recomendado: 'PQS ABC de 9 kg y unidades móviles; espuma AFFF donde hay líquidos inflamables; CO₂ en tableros', nota: 'Con riesgo alto y líquidos inflamables, una unidad móvil puede quedar hasta a 15 m (Tabla 1).' },
+  { uso: 'vehiculo', titulo: 'Extintores para vehículo', arde: 'Motor, combustible y cableado', recomendado: 'PQS ABC de 1 a 2 kg, bien sujeto con su soporte', nota: 'En el Estado de México el Reglamento de Tránsito pide portar extinguidor (art. 17, fr. V).' },
+  { uso: 'site', titulo: 'Extintores para site y telecom', arde: 'Servidores, UPS, baterías y cableado', recomendado: 'CO₂ o agente limpio; agua nebulizada con clasificación C', nota: 'Con un agente sin residuo, apagar el conato no termina de dañar el equipo.' },
 ];
-
 // ── Catálogo por capacidad ───────────────────────────────────────────────────
 export type CapRow = { rango: string; perfil: string; conviene: string; considera: string };
 export const extCapacidades: CapRow[] = [
-  { rango: 'PQS de 1 a 2 kg · CO₂ o agente limpio de 2.5 a 5 lb', perfil: 'Compacto', conviene: 'Vehículos, riesgos puntuales, equipo específico', considera: 'Complementa al extintor de área; poco tiempo de descarga' },
-  { rango: 'PQS de 4.5 a 6 kg · clase K o agua nebulizada de 6 L · CO₂ de 10 lb', perfil: 'Uso general', conviene: 'Oficinas, comercios, escuelas, consultorios, cocinas', considera: 'Manejable por una persona capacitada' },
-  { rango: 'PQS de 9 kg · agua o espuma de 9 L · CO₂ de 15 a 20 lb', perfil: 'Mayor carga portátil', conviene: 'Bodegas, talleres, naves, cuartos eléctricos', considera: 'Pesa más: confirma quién lo va a operar' },
-  { rango: 'PQS de 35 a 70 kg · agua o espuma de 50 L · CO₂ de 50 a 100 lb', perfil: 'Sobre ruedas', conviene: 'Industria, patios de maniobra, combustibles', considera: 'Requiere ruta libre y personal entrenado en su despliegue' },
+  { rango: 'PQS de 1 a 2 kg · CO₂ o agente limpio de 2.5 a 5 lb', perfil: 'Compacto', conviene: 'Vehículos, puntos de riesgo muy acotados, equipo específico', considera: 'Descarga corta: complementa al extintor de área, no lo sustituye' },
+  { rango: 'PQS de 4.5 a 6 kg · clase K o agua nebulizada de 6 L · CO₂ de 10 lb', perfil: 'Uso general', conviene: 'Oficinas, comercios, escuelas, consultorios y cocinas', considera: 'Lo maneja sin problema una persona capacitada' },
+  { rango: 'PQS de 9 kg · agua o espuma de 9 L · CO₂ de 15 a 20 lb', perfil: 'Mayor carga portátil', conviene: 'Bodegas, talleres, naves y cuartos eléctricos', considera: 'Pesa más: confirma quién lo va a descolgar y operar' },
+  { rango: 'PQS de 35 a 70 kg · agua o espuma de 50 L · CO₂ de 50 a 100 lb', perfil: 'Unidad móvil', conviene: 'Industria, patios de maniobra y almacenes de combustibles', considera: 'Necesita pasillos libres y personal entrenado para desplegarla' },
 ];
-
 // ── Comparativa de agentes (5 columnas) ──────────────────────────────────────
-export const extAgentesCols = ['Agente', 'Clases de fuego', 'Residuo', 'Junto a equipo energizado', 'Limitación principal'] as const;
+export const extAgentesCols = ['Agente', 'Dónde rinde mejor', 'Residuo', 'Junto a equipo energizado', 'Limitación principal'] as const;
+
+// Sin columna de clases: esa información ya está en la tabla de clases de
+// fuego (RiskGuide) de la misma página; aquí se compara lo que la otra no dice.
 export const extAgentesRows: string[][] = [
-  ['PQS ABC', 'A, B y C', 'Sí: polvo fino', 'Sí', 'No apto para aceite de cocina'],
-  ['CO₂', 'B y C', 'No', 'Sí', 'No clasificado para clase A'],
-  ['Clase K (químico húmedo)', 'K; algunos modelos también A', 'Mínimo, se limpia', 'No, sin clasificación C', 'Complementa la supresión de campana'],
-  ['Agua a presión', 'A', 'No', 'No: conduce', 'Solo sólidos combustibles'],
-  ['Agua nebulizada', 'A y C', 'No', 'Sí, con clasificación C del fabricante', 'No es para líquidos inflamables'],
-  ['Espuma AFFF', 'A y B', 'Espuma, se limpia', 'No: conduce', 'No para alcoholes ni solventes polares'],
-  ['Agente limpio', 'B y C; A en presentaciones mayores', 'No', 'Sí', 'Las presentaciones chicas no cubren clase A'],
+  ['PQS ABC', 'Oficinas, comercios, bodegas y vehículos', 'Sí: polvo fino', 'Sí', 'No es el agente para aceite de cocina'],
+  ['CO₂', 'Tableros, cuartos eléctricos y equipo electrónico', 'No', 'Sí', 'No está clasificado para clase A'],
+  ['Clase K (químico húmedo)', 'Freidoras y líneas de cocción', 'Mínimo, se limpia', 'No, sin clasificación C', 'Complementa la supresión de la campana'],
+  ['Agua a presión', 'Archivos, bodegas de material seco, madera y textiles', 'No', 'No: conduce', 'Solo sólidos combustibles'],
+  ['Agua nebulizada', 'Hospitales, telecomunicaciones y cuartos limpios', 'No', 'Sí, con clasificación C del fabricante', 'No es para líquidos inflamables'],
+  ['Espuma AFFF', 'Talleres, patios de maniobra y combustibles', 'Espuma, se limpia', 'No: conduce', 'No sirve para alcoholes ni solventes polares'],
+  ['Agente limpio', 'Sites, salas de servidores y equipo sensible', 'No', 'Sí', 'Las presentaciones chicas no cubren clase A'],
 ];
 
 // ── Portátil vs sobre ruedas (3 columnas) ────────────────────────────────────
@@ -202,7 +208,8 @@ export const extServicioRows: string[][] = [
 // Pyro-Chem y Strike First (sin presencia de extintores confirmada en México).
 export type Marca = { nombre: string; tipo: 'Internacional' | 'Fabricante mexicano'; origen: string; productos: string; nota?: string };
 export const extMarcasNota =
-  'Marcas reconocidas que pueden encontrarse en el mercado mexicano. Su mención es informativa: no implica que las distribuyamos ni que estén disponibles. La marca y el modelo se confirman al cotizar. Las marcas pertenecen a sus respectivos titulares.';
+  'Estas son marcas reconocidas que se encuentran en el mercado mexicano. Las mencionamos como referencia: no significa que las distribuyamos ni que estén disponibles. La marca y el modelo se confirman al cotizar. Cada marca pertenece a su titular.';
+
 export const extMarcas: Marca[] = [
   { nombre: 'Amerex', tipo: 'Internacional', origen: 'Estados Unidos', productos: 'PQS, CO₂, agua, agua nebulizada, clase K, Halotron, clase D y sobre ruedas', nota: 'Con distribuidores en México' },
   { nombre: 'Kidde', tipo: 'Internacional', origen: 'Estados Unidos', productos: 'PQS, CO₂, agua, químico húmedo y sobre ruedas' },
@@ -221,89 +228,89 @@ export const extMarcas: Marca[] = [
 // body (2 párrafos). `cta*` opcional.
 export const extSecciones = {
   familias: {
-    eyebrow: 'Por familia de agente',
-    title: 'Cinco agentes,',
-    titleAccent: 'una ficha por cada uno',
-    desc: 'Cada ficha reúne todas las presentaciones de un mismo agente extintor.',
+    eyebrow: 'Tipos de extintor',
+    title: 'Extintores por',
+    titleAccent: 'tipo de agente',
+    desc: 'Cinco familias que reúnen siete agentes extinguidores. Cada ficha trae todas sus capacidades.',
     body: [
-      'Empieza por la familia si ya sabes qué agente necesitas; si no, el catálogo completo de abajo se filtra por uso, capacidad y clase de fuego.',
-      'Todas las familias incluyen presentaciones portátiles y, donde existen en el mercado, unidades sobre ruedas.',
+      'Si ya sabes qué agente necesitas, entra directo a su ficha. Si no, el catálogo de abajo se filtra por giro, capacidad y clase de fuego.',
+      'La familia a base de agua incluye tres agentes distintos: agua a presión, agua nebulizada y espuma AFFF. Por eso son cinco fichas y siete agentes.',
     ],
   },
   catalogo: {
-    eyebrow: 'Catálogo completo',
-    title: 'Todas las presentaciones,',
-    titleAccent: 'filtradas a tu medida',
-    desc: 'Filtra por agente, formato, tipo de negocio o clase de fuego y cotiza la presentación exacta.',
+    eyebrow: 'Catálogo de extintores',
+    title: 'Todas las capacidades,',
+    titleAccent: 'en un solo lugar',
+    desc: 'Filtra por agente, formato, giro o clase de fuego y cotiza la presentación que necesitas.',
     body: [
-      'Cada tarjeta es una presentación concreta: agente, capacidad, clases de fuego que cubre, dónde conviene, su limitación principal y el mantenimiento que pide.',
-      'Las capacidades publicadas son las que se documentan en el mercado mexicano. La marca, el modelo y la disponibilidad se confirman al cotizar.',
+      'Cada tarjeta es una presentación real: capacidad, clases de fuego que cubre, el negocio donde conviene y la limitación que hay que saber antes de comprar.',
+      'Publicamos las capacidades que se consiguen en el mercado mexicano. La marca y el modelo los confirmamos contigo al cotizar, según disponibilidad.',
     ],
   },
   negocio: {
-    eyebrow: 'Por tipo de negocio',
+    eyebrow: 'Extintores por giro',
     title: 'Extintores para empresas,',
     titleAccent: 'según su giro',
-    desc: 'Qué suele arder en cada tipo de inmueble y con qué agente conviene arrancar.',
+    desc: 'Qué suele arder en cada tipo de negocio y con qué extintor conviene empezar.',
     body: [
-      'Es un punto de partida, no un dictamen: la cantidad y la ubicación salen del plano del inmueble y de su grado de riesgo de incendio.',
+      'Tómalo como punto de arranque. La cantidad exacta y el lugar de cada equipo salen del plano del inmueble y de su grado de riesgo.',
       'Cada tarjeta abre el catálogo ya filtrado con las presentaciones que aplican a ese giro.',
     ],
   },
   capacidad: {
-    eyebrow: 'Por capacidad',
-    title: 'Qué capacidad',
-    titleAccent: 'conviene en cada caso',
-    desc: 'La capacidad se elige por superficie, riesgo y por quién va a operar el equipo.',
+    eyebrow: 'Capacidades',
+    title: 'Qué capacidad de extintor',
+    titleAccent: 'te conviene',
+    desc: 'La capacidad se decide por superficie, por riesgo y por quién va a usar el equipo.',
     body: [
-      'Un extintor más grande no siempre protege mejor: si nadie en el turno puede retirarlo del soporte y dirigirlo, no sirve.',
-      'La NOM-002-STPS-2010 pide al menos un extintor por cada 300 m² en riesgo ordinario y por cada 200 m² en riesgo alto.',
+      'Un extintor más grande no siempre protege mejor. Si nadie en el turno puede descolgarlo y dirigirlo, sirve de poco.',
+      'La NOM-002-STPS-2010 pide al menos un extintor por cada 300 m² en riesgo ordinario y uno por cada 200 m² en riesgo alto.',
     ],
     ctaLabel: 'Cuántos extintores necesito',
     ctaHref: '/herramientas/cuantos-extintores-necesito/',
   },
   comparativa: {
     eyebrow: 'Comparativa de agentes',
-    title: 'Siete agentes',
-    titleAccent: 'frente a frente',
-    desc: 'Clases que cubre cada uno, si deja residuo y si puede usarse junto a equipo energizado.',
+    title: 'PQS, CO₂, agua, clase K',
+    titleAccent: 'y agente limpio',
+    desc: 'Lo que de verdad cambia entre un agente y otro: residuo, electricidad y dónde rinde mejor.',
     body: [
-      'Ningún agente es universal. La comparación que más pesa en la práctica es la del residuo y la de la electricidad: ahí se decide si el extintor protege el equipo o lo termina de dañar.',
-      'La clasificación exacta de cada presentación está en la etiqueta del fabricante y en su ficha técnica.',
+      'En la práctica, la decisión casi siempre se juega en dos preguntas: si deja residuo y si se puede usar junto a equipo con corriente. De eso depende que el extintor salve el equipo o lo termine de dañar.',
+      'Las clases de fuego de cada agente están en la tabla anterior. La clasificación exacta de cada modelo, como la clasificación UL que declara el fabricante, viene en su etiqueta.',
     ],
   },
   formato: {
     eyebrow: 'Portátil o sobre ruedas',
-    title: 'Cuándo un portátil',
-    titleAccent: 'se queda corto',
-    desc: 'Las unidades sobre ruedas cargan de 35 a 70 kg de agente y necesitan su propia logística.',
+    title: 'Extintores portátiles',
+    titleAccent: 'o unidades móviles',
+    desc: 'Las unidades móviles cargan de 35 a 70 kg de agente y necesitan espacio para moverse.',
     body: [
-      'El portátil es la primera respuesta en casi cualquier inmueble. La unidad sobre ruedas se suma donde el conato puede crecer más rápido de lo que un portátil alcanza a controlar.',
-      'Antes de elegir una unidad móvil hay que revisar la ruta: pasillos libres, rampas y quién la va a desplegar.',
+      'El portátil es la primera respuesta en casi cualquier inmueble. La unidad móvil se suma donde un conato puede crecer más rápido de lo que un portátil alcanza a controlar.',
+      'Antes de pedir una unidad móvil, revisa el recorrido: pasillos libres, rampas y quién la va a desplegar.',
     ],
   },
   marcas: {
-    eyebrow: 'Marcas del mercado',
-    title: 'Marcas reconocidas',
+    eyebrow: 'Marcas',
+    title: 'Marcas de extintores',
     titleAccent: 'en México',
-    desc: 'Fabricantes internacionales y mexicanos que pueden encontrarse en el mercado.',
+    desc: 'Fabricantes internacionales y mexicanos que se encuentran en el mercado.',
     body: [
-      'Elegir marca importa menos que elegir bien el agente y la capacidad, y que el equipo tenga su certificación y su servicio al día.',
-      'Si tu corporativo o tu aseguradora piden una marca específica, dínoslo al cotizar y confirmamos disponibilidad.',
+      'Elegir bien el agente y la capacidad pesa más que la marca. Lo que no puede faltar es que el equipo esté certificado y con su servicio al día.',
+      'Si tu corporativo o tu aseguradora piden una marca en particular, dínoslo al cotizar y confirmamos disponibilidad.',
     ],
   },
   accesorios: {
-    title: 'Accesorios y equipo complementario',
-    desc: 'Lo que acompaña al extintor para que esté visible, accesible y a la altura correcta.',
+    title: 'Accesorios para extintores',
+    desc: 'Soportes, gabinetes, señalamiento y detección para que el extintor esté visible, a la mano y a la altura correcta. El resto del equipo contra incendio, como alarmas e hidrantes, está en el catálogo general.',
   },
   mantenimiento: {
-    eyebrow: 'Mantenimiento y recarga',
-    title: 'Comprar el extintor',
-    titleAccent: 'es solo el principio',
-    desc: 'La compra y el servicio son dos obligaciones distintas, con evidencias distintas.',
+    eyebrow: 'Recarga y mantenimiento',
+    title: 'Recarga y mantenimiento',
+    titleAccent: 'de extintores',
+    desc: 'Comprar el extintor y mantenerlo vigente son dos obligaciones distintas, cada una con su propio papel.',
     body: [
-      'La NOM-002-STPS-2010 pide revisión mensual, mantenimiento al menos una vez al año y recarga después de cualquier uso. El servicio lo presta un proveedor conforme a la NOM-154-SCFI-2005.',
-      'Nosotros damos ese servicio a los extintores que vendemos y a los que ya tienes instalados, con etiqueta y collarín para tu expediente.',
+      'La NOM-002-STPS-2010 pide revisar el extintor cada mes, darle mantenimiento al menos una vez al año y recargarlo después de cualquier uso. El servicio lo presta un proveedor conforme a la NOM-154-SCFI-2005.',
+      'Damos ese servicio a los extintores que vendemos y a los que ya tienes instalados, con etiqueta y collarín para tu expediente.',
     ],
     ctaLabel: 'Recarga de extintores',
     ctaHref: '/servicios/mantenimiento/',
@@ -311,9 +318,11 @@ export const extSecciones = {
 };
 
 // Enlaces de accesorios (RelatedLinks) — anchor = keyword del destino.
+
 export const extAccesoriosLinks = [
-  { label: 'Soportes para extintor', href: '/productos/soportes-accesorios-extintor/', desc: 'Soportes de pared, gabinetes y accesorios de montaje.' },
-  { label: 'Señalización fotoluminiscente', href: '/productos/senalizacion-fotoluminiscente/', desc: 'Señal de ubicación del extintor y rutas de evacuación.' },
-  { label: 'Gabinetes con manguera', href: '/productos/gabinete-manguera-contra-incendio/', desc: 'La segunda línea de defensa cuando el conato crece.' },
-  { label: 'Detectores de humo', href: '/productos/detector-humo-fotoelectrico/', desc: 'Detección temprana para usar el extintor a tiempo.' },
+  { label: 'Soportes para extintor', href: '/productos/soportes-accesorios-extintor/', desc: 'Soportes de pared, gabinetes y montaje.' },
+  { label: 'Señalamiento de extintor', href: '/productos/senalizacion-fotoluminiscente/', desc: 'Señal fotoluminiscente de ubicación y rutas de evacuación.' },
+  { label: 'Gabinetes con manguera', href: '/productos/gabinete-manguera-contra-incendio/', desc: 'El siguiente paso cuando el conato supera al extintor.' },
+  { label: 'Detectores de humo', href: '/productos/detector-humo-fotoelectrico/', desc: 'Detección temprana para llegar con el extintor a tiempo.' },
 ];
+

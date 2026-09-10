@@ -69,7 +69,7 @@ const WA_EXTINTORES = 'Hola, quiero cotizar extintores. ¿Me ayudan a elegir el 
 const menuCta = {
   label: 'Cotizar por WhatsApp',
   href: waUrl(WA_EXTINTORES),
-  sub: 'Respuesta inmediata',
+  sub: 'Te decimos cuál conviene',
   external: true,
 };
 const schemaData = {
@@ -93,7 +93,7 @@ const schemaData = {
   description={extSeo.description}
   pageType="category"
   schemaData={schemaData}
-  breadcrumbs={[{ label: 'Productos', href: '/productos/' }, { label: 'Extintores portátiles' }]}
+  breadcrumbs={[{ label: 'Productos', href: '/productos/' }, { label: 'Extintores' }]}
   guia={false}
 >
   {/* ─── Hero ─── */}
@@ -159,16 +159,16 @@ const schemaData = {
   {/* ─── Clases de fuego, comparativa y formatos ─── */}
   <RiskGuide
     eyebrow="Clases de fuego"
-    title="Qué agente apaga"
-    titleAccent="cada clase de fuego"
-    desc="Y, lo que casi nadie publica, con cuál no hay que atacarlo."
+    title="Qué extintor usar"
+    titleAccent="en cada clase de fuego"
+    desc="Qué agente apaga cada tipo de fuego y, sobre todo, con cuál no hay que atacarlo."
     body={[
       'La clase de fuego describe lo que arde, y cada agente está clasificado para unas clases y no para otras. La etiqueta del extintor lo indica con letras y pictogramas.',
-      'La columna de la derecha es la que evita accidentes: el agua sobre aceite de cocina o sobre un tablero energizado convierte un conato en una emergencia.',
+      'Fíjate en la última columna. Agua sobre aceite de cocina o sobre un tablero con corriente convierte un conato en una emergencia.',
     ]}
     rows={extintoresClases}
     columns={['Clase', 'Qué arde', 'Agente que sí', 'Agente que no']}
-    note="La mayoría de los inmuebles combina varias clases de fuego. En ese caso se protege por zonas: el agente se elige para lo que arde en cada una, no para el inmueble completo."
+    note="Casi todos los inmuebles combinan varias clases de fuego. Se protegen por zonas: cada área lleva el agente de lo que ahí puede arder."
     ctaLabel="Riesgo de incendio"
     ctaHref="/herramientas/riesgo-de-incendio/"
   />
@@ -230,24 +230,24 @@ const schemaData = {
   <ProcessSteps
     eyebrow="Después de comprarlo"
     title="Lo que le toca a un extintor"
-    titleAccent="durante su vida útil"
-    desc="Comprarlo es el primer paso; mantenerlo vigente es lo que revisa la autoridad."
+    titleAccent="mientras está en servicio"
+    desc="Comprarlo es el primer paso. En una inspección lo que se revisa es que siga vigente."
     body={[
-      'Un extintor vencido o sin revisión cuenta como si no existiera en una inspección. La norma pide una revisión mensual, un mantenimiento anual y una prueba del cilindro cada 5 años.',
-      'Las dos primeras las puedes llevar tú con la bitácora; el mantenimiento y la prueba hidrostática los hace un proveedor, y nosotros los hacemos.',
+      'Un extintor vencido o sin revisión cuenta como si no existiera. La norma pide revisarlo cada mes, darle mantenimiento al menos una vez al año y probar el cilindro por lo menos cada 5 años.',
+      'La revisión mensual la puede hacer tu propio personal y anotarla en la bitácora. El mantenimiento, la recarga y la prueba hidrostática los hace un proveedor, y ese servicio lo damos nosotros.',
     ]}
     steps={extintoresSteps}
   />
 
   {/* ─── Normas, empresa y contacto ─── */}
   <NormsTable
-    eyebrow="Norma por agente"
-    title="Qué norma respalda"
-    titleAccent="cada tipo de extintor"
-    desc="Cada agente tiene su norma de producto; el servicio y la colocación son comunes a todos."
+    eyebrow="Normatividad"
+    title="Normas oficiales mexicanas"
+    titleAccent="para extintores"
+    desc="Cada agente tiene su norma de producto. La colocación y el servicio se rigen igual para todos."
     body={[
-      'Las normas de producto dicen cómo debe fabricarse cada extintor; la NOM-002 dice dónde y cuántos se colocan, y la NOM-154 cómo se les da servicio.',
-      'La clase K no tiene una norma mexicana de producto propia: se toma como referencia técnica la NFPA 10, que no es ley federal pero sí la exigen aseguradoras y corporativos.',
+      'Las normas de producto dicen cómo debe fabricarse cada extintor. La NOM-002 dice cuántos se colocan y dónde, y la NOM-154 cómo se les da servicio.',
+      'La clase K y el agente limpio no tienen norma mexicana de producto propia. En clase K se toma como referencia la NFPA 10, que no es ley federal, aunque algunas aseguradoras y corporativos la piden.',
     ]}
     rows={extintoresNormRows}
     columns={['Norma', 'Qué regula', 'Aplica a']}
@@ -257,13 +257,13 @@ const schemaData = {
     <div class="container">
       <SectionHeading
         layout="duo"
-        eyebrow="Sobre esta familia"
-        title="Cinco familias,"
-        titleAccent="un solo proveedor"
-        desc="El extintor y el servicio que pide durante toda su vida útil."
+        eyebrow="Por qué con nosotros"
+        title="Tus extintores y su servicio"
+        titleAccent="con un solo proveedor"
+        desc="Venta y recarga de extintores con un solo proveedor: el equipo correcto y su servicio al día."
         body={[
-          'Vendemos el extintor y le damos el mantenimiento, la recarga y la prueba hidrostática que la norma pide, para que no tengas que buscar a otro proveedor cada año.',
-          'Cotiza por WhatsApp y te decimos qué agente y qué capacidad te tocan.',
+          'Vendemos el extintor y le damos el mantenimiento, la recarga y la prueba hidrostática que pide la norma. Así no tienes que buscar a otro proveedor cada año ni armar el expediente con papeles de tres empresas.',
+          'Escríbenos por WhatsApp con tu giro y la superficie, y te decimos qué agente y qué capacidad te tocan.',
         ]}
       />
       <CompanyAbout
@@ -274,12 +274,23 @@ const schemaData = {
     </div>
   </section>
   <RelatedLinks
-    title="Sigue por aquí"
+    title="Servicios y guías relacionados"
     desc="Lo que suele hacer falta después de elegir el extintor."
     links={extintoresRelated}
-    limit={4}
+    limit={8}
   />
-  <FAQWithContact items={extintoresFaqs} waNumber={CONTACT.whatsapp} />
+  <FAQWithContact
+    items={extintoresFaqs}
+    waNumber={CONTACT.whatsapp}
+    eyebrow="Preguntas frecuentes"
+    title="Preguntas frecuentes"
+    titleAccent="sobre extintores"
+    desc="Lo que más nos preguntan antes de comprar un extintor: dónde, cuánto cuesta, cuál elegir y qué le toca después."
+    body={[
+      'Si tu caso no aparece aquí, escríbenos con el giro, la superficie y lo que se guarda en el lugar. Con eso te decimos qué equipo te conviene.',
+      'Las respuestas citan la norma cuando aplica; lo que depende de tu inmueble lo revisamos contigo.',
+    ]}
+  />
 </PageLayout>
 
 <style>

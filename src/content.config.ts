@@ -148,6 +148,9 @@ const productos = defineCollection({
             // ── Ficha técnica estructurada (opcional; la usa el catálogo de
             // extintores). `clasificacion` SOLO si consta en la ficha del
             // fabricante; `validacion: 'pendiente'` pinta el aviso en la card.
+            // Resumen corto y ÚNICO para la card del catálogo L3 (no repite
+            // `desc`, que se publica en la ficha L4: evita contenido duplicado).
+            resumen: z.string().min(40).max(160).optional(),
             agente: z.enum(EXT_AGENTES).optional(),
             capacidad: z.string().min(2).max(24).optional(),
             formato: z.enum(EXT_FORMATOS).optional(),

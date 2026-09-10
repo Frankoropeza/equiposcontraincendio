@@ -147,7 +147,7 @@ const CTA_BY_FUNNEL = {
   },
   bofu: {
     heading: '¿Listo para cotizar?',
-    desc: 'Mándanos la lista o las dudas de tu inmueble y te respondemos hoy mismo con precios y tiempos.',
+    desc: 'Mándanos la lista o las dudas de tu inmueble y te respondemos con precios y tiempos de entrega.',
     btns: [
       { label: 'Cotizar por WhatsApp', href: waQuote, icon: 'wa' as const, primary: true, external: true },
       { label: 'Equipos contra incendios', href: '/productos/', icon: 'catalog' as const },
@@ -216,7 +216,7 @@ const cta = CTA_BY_FUNNEL[funnel] ?? CTA_BY_FUNNEL.mofu;
         {commercial.length > 0 && (
           <div class="post__widget">
             <h2>Lo que resuelve tu caso</h2>
-            <RelatedLinks links={commercial.map((r) => ({ label: r.label, href: r.href, desc: r.description }))} />
+            <RelatedLinks title="" links={commercial.map((r) => ({ label: r.label, href: r.href, desc: r.description }))} />
           </div>
         )}
         {tags.length > 0 && (
@@ -228,7 +228,7 @@ const cta = CTA_BY_FUNNEL[funnel] ?? CTA_BY_FUNNEL.mofu;
         {related.length > 0 && (
           <div class="post__widget">
             <h2>Sigue leyendo</h2>
-            <RelatedLinks links={related.map((r) => ({ label: r.label, href: r.href, desc: r.description }))} />
+            <RelatedLinks title="" links={related.map((r) => ({ label: r.label, href: r.href, desc: r.description }))} />
           </div>
         )}
         <div class="post__widget post__widget--cta">

@@ -159,7 +159,7 @@ export const CONTACT = {
 // categoría: solo cuando apunta a una L3 real, nunca al catálogo genérico.
 export const TAXONOMY = {
   categories: [
-    { slug: 'extintores',          label: 'Extintores portátiles',     badge: undefined, href: '/productos/extintores/' },
+    { slug: 'extintores',          label: 'Extintores',                badge: undefined, href: '/productos/extintores/' },
     { slug: 'deteccion-alarmas',   label: 'Detección y alarmas',       badge: undefined, href: '/productos/' },
     { slug: 'hidrantes-mangueras', label: 'Hidrantes y mangueras',     badge: undefined, href: '/productos/' },
     { slug: 'senalizacion',        label: 'Señalización y emergencia', badge: undefined, href: '/productos/' },
@@ -383,7 +383,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
       { label: 'Extintores de CO₂', href: '/productos/extintor-co2/' },
       { label: 'Extintores clase K', href: '/productos/extintor-clase-k/' },
     ],
-    ctaLabel: 'Extintores portátiles',
+    ctaLabel: 'Venta de extintores',
   },
   {
     slug: 'deteccion-alarmas',
