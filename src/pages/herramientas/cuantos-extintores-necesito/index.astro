@@ -2,31 +2,48 @@
 // ============================================================================
 // /herramientas/cuantos-extintores-necesito/ — Calculadora de extintores.
 // ----------------------------------------------------------------------------
-// Devuelve el MÍNIMO normativo por superficie (NOM-002-STPS-2010: uno por cada
-// 300 m² o fracción en riesgo ordinario; uno por cada 200 m² o fracción en
-// riesgo alto) y, aparte, qué agente corresponde a las áreas con riesgo
-// específico (cocina, cuarto eléctrico, almacén de inflamables, metales).
+// QUÉ RESUELVE (y por qué está partida en dos resultados):
+//   1. El MÍNIMO NORMATIVO por superficie — NOM-002-STPS-2010: al menos uno por
+//      cada 300 m² o fracción en riesgo ordinario; uno por cada 200 m² o
+//      fracción en riesgo alto. Es aritmética, no criterio.
+//   2. El EQUIPO POR ÁREA CON RIESGO PROPIO — cocina, cuarto eléctrico, almacén
+//      de inflamables, taller con metales, unidades vehiculares. Aquí no manda
+//      la superficie sino qué se puede quemar.
+//   Mezclar los dos números es el error que lleva a comprar seis ABC para un
+//   local que además necesitaba un clase K.
 //
-// Los dos números se presentan SEPARADOS a propósito: el mínimo por superficie
-// es una obligación aritmética; la selección del agente depende de qué se puede
-// quemar en cada área. Mezclarlos es el error que lleva a comprar seis ABC para
-// un local que necesitaba además un clase K.
+// AÑADIDO 2026-09-10 (petición de Frank: «que realmente funcione a los
+// usuarios»):
+//   • Niveles del inmueble → el mínimo nunca baja de un extintor por nivel:
+//     tres pisos de 90 m² no se protegen con un solo extintor en la planta baja.
+//   • Cantidad por área (2 cocinas, 3 cuartos eléctricos…), no sólo sí/no.
+//   • «No lo sé» en el grado de riesgo: se infiere por superficie y se dice que
+//     se infirió, con enlace al clasificador para los otros cinco criterios.
+//   • Resultado desglosado por tipo de agente, con el porqué de cada renglón.
+//   • Botón de cotizar que se lleva el desglose ya escrito al WhatsApp, y botón
+//     de copiar para pegarlo en un correo o en una requisición.
 //
-// Criterios verificados el 2026-09-09 contra el texto de la NOM-002-STPS-2010.
 // La herramienta ORIENTA; la distribución final depende del recorrido real.
+// Criterios verificados el 2026-09-09 contra el texto de la NOM-002-STPS-2010.
 // ============================================================================
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
+import SectionHeading from '@components/SectionHeading.astro'
 import FAQAccordion from '@components/FAQAccordion.astro'
 import CTABanner from '@components/CTABanner.astro'
 import RelatedLinks from '@components/RelatedLinks.astro'
-import { waUrl } from '@config/site'
+import { waUrl, CONTACT } from '@config/site'
 
 const faqs = [
   {
     question: '¿Cuántos extintores pide la norma por metro cuadrado?',
     answer:
       'La NOM-002-STPS-2010 pide al menos un extintor por cada 300 m² de superficie o fracción cuando el riesgo de incendio es ordinario, y al menos uno por cada 200 m² o fracción cuando es alto. Es un mínimo: la distribución real depende del recorrido y de las clases de fuego presentes.',
+  },
+  {
+    question: '¿Cuenta cada nivel por separado?',
+    answer:
+      'El cálculo por superficie es del inmueble completo, pero un extintor sólo sirve si está al alcance: por eso la calculadora nunca devuelve menos de un extintor por nivel. Tres pisos de 90 m² no se protegen con un solo equipo en la planta baja.',
   },
   {
     question: '¿A qué altura se colocan los extintores?',
@@ -47,11 +64,22 @@ const faqs = [
 
 const schemaData = { faqs }
 const waHref = waUrl('Hola, calculé los extintores de mi inmueble en su herramienta y quiero cotizar.')
+// Base para armar el mensaje de WhatsApp con el desglose desde el cliente.
+const waBase = `https://wa.me/${CONTACT.whatsapp}?text=`
+
+// Áreas con riesgo propio. `qty` habilita el contador cuando se marca.
+const AREAS = [
+  { id: 'cocina', label: 'Cocina comercial con freidora o parrilla', hint: 'Clase K' },
+  { id: 'electrico', label: 'Cuarto eléctrico, site o centro de datos', hint: 'CO₂' },
+  { id: 'inflamables', label: 'Almacén o manejo de líquidos inflamables', hint: 'Clase B' },
+  { id: 'metales', label: 'Taller con metales combustibles', hint: 'Clase D' },
+  { id: 'vehiculos', label: 'Unidades vehiculares o flotilla', hint: 'ABC portátil' },
+]
 ---
 
 <PageLayout
   title="Calculadora: cuántos extintores necesito"
-  description="Calcula el mínimo de extintores que exige la NOM-002-STPS-2010 según la superficie y el grado de riesgo de tu inmueble, y qué agente corresponde a cada área."
+  description="Calcula el mínimo de extintores que exige la NOM-002-STPS-2010 según la superficie, los niveles y el grado de riesgo de tu inmueble, y qué agente corresponde a cada área."
   pageType="page"
   schemaData={schemaData}
   breadcrumbs={[{ label: 'Herramientas', href: '/herramientas/' }, { label: 'Cuántos extintores necesito' }]}
@@ -61,7 +89,7 @@ const waHref = waUrl('Hola, calculé los extintores de mi inmueble en su herrami
     badge="Herramienta gratuita · NOM-002-STPS-2010"
     title="¿Cuántos extintores"
     accent="necesita tu inmueble?"
-    subtitle="Te damos el mínimo que exige la norma según tu superficie y tu grado de riesgo, y qué agente corresponde a las áreas con riesgo propio."
+    subtitle="Te damos el mínimo que exige la norma según tu superficie, tus niveles y tu grado de riesgo, y qué agente corresponde a las áreas con riesgo propio."
     descRight={[
       'El mínimo por superficie es aritmética normativa: uno por cada 300 m² o fracción en riesgo ordinario, uno por cada 200 m² en riesgo alto. Lo demás depende de qué se puede quemar en cada área.',
       'Cocina, cuarto eléctrico, almacén de inflamables o taller con metales cambian el agente, no sólo el número. Por eso los dos resultados van separados.',
@@ -74,74 +102,132 @@ const waHref = waUrl('Hola, calculé los extintores de mi inmueble en su herrami
 
   <section class="section">
     <div class="container">
-      <form class="tool__form" id="ext-form" novalidate>
-        <div class="tool__grid">
-          <label class="fld">
-            <span>Superficie construida (m²)</span>
-            <input type="number" name="superficie" min="1" step="any" inputmode="decimal" placeholder="Ej. 850" required />
-          </label>
-          <fieldset class="fld fld--radios">
-            <legend>Grado de riesgo de incendio</legend>
-            <label><input type="radio" name="riesgo" value="ordinario" checked /> Ordinario</label>
-            <label><input type="radio" name="riesgo" value="alto" /> Alto</label>
-            <p class="fld__hint">¿No lo sabes? <a href="/herramientas/riesgo-de-incendio/">Clasifícalo aquí</a>.</p>
+      <SectionHeading
+        layout="duo"
+        eyebrow="Calculadora"
+        title="Dinos cómo es"
+        titleAccent="tu inmueble"
+        desc="Dos datos obligatorios y las áreas que apliquen. El resultado se actualiza al calcular."
+        body={[
+          'Con la superficie y el grado de riesgo sale el mínimo normativo. Si marcas las áreas con riesgo propio, añadimos el agente que corresponde a cada una y te decimos por qué.',
+          '¿No sabes tu grado de riesgo? Deja la opción «No lo sé»: lo inferimos por superficie y te avisamos que fue inferido.',
+        ]}
+      />
+
+      <div class="calc">
+        <form class="calc__form" id="ext-form" novalidate data-wa={waBase}>
+          <fieldset class="step">
+            <legend class="step__t"><span class="step__n">1</span> Tu inmueble</legend>
+            <div class="step__grid">
+              <label class="fld">
+                <span class="fld__l">Superficie construida <em>(m²)</em></span>
+                <input type="number" name="superficie" min="1" step="any" inputmode="decimal" placeholder="Ej. 850" required />
+                <span class="fld__h">Suma los niveles. Si no la tienes exacta, aproxima.</span>
+              </label>
+              <label class="fld">
+                <span class="fld__l">Niveles ocupados</span>
+                <input type="number" name="niveles" min="1" max="60" step="1" inputmode="numeric" value="1" />
+                <span class="fld__h">Nunca menos de un extintor por nivel.</span>
+              </label>
+            </div>
+
+            <div class="fld fld--radios">
+              <span class="fld__l">Grado de riesgo de incendio</span>
+              <div class="opts">
+                <label class="opt"><input type="radio" name="riesgo" value="ordinario" checked /> <span>Ordinario</span></label>
+                <label class="opt"><input type="radio" name="riesgo" value="alto" /> <span>Alto</span></label>
+                <label class="opt"><input type="radio" name="riesgo" value="auto" /> <span>No lo sé</span></label>
+              </div>
+              <span class="fld__h">
+                Con «No lo sé» lo inferimos por superficie (3,000 m² o más = alto). Para los otros
+                cinco criterios de la Tabla 1, usa el <a href="/herramientas/riesgo-de-incendio/">clasificador de riesgo</a>.
+              </span>
+            </div>
           </fieldset>
-        </div>
 
-        <fieldset class="fld fld--checks">
-          <legend>¿Tu inmueble tiene alguna de estas áreas?</legend>
-          <label><input type="checkbox" name="area" value="cocina" /> Cocina comercial con freidora o parrilla</label>
-          <label><input type="checkbox" name="area" value="electrico" /> Cuarto eléctrico, site o centro de datos</label>
-          <label><input type="checkbox" name="area" value="inflamables" /> Almacén o manejo de líquidos inflamables</label>
-          <label><input type="checkbox" name="area" value="metales" /> Taller con metales combustibles (magnesio, sodio, aluminio en polvo)</label>
-          <label><input type="checkbox" name="area" value="vehiculos" /> Flotilla o unidades vehiculares</label>
-        </fieldset>
+          <fieldset class="step">
+            <legend class="step__t"><span class="step__n">2</span> Áreas con riesgo propio</legend>
+            <p class="step__d">Marca las que existan y ajusta cuántas hay. Estos equipos se suman al mínimo por superficie.</p>
+            <ul class="areas" role="list">
+              {AREAS.map((a) => (
+                <li class="area">
+                  <label class="area__check">
+                    <input type="checkbox" name="area" value={a.id} data-area={a.id} />
+                    <span class="area__txt">{a.label}</span>
+                  </label>
+                  <span class="area__hint">{a.hint}</span>
+                  <label class="area__qty">
+                    <span class="sr-only">Cuántas áreas de tipo {a.label}</span>
+                    <input type="number" name={`qty-${a.id}`} min="1" max="99" step="1" value="1" disabled />
+                  </label>
+                </li>
+              ))}
+            </ul>
+          </fieldset>
 
-        <div class="tool__actions">
-          <button type="submit" class="btn btn--primary">Calcular</button>
-          <button type="reset" class="btn btn--ghost">Limpiar</button>
-        </div>
-      </form>
+          <div class="calc__actions">
+            <button type="submit" class="btn btn--primary">Calcular mi equipo</button>
+            <button type="reset" class="btn btn--ghost">Limpiar</button>
+          </div>
+        </form>
 
-      <output class="res" id="ext-res" hidden></output>
+        <aside class="calc__side">
+          <div class="res res--empty" id="ext-res" aria-live="polite">
+            <p class="res__placeholder">
+              Aquí aparecerá tu resultado: el mínimo normativo, el desglose por tipo de agente y las
+              reglas de colocación, listos para copiar o mandar por WhatsApp.
+            </p>
+          </div>
+        </aside>
+      </div>
 
-      <p class="tool__note">
+      <p class="calc__note">
         <strong>Es un mínimo, no un plano.</strong> El número por superficie es aritmética normativa;
         la ubicación real depende del recorrido que tendría que hacer una persona para alcanzar el
-        extintor más cercano y de qué se puede quemar en cada área. Si quieres el levantamiento hecho,
-        escríbenos.
+        extintor más cercano y de qué se puede quemar en cada área. Tampoco sustituye al sistema fijo
+        cuando el riesgo lo exige. Si quieres el levantamiento hecho, escríbenos.
       </p>
     </div>
   </section>
 
   <section class="section section--surface">
-    <div class="container container--prose">
-      <h2>Cómo se calcula</h2>
-      <ul>
-        <li><strong>Riesgo ordinario:</strong> al menos un extintor por cada 300 m² de superficie o fracción.</li>
-        <li><strong>Riesgo alto:</strong> al menos un extintor por cada 200 m² de superficie o fracción.</li>
-        <li><strong>Colocación:</strong> la parte más alta del extintor, a no más de 1.50 m sobre el nivel del piso, visible, señalizado y sin obstáculos.</li>
-        <li><strong>Conservación:</strong> revisión mensual y mantenimiento al menos una vez por año.</li>
-      </ul>
-      <p>
-        «O fracción» significa que se redondea hacia arriba: 850 m² en riesgo ordinario no son 2.8
-        extintores, son <strong>3</strong>.
-      </p>
+    <div class="container">
+      <SectionHeading
+        layout="duo"
+        eyebrow="El criterio"
+        title="De dónde sale"
+        titleAccent="cada número"
+        desc="Todo lo que calcula esta herramienta está en la NOM-002-STPS-2010."
+        body={[
+          '«O fracción» significa que se redondea hacia arriba: 850 m² en riesgo ordinario no son 2.8 extintores, son 3.',
+          'El agente, en cambio, no sale de la superficie: sale de qué se puede quemar en cada área. Por eso la tabla de abajo va por tipo de espacio.',
+        ]}
+      />
 
-      <h2>Qué agente va en cada área</h2>
-      <div class="tbl-wrap">
-        <table class="tbl">
-          <thead><tr><th>Área</th><th>Clase de fuego</th><th>Agente indicado</th></tr></thead>
-          <tbody>
-            <tr><td>Oficinas, comercio, pasillos</td><td>A, B y C</td><td>Polvo químico seco ABC</td></tr>
-            <tr><td>Cocina comercial (freído)</td><td>K</td><td>Agente húmedo clase K</td></tr>
-            <tr><td>Cuarto eléctrico, site, centro de datos</td><td>B y C</td><td>CO₂ (no deja residuo)</td></tr>
-            <tr><td>Almacén de líquidos inflamables</td><td>B</td><td>PQS o espuma, según el producto</td></tr>
-            <tr><td>Taller con metales combustibles</td><td>D</td><td>Agente específico para clase D</td></tr>
-          </tbody>
-        </table>
+      <div class="crit">
+        <ul class="crit__list" role="list">
+          <li><strong>Riesgo ordinario:</strong> al menos un extintor por cada 300 m² de superficie o fracción.</li>
+          <li><strong>Riesgo alto:</strong> al menos un extintor por cada 200 m² de superficie o fracción.</li>
+          <li><strong>Colocación:</strong> la parte más alta, a no más de 1.50 m del piso, visible, señalizado y sin obstáculos.</li>
+          <li><strong>Conservación:</strong> revisión mensual y mantenimiento al menos una vez por año.</li>
+        </ul>
+
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <caption class="sr-only">Agente extintor recomendado por tipo de área</caption>
+            <thead><tr><th scope="col">Área</th><th scope="col">Clase de fuego</th><th scope="col">Agente indicado</th></tr></thead>
+            <tbody>
+              <tr><td>Oficinas, comercio, pasillos</td><td>A, B y C</td><td>Polvo químico seco ABC</td></tr>
+              <tr><td>Cocina comercial (freído)</td><td>K</td><td>Agente húmedo clase K</td></tr>
+              <tr><td>Cuarto eléctrico, site, centro de datos</td><td>B y C</td><td>CO₂ (no deja residuo)</td></tr>
+              <tr><td>Almacén de líquidos inflamables</td><td>B</td><td>PQS o espuma, según el producto</td></tr>
+              <tr><td>Taller con metales combustibles</td><td>D</td><td>Agente específico para clase D</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-      <p>
+
+      <p class="crit__more">
         Si quieres el detalle de cada clase de fuego, lee la guía de
         <a href="/blog/como-elegir-extintor-clase-fuego/">cómo elegir un extintor según la clase de fuego</a>.
       </p>
@@ -150,7 +236,7 @@ const waHref = waUrl('Hola, calculé los extintores de mi inmueble en su herrami
 
   <section class="section">
     <div class="container container--prose">
-      <FAQAccordion items={faqs} title="Preguntas frecuentes" openFirst bare />
+      <FAQAccordion items={faqs} title="Preguntas frecuentes" openFirst />
     </div>
   </section>
 
@@ -159,7 +245,7 @@ const waHref = waUrl('Hola, calculé los extintores de mi inmueble en su herrami
       <RelatedLinks
         title="Sigue por aquí"
         links={[
-          { label: 'Clasifica tu riesgo de incendio', href: '/herramientas/riesgo-de-incendio/', desc: 'Ordinario o alto, con los criterios de la Tabla 1.' },
+          { label: 'Clasifica tu riesgo de incendio', href: '/herramientas/riesgo-de-incendio/', desc: 'Ordinario o alto, con los seis criterios de la Tabla 1.' },
           { label: 'Verifica tu extintor', href: '/herramientas/verifica-tu-extintor/', desc: 'Si el servicio que te dieron es real o sólo una calcomanía.' },
           { label: 'Catálogo de extintores', href: '/productos/', desc: 'PQS, CO₂, clase K y accesorios.' },
           { label: 'Mantenimiento y recarga', href: '/servicios/mantenimiento/', desc: 'Servicio conforme a la NOM-154-SCFI-2005.' },
@@ -181,96 +267,262 @@ const waHref = waUrl('Hola, calculé los extintores de mi inmueble en su herrami
 <script>
   const form = document.getElementById('ext-form') as HTMLFormElement | null
   const out = document.getElementById('ext-res') as HTMLElement | null
+
   if (form && out) {
-    const RECOMENDACIONES: Record<string, string> = {
-      cocina:
-        'Cocina comercial: extintor <strong>clase K</strong> de agente húmedo cerca del área de freído. El ABC del local no lo sustituye.',
-      electrico:
-        'Cuarto eléctrico, site o centro de datos: extintor de <strong>CO₂</strong>, que no deja residuo sobre el equipo.',
-      inflamables:
-        'Almacén o manejo de líquidos inflamables: extintor para <strong>clase B</strong> (PQS o espuma, según el producto almacenado).',
-      metales:
-        'Taller con metales combustibles: agente específico para <strong>clase D</strong>. Ningún ABC sirve aquí.',
-      vehiculos:
-        'Flotilla o unidades: extintor portátil <strong>ABC</strong> por unidad, sujeto con su soporte y accesible desde la cabina.',
+    const waBase = form.dataset.wa ?? ''
+
+    // Agente que corresponde a cada área con riesgo propio, y el porqué.
+    const AREA_SPEC: Record<string, { tipo: string; motivo: string }> = {
+      cocina: {
+        tipo: 'Clase K (agente húmedo)',
+        motivo: 'Aceites y grasas a alta temperatura; el ABC del local no lo sustituye.',
+      },
+      electrico: {
+        tipo: 'CO₂',
+        motivo: 'No deja residuo sobre tableros, servidores ni electrónica.',
+      },
+      inflamables: {
+        tipo: 'Clase B (PQS o espuma)',
+        motivo: 'Líquidos inflamables: el agente se elige según el producto almacenado.',
+      },
+      metales: {
+        tipo: 'Clase D',
+        motivo: 'Metales combustibles; ningún ABC funciona en este fuego.',
+      },
+      vehiculos: {
+        tipo: 'ABC portátil por unidad',
+        motivo: 'Sujeto con su soporte y accesible desde la cabina.',
+      },
     }
-    const fmt = (n: number) => n.toLocaleString('es-MX')
+
+    const n = (v: unknown) => {
+      const x = parseFloat(String(v ?? '').replace(/,/g, ''))
+      return Number.isFinite(x) ? x : 0
+    }
+    const fmt = (x: number) => x.toLocaleString('es-MX')
+    const esc = (s: string) =>
+      s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+
+    // Habilita el contador sólo del área marcada.
+    form.querySelectorAll<HTMLInputElement>('input[data-area]').forEach((cb) => {
+      cb.addEventListener('change', () => {
+        const qty = form.querySelector<HTMLInputElement>(`input[name="qty-${cb.value}"]`)
+        if (qty) {
+          qty.disabled = !cb.checked
+          if (cb.checked && !qty.value) qty.value = '1'
+        }
+      })
+    })
+
+    let ultimoTexto = ''
 
     form.addEventListener('submit', (e) => {
       e.preventDefault()
       const data = new FormData(form)
-      const sup = parseFloat(String(data.get('superficie') ?? '').replace(/,/g, ''))
-      if (!Number.isFinite(sup) || sup <= 0) {
-        out.hidden = false
+      const sup = n(data.get('superficie'))
+
+      if (sup <= 0) {
         out.className = 'res res--warn'
-        out.innerHTML = '<p class="res__tag">Falta la superficie</p><p>Captura la superficie construida en metros cuadrados para calcular el mínimo.</p>'
+        out.innerHTML =
+          '<p class="res__tag">Falta la superficie</p><p>Captura la superficie construida en metros cuadrados para calcular el mínimo.</p>'
+        form.querySelector<HTMLInputElement>('input[name="superficie"]')?.focus()
         return
       }
-      const alto = data.get('riesgo') === 'alto'
-      const porArea = alto ? 200 : 300
-      const minimo = Math.ceil(sup / porArea)
-      const areas = data.getAll('area').map(String)
 
-      out.hidden = false
+      const niveles = Math.max(1, Math.round(n(data.get('niveles')) || 1))
+      const modo = String(data.get('riesgo') ?? 'ordinario')
+      const inferido = modo === 'auto'
+      const alto = modo === 'alto' || (inferido && sup >= 3000)
+      const porArea = alto ? 200 : 300
+
+      const porSuperficie = Math.ceil(sup / porArea)
+      const base = Math.max(porSuperficie, niveles)
+      const mandaNivel = niveles > porSuperficie
+
+      // Equipo por área con riesgo propio.
+      const especificos = (data.getAll('area') as string[]).map((id) => {
+        const cant = Math.max(1, Math.round(n(data.get(`qty-${id}`)) || 1))
+        return { id, cant, ...AREA_SPEC[id] }
+      })
+      const totalEsp = especificos.reduce((acc, it) => acc + it.cant, 0)
+      const total = base + totalEsp
+
+      const filas = [
+        {
+          tipo: 'Polvo químico seco ABC',
+          cant: base,
+          motivo: mandaNivel
+            ? `Mínimo por superficie: ${porSuperficie} sobre ${fmt(sup)} m² (uno por cada ${porArea} m² o fracción). Se eleva a ${base} para no dejar ningún nivel sin equipo.`
+            : `Uno por cada ${porArea} m² o fracción, sobre ${fmt(sup)} m² de riesgo ${alto ? 'alto' : 'ordinario'}.`,
+        },
+        ...especificos.map((it) => ({ tipo: it.tipo, cant: it.cant, motivo: it.motivo })),
+      ]
+
       out.className = 'res'
       out.innerHTML = `
-        <p class="res__tag">Mínimo normativo: ${minimo} ${minimo === 1 ? 'extintor' : 'extintores'}</p>
-        <p>${fmt(sup)} m² con riesgo <strong>${alto ? 'alto' : 'ordinario'}</strong> → uno por cada ${porArea} m² o fracción.</p>
+        <p class="res__eyebrow">Resultado</p>
+        <p class="res__kpi"><strong>${total}</strong> <span>${total === 1 ? 'extintor' : 'extintores'}</span></p>
+        <p class="res__sub">
+          ${base} por superficie y niveles${totalEsp > 0 ? ` + ${totalEsp} por áreas con riesgo propio` : ''}.
+          Riesgo <strong>${alto ? 'alto' : 'ordinario'}</strong>${inferido ? ' <em>(inferido por superficie)</em>' : ''}.
+        </p>
+
+        <table class="res__tbl">
+          <thead><tr><th scope="col">Tipo</th><th scope="col">Cant.</th></tr></thead>
+          <tbody>
+            ${filas
+              .map(
+                (f) => `<tr>
+                  <td><strong>${esc(f.tipo)}</strong><span class="res__why">${esc(f.motivo)}</span></td>
+                  <td class="res__num">${f.cant}</td>
+                </tr>`,
+              )
+              .join('')}
+          </tbody>
+        </table>
+
+        <ul class="res__rules">
+          <li>Parte más alta a <strong>1.50 m</strong> o menos del piso, visible y señalizado.</li>
+          <li><strong>Revisión mensual</strong> y <strong>mantenimiento anual</strong> conforme a norma.</li>
+          <li>La ubicación final depende del recorrido real hasta el extintor más cercano.</li>
+        </ul>
+
         ${
-          areas.length
-            ? `<p><strong>Además, por las áreas que marcaste:</strong></p><ul>${areas
-                .map((a) => `<li>${RECOMENDACIONES[a] ?? ''}</li>`)
-                .join('')}</ul><p class="res__hint">Estos equipos se suman al mínimo por superficie: cubren un riesgo que el ABC general no resuelve.</p>`
-            : '<p>No marcaste áreas con riesgo específico. Si tienes cocina, cuarto eléctrico o almacén de inflamables, márcalos: cambian el tipo de agente.</p>'
+          inferido
+            ? `<p class="res__flag">Inferimos el grado de riesgo por superficie. La Tabla 1 tiene otros cinco criterios (gases, líquidos, sólidos combustibles y materiales pirofóricos): <a href="/herramientas/riesgo-de-incendio/">clasifícalo aquí</a> para confirmarlo.</p>`
+            : ''
         }
-        <p class="res__next">Recuerda: a no más de 1.50 m de altura, visibles y señalizados, con revisión mensual y mantenimiento anual.</p>
+
+        <div class="res__cta">
+          <a class="btn btn--primary btn--block" id="res-wa" href="#" target="_blank" rel="noopener">Cotizar este resultado</a>
+          <button type="button" class="btn btn--ghost btn--block" id="res-copy">Copiar resultado</button>
+        </div>
       `
+
+      // Texto plano: sirve para WhatsApp y para el portapapeles.
+      ultimoTexto = [
+        `Cálculo de extintores (equiposcontraincendio.com)`,
+        `Superficie: ${fmt(sup)} m² · Niveles: ${niveles} · Riesgo: ${alto ? 'alto' : 'ordinario'}${inferido ? ' (inferido)' : ''}`,
+        `Total estimado: ${total} ${total === 1 ? 'extintor' : 'extintores'}`,
+        ...filas.map((f) => `- ${f.cant} × ${f.tipo}`),
+        `Quiero cotizar este equipo.`,
+      ].join('\n')
+
+      const wa = out.querySelector<HTMLAnchorElement>('#res-wa')
+      if (wa) wa.href = waBase + encodeURIComponent(ultimoTexto)
+
+      const copy = out.querySelector<HTMLButtonElement>('#res-copy')
+      copy?.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(ultimoTexto)
+          copy.textContent = 'Copiado ✓'
+        } catch {
+          copy.textContent = 'No se pudo copiar'
+        }
+        setTimeout(() => (copy.textContent = 'Copiar resultado'), 2200)
+      })
+
       out.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
     })
 
     form.addEventListener('reset', () => {
-      out.hidden = true
-      out.innerHTML = ''
+      out.className = 'res res--empty'
+      out.innerHTML =
+        '<p class="res__placeholder">Aquí aparecerá tu resultado: el mínimo normativo, el desglose por tipo de agente y las reglas de colocación, listos para copiar o mandar por WhatsApp.</p>'
+      form.querySelectorAll<HTMLInputElement>('input[name^="qty-"]').forEach((q) => {
+        q.disabled = true
+        q.value = '1'
+      })
     })
   }
 </script>
 
 <style>
-  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
-  .container--prose { max-width: var(--container-prose, 72ch); }
-  .section { padding: var(--sp-8) 0; }
-  @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
-  .section--surface { background: var(--c-surface); }
-  .tool__form { border: 1px solid var(--c-border); border-radius: var(--radius-lg, 12px); padding: var(--sp-6); background: var(--c-white); }
-  .tool__grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-4); }
-  @media (min-width: 700px) { .tool__grid { grid-template-columns: repeat(2, 1fr); } }
-  .fld { display: grid; gap: var(--sp-2); font-size: var(--text-sm); color: var(--c-ink-2); }
+  /* Estructura: .container/.section/.tbl vienen de tokens.css (piso común). */
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  /* ── Rejilla calculadora + resultado ─────────────────────────────────────── */
+  .calc { display: grid; grid-template-columns: 1fr; gap: var(--sp-6); margin-top: var(--sp-6); }
+  @media (min-width: 1024px) {
+    .calc { grid-template-columns: minmax(0, 1fr) 22rem; gap: var(--sp-7); align-items: start; }
+    .calc__side { position: sticky; top: calc(var(--header-height, 72px) + var(--sp-4)); }
+  }
+
+  .calc__form { display: grid; gap: var(--sp-6); padding: var(--sp-6); border: 1px solid var(--c-border); border-radius: var(--radius-lg, 12px); background: var(--c-white); }
+  .calc__note { margin-top: var(--sp-6); font-size: var(--text-sm); color: var(--c-ink-2); max-width: 75ch; }
+
+  /* ── Pasos ───────────────────────────────────────────────────────────────── */
+  .step { border: 0; margin: 0; padding: 0; }
+  .step + .step { padding-top: var(--sp-5); border-top: 1px solid var(--c-border); }
+  .step__t { display: flex; align-items: center; gap: var(--sp-3); padding: 0; margin-bottom: var(--sp-4); font-family: var(--font-heading); font-size: var(--text-lg); color: var(--c-ink); }
+  .step__n { display: inline-flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; border-radius: 999px; background: var(--c-primary); color: #fff; font-size: var(--text-sm); font-weight: var(--weight-bold); }
+  .step__d { margin: calc(var(--sp-3) * -1) 0 var(--sp-4); font-size: var(--text-sm); color: var(--c-ink-2); }
+  .step__grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-4); }
+  @media (min-width: 640px) { .step__grid { grid-template-columns: 2fr 1fr; } }
+
+  /* ── Campos ──────────────────────────────────────────────────────────────── */
+  .fld { display: grid; gap: var(--sp-2); }
+  .fld + .fld, .step__grid + .fld { margin-top: var(--sp-4); }
+  .fld__l { font-size: var(--text-sm); font-weight: var(--weight-semibold); color: var(--c-ink); }
+  .fld__l em { font-style: normal; font-weight: 400; color: var(--c-muted); }
+  .fld__h { font-size: var(--text-xs); color: var(--c-muted); }
+  .fld__h a { color: var(--c-primary); }
+  /* 16px reales: por debajo de eso iOS hace zoom al enfocar. */
   .fld input[type="number"] { font-size: 1rem; padding: var(--sp-3); border: 1px solid var(--c-border); border-radius: var(--radius-md, 8px); background: var(--c-white); color: var(--c-ink); width: 100%; }
-  .fld input:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 1px; }
-  .fld--radios, .fld--checks { border: 0; margin: 0; padding: 0; }
-  .fld--checks { margin-top: var(--sp-5); }
-  .fld--radios legend, .fld--checks legend { padding: 0; margin-bottom: var(--sp-2); font-size: var(--text-sm); color: var(--c-ink-2); }
-  .fld--radios label, .fld--checks label { display: flex; gap: var(--sp-2); align-items: flex-start; padding: var(--sp-2) 0; color: var(--c-ink); }
-  .fld--radios input, .fld--checks input { margin-top: .2rem; width: 1.15rem; height: 1.15rem; flex: none; }
-  .fld__hint { margin: var(--sp-2) 0 0; font-size: var(--text-xs); color: var(--c-muted); }
-  .tool__actions { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-top: var(--sp-5); }
-  /* Móvil: CTA a todo el ancho, como el resto del sitio (mobile.css). */
-  @media (max-width: 640px) { .tool__actions .btn { width: 100%; } }
-  .tool__note { margin-top: var(--sp-5); font-size: var(--text-sm); color: var(--c-ink-2); max-width: 70ch; }
+  .fld input:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 1px; }
 
-  /* El atributo hidden debe ganarle al display:block, o la caja de
-     resultado se ve vacía antes de calcular nada. */
-  .res[hidden] { display: none; }
-  .res { display: block; margin-top: var(--sp-6); padding: var(--sp-6); border-radius: var(--radius-lg, 12px); border: 1px solid var(--c-border); border-left: 4px solid var(--c-accent); background: var(--c-white); }
+  .opts { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+  .opt { display: inline-flex; align-items: center; gap: var(--sp-2); padding: var(--sp-3) var(--sp-4); border: 1px solid var(--c-border); border-radius: var(--radius-md, 8px); font-size: var(--text-sm); cursor: pointer; }
+  .opt input { accent-color: var(--c-primary); width: 1.05rem; height: 1.05rem; }
+  .opt:has(input:checked) { border-color: var(--c-primary); color: var(--c-primary); font-weight: var(--weight-semibold); }
+
+  /* ── Áreas con riesgo propio ─────────────────────────────────────────────── */
+  .areas { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+  .area { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: var(--sp-2) var(--sp-3); padding: var(--sp-3) 0; border-bottom: 1px solid var(--c-border); }
+  .area:last-child { border-bottom: 0; }
+  .area__check { display: grid; grid-template-columns: auto 1fr; gap: var(--sp-3); align-items: start; cursor: pointer; }
+  .area__check input { margin-top: .15rem; width: 1.15rem; height: 1.15rem; accent-color: var(--c-primary); }
+  .area__txt { font-size: var(--text-sm); color: var(--c-ink); }
+  .area__hint { grid-column: 1; font-size: var(--text-xs); color: var(--c-muted); padding-left: calc(1.15rem + var(--sp-3)); }
+  .area__qty { grid-column: 2; grid-row: 1 / span 2; }
+  .area__qty input { width: 4.5rem; font-size: 1rem; padding: var(--sp-2); text-align: center; border: 1px solid var(--c-border); border-radius: var(--radius-md, 8px); }
+  .area__qty input:disabled { opacity: .45; }
+
+  .calc__actions { display: flex; flex-wrap: wrap; gap: var(--sp-3); }
+  @media (max-width: 640px) { .calc__actions .btn { width: 100%; } }
+
+  /* ── Resultado ───────────────────────────────────────────────────────────── */
+  .res { padding: var(--sp-6); border: 1px solid var(--c-border); border-left: 4px solid var(--c-primary); border-radius: var(--radius-lg, 12px); background: var(--c-white); }
+  .res--empty { border-left-color: var(--c-border); background: var(--c-surface); }
   .res--warn { border-left-color: #b45309; }
+  .res__placeholder { margin: 0; font-size: var(--text-sm); color: var(--c-muted); }
+  .res :global(.res__eyebrow) { margin: 0; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .08em; color: var(--c-muted); }
+  .res :global(.res__kpi) { margin: var(--sp-2) 0 var(--sp-2); font-family: var(--font-heading); line-height: 1; }
+  .res :global(.res__kpi strong) { font-size: 3rem; color: var(--c-primary); }
+  .res :global(.res__kpi span) { font-size: var(--text-lg); color: var(--c-ink); }
+  .res :global(.res__sub) { margin: 0 0 var(--sp-4); font-size: var(--text-sm); color: var(--c-ink-2); }
   .res :global(.res__tag) { font-family: var(--font-heading); font-size: var(--text-lg); margin: 0 0 var(--sp-3); }
-  .res :global(ul) { margin: 0 0 var(--sp-3); padding-left: 1.2rem; display: grid; gap: var(--sp-2); }
-  .res :global(p) { margin: 0 0 var(--sp-3); }
-  .res :global(.res__hint), .res :global(.res__next) { font-size: var(--text-sm); color: var(--c-ink-2); }
-  .res :global(.res__next) { margin: 0; }
+  .res :global(.res__tbl) { width: 100%; border-collapse: collapse; margin: 0 0 var(--sp-4); font-size: var(--text-sm); }
+  .res :global(.res__tbl th) { text-align: left; font-size: var(--text-xs); text-transform: uppercase; letter-spacing: .06em; color: var(--c-muted); border-bottom: 1px solid var(--c-border); padding: 0 0 var(--sp-2); }
+  .res :global(.res__tbl td) { border-bottom: 1px solid var(--c-border); padding: var(--sp-3) 0; vertical-align: top; }
+  .res :global(.res__tbl td strong) { display: block; color: var(--c-ink); }
+  .res :global(.res__why) { display: block; margin-top: 2px; font-size: var(--text-xs); color: var(--c-muted); }
+  .res :global(.res__num) { width: 3rem; text-align: right; font-size: var(--text-lg); font-weight: var(--weight-bold); color: var(--c-ink); }
+  .res :global(.res__rules) { margin: 0 0 var(--sp-4); padding-left: 1.1rem; display: grid; gap: var(--sp-2); font-size: var(--text-xs); color: var(--c-ink-2); }
+  .res :global(.res__flag) { margin: 0 0 var(--sp-4); padding: var(--sp-3); border-radius: var(--radius-md, 8px); background: var(--c-surface); font-size: var(--text-xs); color: var(--c-ink-2); }
+  .res :global(.res__flag a) { color: var(--c-primary); }
+  .res :global(.res__cta) { display: grid; gap: var(--sp-2); }
 
-  .tbl-wrap { overflow-x: auto; margin: var(--sp-5) 0; }
-  .tbl { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+  /* ── Criterio y tabla de agentes ─────────────────────────────────────────── */
+  .crit { display: grid; grid-template-columns: 1fr; gap: var(--sp-6); margin-top: var(--sp-6); }
+  @media (min-width: 1024px) { .crit { grid-template-columns: minmax(0, 22rem) minmax(0, 1fr); gap: var(--sp-7); align-items: start; } }
+  .crit__list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-3); font-size: var(--text-sm); color: var(--c-ink-2); }
+  .crit__list li { padding-left: var(--sp-4); border-left: 2px solid var(--c-primary); }
+  .crit__list strong { color: var(--c-ink); }
+  .crit__more { margin-top: var(--sp-5); font-size: var(--text-sm); color: var(--c-ink-2); }
+  .crit__more a { color: var(--c-primary); }
+  .tbl-wrap { overflow-x: auto; }
+  .tbl { width: 100%; border-collapse: collapse; font-size: var(--text-sm); background: var(--c-white); }
   .tbl th, .tbl td { border: 1px solid var(--c-border); padding: var(--sp-3); text-align: left; }
-  .tbl th { background: var(--c-white); }
+  .tbl th { background: var(--c-white); font-weight: var(--weight-semibold); color: var(--c-ink); }
 </style>
