@@ -335,6 +335,58 @@ const plantillas = defineCollection({
     .strict(),
 });
 
+// ── Colección: tramites (Protección Civil por entidad) ───────────────────────
+// Bloque A del plan de activos de utilidad pública (2026-09-09). Cada ficha
+// describe un trámite REAL con su fuente oficial y la fecha en que se verificó.
+//
+// REGLA DURA DE ESTA COLECCIÓN: nada sin fuente. `sources` y `verifiedAt` son
+// OBLIGATORIOS, y los campos que no se pudieron verificar se omiten en vez de
+// rellenarse — un requisito inventado en materia de trámites es peor que no
+// publicar la ficha. `pending` deja constancia visible de qué falta confirmar.
+const tramites = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/tramites' }),
+  schema: z
+    .object({
+      title: z.string().min(10).max(110),
+      description: z.string().min(70).max(280),
+      /** Nombre corto para el hub y las migas. */
+      label: z.string().min(3).max(60),
+      /** Entidad o demarcación a la que aplica. */
+      entidad: z.string(),
+      /** Autoridad que recibe o resuelve el trámite. */
+      autoridad: z.string(),
+      /** Nombre oficial del trámite, tal como lo publica la autoridad. */
+      tramiteOficial: z.string().optional(),
+      quienAplica: z.string().optional(),
+      modalidad: z.string().optional(),
+      plazo: z.string().optional(),
+      costo: z.string().optional(),
+      resultado: z.string().optional(),
+      vigencia: z.string().optional(),
+      requisitos: z.array(z.string()).optional(),
+      fundamento: z.array(z.string()).optional(),
+      /** Qué falta confirmar. Se publica a la vista: honestidad > apariencia. */
+      pending: z.array(z.string()).optional(),
+      /** Fuentes oficiales consultadas. Obligatorio. */
+      sources: z
+        // Validación de URL absoluta. `z.string().url()` marca un aviso de
+        // deprecación en Zod v4, pero `z.url()` sobre el re-export de astro:content
+        // dispara avisos en cascada: se queda el primero, que es el inocuo.
+        .array(z.object({ label: z.string(), url: z.string().url() }))
+        .min(1),
+      /** Fecha de la última verificación contra la fuente. Obligatorio. */
+      verifiedAt: z.coerce.date(),
+      image: imagePath.optional(),
+      faqs: faqSchema,
+      relatedServices: z.array(reference('servicios')).optional(),
+      relatedZones: z.array(reference('zonas')).optional(),
+      order: z.number().default(0),
+      draft: z.boolean().default(false),
+      ...seoFields,
+    })
+    .strict(),
+});
+
 // ── Export ────────────────────────────────────────────────────────────────────
 // Borra las colecciones que el proyecto no use (un sitio puede no tener `zonas`
 // o `casos`). Mantén `articulos` si hay blog (siempre .mdx — D3).
@@ -344,4 +396,5 @@ export const collections = {
   articulos,
   zonas,
   plantillas,
+  tramites,
 };

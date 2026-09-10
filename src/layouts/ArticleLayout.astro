@@ -85,8 +85,12 @@ const {
 
 const published = new Date(pubDate);
 const updated = updatedDate ? new Date(updatedDate) : published;
+// timeZone UTC a propósito: el frontmatter trae fechas sin hora ("2026-06-21"),
+// que Zod coacciona a medianoche UTC. Al formatearlas en la zona local del
+// servidor (UTC-6) se restaba un día y TODOS los artículos publicaban su fecha
+// con 24 h de atraso — «21 de junio» se imprimía como «20 de junio».
 const fmt = (d: Date) =>
-  d.toLocaleDateString("es-MX", { year: "numeric", month: "long", day: "numeric" });
+  d.toLocaleDateString("es-MX", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
 
 // Índice: sólo H2. A partir de 3 secciones aporta; con menos, estorba.
 const toc = headings.filter((h) => h.depth === 2 && h.slug && h.text);
@@ -146,7 +150,7 @@ const CTA_BY_FUNNEL = {
     desc: 'Mándanos la lista o las dudas de tu inmueble y te respondemos hoy mismo con precios y tiempos.',
     btns: [
       { label: 'Cotizar por WhatsApp', href: waQuote, icon: 'wa' as const, primary: true, external: true },
-      { label: 'Ver catálogo', href: '/productos/', icon: 'catalog' as const },
+      { label: 'Catálogo de equipo', href: '/productos/', icon: 'catalog' as const },
     ],
     badge: 'Respuesta el mismo día',
     variant: 'red' as const,

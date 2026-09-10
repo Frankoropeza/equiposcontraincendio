@@ -1,0 +1,135 @@
+---
+// ============================================================================
+// /proteccion-civil/ — Hub de trámites de Protección Civil por entidad.
+// ----------------------------------------------------------------------------
+// Bloque A del plan de activos de utilidad pública. Data-driven desde la
+// colección `tramites`, donde `sources` y `verifiedAt` son obligatorios.
+// Arranca por entidad (CDMX y Estado de México); las demarcaciones se suman
+// por lotes conforme se verifique cada fuente, nunca de relleno.
+// ============================================================================
+import PageLayout from '@layouts/PageLayout.astro'
+import SectionHeading from '@components/SectionHeading.astro'
+import RelatedLinks from '@components/RelatedLinks.astro'
+import CTABanner from '@components/CTABanner.astro'
+import { getCollection } from 'astro:content'
+import { waUrl, WA_MESSAGES } from '@config/site'
+
+const tramites = (await getCollection('tramites', ({ data }) => !data.draft)).sort(
+  (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0),
+)
+const fmt = (d: Date) => d.toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })
+
+const schemaData = {
+  list: {
+    name: 'Trámites de Protección Civil por entidad',
+    description:
+      'Qué exige Protección Civil en la Ciudad de México y en el Estado de México: autoridad, a quién aplica, requisitos y fundamento, con la fuente oficial de cada dato.',
+    path: '/proteccion-civil/',
+    items: tramites.map((t) => ({
+      name: t.data.title,
+      path: `/proteccion-civil/${t.id}/`,
+      description: t.data.description,
+    })),
+  },
+}
+---
+
+<PageLayout
+  title="Protección Civil: qué exige en CDMX y Edoméx"
+  description="Qué pide Protección Civil a una empresa en la Ciudad de México y en el Estado de México: autoridad, a quién aplica, requisitos, plazos y fundamento, con la fuente oficial de cada dato."
+  pageType="category"
+  schemaData={schemaData}
+  breadcrumbs={[{ label: 'Protección Civil' }]}
+  guia={false}
+>
+  <section class="hub">
+    <div class="container">
+      <p class="hub__eyebrow">Guía de trámite · con fuente oficial</p>
+      <h1 class="hub__h1">Qué te exige Protección Civil, según dónde estés</h1>
+      <p class="hub__lede">
+        La pregunta con la que empieza casi todo cliente es la misma: «me pidieron el programa de
+        protección civil, ¿y ahora qué?». Aquí reunimos, por entidad, quién recibe el trámite, a
+        quién aplica, qué se entrega y en qué se fundamenta — citando siempre de dónde salió el dato.
+      </p>
+      <p class="hub__note">
+        Publicamos sólo lo que pudimos verificar en la fuente oficial, con su fecha. Lo que no,
+        aparece marcado como pendiente y con el enlace para consultarlo directamente. No damos por
+        hecho un requisito.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <SectionHeading
+        layout="duo"
+        eyebrow="Por entidad"
+        title="Ciudad de México y"
+        titleAccent="Estado de México"
+        desc="Las dos entidades donde damos servicio."
+        body={[
+          'Cada ficha resume el trámite estatal y enlaza a la cédula oficial. Empezamos por las dos entidades que atendemos; las demarcaciones se suman conforme podamos verificar la fuente de cada una.',
+          'Si tu inmueble ya tiene el requerimiento encima, lo urgente no es el papel: es que el inmueble aguante la revisión.',
+        ]}
+      />
+
+      <ul class="cards" role="list">
+        {tramites.map((t) => (
+          <li>
+            <article class="card">
+              <span class="card__badge">{t.data.entidad}</span>
+              <h2 class="card__title"><a href={`/proteccion-civil/${t.id}/`}>{t.data.label}</a></h2>
+              <p class="card__desc">{t.data.description}</p>
+              <p class="card__meta">Verificado el {fmt(t.data.verifiedAt)}</p>
+              <a class="card__cta" href={`/proteccion-civil/${t.id}/`}>Ver el trámite →</a>
+            </article>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <RelatedLinks
+        title="Llega preparado"
+        links={[
+          { label: 'Clasifica tu riesgo de incendio', href: '/herramientas/riesgo-de-incendio/', desc: 'Ordinario o alto: define casi todo lo demás.' },
+          { label: 'Cuántos extintores necesito', href: '/herramientas/cuantos-extintores-necesito/', desc: 'El mínimo por superficie y el agente por área.' },
+          { label: 'Formatos descargables', href: '/plantillas/', desc: 'Bitácora, acta de simulacro y censo de brigada.' },
+          { label: 'Gestión documental', href: '/servicios/gestion-documental/', desc: 'El expediente ordenado y al día.' },
+        ]}
+        limit={4}
+      />
+    </div>
+  </section>
+
+  <CTABanner
+    heading="¿Tienes una visita encima?"
+    desc="Revisamos el inmueble, te decimos qué falta y lo dejamos en regla antes de la verificación."
+    btns={[{ label: 'Hablar por WhatsApp', href: waUrl(WA_MESSAGES.urgente), icon: 'wa', primary: true, external: true }]}
+    badge="CDMX y Estado de México"
+    variant="red"
+  />
+</PageLayout>
+
+<style>
+  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
+  .section { padding: var(--sp-8) 0; }
+  .section--surface { background: var(--c-surface); }
+  .hub { padding: var(--sp-9) 0 var(--sp-6); }
+  .hub__eyebrow { color: var(--c-accent); text-transform: uppercase; letter-spacing: .08em; font-size: var(--text-sm); margin: 0 0 var(--sp-2); }
+  .hub__h1 { font-family: var(--font-heading); font-size: var(--text-fluid-4xl, 2.25rem); line-height: 1.1; margin: 0 0 var(--sp-3); }
+  .hub__lede { color: var(--c-ink-2); max-width: 65ch; margin: 0 0 var(--sp-4); }
+  .hub__note { font-size: var(--text-sm); color: var(--c-muted); max-width: 65ch; margin: 0; }
+  .cards { list-style: none; margin: var(--sp-6) 0 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: var(--sp-5); }
+  @media (min-width: 700px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+  .card { height: 100%; display: grid; align-content: start; gap: var(--sp-2); padding: var(--sp-6); border: 1px solid var(--c-border); border-radius: var(--radius-lg, 12px); background: var(--c-white); }
+  .card__badge { font-size: var(--text-xs); color: var(--c-muted); text-transform: uppercase; letter-spacing: .06em; }
+  .card__title { font-family: var(--font-heading); font-size: var(--text-lg); margin: 0; }
+  .card__title a { color: inherit; text-decoration: none; }
+  .card__title a:hover { color: var(--c-accent); }
+  .card__desc { color: var(--c-ink-2); font-size: var(--text-sm); margin: 0; }
+  .card__meta { font-size: var(--text-xs); color: var(--c-muted); margin: var(--sp-2) 0 0; }
+  .card__cta { margin-top: var(--sp-3); color: var(--c-accent); font-size: var(--text-sm); text-decoration: none; }
+</style>

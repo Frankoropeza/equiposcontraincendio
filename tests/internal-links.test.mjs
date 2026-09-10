@@ -32,6 +32,7 @@ const EXTS = ['.astro', '.ts', '.md', '.mdx'];
 // (p. ej. /sectores/ o /productos/<categoria>/), añádela aquí.
 const PAGE_SEGMENTS = [
   'productos', 'servicios', 'blog', 'cobertura', 'sectores', 'herramientas',
+  'plantillas', 'proteccion-civil',
   'contacto', 'nosotros', 'privacidad', 'terminos', 'cookies',
 ];
 

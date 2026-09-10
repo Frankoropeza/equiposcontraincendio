@@ -1,0 +1,176 @@
+---
+// ============================================================================
+// /proteccion-civil/<entidad>/ — Ficha de trámite verificada.
+// ----------------------------------------------------------------------------
+// Renderiza una entrada de la colección `tramites`. Tres elementos NO son
+// decorativos y por eso están en la plantilla y no en el cuerpo del markdown:
+//   • el sello «Verificado el <fecha>» con enlace a las fuentes,
+//   • el bloque de PENDIENTES (lo que no pudimos confirmar), a la vista,
+//   • el aviso de que los trámites cambian y de que no gestionamos ante la
+//     autoridad.
+// Publicar trámites sin eso es cómo se envejece mal y se pierde credibilidad.
+// ============================================================================
+import PageLayout from '@layouts/PageLayout.astro'
+import FAQAccordion from '@components/FAQAccordion.astro'
+import CTABanner from '@components/CTABanner.astro'
+import RelatedLinks from '@components/RelatedLinks.astro'
+import { getCollection, render } from 'astro:content'
+import { waUrl } from '@config/site'
+
+export async function getStaticPaths() {
+  const tramites = await getCollection('tramites', ({ data }) => !data.draft)
+  const servicios = await getCollection('servicios', ({ data }) => !data.draft)
+
+  return tramites.map((entry) => {
+    const comerciales = (entry.data.relatedServices ?? [])
+      .map((r) => servicios.find((s) => s.id === r.id))
+      .filter(Boolean)
+      .map((s) => ({ label: s!.data.title, href: `/servicios/${s!.id}/`, description: s!.data.description }))
+
+    const otras = tramites
+      .filter((t) => t.id !== entry.id)
+      .map((t) => ({ label: t.data.title, href: `/proteccion-civil/${t.id}/`, description: t.data.description }))
+
+    return { params: { slug: entry.id }, props: { entry, comerciales, otras } }
+  })
+}
+
+const { entry, comerciales, otras } = Astro.props
+const { Content } = await render(entry)
+const d = entry.data
+// timeZone UTC: la fecha del frontmatter es medianoche UTC; formatearla en
+// local restaba un día (ver la misma corrección en ArticleLayout).
+const fmt = (date: Date) => date.toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })
+
+// Ficha técnica: sólo los campos que existen. Un campo vacío no se inventa.
+const ficha = [
+  ['Autoridad', d.autoridad],
+  ['Trámite oficial', d.tramiteOficial],
+  ['A quién aplica', d.quienAplica],
+  ['Modalidad', d.modalidad],
+  ['Tiempo de respuesta', d.plazo],
+  ['Costo', d.costo],
+  ['Resultado', d.resultado],
+  ['Vigencia', d.vigencia],
+].filter(([, v]) => Boolean(v)) as [string, string][]
+
+const waHref = waUrl(`Hola, tengo un requerimiento de Protección Civil en ${d.entidad} y necesito poner mi inmueble en regla.`)
+---
+
+<PageLayout
+  title={d.seoTitle ?? d.title}
+  description={d.seoDescription ?? d.description}
+  pageType="page"
+  schemaData={{ ...(d.faqs?.length ? { faqs: d.faqs } : {}) }}
+  breadcrumbs={[{ label: 'Protección Civil', href: '/proteccion-civil/' }, { label: d.label }]}
+  guia={false}
+>
+  <section class="tr">
+    <div class="container">
+      <p class="tr__eyebrow">{d.entidad}</p>
+      <h1 class="tr__h1">{d.title}</h1>
+      <p class="tr__lede">{d.description}</p>
+      <p class="tr__verify">
+        Verificado el <time datetime={d.verifiedAt.toISOString()}>{fmt(d.verifiedAt)}</time> en la fuente oficial.
+        Los trámites cambian: confirma en el enlace antes de iniciar.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--prose">
+      <h2>Ficha del trámite</h2>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <tbody>
+            {ficha.map(([k, v]) => (
+              <tr><th scope="row">{k}</th><td>{v}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {d.requisitos && d.requisitos.length > 0 && (
+        <>
+          <h2>Requisitos</h2>
+          <ul class="req">{d.requisitos.map((r) => <li>{r}</li>)}</ul>
+        </>
+      )}
+
+      {d.fundamento && d.fundamento.length > 0 && (
+        <>
+          <h2>Fundamento jurídico</h2>
+          <ul>{d.fundamento.map((f) => <li>{f}</li>)}</ul>
+        </>
+      )}
+
+      <div class="prose"><Content /></div>
+
+      {d.pending && d.pending.length > 0 && (
+        <div class="pend">
+          <h2 class="pend__t">Lo que todavía no publicamos</h2>
+          <ul>{d.pending.map((p) => <li>{p}</li>)}</ul>
+          <p class="pend__n">Preferimos decirte que falta confirmarlo antes que darte un dato que te haga perder una cita.</p>
+        </div>
+      )}
+
+      <div class="src">
+        <h2 class="src__t">Fuentes oficiales</h2>
+        <ul>
+          {d.sources.map((s) => (
+            <li><a href={s.url} target="_blank" rel="noopener">{s.label}</a></li>
+          ))}
+        </ul>
+        <p class="src__n">
+          No gestionamos el trámite ante la autoridad ni firmamos programas: preparamos el inmueble y
+          la documentación técnica para que lo pases.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {d.faqs && d.faqs.length > 0 && (
+    <section class="section section--surface">
+      <div class="container container--prose">
+        <FAQAccordion items={d.faqs} title="Preguntas frecuentes" openFirst bare />
+      </div>
+    </section>
+  )}
+
+  <section class="section">
+    <div class="container">
+      <RelatedLinks title="Lo que sí hacemos nosotros" links={[...comerciales, ...otras].slice(0, 4)} limit={4} />
+    </div>
+  </section>
+
+  <CTABanner
+    heading="¿Te falta poner el inmueble en regla?"
+    desc="Diagnóstico de riesgo, equipo conforme a norma, capacitación de brigada y expediente ordenado."
+    btns={[{ label: 'Hablar por WhatsApp', href: waHref, icon: 'wa', primary: true, external: true }]}
+    badge={d.entidad}
+    variant="dark"
+  />
+</PageLayout>
+
+<style>
+  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
+  .container--prose { max-width: var(--container-prose, 72ch); }
+  .section { padding: var(--sp-8) 0; }
+  .section--surface { background: var(--c-surface); }
+  .tr { padding: var(--sp-9) 0 var(--sp-5); }
+  .tr__eyebrow { color: var(--c-accent); text-transform: uppercase; letter-spacing: .08em; font-size: var(--text-sm); margin: 0 0 var(--sp-2); }
+  .tr__h1 { font-family: var(--font-heading); font-size: var(--text-fluid-4xl, 2.25rem); line-height: 1.1; margin: 0 0 var(--sp-3); }
+  .tr__lede { color: var(--c-ink-2); max-width: 65ch; margin: 0 0 var(--sp-4); }
+  .tr__verify { font-size: var(--text-sm); color: var(--c-muted); max-width: 65ch; margin: 0; padding-left: var(--sp-3); border-left: 3px solid var(--c-border); }
+  .tbl-wrap { overflow-x: auto; margin: var(--sp-4) 0 var(--sp-7); }
+  .tbl { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+  .tbl th, .tbl td { border: 1px solid var(--c-border); padding: var(--sp-3); text-align: left; vertical-align: top; }
+  .tbl th { width: 32%; background: var(--c-surface); }
+  .req { display: grid; gap: var(--sp-2); }
+  .pend { margin: var(--sp-7) 0; padding: var(--sp-5); border: 1px solid var(--c-border); border-left: 4px solid #b45309; border-radius: var(--radius-lg, 12px); background: var(--c-white); }
+  .pend__t { margin: 0 0 var(--sp-3); font-size: var(--text-base); }
+  .pend__n { margin: var(--sp-3) 0 0; font-size: var(--text-sm); color: var(--c-ink-2); }
+  .src { margin: var(--sp-7) 0 0; padding: var(--sp-5); border: 1px solid var(--c-border); border-radius: var(--radius-lg, 12px); background: var(--c-surface); }
+  .src__t { margin: 0 0 var(--sp-3); font-size: var(--text-base); }
+  .src__n { margin: var(--sp-3) 0 0; font-size: var(--text-sm); color: var(--c-ink-2); }
+</style>
