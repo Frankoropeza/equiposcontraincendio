@@ -82,7 +82,7 @@ export const mantSecciones = {
     desc: 'El procedimiento cambia con lo que lleva dentro el cilindro: polvo, gas, químico húmedo, agua o agente limpio.',
     body: [
       'Un PQS se vacía y se presuriza con nitrógeno; un CO₂ se comprueba en báscula porque no tiene manómetro; un clase K se revisa por la grasa que acumula en la boquilla. Por eso el servicio se cotiza por tipo y por capacidad, no «por extintor».',
-      'Elige el tuyo para ver qué incluye su recarga. La prueba hidrostática del cilindro tiene su propia página.',
+      'Elige el tuyo para ver qué incluye su recarga. Las tres últimas fichas cierran el ciclo: la prueba del cilindro, la revisión que te toca cada mes y el reemplazo cuando ya no conviene recargar.',
     ],
   },
   incluye: {
@@ -119,16 +119,38 @@ export const mantSecciones = {
   },
 };
 
-// ── Vitrina: una tarjeta por agente (enlaza al módulo de la misma página) ────
-// La sexta tarjeta es la prueba hidrostática, que tiene página propia.
-export const mantTarjetas = [
+// ── Vitrina: 8 fichas (regla del sitio: retícula de 4 por fila, total en
+// múltiplos de 4). Cinco por agente (enlazan a su módulo en esta página) y
+// tres que cierran el ciclo de vida: prueba hidrostática, revisión mensual y
+// reemplazo. Cada ficha lleva 3 `specs` (dato clave · valor) que la tarjeta
+// pinta como filas de 44 px, la misma geometría del índice de CategoryCard.
+// Contrato medido a 4 columnas (card de 250 px a 1280): title ≤ 40 car.,
+// description ≤ 88 pero medir: a 90 ya se cortaba la tercera línea,
+// spec.label ≤ 14 y spec.value ≤ 18 (van en una línea, sin wrap), ctaLabel ≤ 24.
+export type Spec = { label: string; value: string };
+export type Tarjeta = {
+  title: string;
+  href: string;
+  image: string;
+  imageAlt: string;
+  badge: string;
+  description: string;
+  specs: Spec[];
+  ctaLabel: string;
+};
+export const mantTarjetas: Tarjeta[] = [
   {
     title: 'Recarga de extintores PQS',
     href: '#recarga-pqs',
     image: '/images/servicios/inspeccion-recarga-extintores.avif',
     imageAlt: 'Recarga de extintores de polvo químico seco en taller de servicio',
-    badge: 'PQS ABC · Con collarín',
-    description: 'Vaciado, revisión interna, recarga y presurizado con nitrógeno. El más frecuente.',
+    badge: 'PQS ABC',
+    description: 'Vaciado, revisión interna, recarga y presurizado con nitrógeno.',
+    specs: [
+      { label: 'Control', value: 'Manómetro' },
+      { label: 'Collarín', value: 'Sí, con holograma' },
+      { label: 'Presurizado', value: 'Con nitrógeno' },
+    ],
     ctaLabel: 'Recarga PQS',
   },
   {
@@ -136,8 +158,13 @@ export const mantTarjetas = [
     href: '#recarga-co2',
     image: '/images/servicios/prueba-electrica-panel-alarma-incendio.avif',
     imageAlt: 'Muro con extintor, estación manual y señalética de emergencia en planta',
-    badge: 'CO₂ · Control por peso',
+    badge: 'CO₂',
     description: 'Sin manómetro: la carga se comprueba en báscula contra el contenido de la etiqueta.',
+    specs: [
+      { label: 'Control', value: 'Peso en báscula' },
+      { label: 'Collarín', value: 'No aplica' },
+      { label: 'Cilindro', value: 'Alta presión' },
+    ],
     ctaLabel: 'Recarga de CO₂',
   },
   {
@@ -147,6 +174,11 @@ export const mantTarjetas = [
     imageAlt: 'Cocina comercial con campana, donde se instala el extintor clase K',
     badge: 'Clase K · Cocinas',
     description: 'Boquilla limpia de grasa, descarga en niebla y químico húmedo del fabricante.',
+    specs: [
+      { label: 'Agente', value: 'Químico húmedo' },
+      { label: 'Punto crítico', value: 'Boquilla' },
+      { label: 'Distancia máx.', value: '10 m' },
+    ],
     ctaLabel: 'Recarga clase K',
   },
   {
@@ -155,7 +187,12 @@ export const mantTarjetas = [
     image: '/images/servicios/instalacion-equipo-almacen.avif',
     imageAlt: 'Extintor y gabinete instalados en un almacén',
     badge: 'Agua · Espuma AFFF',
-    description: 'Presión contenida con manómetro. Aquí salen los equipos obsoletos que ya no se recargan.',
+    description: 'Con manómetro. Detectamos los equipos obsoletos que ya no se recargan.',
+    specs: [
+      { label: 'Control', value: 'Manómetro' },
+      { label: 'Obsoletos', value: 'Se reemplazan' },
+      { label: 'Norma', value: 'NOM-103-STPS' },
+    ],
     ctaLabel: 'Recarga de agua',
   },
   {
@@ -163,18 +200,56 @@ export const mantTarjetas = [
     href: '#recarga-agente-limpio',
     image: '/images/servicios/supresion-agente-limpio-data-center.avif',
     imageAlt: 'Cilindros de agente limpio protegiendo un centro de datos',
-    badge: 'Halotron I · FE-36',
+    badge: 'Agente limpio',
     description: 'Se pesa y se recarga solo con el agente de la etiqueta. Para sites y electrónica.',
+    specs: [
+      { label: 'Control', value: 'Peso y presión' },
+      { label: 'Agente', value: 'Halotron I o FE-36' },
+      { label: 'Residuo', value: 'Ninguno' },
+    ],
     ctaLabel: 'Recarga agente limpio',
   },
   {
-    title: 'Prueba hidrostática',
+    title: 'Prueba hidrostática del cilindro',
     href: '/servicios/prueba-hidrostatica/',
     image: '/images/servicios/prueba-hidrostatica-extintor.avif',
     imageAlt: 'Prueba hidrostática de un extintor en el taller de servicio',
-    badge: 'Cada 5 años · NOM-154',
+    badge: 'Cada 5 años',
     description: 'La prueba de presión del cilindro. Si la pasa se retimbra; si no, se da de baja.',
+    specs: [
+      { label: 'Periodicidad', value: 'Máximo 5 años' },
+      { label: 'Norma', value: 'NOM-154, 5.6' },
+      { label: 'Evidencia', value: 'Marca en cilindro' },
+    ],
     ctaLabel: 'Prueba hidrostática',
+  },
+  {
+    title: 'Revisión mensual de extintores',
+    href: '/plantillas/bitacora-revision-extintores/',
+    image: '/images/servicios/inspeccion-gabinete-hidrante-extintor.avif',
+    imageAlt: 'Revisión de un extintor junto a gabinete e hidrante',
+    badge: 'Cada mes',
+    description: 'La hace tu personal: manómetro, seguro, acceso y etiqueta. Formato gratis.',
+    specs: [
+      { label: 'Quién', value: 'Tu personal' },
+      { label: 'Norma', value: 'NOM-002-STPS' },
+      { label: 'Evidencia', value: 'Bitácora firmada' },
+    ],
+    ctaLabel: 'Bitácora de extintores',
+  },
+  {
+    title: 'Reemplazo de extintores',
+    href: '/productos/extintores/',
+    image: '/images/showcase/extintores-catalogo-profesional.avif',
+    imageAlt: 'Extintores nuevos de distintas capacidades sobre piso de concreto',
+    badge: 'Cuando ya no se recarga',
+    description: 'Si el cilindro no pasa la prueba o es obsoleto, cotizamos el nuevo del agente correcto.',
+    specs: [
+      { label: 'Cuándo', value: 'Baja u obsoleto' },
+      { label: 'Incluye', value: 'Ficha técnica' },
+      { label: 'Entrega', value: 'CDMX y Edomex' },
+    ],
+    ctaLabel: 'Venta de extintores',
   },
 ];
 

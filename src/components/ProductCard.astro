@@ -67,12 +67,14 @@ const eager = priority || index < 4
 
 <style>
   /* Card ESTÁTICA: sin animaciones de entrada (regla de motion del sitio). */
-  .pcard { background: var(--c-white); border: 1px solid var(--c-border); border-radius: var(--radius-lg); overflow: hidden; height: 100%; }
+  .pcard { background: var(--c-white); border: 1px solid var(--c-border); border-radius: var(--radius-lg); overflow: hidden; height: 100%; transition: border-color var(--transition), box-shadow var(--transition); }
+  .pcard:hover, .pcard:focus-within { border-color: rgba(198, 40, 40, .35); box-shadow: var(--shadow-md); }
   .pcard__link { display: flex; flex-direction: column; height: 100%; text-decoration: none; }
 
   /* ── Media: 16/10, igual que CategoryCard y ServiceCard ── */
   .pcard__media { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: var(--c-surface); }
-  .pcard__img { width: 100%; height: 100%; object-fit: cover; }
+  .pcard__img { width: 100%; height: 100%; object-fit: cover; transition: transform .25s ease; }
+  .pcard:hover .pcard__img, .pcard:focus-within .pcard__img { transform: scale(1.03); }
   .pcard__overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,.22) 100%); }
   .pcard__badge {
     position: absolute; top: var(--sp-3); left: var(--sp-3);
@@ -116,5 +118,8 @@ const eager = priority || index < 4
   .pcard__link:hover .pcard__cta { background: var(--c-primary-dark); }
   .pcard__link:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 2px; }
 
-  @media (prefers-reduced-motion: reduce) { .pcard__cta { transition: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    .pcard, .pcard__img, .pcard__cta { transition: none; }
+    .pcard:hover .pcard__img, .pcard:focus-within .pcard__img { transform: none; }
+  }
 </style>

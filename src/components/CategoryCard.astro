@@ -79,7 +79,7 @@ const MediaTag = disabled ? "div" : "a";
 const RowTag = disabled ? "span" : "a";
 ---
 
-<article class="ccard">
+<article class:list={["ccard", { "ccard--disabled": disabled }]}>
   {image && (
     <MediaTag class="ccard__media-link" href={disabled ? undefined : href} tabindex={disabled ? undefined : "-1"} aria-hidden="true">
       <div class="ccard__media">
@@ -141,7 +141,9 @@ const RowTag = disabled ? "span" : "a";
     border: 1px solid var(--c-border);
     border-radius: var(--radius-lg);
     overflow: hidden;
+    transition: border-color var(--transition), box-shadow var(--transition);
   }
+  .ccard:not(.ccard--disabled):hover, .ccard:not(.ccard--disabled):focus-within { border-color: rgba(198, 40, 40, .35); box-shadow: var(--shadow-md); }
 
   /* ── Imagen de cabecera ─────────────────────────────────────────────── */
   .ccard__media-link { display: block; }
@@ -149,7 +151,8 @@ const RowTag = disabled ? "span" : "a";
     position: relative; aspect-ratio: 16 / 10; overflow: hidden;
     background: var(--c-surface);
   }
-  .ccard__img { width: 100%; height: 100%; object-fit: cover; }
+  .ccard__img { width: 100%; height: 100%; object-fit: cover; transition: transform .25s ease; }
+  .ccard:not(.ccard--disabled):hover .ccard__img, .ccard:not(.ccard--disabled):focus-within .ccard__img { transform: scale(1.03); }
   .ccard__overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(0,0,0,.22) 100%); }
   .ccard__badge {
     position: absolute; top: var(--sp-3); left: var(--sp-3);
@@ -159,7 +162,7 @@ const RowTag = disabled ? "span" : "a";
     background: var(--c-primary); padding: .3em .65em; border-radius: var(--radius-sm);
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   }
-  .ccard__badge--inline { position: static; align-self: flex-start; max-width: 100%; }
+  .ccard__badge--inline { position: static; align-self: flex-start; max-width: 100%; margin-bottom: var(--sp-3); }
   .ccard__badge--soon { color: var(--c-muted); background: var(--c-surface); border: 1px solid var(--c-border); }
 
   /* ── Cuerpo: retícula de 4 zonas con altura reservada ───────────────── */
@@ -236,6 +239,7 @@ const RowTag = disabled ? "span" : "a";
   .ccard__cta--soon:hover { background: var(--c-surface); }
 
   @media (prefers-reduced-motion: reduce) {
-    .ccard__cta { transition: none; }
+    .ccard, .ccard__img, .ccard__cta { transition: none; }
+    .ccard:not(.ccard--disabled):hover .ccard__img, .ccard:not(.ccard--disabled):focus-within .ccard__img { transform: none; }
   }
 </style>

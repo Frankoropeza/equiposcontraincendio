@@ -91,7 +91,7 @@ const schemaData = {
   <section class="section" id="por-tipo">
     <div class="container">
       <SectionHeading layout="duo" {...mantSecciones.vitrina} />
-      <div class="card-grid card-grid--trio">
+      <div class="card-grid">
         {mantTarjetas.map((t) => (
           <ServiceCard
             title={t.title}
@@ -100,6 +100,7 @@ const schemaData = {
             imageAlt={t.imageAlt}
             badge={t.badge}
             description={t.description}
+            specs={t.specs}
             ctaLabel={t.ctaLabel}
           />
         ))}
