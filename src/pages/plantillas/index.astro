@@ -2,21 +2,44 @@
 // ============================================================================
 // /plantillas/ — Hub de formatos descargables (L2).
 // ----------------------------------------------------------------------------
-// HOMOLOGADA con /productos y /servicios: Hero → SectionMenu → SectionHeading +
-// tarjetas CategoryCard → SectionMenu de cierre. Los enlaces de descarga por
-// tarjeta se quitaron a propósito: la tarjeta lleva a la página del formato,
-// que es donde se explica cómo se llena y de qué norma sale. Un archivo suelto
-// no enseña nada.
+// AL PATRÓN L2 (2026-09-10), igual que el resto de secciones:
+//   Hero → SectionMenu → TrustBar → tarjetas → módulos CategoryFeature →
+//   RiskGuide → NormsTable → ProcessSteps → CompanyAbout → RelatedLinks →
+//   FAQ + Contacto
+// El SectionMenu de cierre lo sustituye RelatedLinks, como en las demás L2.
 //
-// Listado data-driven desde la colección `plantillas`.
+// Los enlaces de descarga por tarjeta se quitaron a propósito: la tarjeta lleva
+// a la página del formato, que es donde se explica cómo se llena y de qué norma
+// sale. Un archivo suelto no enseña nada.
+//
+// Listado data-driven desde la colección `plantillas`; el resto del contenido,
+// en src/data/plantillas.ts.
 // ============================================================================
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
 import SectionMenu from '@components/SectionMenu.astro'
 import SectionHeading from '@components/SectionHeading.astro'
 import CategoryCard from '@components/CategoryCard.astro'
+import CategoryFeature from '@components/CategoryFeature.astro'
+import TrustBar from '@components/TrustBar.astro'
+import RiskGuide from '@components/RiskGuide.astro'
+import NormsTable from '@components/NormsTable.astro'
+import ProcessSteps from '@components/ProcessSteps.astro'
+import CompanyAbout from '@components/CompanyAbout.astro'
+import RelatedLinks from '@components/RelatedLinks.astro'
+import FAQWithContact from '@components/FAQWithContact.astro'
 import { getCollection } from 'astro:content'
-import { waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
+import { CONTACT, waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
+import {
+  plantillasPillars,
+  plantillasFeatures,
+  plantillasCalendario,
+  plantillasNormRows,
+  plantillasSteps,
+  plantillasCompany,
+  plantillasRelated,
+  plantillasFaqs,
+} from '@data/plantillas'
 
 const plantillas = (await getCollection('plantillas', ({ data }) => !data.draft)).sort(
   (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0),
@@ -30,18 +53,6 @@ const menuCta = {
   external: true,
 }
 
-const cierreItems = [
-  { label: 'Herramientas', href: '/herramientas/', sub: 'Calculadoras y verificador' },
-  { label: 'Protección Civil', href: '/proteccion-civil/', sub: 'Qué exige por entidad' },
-  { label: 'Capacitación y DC-3', href: '/servicios/capacitacion-dc3/', sub: 'Brigadas con constancia' },
-  { label: 'Gestión documental', href: '/servicios/gestion-documental/', sub: 'Expediente al día' },
-]
-const cierreCta = {
-  label: 'Que lo llevemos nosotros',
-  href: waUrl('Hola, quiero que ustedes lleven el mantenimiento y el expediente de mi inmueble.'),
-  sub: 'CDMX y Estado de México',
-  external: true,
-}
 
 const schemaData = {
   list: {
@@ -56,6 +67,7 @@ const schemaData = {
       description: p.data.description,
     })),
   },
+  faqs: plantillasFaqs,
 }
 ---
 
@@ -83,6 +95,9 @@ const schemaData = {
   />
 
   <SectionMenu items={menuSecciones} cta={menuCta} />
+
+  {/* ─── Barra de confianza (pilares honestos) ─── */}
+  <TrustBar items={plantillasPillars} />
 
   <section class="section section--surface">
     <div class="container">
@@ -115,7 +130,102 @@ const schemaData = {
     </div>
   </section>
 
-  <SectionMenu items={cierreItems} cta={cierreCta} ariaLabel="Sigue explorando el sitio" />
+  {/* ─── Módulos por formato (CategoryFeature) ─── */}
+  {plantillasFeatures.map((c) => (
+    <CategoryFeature
+      anchorId={c.id}
+      eyebrow={c.eyebrow}
+      title={c.title}
+      titleAccent={c.titleAccent}
+      description={c.description}
+      features={c.features}
+      ctaLabel={c.ctaLabel}
+      ctaHref={c.ctaHref}
+      ctaSecondaryLabel={c.ctaSecondaryLabel}
+      ctaSecondaryHref={c.ctaSecondaryHref}
+      imgMain={c.imgMain}
+      imgA={c.imgA}
+      imgB={c.imgB}
+    />
+  ))}
+
+  {/* ─── Cada cuándo se llena y quién lo firma ─── */}
+  <RiskGuide
+    eyebrow="Cada cuándo y quién firma"
+    title="El papel no se llena"
+    titleAccent="cuando llega la visita"
+    desc="Cada formato tiene su periodicidad y su responsable."
+    body={[
+      'La pregunta que sigue a la descarga es siempre la misma: cada cuándo hay que llenarlo y de quién tiene que ser la firma. Aquí está, formato por formato.',
+      'La diferencia entre un expediente que aguanta una revisión y uno que no está justo aquí: fechas que corresponden a recorridos reales y firmas de personas que existen en la empresa.',
+    ]}
+    rows={plantillasCalendario}
+    columns={['Documento', 'Cada cuándo se llena', 'Quién lo firma', 'Dónde queda']}
+    note="Son formatos de apoyo para registrar lo que ya haces. No sustituyen el programa interno de protección civil ni la documentación que exija la autoridad competente en cada caso."
+    ctaLabel="Gestión documental"
+    ctaHref="/servicios/gestion-documental/"
+  />
+
+  {/* ─── De qué obligación sale cada formato ─── */}
+  <NormsTable
+    eyebrow="De dónde sale cada formato"
+    title="Ninguno es"
+    titleAccent="un invento de forma"
+    desc="Cada documento responde a una obligación concreta."
+    body={[
+      'Un formato que no corresponde a ninguna obligación es papeleo. Aquí está de qué norma o instrumento sale cada uno y qué parte del expediente cubre.',
+      'Incluimos también lo que estos formatos NO cubren, que es donde más se confunde la gente: el servicio del extintor se acredita con su etiqueta y su collarín, no con la bitácora.',
+    ]}
+    rows={plantillasNormRows}
+    columns={['Norma o instrumento', 'Qué establece', 'Qué formato lo cubre']}
+    note="La revisión mensual la hace tu propio personal y solo requiere registro; el mantenimiento anual lo presta un proveedor y deja etiqueta y collarín sobre el equipo. Son dos evidencias distintas y la autoridad pide las dos."
+  />
+
+  {/* ─── Cómo se usan (proceso, fondo oscuro) ─── */}
+  <ProcessSteps
+    eyebrow="Cómo se usan"
+    title="De la descarga"
+    titleAccent="al expediente que aguanta"
+    desc="Descargarlo es lo fácil; que el papel diga la verdad es lo que cuenta."
+    body={[
+      'Un formato bien llenado no es el que tiene todas las casillas marcadas: es el que se puede contrastar con el inmueble y coincide.',
+      'Si prefieres no cargar con esto, la gestión documental es un servicio: lo llevamos nosotros y lo mantenemos al día todo el año.',
+    ]}
+    steps={plantillasSteps}
+  />
+
+  {/* ─── Sobre los formatos ─── */}
+  <section class="section section--surface">
+    <div class="container">
+      <SectionHeading
+        layout="duo"
+        eyebrow="Sobre estos formatos"
+        title="Hechos con lo que"
+        titleAccent="vemos en campo"
+        desc="Bitácoras firmadas de golpe, simulacros sin acta y censos de hace tres años."
+        body={[
+          'Los publicamos gratis porque el problema casi nunca es la voluntad: es que nadie tiene el formato a la mano cuando toca registrar.',
+          '¿Prefieres que el expediente lo llevemos nosotros? Escríbenos y lo vemos.',
+        ]}
+      />
+      <CompanyAbout
+        que={plantillasCompany.que}
+        como={plantillasCompany.como}
+        cta={{ label: 'Que lo llevemos nosotros', href: waUrl('Hola, quiero que ustedes lleven el mantenimiento y el expediente de mi inmueble.'), external: true }}
+      />
+    </div>
+  </section>
+
+  {/* ─── Interlinking a las otras secciones ─── */}
+  <RelatedLinks
+    title="Sigue por aquí"
+    desc="Lo que suele hacer falta junto con los formatos."
+    links={plantillasRelated}
+    limit={4}
+  />
+
+  {/* ─── FAQ + Contacto ─── */}
+  <FAQWithContact items={plantillasFaqs} waNumber={CONTACT.whatsapp} />
 </PageLayout>
 
 <style>

@@ -2,8 +2,11 @@
 // ============================================================================
 // /proteccion-civil/ — Hub de trámites por entidad (L2).
 // ----------------------------------------------------------------------------
-// HOMOLOGADA con /productos y /servicios: Hero → SectionMenu → SectionHeading +
-// tarjetas CategoryCard → SectionMenu de cierre.
+// AL PATRÓN L2 (2026-09-10), igual que el resto de secciones:
+//   Hero → SectionMenu → TrustBar → tarjetas → módulos CategoryFeature →
+//   RiskGuide → NormsTable → ProcessSteps → CompanyAbout → RelatedLinks →
+//   FAQ + Contacto
+// El SectionMenu de cierre lo sustituye RelatedLinks, como en las demás L2.
 //
 // Data-driven desde la colección `tramites`, donde `sources` y `verifiedAt` son
 // obligatorios. Arranca por entidad (CDMX y Estado de México); las
@@ -14,8 +17,26 @@ import Hero from '@components/Hero.astro'
 import SectionMenu from '@components/SectionMenu.astro'
 import SectionHeading from '@components/SectionHeading.astro'
 import CategoryCard from '@components/CategoryCard.astro'
+import CategoryFeature from '@components/CategoryFeature.astro'
+import TrustBar from '@components/TrustBar.astro'
+import RiskGuide from '@components/RiskGuide.astro'
+import NormsTable from '@components/NormsTable.astro'
+import ProcessSteps from '@components/ProcessSteps.astro'
+import CompanyAbout from '@components/CompanyAbout.astro'
+import RelatedLinks from '@components/RelatedLinks.astro'
+import FAQWithContact from '@components/FAQWithContact.astro'
 import { getCollection } from 'astro:content'
-import { waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
+import { CONTACT, waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
+import {
+  pcPillars,
+  pcFeatures,
+  pcComparativa,
+  pcNormRows,
+  pcSteps,
+  pcCompany,
+  pcRelated,
+  pcFaqs,
+} from '@data/proteccion-civil'
 
 const tramites = (await getCollection('tramites', ({ data }) => !data.draft)).sort(
   (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0),
@@ -31,18 +52,6 @@ const menuCta = {
   external: true,
 }
 
-const cierreItems = [
-  { label: 'Herramientas', href: '/herramientas/', sub: 'Clasifica tu riesgo' },
-  { label: 'Formatos descargables', href: '/plantillas/', sub: 'Bitácora, acta y censo' },
-  { label: 'Gestión documental', href: '/servicios/gestion-documental/', sub: 'Expediente ordenado' },
-  { label: 'Cobertura', href: '/cobertura/', sub: 'CDMX y Estado de México' },
-]
-const cierreCta = {
-  label: 'Pedir diagnóstico',
-  href: waUrl('Hola, tengo un requerimiento de Protección Civil y necesito poner mi inmueble en regla.'),
-  sub: 'Respuesta inmediata',
-  external: true,
-}
 
 const schemaData = {
   list: {
@@ -57,6 +66,7 @@ const schemaData = {
       description: t.data.description,
     })),
   },
+  faqs: pcFaqs,
 }
 ---
 
@@ -84,6 +94,9 @@ const schemaData = {
   />
 
   <SectionMenu items={menuSecciones} cta={menuCta} />
+
+  {/* ─── Barra de confianza (pilares honestos) ─── */}
+  <TrustBar items={pcPillars} />
 
   <section class="section section--surface">
     <div class="container">
@@ -116,7 +129,102 @@ const schemaData = {
     </div>
   </section>
 
-  <SectionMenu items={cierreItems} cta={cierreCta} ariaLabel="Sigue explorando el sitio" />
+  {/* ─── Módulos por entidad (CategoryFeature) ─── */}
+  {pcFeatures.map((c) => (
+    <CategoryFeature
+      anchorId={c.id}
+      eyebrow={c.eyebrow}
+      title={c.title}
+      titleAccent={c.titleAccent}
+      description={c.description}
+      features={c.features}
+      ctaLabel={c.ctaLabel}
+      ctaHref={c.ctaHref}
+      ctaSecondaryLabel={c.ctaSecondaryLabel}
+      ctaSecondaryHref={c.ctaSecondaryHref}
+      imgMain={c.imgMain}
+      imgA={c.imgA}
+      imgB={c.imgB}
+    />
+  ))}
+
+  {/* ─── Comparativa entidad por entidad ─── */}
+  <RiskGuide
+    eyebrow="Lado a lado"
+    title="La misma obligación,"
+    titleAccent="dos trámites distintos"
+    desc="Quién lo recibe, a quién aplica, cómo se presenta y qué obtienes."
+    body={[
+      'Un inmueble idéntico se tramita distinto según la entidad: en la Ciudad de México todo pasa por una plataforma digital y por un responsable registrado; en el Estado de México el trámite es presencial y tiene plazo publicado.',
+      'Donde la fuente oficial no publica el dato, la celda lo dice. Preferimos ese hueco a rellenarlo con una suposición razonable que después te cueste tiempo.',
+    ]}
+    rows={pcComparativa}
+    columns={['', 'Ciudad de México', 'Estado de México', 'A tener en cuenta']}
+    note="Datos tomados de la cédula oficial de cada trámite y de los portales de la autoridad, verificados el 9 de septiembre de 2026. Cada ficha enlaza a su fuente; los requisitos municipales o de alcaldía se revisan caso por caso."
+    ctaLabel="Clasificar mi riesgo"
+    ctaHref="/herramientas/riesgo-de-incendio/"
+  />
+
+  {/* ─── En qué se apoya cada cosa ─── */}
+  <NormsTable
+    eyebrow="Fundamento"
+    title="Qué obliga a qué,"
+    titleAccent="y dónde está escrito"
+    desc="La norma federal es una; el instrumento local, otro."
+    body={[
+      'La confusión más cara de esta sección: cumplir la NOM-002 no es tener el programa en regla, y tener el programa no exime de la NOM. Son obligaciones distintas, con autoridades distintas.',
+      'Aquí está qué establece cada ordenamiento y a cuál de las dos entidades aplica.',
+    ]}
+    rows={pcNormRows}
+    columns={['Norma u ordenamiento', 'Qué establece', 'Dónde aplica']}
+    note="El padrón de responsables oficiales de protección civil de la CDMX es público: sirve para comprobar que quien firma tu programa está realmente registrado, igual que la etiqueta sirve para comprobar el servicio de un extintor."
+  />
+
+  {/* ─── Qué hacer cuando llega el requerimiento (fondo oscuro) ─── */}
+  <ProcessSteps
+    eyebrow="Ya te lo pidieron"
+    title="Empieza por el inmueble,"
+    titleAccent="no por el papel"
+    desc="Un programa bien redactado no salva a un inmueble que no cumple."
+    body={[
+      'El orden importa: el programa describe el inmueble, así que si los extintores están vencidos o las rutas bloqueadas, el documento solo deja por escrito lo que está mal.',
+      'Estos cinco pasos son los que seguimos con cualquier cliente que llega con un requerimiento encima.',
+    ]}
+    steps={pcSteps}
+  />
+
+  {/* ─── Qué hacemos y qué no ─── */}
+  <section class="section section--surface">
+    <div class="container">
+      <SectionHeading
+        layout="duo"
+        eyebrow="Sobre esta sección"
+        title="Publicamos lo confirmado"
+        titleAccent="y marcamos lo demás"
+        desc="Con la fuente enlazada y la fecha en que se verificó."
+        body={[
+          'Estos trámites cambian y un dato correcto envejece sin avisar. Por eso cada ficha lleva su fecha y su enlace: para que puedas comprobarlo tú mismo.',
+          '¿Tienes el requerimiento encima? Escríbenos con lo que te pidieron y lo revisamos.',
+        ]}
+      />
+      <CompanyAbout
+        que={pcCompany.que}
+        como={pcCompany.como}
+        cta={{ label: 'Tengo un requerimiento', href: waUrl('Hola, tengo un requerimiento de Protección Civil y necesito poner mi inmueble en regla.'), external: true }}
+      />
+    </div>
+  </section>
+
+  {/* ─── Interlinking a las otras secciones ─── */}
+  <RelatedLinks
+    title="Sigue por aquí"
+    desc="Lo que hace falta para llegar al trámite con el inmueble listo."
+    links={pcRelated}
+    limit={4}
+  />
+
+  {/* ─── FAQ + Contacto ─── */}
+  <FAQWithContact items={pcFaqs} waNumber={CONTACT.whatsapp} />
 </PageLayout>
 
 <style>
