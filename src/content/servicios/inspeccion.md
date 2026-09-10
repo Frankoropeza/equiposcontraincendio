@@ -66,3 +66,8 @@ Entregamos el inventario del equipo, su estado y las recomendaciones **priorizad
 Al menos una vez al año; siempre antes de una verificación, de una remodelación que cambie la distribución del inmueble o de un cambio de giro; y después de cualquier incidente, aunque haya sido menor.
 
 Escríbenos por WhatsApp con el giro y la superficie aproximada del inmueble para agendar la inspección.
+
+## Antes de contratar, lee
+
+- [Qué revisa Protección Civil en una visita de verificación](/blog/que-revisa-proteccion-civil/) — los cinco bloques que revisa el verificador y los plazos de defensa.
+- [Dónde colocar los extintores: distancia, altura y cantidad](/blog/donde-colocar-extintores/) — los números exactos con los que se mide tu inmueble.

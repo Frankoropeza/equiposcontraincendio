@@ -63,3 +63,9 @@ El extintor vuelve con su **etiqueta** y su **collarín** de servicio: la eviden
 La norma no pide un servicio suelto, pide continuidad. Armamos el **programa anual** de tu inmueble: qué equipo se revisa, cuándo toca cada uno y qué revisión mensual queda a cargo de tu personal. Así el vencimiento no te sorprende a mitad de una verificación.
 
 Escríbenos por WhatsApp con cuántos extintores tienes y de qué tipo, y te programamos el servicio.
+
+## Antes de contratar, lee
+
+- [Recarga y mantenimiento de extintores: qué exige la norma](/blog/mantenimiento-recarga-extintores-nom/) — diferencia entre ambos, periodicidad real y cómo verificar al proveedor.
+- [Prueba hidrostática de extintores: cada cuándo y por qué](/blog/prueba-hidrostatica-extintores/) — los cinco años que fija la NOM-154 y el mito de los doce.
+- [Programa anual de mantenimiento contra incendio](/blog/programa-mantenimiento-contra-incendio/) — cómo se arma el calendario del inmueble completo.

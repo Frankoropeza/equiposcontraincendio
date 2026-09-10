@@ -62,3 +62,8 @@ Ordenar eso cuesta mucho menos que reponerlo bajo la presión de una visita.
 Con la bitácora mensual en manos de tu personal y el programa anual agendando los servicios antes de que venzan. Si el mantenimiento va con nosotros, la evidencia se actualiza sola con cada intervención.
 
 Escríbenos por WhatsApp con el giro del inmueble y qué documentación tienes hoy, y te decimos qué falta.
+
+## Antes de contratar, lee
+
+- [Programa Interno de Protección Civil: quién debe tenerlo](/blog/programa-interno-proteccion-civil/) — obligados, apartados, vigencia y multas en CDMX y Edomex.
+- [Qué revisa Protección Civil en una visita de verificación](/blog/que-revisa-proteccion-civil/) — qué documentos pide y con qué fundamento.

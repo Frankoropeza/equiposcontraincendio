@@ -65,3 +65,8 @@ Un diagnóstico honesto ahorra dinero en las dos direcciones.
 El grado de riesgo con el criterio aplicado, el equipo que corresponde —tipo, cantidad y ubicación— y la norma que sustenta cada punto. Un documento que puedes usar para cotizar con quien quieras: el objetivo es que sepas qué necesitas, no que dependas de nosotros para saberlo.
 
 Escríbenos por WhatsApp con el giro y la superficie aproximada del inmueble y agendamos la visita.
+
+## Antes de contratar, lee
+
+- [Dónde colocar los extintores: distancia, altura y cantidad](/blog/donde-colocar-extintores/) — cuántos exige la norma por superficie y a qué distancia de recorrido.
+- [Sistema contra incendio: qué es y qué lo integra](/blog/sistema-contra-incendio-componentes/) — qué cambia en el equipo exigible entre riesgo ordinario y alto.

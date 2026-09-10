@@ -61,3 +61,8 @@ Porque el agua es prácticamente incompresible: si el cilindro cede, no hay ener
 La constancia del resultado y el cilindro marcado con la fecha. Si el equipo no aprueba, te lo decimos con el sustento de la prueba y cotizamos el reemplazo — no se vuelve a presurizar un cilindro que falló.
 
 Escríbenos por WhatsApp con la cantidad y el tipo de extintores para programar el servicio por lotes.
+
+## Antes de contratar, lee
+
+- [Prueba hidrostática de extintores: cada cuándo y por qué](/blog/prueba-hidrostatica-extintores/) — periodicidad, proceso paso a paso y evidencia que debe quedar en el cilindro.
+- [Recarga y mantenimiento de extintores: qué exige la norma](/blog/mantenimiento-recarga-extintores-nom/) — cómo se articula con el mantenimiento anual.

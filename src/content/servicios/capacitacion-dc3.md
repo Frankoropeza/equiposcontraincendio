@@ -59,3 +59,8 @@ El tamaño de la brigada depende del grado de riesgo, del número de trabajadore
 La capacitación sostiene el **programa de simulacros**. Un simulacro sin brigada formada es un desalojo improvisado; con brigada formada es una prueba real del sistema, y las observaciones que salgan de ahí valen más que cualquier auditoría de papel.
 
 Escríbenos por WhatsApp con el número de participantes y el giro del inmueble para armar la sesión.
+
+## Antes de contratar, lee
+
+- [Brigada contra incendios: cómo se forma y qué exige la NOM](/blog/brigada-contra-incendios/) — cuándo es obligatoria, temario y cómo se documentan cursos y simulacros.
+- [Qué revisa Protección Civil en una visita de verificación](/blog/que-revisa-proteccion-civil/) — por qué las constancias están en su lista corta.

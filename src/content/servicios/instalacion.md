@@ -65,3 +65,9 @@ El error más caro en protección contra incendio es comprar equipo antes de sab
 Un sistema instalado y luego abandonado deja de proteger en menos de un año: extintores que se despresurizan, detectores con batería agotada, mangueras resecas. Por eso la instalación se entrega junto con el **programa de mantenimiento** que la mantiene vigente.
 
 Cotiza tu proyecto por WhatsApp y agendamos la visita de evaluación.
+
+## Antes de contratar, lee
+
+- [Sistema contra incendio: qué es y qué lo integra](/blog/sistema-contra-incendio-componentes/) — componentes, tipos y qué exige la norma según tu grado de riesgo.
+- [Detección y alarmas contra incendio](/blog/sistemas-deteccion-alarmas-incendio/) — cómo funciona la capa que gana los primeros minutos.
+- [Hidrantes, gabinetes y mangueras](/blog/red-hidrantes-gabinetes-mangueras/) — cuándo el extintor ya no basta y hace falta red hidráulica.
