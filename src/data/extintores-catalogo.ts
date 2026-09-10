@@ -313,7 +313,7 @@ export const extCatalogoCierre: FichaCierre[] = [
   {
     badge: 'Cotización a la medida',
     title: '¿No ves la capacidad que buscas?',
-    description: 'Dinos el agente, la capacidad y la cantidad. Si se consigue en el mercado, te la cotizamos.',
+    description: 'Dinos el agente, capacidad y cantidad. Si se consigue, te la cotizamos.',
     href: 'Hola, busco un extintor con una capacidad o un agente que no vi en el catálogo. ¿Me ayudan a cotizarlo?',
     ctaLabel: 'Cotizar por WhatsApp',
     image: '/images/general/inventario-proveedor-equipo-contra-incendio.avif',

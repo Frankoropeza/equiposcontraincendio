@@ -48,6 +48,11 @@ const related = [
   ...disponibles,
   { label: 'Productos contra incendio', href: '/productos/', desc: 'Extintores, detección, hidrantes y señalización.' },
 ]
+const relatedZona = Array.from(new Map([
+  ...related,
+  { label: 'Contacto', href: '/contacto/', desc: 'Cotiza equipo y servicio.' },
+  { label: 'Herramientas', href: '/herramientas/', desc: 'Calculadoras para tu inmueble.' },
+].map((item) => [item.href, item])).values()).slice(0, 4)
 
 ---
 
@@ -120,7 +125,7 @@ const related = [
     </div>
   </section>
 
-  <RelatedLinks title="Sigue por aquí" desc="La otra zona, servicios y productos relacionados." links={related} limit={4} />
+  <RelatedLinks title="Sigue por aquí" desc="La otra zona, servicios y productos relacionados." links={relatedZona} limit={4} />
 
   {faqs.length > 0 && <FAQWithContact items={faqs} waNumber={CONTACT.whatsapp} eyebrow="Preguntas frecuentes" title="Preguntas frecuentes" titleAccent={`sobre ${label}`} />}
 </PageLayout>

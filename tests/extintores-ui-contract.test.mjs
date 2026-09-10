@@ -66,3 +66,63 @@ test('el catálogo completa su última fila con fichas de cierre, no con present
   assert.match(catalog, /data-cierre/, 'las fichas de cierre se marcan con data-cierre');
   assert.match(catalog, /gridTemplateColumns/, 'las columnas se leen de la retícula real, sin duplicar breakpoints');
 });
+
+test('las fichas de cierre exportadas cumplen el contrato de retícula', () => {
+  const cierre = fs.readFileSync(path.join(ROOT, 'src/data/cierre.ts'), 'utf8');
+  assert.match(cierre, /export const cierreExtintores/);
+  assert.match(cierre, /export const cierreGeneral/);
+  assert.match(cierre, /export const cierrePlantillas/);
+  assert.match(cierre, /export const cierreCobertura/);
+  assert.match(cierre, /export const cierreProteccionCivil/);
+  assert.match(cierre, /export function faltanParaCuatro/);
+
+  const sources = [
+    cierre,
+    fs.readFileSync(path.join(ROOT, 'src/data/extintores-catalogo.ts'), 'utf8'),
+  ].join('\n');
+  const fichas = [...sources.matchAll(/\{\s*\n\s*badge:.*?\n\s*title: '([^']+)'[\s\S]*?description: '([^']+)'[\s\S]*?ctaLabel: '([^']+)'[\s\S]*?\n\s*\},/g)];
+  assert.ok(fichas.length >= 12, 'debe haber fichas de cierre para todas las retículas');
+  for (const [, title, description, ctaLabel] of fichas) {
+    assert.ok(title.length <= 40, `título demasiado largo: ${title}`);
+    assert.ok(description.length <= 85, `descripción demasiado larga: ${description}`);
+    assert.ok(ctaLabel.length <= 24, `CTA demasiado largo: ${ctaLabel}`);
+  }
+});
+
+test('src no conserva variantes de retícula ni animaciones prohibidas', () => {
+  const files = [];
+  const walk = (dir) => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) walk(full);
+      else if (/\.(astro|css)$/.test(entry.name)) files.push(full);
+    }
+  };
+  walk(path.join(ROOT, 'src'));
+  const source = files.map((file) => fs.readFileSync(file, 'utf8')).join('\n');
+  assert.doesNotMatch(source, /card-grid--(?:trio|duo)/);
+  assert.doesNotMatch(source, /@keyframes|animation\s*:|behavior\s*:\s*['"]smooth['"]/);
+});
+
+test('las transiciones quedan limitadas a controles y enlaces accionables', () => {
+  const files = [];
+  const walk = (dir) => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) walk(full);
+      else if (/\.(astro|css)$/.test(entry.name)) files.push(full);
+    }
+  };
+  walk(path.join(ROOT, 'src'));
+  // Se permiten únicamente botones: clases btn/CTA, <button> (burger, trigger del
+  // menú móvil, «subir» del footer) y enlaces
+  // cuyo contrato ya está marcado con `__link`; las tarjetas deben ser estáticas.
+  const rule = /([^{}]+)\{[^{}]*(?<!-)transition\s*:/gs;
+  for (const file of files) {
+    const source = fs.readFileSync(file, 'utf8');
+    for (const match of source.matchAll(rule)) {
+      const selector = match[1].replace(/\/\*[\s\S]*?\*\//g, ' ').trim();
+      assert.match(selector, /btn|cta|button|burger|trigger|__top|__link/i, `${file}: transición fuera de un control o enlace`);
+    }
+  }
+});

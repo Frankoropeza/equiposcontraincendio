@@ -19,6 +19,9 @@ const destinos = [
   { label: 'Cobertura',             href: '/cobertura/',  sub: 'CDMX y Estado de México' },
   { label: 'Blog',                  href: '/blog/',       sub: 'Guías de normatividad y selección de equipo' },
   { label: 'Contacto',              href: '/contacto/',   sub: 'Cotizaciones y atención directa' },
+  { label: 'Herramientas',          href: '/herramientas/', sub: 'Calculadoras y verificaciones para tu inmueble' },
+  { label: 'Formatos descargables', href: '/plantillas/',  sub: 'Bitácora, acta de simulacro y censo de brigada' },
+  { label: 'Protección Civil',      href: '/proteccion-civil/', sub: 'Qué exige por entidad' },
 ]
 ---
 
@@ -46,7 +49,7 @@ const destinos = [
   <section class="section">
     <div class="container">
       <h2 class="nf__title">¿A dónde ibas?</h2>
-      <ul class="nf__list" role="list">
+      <ul class="nf__list card-grid" role="list">
         {destinos.map((d) => (
           <li class="nf__item">
             <a class="nf__link" href={d.href}>
@@ -83,9 +86,6 @@ const destinos = [
     list-style: none;
     margin: 0;
     padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
-    gap: var(--sp-4);
   }
 
   .nf__link {

@@ -5,13 +5,14 @@ import type { FichaCierre } from '@data/extintores-catalogo';
 
 interface Props {
   ficha: FichaCierre;
+  visible?: boolean;
 }
 
-const { ficha } = Astro.props as Props;
+const { ficha, visible = false } = Astro.props as Props;
 const href = ficha.whatsapp ? waUrl(ficha.href) : ficha.href;
 ---
 
-<article class="catalog-cierre" hidden data-cierre>
+<article class="catalog-cierre" class:list={{ 'catalog-cierre--visible': visible }} hidden={!visible} data-cierre={!visible}>
   <img
     class="catalog-cierre__image"
     src={ficha.image}
@@ -50,15 +51,18 @@ const href = ficha.whatsapp ? waUrl(ficha.href) : ficha.href;
     border: 1px solid var(--c-border);
     border-radius: var(--radius-lg);
     background: var(--c-white);
-    box-shadow: var(--shadow-sm);
   }
 
   .catalog-cierre[hidden] {
     display: none;
   }
 
+  /* height:auto — sin él manda el atributo height="400" y la imagen no respeta
+  el 16:10: la ficha crecía ~130 px y estiraba toda su fila. */
   .catalog-cierre__image {
     width: 100%;
+    height: auto;
+    flex-shrink: 0;
     aspect-ratio: 16 / 10;
     object-fit: cover;
     background: var(--c-surface);

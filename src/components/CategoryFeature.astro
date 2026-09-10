@@ -440,6 +440,16 @@ const {
   }
 
   /* ── Responsive ── */
+  /* 901–1439 px: con la sección a dos columnas la celda de la rejilla 2×2
+  queda por debajo de ~280 px y la etiqueta se corta con elipsis (medido en
+  9 páginas: 200 px a 1024, 267 a 1380). En ese tramo las cuatro celdas van
+  en una sola columna; desde 1440, 2×2 sin cortes. */
+  @media (min-width: 901px) and (max-width: 1439px) {
+    .cf__features {
+      grid-template-columns: 1fr;
+    }
+  }
+
   @media (max-width: 900px) {
     .cf__inner {
       grid-template-columns: 1fr;

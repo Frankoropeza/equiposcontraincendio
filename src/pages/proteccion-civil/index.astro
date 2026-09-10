@@ -38,6 +38,7 @@ import {
   pcFaqs,
 } from '@data/proteccion-civil'
 import { companyStats } from '@data/home'
+import { cierreProteccionCivil, faltanParaCuatro } from '@data/cierre'
 
 const tramites = (await getCollection('tramites', ({ data }) => !data.draft)).sort(
   (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0),
@@ -113,7 +114,7 @@ const schemaData = {
         ]}
       />
 
-      <div class="card-grid card-grid--duo">
+      <div class="card-grid">
         {tramites.map((t, i) => (
           <CategoryCard
             label={t.data.label}
@@ -124,6 +125,19 @@ const schemaData = {
             blurb={t.data.description}
             ctaLabel="Requisitos del trámite"
             index={i}
+          />
+        ))}
+        {cierreProteccionCivil.slice(0, faltanParaCuatro(tramites.length)).map((ficha, i) => (
+          <CategoryCard
+            label={ficha.title}
+            href={ficha.whatsapp ? waUrl(ficha.href) : ficha.href}
+            image={ficha.image}
+            imageAlt={ficha.imageAlt}
+            badge={ficha.badge}
+            blurb={ficha.description}
+            ctaLabel={ficha.ctaLabel}
+            index={tramites.length + i}
+            external={ficha.whatsapp}
           />
         ))}
       </div>

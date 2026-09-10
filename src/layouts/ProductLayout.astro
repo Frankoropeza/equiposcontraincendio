@@ -9,6 +9,7 @@ import SectionHeading from '@components/SectionHeading.astro';
 import ExtintorCard from '@components/ExtintorCard.astro';
 import ProductShowcase from '@components/ProductShowcase.astro';
 import ProductVariantCard from '@components/ProductVariantCard.astro';
+import CatalogCierreCard from '@components/CatalogCierreCard.astro';
 import QuoteCard from '@components/QuoteCard.astro';
 import DataTable from '@components/DataTable.astro';
 import RelatedLinks from '@components/RelatedLinks.astro';
@@ -16,6 +17,7 @@ import FAQWithContact from '@components/FAQWithContact.astro';
 import { FICHAS, FICHA_DEFAULT } from '@data/fichas';
 import { extintoresFichas } from '@data/extintores';
 import { EXT_FORMATO_LABEL } from '@data/extintores-catalogo';
+import { cierreExtintores, cierreGeneral, faltanParaCuatro } from '@data/cierre';
 import { CONTACT, waUrl, telUrl, TAXONOMY, sectionMenuItems } from '@config/site';
 import { slugify } from '@lib/slug';
 
@@ -82,7 +84,7 @@ const tableRows = comparable.map((item) => [
   item.formato ? (EXT_FORMATO_LABEL[item.formato as keyof typeof EXT_FORMATO_LABEL] ?? item.formato) : 'Según presentación',
   item.clases?.join(', ') ?? 'Según fabricante', item.clasificacion ?? 'Según fabricante',
 ]);
-const relatedLinks = [
+const relatedCandidates = [
   // Desc corta: la card de RelatedLinks recorta a ~40 caracteres. En las
   // hermanas de extintores se usa su badge (clases de fuego), que sí cabe.
   ...related.map((item) => {
@@ -94,6 +96,19 @@ const relatedLinks = [
     { label: 'Cuántos extintores necesito', href: '/herramientas/cuantos-extintores-necesito/', desc: 'Cantidad inicial para tu inmueble.' },
   ] : []),
 ];
+const relatedGeneric = [
+  { label: 'Equipos contra incendios', href: '/productos/', desc: 'Catálogo de equipo contra incendio.' },
+  { label: 'Mantenimiento de extintores', href: '/servicios/mantenimiento/', desc: 'Recarga y servicio conforme a norma.' },
+  { label: 'Cuántos extintores necesito', href: '/herramientas/cuantos-extintores-necesito/', desc: 'Calcula el mínimo para tu inmueble.' },
+  { label: 'Contacto', href: '/contacto/', desc: 'Cotiza por WhatsApp, teléfono o correo.' },
+];
+const relatedLinks = Array.from(new Map(
+  [...relatedCandidates, ...relatedGeneric]
+    .filter((item) => item.href !== `/productos/${slug}/`)
+    .map((item) => [item.href, { ...item, desc: shortDescription(item.desc) }]),
+).values()).slice(0, relatedCandidates.length >= 8 ? 8 : 4);
+const cierreVariantes = (variantes.some((item) => item.agente) ? cierreExtintores : cierreGeneral)
+  .slice(0, faltanParaCuatro(variantes.length));
 const faqTitleAccent = fichaData.faqAccent;
 function shortDescription(value?: string) { return !value ? '' : value.length <= 40 ? value : `${value.slice(0, 37).trimEnd()}…`; }
 ---
@@ -111,12 +126,13 @@ function shortDescription(value?: string) { return !value ? '' : value.length <=
   <section class="section section--surface" id="presentaciones">
     <div class="container">
       <SectionHeading layout="duo" eyebrow="Presentaciones" title="Presentaciones" titleAccent="y capacidades" desc="Compara capacidad, clases de fuego y uso sugerido. Al cotizar, menciona la presentación exacta y la cantidad." />
-      <div class="card-grid card-grid--trio">
+      <div class="card-grid">
         {variantes.map((variante, index) => {
           const id = slugify(variante.nombre);
           const item = { ...variante, id, fichaHref: `/productos/${slug}/#${id}`, imagen: variante.imagen };
           return variante.agente ? <ExtintorCard item={item as any} index={index} showFicha={false} /> : <ProductVariantCard item={item} index={index} />;
         })}
+        {cierreVariantes.map((ficha) => <CatalogCierreCard ficha={ficha} visible />)}
       </div>
     </div>
   </section>

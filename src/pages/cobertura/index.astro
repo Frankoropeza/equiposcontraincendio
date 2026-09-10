@@ -25,6 +25,7 @@ import {
   coberturaRelated,
 } from '@data/cobertura'
 import { companyStats } from '@data/home'
+import { cierreCobertura, cierreGeneral, faltanParaCuatro } from '@data/cierre'
 import { COVERAGE_STATES, CONTACT, waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
 
 const tipoLabel = (t: string) => (t === 'operativo' ? 'Servicio en sitio' : 'Atención a distancia')
@@ -114,7 +115,7 @@ const faqs = [
           '¿No ves tu ubicación? Escríbenos por WhatsApp y te confirmamos si llegamos a tu zona.',
         ]}
       />
-      <div class="card-grid card-grid--duo">
+      <div class="card-grid">
         {COVERAGE_STATES.map((z, i) => (
           <CategoryCard
             label={z.label}
@@ -125,6 +126,19 @@ const faqs = [
             badge={zoneCard[z.slug]?.badge ?? tipoLabel(z.type)}
             ctaLabel={zoneCard[z.slug]?.cta ?? `Cobertura en ${z.label}`}
             index={i}
+          />
+        ))}
+        {[...cierreCobertura, ...cierreGeneral].slice(0, faltanParaCuatro(COVERAGE_STATES.length)).map((ficha, i) => (
+          <CategoryCard
+            label={ficha.title}
+            href={ficha.whatsapp ? waUrl(ficha.href) : ficha.href}
+            image={ficha.image}
+            imageAlt={ficha.imageAlt}
+            badge={ficha.badge}
+            blurb={ficha.description}
+            ctaLabel={ficha.ctaLabel}
+            index={COVERAGE_STATES.length + i}
+            external={ficha.whatsapp}
           />
         ))}
       </div>

@@ -272,21 +272,6 @@ viven en src/styles/mobile.css (se importa DESPUÉS en BaseLayout). Todo en
   }
 }
 
-/* Variantes para retículas con pocos elementos: a 4 columnas dejarían huecos.
-En retiro — regla de 4 por fila (2026-09-10); no usar en páginas nuevas.
---duo → /cobertura/ (2 zonas) y /proteccion-civil/ (2 entidades).
---trio → /plantillas/ (3 formatos descargables).
-Con 4 o más elementos se usa la base, sin variante. */
-@media (min-width: 768px) {
-  .card-grid--duo {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .card-grid--trio {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 /* ═════════════════════════════════════════════════════════════════════════════
 * BOTONES (.btn) — utilidad global, homologación 2026-09-10.
 * Hasta ahora cada componente pintaba su propio botón (.hero__btn, el CTA de

@@ -310,7 +310,7 @@ const CAMPOS = [
       const wa = out.querySelector<HTMLAnchorElement>('#res-wa')
       if (wa) wa.href = waBase + encodeURIComponent(ultimoTexto)
 
-      out.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+      out.scrollIntoView({ block: 'nearest' })
     })
 
     form.addEventListener('reset', () => {

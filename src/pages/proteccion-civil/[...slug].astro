@@ -59,6 +59,12 @@ const bloqueIds = [
 ]
 const usaSurface = (id: string) => bloqueIds.indexOf(id) % 2 === 0
 const waHref = waUrl(`Hola, tengo un requerimiento de Protección Civil en ${d.entidad} y necesito poner mi inmueble en regla.`)
+const relatedTramite = Array.from(new Map([
+  ...comerciales,
+  ...otras,
+  { label: 'Productos', href: '/productos/', desc: 'Equipo contra incendio para tu inmueble.' },
+  { label: 'Contacto', href: '/contacto/', desc: 'Cotiza equipo y servicios.' },
+].map((item) => [item.href, item])).values()).slice(0, 4)
 
 ---
 
@@ -161,7 +167,7 @@ const waHref = waUrl(`Hola, tengo un requerimiento de Protección Civil en ${d.e
     </div>
   </section>
 
-  <RelatedLinks title="Lo que sí hacemos nosotros" links={[...comerciales, ...otras]} limit={4} />
+  <RelatedLinks title="Lo que sí hacemos nosotros" links={relatedTramite} limit={4} />
 
   {d.faqs && d.faqs.length > 0 && (
     <FAQWithContact

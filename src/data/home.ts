@@ -250,7 +250,7 @@ export const homeCategoryFeatures: HomeCategoryFeature[] = [
     features: [
       { label: "PQS ABC multipropósito", desc: "Oficinas, escuelas, comercios y bodegas. Cubre clases A, B y C." },
       { label: "CO₂ para cuartos eléctricos", desc: "No conduce ni deja residuo sobre tableros y electrónica. Clases B y C." },
-      { label: "Agente K para cocinas", desc: "Formulado para aceites y grasas de cocción; complementa la supresión de la campana." },
+      { label: "Agente K para cocinas", desc: "Para aceites y grasas de cocción; complementa la supresión de la campana." },
       { label: "Recarga y mantenimiento", desc: "Servicio anual con etiqueta y collarín; prueba de presión cada 5 años." },
     ],
     brands: [

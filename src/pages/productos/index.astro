@@ -11,7 +11,6 @@ import SectionHeading from '@components/SectionHeading.astro';
 import CategoryCard from '@components/CategoryCard.astro';
 import CategoryFeature from '@components/CategoryFeature.astro';
 import ProductCard from '@components/ProductCard.astro';
-import ServiceCard from '@components/ServiceCard.astro';
 import FAQWithContact from '@components/FAQWithContact.astro';
 import RiskGuide from '@components/RiskGuide.astro';
 import NormsTable from '@components/NormsTable.astro';
@@ -28,16 +27,13 @@ import {
 import { companyStats } from '@data/home';
 import { getCollection } from 'astro:content';
 import { SHOWCASE, CONTACT, waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site';
+import { cierreGeneral, faltanParaCuatro } from '@data/cierre';
 
 const productos = (await getCollection('productos', ({ data }) => !data.draft)).sort(
   (a, b) => a.data.order - b.data.order,
 );
 
-// Retícula del listado de fichas sin fila huérfana: 4 columnas si el número
-// de fichas es múltiplo de 4, 3 si lo es de 3; si no, 4 columnas más la celda
-// de cierre «¿No encuentras…?» (que solo se pinta en ese último caso).
-const gridTrio = productos.length % 4 !== 0 && productos.length % 3 === 0;
-const showClosure = productos.length % 4 !== 0 && !gridTrio;
+const cierreProductos = cierreGeneral.slice(0, faltanParaCuatro(productos.length));
 
 const CAT_LABEL: Record<string, string> = {
   extintores: 'Extintores',
@@ -383,7 +379,7 @@ const schemaData = {
             'Pide cotización por WhatsApp indicando el producto y la cantidad — te respondemos con precio, disponibilidad y tiempos de entrega.',
           ]}
         />
-        <div class={gridTrio ? 'card-grid card-grid--trio' : 'card-grid'}>
+        <div class="card-grid">
           {productos.map((p, i) => (
             <ProductCard
               title={p.data.title}
@@ -396,22 +392,19 @@ const schemaData = {
               priority={i === 0}
             />
           ))}
-          {/* Celda de cierre: recoge a quien no encontró su equipo (el catálogo
-              publica solo lo de mayor rotación). Solo se pinta cuando el número
-              de fichas deja hueco en la retícula de 4 columnas: con 7 fichas
-              completaba la segunda fila; con 8 (desde la ficha de agua,
-              2026-09-10) la fila ya está llena y la celda la dejaría huérfana;
-              con 9 (desde agente limpio) la retícula pasa a 3 columnas. */}
-          {showClosure && <ServiceCard
-            title="¿No encuentras el equipo que buscas?"
-            description="El catálogo publica lo de mayor rotación. Surtimos más marcas, capacidades y equipo especializado: dinos qué necesitas y te cotizamos con disponibilidad y tiempo de entrega."
-            href={waUrl('Hola, busco un equipo contra incendio que no vi en el catálogo. ¿Me ayudan a cotizarlo?')}
-            image="/images/servicios/cuarto-bomba-contra-incendio.avif"
-            imageAlt="Cuarto de bombas de una red contra incendio con equipo especializado"
-            badge="Cotización a medida"
-            ctaLabel="Cotizar por WhatsApp"
-            whatsapp
-          />}
+          {cierreProductos.map((ficha, i) => (
+            <ProductCard
+              title={ficha.title}
+              href={ficha.whatsapp ? waUrl(ficha.href) : ficha.href}
+              image={ficha.image}
+              imageAlt={ficha.imageAlt}
+              badge={ficha.badge}
+              description={ficha.description}
+              ctaLabel={ficha.ctaLabel}
+              index={productos.length + i}
+              external={ficha.whatsapp}
+            />
+          ))}
         </div>
       </div>
     </section>

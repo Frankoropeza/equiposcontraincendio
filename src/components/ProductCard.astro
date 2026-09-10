@@ -31,13 +31,14 @@ interface Props {
   index?: number
   /** Recurso LCP (primer card del primer grid). */
   priority?: boolean
+  external?: boolean
 }
-const { title, href, image, imageAlt, badge, description, ctaLabel = 'Ficha técnica', index = 99, priority = false } = Astro.props
+const { title, href, image, imageAlt, badge, description, ctaLabel = 'Ficha técnica', index = 99, priority = false, external = false } = Astro.props
 const eager = priority || index < 4
 ---
 
 <article class="pcard" aria-label={title}>
-  <a href={href} class="pcard__link">
+  <a href={href} class="pcard__link" target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined}>
     {image && (
       <div class="pcard__media">
         <img

@@ -24,6 +24,7 @@ import SectionMenu from '@components/SectionMenu.astro'
 import { getCollection } from 'astro:content'
 import { SITE, waUrl, WA_MESSAGES } from '@config/site'
 import { slugify } from '@lib/slug'
+import { cierreGeneral, faltanParaCuatro } from '@data/cierre'
 
 export async function getStaticPaths() {
   const posts = (await getCollection('articulos', ({ data }) => !data.draft)).sort(
@@ -37,6 +38,7 @@ export async function getStaticPaths() {
 }
 
 const { tag, posts } = Astro.props
+const cierreTag = cierreGeneral.slice(0, faltanParaCuatro(posts.length))
 
 const cierreItems = [
   { label: 'Todo el blog', href: '/blog/', sub: 'Todos los artículos' },
@@ -79,7 +81,7 @@ const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog)
           'La clave es la disciplina: un conjunto corto y estable de etiquetas vale más que decenas de etiquetas únicas. Cada una debe agrupar varios artículos para justificar su página de archivo.',
         ]}
       />
-      <div class="card-grid card-grid--trio">
+      <div class="card-grid">
         {posts.map((a, i) => (
           <CategoryCard
             label={a.data.title}
@@ -90,6 +92,19 @@ const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog)
             blurb={a.data.description}
             ctaLabel="Leer artículo"
             index={i}
+          />
+        ))}
+        {cierreTag.map((ficha, i) => (
+          <CategoryCard
+            label={ficha.title}
+            href={ficha.whatsapp ? waUrl(ficha.href) : ficha.href}
+            image={ficha.image}
+            imageAlt={ficha.imageAlt}
+            badge={ficha.badge}
+            blurb={ficha.description}
+            ctaLabel={ficha.ctaLabel}
+            index={posts.length + i}
+            external={ficha.whatsapp}
           />
         ))}
       </div>
