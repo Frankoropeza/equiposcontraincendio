@@ -36,6 +36,7 @@ const L3 = [
   { page: 'src/pages/servicios/inspeccion/index.astro', data: 'src/data/inspeccion.ts', list: 'inspTarjetas' },
   { page: 'src/pages/servicios/diagnostico-de-riesgo/index.astro', data: 'src/data/diagnostico-de-riesgo.ts', list: 'diagTarjetas' },
   { page: 'src/pages/servicios/capacitacion-dc3/index.astro', data: 'src/data/capacitacion-dc3.ts', list: 'capTarjetas' },
+  { page: 'src/pages/servicios/gestion-documental/index.astro', data: 'src/data/gestion-documental.ts', list: 'docTarjetas' },
 ];
 
 test('las L3 no usan retículas de 3 ni de 2 columnas', () => {
