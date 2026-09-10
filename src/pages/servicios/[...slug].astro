@@ -29,12 +29,17 @@ import SectionMenu from '@components/SectionMenu.astro'
 import { waUrl, WA_MESSAGES } from '@config/site'
 
 export async function getStaticPaths() {
+  // Servicios con página L3 propia en src/pages/servicios/<id>/index.astro.
+  // Se excluyen para no generar dos páginas en la misma URL; su ficha de la
+  // colección se conserva (tarjeta de /servicios/, menú y blog). Va dentro de
+  // getStaticPaths porque Astro la ejecuta aislada del resto del frontmatter.
+  const L3_PROPIAS = new Set(['mantenimiento'])
   const servicios = (await getCollection('servicios', ({ data }) => !data.draft)).sort(
     (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0),
   )
   const productos = await getCollection('productos', ({ data }) => !data.draft)
 
-  return servicios.map((servicio) => {
+  return servicios.filter((servicio) => !L3_PROPIAS.has(servicio.id)).map((servicio) => {
     // Interlinking (B6). Preferencia: las relaciones declaradas en el
     // frontmatter (reference() tipado); si no hay, los servicios hermanos.
     // flatMap en vez de map+filter(Boolean): filter no estrecha el tipo en TS

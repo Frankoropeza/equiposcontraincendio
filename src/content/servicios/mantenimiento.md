@@ -25,7 +25,7 @@ relatedProducts:
   - soportes-accesorios-extintor
 faqs:
   - question: "¿Cada cuánto se le da mantenimiento a un extintor?"
-    answer: "El servicio de mantenimiento y recarga se realiza conforme a la NOM-154-SCFI-2005, de forma anual como práctica habitual. Además, la NOM-002-STPS-2010 pide en centros de trabajo una revisión mensual a cargo del propio personal: que el extintor esté en su lugar, accesible, con el manómetro en zona verde, el seguro puesto y sin daños visibles."
+    answer: "Al menos una vez al año: ese plazo lo fija la NOM-002-STPS-2010 (numeral 7.18), y la NOM-154-SCFI-2005 regula cómo debe prestarse el servicio. Además, la NOM-002-STPS-2010 pide en centros de trabajo una revisión mensual a cargo del propio personal: que el extintor esté en su lugar, accesible, con el manómetro en zona verde, el seguro puesto y sin daños visibles."
   - question: "¿Cada cuánto se hace la prueba hidrostática?"
     answer: "En México la prueba hidrostática se realiza cada 5 años para extintores de agua, CO₂ y PQS conforme a la NOM-154-SCFI-2005, o antes si el cilindro sufre un golpe o pierde su contraseña. Ojo con el dato de «12 años» que circula: ese corresponde a la NFPA 10 de Estados Unidos, no es norma mexicana."
   - question: "¿Qué documento me entregan del servicio?"
