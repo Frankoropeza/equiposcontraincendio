@@ -109,7 +109,7 @@ const servicios = (await getCollection("servicios", ({ data }) => !data.draft))
           "Si no sabes por dónde empezar, escríbenos: revisamos tu caso y te decimos exactamente qué necesitas, sin venderte de más.",
         ]}
       />
-      <div class="showcase">
+      <div class="card-grid">
         {SHOWCASE.map((c, i) => (
           <CategoryCard
             label={c.label}
@@ -172,7 +172,7 @@ const servicios = (await getCollection("servicios", ({ data }) => !data.draft))
           "Todo con servicio conforme a norma y un reporte claro de lo que se hizo.",
         ]}
       />
-      <div class="svcs">
+      <div class="card-grid">
         {servicios.map((s) => (
           <ServiceCard
             title={s.title}
@@ -270,14 +270,7 @@ const servicios = (await getCollection("servicios", ({ data }) => !data.draft))
   }
   .section { padding: var(--sp-8) 0; }
   .section--surface { background: var(--c-surface); }
-  .showcase { display: grid; grid-template-columns: 1fr; gap: var(--sp-5); }
-  .svcs { display: grid; grid-template-columns: 1fr; gap: var(--sp-5); margin-top: var(--sp-6); }
-  @media (min-width: 640px) { .showcase { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 768px) { .showcase { grid-template-columns: repeat(4, 1fr); } }
-  @media (min-width: 640px) { .svcs { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 768px) { .svcs { grid-template-columns: repeat(4, 1fr); } }
   @media (min-width: 1024px) {
     .section { padding: var(--sp-10) 0; }
-    .showcase { grid-template-columns: repeat(4, 1fr); }
   }
 </style>

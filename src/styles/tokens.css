@@ -190,6 +190,38 @@ img, picture, video, canvas { max-width: 100%; }
 }
 
 /* ═════════════════════════════════════════════════════════════════════════════
+ * RETÍCULA DE TARJETAS (.card-grid) — utilidad global, homologación 2026-09-10.
+ * Cada página declaraba la suya, con distinto nombre y en su propio <style>:
+ * `.showcase` en el index y en /productos/, `.svcs` también en el index, y
+ * `.grid` en /servicios/ y /cobertura/ — la MISMA regla copiada cinco veces.
+ * El precio de esa duplicación se veía a simple vista: a /cobertura/ le faltaba
+ * el breakpoint de 768 px, así que era la única sección del sitio que nunca
+ * pasaba de dos columnas.
+ *
+ * NO BORRAR creyéndola duplicada de los <style> de página: los estilos de Astro
+ * son SCOPED, así que una retícula compartida solo puede vivir aquí, en el CSS
+ * global. (Mismo motivo por el que .container vive aquí; ver el incidente de
+ * 2026-09-09, cuando se borró de index.astro por "deduplicar".)
+ * ═════════════════════════════════════════════════════════════════════════════ */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-5);
+  margin-top: var(--sp-6);
+}
+@media (min-width: 640px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 768px) { .card-grid { grid-template-columns: repeat(4, 1fr); } }
+
+/* Variantes para retículas con pocos elementos: a 4 columnas dejarían huecos.
+   --duo → /cobertura/ (2 zonas) y /proteccion-civil/ (2 entidades).
+   --trio → /plantillas/ (3 formatos descargables).
+   Con 4 o más elementos se usa la base, sin variante. */
+@media (min-width: 768px) {
+  .card-grid--duo  { grid-template-columns: repeat(2, 1fr); }
+  .card-grid--trio { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ═════════════════════════════════════════════════════════════════════════════
  * BOTONES (.btn) — utilidad global, homologación 2026-09-10.
  * Hasta ahora cada componente pintaba su propio botón (.hero__btn, el CTA de
  * CTABanner, SectionMenu…) y no existía ninguna clase compartida. Las páginas

@@ -322,7 +322,7 @@ const schemaData = {
           'Si no sabes por dónde empezar, escríbenos: revisamos tu inmueble y te decimos exactamente qué necesitas, sin venderte de más.',
         ]}
       />
-      <div class="showcase">
+      <div class="card-grid">
         {SHOWCASE.map((c, i) => (
           <CategoryCard
             label={c.label}
@@ -376,7 +376,7 @@ const schemaData = {
             'Pide cotización por WhatsApp indicando el producto y la cantidad — te respondemos con precio, disponibilidad y tiempos de entrega.',
           ]}
         />
-        <div class="showcase">
+        <div class="card-grid">
           {productos.map((p, i) => (
             <ProductCard
               title={p.data.title}
@@ -498,13 +498,8 @@ const schemaData = {
   .section { padding: var(--sp-8) 0; }
   .section--surface { background: var(--c-surface); }
 
-  /* Grid de tarjetas: mismo patrón que la vitrina del home (.showcase). */
-  .showcase { display: grid; grid-template-columns: 1fr; gap: var(--sp-5); margin-top: var(--sp-6); }
-  @media (min-width: 640px) { .showcase { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 768px) { .showcase { grid-template-columns: repeat(4, 1fr); } }
   @media (min-width: 1024px) {
     .section { padding: var(--sp-10) 0; }
-    .showcase { grid-template-columns: repeat(4, 1fr); }
   }
 
   /* Banda de normas (tira oscura sobre tokens de marca). */
