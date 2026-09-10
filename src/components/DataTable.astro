@@ -1,0 +1,72 @@
+---
+// DataTable.astro — tabla comparativa genérica y responsive de N columnas.
+// Contrato: recibe encabezados, filas y el copy de una sección de datos.
+import SectionHeading from './SectionHeading.astro';
+
+interface Props {
+  eyebrow?: string;
+  title: string;
+  titleAccent?: string;
+  desc?: string;
+  body?: string[];
+  columns: readonly string[];
+  rows: string[][];
+  note?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  id?: string;
+  surface?: boolean;
+}
+
+const { eyebrow, title, titleAccent, desc, body = [], columns, rows, note, ctaLabel, ctaHref, id, surface = false } = Astro.props as Props;
+---
+
+<section class:list={['datatable', surface && 'datatable--surface']} id={id}>
+  <div class="container">
+    <SectionHeading layout="duo" {eyebrow} {title} {titleAccent} {desc} {body} />
+    <div class="datatable__wrap">
+      <table>
+        <thead>
+          <tr>{columns.map((column) => <th scope="col">{column}</th>)}</tr>
+        </thead>
+        <tbody>
+          {rows.map((row) => (
+            <tr>
+              {row.map((cell, index) => (
+                <td data-label={columns[index] ?? ''}>{index === 0 ? <strong>{cell}</strong> : cell}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    {(note || (ctaLabel && ctaHref)) && (
+      <footer class="datatable__footer">
+        {note && <p>{note}</p>}
+        {ctaLabel && ctaHref && <a class="btn btn--primary" href={ctaHref}>{ctaLabel} <span aria-hidden="true">→</span></a>}
+      </footer>
+    )}
+  </div>
+</section>
+
+<style>
+  .datatable { padding: var(--section-py) 0; background: var(--c-white); }
+  .datatable--surface { background: var(--c-surface); }
+  .datatable__wrap { overflow: hidden; border: 1px solid var(--c-border); border-radius: var(--radius-md); background: var(--c-white); }
+  table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+  th { padding: var(--sp-3) var(--sp-4); border-bottom: 1px solid var(--c-border); background: var(--c-surface); color: var(--c-ink); font-family: var(--font-heading); font-size: var(--text-xs); letter-spacing: .04em; text-align: left; text-transform: uppercase; }
+  td { padding: var(--sp-4); border-bottom: 1px solid var(--c-border); color: var(--c-ink-2); line-height: var(--leading-normal); vertical-align: top; }
+  tr:last-child td { border-bottom: 0; }
+  td strong { color: var(--c-primary); }
+  .datatable__footer { display: flex; align-items: center; flex-wrap: wrap; gap: var(--sp-5); margin-top: var(--sp-5); }
+  .datatable__footer p { flex: 1; min-width: 16rem; margin: 0; color: var(--c-muted); font-size: var(--text-sm); line-height: var(--leading-relaxed); }
+  @media (max-width: 767px) {
+    .datatable__wrap { overflow: visible; border: 0; background: transparent; }
+    table, thead, tbody, tr, td { display: block; }
+    thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    tr { margin-bottom: var(--sp-4); overflow: hidden; border: 1px solid var(--c-border); border-radius: var(--radius-md); background: var(--c-white); }
+    td { display: grid; grid-template-columns: minmax(8rem, 34%) 1fr; gap: var(--sp-3); padding: var(--sp-3) var(--sp-4); }
+    td::before { content: attr(data-label); color: var(--c-muted); font-size: var(--text-xs); font-weight: var(--weight-bold); letter-spacing: .04em; text-transform: uppercase; }
+    td:last-child { border-bottom: 0; }
+  }
+</style>

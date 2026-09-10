@@ -5,7 +5,7 @@ category: hidrantes-mangueras
 image: /images/productos/extintor-oficina-gabinete.avif
 price: "Cotizar"
 brand: "Equipos Contra Incendio"
-order: 6
+order: 7
 seoTitle: "Gabinetes con manguera contra incendio 1½\""
 seoDescription: "Compara gabinetes de sobreponer, empotrar y combinados para manguera contra incendio de 1½ pulgadas."
 variantes:

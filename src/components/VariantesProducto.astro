@@ -1,5 +1,9 @@
 ---
+// VariantesProducto.astro — lista las presentaciones de una ficha L4.
+// Contrato: recibe variantes del frontmatter y una imagen de respaldo; cada
+// variante conserva su slug estable para anclas y no requiere JavaScript.
 import { waUrl } from '@config/site';
+import { slugify } from '@lib/slug';
 
 interface Variante {
   nombre: string;
@@ -8,6 +12,9 @@ interface Variante {
   specs: string;
   imagen?: string;
   waText: string;
+  capacidad?: string;
+  clases?: string[];
+  formato?: string;
 }
 
 interface Props {
@@ -31,7 +38,7 @@ const { variantes, fallbackImage } = Astro.props;
       const specs = variante.specs.split(' · ');
 
       return (
-        <li class="variant-card">
+        <li class="variant-card" id={slugify(variante.nombre)}>
           <img
             class="variant-card__image"
             src={image}
@@ -47,6 +54,9 @@ const { variantes, fallbackImage } = Astro.props;
             <p>{variante.desc}</p>
             <ul class="variant-card__specs" aria-label={`Especificaciones de ${variante.nombre}`}>
               {specs.map((spec) => <li>{spec}</li>)}
+              {variante.capacidad && <li>{variante.capacidad}</li>}
+              {variante.formato && <li>{variante.formato}</li>}
+              {variante.clases?.map((clase) => <li>{clase}</li>)}
             </ul>
             <a class="btn btn--primary variant-card__cta" href={waUrl(variante.waText)}>
               Cotizar esta variante

@@ -1,36 +1,43 @@
 ---
-// ============================================================================
-// /productos/extintores/ — Categoría «Extintores portátiles» (L3).
-// ----------------------------------------------------------------------------
-// PRIMERA L3 (2026-09-10). Inicio → Productos (L2) → Extintores (L3) → ficha (L4).
-// Las fichas conservan su URL plana (/productos/extintor-pqs/); la jerarquía
-// la dan las migas y el BreadcrumbList, sin redirecciones.
-//
-// Mismo esqueleto que las L2:
-//   Hero → SectionMenu → TrustBar → vitrina de fichas → módulos
-//   CategoryFeature → RiskGuide → NormsTable → ProcessSteps → CompanyAbout →
-//   RelatedLinks → FAQ + Contacto
-//
-// Las fichas se leen de la colección `productos` (category: extintores); el
-// resto del contenido vive en src/data/extintores.ts, donde también está el
-// ángulo de esta página frente a /productos/ y a las fichas.
-// ============================================================================
-import PageLayout from '@layouts/PageLayout.astro'
-import Hero from '@components/Hero.astro'
-import SectionMenu from '@components/SectionMenu.astro'
-import SectionHeading from '@components/SectionHeading.astro'
-import ProductCard from '@components/ProductCard.astro'
-import CategoryFeature from '@components/CategoryFeature.astro'
-import TrustBar from '@components/TrustBar.astro'
-import RiskGuide from '@components/RiskGuide.astro'
-import NormsTable from '@components/NormsTable.astro'
-import ProcessSteps from '@components/ProcessSteps.astro'
-import CompanyAbout from '@components/CompanyAbout.astro'
-import RelatedLinks from '@components/RelatedLinks.astro'
-import FAQWithContact from '@components/FAQWithContact.astro'
-import { getCollection } from 'astro:content'
-import { CONTACT, waUrl, sectionMenuItems } from '@config/site'
+// /productos/extintores/ — catálogo L3 de extintores portátiles.
+import PageLayout from '@layouts/PageLayout.astro';
+import Hero from '@components/Hero.astro';
+import SectionMenu from '@components/SectionMenu.astro';
+import SectionHeading from '@components/SectionHeading.astro';
+import ProductCard from '@components/ProductCard.astro';
+import ServiceCard from '@components/ServiceCard.astro';
+import CategoryFeature from '@components/CategoryFeature.astro';
+import TrustBar from '@components/TrustBar.astro';
+import RiskGuide from '@components/RiskGuide.astro';
+import NormsTable from '@components/NormsTable.astro';
+import ProcessSteps from '@components/ProcessSteps.astro';
+import CompanyAbout from '@components/CompanyAbout.astro';
+import RelatedLinks from '@components/RelatedLinks.astro';
+import FAQWithContact from '@components/FAQWithContact.astro';
+import ExtintorCatalog from '@components/ExtintorCatalog.astro';
+import UsoGrid from '@components/UsoGrid.astro';
+import BrandGrid from '@components/BrandGrid.astro';
+import DataTable from '@components/DataTable.astro';
+import { getCollection } from 'astro:content';
+import { CONTACT, waUrl, sectionMenuItems } from '@config/site';
+import { slugify } from '@lib/slug';
 import {
+  extSeo,
+  extUsos,
+  extCapacidades,
+  extAgentesCols,
+  extAgentesRows,
+  extFormatoCols,
+  extFormatoRows,
+  extServicioCols,
+  extServicioRows,
+  extMarcas,
+  extMarcasNota,
+  extSecciones,
+  extAccesoriosLinks,
+} from '@data/extintores-catalogo';
+import {
+  extintoresHero,
   extintoresPillars,
   extintoresFichas,
   extintoresFeatures,
@@ -40,27 +47,35 @@ import {
   extintoresCompany,
   extintoresRelated,
   extintoresFaqs,
-} from '@data/extintores'
+} from '@data/extintores';
 
 const fichas = (
   await getCollection('productos', ({ data }) => !data.draft && data.category === 'extintores')
-).sort((a, b) => a.data.order - b.data.order)
+).sort((a, b) => a.data.order - b.data.order);
 
-const WA_EXTINTORES = 'Hola, quiero cotizar extintores. ¿Me ayudan a elegir el agente y la capacidad para mi inmueble?'
+const items = fichas.flatMap((ficha) =>
+  (ficha.data.variantes ?? [])
+    .filter((variante) => variante.agente)
+    .map((variante) => ({
+      id: `${ficha.id}--${slugify(variante.nombre)}`,
+      fichaId: ficha.id,
+      fichaTitle: ficha.data.title,
+      fichaHref: `/productos/${ficha.id}/#${slugify(variante.nombre)}`,
+      ...variante,
+    })),
+);
 
-const menuSecciones = sectionMenuItems()
+const WA_EXTINTORES = 'Hola, quiero cotizar extintores. ¿Me ayudan a elegir el agente y la capacidad para mi inmueble?';
 const menuCta = {
   label: 'Cotizar por WhatsApp',
   href: waUrl(WA_EXTINTORES),
   sub: 'Respuesta inmediata',
   external: true,
-}
-
+};
 const schemaData = {
   list: {
-    name: 'Extintores portátiles contra incendio',
-    description:
-      'Extintores de polvo químico seco ABC, CO₂, agente K para cocina y a base de agua, en presentaciones portátiles y móviles.',
+    name: 'Catálogo de extintores',
+    description: extSeo.description,
     path: '/productos/extintores/',
     items: fichas.map((p) => ({
       name: p.data.title,
@@ -70,90 +85,78 @@ const schemaData = {
     })),
   },
   faqs: extintoresFaqs,
-}
+};
 ---
 
 <PageLayout
-  title="Venta de extintores contra incendio en CDMX y Edomex"
-  description="Extintores PQS ABC, CO₂, clase K y a base de agua, portátiles y sobre ruedas: qué apaga cada agente, en qué capacidades y con recarga incluida."
+  title={extSeo.title}
+  description={extSeo.description}
   pageType="category"
   schemaData={schemaData}
   breadcrumbs={[{ label: 'Productos', href: '/productos/' }, { label: 'Extintores portátiles' }]}
   guia={false}
 >
+  {/* ─── Hero ─── */}
   <Hero
-    badge="Extintores portátiles · CDMX y Edomex"
-    title="Extintores contra incendio,"
-    accent="según lo que puede arder"
-    subtitle="Polvo químico seco ABC, CO₂, agente K para cocina y la familia a base de agua, en portátil y sobre ruedas, con recarga y prueba hidrostática del mismo proveedor."
-    descRight={[
-      'Un extintor no se elige por tamaño ni por color: se elige por la clase de fuego que puede presentarse en cada zona. El agente equivocado no solo falla; puede avivar el incendio o exponer a quien lo usa.',
-      'Aquí están los cuatro agentes que manejamos, qué apaga cada uno y dónde no debe usarse. Cada ficha trae sus presentaciones y capacidades para cotizar la exacta.',
-    ]}
+    badge={extintoresHero.badge}
+    title={extSeo.heroTitle}
+    accent={extSeo.heroAccent}
+    subtitle={extintoresHero.subtitle}
+    descRight={extintoresHero.descRight}
     ctas={[
-      { text: 'Extintores por agente', href: '#agentes', variant: 'outline' },
+      { text: 'Catálogo de extintores', href: '#catalogo', variant: 'outline' },
       { text: 'Cotizar por WhatsApp', href: waUrl(WA_EXTINTORES), variant: 'primary', whatsapp: true },
     ]}
   />
 
-  <SectionMenu items={menuSecciones} cta={menuCta} />
-
-  {/* ─── Barra de confianza (pilares honestos) ─── */}
+  {/* ─── Navegación y confianza ─── */}
+  <SectionMenu items={sectionMenuItems()} cta={menuCta} />
   <TrustBar items={extintoresPillars} />
 
-  {/* ─── Vitrina: una ficha L4 por agente ─── */}
-  <section class="section section--surface" id="agentes">
+  {/* ─── Familias ─── */}
+  <section class="section" id="agentes">
     <div class="container">
-      <SectionHeading
-        layout="duo"
-        eyebrow="Por agente extintor"
-        title="Cuatro agentes,"
-        titleAccent="cuatro fichas"
-        desc="Entra a la ficha del agente para ver todas sus presentaciones."
-        body={[
-          'Cada ficha reúne las capacidades de un mismo agente, del portátil compacto a la unidad sobre ruedas, con lo que conviene revisar antes de elegir una.',
-          'Si todavía no sabes qué agente te toca, la tabla de clases de fuego de más abajo lo resuelve en un vistazo.',
-        ]}
-      />
-      <div class="card-grid">
-        {fichas.map((p, i) => (
+      <SectionHeading layout="duo" {...extSecciones.familias} />
+      <div class="card-grid card-grid--trio">
+        {fichas.map((ficha, index) => (
           <ProductCard
-            title={p.data.title}
-            href={`/productos/${p.id}/`}
-            image={p.data.image}
-            imageAlt={p.data.title}
-            badge={extintoresFichas[p.id]?.badge}
-            description={extintoresFichas[p.id]?.blurb ?? p.data.description}
-            ctaLabel={extintoresFichas[p.id]?.ctaLabel}
-            index={i}
-            priority={i === 0}
+            title={ficha.data.title}
+            href={`/productos/${ficha.id}/`}
+            image={ficha.data.image}
+            imageAlt={ficha.data.title}
+            badge={extintoresFichas[ficha.id]?.badge}
+            description={extintoresFichas[ficha.id]?.blurb ?? ficha.data.description}
+            ctaLabel={extintoresFichas[ficha.id]?.ctaLabel}
+            index={index}
+            priority={index === 0}
           />
         ))}
+        <ServiceCard
+          title="Recarga y mantenimiento"
+          href="/servicios/mantenimiento/"
+          image="/images/servicios/inspeccion-recarga-extintores.avif"
+          imageAlt="Recarga y mantenimiento de extintores en taller de servicio"
+          badge="Servicio NOM-154"
+          description="Mantenimiento anual, recarga después de cualquier uso y prueba hidrostática para los extintores que ya tienes."
+          ctaLabel="Recarga de extintores"
+        />
       </div>
     </div>
   </section>
 
-  {/* ─── Módulos por agente (CategoryFeature) ─── */}
-  {extintoresFeatures.map((c) => (
-    <CategoryFeature
-      anchorId={c.id}
-      eyebrow={c.eyebrow}
-      title={c.title}
-      titleAccent={c.titleAccent}
-      description={c.description}
-      features={c.features}
-      ctaLabel={c.ctaLabel}
-      ctaHref={c.ctaHref}
-      ctaSecondaryLabel={c.ctaSecondaryLabel}
-      ctaSecondaryHref={waUrl(c.ctaMsg)}
-      ctaSecondaryExternal
-      imgMain={c.imgMain}
-      imgA={c.imgA}
-      imgB={c.imgB}
-    />
-  ))}
-
-  {/* ─── Qué agente apaga cada clase de fuego ─── */}
+  {/* ─── Catálogo, negocios y capacidades ─── */}
+  <ExtintorCatalog items={items} copy={extSecciones.catalogo} />
+  <UsoGrid rows={extUsos} copy={extSecciones.negocio} />
+  <DataTable
+    id="por-capacidad"
+    {...extSecciones.capacidad}
+    columns={['Rango de capacidad', 'Perfil', 'Dónde conviene', 'A considerar']}
+    rows={extCapacidades.map((row) => [row.rango, row.perfil, row.conviene, row.considera])}
+    ctaLabel={extSecciones.capacidad.ctaLabel}
+    ctaHref={extSecciones.capacidad.ctaHref}
+    surface
+  />
+  {/* ─── Clases de fuego, comparativa y formatos ─── */}
   <RiskGuide
     eyebrow="Clases de fuego"
     title="Qué agente apaga"
@@ -169,8 +172,74 @@ const schemaData = {
     ctaLabel="Riesgo de incendio"
     ctaHref="/herramientas/riesgo-de-incendio/"
   />
+  <DataTable
+    id="comparativa"
+    {...extSecciones.comparativa}
+    columns={extAgentesCols}
+    rows={extAgentesRows}
+    surface
+  />
 
-  {/* ─── Qué norma certifica cada agente ─── */}
+  <DataTable
+    id="portatil-o-ruedas"
+    {...extSecciones.formato}
+    columns={extFormatoCols}
+    rows={extFormatoRows}
+  />
+
+  {/* ─── Módulos por agente (fondos alternados, empezando en surface) ─── */}
+  {extintoresFeatures.map((feature, i) => (
+    <CategoryFeature
+      anchorId={feature.id}
+      eyebrow={feature.eyebrow}
+      title={feature.title}
+      titleAccent={feature.titleAccent}
+      description={feature.description}
+      features={feature.features}
+      ctaLabel={feature.ctaLabel}
+      ctaHref={feature.ctaHref}
+      ctaSecondaryLabel={feature.ctaSecondaryLabel}
+      ctaSecondaryHref={waUrl(feature.ctaMsg)}
+      ctaSecondaryExternal
+      imgMain={feature.imgMain}
+      imgA={feature.imgA}
+      imgB={feature.imgB}
+      surface={i % 2 === 0}
+      flip={i % 2 === 1}
+    />
+  ))}
+
+  {/* ─── Marcas y accesorios ─── */}
+  <BrandGrid marcas={extMarcas} nota={extMarcasNota} copy={extSecciones.marcas} />
+  <RelatedLinks
+    title={extSecciones.accesorios.title}
+    desc={extSecciones.accesorios.desc}
+    links={extAccesoriosLinks}
+    limit={4}
+  />
+
+  {/* ─── Mantenimiento ─── */}
+  <DataTable
+    id="mantenimiento"
+    {...extSecciones.mantenimiento}
+    columns={extServicioCols}
+    rows={extServicioRows}
+    ctaLabel={extSecciones.mantenimiento.ctaLabel}
+    ctaHref={extSecciones.mantenimiento.ctaHref}
+  />
+  <ProcessSteps
+    eyebrow="Después de comprarlo"
+    title="Lo que le toca a un extintor"
+    titleAccent="durante su vida útil"
+    desc="Comprarlo es el primer paso; mantenerlo vigente es lo que revisa la autoridad."
+    body={[
+      'Un extintor vencido o sin revisión cuenta como si no existiera en una inspección. La norma pide una revisión mensual, un mantenimiento anual y una prueba del cilindro cada 5 años.',
+      'Las dos primeras las puedes llevar tú con la bitácora; el mantenimiento y la prueba hidrostática los hace un proveedor, y nosotros los hacemos.',
+    ]}
+    steps={extintoresSteps}
+  />
+
+  {/* ─── Normas, empresa y contacto ─── */}
   <NormsTable
     eyebrow="Norma por agente"
     title="Qué norma respalda"
@@ -184,27 +253,12 @@ const schemaData = {
     columns={['Norma', 'Qué regula', 'Aplica a']}
     note="Normas de producto consultadas en el catálogo de normas de la Secretaría de Economía, donde figuran vigentes. Cada extintor se entrega con su ficha técnica para tu expediente."
   />
-
-  {/* ─── Ciclo de vida del extintor (proceso, fondo oscuro) ─── */}
-  <ProcessSteps
-    eyebrow="Después de comprarlo"
-    title="Lo que le toca a un extintor"
-    titleAccent="durante su vida útil"
-    desc="Comprarlo es el primer paso; mantenerlo vigente es lo que revisa la autoridad."
-    body={[
-      'Un extintor vencido o sin revisión cuenta como si no existiera en una inspección. La norma pide una revisión mensual, un mantenimiento anual y una prueba del cilindro cada 5 años.',
-      'Las dos primeras las puedes llevar tú con la bitácora; el mantenimiento y la prueba hidrostática los hace un proveedor, y nosotros los hacemos.',
-    ]}
-    steps={extintoresSteps}
-  />
-
-  {/* ─── Sobre esta familia ─── */}
   <section class="section section--surface">
     <div class="container">
       <SectionHeading
         layout="duo"
         eyebrow="Sobre esta familia"
-        title="Cuatro agentes,"
+        title="Cinco familias,"
         titleAccent="un solo proveedor"
         desc="El extintor y el servicio que pide durante toda su vida útil."
         body={[
@@ -219,16 +273,12 @@ const schemaData = {
       />
     </div>
   </section>
-
-  {/* ─── Interlinking ─── */}
   <RelatedLinks
     title="Sigue por aquí"
     desc="Lo que suele hacer falta después de elegir el extintor."
     links={extintoresRelated}
     limit={4}
   />
-
-  {/* ─── FAQ + Contacto ─── */}
   <FAQWithContact items={extintoresFaqs} waNumber={CONTACT.whatsapp} />
 </PageLayout>
 

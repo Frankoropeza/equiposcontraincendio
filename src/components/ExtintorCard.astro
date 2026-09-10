@@ -1,0 +1,194 @@
+---
+// ExtintorCard.astro — ficha técnica compacta para una presentación concreta.
+// Contrato: recibe un item normalizado desde la L3, con agente obligatorio y
+// los campos opcionales de capacidad, formato, clases, uso y validación.
+import { waUrl } from '@config/site';
+import {
+  EXT_ACCESORIOS,
+  EXT_AGENTE_INFO,
+  EXT_AGENTE_LABEL,
+  EXT_CLASE_LABEL,
+  EXT_FORMATO_LABEL,
+  EXT_USO_LABEL,
+} from '@data/extintores-catalogo';
+
+interface Item {
+  id: string;
+  nombre: string;
+  badge?: string;
+  desc: string;
+  specs: string;
+  agente: string;
+  capacidad?: string;
+  formato?: string;
+  clases?: string[];
+  clasificacion?: string;
+  usos?: string[];
+  validacion?: string;
+  waText: string;
+  fichaHref: string;
+  imagen?: string;
+}
+
+interface Props {
+  item: Item;
+  index?: number;
+}
+
+const { item, index = 0 } = Astro.props as Props;
+const info = EXT_AGENTE_INFO[item.agente as keyof typeof EXT_AGENTE_INFO];
+const accesorios = item.formato
+  ? EXT_ACCESORIOS[item.formato as keyof typeof EXT_ACCESORIOS]
+  : [];
+---
+
+<article
+  class="ecard"
+  id={item.id}
+  data-agente={item.agente}
+  data-formato={item.formato ?? ''}
+  data-usos={item.usos?.join(' ') ?? ''}
+  data-clases={item.clases?.join(' ') ?? ''}
+  style={`--card-index: ${index}`}
+>
+  {item.imagen && (
+    <img
+      class="ecard__image"
+      src={item.imagen}
+      alt={`${item.nombre} — imagen ilustrativa`}
+      width="640"
+      height="400"
+      loading="lazy"
+      decoding="async"
+    />
+  )}
+
+  <div class="ecard__body">
+    <header class="ecard__header">
+      <div class="ecard__agent">
+        <span class="ecard__badge">
+          {EXT_AGENTE_LABEL[item.agente as keyof typeof EXT_AGENTE_LABEL]}
+        </span>
+        {item.formato && (
+          <span class="ecard__format">
+            {EXT_FORMATO_LABEL[item.formato as keyof typeof EXT_FORMATO_LABEL]}
+          </span>
+        )}
+      </div>
+      <div class="ecard__labels">
+        {item.badge && <span class="ecard__badge ecard__badge--outline">{item.badge}</span>}
+        {item.validacion === 'pendiente' && (
+          <span class="ecard__badge ecard__badge--pending">Dato por confirmar</span>
+        )}
+      </div>
+    </header>
+
+    <div class="ecard__key-data">
+      {item.capacidad && <strong class="ecard__capacity">{item.capacidad}</strong>}
+      {item.clases?.length ? (
+        <div class="ecard__class-chips" aria-label="Clases de fuego">
+          {item.clases.map((clase) => (
+            <span
+              title={EXT_CLASE_LABEL[clase as keyof typeof EXT_CLASE_LABEL]}
+              aria-label={EXT_CLASE_LABEL[clase as keyof typeof EXT_CLASE_LABEL]}
+            >
+              {clase}
+            </span>
+          ))}
+        </div>
+      ) : null}
+      {item.clasificacion && (
+        <small class="ecard__classification">
+          Clasificación {item.clasificacion} · según fabricante
+        </small>
+      )}
+    </div>
+
+    <h3 class="ecard__title">{item.nombre}</h3>
+    <p class="ecard__desc">{item.desc}</p>
+
+    {item.usos?.length ? (
+      <div class="ecard__use-row">
+        <strong>Uso sugerido</strong>
+        <div class="ecard__use-tags">
+          {item.usos.map((uso) => <span>{EXT_USO_LABEL[uso as keyof typeof EXT_USO_LABEL]}</span>)}
+        </div>
+      </div>
+    ) : null}
+
+    {info && (
+      <div class="ecard__block">
+        <strong>Ventajas</strong>
+        <ul class="ecard__checks">
+          {info.ventajas.map((ventaja) => <li>{ventaja}</li>)}
+        </ul>
+      </div>
+    )}
+
+    {info && (
+      <p class="ecard__limit">
+        <strong>Limitación:</strong> {info.limitacion}
+      </p>
+    )}
+
+    {info && accesorios.length > 0 && (
+      <details class="ecard__more">
+        <summary>Mantenimiento y accesorios</summary>
+        <p><strong>Mantenimiento:</strong> {info.mantenimiento}</p>
+        <div class="ecard__links">
+          {accesorios.map((link) => <a href={link.href}>{link.label}</a>)}
+        </div>
+      </details>
+    )}
+
+    <div class="ecard__actions">
+      <a
+        class="btn btn--primary"
+        href={waUrl(item.waText)}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Cotizar
+      </a>
+      <a class="ecard__secondary" href={item.fichaHref}>
+        Ficha técnica <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</article>
+
+<style>
+  .ecard { display: flex; flex-direction: column; height: 100%; min-width: 0; overflow: hidden; border: 1px solid var(--c-border); border-radius: var(--radius-lg); background: var(--c-white); box-shadow: var(--shadow-sm); }
+  .ecard[hidden] { display: none; }
+  .ecard__image { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: var(--c-surface); }
+  .ecard__body { display: flex; flex: 1; flex-direction: column; padding: var(--sp-5); }
+  .ecard__header { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--sp-3); margin-bottom: var(--sp-4); }
+  .ecard__agent, .ecard__labels, .ecard__use-tags, .ecard__links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2); }
+  .ecard__labels { justify-content: flex-end; }
+  .ecard__badge { display: inline-flex; max-width: 100%; padding: .3em .65em; border: 1px solid var(--c-primary); border-radius: var(--radius-sm); background: var(--c-primary); color: #fff; font-size: var(--text-xs); font-weight: var(--weight-bold); letter-spacing: .03em; text-transform: uppercase; }
+  .ecard__badge--outline { overflow: hidden; border-color: var(--c-border); background: var(--c-white); color: var(--c-ink-2); text-overflow: ellipsis; white-space: nowrap; }
+  .ecard__badge--pending { border-color: #e4d2a7; background: #f4ead4; color: #735b24; white-space: nowrap; }
+  .ecard__format { color: var(--c-muted); font-size: var(--text-xs); }
+  .ecard__key-data { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-3); margin-bottom: var(--sp-4); padding: var(--sp-3) var(--sp-4); border-radius: var(--radius-md); background: var(--c-surface); }
+  .ecard__capacity { color: var(--c-ink); font-size: var(--text-2xl); line-height: 1; }
+  .ecard__class-chips { display: flex; gap: var(--sp-1); }
+  .ecard__class-chips span { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border: 1px solid var(--c-border); border-radius: var(--radius-sm); color: var(--c-ink); font-weight: var(--weight-bold); }
+  .ecard__classification { flex-basis: 100%; color: var(--c-muted); font-size: var(--text-xs); }
+  .ecard__title { margin: 0 0 var(--sp-3); font-family: var(--font-heading); font-size: var(--text-lg); line-height: var(--leading-snug); }
+  .ecard__desc { margin: 0 0 var(--sp-4); color: var(--c-ink-2); font-size: var(--text-sm); line-height: var(--leading-relaxed); }
+  .ecard__use-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2) var(--sp-3); margin-bottom: var(--sp-4); font-size: var(--text-sm); }
+  .ecard__use-row > strong, .ecard__block > strong { font-size: var(--text-xs); letter-spacing: .06em; text-transform: uppercase; }
+  .ecard__use-tags span { padding: .2em .5em; border-radius: var(--radius-sm); background: var(--c-surface); color: var(--c-ink-2); font-size: var(--text-xs); }
+  .ecard__block { margin-bottom: var(--sp-4); font-size: var(--text-sm); }
+  .ecard__checks { display: grid; gap: var(--sp-1); margin: var(--sp-2) 0 0; padding: 0; list-style: none; color: var(--c-ink-2); }
+  .ecard__checks li::before { margin-right: var(--sp-2); color: var(--c-primary); content: '✓'; font-weight: var(--weight-bold); }
+  .ecard__limit { margin: 0 0 var(--sp-4); padding: var(--sp-3); border-left: 3px solid #c7a45b; background: #fbf7ec; color: var(--c-ink-2); font-size: var(--text-sm); }
+  .ecard__more { margin-bottom: var(--sp-4); border-top: 1px solid var(--c-border); border-bottom: 1px solid var(--c-border); padding: var(--sp-3) 0; }
+  .ecard__more summary { color: var(--c-ink); cursor: pointer; font-size: var(--text-sm); font-weight: var(--weight-semibold); }
+  .ecard__more p { margin: var(--sp-3) 0; color: var(--c-muted); font-size: var(--text-xs); line-height: var(--leading-normal); }
+  .ecard__links a, .ecard__secondary { color: var(--c-primary); font-size: var(--text-sm); font-weight: var(--weight-semibold); text-decoration: none; }
+  .ecard__links a:hover, .ecard__secondary:hover { text-decoration: underline; }
+  .ecard__actions { display: flex; align-items: center; gap: var(--sp-4); margin-top: auto; padding-top: var(--sp-4); border-top: 1px solid var(--c-border); }
+  .ecard__actions .btn { flex: 1; text-align: center; }
+  @media (max-width: 480px) { .ecard__header { flex-direction: column; } .ecard__labels { justify-content: flex-start; } }
+</style>

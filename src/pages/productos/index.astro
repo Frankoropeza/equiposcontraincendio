@@ -32,6 +32,12 @@ const productos = (await getCollection('productos', ({ data }) => !data.draft)).
   (a, b) => a.data.order - b.data.order,
 );
 
+// Retícula del listado de fichas sin fila huérfana: 4 columnas si el número
+// de fichas es múltiplo de 4, 3 si lo es de 3; si no, 4 columnas más la celda
+// de cierre «¿No encuentras…?» (que solo se pinta en ese último caso).
+const gridTrio = productos.length % 4 !== 0 && productos.length % 3 === 0;
+const showClosure = productos.length % 4 !== 0 && !gridTrio;
+
 const CAT_LABEL: Record<string, string> = {
   extintores: 'Extintores',
   'deteccion-alarmas': 'Detección',
@@ -70,14 +76,14 @@ const CATEGORY_FEATURES = [
     title: 'El extintor correcto para',
     titleAccent: 'lo que puede arder',
     description:
-      'No todos los fuegos se apagan igual y el agente equivocado puede empeorarlo. Te ayudamos a elegir entre PQS, CO₂, agua y agente K según el riesgo real de tu inmueble, con la capacidad adecuada y el servicio de recarga conforme a norma.',
+      'No todos los fuegos se apagan igual y el agente equivocado puede empeorarlo. Te ayudamos a elegir entre PQS, CO₂, agua, agente K y agente limpio según el riesgo real de tu inmueble, con la capacidad adecuada y el servicio de recarga conforme a norma.',
     features: [
       { label: 'PQS ABC multipropósito', desc: 'El más versátil: oficinas, comercios, bodegas y casa. Clases A, B y C.' },
       { label: 'CO₂ para tableros y sites', desc: 'No conduce ni deja residuo en cuartos eléctricos. Clases B y C.' },
       { label: 'Agente K para cocina', desc: 'Sofoca aceites y grasas calientes; obligatorio bajo campana.' },
       { label: 'Recarga y mantenimiento', desc: 'Servicio anual con etiqueta y collarín; prueba de presión cada 5 años.' },
     ],
-    brands: [{ name: 'Kidde' }, { name: 'Amerex' }, { name: 'Stelfire' }, { name: 'Buckeye' }, { name: 'Suprema' }],
+    brands: [{ name: 'Amerex' }, { name: 'Kidde' }, { name: 'Badger' }, { name: 'Buckeye' }, { name: 'Ansul' }],
     ctaLabel: 'Cotizar extintores',
     ctaMsg: 'Hola, quiero cotizar extintores (PQS, CO₂ o clase K). ¿Me ayudan a elegir la capacidad según mi riesgo?',
     ctaSecondaryLabel: 'Extintores portátiles',
@@ -224,7 +230,7 @@ const CATEGORY_FEATURES = [
       { label: 'Soportes y porta-extintores', desc: 'Pared, poste o gabinete; mantienen la altura reglamentaria de 1.50 m.' },
       { label: 'Herramienta de servicio', desc: 'Adaptadores y equipo para recarga y prueba hidrostática.' },
     ],
-    brands: [{ name: 'Kidde' }, { name: 'Amerex' }, { name: 'Stelfire' }, { name: 'Suprema' }],
+    brands: [{ name: 'Amerex' }, { name: 'Kidde' }, { name: 'Badger' }, { name: 'Buckeye' }],
     ctaLabel: 'Cotizar accesorios',
     ctaMsg: 'Hola, quiero cotizar refacciones y accesorios para mantenimiento de extintores (NOM-154).',
     ctaSecondaryLabel: 'Soportes para extintor',
@@ -376,7 +382,7 @@ const schemaData = {
             'Pide cotización por WhatsApp indicando el producto y la cantidad — te respondemos con precio, disponibilidad y tiempos de entrega.',
           ]}
         />
-        <div class="card-grid">
+        <div class={gridTrio ? 'card-grid card-grid--trio' : 'card-grid'}>
           {productos.map((p, i) => (
             <ProductCard
               title={p.data.title}
@@ -393,8 +399,9 @@ const schemaData = {
               publica solo lo de mayor rotación). Solo se pinta cuando el número
               de fichas deja hueco en la retícula de 4 columnas: con 7 fichas
               completaba la segunda fila; con 8 (desde la ficha de agua,
-              2026-09-10) la fila ya está llena y la celda la dejaría huérfana. */}
-          {productos.length % 4 !== 0 && <ServiceCard
+              2026-09-10) la fila ya está llena y la celda la dejaría huérfana;
+              con 9 (desde agente limpio) la retícula pasa a 3 columnas. */}
+          {showClosure && <ServiceCard
             title="¿No encuentras el equipo que buscas?"
             description="El catálogo publica lo de mayor rotación. Surtimos más marcas, capacidades y equipo especializado: dinos qué necesitas y te cotizamos con disponibilidad y tiempo de entrega."
             href={waUrl('Hola, busco un equipo contra incendio que no vi en el catálogo. ¿Me ayudan a cotizarlo?')}

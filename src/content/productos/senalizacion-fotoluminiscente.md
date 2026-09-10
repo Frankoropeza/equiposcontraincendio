@@ -5,7 +5,7 @@ category: senalizacion
 image: /images/productos/senalizacion-luces-emergencia.avif
 price: "Cotizar"
 brand: "Equipos Contra Incendio"
-order: 7
+order: 8
 seoTitle: "Señalización fotoluminiscente de emergencia"
 seoDescription: "Compara señales fotoluminiscentes para evacuación, salida, extintor, hidrante, punto de reunión y primeros auxilios."
 variantes:

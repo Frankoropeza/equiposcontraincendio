@@ -25,6 +25,7 @@ export function slugify(input: string): string {
   return (input ?? '')
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '') // quita diacríticos
+    .replace(/₂/g, '2')
     .replace(/[ºª]/g, '')
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')

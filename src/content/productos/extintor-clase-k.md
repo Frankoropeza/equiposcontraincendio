@@ -13,16 +13,31 @@ variantes:
     desc: "Capacidad compacta documentada en el mercado mexicano para áreas de cocción con espacio limitado. La cobertura necesaria debe definirse según equipos, aceites y distribución de la cocina."
     specs: "Químico húmedo · 4 L · Fuego Clase K · Portátil · Servicio NOM-154"
     waText: "Hola, necesito cotizar un extintor Clase K de 4 litros en CDMX"
+    agente: "clase-k"
+    capacidad: "4 L"
+    formato: "portatil"
+    clases: [K]
+    usos: [restaurante, hotel]
   - nombre: "Extintor Clase K de 6 L"
     badge: "Cocina comercial"
     desc: "Presentación común para cocinas comerciales y restaurantes con freidoras, planchas o equipos que usan grasas. La descarga de niebla busca aplicar el agente sin proyectar el aceite en combustión."
     specs: "Químico húmedo · 6 L · Fuego Clase K · Portátil · Servicio NOM-154"
     waText: "Hola, necesito cotizar un extintor Clase K de 6 litros en CDMX"
+    agente: "clase-k"
+    capacidad: "6 L"
+    formato: "portatil"
+    clases: [K]
+    usos: [restaurante, hotel]
   - nombre: "Extintor Clase K de 9.46 L"
     badge: "Mayor capacidad"
     desc: "Presentación de mayor volumen para cocinas con varios equipos o una carga de aceites superior. Debe seleccionarse junto con el análisis del sistema fijo de campana cuando éste exista."
     specs: "Químico húmedo · 9.46 L / 2.5 gal · Fuego Clase K · Portátil"
     waText: "Hola, necesito cotizar un extintor Clase K de 9.46 litros en CDMX"
+    agente: "clase-k"
+    capacidad: "9.46 L (2.5 gal)"
+    formato: "portatil"
+    clases: [K]
+    usos: [restaurante, hotel]
 ---
 
 Los fuegos de **aceites y grasas de cocción** trabajan a temperaturas altas y pueden reignitar. El agente químico húmedo enfría y reacciona con la grasa para formar una capa que ayuda a aislar la superficie.

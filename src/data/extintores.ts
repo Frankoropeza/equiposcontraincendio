@@ -1,7 +1,9 @@
 // ============================================================================
 // src/data/extintores.ts — Datos de la L3 /productos/extintores/.
 // ----------------------------------------------------------------------------
-// PRIMERA L3 DEL SITIO (2026-09-10). Jerarquía de productos:
+// PRIMERA L3 DEL SITIO (2026-09-10). Catálogo ampliado el mismo día: ver
+// src/data/extintores-catalogo.ts (filtros, tablas, marcas) y las variantes
+// estructuradas de cada ficha. Jerarquía de productos:
 //   L2 /productos/  →  L3 /productos/extintores/  →  L4 /productos/<ficha>/
 // Las fichas se quedan en URL plana (/productos/extintor-pqs/, etc.): la
 // jerarquía la dan las migas y el BreadcrumbList, sin redirecciones.
@@ -40,9 +42,21 @@ export type RiskRow = { nivel: string; ejemplos: string; minimo: string; complem
 export type NormRow = { norma: string; alcance: string; aplica: string };
 export type Step = { num: string; title: string; desc: string };
 
+// ── Hero (2026-09-10, catálogo ampliado) ─────────────────────────────────────
+// Título y acento en extSeo (src/data/extintores-catalogo.ts).
+export const extintoresHero = {
+  badge: 'Catálogo de extintores · entrega en CDMX y Edomex',
+  subtitle:
+    'PQS, CO₂, clase K, agua, espuma y agente limpio, en portátil y sobre ruedas, con la recarga y el mantenimiento que pide la norma durante toda su vida útil.',
+  descRight: [
+    'Un extintor no se elige por tamaño ni por color: se elige por lo que puede arder en cada zona. El agente equivocado no solo falla; puede avivar el incendio o exponer a quien lo usa.',
+    'Aquí están todas las presentaciones que cotizamos, filtrables por agente, capacidad, tipo de negocio y clase de fuego, con lo que conviene revisar antes de elegir cada una.',
+  ],
+};
+
 // ── Barra de confianza ───────────────────────────────────────────────────────
 export const extintoresPillars = [
-  { icon: 'check', title: 'Cuatro agentes', desc: 'PQS, CO₂, agua y agente K: se elige por lo que puede arder, no por costumbre.' },
+  { icon: 'check', title: 'Cinco agentes', desc: 'PQS, CO₂, clase K, agua y agente limpio: se elige por lo que puede arder.' },
   { icon: 'doc', title: 'Ficha y etiqueta', desc: 'Cada equipo sale con su ficha técnica y la etiqueta de servicio para tu expediente.' },
   { icon: 'clock', title: 'Servicio de por vida', desc: 'Mantenimiento anual y prueba hidrostática a 5 años con quien te lo vendió.' },
   { icon: 'chat', title: 'Te decimos cuál no', desc: 'Si el agente que pides no sirve para tu riesgo, te lo decimos antes de cotizar.' },
@@ -54,10 +68,11 @@ export const extintoresPillars = [
 // tarjeta la cortaba con elipsis — medido en el navegador el 2026-09-10.
 // ctaLabel = keyword limpia del destino (regla de anchor text, tope ~24 car.).
 export const extintoresFichas: Record<string, { badge: string; blurb: string; ctaLabel: string }> = {
-  'extintor-pqs': { badge: 'Clases A · B · C', blurb: 'Un solo agente para sólidos, líquidos inflamables y equipo eléctrico. De 1 a 50 kg.', ctaLabel: 'Extintores PQS ABC' },
+  'extintor-pqs': { badge: 'Clases A · B · C', blurb: 'Un solo agente para sólidos, líquidos inflamables y equipo eléctrico. De 1 a 70 kg.', ctaLabel: 'Extintores PQS ABC' },
   'extintor-co2': { badge: 'Clases B · C', blurb: 'Sin residuo para tableros, sites y electrónica. Portátil y móvil sobre ruedas.', ctaLabel: 'Extintores de CO₂' },
   'extintor-clase-k': { badge: 'Clase K · Cocina', blurb: 'Químico húmedo para aceites y grasas de cocción. Complementa el sistema de la campana.', ctaLabel: 'Extintores clase K' },
   'extintor-agua': { badge: 'Clases A · B', blurb: 'Agua a presión, nebulizada y espuma AFFF para sólidos y líquidos inflamables.', ctaLabel: 'Extintores de agua' },
+  'extintor-agente-limpio': { badge: 'Clases B · C · A', blurb: 'Halotron I y FE-36: sin residuo ni conductividad, para sites y equipo electrónico.', ctaLabel: 'Agente limpio' },
 };
 
 // ── Módulos por agente (CategoryFeature) ─────────────────────────────────────
@@ -73,7 +88,7 @@ export const extintoresFeatures = [
       'Es el extintor que más se instala porque cubre sólidos, líquidos inflamables y equipo eléctrico con un solo agente. Su límite es el residuo: el polvo es fino, se deposita en los equipos y obliga a limpiar a fondo después de usarlo. Donde lo que se protege es electrónica o una cocina, conviene otro agente.',
     features: [
       { label: 'Tres clases en un equipo', desc: 'Sólidos, líquidos inflamables y riesgo eléctrico con el mismo extintor.' },
-      { label: 'De 1 a 50 kg', desc: 'Del vehículo a la nave industrial: cinco portátiles y un móvil sobre ruedas.' },
+      { label: 'De 1 a 70 kg', desc: 'Del vehículo a la nave industrial: cinco portátiles y tres unidades sobre ruedas.' },
       { label: 'Deja residuo', desc: 'El polvo cubre el área y puede dañar electrónica; hay que limpiar después.' },
       { label: 'No va en la cocina', desc: 'Contra aceite de cocción no basta: bajo la campana va agente K.' },
     ],
@@ -148,6 +163,27 @@ export const extintoresFeatures = [
     imgA: { src: '/images/servicios/inspeccion-recarga-extintores.avif', alt: 'Recarga y mantenimiento de extintores en taller de servicio' },
     imgB: { src: '/images/servicios/prueba-hidrostatica-extintor.avif', alt: 'Prueba hidrostática de extintor en el taller de servicio' },
   },
+  {
+    id: 'extintor-agente-limpio',
+    eyebrow: 'Agente limpio · Halotron I y FE-36 · Clases B, C y A',
+    title: 'Agente limpio,',
+    titleAccent: 'para lo que no puede ensuciarse',
+    description:
+      'El agente se evapora al descargarse: no conduce la electricidad y no deja residuo, así que protege servidores y equipo sensible sin dañarlos. Es la opción cuando el PQS obligaría a una limpieza costosa y el CO₂ no alcanza porque también hay material de clase A.',
+    features: [
+      { label: 'Sin residuo', desc: 'El agente se evapora; el equipo protegido no se ensucia.' },
+      { label: 'No conduce', desc: 'Se usa junto a equipo eléctrico energizado.' },
+      { label: 'Clase A desde 4.3 kg', desc: 'Las presentaciones mayores también cubren sólidos (según fabricante).' },
+      { label: 'Dos agentes', desc: 'Halotron I de 1.1 a 7 kg y FE-36 de 4.3 y 6 kg.' },
+    ],
+    ctaLabel: 'Agente limpio',
+    ctaHref: '/productos/extintor-agente-limpio/',
+    ctaSecondaryLabel: 'Cotizar agente limpio',
+    ctaMsg: 'Hola, quiero cotizar extintores de agente limpio para un site o equipo electrónico.',
+    imgMain: { src: '/images/servicios/supresion-agente-limpio-data-center.avif', alt: 'Cilindros de agente limpio protegiendo un data center' },
+    imgA: { src: '/images/servicios/inspeccion-sistema-alarma-extintor.avif', alt: 'Ruta de evacuación señalizada junto a extintor en nave industrial' },
+    imgB: { src: '/images/servicios/etiquetado-inspeccion-extintor.avif', alt: 'Colocación de etiqueta y collarín de servicio en el extintor' },
+  },
 ];
 
 // ── Qué agente apaga cada clase de fuego ─────────────────────────────────────
@@ -164,13 +200,13 @@ export const extintoresClases: RiskRow[] = [
   {
     nivel: 'Clase B',
     ejemplos: 'Gasolina, diésel, solventes, pinturas y gas',
-    minimo: 'PQS ABC, CO₂ o espuma AFFF',
+    minimo: 'PQS ABC, CO₂, espuma AFFF o agente limpio',
     complementos: 'Agua a presión: esparce el líquido encendido',
   },
   {
     nivel: 'Clase C',
     ejemplos: 'Tableros, motores y cableado energizados',
-    minimo: 'CO₂, PQS ABC o agua nebulizada con clasificación C',
+    minimo: 'CO₂, agente limpio, PQS ABC o agua nebulizada con clasificación C',
     complementos: 'Agua a presión y espuma AFFF: conducen la corriente',
   },
   {
@@ -183,7 +219,7 @@ export const extintoresClases: RiskRow[] = [
     nivel: 'Clase D',
     ejemplos: 'Metales combustibles: magnesio, sodio o titanio',
     minimo: 'Polvo especial para el metal de que se trate',
-    complementos: 'Ninguno de los cuatro agentes de este catálogo',
+    complementos: 'Ninguno de los agentes de este catálogo',
   },
 ];
 
@@ -195,6 +231,7 @@ export const extintoresNormRows: NormRow[] = [
   { norma: 'NOM-102-STPS-1994', alcance: 'Seguridad de los extintores a base de bióxido de carbono, parte 1: recipientes', aplica: 'Extintores de CO₂' },
   { norma: 'NOM-103-STPS-1994', alcance: 'Extintores a base de agua con presión contenida, incluidos los aditivos espumantes, para clases A y B', aplica: 'Agua a presión y espuma AFFF' },
   { norma: 'NFPA 10 (ref.)', alcance: 'Clasificación de fuegos, incluida la clase K, y criterios de selección y ubicación de extintores', aplica: 'Extintores clase K' },
+  { norma: 'Clasificación del fabricante', alcance: 'Sin NOM mexicana de producto específica: la clase de fuego y el rango constan en la etiqueta del modelo', aplica: 'Agente limpio (Halotron I, FE-36)' },
   { norma: 'NOM-106-SCFI-2017', alcance: 'Diseño y uso de la contraseña oficial que identifica al producto certificado', aplica: 'Extintores sujetos a norma de producto' },
   { norma: 'NOM-002-STPS-2010', alcance: 'Extintor acorde a la clase de fuego, distancia máxima de recorrido y revisión mensual (7.18)', aplica: 'Selección y colocación en el centro de trabajo' },
   { norma: 'NOM-154-SCFI-2005', alcance: 'Mantenimiento, recarga y prueba hidrostática del cilindro cada 5 años (5.6)', aplica: 'Los cuatro agentes' },
@@ -215,7 +252,7 @@ export const extintoresCompany = {
   que: {
     title: 'Qué encuentras en esta familia',
     body: [
-      'Cuatro agentes extintores, en portátil y sobre ruedas: polvo químico seco ABC, dióxido de carbono, agente K para cocina y la familia a base de agua, que reúne agua a presión, agua nebulizada y espuma AFFF. Cada agente tiene su ficha con todas sus presentaciones.',
+      'Cinco familias de extintores, en portátil y sobre ruedas: polvo químico seco ABC, dióxido de carbono, agente K para cocina, la familia a base de agua (agua a presión, agua nebulizada y espuma AFFF) y agente limpio. Cada familia tiene su ficha con todas sus presentaciones.',
       'Además de venderlos, damos el servicio que la norma pide durante toda su vida útil: mantenimiento anual, recarga y prueba hidrostática. El extintor que compras aquí tiene a quién volver.',
     ],
   },
@@ -234,6 +271,10 @@ export const extintoresRelated = [
   { label: 'Prueba hidrostática', href: '/servicios/prueba-hidrostatica/', desc: 'Retimbrado del cilindro cada 5 años.' },
   { label: 'Cuántos extintores necesito', href: '/herramientas/cuantos-extintores-necesito/', desc: 'Cálculo por superficie y nivel de riesgo.' },
   { label: 'Tipos de extintores', href: '/blog/como-elegir-extintor-clase-fuego/', desc: 'La guía completa de clases de fuego y agentes.' },
+  { label: 'Instalación de extintores', href: '/servicios/instalacion/', desc: 'Montaje a la altura correcta y señalización.' },
+  { label: 'Inspección y dictamen', href: '/servicios/inspeccion/', desc: 'Revisión del equipo instalado y su reporte.' },
+  { label: 'Cotizar extintores', href: '/contacto/', desc: 'Escríbenos con tu giro y superficie.' },
+  { label: 'Protección Civil', href: '/proteccion-civil/', desc: 'Qué pide el trámite en CDMX y Edomex.' },
 ];
 
 // ── FAQ propio de la L3 ──────────────────────────────────────────────────────
@@ -262,5 +303,25 @@ export const extintoresFaqs = [
   {
     question: '¿Venden extintores para metales combustibles (clase D)?',
     answer: 'No forman parte de este catálogo, porque el agente depende del metal: magnesio, sodio o titanio piden polvos distintos. Si tu proceso los maneja, se revisa el caso y se cotiza como equipo especializado.',
+  },
+  {
+    question: '¿Qué extintor necesita un restaurante?',
+    answer: 'Un extintor clase K junto a la línea de cocción, porque es el agente formulado para aceites y grasas, y extintores PQS ABC en comedor y pasillos. La NOM-002-STPS-2010 fija en 10 m la distancia máxima de recorrido a un extintor clase K. Si la campana tiene sistema fijo de supresión, el extintor lo complementa; no lo sustituye.',
+  },
+  {
+    question: '¿Cuántos extintores necesita mi empresa?',
+    answer: 'La NOM-002-STPS-2010 pide al menos un extintor por cada 300 m² en riesgo ordinario y por cada 200 m² en riesgo alto, además de respetar la distancia máxima de recorrido de cada clase de fuego. Nuestra calculadora te da un primer número; la cantidad definitiva sale del plano del inmueble.',
+  },
+  {
+    question: '¿Es obligatorio llevar extintor en el auto?',
+    answer: 'Depende de la entidad. En el Estado de México, el Reglamento de Tránsito pide portar un extinguidor en buenas condiciones de uso (art. 17, fracción V), y el artículo 35 lo exige a los vehículos de uso comercial y público. En otras entidades conviene revisar el reglamento local vigente. La presentación habitual es un PQS ABC de 1 a 2 kg.',
+  },
+  {
+    question: '¿Qué marcas de extintores manejan?',
+    answer: 'La marca y el modelo se confirman al cotizar, según disponibilidad. En esta página listamos marcas reconocidas del mercado mexicano como referencia; su mención no significa que las distribuyamos. Si tu corporativo o tu aseguradora piden una marca específica, indícalo en tu mensaje.',
+  },
+  {
+    question: '¿Qué es un extintor de agente limpio?',
+    answer: 'Es un extintor cuyo agente se evapora al descargarse: no conduce la electricidad ni deja residuo. Se usa en sites, telecomunicaciones y equipo sensible. Las presentaciones chicas cubren clases B y C; a partir de 4.3 kg (FE-36) o 5 kg (Halotron I) el fabricante también las clasifica para clase A.',
   },
 ];

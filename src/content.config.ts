@@ -111,6 +111,15 @@ export const ARTICLE_CATEGORIES = [
 // tofu → orientación, mofu → diagnóstico/servicio, bofu → cotización directa.
 export const ARTICLE_FUNNELS = ['tofu', 'mofu', 'bofu'] as const;
 
+// Taxonomía técnica de las presentaciones de extintor (2026-09-10, catálogo
+// de la L3 /productos/extintores/). Son los ejes de los filtros del catálogo:
+// cada presentación declara su agente, formato, clases de fuego y usos. Las
+// etiquetas visibles viven en src/data/extintores.ts (EXT_*_LABEL).
+export const EXT_AGENTES = ['pqs', 'co2', 'clase-k', 'agua', 'agua-nebulizada', 'espuma', 'agente-limpio'] as const;
+export const EXT_FORMATOS = ['portatil', 'movil'] as const;
+export const EXT_CLASES = ['A', 'B', 'C', 'D', 'K'] as const;
+export const EXT_USOS = ['oficina', 'comercio', 'restaurante', 'hotel', 'bodega', 'industria', 'vehiculo', 'site'] as const;
+
 export const ZONE_TYPES = ['ciudad', 'estado', 'alcaldia', 'municipio', 'zona'] as const;
 
 // ── Colección: productos ──────────────────────────────────────────────────────
@@ -136,6 +145,16 @@ const productos = defineCollection({
             specs: z.string().min(20).max(200),
             imagen: imagePath.optional(),
             waText: z.string().min(20),
+            // ── Ficha técnica estructurada (opcional; la usa el catálogo de
+            // extintores). `clasificacion` SOLO si consta en la ficha del
+            // fabricante; `validacion: 'pendiente'` pinta el aviso en la card.
+            agente: z.enum(EXT_AGENTES).optional(),
+            capacidad: z.string().min(2).max(24).optional(),
+            formato: z.enum(EXT_FORMATOS).optional(),
+            clases: z.array(z.enum(EXT_CLASES)).min(1).optional(),
+            clasificacion: z.string().max(24).optional(),
+            usos: z.array(z.enum(EXT_USOS)).min(1).max(5).optional(),
+            validacion: z.enum(['verificado', 'pendiente']).optional(),
           }),
         )
         .min(1)

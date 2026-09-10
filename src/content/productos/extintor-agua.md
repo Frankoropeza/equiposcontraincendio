@@ -13,30 +13,62 @@ variantes:
     desc: "La presentación portátil de referencia para sólidos combustibles: papel, madera, cartón y textiles. Enfría la brasa y reduce la reignición, sin dejar polvo en el área. No debe dirigirse contra equipo eléctrico energizado."
     specs: "Agua a presión · 9 L · Fuego clase A · Portátil · No apto para equipo energizado"
     waText: "Hola, necesito cotizar un extintor de agua a presión de 9 litros en CDMX"
+    agente: "agua"
+    capacidad: "9 L"
+    formato: "portatil"
+    clases: [A]
+    usos: [bodega, oficina, hotel, comercio]
   - nombre: "Unidad móvil de agua a presión de 50 L"
     badge: "Sobre ruedas"
     desc: "Equipo sobre ruedas para bodegas, patios de maniobra y áreas con acumulación de material combustible, donde un portátil se queda corto. Requiere ruta de acceso libre y personal que sepa desplegar la manguera."
     specs: "Agua a presión · 50 L · Fuego clase A · Móvil · No apto para equipo energizado"
     waText: "Hola, necesito cotizar una unidad móvil de agua a presión de 50 litros en CDMX"
+    agente: "agua"
+    capacidad: "50 L"
+    formato: "movil"
+    clases: [A]
+    usos: [bodega, industria]
   - nombre: "Extintor de agua nebulizada de 6 L"
     badge: "Apto clase C"
     desc: "Agua desionizada que sale en niebla fina. Esa combinación le da la clasificación 2A:C del fabricante: apaga sólidos y puede usarse donde hay riesgo eléctrico, sin el residuo del polvo. Se usa en hospitales, telecomunicaciones y cuartos limpios."
     specs: "Agua desionizada nebulizada · 6 L (1.75 gal) · Clasificación 2A:C · Portátil · Sin residuo"
     waText: "Hola, necesito cotizar un extintor de agua nebulizada de 6 litros en CDMX"
+    agente: "agua-nebulizada"
+    capacidad: "6 L (1.75 gal)"
+    formato: "portatil"
+    clases: [A, C]
+    usos: [site, hotel, oficina]
+    clasificacion: "2A:C"
   - nombre: "Extintor de agua nebulizada de 9.46 L"
     desc: "La versión de mayor carga del agua nebulizada, con la misma clasificación 2A:C. Conviene en áreas amplias con equipo sensible, donde el polvo químico dañaría lo que se quiere proteger y el CO₂ no cubre fuegos de sólidos."
     specs: "Agua desionizada nebulizada · 9.46 L (2.5 gal) · Clasificación 2A:C · Portátil · Sin residuo"
     waText: "Hola, necesito cotizar un extintor de agua nebulizada de 9.46 litros en CDMX"
+    agente: "agua-nebulizada"
+    capacidad: "9.46 L (2.5 gal)"
+    formato: "portatil"
+    clases: [A, C]
+    usos: [site, hotel, industria]
+    clasificacion: "2A:C"
   - nombre: "Extintor de espuma AFFF de 9 L"
     badge: "Clases A y B"
     desc: "Agua con espumante AFFF que forma una película sobre el líquido inflamable y corta el vapor que alimenta la flama. Cubre sólidos y líquidos como gasolina, diésel o aceites. No es apto para alcoholes ni solventes polares."
     specs: "Agua + espumante AFFF · 9 L · Fuegos A y B · Portátil · No apto para equipo energizado"
     waText: "Hola, necesito cotizar un extintor de espuma AFFF de 9 litros en CDMX"
+    agente: "espuma"
+    capacidad: "9 L"
+    formato: "portatil"
+    clases: [A, B]
+    usos: [industria, bodega]
   - nombre: "Unidad móvil de espuma AFFF de 50 L"
     badge: "Sobre ruedas"
     desc: "Espuma AFFF en volumen para talleres, patios de combustible y almacenes de líquidos inflamables. Da tiempo de descarga suficiente para cubrir un derrame encendido que superaría a un portátil."
     specs: "Agua + espumante AFFF · 50 L · Fuegos A y B · Móvil · No apto para equipo energizado"
     waText: "Hola, necesito cotizar una unidad móvil de espuma AFFF de 50 litros en CDMX"
+    agente: "espuma"
+    capacidad: "50 L"
+    formato: "movil"
+    clases: [A, B]
+    usos: [industria]
 faqs:
   - question: "¿Puedo usar un extintor de agua en un tablero eléctrico?"
     answer: "El de agua a presión y el de espuma AFFF, no: el chorro conduce la corriente y expone a quien lo opera. La excepción es el agua nebulizada desionizada con clasificación C del fabricante, que se fabrica precisamente para áreas con riesgo eléctrico. Para tableros y sites el agente habitual sigue siendo el CO₂."

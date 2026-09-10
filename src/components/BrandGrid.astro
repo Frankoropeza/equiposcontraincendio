@@ -1,0 +1,48 @@
+---
+// BrandGrid.astro — retícula tipográfica de marcas del mercado.
+// Contrato: recibe extMarcas, su nota informativa y extSecciones.marcas.
+import SectionHeading from './SectionHeading.astro';
+
+interface Marca { nombre: string; tipo: string; origen: string; productos: string; nota?: string; }
+interface Copy { eyebrow: string; title: string; titleAccent: string; desc: string; body: string[]; }
+const { marcas, nota, copy } = Astro.props as { marcas: Marca[]; nota: string; copy: Copy };
+---
+
+<section class="brands section" id="marcas">
+  <div class="container">
+    <SectionHeading layout="duo" {...copy} />
+    <div class="brands__note">
+      <span aria-hidden="true">ⓘ</span>
+      <p>{nota}</p>
+    </div>
+    <div class="card-grid brands__grid">
+      {marcas.map((marca) => (
+        <article class="brands__card">
+          <div class="brands__top">
+            <h3>{marca.nombre}</h3>
+            <span class="brands__type">{marca.tipo}</span>
+          </div>
+          <p class="brands__origin">{marca.origen}</p>
+          <p>{marca.productos}</p>
+          {marca.nota && <small>{marca.nota}</small>}
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .brands { background: var(--c-white); }
+  .brands__note { display: flex; align-items: flex-start; gap: var(--sp-3); margin-bottom: var(--sp-6); padding: var(--sp-4); border: 1px solid var(--c-border); border-radius: var(--radius-md); background: var(--c-surface); color: var(--c-ink-2); }
+  .brands__note span { color: var(--c-primary); font-size: var(--text-xl); line-height: 1; }
+  .brands__note p { margin: 0; font-size: var(--text-sm); }
+  .brands__grid { grid-template-columns: repeat(2, 1fr); }
+  .brands__card { height: 100%; padding: var(--sp-4); border: 1px solid var(--c-border); border-radius: var(--radius-md); background: var(--c-white); }
+  .brands__top { display: flex; flex-direction: column; align-items: flex-start; gap: var(--sp-2); }
+  .brands__card h3 { margin: 0; font-family: var(--font-heading); font-size: var(--text-lg); }
+  .brands__type { padding: .25em .45em; border-radius: var(--radius-sm); background: var(--c-surface); color: var(--c-muted); font-size: var(--text-xs); }
+  .brands__card p { margin: var(--sp-3) 0 0; color: var(--c-ink-2); font-size: var(--text-sm); }
+  .brands__card .brands__origin { color: var(--c-primary); font-weight: var(--weight-semibold); }
+  .brands__card small { display: block; margin-top: var(--sp-3); color: var(--c-muted); font-size: var(--text-xs); }
+  @media (min-width: 1024px) { .brands__grid { grid-template-columns: repeat(5, 1fr); } }
+</style>

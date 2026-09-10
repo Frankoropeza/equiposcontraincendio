@@ -1,0 +1,249 @@
+---
+// ExtintorCatalog.astro — catálogo filtrable de presentaciones.
+// Contrato: recibe items normalizados y el copy de extSecciones.catalogo.
+import SectionHeading from './SectionHeading.astro';
+import ExtintorCard from './ExtintorCard.astro';
+import {
+  EXT_AGENTE_FILTRO,
+  EXT_FORMATO_LABEL,
+  EXT_USO_LABEL,
+  EXT_CLASE_LABEL,
+} from '@data/extintores-catalogo';
+import { waUrl } from '@config/site';
+
+interface Item {
+  id: string;
+  nombre: string;
+  desc: string;
+  specs: string;
+  agente: string;
+  fichaHref: string;
+  waText: string;
+  badge?: string;
+  capacidad?: string;
+  formato?: string;
+  clases?: string[];
+  clasificacion?: string;
+  usos?: string[];
+  validacion?: string;
+  imagen?: string;
+}
+
+interface Copy {
+  eyebrow: string;
+  title: string;
+  titleAccent: string;
+  desc: string;
+  body: string[];
+}
+
+type FilterOption = { value: string; label: string; agentes?: string; title?: string };
+type FilterKey = 'agente' | 'formato' | 'uso' | 'clase';
+type FilterGroup = { key: FilterKey; label: string; options: FilterOption[] };
+
+const { items, copy } = Astro.props as { items: Item[]; copy: Copy };
+const groups: FilterGroup[] = [
+  {
+    key: 'agente',
+    label: 'Agente',
+    options: EXT_AGENTE_FILTRO.map((option) => ({
+      value: option.key,
+      label: option.label,
+      agentes: option.agentes.join(','),
+    })),
+  },
+  {
+    key: 'formato',
+    label: 'Formato',
+    options: Object.entries(EXT_FORMATO_LABEL).map(([value, label]) => ({ value, label })),
+  },
+  {
+    key: 'uso',
+    label: 'Tipo de negocio',
+    options: Object.entries(EXT_USO_LABEL).map(([value, label]) => ({ value, label })),
+  },
+  {
+    key: 'clase',
+    label: 'Clase de fuego',
+    options: Object.keys(EXT_CLASE_LABEL)
+      .filter((value) => ['A', 'B', 'C', 'K'].includes(value))
+      .map((value) => ({
+        value,
+        label: `Clase ${value}`,
+        title: EXT_CLASE_LABEL[value as keyof typeof EXT_CLASE_LABEL],
+      })),
+  },
+];
+---
+
+<section class="catalog section" id="catalogo">
+  <div class="container">
+    <SectionHeading layout="duo" {...copy} />
+
+    <div class="catalog__interactive" hidden>
+      <div class="catalog__filters">
+        {groups.map((group) => (
+          <div class="catalog__group" data-filter-group={group.key}>
+            <strong>{group.label}</strong>
+            <div class="catalog__chips">
+              <button type="button" data-value="" aria-pressed="true">Todos</button>
+              {group.options.map((option) => (
+                <button
+                  type="button"
+                  data-value={option.value}
+                  data-agentes={option.agentes}
+                  title={option.title}
+                  aria-pressed="false"
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="catalog__meta">
+        <p class="catalog__count" aria-live="polite"></p>
+        <button class="btn btn--ghost catalog__clear" type="button">Limpiar filtros</button>
+      </div>
+    </div>
+
+    <div class="catalog__grid">
+      {items.map((item, index) => <ExtintorCard item={item} index={index} />)}
+    </div>
+
+    <div class="catalog__empty" hidden>
+      <p>No encontramos una presentación con esos filtros.</p>
+      <a
+        class="btn btn--primary"
+        href={waUrl('Hola, busco un extintor que no encontré en el catálogo. ¿Me ayudan?')}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Cotizar a medida
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  type FilterKey = 'agente' | 'formato' | 'uso' | 'clase';
+  const root = document.querySelector<HTMLElement>('.catalog');
+
+  if (root) {
+    const interactive = root.querySelector<HTMLElement>('.catalog__interactive');
+    const count = root.querySelector<HTMLElement>('.catalog__count');
+    const clear = root.querySelector<HTMLButtonElement>('.catalog__clear');
+    const empty = root.querySelector<HTMLElement>('.catalog__empty');
+    const cards = [...root.querySelectorAll<HTMLElement>('.ecard')];
+    const groups = [...root.querySelectorAll<HTMLElement>('[data-filter-group]')];
+    const state: Record<FilterKey, string> = { agente: '', formato: '', uso: '', clase: '' };
+
+    const readUrl = () => {
+      const params = new URLSearchParams(window.location.search);
+      (Object.keys(state) as FilterKey[]).forEach((key) => {
+        state[key] = params.get(key) ?? '';
+      });
+    };
+
+    const writeUrl = () => {
+      const params = new URLSearchParams(window.location.search);
+      (Object.keys(state) as FilterKey[]).forEach((key) => {
+        if (state[key]) params.set(key, state[key]);
+        else params.delete(key);
+      });
+      const query = params.toString();
+      history.replaceState(null, '', `${window.location.pathname}${query ? `?${query}` : ''}#catalogo`);
+    };
+
+    const apply = () => {
+      const agentButton = groups[0]?.querySelector<HTMLButtonElement>(
+        `[data-value="${state.agente}"]`,
+      );
+      const agents = agentButton?.dataset.agentes?.split(',') ?? [];
+      let visible = 0;
+
+      cards.forEach((card) => {
+        const matches =
+          (!state.agente || agents.includes(card.dataset.agente ?? '')) &&
+          (!state.formato || card.dataset.formato === state.formato) &&
+          (!state.uso || (card.dataset.usos ?? '').split(' ').includes(state.uso)) &&
+          (!state.clase || (card.dataset.clases ?? '').split(' ').includes(state.clase));
+        card.hidden = !matches;
+        if (matches) visible += 1;
+      });
+
+      if (count) count.textContent = `Mostrando ${visible} de ${cards.length} presentaciones`;
+      if (empty) empty.hidden = visible !== 0;
+      groups.forEach((group) => {
+        const key = group.dataset.filterGroup as FilterKey;
+        group.querySelectorAll<HTMLButtonElement>('button').forEach((button) => {
+          button.setAttribute('aria-pressed', button.dataset.value === state[key] ? 'true' : 'false');
+        });
+      });
+    };
+
+    const refresh = () => {
+      writeUrl();
+      apply();
+    };
+
+    groups.forEach((group) => {
+      group.addEventListener('click', (event) => {
+        const button = (event.target as HTMLElement).closest<HTMLButtonElement>('button');
+        const key = group.dataset.filterGroup as FilterKey;
+        if (!button || !key) return;
+        state[key] = button.dataset.value ?? '';
+        refresh();
+      });
+    });
+
+    clear?.addEventListener('click', () => {
+      (Object.keys(state) as FilterKey[]).forEach((key) => { state[key] = ''; });
+      refresh();
+    });
+
+    document.addEventListener('click', (event) => {
+      const link = (event.target as HTMLElement).closest<HTMLAnchorElement>('a[href^="?uso="]');
+      if (!link) return;
+      const url = new URL(link.href);
+      state.uso = url.searchParams.get('uso') ?? '';
+      refresh();
+      root.scrollIntoView();
+      event.preventDefault();
+    });
+
+    window.addEventListener('popstate', () => {
+      readUrl();
+      apply();
+    });
+
+    if (interactive) interactive.hidden = false;
+    readUrl();
+    apply();
+  }
+</script>
+
+<style>
+  .catalog { background: var(--c-surface); }
+  .catalog__interactive[hidden], .catalog__empty[hidden] { display: none; }
+  .catalog__filters { display: grid; gap: var(--sp-4); margin-bottom: var(--sp-5); padding: var(--sp-4); border: 1px solid var(--c-border); border-radius: var(--radius-lg); background: var(--c-white); }
+  /* minmax(0,1fr) + min-width:0: sin esto la fila de chips empuja el grid
+     al ancho de su contenido y desborda la página en móvil (medido a 390 px). */
+  .catalog__filters { grid-template-columns: minmax(0, 1fr); }
+  .catalog__group { min-width: 0; }
+  .catalog__group > strong { display: block; margin-bottom: var(--sp-2); font-size: var(--text-xs); letter-spacing: .06em; text-transform: uppercase; }
+  .catalog__chips { display: flex; gap: var(--sp-2); overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; scroll-snap-type: x proximity; }
+  .catalog__chips::-webkit-scrollbar { display: none; }
+  .catalog__chips button { flex: none; padding: .5em .85em; border: 1px solid var(--c-border); border-radius: var(--radius-full); background: var(--c-white); color: var(--c-ink-2); font: inherit; font-size: var(--text-sm); cursor: pointer; scroll-snap-align: start; }
+  .catalog__chips button[aria-pressed="true"] { border-color: var(--c-primary); background: var(--c-primary); color: #fff; }
+  .catalog__meta { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4); margin-bottom: var(--sp-4); }
+  .catalog__count { margin: 0; color: var(--c-muted); font-size: var(--text-sm); }
+  .catalog__clear { font-size: var(--text-sm); }
+  .catalog__grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-5); align-items: stretch; }
+  .catalog__empty { padding: var(--sp-8); border: 1px dashed var(--c-border); border-radius: var(--radius-lg); background: var(--c-white); text-align: center; }
+  .catalog__empty p { margin: 0 0 var(--sp-4); color: var(--c-muted); }
+  @media (min-width: 640px) { .catalog__grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1200px) { .catalog__grid { grid-template-columns: repeat(3, 1fr); } }
+</style>

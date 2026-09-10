@@ -5,7 +5,7 @@ category: deteccion-alarmas
 image: /images/productos/dispositivos-deteccion-alarma.avif
 price: "Cotizar"
 brand: "Equipos Contra Incendio"
-order: 5
+order: 6
 seoTitle: "Detectores de humo | autónomos y para panel"
 seoDescription: "Compara detectores de humo fotoeléctricos: batería, interconectados, humo y CO, o para panel de alarma."
 variantes:
