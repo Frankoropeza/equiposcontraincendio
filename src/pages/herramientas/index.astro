@@ -2,12 +2,13 @@
 // ============================================================================
 // /herramientas/ — Hub de herramientas de utilidad pública (L2).
 // ----------------------------------------------------------------------------
-// HOMOLOGADA con /productos y /servicios: Hero → SectionMenu → TrustBar →
-// SectionHeading + tarjetas CategoryCard → ProcessSteps ("cómo funcionan") →
-// FAQ + contacto → SectionMenu de cierre. Mismos componentes compartidos;
-// copy propio. Antes esta página se quedaba en Hero + tarjetas y sin más
-// contenido, así que se veía pobre frente a /productos (459 líneas) y
-// /servicios (233 líneas, con TrustBar + módulos + FAQ).
+// AL PATRÓN L2 (2026-09-10), igual que /productos, /servicios y /cobertura:
+//   Hero → SectionMenu → TrustBar → tarjetas → módulos CategoryFeature →
+//   RiskGuide → NormsTable → ProcessSteps → CompanyAbout → RelatedLinks →
+//   FAQ + Contacto
+// El SectionMenu de cierre que tenía esta página lo sustituye RelatedLinks,
+// que es como cierran las otras tres. Todo el contenido vive en
+// src/data/herramientas.ts; aquí solo queda la composición.
 //
 // Listado propio (HERRAMIENTAS_CARDS, abajo): 3 herramientas + formatos,
 // homologado con las 4 entradas del menú «Herramientas» del header.
@@ -23,70 +24,27 @@ import CategoryFeature from '@components/CategoryFeature.astro'
 import ProcessSteps from '@components/ProcessSteps.astro'
 import FAQWithContact from '@components/FAQWithContact.astro'
 import { CONTACT, waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
+import RiskGuide from '@components/RiskGuide.astro'
+import NormsTable from '@components/NormsTable.astro'
+import CompanyAbout from '@components/CompanyAbout.astro'
+import RelatedLinks from '@components/RelatedLinks.astro'
+import {
+  herramientasPillars as pillars,
+  herramientasCards as HERRAMIENTAS_CARDS,
+  herramientasFeatures as HERRAMIENTAS_FEATURES,
+  herramientasSteps as comoFuncionaSteps,
+  herramientasFaqs as faqs,
+  herramientasComparativa,
+  herramientasNormRows,
+  herramientasCompany,
+  herramientasRelated,
+} from '@data/herramientas'
 
 // ── Tarjetas del hub (4, homologadas con el header: 3 herramientas + formatos).
 // Copy propio por tarjeta (no reutiliza t.desc de TOOLS): título de venta,
 // blurb más específico y 3 enlaces reales (subcategories del CategoryCard)
 // a los artículos o formatos que profundizan el tema — reparten autoridad
 // interna en vez de quedarse en una sola línea de texto.
-const HERRAMIENTAS_CARDS = [
-  {
-    label: 'Riesgo de incendio: ordinario o alto',
-    href: '/herramientas/riesgo-de-incendio/',
-    image: '/images/servicios/inspeccion-sistema-alarma-extintor.avif',
-    imageAlt: 'Inspección de sistema de alarma y extintor en un centro de trabajo',
-    badge: 'NOM-002-STPS-2010',
-    blurb: 'Clasifica tu centro de trabajo con los mismos seis criterios que aplica la autoridad: basta uno para pasar a riesgo alto.',
-    ctaLabel: 'Clasificar mi riesgo',
-    subcategories: [
-      { label: 'La Tabla 1 explicada', href: '/blog/riesgo-de-incendio-tabla-1-nom-002/' },
-      { label: 'Quién debe firmarlo', href: '/blog/quien-clasifica-riesgo-de-incendio-empresa/' },
-      { label: 'Bodegas y naves', href: '/blog/riesgo-de-incendio-bodegas-naves-industriales/' },
-    ],
-  },
-  {
-    label: 'Cuántos extintores necesito',
-    href: '/herramientas/cuantos-extintores-necesito/',
-    image: '/images/showcase/extintores-variedad-colores-catalogo.avif',
-    imageAlt: 'Extintores de distintos agentes y capacidades en catálogo',
-    badge: 'NOM-002-STPS-2010',
-    blurb: 'Mínimo por superficie y por nivel, más el agente exacto para cocina, cuarto eléctrico y otras áreas de riesgo propio.',
-    ctaLabel: 'Calcular mis extintores',
-    subcategories: [
-      { label: 'Extintores por m²', href: '/blog/cuantos-extintores-por-metro-cuadrado/' },
-      { label: 'Por área de riesgo', href: '/blog/extintores-por-area-riesgo-cocina-cuarto-electrico/' },
-      { label: 'Naves de varios niveles', href: '/blog/cuantos-extintores-nave-industrial-varios-niveles/' },
-    ],
-  },
-  {
-    label: 'Verifica tu extintor',
-    href: '/herramientas/verifica-tu-extintor/',
-    image: '/images/servicios/inspeccion-gabinete-hidrante-extintor.avif',
-    imageAlt: 'Revisión de gabinete de hidrante y extintor en sitio',
-    badge: 'NOM-154-SCFI-2005',
-    blurb: 'Doce puntos observables para saber si el servicio del año pasado fue real o solo una calcomanía con fecha.',
-    ctaLabel: 'Verificar mi extintor',
-    subcategories: [
-      { label: '12 señales de servicio real', href: '/blog/como-saber-si-mantenimiento-extintor-es-real/' },
-      { label: 'Verificar al proveedor', href: '/blog/mantenimiento-recarga-extintores-nom/' },
-      { label: 'Leer el manómetro', href: '/blog/manometro-extintor-zonas-que-significan/' },
-    ],
-  },
-  {
-    label: 'Formatos descargables',
-    href: '/plantillas/',
-    image: '/images/servicios/inspeccion-gabinete-manguera-contra-incendio.avif',
-    imageAlt: 'Revisión de gabinete y manguera contra incendio en sitio',
-    badge: 'Excel y PDF',
-    blurb: 'Bitácora de revisión mensual, acta de simulacro y censo de brigada: listos para llenar hoy, sin diseñarlos tú.',
-    ctaLabel: 'Ver formatos',
-    subcategories: [
-      { label: 'Bitácora de revisión', href: '/plantillas/bitacora-revision-extintores/' },
-      { label: 'Acta de simulacro', href: '/plantillas/acta-simulacro-evacuacion/' },
-      { label: 'Censo de brigada', href: '/plantillas/censo-brigada-emergencia/' },
-    ],
-  },
-]
 
 const menuSecciones = sectionMenuItems()
 const menuCta = {
@@ -96,149 +54,6 @@ const menuCta = {
   external: true,
 }
 
-const cierreItems = [
-  { label: 'Formatos descargables', href: '/plantillas/', sub: 'Bitácora, acta y censo' },
-  { label: 'Protección Civil', href: '/proteccion-civil/', sub: 'Qué exige por entidad' },
-  { label: 'Catálogo', href: '/productos/', sub: 'Equipo contra incendio' },
-  { label: 'Blog', href: '/blog/', sub: 'Guías y normatividad' },
-]
-const cierreCta = {
-  label: 'Pedir diagnóstico',
-  href: waUrl('Hola, usé sus herramientas y quiero un diagnóstico de mi inmueble.'),
-  sub: 'CDMX y Estado de México',
-  external: true,
-}
-
-// ── Barra de confianza (pilares honestos, vía componente TrustBar) ──
-const pillars = [
-  { icon: 'check', title: 'Gratis y sin registro', desc: 'Sin correo, sin cuenta y sin letras chiquitas: usa la herramienta y ve tu resultado al instante.' },
-  { icon: 'doc', title: 'Basadas en la norma', desc: 'Cada criterio cita de dónde sale: NOM-002-STPS-2010 y NOM-154-SCFI-2005.' },
-  { icon: 'shield', title: 'Orientan, no dictaminan', desc: 'Dan un punto de partida claro; el estudio o dictamen formal lo elabora y lo firma quien está facultado.' },
-  { icon: 'chat', title: 'Atención por WhatsApp', desc: '¿Tu resultado da riesgo alto o no sabes cómo seguir? Escríbenos y te orientamos sin costo.' },
-]
-
-// ── Módulos de detalle por herramienta (CategoryFeature, 2 columnas) ──
-// Mismo patrón que /servicios (CategoryFeature uniforme: sin flip ni surface):
-// izquierda info + bullets, derecha galería 1 grande + 2 chicas. Uno por
-// tarjeta, en el mismo orden que el grid de arriba.
-const HERRAMIENTAS_FEATURES = [
-  {
-    eyebrow: 'Herramienta gratuita · NOM-002-STPS-2010',
-    title: 'Riesgo de incendio:',
-    titleAccent: 'ordinario o alto, en minutos',
-    description:
-      'Captura los datos de tu inmueble y aplica los mismos seis criterios de la Tabla 1 que usa la autoridad: superficie, gases, líquidos inflamables y combustibles, y sustancias corrosivas o comburentes. Con que uno solo alcance su umbral, todo el centro de trabajo pasa a riesgo alto.',
-    features: [
-      { label: 'Seis criterios de la Tabla 1', desc: 'Superficie e inventario de gases, líquidos y sustancias con umbral propio.' },
-      { label: 'Resultado inmediato', desc: 'Ordinario o alto, con el criterio exacto que definió tu clasificación.' },
-      { label: 'De qué depende después', desc: 'Cuántos extintores te pide la norma y si necesitas brigada.' },
-      { label: 'Orienta, no dictamina', desc: 'El estudio formal para tu expediente lo firma quien está facultado.' },
-    ],
-    ctaLabel: 'Clasificar mi riesgo',
-    ctaHref: '/herramientas/riesgo-de-incendio/',
-    ctaSecondaryLabel: 'La Tabla 1 explicada',
-    ctaSecondaryHref: '/blog/riesgo-de-incendio-tabla-1-nom-002/',
-    imgMain: { src: '/images/servicios/auditoria-seguridad-contra-incendio.avif', alt: 'Diagnóstico de riesgo de incendio en un centro de trabajo' },
-    imgA: { src: '/images/servicios/cuarto-bomba-contra-incendio.avif', alt: 'Cuarto de bomba contra incendio en nave industrial' },
-    imgB: { src: '/images/servicios/instalacion-deteccion-alarma.avif', alt: 'Instalación de detección y alarma contra incendio' },
-  },
-  {
-    eyebrow: 'Herramienta gratuita · NOM-002-STPS-2010',
-    title: 'Cuántos extintores',
-    titleAccent: 'necesita tu inmueble',
-    description:
-      'Te damos dos números por separado: el mínimo por superficie —uno por cada 300 m² en riesgo ordinario, uno por cada 200 m² en riesgo alto— y el agente que corresponde a cada área con riesgo propio, como cocina, cuarto eléctrico o almacén de inflamables.',
-    features: [
-      { label: 'Mínimo por superficie', desc: 'Aritmética normativa según tu grado de riesgo y tus niveles.' },
-      { label: 'Agente por área', desc: 'Clase K, CO₂, clase B o clase D según qué se puede quemar ahí.' },
-      { label: 'Nunca menos de uno por nivel', desc: 'Un extintor solo sirve si está al alcance en cada piso.' },
-      { label: 'Desglose listo para cotizar', desc: 'Cópialo o mándalo por WhatsApp con un clic.' },
-    ],
-    ctaLabel: 'Calcular mis extintores',
-    ctaHref: '/herramientas/cuantos-extintores-necesito/',
-    ctaSecondaryLabel: 'Extintores por m²',
-    ctaSecondaryHref: '/blog/cuantos-extintores-por-metro-cuadrado/',
-    imgMain: { src: '/images/servicios/instalacion-equipo-almacen.avif', alt: 'Suministro de equipo contra incendio en almacén' },
-    imgA: { src: '/images/showcase/extintores-catalogo-profesional.avif', alt: 'Extintores de distintas capacidades en catálogo' },
-    imgB: { src: '/images/servicios/supresion-cocina-comercial.avif', alt: 'Supresión de incendios en cocina comercial' },
-  },
-  {
-    eyebrow: 'Herramienta gratuita · NOM-154-SCFI-2005',
-    title: 'Verifica tu extintor',
-    titleAccent: 'en 12 puntos',
-    description:
-      'El problema más común de este mercado no es el extintor: es la calcomanía sin servicio detrás. Marca lo que se cumple hoy en tu inmueble y sabrás, sin herramientas ni conocimientos técnicos, en qué estás parado antes de que llegue una verificación real.',
-    features: [
-      { label: 'Doce puntos observables', desc: 'Etiqueta, collarín, manómetro, seguro y más, sin tecnicismos.' },
-      { label: 'Detecta la calcomanía sin servicio', desc: 'La causa número uno de extintores que no funcionan cuando se necesitan.' },
-      { label: 'Es autoevaluación, no dictamen', desc: 'Sirve para llegar con preguntas concretas a tu proveedor.' },
-      { label: 'Agenda revisión con un clic', desc: 'Si algo falla, cotiza la corrección directo por WhatsApp.' },
-    ],
-    ctaLabel: 'Verificar mi extintor',
-    ctaHref: '/herramientas/verifica-tu-extintor/',
-    ctaSecondaryLabel: '12 señales de servicio real',
-    ctaSecondaryHref: '/blog/como-saber-si-mantenimiento-extintor-es-real/',
-    imgMain: { src: '/images/servicios/etiquetado-inspeccion-extintor.avif', alt: 'Etiquetado e inspección de extintor en sitio' },
-    imgA: { src: '/images/servicios/prueba-hidrostatica-extintor.avif', alt: 'Prueba hidrostática de extintor' },
-    imgB: { src: '/images/servicios/inspeccion-recarga-extintores.avif', alt: 'Inspección y recarga de extintores' },
-  },
-  {
-    eyebrow: 'Gratis · Excel y PDF',
-    title: 'Formatos',
-    titleAccent: 'listos para llenar hoy',
-    description:
-      'Tres documentos que Protección Civil y la STPS piden ver en tu expediente, ya armados: bitácora de revisión mensual de extintores, acta de simulacro de evacuación y censo de brigada de emergencia. Descárgalos en Excel o PDF y empieza a llenarlos hoy mismo.',
-    features: [
-      { label: 'Bitácora de revisión', desc: 'Una fila por extintor, una casilla por mes, con qué revisar cada vez.' },
-      { label: 'Acta de simulacro', desc: 'Hipótesis, tiempos, puntos observados y áreas de oportunidad.' },
-      { label: 'Censo de brigada', desc: 'Integrantes, rol, contacto y constancia de capacitación.' },
-      { label: 'En Excel y PDF', desc: 'Edítalos en computadora o imprímelos para llenar a mano.' },
-    ],
-    ctaLabel: 'Ver formatos',
-    ctaHref: '/plantillas/',
-    ctaSecondaryLabel: 'Bitácora de revisión',
-    ctaSecondaryHref: '/plantillas/bitacora-revision-extintores/',
-    imgMain: { src: '/images/servicios/capacitacion-brigada-extintores.avif', alt: 'Capacitación de brigada en el uso de extintores' },
-    imgA: { src: '/images/casos/entrega-servicio-equipo-contra-incendio.avif', alt: 'Entrega de servicio de equipo contra incendio' },
-    imgB: { src: '/images/servicios/inspeccion-gabinete-manguera-contra-incendio.avif', alt: 'Revisión de gabinete y manguera contra incendio' },
-  },
-]
-
-// ── Cómo funcionan (ProcessSteps, fondo oscuro) ──
-const comoFuncionaSteps = [
-  { num: '01', title: 'Elige tu pregunta', desc: 'Riesgo de incendio, cuántos extintores necesitas, si tu equipo actual está en regla o qué formato te falta: cada herramienta resuelve una duda concreta.' },
-  { num: '02', title: 'Captura los datos de tu inmueble', desc: 'Superficie, inventario de sustancias o los doce puntos de revisión: información que ya conoces de tu negocio, sin trámites.' },
-  { num: '03', title: 'Obtén tu resultado con su criterio', desc: 'Ves el resultado y la norma exacta de la que sale, para no tener que interpretarla tú mismo.' },
-  { num: '04', title: 'Decide tu siguiente paso', desc: 'Si necesitas equipo, servicio o una segunda opinión, cotiza por WhatsApp con el resultado ya en mano.' },
-]
-
-// ── FAQ propio de herramientas ──
-const faqs = [
-  {
-    question: '¿Estas herramientas sustituyen un dictamen o estudio oficial?',
-    answer: 'No. Orientan y te dan un punto de partida con el mismo criterio que aplica la autoridad, pero el estudio o dictamen formal para tu expediente ante Protección Civil o STPS lo debe elaborar y firmar quien está facultado para ello. Si quieres que lo hagamos nosotros, escríbenos.',
-  },
-  {
-    question: '¿Necesito registrarme o dar mi correo para usarlas?',
-    answer: 'No. Las cuatro son gratuitas, sin registro y sin necesidad de correo: capturas tus datos o descargas el formato, y decides si quieres compartirlo con nosotros por WhatsApp.',
-  },
-  {
-    question: '¿Mis datos se guardan o los ve alguien más?',
-    answer: 'No. El cálculo se hace en tu navegador; no guardamos ni enviamos tus datos a ningún lado, salvo que tú decidas compartirlos al escribirnos.',
-  },
-  {
-    question: '¿Qué pasa si mi resultado da riesgo alto o mi extintor no pasa la verificación?',
-    answer: 'Son la señal de que conviene revisar tu caso con más detalle. Escríbenos con tu resultado y te decimos qué corregir primero, sin compromiso.',
-  },
-  {
-    question: '¿Tengo que ser cliente suyo para usarlas?',
-    answer: 'No. Funcionan igual si eres cliente nuestro o no: son de utilidad pública, pensadas para cualquier empresa que necesite resolver estas preguntas.',
-  },
-  {
-    question: '¿En qué normas se basan?',
-    answer: 'La clasificación de riesgo y el mínimo de extintores salen de la NOM-002-STPS-2010; la verificación del servicio, de la NOM-154-SCFI-2005. Cada herramienta cita el artículo o tabla exacta de la que sale su número.',
-  },
-]
 
 const schemaData = {
   list: {
@@ -335,6 +150,38 @@ const schemaData = {
     />
   ))}
 
+  {/* ─── Comparativa: cuál herramienta resuelve tu pregunta ─── */}
+  <RiskGuide
+    eyebrow="Cuál te sirve"
+    title="Qué resuelve"
+    titleAccent="cada herramienta"
+    desc="Para que abras la que necesitas sin tener que probarlas todas."
+    body={[
+      'Las cuatro parten de la misma idea: darte el número antes de que alguien te lo convierta en cotización. Cambia la pregunta que responden y los datos que hay que tener a la mano.',
+      'Si no sabes por dónde empezar, empieza por el riesgo: casi todo lo demás —cuántos extintores, si necesitas brigada— depende de ese primer resultado.',
+    ]}
+    rows={herramientasComparativa}
+    columns={['Herramienta', 'Qué pregunta responde', 'Qué necesitas a la mano', 'Qué te entrega']}
+    note="Ninguna guarda ni envía tus datos: el cálculo ocurre en tu navegador. Y ninguna sustituye un dictamen: orientan con el mismo criterio que aplica la autoridad, pero el estudio formal para tu expediente lo elabora y lo firma quien está facultado."
+    ctaLabel="Clasificar mi riesgo"
+    ctaHref="/herramientas/riesgo-de-incendio/"
+  />
+
+  {/* ─── De qué norma sale cada número ─── */}
+  <NormsTable
+    eyebrow="De dónde sale cada número"
+    title="Ninguna cuenta"
+    titleAccent="es invento nuestro"
+    desc="Cada resultado cita el artículo o la tabla de la que sale."
+    body={[
+      'Una calculadora que no dice de dónde saca su número no sirve para discutir con nadie. Aquí está el sustento normativo de cada cálculo, para que puedas verificarlo o defenderlo ante una verificación.',
+      'Las NOM son obligatorias en México; el criterio de las herramientas no va más allá de lo que ellas dicen.',
+    ]}
+    rows={herramientasNormRows}
+    columns={['Norma y apartado', 'Qué establece', 'Qué herramienta lo usa']}
+    note="Si tu resultado da riesgo alto o tu extintor no pasa la verificación, no es un veredicto: es la señal de revisar tu caso con más detalle. Escríbenos con el resultado y te decimos qué corregir primero."
+  />
+
   {/* ─── Cómo funcionan (ProcessSteps, fondo oscuro) ─── */}
   <ProcessSteps
     eyebrow="Cómo funcionan"
@@ -344,10 +191,38 @@ const schemaData = {
     steps={comoFuncionaSteps}
   />
 
+  {/* ─── Sobre las herramientas (por qué son públicas / cómo usarlas) ─── */}
+  <section class="section section--surface">
+    <div class="container">
+      <SectionHeading
+        layout="duo"
+        eyebrow="Sobre estas herramientas"
+        title="Gratis, sin registro"
+        titleAccent="y con la norma a la vista"
+        desc="Un cliente que entiende el porqué de su número compra mejor."
+        body={[
+          'Publicamos las cuentas en vez de guardarlas: es la forma más rápida de que dejes de depender de la palabra de un proveedor, el nuestro incluido.',
+          '¿Tu resultado no te cuadra o no sabes cómo seguir? Escríbenos y lo revisamos contigo.',
+        ]}
+      />
+      <CompanyAbout
+        que={herramientasCompany.que}
+        como={herramientasCompany.como}
+        cta={{ label: 'Consultar mi resultado', href: waUrl('Hola, usé sus herramientas y quiero revisar mi resultado.'), external: true }}
+      />
+    </div>
+  </section>
+
+  {/* ─── Interlinking a las otras secciones ─── */}
+  <RelatedLinks
+    title="Sigue por aquí"
+    desc="Lo que suele hacer falta después de tener el número."
+    links={herramientasRelated}
+    limit={4}
+  />
+
   {/* ─── FAQ + Contacto ─── */}
   <FAQWithContact items={faqs} waNumber={CONTACT.whatsapp} />
-
-  <SectionMenu items={cierreItems} cta={cierreCta} ariaLabel="Sigue explorando el sitio" />
 </PageLayout>
 
 <style>
