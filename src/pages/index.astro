@@ -19,7 +19,7 @@ import ProcessSteps from "@components/ProcessSteps.astro";
 import CompanyAbout from "@components/CompanyAbout.astro";
 import FAQWithContact from "@components/FAQWithContact.astro";
 import CategoryFeature from "@components/CategoryFeature.astro";
-import { KEYWORDS, NAV, SHOWCASE, WA_MESSAGES, waUrl, CONTACT } from "@config/site";
+import { KEYWORDS, NAV, SHOWCASE, SERVICE_ANCHOR, WA_MESSAGES, waUrl, CONTACT } from "@config/site";
 import {
   homeCategoryFeatures,
   homeCompany,
@@ -37,7 +37,7 @@ const waLink = waUrl();
 const menuSecciones = NAV.filter((n) => n.label !== "Contacto").map((n) => ({
   label: n.label,
   href: n.href,
-  sub: homeMenuSub[n.label] ?? "Ver sección",
+  sub: homeMenuSub[n.label] ?? "Ir a la sección",
 }));
 const menuCta = {
   label: "Cotizar por WhatsApp",
@@ -60,6 +60,7 @@ const servicios = (await getCollection("servicios", ({ data }) => !data.draft))
     image: s.data.image,
     imageAlt: s.data.title,
     badge: s.data.badge,
+    anchor: SERVICE_ANCHOR[s.id] ?? s.data.title,
   }));
 
 ---
@@ -84,7 +85,7 @@ const servicios = (await getCollection("servicios", ({ data }) => !data.draft))
       "Trabajamos conforme a la normatividad mexicana —NOM-002-STPS-2010 y NOM-154-SCFI-2005— con equipo certificado y la documentación lista para tu expediente de Protección Civil. Cotiza por WhatsApp y recibe una recomendación honesta.",
     ]}
     ctas={[
-      { text: "Ver catálogo", href: "/productos/", variant: "outline" },
+      { text: "Equipos contra incendios", href: "/productos/", variant: "outline" },
       { text: "Cotizar por WhatsApp", href: waUrl(WA_MESSAGES.cotizar), variant: "primary", whatsapp: true },
     ]}
   />
@@ -102,7 +103,7 @@ const servicios = (await getCollection("servicios", ({ data }) => !data.draft))
         eyebrow="Catálogo"
         title="Venta de equipos"
         titleAccent="contra incendios"
-        desc="Seis familias que cubren la protección de la mayoría de los inmuebles, con la norma que respalda cada una."
+        desc="Ocho familias de equipo que cubren la protección de la mayoría de los inmuebles, con la norma que respalda cada una."
         body={[
           "Cada inmueble tiene un riesgo distinto, así que el equipo correcto también lo es. Aquí están las familias con las que protegemos oficinas, comercios, cocinas, escuelas e industria.",
           "Si no sabes por dónde empezar, escríbenos: revisamos tu caso y te decimos exactamente qué necesitas, sin venderte de más.",
@@ -127,7 +128,15 @@ const servicios = (await getCollection("servicios", ({ data }) => !data.draft))
     </div>
   </section>
 
-  {homeCategoryFeatures.map((feature) => <CategoryFeature {...feature} />)}
+  {homeCategoryFeatures.map(({ ctaSecondaryMsg, ...feature }, i) => (
+    <CategoryFeature
+      {...feature}
+      anchorId={SHOWCASE[i]?.slug}
+      ctaSecondaryLabel={ctaSecondaryMsg ? "Cotizar por WhatsApp" : undefined}
+      ctaSecondaryHref={ctaSecondaryMsg ? waUrl(ctaSecondaryMsg) : undefined}
+      ctaSecondaryExternal
+    />
+  ))}
 
 
 
@@ -172,9 +181,23 @@ const servicios = (await getCollection("servicios", ({ data }) => !data.draft))
             image={s.image}
             imageAlt={s.imageAlt}
             badge={s.badge}
-            ctaLabel="Ver servicio"
+            ctaLabel={s.anchor}
           />
         ))}
+        {/* Tarjeta de cierre: la colección tiene 7 servicios y el grid es de 4
+            columnas, así que la segunda fila quedaba con un hueco. En vez de
+            dejarlo vacío, la octava celda es la salida para quien no sabe qué
+            servicio pedir — que es el caso más común de este negocio. */}
+        <ServiceCard
+          title="¿No sabes qué servicio necesitas?"
+          description="Cuéntanos el giro y la superficie de tu inmueble y te decimos qué equipo y qué servicio te pide la norma, sin venderte de más."
+          href={waUrl("Hola, no sé qué servicio necesito. ¿Me ayudan a saber qué me pide la norma para mi inmueble?")}
+          image="/images/servicios/inspeccion-tablero-alarma-gabinete-manguera.avif"
+          imageAlt="Técnico revisando el tablero de alarma y el gabinete de un inmueble"
+          badge="Asesoría sin costo"
+          ctaLabel="Diagnóstico por WhatsApp"
+          whatsapp
+        />
       </div>
     </div>
   </section>

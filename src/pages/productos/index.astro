@@ -11,6 +11,7 @@ import SectionHeading from '@components/SectionHeading.astro';
 import CategoryCard from '@components/CategoryCard.astro';
 import CategoryFeature from '@components/CategoryFeature.astro';
 import ProductCard from '@components/ProductCard.astro';
+import ServiceCard from '@components/ServiceCard.astro';
 import FAQWithContact from '@components/FAQWithContact.astro';
 import { getCollection } from 'astro:content';
 import { SHOWCASE, CONTACT, waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site';
@@ -67,7 +68,7 @@ const CATEGORY_FEATURES = [
     brands: [{ name: 'Kidde' }, { name: 'Amerex' }, { name: 'Stelfire' }, { name: 'Buckeye' }, { name: 'Suprema' }],
     ctaLabel: 'Cotizar extintores',
     ctaMsg: 'Hola, quiero cotizar extintores (PQS, CO₂ o clase K). ¿Me ayudan a elegir la capacidad según mi riesgo?',
-    ctaSecondaryLabel: 'Ficha de extintores PQS',
+    ctaSecondaryLabel: 'Extintores PQS ABC',
     ctaSecondaryHref: '/productos/extintor-pqs/',
     imgMain: { src: '/images/showcase/extintores-catalogo-profesional.avif', alt: 'Extintores PQS, CO₂ y agente K de distintas capacidades' },
     imgA: { src: '/images/showcase/extintores-variedad-colores-catalogo.avif', alt: 'Extintores de PQS, CO₂, agua y agente K comparados por agente' },
@@ -88,7 +89,7 @@ const CATEGORY_FEATURES = [
     brands: [{ name: 'System Sensor' }, { name: 'Honeywell' }, { name: 'Notifier' }, { name: 'Bosch' }],
     ctaLabel: 'Cotizar detección',
     ctaMsg: 'Hola, quiero cotizar un sistema de detección y alarma (detectores, panel y sirenas) para mi inmueble.',
-    ctaSecondaryLabel: 'Ficha de detectores de humo',
+    ctaSecondaryLabel: 'Detectores de humo',
     ctaSecondaryHref: '/productos/detector-humo-fotoelectrico/',
     imgMain: { src: '/images/servicios/instalacion-deteccion-alarma.avif', alt: 'Instalación de detectores de humo en pasillo de oficinas' },
     imgA: { src: '/images/productos/dispositivos-deteccion-alarma.avif', alt: 'Detectores, estación manual y sirena estroboscópica sobre banco de trabajo' },
@@ -109,7 +110,7 @@ const CATEGORY_FEATURES = [
     brands: [{ name: 'Potter' }, { name: 'Victaulic' }, { name: 'Nibco' }, { name: 'Dixon' }],
     ctaLabel: 'Cotizar hidrantes',
     ctaMsg: 'Hola, quiero cotizar gabinetes, mangueras o una red hidráulica contra incendio (NFPA 14).',
-    ctaSecondaryLabel: 'Ficha de gabinetes',
+    ctaSecondaryLabel: 'Gabinetes con manguera',
     ctaSecondaryHref: '/productos/gabinete-manguera-contra-incendio/',
     imgMain: { src: '/images/showcase/gabinete-manguera-hidrante.avif', alt: 'Gabinete con manguera contra incendio e hidrante de muro' },
     imgA: { src: '/images/productos/extintor-oficina-gabinete.avif', alt: 'Gabinete tipo I con manguera, pitón y extintor' },
@@ -130,7 +131,7 @@ const CATEGORY_FEATURES = [
     brands: [{ name: 'Brady' }, { name: 'Seton' }, { name: 'Luminart' }, { name: 'Indexx' }],
     ctaLabel: 'Cotizar señalización',
     ctaMsg: 'Hola, quiero cotizar señalización fotoluminiscente, lámparas de emergencia y plano de evacuación.',
-    ctaSecondaryLabel: 'Ficha de señalización',
+    ctaSecondaryLabel: 'Señales fotoluminiscentes',
     ctaSecondaryHref: '/productos/senalizacion-fotoluminiscente/',
     imgMain: { src: '/images/servicios/integracion-sistemas-contra-incendio.avif', alt: 'Pasillo con gabinete de manguera y señalética de emergencia' },
     imgA: { src: '/images/servicios/inspeccion-sistema-alarma-extintor.avif', alt: 'Ruta de evacuación señalizada junto a extintor en nave industrial' },
@@ -214,7 +215,7 @@ const CATEGORY_FEATURES = [
     brands: [{ name: 'Kidde' }, { name: 'Amerex' }, { name: 'Stelfire' }, { name: 'Suprema' }],
     ctaLabel: 'Cotizar accesorios',
     ctaMsg: 'Hola, quiero cotizar refacciones y accesorios para mantenimiento de extintores (NOM-154).',
-    ctaSecondaryLabel: 'Ficha de soportes',
+    ctaSecondaryLabel: 'Soportes para extintor',
     ctaSecondaryHref: '/productos/soportes-accesorios-extintor/',
     imgMain: { src: '/images/showcase/refacciones-equipo-contra-incendio.avif', alt: 'Válvulas, manómetros, collarines y refacciones para extintor' },
     imgA: { src: '/images/servicios/inspeccion-recarga-extintores.avif', alt: 'Recarga y mantenimiento de extintores en taller de servicio' },
@@ -285,7 +286,7 @@ const schemaData = {
       'Cada equipo se entrega con ficha técnica y la documentación de servicio lista para tu expediente ante Protección Civil y STPS. Cotiza por WhatsApp y recibe una recomendación honesta.',
     ]}
     ctas={[
-      { text: 'Catálogo de equipo', href: '#categorias', variant: 'outline' },
+      { text: 'Equipo contra incendio', href: '#categorias', variant: 'outline' },
       { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.productos), variant: 'primary', whatsapp: true },
     ]}
   />
@@ -376,6 +377,20 @@ const schemaData = {
               priority={i === 0}
             />
           ))}
+          {/* Celda de cierre: las fichas son 7 y el grid es de 4 columnas, así
+              que la segunda fila quedaba con un hueco. La octava celda recoge
+              a quien no encontró su equipo — el catálogo publica solo lo de
+              mayor rotación, no todo lo que se surte. */}
+          <ServiceCard
+            title="¿No encuentras el equipo que buscas?"
+            description="El catálogo publica lo de mayor rotación. Surtimos más marcas, capacidades y equipo especializado: dinos qué necesitas y te cotizamos con disponibilidad y tiempo de entrega."
+            href={waUrl('Hola, busco un equipo contra incendio que no vi en el catálogo. ¿Me ayudan a cotizarlo?')}
+            image="/images/servicios/cuarto-bomba-contra-incendio.avif"
+            imageAlt="Cuarto de bombas de una red contra incendio con equipo especializado"
+            badge="Cotización a medida"
+            ctaLabel="Cotizar por WhatsApp"
+            whatsapp
+          />
         </div>
       </div>
     </section>

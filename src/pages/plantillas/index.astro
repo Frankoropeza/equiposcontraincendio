@@ -77,7 +77,7 @@ const schemaData = {
       'Son formatos de apoyo: no sustituyen el programa interno de protección civil ni la documentación que exija la autoridad competente en cada caso.',
     ]}
     ctas={[
-      { text: 'Ver herramientas', href: '/herramientas/', variant: 'outline' },
+      { text: 'Herramientas de cálculo', href: '/herramientas/', variant: 'outline' },
       { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.default), variant: 'primary', whatsapp: true },
     ]}
   />
@@ -107,7 +107,7 @@ const schemaData = {
             imageAlt={p.data.imageAlt}
             badge={p.data.files.map((f) => f.ext).join(' · ')}
             blurb={p.data.description}
-            ctaLabel="Ver y descargar"
+            ctaLabel="Descargar formato"
             index={i}
           />
         ))}

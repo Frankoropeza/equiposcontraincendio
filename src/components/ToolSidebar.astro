@@ -1,0 +1,179 @@
+---
+// ============================================================================
+// ToolSidebar.astro — columna lateral de las páginas de herramienta.
+// ----------------------------------------------------------------------------
+// POR QUÉ: las fichas de herramienta eran una sola columna con módulos de ancho
+// distinto (formulario ancho, resultado a un lado, FAQ angosta, enlaces al
+// final). Además no repartían enlaces: quien usaba la calculadora no tenía a
+// dónde ir salvo el CTA. Esta barra hace las dos cosas — da una retícula
+// estable a la página y reparte autoridad hacia producto, servicio, trámite y
+// blog, igual que la barra del blog (BlogSidebar).
+//
+// DATA-DRIVEN: TOOLS y SERVICES de site.ts; productos, plantillas, trámites y
+// artículos desde sus colecciones. Al publicar algo nuevo, la barra lo recoge.
+// ============================================================================
+import { getCollection } from 'astro:content'
+import { TOOLS, SERVICES, COVERAGE_STATES, waUrl, WA_MESSAGES } from '@config/site'
+
+interface Props {
+  /** Slug de la herramienta actual: se marca y no se enlaza a sí misma. */
+  current?: string
+  /** Mensaje de WhatsApp del CTA lateral. */
+  waMessage?: string
+  /** Slugs de artículos del blog a destacar (en orden). Si falta, toma los más recientes. */
+  posts?: string[]
+}
+const {
+  current = '',
+  waMessage = 'Hola, usé sus herramientas y quiero que revisen mi inmueble.',
+  posts = [],
+} = Astro.props
+
+const productos = (await getCollection('productos', ({ data }) => !data.draft))
+  .sort((a, b) => {
+    if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1
+    return (a.data.order ?? 0) - (b.data.order ?? 0)
+  })
+  .slice(0, 6)
+
+const plantillas = (await getCollection('plantillas', ({ data }) => !data.draft)).sort(
+  (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0),
+)
+
+const tramites = (await getCollection('tramites', ({ data }) => !data.draft)).sort(
+  (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0),
+)
+
+const articulos = await getCollection('articulos', ({ data }) => !data.draft)
+const elegidos = posts
+  .map((slug) => articulos.find((a) => a.id === slug))
+  .filter(Boolean) as typeof articulos
+const guias = (elegidos.length
+  ? elegidos
+  : [...articulos].sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+).slice(0, 3)
+
+const waHref = waUrl(waMessage)
+---
+
+<aside class="tsb" aria-label="Herramientas, servicios y guías relacionadas">
+  <nav class="tsb__w" aria-labelledby="tsb-tools">
+    <h2 class="tsb__t" id="tsb-tools">Herramientas</h2>
+    <ul class="tsb__list" role="list">
+      {TOOLS.map((t) => (
+        <li>
+          {t.slug === current ? (
+            <span class="tsb__link is-current" aria-current="page">{t.label}</span>
+          ) : (
+            <a class="tsb__link" href={`/herramientas/${t.slug}/`}>{t.label}</a>
+          )}
+        </li>
+      ))}
+    </ul>
+  </nav>
+
+  <div class="tsb__w tsb__w--cta">
+    <h2 class="tsb__t">¿Prefieres que lo hagamos nosotros?</h2>
+    <p class="tsb__p">Levantamos el inmueble, calculamos el equipo y te lo entregamos instalado y documentado.</p>
+    <a class="btn btn--primary btn--block" href={waHref} target="_blank" rel="noopener">Pedir levantamiento</a>
+    <a class="tsb__all" href="/contacto/">O escríbenos por correo</a>
+  </div>
+
+  {plantillas.length > 0 && (
+    <nav class="tsb__w" aria-labelledby="tsb-plantillas">
+      <h2 class="tsb__t" id="tsb-plantillas">Formatos para tu expediente</h2>
+      <ul class="tsb__list" role="list">
+        {plantillas.map((p) => (
+          <li>
+            <a class="tsb__link" href={`/plantillas/${p.id}/`}>
+              <span>{p.data.label}</span>
+              <span class="tsb__tag">{p.data.files.map((f) => f.ext).join(' · ')}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <a class="tsb__all" href="/plantillas/">Todos los formatos →</a>
+    </nav>
+  )}
+
+  <nav class="tsb__w" aria-labelledby="tsb-servicios">
+    <h2 class="tsb__t" id="tsb-servicios">Servicios</h2>
+    <ul class="tsb__list" role="list">
+      {SERVICES.map((s) => (
+        <li><a class="tsb__link" href={`/servicios/${s.id}/`}>{s.label}</a></li>
+      ))}
+    </ul>
+    <a class="tsb__all" href="/servicios/">Todos los servicios →</a>
+  </nav>
+
+  {productos.length > 0 && (
+    <nav class="tsb__w" aria-labelledby="tsb-catalogo">
+      <h2 class="tsb__t" id="tsb-catalogo">Del catálogo</h2>
+      <ul class="tsb__list" role="list">
+        {productos.map((p) => (
+          <li><a class="tsb__link" href={`/productos/${p.id}/`}>{p.data.title}</a></li>
+        ))}
+      </ul>
+      <a class="tsb__all" href="/productos/">Catálogo completo →</a>
+    </nav>
+  )}
+
+  {tramites.length > 0 && (
+    <nav class="tsb__w" aria-labelledby="tsb-pc">
+      <h2 class="tsb__t" id="tsb-pc">Protección Civil</h2>
+      <ul class="tsb__list" role="list">
+        {tramites.map((t) => (
+          <li><a class="tsb__link" href={`/proteccion-civil/${t.id}/`}>{t.data.label}</a></li>
+        ))}
+      </ul>
+      <a class="tsb__all" href="/proteccion-civil/">Qué exige por entidad →</a>
+    </nav>
+  )}
+
+  {guias.length > 0 && (
+    <nav class="tsb__w" aria-labelledby="tsb-guias">
+      <h2 class="tsb__t" id="tsb-guias">Guías relacionadas</h2>
+      <ul class="tsb__posts" role="list">
+        {guias.map((a) => (
+          <li>
+            <a class="tsb__post" href={`/blog/${a.id}/`}>
+              <img src={a.data.heroImage} alt="" width="80" height="60" loading="lazy" decoding="async" />
+              <span>{a.data.title}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <a class="tsb__all" href="/blog/">Todas las guías →</a>
+    </nav>
+  )}
+
+  <nav class="tsb__w" aria-labelledby="tsb-cobertura">
+    <h2 class="tsb__t" id="tsb-cobertura">Dónde damos servicio</h2>
+    <ul class="tsb__list" role="list">
+      {COVERAGE_STATES.map((z) => (
+        <li><a class="tsb__link" href={`/cobertura/${z.slug}/`}>{z.label}</a></li>
+      ))}
+    </ul>
+    <a class="tsb__all" href={waUrl(WA_MESSAGES.urgente)} target="_blank" rel="noopener">¿Tienes una visita encima? →</a>
+  </nav>
+</aside>
+
+<style>
+  .tsb { display: grid; gap: var(--sp-5); align-content: start; }
+  .tsb__w { padding: var(--sp-5); border: 1px solid var(--c-border); border-radius: var(--radius-lg, 12px); background: var(--c-white); }
+  .tsb__w--cta { background: var(--c-surface); border-left: 4px solid var(--c-primary); }
+  .tsb__t { font-family: var(--font-heading); font-size: var(--text-base); margin: 0 0 var(--sp-3); color: var(--c-ink); }
+  .tsb__p { color: var(--c-ink-2); font-size: var(--text-sm); margin: 0 0 var(--sp-4); }
+  .tsb__list { list-style: none; margin: 0; padding: 0; display: grid; }
+  .tsb__list li + li { border-top: 1px solid var(--c-border); }
+  .tsb__link { display: flex; justify-content: space-between; gap: var(--sp-3); align-items: baseline; padding: var(--sp-3) 0; color: var(--c-ink-2); text-decoration: none; font-size: var(--text-sm); line-height: 1.35; }
+  .tsb__link:hover { color: var(--c-accent); }
+  .tsb__link.is-current { color: var(--c-primary); font-weight: var(--weight-semibold); }
+  .tsb__tag { flex: none; font-size: var(--text-xs); color: var(--c-muted); }
+  .tsb__posts { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-4); }
+  .tsb__post { display: grid; grid-template-columns: 5rem 1fr; gap: var(--sp-3); align-items: center; text-decoration: none; color: var(--c-ink); font-size: var(--text-sm); line-height: 1.35; }
+  .tsb__post img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-md, 8px); }
+  .tsb__post:hover span { color: var(--c-accent); }
+  .tsb__all { display: inline-block; margin-top: var(--sp-3); font-size: var(--text-sm); color: var(--c-accent); text-decoration: none; }
+  .tsb__all:hover { text-decoration: underline; }
+</style>

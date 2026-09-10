@@ -10,7 +10,9 @@ import SectionHeading from '@components/SectionHeading.astro'
 import CategoryCard from '@components/CategoryCard.astro'
 import CategoryFeature from '@components/CategoryFeature.astro'
 import FAQWithContact from '@components/FAQWithContact.astro'
-import { SERVICES, CONTACT, waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
+import ServiceCard from '@components/ServiceCard.astro'
+import { getCollection } from 'astro:content'
+import { SERVICES, SERVICE_ANCHOR, CONTACT, waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
 
 // Menú de secciones: subtítulos desde SECTION_MENU_SUB (site.ts), no un mapa
 // local — así todas las páginas describen las secciones igual.
@@ -30,12 +32,15 @@ const pillars = [
   { icon: 'chat', title: 'Atención por WhatsApp', desc: 'Agenda y resuelve dudas directo, con atención personal.' },
 ]
 
-// ── Imagen por servicio (para las tarjetas) ──
-const SERVICE_IMG: Record<string, string> = {
-  instalacion: '/images/servicios/integracion-sistemas-contra-incendio.avif',
-  mantenimiento: '/images/servicios/inspeccion-recarga-extintores.avif',
-  inspeccion: '/images/servicios/inspeccion-tablero-alarma-gabinete-manguera.avif',
-}
+// ── Imagen y badge por servicio, LEÍDOS DE LA COLECCIÓN ──
+// Antes esto era un mapa hardcodeado con solo 3 de los 7 servicios (el mismo
+// anti-patrón D3 que la auditoría corrigió en la home): las otras 4 tarjetas
+// salían sin imagen, y una de ellas quedaba sola y a media altura en la
+// tercera fila del grid. La colección ya tiene `image` y `badge` de los 7.
+const serviciosCol = await getCollection('servicios', ({ data }) => !data.draft)
+const SERVICE_META = Object.fromEntries(
+  serviciosCol.map((s) => [s.id, { image: s.data.image, badge: s.data.badge }]),
+) as Record<string, { image?: string; badge?: string }>
 
 // ── Módulos de servicio (CategoryFeature) — copy PROPIO. Diseño uniforme
 // (sin surface ni flip): todos iguales, solo cambia la información. ──
@@ -172,14 +177,26 @@ const faqs = [
           <CategoryCard
             label={s.label}
             href={`/servicios/${s.id}/`}
-            image={SERVICE_IMG[s.id]}
+            image={SERVICE_META[s.id]?.image}
             imageAlt={s.label}
             blurb={s.desc}
-            badge="Servicio"
-            ctaLabel="Detalle del servicio"
+            badge={SERVICE_META[s.id]?.badge ?? 'Servicio'}
+            ctaLabel={SERVICE_ANCHOR[s.id] ?? s.label}
             index={i}
           />
         ))}
+        {/* Celda de cierre: 7 servicios en un grid de 4 columnas dejaban un
+            hueco. La octava es la salida para quien no sabe cuál pedir. */}
+        <ServiceCard
+          title="¿No sabes qué servicio necesitas?"
+          description="Cuéntanos el giro y la superficie de tu inmueble y te decimos qué servicio te pide la norma y con qué periodicidad, sin venderte de más."
+          href={waUrl('Hola, no sé qué servicio necesito. ¿Me ayudan a saber qué me pide la norma para mi inmueble?')}
+          image="/images/servicios/inspeccion-gabinete-manguera-contra-incendio.avif"
+          imageAlt="Técnico inspeccionando un gabinete de manguera contra incendio"
+          badge="Asesoría sin costo"
+          ctaLabel="Diagnóstico por WhatsApp"
+          whatsapp
+        />
       </div>
     </div>
   </section>
@@ -211,5 +228,6 @@ const faqs = [
   .section--surface { background: var(--c-surface); }
   @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
   .grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-5); margin-top: var(--sp-6); }
-  @media (min-width: 640px)  { .grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 640px)  { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 768px)  { .grid { grid-template-columns: repeat(4, 1fr); } }
 </style>

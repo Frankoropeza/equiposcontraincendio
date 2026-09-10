@@ -263,21 +263,21 @@ export const NAV: readonly NavItem[] = [
     label: 'Productos',
     href: '/productos/',
     panel: 'mega',
-    allLabel: 'Catálogo completo',
+    allLabel: 'Equipos contra incendios',
     items: PRODUCT_CATEGORIES.map((c) => ({ label: c.label, href: c.href })),
   },
   {
     label: 'Servicios',
     href: '/servicios/',
     panel: 'dropdown',
-    allLabel: 'Todos los servicios',
+    allLabel: 'Servicios contra incendio',
     items: SERVICES.map((s) => ({ label: s.label, href: `/servicios/${s.id}/`, desc: s.desc })),
   },
   {
     label: 'Cobertura',
     href: '/cobertura/',
     panel: 'dropdown',
-    allLabel: 'Toda la cobertura',
+    allLabel: 'Cobertura CDMX y Edomex',
     items: COVERAGE_STATES.map((s) => ({ label: s.label, href: `/cobertura/${s.slug}/` })),
   },
   ...(SECTORS.length > 0
@@ -303,7 +303,7 @@ export const NAV: readonly NavItem[] = [
     label: 'Protección Civil',
     href: '/proteccion-civil/',
     panel: 'dropdown',
-    allLabel: 'Ver ambas entidades',
+    allLabel: 'Cobertura CDMX y Edomex',
     items: [
       { label: 'CDMX', href: '/proteccion-civil/cdmx/', desc: 'Programa Interno: plataforma digital de la SGIRPC.' },
       { label: 'Estado de México', href: '/proteccion-civil/edomex/', desc: 'Programa Específico: requisitos, plazo y fundamento.' },
@@ -320,7 +320,7 @@ export const NAV: readonly NavItem[] = [
 // misma barra decía cosas distintas según dónde estuvieras. Un solo mapa aquí y
 // un helper que arma los items resuelve el drift de raíz.
 export const SECTION_MENU_SUB: Record<string, string> = {
-  Productos: 'Catálogo de equipo',
+  Productos: 'Equipos contra incendios',
   Servicios: 'Instalación y mantenimiento',
   Cobertura: 'Zonas que atendemos',
   Herramientas: 'Calculadoras y formatos',
@@ -333,7 +333,7 @@ export function sectionMenuItems(): { label: string; href: string; sub: string }
   return NAV.filter((n) => n.label !== 'Contacto').map((n) => ({
     label: n.label,
     href: n.href,
-    sub: SECTION_MENU_SUB[n.label] ?? 'Ver sección',
+    sub: SECTION_MENU_SUB[n.label] ?? 'Ir a la sección',
   }));
 }
 
@@ -355,10 +355,15 @@ export type ShowcaseCategory = {
 //     caracteres la elipsis aparece en las tarjetas cuyo texto rompe peor
 //     (medido en la vitrina de la home a 1440 px de ancho de ventana).
 //   • exactamente 3 subcategorías, con etiqueta ≤ 24 caracteres (sin wrap).
-//   • ctaLabel con palabra clave y SIN el verbo "ver"; estructura paralela
-//     («Catálogo de …») para que las 8 tarjetas lean como un mismo sistema.
-//     Tope de 26 caracteres: a partir de ahí el botón parte en dos líneas y
-//     estira TODA su fila del grid (el CSS lo recorta, pero mejor no llegar).
+//   • ctaLabel = ANCHOR TEXT SEO: la palabra clave limpia de la sección a la
+//     que lleva el botón, sin el verbo "ver" y sin genéricos repetidos. Es un
+//     enlace interno real, así que su texto debe describir el destino — no
+//     decir "Catálogo" ocho veces. Se elige distinto del título de la tarjeta
+//     para variar el anchor sin perder la keyword.
+//     Tope práctico de 24 caracteres. El límite real depende del ancho de los
+//     glifos, no del conteo: «Extintores contra incendio» (26) entra y
+//     «Señalización de emergencia» (26) no. Si se roza el tope, hay que
+//     medirlo en el navegador antes de darlo por bueno.
 //   • href → ancla real del módulo de categoría en /productos/ (no la URL pelada).
 export const SHOWCASE: readonly ShowcaseCategory[] = [
   {
@@ -375,7 +380,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
       { label: 'Extintores de CO₂', href: '/productos/extintor-co2/' },
       { label: 'Extintores clase K', href: '/productos/extintor-clase-k/' },
     ],
-    ctaLabel: 'Catálogo de extintores',
+    ctaLabel: 'Extintores portátiles',
   },
   {
     slug: 'deteccion-alarmas',
@@ -391,7 +396,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
       { label: 'Paneles direccionables', href: '/productos/#deteccion-alarmas' },
       { label: 'Estaciones y sirenas', href: '/productos/#deteccion-alarmas' },
     ],
-    ctaLabel: 'Catálogo de detección',
+    ctaLabel: 'Alarmas contra incendios',
   },
   {
     slug: 'hidrantes-mangueras',
@@ -407,7 +412,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
       { label: 'Hidrantes y siamesas', href: '/productos/#hidrantes-mangueras' },
       { label: 'Válvulas de control', href: '/productos/#hidrantes-mangueras' },
     ],
-    ctaLabel: 'Catálogo de hidrantes',
+    ctaLabel: 'Mangueras contra incendio',
   },
   {
     slug: 'senalizacion',
@@ -423,7 +428,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
       { label: 'Lámparas de emergencia', href: '/productos/#senalizacion' },
       { label: 'Puntos de reunión', href: '/productos/#senalizacion' },
     ],
-    ctaLabel: 'Catálogo de señalización',
+    ctaLabel: 'Señales de emergencia',
   },
   {
     slug: 'sistemas-supresion',
@@ -439,7 +444,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
       { label: 'Supresión de cocina K', href: '/productos/#sistemas-supresion' },
       { label: 'Agente limpio', href: '/productos/#sistemas-supresion' },
     ],
-    ctaLabel: 'Catálogo de sistemas fijos',
+    ctaLabel: 'Sistemas de supresión',
   },
   {
     slug: 'proteccion-primeros-auxilios',
@@ -455,7 +460,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
       { label: 'Equipo de brigada', href: '/productos/#proteccion-primeros-auxilios' },
       { label: 'Mantas y camillas', href: '/productos/#proteccion-primeros-auxilios' },
     ],
-    ctaLabel: 'Catálogo de botiquines',
+    ctaLabel: 'Botiquines y brigada',
   },
   {
     slug: 'equipo-proteccion-personal',
@@ -471,7 +476,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
       { label: 'Guantes térmicos', href: '/productos/#equipo-proteccion-personal' },
       { label: 'Trajes de aproximación', href: '/productos/#equipo-proteccion-personal' },
     ],
-    ctaLabel: 'Catálogo de EPP',
+    ctaLabel: 'Equipo de protección',
   },
   {
     slug: 'accesorios-refacciones',
@@ -487,9 +492,25 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
       { label: 'Soportes y bases', href: '/productos/soportes-accesorios-extintor/' },
       { label: 'Herramienta de servicio', href: '/productos/#accesorios-refacciones' },
     ],
-    ctaLabel: 'Catálogo de accesorios',
+    ctaLabel: 'Refacciones de extintor',
   },
 ];
+
+// ── SERVICE_ANCHOR — anchor text SEO del botón de cada servicio ─────────────
+// Los enlaces a /servicios/<id>/ salían todos con el mismo texto genérico
+// («Detalle del servicio»), que no describe el destino ni aporta señal. Aquí
+// vive la palabra clave limpia de cada servicio, para que la home y
+// /servicios/ enlacen con el MISMO anchor y no vuelvan a divergir.
+// Tope práctico: 24 caracteres (más allá el botón parte en dos líneas).
+export const SERVICE_ANCHOR: Record<string, string> = {
+  'instalacion':           'Instalación de sistemas',
+  'mantenimiento':         'Recarga de extintores',
+  'prueba-hidrostatica':   'Prueba hidrostática',
+  'inspeccion':            'Inspección y dictamen',
+  'diagnostico-de-riesgo': 'Diagnóstico de riesgo',
+  'capacitacion-dc3':      'Capacitación de brigada',
+  'gestion-documental':    'Gestión documental',
+};
 
 // ── BRANCHES — sucursales (opcional). Vacío → el Footer omite el bloque. ──────
 export const BRANCHES: { label: string; address: string; mapsUrl?: string }[] = [];

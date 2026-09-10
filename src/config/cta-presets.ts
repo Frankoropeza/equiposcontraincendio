@@ -32,7 +32,8 @@ export interface CTAPreset {
 
 // ── Botones reutilizables (WhatsApp SIEMPRE vía waUrl) ───────────────────────
 const BTN_WA: BtnDef = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.cotizacion ?? WA_MESSAGES.default), icon: 'wa', primary: true, external: true }
-const BTN_CATALOGO: BtnDef = { label: 'Ver catálogo completo', href: '/productos/', icon: 'catalog' }
+// Anchor text = keyword principal del sitio; el destino es el catálogo entero.
+const BTN_CATALOGO: BtnDef = { label: 'Equipos contra incendios', href: '/productos/', icon: 'catalog' }
 const BTN_CONTACTO: BtnDef = { label: 'Solicitar cotización', href: '/contacto/', icon: 'quote', primary: true }
 
 // ── PRESET — General / Home ──────────────────────────────────────────────────

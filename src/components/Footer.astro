@@ -2,16 +2,21 @@
 // Footer.astro — Footer profesional AMPLIO de 5 zonas, 100% data-driven desde
 // config/site (SSoT). Estructura:
 //   1) Banda CTA pre-footer (titular + WhatsApp + Contacto).
-//   2) Cuerpo: marca (logo wordmark + descripción + contacto NAP + redes) + 4
-//      columnas de navegación (Productos · Servicios/Sectores · Cobertura · Empresa).
+//   2) Cuerpo: grid de 2 pisos × 4 columnas (8 celdas) — marca (logo wordmark +
+//      descripción + contacto NAP + redes) + 7 columnas de navegación repartidas
+//      en 2 filas de 4: piso 1 = Marca · Productos · Servicios/Sectores ·
+//      Cobertura; piso 2 = Empresa · Blog (solo categorías con artículo) ·
+//      Productos destacados (fichas reales, no solo /productos/) · Legal.
 //   3) Banda de cumplimiento normativo (opcional, vía prop `certifications`).
-//   4) Barra inferior: copyright + enlaces legales + botón "volver arriba".
+//   4) Barra inferior: copyright + botón "volver arriba" (los legales viven en
+//      su propia columna del piso 2, ya no diminutos en esta barra).
 // Barra full-width de fondo; contenido al 90% (--container-max). WhatsApp SIEMPRE
 // vía waUrl(); teléfono vía telUrl(). Reglas de motion: solo botones/CTA con
 // transición (las listas de enlaces cambian de color al instante).
+import { getCollection } from 'astro:content'
 import {
   SITE, CONTACT, BRANCHES, PRODUCT_CATEGORIES, SERVICES, SECTORS,
-  COVERAGE_STATES, SOCIAL, LEGAL, waUrl, telUrl, WA_MESSAGES,
+  COVERAGE_STATES, SOCIAL, LEGAL, BLOG_CATEGORIES, waUrl, telUrl, WA_MESSAGES,
 } from '@config/site'
 
 interface Cert { label: string; title?: string }
@@ -38,6 +43,20 @@ const telLink = telUrl()
 const schedule = CONTACT.schedule as { weekdays?: string; saturday?: string; sunday?: string } | undefined
 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${(CONTACT as any).geo?.lat},${(CONTACT as any).geo?.lng}`
 const fullAddress = `${CONTACT.street}, ${CONTACT.city}, ${CONTACT.state} ${CONTACT.postalCode}`
+
+// Productos destacados (2do piso del footer) — interlinking a fichas reales de
+// producto, no solo a /productos/: hoy nada del sitio enlaza estas 7 fichas
+// salvo el propio catálogo.
+const productosDestacados = (await getCollection('productos', ({ data }) => !data.draft)).sort(
+  (a, b) => a.data.order - b.data.order,
+)
+
+// Categorías de blog REALMENTE publicadas. Enlazar una categoría sin artículos
+// rompería (blog/categoria/[...categoria].astro solo genera páginas para las
+// categorías que tienen artículo — ver su getStaticPaths).
+const articulosPublicados = await getCollection('articulos', ({ data }) => !data.draft)
+const categoriasBlogActivas: Set<string> = new Set(articulosPublicados.map((a) => a.data.category))
+const footerBlogCategories = BLOG_CATEGORIES.filter((c) => categoriasBlogActivas.has(c.slug))
 
 // Iconos sociales (24×24, fill=currentColor). Clave = `network` de SOCIAL.
 const SOCIAL_ICONS: Record<string, string> = {
@@ -75,7 +94,7 @@ const ARROW = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" strok
     </div>
   </section>
 
-  <!-- 2) CUERPO: MARCA + 4 COLUMNAS -->
+  <!-- 2) CUERPO: 2 PISOS x 4 COLUMNAS (marca + 7 columnas de navegación) -->
   <div class="footer__body">
     <div class="footer__grid">
 
@@ -103,7 +122,7 @@ const ARROW = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" strok
             <span class="footer__contact-text"><strong>{CONTACT.email}</strong></span>
           </a>
 
-          <a href={mapsUrl} class="footer__contact-row" target="_blank" rel="noopener noreferrer" aria-label="Ver dirección en Google Maps">
+          <a href={mapsUrl} class="footer__contact-row" target="_blank" rel="noopener noreferrer" aria-label="Abrir dirección en Google Maps">
             <span class="footer__contact-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
             <span class="footer__contact-text"><span class="footer__contact-plain">{fullAddress}</span></span>
           </a>
@@ -112,7 +131,7 @@ const ARROW = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" strok
             <div class="footer__branches" role="group" aria-label="Sucursales">
               <span class="footer__branches-label">Sucursales</span>
               {branches.map((branch) => (
-                <a href={branch.mapsUrl ?? '#'} class="footer__contact-row footer__branch" target="_blank" rel="noopener noreferrer" aria-label={`Ver ${branch.label} en Google Maps`}>
+                <a href={branch.mapsUrl ?? '#'} class="footer__contact-row footer__branch" target="_blank" rel="noopener noreferrer" aria-label={`Abrir ${branch.label} en Google Maps`}>
                   <span class="footer__contact-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
                   <span class="footer__contact-text"><strong class="footer__branch-name">{branch.label}</strong><span class="footer__branch-address">{branch.address}</span></span>
                 </a>
@@ -147,7 +166,7 @@ const ARROW = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" strok
       <nav class="footer__col" aria-label="Productos">
         <h3 class="footer__col-heading"><span class="footer__col-heading-accent" aria-hidden="true"></span>Productos</h3>
         <ul class="footer__nav-list" role="list">
-          <li><a href="/productos/" class="footer__nav-link footer__nav-link--all">Ver catálogo completo<Fragment set:html={ARROW} /></a></li>
+          <li><a href="/productos/" class="footer__nav-link footer__nav-link--all">Catálogo completo<Fragment set:html={ARROW} /></a></li>
           {PRODUCT_CATEGORIES.map((cat) => (
             <li><a href={cat.href} class="footer__nav-link">{cat.label}{(cat as any).badge && <span class="footer__nav-badge">{(cat as any).badge}</span>}</a></li>
           ))}
@@ -195,6 +214,41 @@ const ARROW = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" strok
         </ul>
       </nav>
 
+      <!-- Blog (2do piso) — solo categorías con artículo publicado -->
+      {footerBlogCategories.length > 0 && (
+        <nav class="footer__col" aria-label="Blog">
+          <h3 class="footer__col-heading"><span class="footer__col-heading-accent" aria-hidden="true"></span>Blog</h3>
+          <ul class="footer__nav-list" role="list">
+            <li><a href="/blog/" class="footer__nav-link footer__nav-link--all">Todo el blog<Fragment set:html={ARROW} /></a></li>
+            {footerBlogCategories.map((cat) => (
+              <li><a href={`/blog/categoria/${cat.slug}/`} class="footer__nav-link">{cat.label}</a></li>
+            ))}
+          </ul>
+        </nav>
+      )}
+
+      <!-- Productos destacados (2do piso) — fichas reales, no solo la categoría -->
+      {productosDestacados.length > 0 && (
+        <nav class="footer__col" aria-label="Productos destacados">
+          <h3 class="footer__col-heading"><span class="footer__col-heading-accent" aria-hidden="true"></span>Productos destacados</h3>
+          <ul class="footer__nav-list" role="list">
+            {productosDestacados.map((producto) => (
+              <li><a href={`/productos/${producto.id}/`} class="footer__nav-link">{producto.data.title}</a></li>
+            ))}
+          </ul>
+        </nav>
+      )}
+
+      <!-- Legal (2do piso) — antes solo vivía, diminuto, en la barra inferior -->
+      {LEGAL.length > 0 && (
+        <nav class="footer__col" aria-label="Legal">
+          <h3 class="footer__col-heading"><span class="footer__col-heading-accent" aria-hidden="true"></span>Legal</h3>
+          <ul class="footer__nav-list" role="list">
+            {LEGAL.map((item) => (<li><a href={item.href} class="footer__nav-link">{item.label}</a></li>))}
+          </ul>
+        </nav>
+      )}
+
     </div>
   </div>
 
@@ -217,17 +271,6 @@ const ARROW = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" strok
         <p class="footer__copy">© {currentYear} {SITE.name}. Todos los derechos reservados.</p>
         <p class="footer__seo-tagline">{seoTagline}</p>
       </div>
-
-      {LEGAL.length > 0 && (
-        <nav class="footer__legal" aria-label="Enlaces legales">
-          {LEGAL.map((item, i) => (
-            <>
-              {i > 0 && <span class="footer__legal-sep" aria-hidden="true">·</span>}
-              <a href={item.href} class="footer__legal-link">{item.label}</a>
-            </>
-          ))}
-        </nav>
-      )}
 
       <button type="button" class="footer__top" aria-label="Volver arriba">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
@@ -282,7 +325,10 @@ const ARROW = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" strok
 
   /* ---------- 2) CUERPO ---------- */
   .footer__body { padding: 3.5rem 0 3rem; }
-  .footer__grid { display: grid; grid-template-columns: minmax(260px, 1.4fr) repeat(5, 1fr); gap: 3rem 1.75rem; align-items: start; max-width: var(--container-max, 1400px); margin-inline: auto; padding-inline: var(--container-px, 1.5rem); }
+  /* 2 pisos x 4 columnas iguales: piso 1 = Marca·Productos·Servicios·Cobertura;
+     piso 2 = Empresa·Blog·Productos destacados·Legal. El orden en el DOM decide
+     la fila (grid-auto-flow: row por defecto), no hace falta fijar filas a mano. */
+  .footer__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 3rem 1.75rem; align-items: start; max-width: var(--container-max, 1400px); margin-inline: auto; padding-inline: var(--container-px, 1.5rem); }
 
   /* Marca */
   .footer__logo { display: inline-flex; align-items: center; gap: .55rem; text-decoration: none; margin-bottom: 1.1rem; }
@@ -350,30 +396,29 @@ const ARROW = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" strok
   .footer__bottom-left { display: flex; flex-direction: column; gap: .15rem; }
   .footer__copy { margin: 0; font-size: var(--text-xs, .75rem); color: rgba(255,255,255,.45); line-height: 1.5; }
   .footer__seo-tagline { margin: 0; font-size: var(--text-xs, .75rem); color: rgba(255,255,255,.3); line-height: 1.5; }
-  .footer__legal { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; justify-content: center; }
-  .footer__legal-link { font-size: var(--text-xs, .75rem); color: rgba(255,255,255,.5); text-decoration: none; transition: color var(--transition, .2s ease); }
-  .footer__legal-link:hover { color: var(--ft-white); }
-  .footer__legal-sep { color: rgba(255,255,255,.2); font-size: .75rem; }
   .footer__top { display: inline-flex; align-items: center; gap: .4rem; font-family: var(--font-body); font-size: var(--text-xs, .75rem); font-weight: var(--weight-semibold, 600); color: rgba(255,255,255,.7); background: rgba(255,255,255,.05); border: 1px solid var(--ft-border); border-radius: var(--radius-full, 999px); padding: .45rem .85rem; cursor: pointer; transition: background var(--transition, .2s ease), border-color var(--transition, .2s ease), color var(--transition, .2s ease); }
   .footer__top:hover { color: var(--ft-white); background: var(--ft-accent-dim); border-color: var(--ft-accent-2); }
   .footer__top:focus-visible { outline: 2px solid var(--ft-accent-2); outline-offset: 2px; }
 
   /* ---------- RESPONSIVE ---------- */
   @media (max-width: 1280px) {
-    /* 5 cols → 3 cols + marca full-width; suficiente aire para Productos · Servicios · Cobertura · Módulos · Empresa repartidos en 2 filas. */
-    .footer__grid { grid-template-columns: 1fr 1fr 1fr; gap: 2.5rem 2rem; }
-    .footer__brand { grid-column: 1 / -1; max-width: 620px; }
+    /* 4 cols → 3 cols; marca sigue ocupando su propia celda (ya no es 1.4fr, así
+       que cabe igual que cualquier columna de navegación). 8 celdas en 3 cols
+       terminan en 3 filas, la última con 2 huecos — aceptable, no se fuerza. */
+    .footer__grid { grid-template-columns: repeat(3, 1fr); gap: 2.5rem 2rem; }
   }
   @media (max-width: 760px) {
     .footer__cta-inner { flex-direction: column; align-items: flex-start; gap: 1.25rem; padding: 2rem var(--container-px, 1.5rem); }
     .footer__cta-actions { width: 100%; }
     .footer__btn { flex: 1; justify-content: center; }
-    .footer__grid { grid-template-columns: 1fr 1fr; }
+    .footer__grid { grid-template-columns: repeat(2, 1fr); }
+    .footer__brand { grid-column: 1 / -1; max-width: 620px; }
     .footer__bottom-inner { flex-direction: column; align-items: center; text-align: center; gap: .875rem; }
     .footer__bottom-left { align-items: center; }
   }
   @media (max-width: 480px) {
     .footer__body { padding: 2.5rem 0 2rem; }
     .footer__grid { grid-template-columns: 1fr; gap: 2rem; }
+    .footer__brand { grid-column: 1 / -1; }
   }
 </style>
