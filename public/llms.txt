@@ -27,17 +27,20 @@ Idioma: español (es-MX). País: México.
 ## Páginas clave
 - [Inicio](https://equiposcontraincendio.com/): presentación del catálogo y servicios.
 - [Productos](https://equiposcontraincendio.com/productos): catálogo de equipo contra incendio.
-- [Extintor PQS 6 kg](https://equiposcontraincendio.com/productos/extintor-pqs-6kg): ficha de producto.
-- [Extintor CO2 4.5 kg](https://equiposcontraincendio.com/productos/extintor-co2-45kg): ficha de producto.
-- [Detector de humo fotoeléctrico](https://equiposcontraincendio.com/productos/detector-humo-fotoelectrico): ficha de producto.
-- [Servicios](https://equiposcontraincendio.com/servicios): instalación, mantenimiento e inspección.
-- [Mantenimiento y recarga](https://equiposcontraincendio.com/servicios/mantenimiento): recarga de extintores conforme a norma.
-- [Blog](https://equiposcontraincendio.com/blog): guías técnicas y de normatividad.
-- [Cómo elegir extintor por clase de fuego](https://equiposcontraincendio.com/blog/como-elegir-extintor-clase-fuego): guía práctica.
-- [Mantenimiento y recarga según NOM](https://equiposcontraincendio.com/blog/mantenimiento-recarga-extintores-nom): guía normativa.
-- [Cobertura](https://equiposcontraincendio.com/cobertura): CDMX y Estado de México.
-- [Nosotros](https://equiposcontraincendio.com/nosotros): quiénes somos.
-- [Contacto](https://equiposcontraincendio.com/contacto): cotizaciones y contacto.
+- [Extintor PQS ABC](https://equiposcontraincendio.com/productos/extintor-pqs/): ficha de producto.
+- [Extintor de CO2](https://equiposcontraincendio.com/productos/extintor-co2/): ficha de producto.
+- [Detector de humo fotoeléctrico](https://equiposcontraincendio.com/productos/detector-humo-fotoelectrico/): ficha de producto.
+- [Servicios](https://equiposcontraincendio.com/servicios/): instalación, mantenimiento, inspección, prueba hidrostática, diagnóstico de riesgo, capacitación DC-3 y gestión documental.
+- [Mantenimiento y recarga](https://equiposcontraincendio.com/servicios/mantenimiento/): recarga de extintores conforme a la NOM-154-SCFI-2005.
+- [Blog](https://equiposcontraincendio.com/blog/): guías técnicas y de normatividad.
+- [Tipos de extintores por clase de fuego y agente](https://equiposcontraincendio.com/blog/como-elegir-extintor-clase-fuego/): pilar de selección de extintores.
+- [NOM-002-STPS-2010 explicada](https://equiposcontraincendio.com/blog/nom-002-stps-2010/): pilar de normatividad, obligaciones del patrón y registros exigibles.
+- [Recarga y mantenimiento de extintores](https://equiposcontraincendio.com/blog/mantenimiento-recarga-extintores-nom/): qué exige la NOM-154 y cómo verificar al proveedor.
+- [Cobertura](https://equiposcontraincendio.com/cobertura/): CDMX y Estado de México.
+- [Herramientas](https://equiposcontraincendio.com/herramientas/): clasificador de riesgo, calculadora de extintores y verificador en 12 puntos.
+- [Formatos descargables](https://equiposcontraincendio.com/plantillas/): bitácora de revisión, acta de simulacro y censo de brigada.
+- [Nosotros](https://equiposcontraincendio.com/nosotros/): quiénes somos.
+- [Contacto](https://equiposcontraincendio.com/contacto/): cotizaciones y contacto.
 
 ## Contacto
 - Sitio: https://equiposcontraincendio.com/
