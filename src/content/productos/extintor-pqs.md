@@ -2,7 +2,7 @@
 title: "Extintores de polvo químico seco PQS ABC"
 description: "Familia de extintores de polvo químico seco ABC para fuegos de sólidos, líquidos inflamables y equipo eléctrico energizado. Capacidades portátiles y móviles para distintos niveles de riesgo."
 category: extintores
-image: /images/productos/extintor-pqs-6kg.svg
+image: /images/showcase/extintores-catalogo-profesional.avif
 price: "Cotizar"
 featured: true
 order: 1

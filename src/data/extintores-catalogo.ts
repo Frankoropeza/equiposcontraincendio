@@ -142,11 +142,11 @@ export const EXT_ACCESORIOS: Record<ExtFormato, LinkItem[]> = {
 // Punto de partida, no dictamen: la cantidad y la ubicación salen del plano y
 // del grado de riesgo (NOM-002-STPS-2010, 7.17 y Tabla 1). `uso` activa el
 // filtro del catálogo (enlace ?uso=<key>#catalogo).
-export type UsoRow = { uso: ExtUso; titulo: string; arde: string; recomendado: string; nota: string };
+export type UsoRow = { uso: ExtUso; titulo: string; arde: string; recomendado: string; nota: string; guia?: LinkItem };
 export const extUsos: UsoRow[] = [
   { uso: 'oficina', titulo: 'Extintores para oficinas', arde: 'Papel, mobiliario, equipo de cómputo y contactos', recomendado: 'PQS ABC de 4.5 a 6 kg en áreas comunes; CO₂ o agente limpio junto al site', nota: 'El polvo del PQS daña equipo: junto a servidores conviene un agente sin residuo.' },
   { uso: 'comercio', titulo: 'Extintores para comercios', arde: 'Mercancía, empaque, mobiliario y tablero eléctrico', recomendado: 'PQS ABC de 6 kg en piso de venta; CO₂ junto al tablero', nota: 'La ruta al extintor no debe quedar bloqueada por mercancía ni exhibidores.' },
-  { uso: 'restaurante', titulo: 'Extintores para restaurantes', arde: 'Aceites de cocción, gas, comedor y mobiliario', recomendado: 'Clase K de 6 L junto a la línea de cocción; PQS ABC en comedor y pasillo', nota: 'El recorrido máximo a un extintor clase K es de 10 m (NOM-002, Tabla 1).' },
+  { uso: 'restaurante', titulo: 'Extintores para restaurantes', arde: 'Aceites de cocción, gas, comedor y mobiliario', recomendado: 'Clase K de 6 L junto a la línea de cocción; PQS ABC en comedor y pasillo', nota: 'El recorrido máximo a un extintor clase K es de 10 m (NOM-002, Tabla 1).', guia: { label: 'Guía de Protección Civil para restaurantes', href: '/blog/proteccion-civil-restaurantes/' } },
   { uso: 'hotel', titulo: 'Extintores para hoteles', arde: 'Habitaciones, textiles, cocina, lavandería y cuartos de máquinas', recomendado: 'PQS ABC o agua en pasillos; clase K en cocina; CO₂ en cuartos eléctricos', nota: 'Cada área se protege por lo que arde en ella, no con un solo agente para todo el edificio.' },
   { uso: 'bodega', titulo: 'Extintores para bodegas', arde: 'Tarima, cartón, plástico, montacargas y cargadores', recomendado: 'PQS ABC de 9 kg; unidades móviles de PQS o agua en naves amplias', nota: 'Con riesgo alto, la NOM-002 pide un extintor por cada 200 m² (7.17).' },
   { uso: 'industria', titulo: 'Extintores industriales', arde: 'Procesos, solventes, combustibles y tableros', recomendado: 'PQS ABC de 9 kg y móviles; espuma AFFF con líquidos inflamables; CO₂ en tableros', nota: 'En riesgo alto y clase B, un extintor móvil puede ubicarse hasta a 15 m (Tabla 1, nota).' },

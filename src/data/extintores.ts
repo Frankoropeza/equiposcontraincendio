@@ -67,12 +67,17 @@ export const extintoresPillars = [
 // usa la `description` del frontmatter porque mide 180–230 caracteres y la
 // tarjeta la cortaba con elipsis — medido en el navegador el 2026-09-10.
 // ctaLabel = keyword limpia del destino (regla de anchor text, tope ~24 car.).
-export const extintoresFichas: Record<string, { badge: string; blurb: string; ctaLabel: string }> = {
-  'extintor-pqs': { badge: 'Clases A · B · C', blurb: 'Un solo agente para sólidos, líquidos inflamables y equipo eléctrico. De 1 a 70 kg.', ctaLabel: 'Extintores PQS ABC' },
-  'extintor-co2': { badge: 'Clases B · C', blurb: 'Sin residuo para tableros, sites y electrónica. Portátil y móvil sobre ruedas.', ctaLabel: 'Extintores de CO₂' },
-  'extintor-clase-k': { badge: 'Clase K · Cocina', blurb: 'Químico húmedo para aceites y grasas de cocción. Complementa el sistema de la campana.', ctaLabel: 'Extintores clase K' },
-  'extintor-agua': { badge: 'Clases A · B', blurb: 'Agua a presión, nebulizada y espuma AFFF para sólidos y líquidos inflamables.', ctaLabel: 'Extintores de agua' },
-  'extintor-agente-limpio': { badge: 'Clases B · C · A', blurb: 'Halotron I y FE-36: sin residuo ni conductividad, para sites y equipo electrónico.', ctaLabel: 'Agente limpio' },
+// image/imageAlt: fotografía de CONTEXTO de uso para la tarjeta de familia
+// (2026-09-10, a falta de foto de producto por agente). No sustituye a la
+// `image` de la ficha, que alimenta el schema Product y el OG: ahí se queda el
+// cartel hasta tener foto real del producto, salvo PQS, cuya foto sí muestra
+// extintores de la familia. El alt describe lo que se ve, no el producto.
+export const extintoresFichas: Record<string, { badge: string; blurb: string; ctaLabel: string; image?: string; imageAlt?: string }> = {
+  'extintor-pqs': { badge: 'Clases A · B · C', blurb: 'Un solo agente para sólidos, líquidos inflamables y equipo eléctrico. De 1 a 70 kg.', ctaLabel: 'Extintores PQS ABC', image: '/images/showcase/extintores-catalogo-profesional.avif', imageAlt: 'Extintores portátiles de distintas capacidades sobre piso de concreto' },
+  'extintor-co2': { badge: 'Clases B · C', blurb: 'Sin residuo para tableros, sites y electrónica. Portátil y móvil sobre ruedas.', ctaLabel: 'Extintores de CO₂', image: '/images/servicios/prueba-electrica-panel-alarma-incendio.avif', imageAlt: 'Muro con señalética de emergencia, extintor y estación manual en planta' },
+  'extintor-clase-k': { badge: 'Clase K · Cocina', blurb: 'Químico húmedo para aceites y grasas de cocción. Complementa el sistema de la campana.', ctaLabel: 'Extintores clase K', image: '/images/servicios/supresion-cocina-comercial.avif', imageAlt: 'Cocina comercial con campana y supresión clase K' },
+  'extintor-agua': { badge: 'Clases A · B', blurb: 'Agua a presión, nebulizada y espuma AFFF para sólidos y líquidos inflamables.', ctaLabel: 'Extintores de agua', image: '/images/servicios/instalacion-equipo-almacen.avif', imageAlt: 'Instalación de extintor y gabinete en almacén' },
+  'extintor-agente-limpio': { badge: 'Clases B · C · A', blurb: 'Halotron I y FE-36: sin residuo ni conductividad, para sites y equipo electrónico.', ctaLabel: 'Agente limpio', image: '/images/servicios/supresion-agente-limpio-data-center.avif', imageAlt: 'Cilindros de agente limpio protegiendo un data center' },
 };
 
 // ── Módulos por agente (CategoryFeature) ─────────────────────────────────────

@@ -3,7 +3,7 @@
 // Contrato: recibe extUsos y el copy de extSecciones.negocio.
 import SectionHeading from './SectionHeading.astro';
 
-interface Row { uso: string; titulo: string; arde: string; recomendado: string; nota: string; }
+interface Row { uso: string; titulo: string; arde: string; recomendado: string; nota: string; guia?: { label: string; href: string }; }
 interface Copy { eyebrow: string; title: string; titleAccent: string; desc: string; body: string[]; }
 const { rows, copy } = Astro.props as { rows: Row[]; copy: Copy };
 ---
@@ -20,6 +20,7 @@ const { rows, copy } = Astro.props as { rows: Row[]; copy: Copy };
             <div><dt>Con qué arrancar</dt><dd>{row.recomendado}</dd></div>
           </dl>
           <p>{row.nota}</p>
+          {row.guia && <a class="uso__guide" href={row.guia.href}>{row.guia.label}</a>}
           <a href={`?uso=${row.uso}#catalogo`}>Ver presentaciones <span aria-hidden="true">→</span></a>
         </article>
       ))}
@@ -40,4 +41,5 @@ const { rows, copy } = Astro.props as { rows: Row[]; copy: Copy };
   .uso__card a:hover { text-decoration: underline; }
   @media (min-width: 640px) { .uso__grid { grid-template-columns: repeat(2, 1fr); } }
   @media (min-width: 1024px) { .uso__grid { grid-template-columns: repeat(4, 1fr); } }
+  .uso__card .uso__guide { margin: 0 0 var(--sp-3); font-size: var(--text-xs); font-weight: var(--weight-medium); text-decoration: underline; }
 </style>

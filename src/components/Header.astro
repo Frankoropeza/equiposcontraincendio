@@ -310,8 +310,20 @@ const PHONE_SVG = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" s
   .mob-call:hover { background: rgba(var(--c-primary-rgb), .08); }
   .mob-foot__meta { margin: 0; display: flex; align-items: center; justify-content: center; gap: .4rem; font-size: var(--text-sm); color: var(--c-muted); }
 
-  /* ── Breakpoint chrome → móvil ── */
-  @media (max-width: 1024px) {
+  /* ── Breakpoint chrome → móvil ──
+     La nav de escritorio (logo + 7 secciones + CTA) necesita ~1,215 px con el
+     padding normal: entre 1025 y 1199 px desbordaba el ancho de la ventana
+     (medido a 1053 px: 140 px fuera de pantalla, 2026-09-10). Por eso el
+     menú hamburguesa cubre hasta 1279 px y, de 1280 a 1399 px, los enlaces
+     usan un padding compacto para caber sin recortar etiquetas (medido en
+     iframes a 1214, 1285, 1360 y 1440 px). */
+  @media (min-width: 1280px) and (max-width: 1399px) {
+    .hdr-inner { gap: var(--sp-4, 1rem); }
+    .hdr-nav__list { gap: 0; }
+    .hdr-nav__link { padding: var(--sp-2, .5rem) .55rem; }
+    .hdr-cta { padding: .6rem 1rem; }
+  }
+  @media (max-width: 1279px) {
     .hdr-nav, .hdr-cta { display: none; }
     .hdr-burger { display: flex; }
   }
@@ -468,6 +480,6 @@ const PHONE_SVG = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" s
       })
     })
     mobileNav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)))
-    window.addEventListener('resize', () => { if (window.innerWidth > 1024) { closeAll(); setMenu(false) } })
+    window.addEventListener('resize', () => { if (window.innerWidth >= 1280) { closeAll(); setMenu(false) } })
   })()
 </script>

@@ -122,8 +122,8 @@ const schemaData = {
           <ProductCard
             title={ficha.data.title}
             href={`/productos/${ficha.id}/`}
-            image={ficha.data.image}
-            imageAlt={ficha.data.title}
+            image={extintoresFichas[ficha.id]?.image ?? ficha.data.image}
+            imageAlt={extintoresFichas[ficha.id]?.imageAlt ?? ficha.data.title}
             badge={extintoresFichas[ficha.id]?.badge}
             description={extintoresFichas[ficha.id]?.blurb ?? ficha.data.description}
             ctaLabel={extintoresFichas[ficha.id]?.ctaLabel}
