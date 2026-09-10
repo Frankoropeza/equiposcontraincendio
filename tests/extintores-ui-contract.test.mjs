@@ -32,6 +32,7 @@ test('la L3 contiene los bloques y contratos del catálogo', () => {
 const L3 = [
   { page: 'src/pages/productos/extintores/index.astro', data: 'src/data/extintores.ts', list: 'extintoresTarjetas' },
   { page: 'src/pages/servicios/mantenimiento/index.astro', data: 'src/data/mantenimiento.ts', list: 'mantTarjetas' },
+  { page: 'src/pages/servicios/prueba-hidrostatica/index.astro', data: 'src/data/prueba-hidrostatica.ts', list: 'phTarjetas' },
 ];
 
 test('las L3 no usan retículas de 3 ni de 2 columnas', () => {

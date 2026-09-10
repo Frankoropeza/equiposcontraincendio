@@ -451,11 +451,11 @@ export const mantCompany = {
 // ── Enlaces relacionados ─────────────────────────────────────────────────────
 export const mantRelated = [
   { label: 'Prueba hidrostática', href: '/servicios/prueba-hidrostatica/', desc: 'Retimbrado del cilindro cada 5 años.' },
-  { label: 'Inspección y dictamen', href: '/servicios/inspeccion/', desc: 'Qué equipo tienes, qué venció y qué falta.' },
-  { label: 'Verifica tu extintor', href: '/herramientas/verifica-tu-extintor/', desc: 'Doce puntos para saber si el servicio fue real.' },
+  { label: 'Inspección y dictamen', href: '/servicios/inspeccion/', desc: 'Vencimientos y faltantes por equipo.' },
+  { label: 'Verifica tu extintor', href: '/herramientas/verifica-tu-extintor/', desc: 'Doce puntos para saber si fue real.' },
   { label: 'Bitácora de extintores', href: '/plantillas/bitacora-revision-extintores/', desc: 'Formato gratuito para la revisión mensual.' },
   { label: 'Qué exige la NOM-154', href: '/blog/mantenimiento-recarga-extintores-nom/', desc: 'Etiqueta, collarín, dictamen y garantía.' },
-  { label: 'Calcomanía sin servicio', href: '/blog/calcomania-sin-servicio-extintores-fraude/', desc: 'Cómo detectar un servicio que no se hizo.' },
+  { label: 'Calcomanía sin servicio', href: '/blog/calcomania-sin-servicio-extintores-fraude/', desc: 'Servicios que no se hicieron.' },
   { label: 'Manómetro del extintor', href: '/blog/manometro-extintor-zonas-que-significan/', desc: 'Qué significa cada zona y cuándo actuar.' },
   { label: 'Retimbrar o dar de baja', href: '/blog/cuando-dar-de-baja-o-retimbrar-un-extintor/', desc: 'Vida útil del cilindro y señales de baja.' },
 ];
@@ -516,3 +516,107 @@ export const mantFaqs = [
     answer: 'Se da de baja: un cilindro que no resiste la prueba no puede volver a servicio, y ninguna recarga lo corrige. Se documenta el retiro y te cotizamos un extintor nuevo del agente adecuado para esa zona.',
   },
 ];
+
+export const mantenimientoL3: import('./l3-types').ServiceL3Data = {
+  id: 'mantenimiento',
+  path: '/servicios/mantenimiento/',
+  seo: mantSeo,
+  breadcrumb: 'Mantenimiento y recarga',
+  wa: WA_MANTENIMIENTO,
+  menuCtaSub: 'Manda tu inventario',
+  hero: {
+    ...mantHero,
+    outlineText: 'Recarga por tipo',
+  },
+  pillars: mantPillars as import('./l3-types').ServiceL3Data['pillars'],
+  vitrina: {
+    ...mantSecciones.vitrina,
+    id: 'por-tipo',
+    tarjetas: mantTarjetas,
+  },
+  tablaPrincipal: {
+    id: 'que-incluye',
+    ...mantSecciones.incluye,
+    columns: mantIncluyeCols,
+    rows: mantIncluyeRows,
+  },
+  guia: {
+    eyebrow: 'Antes del servicio anual',
+    title: 'Señales para llevar tu extintor',
+    titleAccent: 'a servicio antes de tiempo',
+    desc: 'El mantenimiento es anual, pero hay fallas que no esperan. Estas se ven en la revisión mensual.',
+    body: [
+      'Cada fila es algo que tu personal puede detectar sin abrir el extintor. Si aparece una, el equipo sale de servicio y se atiende ya, sin esperar a la fecha del mantenimiento.',
+      'La última columna es lo que más vemos en campo: soluciones rápidas que dejan el extintor con apariencia de vigente y sin capacidad real de descarga.',
+    ],
+    rows: mantSenales,
+    columns: ['Señal', 'Qué indica', 'Qué hacer', 'Qué no hacer'],
+    note: 'Mientras el extintor está fuera de servicio, esa zona necesita otro equipo del mismo agente. Si no tienes de reserva, lo coordinamos al recogerlo.',
+    ctaLabel: 'Verifica tu extintor',
+    ctaHref: '/herramientas/verifica-tu-extintor/',
+  },
+  tabla2: {
+    id: 'al-regresar',
+    ...mantSecciones.regreso,
+    columns: mantRegresoCols,
+    rows: mantRegresoRows,
+  },
+  modulos: mantFeatures,
+  decision: {
+    id: 'recargar-o-reemplazar',
+    ...mantSecciones.reemplazo,
+    columns: mantReemplazoCols,
+    rows: mantReemplazoRows,
+  },
+  proceso: {
+    eyebrow: 'Cómo es el servicio',
+    title: 'Del inventario',
+    titleAccent: 'a la etiqueta nueva',
+    desc: 'Lo que le pasa a cada extintor entre que lo recogemos y te lo devolvemos.',
+    body: [
+      'El paso que separa un mantenimiento de una recarga rápida es el tercero: abrir el equipo y revisarlo por dentro. Sin eso, nadie sabe en qué estado está el cilindro.',
+      'Al final no recibes solo el extintor: recibes la evidencia de que se le dio servicio, que es lo que te piden en una verificación.',
+    ],
+    steps: mantSteps,
+  },
+  normas: {
+    eyebrow: 'Normatividad',
+    title: 'Qué le exige la norma',
+    titleAccent: 'al taller que da servicio',
+    desc: 'La NOM-154 dice cómo se hace el servicio; la NOM-002, cada cuándo y qué revisas tú.',
+    body: [
+      'La confusión más común es atribuir el plazo anual a la NOM-154. Ese plazo sale de la NOM-002-STPS-2010; la NOM-154 regula el procedimiento, la etiqueta, el collarín, la garantía y la verificación del taller.',
+      'Estas obligaciones también sirven para comparar proveedores: quien no puede mostrar su dictamen o su contrato registrado no está cumpliendo.',
+    ],
+    rows: mantNormRows,
+    columns: ['Norma', 'Qué exige', 'Qué significa para ti'],
+    note: 'La NOM-002-STPS-2010 pide conservar los registros de revisión y servicio; la NOM-154 obliga al taller a guardar la orden de servicio al menos dos años. Pide la tuya en cada servicio.',
+  },
+  empresa: {
+    eyebrow: 'Por qué con nosotros',
+    title: 'Tus extintores al día',
+    titleAccent: 'y con evidencia',
+    desc: 'Un extintor recargado cuenta en una verificación solo si el papel lo demuestra.',
+    body: [
+      'Damos el mantenimiento, la recarga y la prueba hidrostática a extintores de todos los agentes, y dejamos en cada equipo la evidencia que pide la norma. Si también te vendimos los extintores, el servicio sigue con el mismo proveedor.',
+      'Mándanos por WhatsApp tu inventario —tipo, capacidad y cantidad— y te cotizamos el servicio completo del año.',
+    ],
+    que: mantCompany.que,
+    como: mantCompany.como,
+  },
+  related: {
+    title: 'Servicios y guías relacionados',
+    desc: 'Lo que conviene revisar antes y después de dar servicio a tus extintores.',
+    links: mantRelated,
+  },
+  faq: {
+    eyebrow: 'Preguntas frecuentes',
+    titleAccent: 'sobre recarga de extintores',
+    desc: 'Lo que más nos preguntan antes de mandar los extintores a servicio: costo, periodicidad, qué deben traer y cuándo ya no conviene recargarlos.',
+    body: [
+      'Si tu caso no aparece aquí, escríbenos con el tipo, la capacidad y la cantidad de extintores. Con eso te decimos qué servicio les toca.',
+      'Las respuestas citan la norma cuando aplica; lo que depende del estado de cada equipo lo revisamos al abrirlo.',
+    ],
+    items: mantFaqs,
+  },
+};

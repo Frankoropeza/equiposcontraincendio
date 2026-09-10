@@ -274,10 +274,10 @@ export const extintoresCompany = {
 
 export const extintoresRelated = [
   { label: 'Prueba hidrostática', href: '/servicios/prueba-hidrostatica/', desc: 'Retimbrado del cilindro cada 5 años.' },
-  { label: 'Instalación de extintores', href: '/servicios/instalacion/', desc: 'Montaje a la altura correcta y señalización.' },
+  { label: 'Instalación de extintores', href: '/servicios/instalacion/', desc: 'Montaje a la altura correcta.' },
   { label: 'Inspección y dictamen', href: '/servicios/inspeccion/', desc: 'Revisión del equipo instalado y su reporte.' },
-  { label: 'Capacitación en extintores', href: '/servicios/capacitacion-dc3/', desc: 'Uso de extintores para tu brigada, con DC-3.' },
-  { label: 'Señalamiento de extintor', href: '/productos/senalizacion-fotoluminiscente/', desc: 'Señal fotoluminiscente de ubicación.' },
+  { label: 'Capacitación en extintores', href: '/servicios/capacitacion-dc3/', desc: 'Uso de extintores, con DC-3.' },
+  { label: 'Señalamiento de extintor', href: '/productos/senalizacion-fotoluminiscente/', desc: 'Señal fotoluminiscente.' },
   { label: 'Gabinetes con manguera', href: '/productos/gabinete-manguera-contra-incendio/', desc: 'Cuando el conato supera al extintor.' },
   { label: 'Tipos de extintores', href: '/blog/como-elegir-extintor-clase-fuego/', desc: 'Clases de fuego y agentes, explicados.' },
   { label: 'Cotizar extintores', href: '/contacto/', desc: 'Escríbenos con tu giro y superficie.' },

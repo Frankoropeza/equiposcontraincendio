@@ -33,7 +33,7 @@ export async function getStaticPaths() {
   // Se excluyen para no generar dos páginas en la misma URL; su ficha de la
   // colección se conserva (tarjeta de /servicios/, menú y blog). Va dentro de
   // getStaticPaths porque Astro la ejecuta aislada del resto del frontmatter.
-  const L3_PROPIAS = new Set(['mantenimiento'])
+  const L3_PROPIAS = new Set(['mantenimiento', 'prueba-hidrostatica'])
   const servicios = (await getCollection('servicios', ({ data }) => !data.draft)).sort(
     (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0),
   )

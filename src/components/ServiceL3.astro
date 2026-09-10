@@ -1,0 +1,194 @@
+---
+// ServiceL3 — composición compartida de una L3 de servicio.
+// Existe para mantener una sola implementación del patrón aprobado: las
+// páginas entregan datos y no pueden desviarse en orden, fondos o componentes.
+import type { ServiceL3Data } from '@data/l3-types';
+import PageLayout from '@layouts/PageLayout.astro';
+import Hero from '@components/Hero.astro';
+import SectionMenu from '@components/SectionMenu.astro';
+import SectionHeading from '@components/SectionHeading.astro';
+import ServiceCard from '@components/ServiceCard.astro';
+import CategoryFeature from '@components/CategoryFeature.astro';
+import TrustBar from '@components/TrustBar.astro';
+import RiskGuide from '@components/RiskGuide.astro';
+import NormsTable from '@components/NormsTable.astro';
+import ProcessSteps from '@components/ProcessSteps.astro';
+import CompanyAbout from '@components/CompanyAbout.astro';
+import RelatedLinks from '@components/RelatedLinks.astro';
+import FAQWithContact from '@components/FAQWithContact.astro';
+import DataTable from '@components/DataTable.astro';
+import { CONTACT, waUrl, sectionMenuItems } from '@config/site';
+import { companyStats } from '@data/home';
+
+interface Props {
+  data: ServiceL3Data;
+}
+
+const { data } = Astro.props;
+const schemaData = {
+  service: {
+    name: data.seo.serviceName,
+    description: data.seo.description,
+    path: data.path,
+    serviceType: data.seo.serviceType,
+    image: data.seo.image,
+    areaServed: ['Ciudad de México', 'Estado de México'],
+  },
+  faqs: data.faq.items,
+};
+---
+
+<PageLayout
+  title={data.seo.title}
+  description={data.seo.description}
+  image={data.seo.image}
+  pageType="service"
+  schemaData={schemaData}
+  breadcrumbs={[{ label: 'Servicios', href: '/servicios/' }, { label: data.breadcrumb }]}
+  guia={false}
+>
+  {/* ─── Hero ─── */}
+  <Hero
+    badge={data.hero.badge}
+    title={data.hero.title}
+    accent={data.hero.accent}
+    subtitle={data.hero.subtitle}
+    descRight={data.hero.descRight}
+    ctas={[
+      { text: data.hero.outlineText, href: `#${data.vitrina.id}`, variant: 'outline' },
+      { text: 'Cotizar por WhatsApp', href: waUrl(data.wa), variant: 'primary', whatsapp: true },
+    ]}
+  />
+
+  {/* ─── Navegación y confianza ─── */}
+  <SectionMenu
+    items={sectionMenuItems()}
+    cta={{ label: 'Cotizar por WhatsApp', href: waUrl(data.wa), sub: data.menuCtaSub, external: true }}
+  />
+  <TrustBar items={data.pillars} />
+
+  {/* ─── Vitrina ─── */}
+  <section class="section" id={data.vitrina.id}>
+    <div class="container">
+      <SectionHeading
+        layout="duo"
+        eyebrow={data.vitrina.eyebrow}
+        title={data.vitrina.title}
+        titleAccent={data.vitrina.titleAccent}
+        desc={data.vitrina.desc}
+        body={data.vitrina.body}
+      />
+      <div class="card-grid">
+        {data.vitrina.tarjetas.map((t) => (
+          <ServiceCard
+            title={t.title}
+            href={t.href}
+            image={t.image}
+            imageAlt={t.imageAlt}
+            badge={t.badge}
+            description={t.description}
+            specs={t.specs}
+            ctaLabel={t.ctaLabel}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* ─── Tabla principal ─── */}
+  <DataTable {...data.tablaPrincipal} surface />
+
+  {/* ─── Guía de riesgo ─── */}
+  <RiskGuide {...data.guia} />
+
+  {/* ─── Tabla secundaria ─── */}
+  <DataTable {...data.tabla2} surface />
+
+  {/* ─── Módulos ─── */}
+  {data.modulos.map((modulo) => (
+    <CategoryFeature
+      anchorId={modulo.id}
+      eyebrow={modulo.eyebrow}
+      title={modulo.title}
+      titleAccent={modulo.titleAccent}
+      description={modulo.description}
+      features={modulo.features}
+      ctaLabel={modulo.ctaLabel}
+      ctaHref={waUrl(modulo.ctaMsg)}
+      ctaExternal
+      ctaSecondaryLabel={modulo.ctaSecondaryLabel}
+      ctaSecondaryHref={modulo.ctaSecondaryHref}
+      imgMain={modulo.imgMain}
+      imgA={modulo.imgA}
+      imgB={modulo.imgB}
+    />
+  ))}
+
+  {/* ─── Tabla de decisión ─── */}
+  <DataTable {...data.decision} surface />
+
+  {/* ─── Proceso ─── */}
+  <ProcessSteps {...data.proceso} />
+
+  {/* ─── Normas ─── */}
+  <NormsTable {...data.normas} />
+
+  {/* ─── Sobre el servicio ─── */}
+  <section class="section section--surface">
+    <div class="container">
+      <SectionHeading
+        layout="duo"
+        eyebrow={data.empresa.eyebrow}
+        title={data.empresa.title}
+        titleAccent={data.empresa.titleAccent}
+        desc={data.empresa.desc}
+        body={data.empresa.body}
+      />
+      <CompanyAbout
+        que={data.empresa.que}
+        como={data.empresa.como}
+        stats={companyStats}
+        cta={{ label: 'Cotizar por WhatsApp', href: waUrl(data.wa), external: true }}
+      />
+    </div>
+  </section>
+
+  <RelatedLinks
+    title={data.related.title}
+    desc={data.related.desc}
+    links={data.related.links}
+    limit={8}
+  />
+
+  <FAQWithContact
+    items={data.faq.items}
+    waNumber={CONTACT.whatsapp}
+    eyebrow={data.faq.eyebrow}
+    title="Preguntas frecuentes"
+    titleAccent={data.faq.titleAccent}
+    desc={data.faq.desc}
+    body={data.faq.body}
+  />
+</PageLayout>
+
+<style>
+  .container {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-px);
+  }
+
+  .section {
+    padding: var(--sp-8) 0;
+  }
+
+  .section--surface {
+    background: var(--c-surface);
+  }
+
+  @media (min-width: 768px) {
+    .section {
+      padding: var(--sp-10) 0;
+    }
+  }
+</style>
