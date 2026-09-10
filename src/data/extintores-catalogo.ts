@@ -191,21 +191,15 @@ export const extFormatoRows: string[][] = [
   ['Distancia de recorrido', 'La de su clase de fuego (Tabla 1 de la NOM-002)', 'En riesgo alto y clase B puede ubicarse hasta a 15 m'],
 ];
 
-// ── Compra vs mantenimiento y recarga (3 columnas) ───────────────────────────
-export const extServicioCols = ['', 'Compra del extintor', 'Mantenimiento y recarga'] as const;
-export const extServicioRows: string[][] = [
-  ['Cuándo', 'Equipo nuevo, ampliación del inmueble o reemplazo por baja', 'Cada año y después de cualquier uso'],
-  ['Quién', 'El proveedor del equipo', 'Un prestador del servicio conforme a la NOM-154-SCFI-2005'],
-  ['Qué evidencia deja', 'Ficha técnica y contraseña oficial del producto', 'Etiqueta con mes y año del servicio y, en PQS, collarín'],
-  ['Norma que lo rige', 'NOM de producto del agente (NOM-100, 102 o 103-STPS)', 'NOM-154-SCFI-2005 y NOM-002-STPS-2010 (7.18 y 7.19)'],
-  ['Cilindro', 'Nuevo, con su fecha de fabricación', 'Prueba hidrostática al menos cada 5 años'],
-];
-
 // ── Marcas del mercado ───────────────────────────────────────────────────────
 // Verificadas el 2026-09-10 (sitio oficial o distribuidor mexicano). Se
 // EXCLUYEN Stelfire y Suprema (no se encontró evidencia de que existan como
 // marcas de extintores), ESICSA y DAHFSA (empresas, no marcas de extintor),
 // Pyro-Chem y Strike First (sin presencia de extintores confirmada en México).
+// 2026-09-10 · regla de 4 por fila: la retícula queda en 8 (4 internacionales
+// en la primera fila y 4 fabricantes mexicanos en la segunda). Salieron de la
+// vitrina Ansul (su línea fuerte es la supresión fija de cocinas) y Aipieci
+// Fire (la de menor presencia); ambas siguen verificadas si se quieren volver.
 export type Marca = { nombre: string; tipo: 'Internacional' | 'Fabricante mexicano'; origen: string; productos: string; nota?: string };
 export const extMarcasNota =
   'Estas son marcas reconocidas que se encuentran en el mercado mexicano. Las mencionamos como referencia: no significa que las distribuyamos ni que estén disponibles. La marca y el modelo se confirman al cotizar. Cada marca pertenece a su titular.';
@@ -215,12 +209,10 @@ export const extMarcas: Marca[] = [
   { nombre: 'Kidde', tipo: 'Internacional', origen: 'Estados Unidos', productos: 'PQS, CO₂, agua, químico húmedo y sobre ruedas' },
   { nombre: 'Badger', tipo: 'Internacional', origen: 'Estados Unidos', productos: 'PQS, CO₂, agua, clase K y sobre ruedas' },
   { nombre: 'Buckeye', tipo: 'Internacional', origen: 'Estados Unidos', productos: 'PQS, CO₂, Halotron, químico húmedo y sobre ruedas', nota: 'Hojas de seguridad en español conforme a la NOM-018-STPS-2015' },
-  { nombre: 'Ansul', tipo: 'Internacional', origen: 'Johnson Controls', productos: 'PQS y CO₂, unidades sobre ruedas y clase K para cocina' },
   { nombre: 'FANEX', tipo: 'Fabricante mexicano', origen: 'Fábrica Nacional de Extintores', productos: 'PQS portátil y móvil, y unidades móviles de espuma' },
   { nombre: 'EXAIN', tipo: 'Fabricante mexicano', origen: 'México, desde 1984', productos: 'PQS, CO₂, agua, espuma AFFF, clase K, agentes limpios y móviles', nota: 'También distribuye equipo importado' },
   { nombre: 'Extin-Flam', tipo: 'Fabricante mexicano', origen: 'México', productos: 'PQS portátil y móvil, CO₂ móvil, agua y espuma' },
   { nombre: 'Valtin', tipo: 'Fabricante mexicano', origen: 'Estado de México', productos: 'PQS de fabricación propia; CO₂ y clase K importados' },
-  { nombre: 'Aipieci Fire', tipo: 'Fabricante mexicano', origen: 'Estado de México', productos: 'PQS de 0.75 a 50 kg, agua y espuma, y unidades móviles' },
 ];
 
 // ── Copy de las secciones nuevas (encabezados e introducciones) ─────────────
@@ -231,10 +223,10 @@ export const extSecciones = {
     eyebrow: 'Tipos de extintor',
     title: 'Extintores por',
     titleAccent: 'tipo de agente',
-    desc: 'Cinco familias que reúnen siete agentes extinguidores. Cada ficha trae todas sus capacidades.',
+    desc: 'Cinco familias que reúnen siete agentes, más lo que hace falta para instalarlos, calcularlos y mantenerlos.',
     body: [
       'Si ya sabes qué agente necesitas, entra directo a su ficha. Si no, el catálogo de abajo se filtra por giro, capacidad y clase de fuego.',
-      'La familia a base de agua incluye tres agentes distintos: agua a presión, agua nebulizada y espuma AFFF. Por eso son cinco fichas y siete agentes.',
+      'Las tres últimas fichas cierran el ciclo: el soporte o gabinete para colocarlo, la calculadora para saber cuántos te pide la norma y el servicio que le toca cada año.',
     ],
   },
   catalogo: {
@@ -299,30 +291,4 @@ export const extSecciones = {
       'Si tu corporativo o tu aseguradora piden una marca en particular, dínoslo al cotizar y confirmamos disponibilidad.',
     ],
   },
-  accesorios: {
-    title: 'Accesorios para extintores',
-    desc: 'Soportes, gabinetes, señalamiento y detección para que el extintor esté visible, a la mano y a la altura correcta. El resto del equipo contra incendio, como alarmas e hidrantes, está en el catálogo general.',
-  },
-  mantenimiento: {
-    eyebrow: 'Recarga y mantenimiento',
-    title: 'Recarga y mantenimiento',
-    titleAccent: 'de extintores',
-    desc: 'Comprar el extintor y mantenerlo vigente son dos obligaciones distintas, cada una con su propio papel.',
-    body: [
-      'La NOM-002-STPS-2010 pide revisar el extintor cada mes, darle mantenimiento al menos una vez al año y recargarlo después de cualquier uso. El servicio lo presta un proveedor conforme a la NOM-154-SCFI-2005.',
-      'Damos ese servicio a los extintores que vendemos y a los que ya tienes instalados, con etiqueta y collarín para tu expediente.',
-    ],
-    ctaLabel: 'Recarga de extintores',
-    ctaHref: '/servicios/mantenimiento/',
-  },
 };
-
-// Enlaces de accesorios (RelatedLinks) — anchor = keyword del destino.
-
-export const extAccesoriosLinks = [
-  { label: 'Soportes para extintor', href: '/productos/soportes-accesorios-extintor/', desc: 'Soportes de pared, gabinetes y montaje.' },
-  { label: 'Señalamiento de extintor', href: '/productos/senalizacion-fotoluminiscente/', desc: 'Señal fotoluminiscente de ubicación y rutas de evacuación.' },
-  { label: 'Gabinetes con manguera', href: '/productos/gabinete-manguera-contra-incendio/', desc: 'El siguiente paso cuando el conato supera al extintor.' },
-  { label: 'Detectores de humo', href: '/productos/detector-humo-fotoelectrico/', desc: 'Detección temprana para llegar con el extintor a tiempo.' },
-];
-

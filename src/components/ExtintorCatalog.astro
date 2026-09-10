@@ -109,7 +109,7 @@ const groups: FilterGroup[] = [
       </div>
     </div>
 
-    <div class="catalog__grid">
+    <div class="catalog__grid card-grid">
       {items.map((item, index) => <ExtintorCard item={item} index={index} />)}
     </div>
 
@@ -314,9 +314,6 @@ const groups: FilterGroup[] = [
   }
 
   .catalog__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--sp-5);
     align-items: stretch;
   }
 
@@ -333,15 +330,4 @@ const groups: FilterGroup[] = [
     color: var(--c-muted);
   }
 
-  @media (min-width: 640px) {
-    .catalog__grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .catalog__grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
 </style>

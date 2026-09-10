@@ -1,10 +1,13 @@
 ---
-// /productos/extintores/ — catálogo L3 de extintores portátiles.
+// /productos/extintores/ — PATRÓN L3 canónico; referencia: /servicios/mantenimiento/.
+// Bloques: Hero → SectionMenu + TrustBar → vitrina → catálogo → usos →
+// comparativa → clases de fuego → capacidad → módulos por agente →
+// portátil/ruedas → marcas → proceso → normas → empresa → enlaces → FAQ.
+// Propios de esta L3 de producto: catálogo filtrable, usos por giro y marcas.
 import PageLayout from '@layouts/PageLayout.astro';
 import Hero from '@components/Hero.astro';
 import SectionMenu from '@components/SectionMenu.astro';
 import SectionHeading from '@components/SectionHeading.astro';
-import ProductCard from '@components/ProductCard.astro';
 import ServiceCard from '@components/ServiceCard.astro';
 import CategoryFeature from '@components/CategoryFeature.astro';
 import TrustBar from '@components/TrustBar.astro';
@@ -29,17 +32,14 @@ import {
   extAgentesRows,
   extFormatoCols,
   extFormatoRows,
-  extServicioCols,
-  extServicioRows,
   extMarcas,
   extMarcasNota,
   extSecciones,
-  extAccesoriosLinks,
 } from '@data/extintores-catalogo';
 import {
   extintoresHero,
   extintoresPillars,
-  extintoresFichas,
+  extintoresTarjetas,
   extintoresFeatures,
   extintoresClases,
   extintoresNormRows,
@@ -113,50 +113,41 @@ const schemaData = {
   <SectionMenu items={sectionMenuItems()} cta={menuCta} />
   <TrustBar items={extintoresPillars} />
 
-  {/* ─── Familias ─── */}
+  {/* ─── Vitrina: una tarjeta por agente y servicio relacionado ─── */}
   <section class="section" id="agentes">
     <div class="container">
       <SectionHeading layout="duo" {...extSecciones.familias} />
-      <div class="card-grid card-grid--trio">
-        {fichas.map((ficha, index) => (
-          <ProductCard
-            title={ficha.data.title}
-            href={`/productos/${ficha.id}/`}
-            image={extintoresFichas[ficha.id]?.image ?? ficha.data.image}
-            imageAlt={extintoresFichas[ficha.id]?.imageAlt ?? ficha.data.title}
-            badge={extintoresFichas[ficha.id]?.badge}
-            description={extintoresFichas[ficha.id]?.blurb ?? ficha.data.description}
-            ctaLabel={extintoresFichas[ficha.id]?.ctaLabel}
-            index={index}
-            priority={index === 0}
+      <div class="card-grid">
+        {extintoresTarjetas.map((tarjeta) => (
+          <ServiceCard
+            title={tarjeta.title}
+            href={tarjeta.href}
+            image={tarjeta.image}
+            imageAlt={tarjeta.imageAlt}
+            badge={tarjeta.badge}
+            description={tarjeta.description}
+            specs={tarjeta.specs}
+            ctaLabel={tarjeta.ctaLabel}
           />
         ))}
-        <ServiceCard
-          title="Recarga y mantenimiento"
-          href="/servicios/mantenimiento/"
-          image="/images/servicios/inspeccion-recarga-extintores.avif"
-          imageAlt="Recarga y mantenimiento de extintores en taller de servicio"
-          badge="Servicio NOM-154"
-          description="Mantenimiento anual, recarga después de cualquier uso y prueba hidrostática para los extintores que ya tienes."
-          ctaLabel="Recarga de extintores"
-        />
       </div>
     </div>
   </section>
 
-  {/* ─── Catálogo, negocios y capacidades ─── */}
+  {/* ─── Catálogo filtrable ─── */}
   <ExtintorCatalog items={items} copy={extSecciones.catalogo} />
   <UsoGrid rows={extUsos} copy={extSecciones.negocio} />
+
+  {/* ─── Comparativa de agentes ─── */}
   <DataTable
-    id="por-capacidad"
-    {...extSecciones.capacidad}
-    columns={['Rango de capacidad', 'Perfil', 'Dónde conviene', 'A considerar']}
-    rows={extCapacidades.map((row) => [row.rango, row.perfil, row.conviene, row.considera])}
-    ctaLabel={extSecciones.capacidad.ctaLabel}
-    ctaHref={extSecciones.capacidad.ctaHref}
+    id="comparativa"
+    {...extSecciones.comparativa}
+    columns={extAgentesCols}
+    rows={extAgentesRows}
     surface
   />
-  {/* ─── Clases de fuego, comparativa y formatos ─── */}
+
+  {/* ─── Clases de fuego ─── */}
   <RiskGuide
     eyebrow="Clases de fuego"
     title="Qué extintor usar"
@@ -172,19 +163,15 @@ const schemaData = {
     ctaLabel="Riesgo de incendio"
     ctaHref="/herramientas/riesgo-de-incendio/"
   />
-  <DataTable
-    id="comparativa"
-    {...extSecciones.comparativa}
-    columns={extAgentesCols}
-    rows={extAgentesRows}
-    surface
-  />
 
   <DataTable
-    id="portatil-o-ruedas"
-    {...extSecciones.formato}
-    columns={extFormatoCols}
-    rows={extFormatoRows}
+    id="por-capacidad"
+    {...extSecciones.capacidad}
+    columns={['Rango de capacidad', 'Perfil', 'Dónde conviene', 'A considerar']}
+    rows={extCapacidades.map((row) => [row.rango, row.perfil, row.conviene, row.considera])}
+    ctaLabel={extSecciones.capacidad.ctaLabel}
+    ctaHref={extSecciones.capacidad.ctaHref}
+    surface
   />
 
   {/* ─── Módulos por agente ───
@@ -211,24 +198,18 @@ const schemaData = {
     />
   ))}
 
-  {/* ─── Marcas y accesorios ─── */}
-  <BrandGrid marcas={extMarcas} nota={extMarcasNota} copy={extSecciones.marcas} />
-  <RelatedLinks
-    title={extSecciones.accesorios.title}
-    desc={extSecciones.accesorios.desc}
-    links={extAccesoriosLinks}
-    limit={4}
+  <DataTable
+    id="portatil-o-ruedas"
+    {...extSecciones.formato}
+    columns={extFormatoCols}
+    rows={extFormatoRows}
+    surface
   />
 
-  {/* ─── Mantenimiento ─── */}
-  <DataTable
-    id="mantenimiento"
-    {...extSecciones.mantenimiento}
-    columns={extServicioCols}
-    rows={extServicioRows}
-    ctaLabel={extSecciones.mantenimiento.ctaLabel}
-    ctaHref={extSecciones.mantenimiento.ctaHref}
-  />
+  {/* ─── Marcas ─── */}
+  <BrandGrid marcas={extMarcas} nota={extMarcasNota} copy={extSecciones.marcas} />
+
+  {/* ─── Proceso de servicio ─── */}
   <ProcessSteps
     eyebrow="Después de comprarlo"
     title="Lo que le toca a un extintor"

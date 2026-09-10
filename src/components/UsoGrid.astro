@@ -33,10 +33,6 @@ const { rows, copy } = Astro.props as { rows: Row[]; copy: Copy };
     background: var(--c-white);
   }
 
-  .uso__grid {
-    grid-template-columns: 1fr;
-  }
-
   .uso__card {
     display: flex;
     flex-direction: column;
@@ -90,18 +86,6 @@ const { rows, copy } = Astro.props as { rows: Row[]; copy: Copy };
 
   .uso__card a:hover {
     text-decoration: underline;
-  }
-
-  @media (min-width: 640px) {
-    .uso__grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .uso__grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
   }
 
   .uso__card .uso__guide {

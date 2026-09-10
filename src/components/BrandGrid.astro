@@ -59,10 +59,6 @@ const { marcas, nota, copy } = Astro.props as { marcas: Marca[]; nota: string; c
     font-size: var(--text-sm);
   }
 
-  .brands__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .brands__card {
     height: 100%;
     padding: var(--sp-4);
@@ -110,9 +106,4 @@ const { marcas, nota, copy } = Astro.props as { marcas: Marca[]; nota: string; c
     font-size: var(--text-xs);
   }
 
-  @media (min-width: 1024px) {
-    .brands__grid {
-      grid-template-columns: repeat(5, 1fr);
-    }
-  }
 </style>

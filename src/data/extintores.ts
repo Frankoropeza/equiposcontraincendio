@@ -273,14 +273,14 @@ export const extintoresCompany = {
 };
 
 export const extintoresRelated = [
-  { label: 'Recarga de extintores', href: '/servicios/mantenimiento/', desc: 'Mantenimiento anual y recarga, NOM-154.' },
   { label: 'Prueba hidrostática', href: '/servicios/prueba-hidrostatica/', desc: 'Retimbrado del cilindro cada 5 años.' },
-  { label: 'Cuántos extintores necesito', href: '/herramientas/cuantos-extintores-necesito/', desc: 'Cálculo por superficie y nivel de riesgo.' },
-  { label: 'Tipos de extintores', href: '/blog/como-elegir-extintor-clase-fuego/', desc: 'Clases de fuego y agentes, explicados.' },
   { label: 'Instalación de extintores', href: '/servicios/instalacion/', desc: 'Montaje a la altura correcta y señalización.' },
   { label: 'Inspección y dictamen', href: '/servicios/inspeccion/', desc: 'Revisión del equipo instalado y su reporte.' },
-  { label: 'Cotizar extintores', href: '/contacto/', desc: 'Escríbenos con tu giro y superficie.' },
   { label: 'Capacitación en extintores', href: '/servicios/capacitacion-dc3/', desc: 'Uso de extintores para tu brigada, con DC-3.' },
+  { label: 'Señalamiento de extintor', href: '/productos/senalizacion-fotoluminiscente/', desc: 'Señal fotoluminiscente de ubicación.' },
+  { label: 'Gabinetes con manguera', href: '/productos/gabinete-manguera-contra-incendio/', desc: 'Cuando el conato supera al extintor.' },
+  { label: 'Tipos de extintores', href: '/blog/como-elegir-extintor-clase-fuego/', desc: 'Clases de fuego y agentes, explicados.' },
+  { label: 'Cotizar extintores', href: '/contacto/', desc: 'Escríbenos con tu giro y superficie.' },
 ];
 
 // ── FAQ propio de la L3 ──────────────────────────────────────────────────────
@@ -344,3 +344,139 @@ export const extintoresFaqs = [
   },
 ];
 
+
+// ── Vitrina canónica L3: 8 fichas con specs (PATRÓN L3, 2026-09-10) ─────────
+// Regla del sitio: retícula de 4 por fila y total en múltiplos de 4. Las
+// cinco familias (fichas L4) más tres fichas de ciclo de vida: recarga y
+// mantenimiento (L3 de servicio), soportes y gabinetes (L4) y la calculadora.
+// Se pinta con ServiceCard + `specs`, el mismo diseño aprobado en
+// /servicios/mantenimiento/. Los specs salen de las `variantes` de cada ficha
+// (capacidades mínima y máxima reales) y de las normas ya verificadas arriba.
+// Contrato medido a 1280 px: title ≤ 40, description ≤ ~85, spec.label ≤ 14,
+// spec.value ≤ 18, ctaLabel ≤ 24 (keyword del destino).
+export type Spec = { label: string; value: string };
+export type Tarjeta = {
+  title: string;
+  href: string;
+  image: string;
+  imageAlt: string;
+  badge: string;
+  description: string;
+  specs: Spec[];
+  ctaLabel: string;
+};
+const f = extintoresFichas;
+export const extintoresTarjetas: Tarjeta[] = [
+  {
+    title: 'Extintores PQS ABC',
+    href: '/productos/extintor-pqs/',
+    image: f['extintor-pqs'].image!,
+    imageAlt: f['extintor-pqs'].imageAlt!,
+    badge: 'Polvo químico seco',
+    description: 'Un solo agente para sólidos, líquidos inflamables y equipo eléctrico.',
+    specs: [
+      { label: 'Clases', value: 'A · B · C' },
+      { label: 'Capacidad', value: '1 a 70 kg' },
+      { label: 'Norma', value: 'NOM-100-STPS' },
+    ],
+    ctaLabel: f['extintor-pqs'].ctaLabel,
+  },
+  {
+    title: 'Extintores de CO₂',
+    href: '/productos/extintor-co2/',
+    image: f['extintor-co2'].image!,
+    imageAlt: f['extintor-co2'].imageAlt!,
+    badge: 'Sin residuo',
+    description: 'Para tableros, sites y electrónica. Portátil y móvil sobre ruedas.',
+    specs: [
+      { label: 'Clases', value: 'B · C' },
+      { label: 'Capacidad', value: '2.27 a 45.4 kg' },
+      { label: 'Norma', value: 'NOM-102-STPS' },
+    ],
+    ctaLabel: f['extintor-co2'].ctaLabel,
+  },
+  {
+    title: 'Extintores clase K',
+    href: '/productos/extintor-clase-k/',
+    image: f['extintor-clase-k'].image!,
+    imageAlt: f['extintor-clase-k'].imageAlt!,
+    badge: 'Cocinas comerciales',
+    description: 'Químico húmedo para aceites y grasas de cocción. Complementa la campana.',
+    specs: [
+      { label: 'Clase', value: 'K' },
+      { label: 'Capacidad', value: '4 a 9.46 L' },
+      { label: 'Referencia', value: 'NFPA 10' },
+    ],
+    ctaLabel: f['extintor-clase-k'].ctaLabel,
+  },
+  {
+    title: 'Extintores de agua y espuma',
+    href: '/productos/extintor-agua/',
+    image: f['extintor-agua'].image!,
+    imageAlt: f['extintor-agua'].imageAlt!,
+    badge: 'Agua · Espuma AFFF',
+    description: 'Agua a presión para sólidos, nebulizada junto a equipo eléctrico y espuma.',
+    specs: [
+      { label: 'Tipos', value: 'Agua, niebla, AFFF' },
+      { label: 'Capacidad', value: '6 a 50 L' },
+      { label: 'Norma', value: 'NOM-103-STPS' },
+    ],
+    ctaLabel: f['extintor-agua'].ctaLabel,
+  },
+  {
+    title: 'Extintores de agente limpio',
+    href: '/productos/extintor-agente-limpio/',
+    image: f['extintor-agente-limpio'].image!,
+    imageAlt: f['extintor-agente-limpio'].imageAlt!,
+    badge: 'Clases B · C',
+    description: 'Sin residuo ni conductividad, para sites y equipo electrónico sensible.',
+    specs: [
+      { label: 'Agentes', value: 'Halotron I · FE-36' },
+      { label: 'Capacidad', value: '1.1 a 7 kg' },
+      { label: 'Clase A', value: 'Desde 4.3 kg' },
+    ],
+    ctaLabel: f['extintor-agente-limpio'].ctaLabel,
+  },
+  {
+    title: 'Recarga de extintores',
+    href: '/servicios/mantenimiento/',
+    image: '/images/servicios/inspeccion-recarga-extintores.avif',
+    imageAlt: 'Recarga y mantenimiento de extintores en taller de servicio',
+    badge: 'Servicio NOM-154',
+    description: 'Mantenimiento anual, recarga tras cualquier uso y prueba hidrostática.',
+    specs: [
+      { label: 'Periodicidad', value: 'Al menos anual' },
+      { label: 'Norma', value: 'NOM-154-SCFI' },
+      { label: 'Evidencia', value: 'Etiqueta nueva' },
+    ],
+    ctaLabel: 'Recarga de extintores',
+  },
+  {
+    title: 'Soportes y gabinetes para extintor',
+    href: '/productos/soportes-accesorios-extintor/',
+    image: '/images/productos/extintor-oficina-gabinete.avif',
+    imageAlt: 'Extintor montado en gabinete dentro de una oficina',
+    badge: 'Instalación',
+    description: 'Soportes de pared y vehículo, y gabinetes para tener el extintor a la mano.',
+    specs: [
+      { label: 'Montaje', value: 'Pared o vehículo' },
+      { label: 'Altura máx.', value: '1.50 m' },
+      { label: 'Norma', value: 'NOM-002-STPS' },
+    ],
+    ctaLabel: 'Soportes para extintor',
+  },
+  {
+    title: '¿Cuántos extintores necesito?',
+    href: '/herramientas/cuantos-extintores-necesito/',
+    image: '/images/servicios/auditoria-seguridad-contra-incendio.avif',
+    imageAlt: 'Levantamiento de riesgo de incendio en una planta',
+    badge: 'Calculadora gratis',
+    description: 'Calcula el mínimo que pide la NOM-002 según superficie y nivel de riesgo.',
+    specs: [
+      { label: 'Ordinario', value: '1 por 300 m²' },
+      { label: 'Riesgo alto', value: '1 por 200 m²' },
+      { label: 'Recorrido', value: '23 m, clase A' },
+    ],
+    ctaLabel: 'Cuántos extintores',
+  },
+];
