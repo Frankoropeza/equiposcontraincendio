@@ -11,3 +11,9 @@ https://www.equiposcontraincendio.com/* https://equiposcontraincendio.com/:splat
 /blog/categoria/novedades /blog/ 301
 /blog/categoria/general/ /blog/ 301
 /blog/categoria/general /blog/ 301
+
+# Fusión editorial 2026-09-10: la verificación del proveedor se concentra en el
+# artículo de mantenimiento, que la cubre con la norma citada (dictamen de
+# unidad de verificación, evaluación semestral, contrato PROFECO).
+/blog/como-verificar-proveedor-extintores-acreditado/ /blog/mantenimiento-recarga-extintores-nom/ 301
+/blog/como-verificar-proveedor-extintores-acreditado /blog/mantenimiento-recarga-extintores-nom/ 301
