@@ -158,7 +158,7 @@ export const GIROS_CATALOGO: Record<string, GiroCatalogCard> = {
     title: 'Gabinete con manguera',
     description: 'Gabinete, manguera y chiflón para la red hidráulica del inmueble.',
     href: '/productos/gabinete-manguera-contra-incendio/',
-    ctaLabel: 'Gabinete con manguera',
+    ctaLabel: 'Gabinetes',
     image: '/images/showcase/gabinetes-estaciones-contra-incendio.avif',
     imageAlt: 'Gabinetes con manguera contra incendio',
     badge: 'Producto',
