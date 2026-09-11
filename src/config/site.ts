@@ -686,11 +686,11 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
     href: '/productos/#proteccion-primeros-auxilios',
     image: '/images/servicios/auditoria-seguridad-contra-incendio.avif',
     imageAlt: 'Brigada revisando el equipo contra incendio de la planta',
-    badge: 'NOM-020 · Brigadas',
+    badge: 'Brigadas y botiquines',
     blurb:
-      'Botiquines NOM-020-STPS y equipo de apoyo para que tu brigada responda a tiempo.',
+      'Botiquines y equipo de apoyo para que tu brigada responda a tiempo.',
     subcategories: [
-      { label: 'Botiquines NOM-020', href: '/productos/#proteccion-primeros-auxilios' },
+      { label: 'Botiquines', href: '/productos/#proteccion-primeros-auxilios' },
       { label: 'Equipo de brigada', href: '/productos/#proteccion-primeros-auxilios' },
       { label: 'Mantas y camillas', href: '/productos/#proteccion-primeros-auxilios' },
     ],
