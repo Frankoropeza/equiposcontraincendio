@@ -229,7 +229,7 @@ export const FICHAS: Record<string, FichaData> = {
     guia: { title: 'Cómo elegir tu', titleAccent: 'gabinete con manguera', desc: 'Revisa recorrido, montaje y red hidráulica para pedir el gabinete que funcione en tu inmueble.' },
   },
   'senalizacion-fotoluminiscente': {
-    heroBadge: 'Evacuación · Equipo contra incendio · NOM-003-SEGOB-2011',
+    heroBadge: 'Evacuación · Equipo contra incendio · NOM-003-SSPC-2011',
     heroTitle: 'Señalización fotoluminiscente',
     heroAccent: 'que se ve sin luz',
     descRight: [
@@ -242,7 +242,7 @@ export const FICHAS: Record<string, FichaData> = {
       { icon: 'doc', title: 'Visibilidad nocturna', desc: 'El material conserva una referencia visual cuando el lugar queda oscuro.' },
       { icon: 'pin', title: 'Ubicación precisa', desc: 'Ajusta cada señal a las rutas, equipos y condiciones reales del inmueble.' },
     ],
-    norma: 'NOM-003-SEGOB-2011',
+    norma: 'NOM-003-SSPC-2011',
     claves: [
       { label: 'Evacuación', value: 'Ruta y salida de emergencia' },
       { label: 'Equipo', value: 'Extintor e hidrante' },

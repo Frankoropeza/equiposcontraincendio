@@ -16,7 +16,7 @@
 // hábiles para observaciones en CDMX, PC local vs STPS federal); hoja de
 // umbrales NOM-002-STPS-2010 (23 m clase A, 1.50 m, revisión mensual,
 // mantenimiento anual 7.18, Tabla 1); NOM-154 (etiqueta, collarín, 5.6);
-// NOM-003-SEGOB-2011; NOM-026-STPS-2008 y NFPA 25 como en /servicios/.
+// NOM-003-SSPC-2011; NOM-026-STPS-2008 y NFPA 25 como en /servicios/.
 // NO se afirma: tiempos de entrega, que el reporte sustituya trámites, ni
 // requisitos de detección por norma (se revisa «donde existe»).
 // ============================================================================
@@ -70,10 +70,10 @@ export const inspTarjetas: Tarjeta[] = [
     href: '#insp-senalizacion',
     image: '/images/productos/senalizacion-luces-emergencia.avif',
     imageAlt: 'Señalización fotoluminiscente y luz de emergencia en un pasillo',
-    badge: 'NOM-003-SEGOB',
+    badge: 'NOM-003-SSPC',
     description: 'Señales visibles desde la ruta, salidas libres e iluminación de emergencia.',
     specs: [
-      { label: 'Norma', value: 'NOM-003-SEGOB' },
+      { label: 'Norma', value: 'NOM-003-SSPC' },
       { label: 'Revisa', value: 'Rutas y salidas' },
       { label: 'Incluye', value: 'Luz de emergencia' },
     ],
@@ -196,7 +196,7 @@ export const inspeccionL3: ServiceL3Data = {
       ['Extintores', 'Cantidad, agente por área, altura, distancia de recorrido, acceso, señal y vigencia', 'NOM-002-STPS-2010 y NOM-154-SCFI-2005', 'Servicio vencido o equipo tapado'],
       ['Detección y alarma', 'Funcionamiento del panel, los detectores y los dispositivos de aviso', 'El diseño del sistema instalado y la ficha del fabricante', 'Detectores que nadie ha probado'],
       ['Red hidráulica', 'Gabinetes, mangueras, válvulas y conexiones', 'NFPA 25 como referencia técnica', 'Gabinete sin manguera o con válvula dañada'],
-      ['Señalización y rutas', 'Presencia, ubicación y legibilidad de señales; rutas y salidas; luz de emergencia', 'NOM-003-SEGOB-2011', 'Señal que no se ve desde la ruta'],
+      ['Señalización y rutas', 'Presencia, ubicación y legibilidad de señales; rutas y salidas; luz de emergencia', 'NOM-003-SSPC-2011', 'Señal que no se ve desde la ruta'],
       ['Documentos', 'Etiquetas, collarines, fechas de prueba hidrostática y bitácora mensual', 'NOM-002-STPS-2010 y NOM-154-SCFI-2005', 'Bitácora sin llenar'],
     ],
   },
@@ -214,7 +214,7 @@ export const inspeccionL3: ServiceL3Data = {
       { nivel: 'Extintor vencido o en rojo', ejemplos: 'Puede no descargar cuando haga falta', minimo: 'Mantenimiento y recarga', complementos: 'Inmediata' },
       { nivel: 'Equipo obstruido', ejemplos: 'Existe, pero nadie llegaría a él', minimo: 'Liberar el acceso y marcar el área', complementos: 'Inmediata' },
       { nivel: 'Agente equivocado', ejemplos: 'Una cocina sin clase K o PQS junto a servidores', minimo: 'Agregar o cambiar el extintor del área', complementos: 'Alta' },
-      { nivel: 'Señal ausente o mal colocada', ejemplos: 'La ruta no se entiende en una evacuación', minimo: 'Señalización conforme a la NOM-003-SEGOB', complementos: 'Alta' },
+      { nivel: 'Señal ausente o mal colocada', ejemplos: 'La ruta no se entiende en una evacuación', minimo: 'Señalización conforme a la NOM-003-SSPC', complementos: 'Alta' },
       { nivel: 'Ruta o salida bloqueada', ejemplos: 'Almacenamiento temporal que se volvió permanente', minimo: 'Despejar y fijar dónde se almacena', complementos: 'Inmediata' },
       { nivel: 'Detectores sin probar', ejemplos: 'No se sabe si avisarían', minimo: 'Prueba de funcionamiento y reporte', complementos: 'Alta' },
       { nivel: 'Bitácora sin llenar', ejemplos: 'La revisión mensual no se puede acreditar', minimo: 'Formato y responsable de la revisión', complementos: 'Media' },
@@ -308,11 +308,11 @@ export const inspeccionL3: ServiceL3Data = {
     },
     {
       id: 'insp-senalizacion',
-      eyebrow: 'Señalización y rutas · NOM-003-SEGOB-2011',
+      eyebrow: 'Señalización y rutas · NOM-003-SSPC-2011',
       title: 'Señalización y rutas',
       titleAccent: 'que se entiendan',
       description:
-        'Una señal que existe pero no se ve desde la ruta no guía a nadie en una evacuación. Revisamos presencia, ubicación y legibilidad de la señalización conforme a la NOM-003-SEGOB-2011, que las rutas y salidas estén libres y que la iluminación de emergencia funcione.',
+        'Una señal que existe pero no se ve desde la ruta no guía a nadie en una evacuación. Revisamos presencia, ubicación y legibilidad de la señalización conforme a la NOM-003-SSPC-2011, que las rutas y salidas estén libres y que la iluminación de emergencia funcione.',
       features: [
         { label: 'Señal visible', desc: 'Que se lea desde la ruta, no solo que esté pegada.' },
         { label: 'Rutas y salidas libres', desc: 'Sin almacenamiento temporal que se quedó para siempre.' },
@@ -404,7 +404,7 @@ export const inspeccionL3: ServiceL3Data = {
       { norma: 'NOM-002-STPS-2010, 7.18', alcance: 'Revisión mensual del extintor y mantenimiento al menos una vez al año', aplica: 'Vigencias y bitácora' },
       { norma: 'NOM-002-STPS-2010, Tabla 1', alcance: 'Clasificación del riesgo de incendio en ordinario o alto', aplica: 'Densidad de equipo que corresponde' },
       { norma: 'NOM-154-SCFI-2005', alcance: 'Etiqueta, collarín y prueba hidrostática al menos cada 5 años (5.6)', aplica: 'Evidencia de servicio de cada extintor' },
-      { norma: 'NOM-003-SEGOB-2011', alcance: 'Señales de protección civil: color, forma y símbolo', aplica: 'Señalización y rutas' },
+      { norma: 'NOM-003-SSPC-2011', alcance: 'Señales de protección civil: color, forma y símbolo', aplica: 'Señalización y rutas' },
       { norma: 'NOM-026-STPS-2008', alcance: 'Colores de seguridad e identificación de fluidos en tuberías', aplica: 'Identificación de la red hidráulica' },
       { norma: 'LGIRPC CDMX', alcance: 'Programa Interno, correspondencia con el inmueble y visita de verificación', aplica: 'Qué verá el verificador en CDMX' },
       { norma: 'NFPA 25 (ref.)', alcance: 'Inspección, prueba y mantenimiento de sistemas a base de agua', aplica: 'Red de gabinetes e hidrantes' },

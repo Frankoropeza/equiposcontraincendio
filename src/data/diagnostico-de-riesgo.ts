@@ -408,7 +408,7 @@ export const diagnosticoL3: ServiceL3Data = {
       { norma: 'NOM-002-STPS-2010 · ubicación', alcance: 'Distancia máxima de recorrido (23 m clase A, 10 m clase K) y altura de 1.50 m', aplica: 'La distribución por área' },
       { norma: 'NOM-002-STPS-2010 · brigada', alcance: 'Brigada contra incendio obligatoria en riesgo alto', aplica: 'Lo que cambia si eres riesgo alto' },
       { norma: 'NOM-002-STPS-2010, 7.18', alcance: 'Revisión mensual y mantenimiento anual de los extintores', aplica: 'El programa después de instalar' },
-      { norma: 'NOM-003-SEGOB-2011', alcance: 'Señales de protección civil', aplica: 'Señalización del equipo propuesto' },
+      { norma: 'NOM-003-SSPC-2011', alcance: 'Señales de protección civil', aplica: 'Señalización del equipo propuesto' },
       { norma: 'Programa Interno de PC', alcance: 'Incluye un análisis de riesgos del inmueble', aplica: 'El diagnóstico es un insumo, no lo sustituye' },
       { norma: 'NFPA 10 (ref.)', alcance: 'Criterios de selección y ubicación de extintores', aplica: 'Referencia técnica' },
     ],

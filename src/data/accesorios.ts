@@ -145,7 +145,7 @@ export const accTarjetas: Tarjeta[] = [
     specs: [
       { label: 'Color', value: 'Rojo' },
       { label: 'Va', value: 'Sobre el equipo' },
-      { label: 'Norma', value: 'NOM-003-SEGOB' },
+      { label: 'Norma', value: 'NOM-003-SSPC' },
     ],
     ctaLabel: 'Señalización',
   },
@@ -449,7 +449,7 @@ export const accesoriosL3: ServiceL3Data = {
       { norma: 'NOM-154-SCFI-2005', alcance: 'Servicio de mantenimiento y recarga; prohíbe adaptar piezas de otro modelo', aplica: 'Refacciones, mangueras y boquillas' },
       { norma: 'NOM-154-SCFI-2005, 5.6', alcance: 'Prueba hidrostática al menos cada 5 años', aplica: 'Cilindro del extintor' },
       { norma: 'NOM-106-SCFI-2017', alcance: 'Contraseña oficial del producto y del servicio certificados', aplica: 'Etiqueta y collarín' },
-      { norma: 'NOM-003-SEGOB-2011', alcance: 'Señal de ubicación del equipo contra incendio', aplica: 'Señal sobre el extintor' },
+      { norma: 'NOM-003-SSPC-2011', alcance: 'Señal de ubicación del equipo contra incendio', aplica: 'Señal sobre el extintor' },
     ],
     note: 'Un gabinete o un soporte no sustituyen la revisión mensual ni el mantenimiento anual: solo mantienen el extintor en su lugar y a la vista.',
   },

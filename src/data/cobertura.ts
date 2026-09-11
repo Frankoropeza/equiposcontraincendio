@@ -147,7 +147,7 @@ export type NormRow = { norma: string; alcance: string; aplica: string };
 export const coberturaNormRows: NormRow[] = [
   { norma: 'NOM-002-STPS-2010', alcance: 'Prevención y protección contra incendios en centros de trabajo: densidad de equipo, revisión mensual y mantenimiento anual', aplica: 'Federal · igual en CDMX y Edomex' },
   { norma: 'NOM-154-SCFI-2005', alcance: 'Servicio, recarga y prueba hidrostática del extintor', aplica: 'Federal · igual en CDMX y Edomex' },
-  { norma: 'NOM-003-SEGOB-2011', alcance: 'Señales y avisos de protección civil', aplica: 'Federal · igual en CDMX y Edomex' },
+  { norma: 'NOM-003-SSPC-2011', alcance: 'Señales y avisos de protección civil', aplica: 'Federal · igual en CDMX y Edomex' },
   { norma: 'Programa Interno de PC · CDMX', alcance: 'Se ingresa en la plataforma digital de la ciudad, con validación por Llave CDMX; lo presenta un tercero acreditado del ROPC/ROPCI', aplica: 'Ciudad de México' },
   { norma: 'Programa Interno de PC · Edomex', alcance: 'Trámite presencial con homoclave del RETyS, obligatorio para inmuebles de riesgo mediano y alto', aplica: 'Estado de México' },
   { norma: 'Verificación municipal o de alcaldía', alcance: 'Revisa el equipo instalado y el expediente que acredita su vigencia', aplica: 'Local · cambia por demarcación' },

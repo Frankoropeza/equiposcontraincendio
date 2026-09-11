@@ -32,7 +32,7 @@ faqs:
   - question: "¿Hacen la instalación y el mantenimiento en sitio?"
     answer: "Sí. Coordinamos día y hora para entrega de equipo, instalación, mantenimiento, recarga o inspección directamente en tu inmueble dentro de la Ciudad de México."
   - question: "¿Qué norma aplica a mi negocio en la Ciudad de México?"
-    answer: "En centros de trabajo aplica la NOM-002-STPS-2010, que pide clasificar el grado de riesgo de incendio y contar con un programa anual de revisión. El servicio de mantenimiento y recarga de extintores se rige por la NOM-154-SCFI-2005, y la señalización de rutas de evacuación por la NOM-003-SEGOB-2011. Además, el Reglamento de Construcciones de la Ciudad de México y los términos de referencia de Protección Civil local pueden exigir requisitos adicionales según el uso y la superficie del inmueble."
+    answer: "En centros de trabajo aplica la NOM-002-STPS-2010, que pide clasificar el grado de riesgo de incendio y contar con un programa anual de revisión. El servicio de mantenimiento y recarga de extintores se rige por la NOM-154-SCFI-2005, y la señalización de rutas de evacuación por la NOM-003-SSPC-2011. Además, el Reglamento de Construcciones de la Ciudad de México y los términos de referencia de Protección Civil local pueden exigir requisitos adicionales según el uso y la superficie del inmueble."
   - question: "¿Entregan documentación para el expediente de Protección Civil?"
     answer: "Sí. Cada equipo se entrega con su ficha técnica y, en los servicios, con la constancia correspondiente: etiqueta y collarín en recarga de extintores, y reporte de lo realizado en instalación e inspección."
 seoTitle: "Equipo contra incendio en CDMX | 16 alcaldías"

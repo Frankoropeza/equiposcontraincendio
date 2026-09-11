@@ -16,7 +16,7 @@ faqs:
   - question: "¿Qué define el tamaño y la ubicación?"
     answer: "El levantamiento del inmueble define el mensaje, tamaño, orientación y cantidad de cada señal. La distancia de observación y la función del punto ayudan a determinar esa configuración."
   - question: "¿Qué debo considerar para que las señales se vean durante una evacuación?"
-    answer: "Que respeten colores, formas y símbolos de la NOM-003-SEGOB-2011 y que el material fotoluminiscente reciba luz suficiente para cargarse. En el levantamiento confirmamos mensaje, tamaño y altura de cada señal."
+    answer: "Que respeten colores, formas y símbolos de la NOM-003-SSPC-2011 y que el material fotoluminiscente reciba luz suficiente para cargarse. En el levantamiento confirmamos mensaje, tamaño y altura de cada señal."
 variantes:
   - nombre: "Señal de ruta de evacuación"
     badge: "Orientación"
@@ -56,4 +56,4 @@ La **señalización fotoluminiscente** almacena energía de la iluminación ambi
 
 ### Cumplimiento
 
-La **NOM-003-SEGOB-2011** establece colores, formas, símbolos, materiales y criterios de visibilidad para señales de protección civil. El levantamiento del inmueble permite definir mensaje, tamaño, orientación y cantidad antes de producirlas.
+La **NOM-003-SSPC-2011** (antes NOM-003-SEGOB-2011) establece colores, formas, símbolos, materiales y criterios de visibilidad para señales de protección civil. El levantamiento del inmueble permite definir mensaje, tamaño, orientación y cantidad antes de producirlas.

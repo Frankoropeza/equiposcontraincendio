@@ -44,7 +44,7 @@ La **inspección** responde una pregunta concreta: si mañana llega una verifica
 - **Extintores**: cantidad, tipo de agente por clase de fuego, ubicación, altura de montaje, accesibilidad, señalización asociada y vigencia del servicio.
 - **Detección y alarma**: funcionamiento del panel, de los detectores y de los dispositivos de notificación.
 - **Red hidráulica**: estado de gabinetes, mangueras, válvulas y conexiones.
-- **Señalización y rutas**: presencia, ubicación y legibilidad conforme a la **NOM-003-SEGOB-2011**, incluida la iluminación de emergencia.
+- **Señalización y rutas**: presencia, ubicación y legibilidad conforme a la **NOM-003-SSPC-2011**, incluida la iluminación de emergencia.
 - **Documentación**: etiquetas, collarines, fechas de prueba hidrostática y programa de revisión.
 
 ## Lo que solemos encontrar

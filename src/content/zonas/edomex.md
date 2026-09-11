@@ -28,7 +28,7 @@ faqs:
   - question: "¿Atienden naves industriales y bodegas?"
     answer: "Sí. Es el perfil más frecuente en la zona conurbada. En naves y bodegas la superficie y la carga de material suelen clasificar el inmueble como de riesgo alto según la NOM-002-STPS-2010, lo que puede requerir red de hidrantes además de extintores, detección y señalización. El levantamiento en sitio define el alcance."
   - question: "¿La norma es distinta a la de la Ciudad de México?"
-    answer: "Las normas oficiales mexicanas son federales y aplican igual: NOM-002-STPS-2010 en centros de trabajo, NOM-154-SCFI-2005 para el servicio de extintores y NOM-003-SEGOB-2011 para señalización. Lo que cambia son los reglamentos municipales y los términos de referencia de Protección Civil de cada municipio, que pueden pedir requisitos o trámites adicionales."
+    answer: "Las normas oficiales mexicanas son federales y aplican igual: NOM-002-STPS-2010 en centros de trabajo, NOM-154-SCFI-2005 para el servicio de extintores y NOM-003-SSPC-2011 para señalización. Lo que cambia son los reglamentos municipales y los términos de referencia de Protección Civil de cada municipio, que pueden pedir requisitos o trámites adicionales."
   - question: "¿Hay costo por el traslado a mi municipio?"
     answer: "Depende de la ubicación y del alcance del trabajo. Lo indicamos en la cotización antes de agendar, sin sorpresas: escríbenos tu dirección y lo que necesitas y te lo desglosamos."
 seoTitle: "Equipo contra incendio en Edomex | zona conurbada"

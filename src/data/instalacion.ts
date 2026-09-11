@@ -13,7 +13,7 @@
 // /servicios/ (planos y memoria técnica; NFPA 14 para la red);
 // /blog/sistema-contra-incendio-componentes/ (capas: detección y alarma
 // NOM-002 5.10, extinción portátil 7.17 y 7.18, red hidráulica NFPA 14 y 20 como
-// referencia de diseño, evacuación NOM-026-STPS-2008 y NOM-003-SEGOB-2011);
+// referencia de diseño, evacuación NOM-026-STPS-2008 y NOM-003-SSPC-2011);
 // hoja de umbrales NOM-002 (Tabla 1, 1.50 m, 23 m clase A, 10 m clase K).
 // NO se afirma: instalación de supresión fija (rociadores, agente limpio o
 // campanas), tiempos de obra ni que la instalación complete el expediente.
@@ -71,7 +71,7 @@ export const instTarjetas: Tarjeta[] = [
     badge: 'Evacuación',
     description: 'Señales, rutas, salidas y luces de emergencia colocadas donde se ven.',
     specs: [
-      { label: 'Señales', value: 'NOM-003-SEGOB' },
+      { label: 'Señales', value: 'NOM-003-SSPC' },
       { label: 'Colores', value: 'NOM-026-STPS' },
       { label: 'Incluye', value: 'Luz de emergencia' },
     ],
@@ -195,7 +195,7 @@ export const instalacionL3: ServiceL3Data = {
       ['Detección', 'Detectores de humo o temperatura y estaciones manuales', 'Detección temprana: gana los primeros minutos', 'NOM-002-STPS-2010, 5.10'],
       ['Alarma y notificación', 'Panel convencional o direccionable, sirenas y estrobos', 'Aviso simultáneo a todos los ocupantes', 'NOM-002-STPS-2010, 5.10'],
       ['Red hidráulica', 'Hidrantes, gabinetes, mangueras, válvulas, tubería y bomba', 'Ataque sostenido cuando el extintor ya no basta', 'NFPA 14 y NFPA 20 (referencia de diseño)'],
-      ['Evacuación', 'Señalización de rutas, salidas, punto de reunión y luces de emergencia', 'Saca a las personas antes de que el humo lo impida', 'NOM-003-SEGOB-2011 y NOM-026-STPS-2008'],
+      ['Evacuación', 'Señalización de rutas, salidas, punto de reunión y luces de emergencia', 'Saca a las personas antes de que el humo lo impida', 'NOM-003-SSPC-2011 y NOM-026-STPS-2008'],
     ],
   },
   guia: {
@@ -213,7 +213,7 @@ export const instalacionL3: ServiceL3Data = {
       { nivel: 'Extintor alto o escondido', ejemplos: 'Nadie lo alcanza en la emergencia', minimo: 'A no más de 1.50 m, visible y señalizado', complementos: 'NOM-002-STPS-2010' },
       { nivel: 'Distancias sin medir', ejemplos: 'Zonas fuera del alcance de cualquier extintor', minimo: 'Recorrido máximo de 23 m (A) y 10 m (K)', complementos: 'NOM-002-STPS-2010' },
       { nivel: 'Un solo agente para todo', ejemplos: 'Cocina o site sin el agente correcto', minimo: 'Agente por área según lo que puede arder', complementos: 'NOM-002-STPS-2010' },
-      { nivel: 'Señal fuera de la vista', ejemplos: 'No guía a nadie en una evacuación', minimo: 'Visible desde la ruta, con luz de emergencia', complementos: 'NOM-003-SEGOB-2011' },
+      { nivel: 'Señal fuera de la vista', ejemplos: 'No guía a nadie en una evacuación', minimo: 'Visible desde la ruta, con luz de emergencia', complementos: 'NOM-003-SSPC-2011' },
       { nivel: 'Obra nueva sin coordinar', ejemplos: 'Romper acabados para pasar tubería o cableado', minimo: 'Entrar antes de cerrar plafones y muros', complementos: 'Práctica de obra' },
     ],
     note: 'Si ya tienes un proyecto ejecutivo o una memoria de cálculo, instalamos conforme a él. Si otro proveedor dejó una instalación a medias, la levantamos y la completamos.',
@@ -304,13 +304,13 @@ export const instalacionL3: ServiceL3Data = {
     },
     {
       id: 'inst-senalizacion',
-      eyebrow: 'Señalización y rutas · NOM-003-SEGOB-2011',
+      eyebrow: 'Señalización y rutas · NOM-003-SSPC-2011',
       title: 'Señalización',
       titleAccent: 'y rutas de evacuación',
       description:
-        'La señalización es la capa que saca a las personas del inmueble. Colocamos las señales de ruta, salida, equipo y punto de reunión conforme a la NOM-003-SEGOB-2011, donde se vean desde la ruta, y las luces de emergencia que las mantienen visibles cuando se corta la energía.',
+        'La señalización es la capa que saca a las personas del inmueble. Colocamos las señales de ruta, salida, equipo y punto de reunión conforme a la NOM-003-SSPC-2011, donde se vean desde la ruta, y las luces de emergencia que las mantienen visibles cuando se corta la energía.',
       features: [
-        { label: 'Señales de norma', desc: 'Color, forma y símbolo de la NOM-003-SEGOB-2011.' },
+        { label: 'Señales de norma', desc: 'Color, forma y símbolo de la NOM-003-SSPC-2011.' },
         { label: 'Rutas y salidas', desc: 'Señalizadas de forma continua hasta el punto de reunión.' },
         { label: 'Luces de emergencia', desc: 'Encienden al cortarse la energía.' },
         { label: 'Señal de cada equipo', desc: 'Extintores, gabinetes y alarmas ubicables a simple vista.' },
@@ -399,7 +399,7 @@ export const instalacionL3: ServiceL3Data = {
       { norma: 'NOM-002-STPS-2010, Tabla 1', alcance: 'Clasificación del riesgo de incendio en ordinario o alto', aplica: 'El alcance del proyecto' },
       { norma: 'NOM-002-STPS-2010, 7.17', alcance: 'Extintores por clase de fuego, altura máxima de 1.50 m y distancia de recorrido', aplica: 'Instalación de extintores' },
       { norma: 'NOM-002-STPS-2010, 5.10', alcance: 'Medios de detección y alarma de incendio', aplica: 'Detección y alarma' },
-      { norma: 'NOM-003-SEGOB-2011', alcance: 'Señales de protección civil: color, forma y símbolo', aplica: 'Señalización y rutas' },
+      { norma: 'NOM-003-SSPC-2011', alcance: 'Señales de protección civil: color, forma y símbolo', aplica: 'Señalización y rutas' },
       { norma: 'NOM-026-STPS-2008', alcance: 'Colores de seguridad e identificación de fluidos en tuberías', aplica: 'Red hidráulica' },
       { norma: 'NOM-106-SCFI-2017', alcance: 'Contraseña oficial del producto certificado', aplica: 'Equipo suministrado' },
       { norma: 'NFPA 14 (ref.)', alcance: 'Diseño de sistemas de tubería vertical y mangueras', aplica: 'Gabinetes e hidrantes' },

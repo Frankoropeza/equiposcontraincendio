@@ -49,7 +49,7 @@ El error más caro en protección contra incendio es comprar equipo antes de sab
 - **Detección y alarma**: detectores de humo y calor, estaciones manuales, sirenas y panel, dimensionados al inmueble.
 - **Red hidráulica**: gabinetes, mangueras, válvulas, hidrantes y conexiones siamesas.
 - **Extintores**: selección del agente y la capacidad por clase de fuego, con la distribución y las distancias de recorrido aplicables.
-- **Señalización**: rutas de evacuación, salidas de emergencia, ubicación de equipo y puntos de reunión conforme a la **NOM-003-SEGOB-2011**.
+- **Señalización**: rutas de evacuación, salidas de emergencia, ubicación de equipo y puntos de reunión conforme a la **NOM-003-SSPC-2011**.
 - **Sistemas fijos**: rociadores y supresión de cocina Clase K, según el proyecto.
 
 ## Cómo trabajamos

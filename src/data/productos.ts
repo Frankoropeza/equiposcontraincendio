@@ -79,7 +79,7 @@ export const productosNormRows: NormRow[] = [
   { norma: 'NOM-002-STPS-2010', alcance: 'Obliga la revisión mensual y el mantenimiento anual del extintor (7.18), la densidad por superficie y la altura máxima de 1.50 m', aplica: 'Todo el equipo instalado en un centro de trabajo' },
   { norma: 'NOM-154-SCFI-2005', alcance: 'Procedimiento de servicio, recarga y prueba hidrostática del cilindro cada 5 años (5.6)', aplica: 'Extintores portátiles y móviles' },
   { norma: 'NOM-106-SCFI-2017', alcance: 'Contraseña oficial del producto certificado: es el sello que acredita el extintor ante la autoridad', aplica: 'Extintores que se venden en México' },
-  { norma: 'NOM-003-SEGOB-2011', alcance: 'Color, forma y símbolo de las señales de protección civil, incluidas las fotoluminiscentes', aplica: 'Señalización y rutas de evacuación' },
+  { norma: 'NOM-003-SSPC-2011', alcance: 'Color, forma y símbolo de las señales de protección civil, incluidas las fotoluminiscentes', aplica: 'Señalización y rutas de evacuación' },
   { norma: 'NOM-026-STPS-2008', alcance: 'Colores de seguridad e identificación de fluidos en tubería', aplica: 'Red hidráulica y tubería de la instalación' },
   { norma: 'NFPA 72 (ref.)', alcance: 'Diseño, instalación y prueba del sistema de detección y alarma', aplica: 'Detectores, paneles, estaciones y sirenas' },
   { norma: 'NFPA 13 (ref.)', alcance: 'Cálculo hidráulico y densidad de descarga de rociadores automáticos', aplica: 'Sistemas fijos de supresión' },

@@ -15,7 +15,7 @@
 //     ruta, salida, extintor, hidrante, punto de reunión y primeros auxilios;
 //     verde = condición segura, rojo = equipo contra incendio).
 //   · Investigación «Cumplimiento por giro (Fase 1)»: NOM-026-STPS-2008 (señales
-//     de seguridad e higiene en centros de trabajo) y NOM-003-SEGOB-2011 (señales
+//     de seguridad e higiene en centros de trabajo) y NOM-003-SSPC-2011 (señales
 //     y avisos de protección civil, remite a la NOM-026 en lo que no cubre); Ley
 //     de GIRPC CDMX art. 64 (piso mínimo de bajo riesgo: extintores señalizados y
 //     señalización de rutas de evacuación); Ley de Establecimientos Mercantiles
@@ -150,7 +150,7 @@ export const senTarjetas: Tarjeta[] = [
     specs: [
       { label: 'Revisa', value: 'Ubicación y color' },
       { label: 'Detecta', value: 'Rutas obstruidas' },
-      { label: 'Norma', value: 'NOM-003-SEGOB' },
+      { label: 'Norma', value: 'NOM-003-SSPC' },
     ],
     ctaLabel: 'Inspección y dictamen',
   },
@@ -185,7 +185,7 @@ export const senalizacionL3: ServiceL3Data = {
     outlineText: 'Qué señales llevas',
   },
   pillars: [
-    { icon: 'check', title: 'La señal que toca', desc: 'Color, forma y símbolo de la NOM-003-SEGOB y la NOM-026.' },
+    { icon: 'check', title: 'La señal que toca', desc: 'Color, forma y símbolo de la NOM-003-SSPC y la NOM-026.' },
     { icon: 'doc', title: 'Tamaño calculado', desc: 'Cada señal dimensionada a su distancia de observación.' },
     { icon: 'shield', title: 'Visible sin energía', desc: 'Fotoluminiscente y luces de emergencia en la ruta.' },
     { icon: 'pin', title: 'Sobre tu inmueble real', desc: 'Del levantamiento al croquis, sin rutas contradictorias.' },
@@ -229,15 +229,15 @@ export const senalizacionL3: ServiceL3Data = {
     eyebrow: 'Qué significa cada color',
     title: 'Los colores de seguridad',
     titleAccent: 'y lo que exige cada uno',
-    desc: 'La NOM-026-STPS-2008 fija el significado de cada color; la NOM-003-SEGOB-2011 lo aplica a las señales de protección civil.',
+    desc: 'La NOM-026-STPS-2008 fija el significado de cada color; la NOM-003-SSPC-2011 lo aplica a las señales de protección civil.',
     body: [
-      'La NOM-026 aplica a los centros de trabajo y la NOM-003-SEGOB a las señales y avisos de protección civil en cualquier inmueble; la segunda remite a la primera en lo que no cubre. Por eso en un centro de trabajo suelen pedirse las dos.',
+      'La NOM-026 aplica a los centros de trabajo y la NOM-003-SSPC a las señales y avisos de protección civil en cualquier inmueble; la segunda remite a la primera en lo que no cubre. Por eso en un centro de trabajo suelen pedirse las dos.',
       'El error más común no es de color sino de mezcla: una señal verde de salida junto a una roja de equipo, del mismo tamaño y a la misma altura, obliga a leer cuando nadie tiene tiempo de leer.',
     ],
     columns: ['Color', 'Significado', 'Ejemplos', 'Norma'],
     rows: [
-      { nivel: 'Verde', ejemplos: 'Condición segura', minimo: 'Ruta de evacuación, salida de emergencia, punto de reunión y primeros auxilios', complementos: 'NOM-026-STPS-2008 · NOM-003-SEGOB-2011' },
-      { nivel: 'Rojo', ejemplos: 'Paro, prohibición y equipo contra incendio', minimo: 'Extintor, hidrante, alarma y prohibido fumar', complementos: 'NOM-026-STPS-2008 · NOM-003-SEGOB-2011' },
+      { nivel: 'Verde', ejemplos: 'Condición segura', minimo: 'Ruta de evacuación, salida de emergencia, punto de reunión y primeros auxilios', complementos: 'NOM-026-STPS-2008 · NOM-003-SSPC-2011' },
+      { nivel: 'Rojo', ejemplos: 'Paro, prohibición y equipo contra incendio', minimo: 'Extintor, hidrante, alarma y prohibido fumar', complementos: 'NOM-026-STPS-2008 · NOM-003-SSPC-2011' },
       { nivel: 'Amarillo', ejemplos: 'Advertencia y precaución', minimo: 'Riesgo eléctrico, piso resbaloso o superficie caliente', complementos: 'NOM-026-STPS-2008' },
       { nivel: 'Azul', ejemplos: 'Obligación', minimo: 'Uso obligatorio de equipo de protección personal', complementos: 'NOM-026-STPS-2008' },
     ],
@@ -439,12 +439,12 @@ export const senalizacionL3: ServiceL3Data = {
     titleAccent: 'de protección civil y seguridad',
     desc: 'Dos normas federales fijan colores, formas y símbolos; en la Ciudad de México, dos leyes locales fijan el mínimo.',
     body: [
-      'La NOM-003-SEGOB-2011 regula las señales y avisos de protección civil en cualquier inmueble. La NOM-026-STPS-2008 regula los colores y señales de seguridad en los centros de trabajo, incluida la fórmula del tamaño.',
+      'La NOM-003-SSPC-2011 (antes NOM-003-SEGOB-2011) regula las señales y avisos de protección civil en cualquier inmueble. La NOM-026-STPS-2008 regula los colores y señales de seguridad en los centros de trabajo, incluida la fórmula del tamaño.',
       'En la Ciudad de México, la Ley de Gestión Integral de Riesgos y Protección Civil y la Ley de Establecimientos Mercantiles fijan lo que se exige aun sin Programa Interno.',
     ],
     columns: ['Norma', 'Qué exige', 'A qué aplica'],
     rows: [
-      { norma: 'NOM-003-SEGOB-2011', alcance: 'Señales y avisos de protección civil: colores, formas, símbolos y materiales', aplica: 'Cualquier inmueble' },
+      { norma: 'NOM-003-SSPC-2011', alcance: 'Señales y avisos de protección civil: colores, formas, símbolos y materiales', aplica: 'Cualquier inmueble' },
       { norma: 'NOM-026-STPS-2008', alcance: 'Colores y señales de seguridad e higiene; tamaño por distancia de observación', aplica: 'Centros de trabajo' },
       { norma: 'Ley de GIRPC CDMX, art. 64', alcance: 'Extintores señalizados y señalización de rutas de evacuación, aun en bajo riesgo', aplica: 'Inmuebles en CDMX' },
       { norma: 'Ley de Establecimientos Mercantiles CDMX, art. 10, fracc. XII', alcance: '911 visible y señalización de acciones ante sismo e incendio', aplica: 'Establecimientos en CDMX' },
@@ -466,7 +466,7 @@ export const senalizacionL3: ServiceL3Data = {
       title: 'Qué incluye',
       body: [
         'Levantamiento del inmueble, definición de la ruta de evacuación y cálculo del tamaño de cada señal con la relación de la NOM-026-STPS-2008.',
-        'Señales fotoluminiscentes de ruta, salida, extintor, hidrante, punto de reunión y primeros auxilios conforme a la NOM-003-SEGOB-2011, luces de emergencia en la ruta y su instalación.',
+        'Señales fotoluminiscentes de ruta, salida, extintor, hidrante, punto de reunión y primeros auxilios conforme a la NOM-003-SSPC-2011, luces de emergencia en la ruta y su instalación.',
         'Croquis de evacuación sobre el inmueble real y recorrido de prueba de punta a punta, para tu expediente de Protección Civil.',
       ],
     },
@@ -502,10 +502,10 @@ export const senalizacionL3: ServiceL3Data = {
       'Las respuestas citan la norma cuando aplica; lo que depende de tu inmueble lo revisamos contigo.',
     ],
     items: [
-      { question: '¿Qué norma regula las señales de protección civil?', answer: 'La NOM-003-SEGOB-2011 regula las señales y avisos de protección civil en cualquier inmueble: colores, formas, símbolos y materiales. En los centros de trabajo aplica además la NOM-026-STPS-2008, de colores y señales de seguridad e higiene; la NOM-003 remite a ella en lo que no cubre, así que en una empresa suelen pedirse las dos.' },
+      { question: '¿Qué norma regula las señales de protección civil?', answer: 'La NOM-003-SSPC-2011 regula las señales y avisos de protección civil en cualquier inmueble: colores, formas, símbolos y materiales. En los centros de trabajo aplica además la NOM-026-STPS-2008, de colores y señales de seguridad e higiene; la NOM-003 remite a ella en lo que no cubre, así que en una empresa suelen pedirse las dos.' },
       { question: '¿Qué significa cada color de señal?', answer: 'Verde: condición segura, como rutas de evacuación, salidas, punto de reunión y primeros auxilios. Rojo: paro, prohibición y equipo contra incendio, como extintores, hidrantes y alarmas. Amarillo: advertencia o precaución. Azul: obligación, como el uso de equipo de protección personal.' },
       { question: '¿De qué tamaño debe ser una señal?', answer: 'Según la distancia desde la que se tiene que leer. La NOM-026-STPS-2008 pide que la superficie S, en metros cuadrados, sea al menos L²/2000, donde L es la distancia de observación en metros, entre 5 y 50 m. A 10 m, por ejemplo, la señal debe tener al menos 500 cm². Por debajo de 5 m el mínimo es 125 cm² y por encima de 50 m, 12,500 cm².' },
-      { question: '¿La señalización tiene que ser fotoluminiscente?', answer: 'La NOM-003-SEGOB-2011 fija materiales y criterios de visibilidad, y el material fotoluminiscente es la forma más directa de que una señal de ruta se siga viendo sin energía: se carga con la luz del lugar y brilla a oscuras. Para que funcione tiene que recibir luz suficiente antes de la emergencia; en el levantamiento revisamos eso en cada punto.' },
+      { question: '¿La señalización tiene que ser fotoluminiscente?', answer: 'No siempre. La NOM-003-SSPC-2011 permite el material fotoluminiscente y exige que las señales de ruta, salida y zona de resguardo puedan observarse bajo cualquier condición (numeral 6.6). El fotoluminiscente es la forma más directa de lograrlo sin energía: se carga con la luz del lugar y brilla a oscuras. Para que funcione tiene que recibir luz suficiente antes de la emergencia; en el levantamiento revisamos eso en cada punto.' },
       { question: '¿Qué señales pide Protección Civil en la Ciudad de México?', answer: 'Aun en el nivel de bajo riesgo, la Ley de Gestión Integral de Riesgos y Protección Civil (art. 64) pide extintores señalizados y señalización de las rutas de evacuación. Un establecimiento mercantil que no requiere Programa Interno igual debe exhibir el 911 y la señalización de qué hacer ante sismo e incendio (Ley de Establecimientos Mercantiles, art. 10, fracc. XII). En la visita se revisan rutas, salidas y equipo señalizados.' },
       { question: '¿Las luces de emergencia son obligatorias?', answer: 'No encontramos un numeral mexicano que las haga obligatorias con una duración fija. Son criterio técnico: si se corta la energía, la luz de emergencia es lo que mantiene visible la ruta. La NFPA 101, referencia técnica, pide 90 minutos de iluminación de emergencia.' },
       { question: '¿Qué es el croquis de evacuación y quién lo pide?', answer: 'Es el plano del inmueble con las rutas, las salidas, el equipo contra incendio y el punto de reunión. En el Estado de México, el trámite de Protección Civil pide un croquis de distribución con señalamientos. Lo hacemos a partir del levantamiento, pero no sustituye al Programa Interno, que firma un tercero acreditado.' },

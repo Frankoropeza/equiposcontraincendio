@@ -90,7 +90,7 @@ export const homeMenuSub: Record<string, string> = {
 // y cobertura. «Asesoría honesta» pasa a /nosotros/ (principios).
 export const homePillars: HomePillar[] = [
   { icon: "clock", title: "Más de 35 años", desc: "CONINC vende equipo contra incendio en el mercado mexicano desde hace más de 35 años." },
-  { icon: "shield", title: "Conforme a norma", desc: "Equipo y servicio alineados a la NOM-154-SCFI, la NOM-002-STPS y la NOM-003-SEGOB." },
+  { icon: "shield", title: "Conforme a norma", desc: "Equipo y servicio alineados a la NOM-154-SCFI, la NOM-002-STPS y la NOM-003-SSPC." },
   { icon: "doc", title: "Listo para Protección Civil", desc: "Te entregamos ficha técnica y constancias de servicio para tu expediente ante PC y STPS." },
   { icon: "pin", title: "CDMX y Estado de México", desc: "Atención y entrega en la Ciudad de México, el Estado de México y la zona metropolitana." },
 ];
@@ -119,7 +119,7 @@ export const homeRiskRows: HomeRiskRow[] = [
 export const homeNormRows: HomeNormRow[] = [
   { norma: "NOM-002-STPS-2010", alcance: "Prevención y protección contra incendios en centros de trabajo", aplica: "Toda empresa con trabajadores" },
   { norma: "NOM-154-SCFI-2005", alcance: "Mantenimiento, recarga y prueba hidrostática de extintores", aplica: "Extintores y su servicio" },
-  { norma: "NOM-003-SEGOB-2011", alcance: "Señales y avisos para protección civil: colores, formas y símbolos", aplica: "Inmuebles con afluencia de personas" },
+  { norma: "NOM-003-SSPC-2011", alcance: "Señales y avisos para protección civil: colores, formas y símbolos", aplica: "Inmuebles con afluencia de personas" },
   { norma: "NOM-026-STPS-2008", alcance: "Colores y señales de seguridad; identificación de fluidos en tubería", aplica: "Centros de trabajo" },
   { norma: "NFPA 72 (ref.)", alcance: "Detección y alarma de incendio", aplica: "Sistemas de detectores y alarma" },
   { norma: "NFPA 13 (ref.)", alcance: "Rociadores automáticos", aplica: "Supresión automática en edificios" },
@@ -195,7 +195,7 @@ export const homeFaqs: HomeFaq[] = [
   {
     question: "¿Qué equipos contra incendio exige Protección Civil para una empresa en CDMX?",
     answer:
-      "El mínimo lo marca la NOM-002-STPS-2010 según el grado de riesgo, y a eso se suman los reglamentos locales: el Reglamento de Construcciones de la Ciudad de México y los términos de referencia de Protección Civil pueden pedir requisitos adicionales por uso y superficie. En la práctica se revisan extintores vigentes y bien distribuidos, señalización de rutas conforme a la NOM-003-SEGOB-2011, detección cuando aplica, y el expediente documental. El levantamiento en sitio es lo que lo define.",
+      "El mínimo lo marca la NOM-002-STPS-2010 según el grado de riesgo, y a eso se suman los reglamentos locales: el Reglamento de Construcciones de la Ciudad de México y los términos de referencia de Protección Civil pueden pedir requisitos adicionales por uso y superficie. En la práctica se revisan extintores vigentes y bien distribuidos, señalización de rutas conforme a la NOM-003-SSPC-2011, detección cuando aplica, y el expediente documental. El levantamiento en sitio es lo que lo define.",
   },
   {
     question: "¿Cuál es la diferencia entre un extintor de PQS y uno de CO₂?",
@@ -322,10 +322,10 @@ export const homeCategoryFeatures: HomeCategoryFeature[] = [
   },
   {
     surface: true,
-    eyebrow: "Categoría · NOM-003-SEGOB · Fotoluminiscente",
+    eyebrow: "Categoría · NOM-003-SSPC · Fotoluminiscente",
     title: "Señalización y equipo",
     titleAccent: "de emergencia",
-    description: "La señalización correcta guía una evacuación ordenada incluso sin luz eléctrica. Suministramos señales fotoluminiscentes, lámparas de emergencia y planos de evacuación conforme a la NOM-003-SEGOB-2011. En la Ciudad de México, la señalización de rutas se pide aun en bajo riesgo.",
+    description: "La señalización correcta guía una evacuación ordenada incluso sin luz eléctrica. Suministramos señales fotoluminiscentes, lámparas de emergencia y planos de evacuación conforme a la NOM-003-SSPC-2011. En la Ciudad de México, la señalización de rutas se pide aun en bajo riesgo.",
     features: [
       { label: "Señales fotoluminiscentes", desc: "Salida, ruta, extintor, hidrante y punto de reunión. Sin electricidad." },
       { label: "Lámparas de emergencia", desc: "Iluminación autónoma con batería; 90 minutos según la NFPA 101 (ref.)." },

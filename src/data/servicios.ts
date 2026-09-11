@@ -46,7 +46,7 @@ export const serviceFeatures: ServiceFeature[] = [
     features: [
       { label: 'Detección y alarma', desc: 'Detectores, panel y sirenas dimensionados a la superficie real.' },
       { label: 'Red hidráulica', desc: 'Gabinetes, mangueras y válvulas con cálculo conforme a la NFPA 14.' },
-      { label: 'Extintores y señalización', desc: 'Ubicación y capacidad según la NOM-002-STPS y la NOM-003-SEGOB.' },
+      { label: 'Extintores y señalización', desc: 'Ubicación y capacidad según la NOM-002-STPS y la NOM-003-SSPC.' },
       { label: 'Planos y memoria', desc: 'Documentación técnica lista para presentar a Protección Civil.' },
     ],
     ctaLabel: 'Cotizar instalación',
@@ -237,7 +237,7 @@ export const serviciosNormRows: NormRow[] = [
   { norma: 'NOM-002-STPS-2010', alcance: 'Obliga la revisión mensual y el mantenimiento anual del equipo, y el programa de prevención del centro de trabajo', aplica: 'Toda empresa con trabajadores' },
   { norma: 'NOM-154-SCFI-2005', alcance: 'Fija el procedimiento de servicio y recarga, y la prueba hidrostática del cilindro cada 5 años', aplica: 'Mantenimiento de extintores' },
   { norma: 'NOM-106-SCFI-2017', alcance: 'Contraseña oficial del producto certificado: el sello que acredita el equipo entregado', aplica: 'Equipo que se suministra en el servicio' },
-  { norma: 'NOM-003-SEGOB-2011', alcance: 'Señales de protección civil: color, forma y símbolo de la señalización instalada', aplica: 'Señalización y rutas de evacuación' },
+  { norma: 'NOM-003-SSPC-2011', alcance: 'Señales de protección civil: color, forma y símbolo de la señalización instalada', aplica: 'Señalización y rutas de evacuación' },
   { norma: 'NOM-026-STPS-2008', alcance: 'Colores de seguridad e identificación de fluidos en la tubería de la red', aplica: 'Instalación de red hidráulica' },
   { norma: 'Formato DC-3 (STPS)', alcance: 'Acredita ante la STPS la capacitación recibida por cada trabajador', aplica: 'Capacitación de brigada' },
   { norma: 'NFPA 10 (ref.)', alcance: 'Inspección, prueba y mantenimiento de extintores portátiles', aplica: 'Referencia técnica del servicio' },
