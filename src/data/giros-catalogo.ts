@@ -144,7 +144,7 @@ export const GIROS_CATALOGO: Record<string, GiroCatalogCard> = {
     title: 'Hidrantes y mangueras',
     description: 'Gabinetes, conexiones, toma siamesa, válvulas y bomba contra incendio.',
     href: '/productos/hidrantes-mangueras/',
-    ctaLabel: 'Hidrantes y mangueras',
+    ctaLabel: 'Hidrantes',
     image: '/images/showcase/gabinete-manguera-hidrante.avif',
     imageAlt: 'Gabinete con manguera e hidrante contra incendio',
     badge: 'Producto',
