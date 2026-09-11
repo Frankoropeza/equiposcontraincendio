@@ -379,4 +379,29 @@ export const FICHAS: Record<string, FichaData> = {
     faqAccent: 'sobre rociadores contra incendio',
     guia: { title: 'Cómo funciona un', titleAccent: 'sistema de rociadores', desc: 'Cuándo son obligatorios, tipos de sistema, colores del bulbo y cómo se cotiza.' },
   },
+  'detector-de-gas': {
+    heroBadge: 'Gas LP · Gas natural · NTC-PA 2024, 4.4.5.2',
+    heroTitle: 'Detector de gas',
+    heroAccent: 'para cocinas y cuartos de máquinas',
+    descRight: [
+      'Detectores de gas LP y gas natural para cocinas comerciales, calderas y cuartos de máquinas: autónomos, con electroválvula de corte o conectados al panel de alarma.',
+      'Avisan de la fuga antes de que se convierta en incendio o explosión y, con electroválvula, cierran el paso del gas sin esperar a nadie.',
+    ],
+    pillars: [
+      { icon: 'check', title: 'Aviso antes del fuego', desc: 'Alarma sonora y visual en cuanto registra la fuga.' },
+      { icon: 'shield', title: 'Corte automático', desc: 'Con electroválvula, cierra la línea de gas por sí solo.' },
+      { icon: 'doc', title: 'Cuándo es obligatorio', desc: 'NTC 2024 en CDMX: obra nueva, remodelación o cambio de uso.' },
+      { icon: 'pin', title: 'Instalación', desc: 'Lo instalamos en CDMX y el Estado de México.' },
+    ],
+    norma: 'NTC-PA 2024 (CDMX), numeral 4.4.5.2',
+    claves: [
+      { label: 'Gases', value: 'Gas LP y gas natural' },
+      { label: 'Colocación', value: 'LP cerca del piso · natural cerca del techo' },
+      { label: 'Corte', value: 'Electroválvula en la línea de gas' },
+      { label: 'Integración', value: 'Autónomo o panel de alarma' },
+    ],
+    showcaseTitle: 'Datos clave del detector de gas',
+    faqAccent: 'sobre detectores de gas',
+    guia: { title: 'Cómo elegir tu', titleAccent: 'detector de gas', desc: 'Tipo de gas, dónde se coloca, corte automático y lo que pide la norma en la CDMX.' },
+  },
 };

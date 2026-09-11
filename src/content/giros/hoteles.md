@@ -78,7 +78,7 @@ errores:
   - { title: "Caldera sin expediente", desc: "Equipo a presión sin categoría, pruebas ni expediente NOM-020." }
   - { title: "Brigada solo de día", desc: "El turno nocturno, cuando el hotel está lleno, sin nadie capacitado." }
   - { title: "Plano de habitación desactualizado", desc: "Croquis que no refleja la remodelación o marca una salida que ya no existe." }
-vitrina: [pqs, co2, clase_k, deteccion_alarmas, hidrantes, senalizacion, lamparas, capacitacion]
+vitrina: [pqs, detector_gas, clase_k, deteccion_alarmas, hidrantes, senalizacion, lamparas, capacitacion]
 hermanos: [salones-de-eventos, restaurantes, condominios-y-edificios, negocios-de-mediano-y-alto-riesgo]
 enlacesSoporte:
   - "/blog/ntc-2024-rociadores-cuando/"
@@ -136,7 +136,7 @@ La misma tabla marca la **detección como opcional** en hospedaje. Por eso no es
 
 ## La cocina y el cuarto de máquinas se rigen por sus propias reglas
 
-La cocina del hotel es un restaurante dentro del edificio: fuego de aceites (clase K) que solo se atiende con **químico húmedo**, a no más de 10 metros de recorrido, y detector de gas donde hay equipos de combustión en obra nueva o remodelación. El detalle está en la [ficha de restaurantes](/proteccion-civil/restaurantes/).
+La cocina del hotel es un restaurante dentro del edificio: fuego de aceites (clase K) que solo se atiende con **químico húmedo**, a no más de 10 metros de recorrido, y [detector de gas](/productos/detector-de-gas/) donde hay equipos de combustión en obra nueva o remodelación. El detalle está en la [ficha de restaurantes](/proteccion-civil/restaurantes/).
 
 El cuarto de máquinas tiene dos obligaciones que no se sustituyen entre sí: el extintor adecuado para equipo eléctrico y, si hay caldera o recipientes a presión, el **expediente de la NOM-020-STPS-2011** con su categoría, pruebas y dispositivos de relevo. La etiqueta de un extintor no acredita nada de la caldera.
 

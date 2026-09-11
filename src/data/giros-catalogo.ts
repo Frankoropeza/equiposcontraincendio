@@ -140,6 +140,20 @@ export const GIROS_CATALOGO: Record<string, GiroCatalogCard> = {
       { label: 'Revisión', value: 'Programa anual' },
     ],
   },
+  detector_gas: {
+    title: 'Detector de gas',
+    description: 'Gas LP o natural, con corte automático, para cocinas y calderas.',
+    href: '/productos/detector-de-gas/',
+    ctaLabel: 'Detector de gas',
+    image: '/images/servicios/supresion-cocina-comercial.avif',
+    imageAlt: 'Cocina comercial con equipos de combustión a gas',
+    badge: 'Producto',
+    specs: [
+      { label: 'Gas', value: 'LP o natural' },
+      { label: 'Corte', value: 'Electroválvula' },
+      { label: 'Norma', value: 'NTC 2024, 4.4.5.2' },
+    ],
+  },
   hidrantes: {
     title: 'Hidrantes y mangueras',
     description: 'Gabinetes, conexiones, toma siamesa, válvulas y bomba contra incendio.',

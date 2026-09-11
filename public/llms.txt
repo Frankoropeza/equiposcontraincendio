@@ -44,6 +44,7 @@ Idioma: español (es-MX). País: México.
 - [Señalización y emergencia](https://equiposcontraincendio.com/productos/senalizacion/): señales de protección civil y de emergencia, luces de emergencia y croquis de evacuación.
 - [Accesorios y refacciones](https://equiposcontraincendio.com/productos/accesorios/): soportes de pared y vehiculares, gabinetes para extintor y refacciones de servicio.
 - [Detector de humo fotoeléctrico](https://equiposcontraincendio.com/productos/detector-humo-fotoelectrico/): ficha de producto.
+- [Detector de gas](https://equiposcontraincendio.com/productos/detector-de-gas/): gas LP y natural, dónde se coloca, electroválvula de corte y lo que pide la NTC 2024 de la CDMX (4.4.5.2).
 - [Servicios](https://equiposcontraincendio.com/servicios/): instalación, mantenimiento, inspección, prueba hidrostática, diagnóstico de riesgo, capacitación DC-3 y gestión documental.
 - [Mantenimiento y recarga](https://equiposcontraincendio.com/servicios/mantenimiento/): recarga de extintores conforme a la NOM-154-SCFI-2005.
 - [Blog](https://equiposcontraincendio.com/blog/): guías técnicas y de normatividad.

@@ -78,7 +78,7 @@ errores:
   - { title: "Aforo menor al real", desc: "Una carta de aforo que no coincide con las mesas del salón y la terraza." }
   - { title: "Croquis desactualizado", desc: "Plano que no refleja la remodelación, la barra nueva o la salida que se clausuró." }
   - { title: "Salida bloqueada por insumos", desc: "Cajas, garrafones o sillas apiladas en la ruta de evacuación." }
-vitrina: [clase_k, pqs, co2, deteccion_alarmas, senalizacion, mantenimiento, capacitacion, documental]
+vitrina: [clase_k, pqs, detector_gas, deteccion_alarmas, senalizacion, mantenimiento, capacitacion, documental]
 hermanos: [cafeterias-y-cocinas-economicas, bares-y-antros, hoteles, salones-de-eventos]
 enlacesSoporte:
   - "/blog/extintores-por-area-riesgo-cocina-cuarto-electrico/"

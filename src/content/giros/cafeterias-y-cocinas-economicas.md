@@ -69,7 +69,7 @@ errores:
   - { title: "Botiquín vacío", desc: "Sin reposición desde la última quemadura." }
   - { title: "Sin constancia de capacitación", desc: "El personal rota y nadie tiene el curso vigente." }
   - { title: "Crecer con terraza sin reclasificar", desc: "Más mesas y más aforo cambian el nivel de riesgo." }
-vitrina: [pqs, clase_k, soportes, botiquin, senalizacion, mantenimiento, capacitacion, verifica]
+vitrina: [pqs, clase_k, detector_gas, botiquin, senalizacion, mantenimiento, capacitacion, verifica]
 hermanos: [restaurantes, locales-comerciales, comercios-de-bajo-riesgo, bares-y-antros]
 enlacesSoporte:
   - "/blog/riesgo-de-incendio-cocina-comercial-vs-oficina/"
