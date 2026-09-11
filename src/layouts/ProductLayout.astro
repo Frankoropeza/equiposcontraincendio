@@ -65,7 +65,10 @@ const menuCta = { label: 'Cotizar por WhatsApp', href: waLink, sub: 'Te decimos 
 const cat = TAXONOMY.categories.find((item) => item.slug === category);
 const breadcrumbs = [
   { label: 'Productos', href: '/productos/' },
-  ...(cat && cat.href !== '/productos/' ? [{ label: cat.label, href: cat.href }] : []),
+  // Desde 2026-09-11 las 5 categorías tienen L3 y TAXONOMY es `as const`: el
+  // href se ensancha a string para que la guarda siga valiendo si mañana entra
+  // una categoría sin L3 (href '/productos/').
+  ...(cat && (cat.href as string) !== '/productos/' ? [{ label: cat.label, href: cat.href }] : []),
   { label: title },
 ];
 const productImages = [image, ...((Astro.props.gallery ?? []).map((item) => item.src))].filter(Boolean) as string[];

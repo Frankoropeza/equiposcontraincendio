@@ -437,7 +437,7 @@ export const homeCategoryFeatures: HomeCategoryFeature[] = [
       { name: "Buckeye" },
     ],
     ctaLabel: "Refacciones de extintor",
-    ctaHref: "/productos/#accesorios-refacciones",
+    ctaHref: "/productos/accesorios/",
     ctaSecondaryMsg: "Hola, quiero cotizar refacciones y accesorios para extintores (válvulas, manómetros, soportes).",
     imgMain: { src: "/images/showcase/refacciones-equipo-contra-incendio.avif", alt: "Válvulas, manómetros, collarines y refacciones para extintor" },
     imgA: { src: "/images/servicios/inspeccion-recarga-extintores.avif", alt: "Recarga y mantenimiento de extintores en taller de servicio" },
