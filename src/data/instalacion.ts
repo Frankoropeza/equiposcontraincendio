@@ -139,7 +139,7 @@ export const instalacionL3: ServiceL3Data = {
   id: 'instalacion',
   path: '/servicios/instalacion/',
   seo: {
-    title: 'Instalación de sistemas contra incendio en CDMX y Edomex',
+    title: 'Sistemas contra incendio: instalación en CDMX y Edomex',
     description:
       'Instalación de sistemas contra incendio en CDMX y Edomex: extintores, detección y alarma, red hidráulica y señalización, con planos, memoria técnica y fichas.',
     serviceName: 'Instalación de sistemas contra incendio',

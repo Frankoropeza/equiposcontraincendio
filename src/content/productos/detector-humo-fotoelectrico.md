@@ -6,7 +6,7 @@ image: /images/productos/dispositivos-deteccion-alarma.avif
 price: "Cotizar"
 brand: "CONINC"
 order: 6
-seoTitle: "Detectores de humo | autónomos y para panel"
+seoTitle: "Detector de humo fotoeléctrico: autónomo y para panel"
 seoDescription: "Compara detectores de humo fotoeléctricos: batería, interconectados, humo y CO, o para panel de alarma."
 faqs:
   - question: "¿Qué detector de humo se adapta mejor a mi instalación?"
