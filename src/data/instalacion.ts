@@ -15,8 +15,9 @@
 // NOM-002 5.10, extinción portátil 7.17 y 7.18, red hidráulica NFPA 14 y 20 como
 // referencia de diseño, evacuación NOM-026-STPS-2008 y NOM-003-SSPC-2011);
 // hoja de umbrales NOM-002 (Tabla 1, 1.50 m, 23 m clase A, 10 m clase K).
-// NO se afirma: instalación de supresión fija (rociadores, agente limpio o
-// campanas), tiempos de obra ni que la instalación complete el expediente.
+// 2026-09-11: Frank confirmó que CONINC instala rociadores (ficha L4
+// /productos/rociadores-contra-incendio/). NO se afirma: supresión con agente
+// limpio o campanas, tiempos de obra ni que la instalación complete el expediente.
 // ============================================================================
 import type { ServiceL3Data, Tarjeta } from './l3-types';
 
@@ -444,7 +445,7 @@ export const instalacionL3: ServiceL3Data = {
       { label: 'Componentes del sistema', href: '/blog/sistema-contra-incendio-componentes/', desc: 'Las capas, explicadas.' },
       { label: 'Red de hidrantes', href: '/blog/red-hidrantes-gabinetes-mangueras/', desc: 'Gabinetes y mangueras.' },
       { label: 'Detección y alarmas', href: '/blog/sistemas-deteccion-alarmas-incendio/', desc: 'Tipos de detector y panel.' },
-      { label: 'Dónde colocar extintores', href: '/blog/donde-colocar-extintores/', desc: 'Distancia, altura y cantidad.' },
+      { label: 'Rociadores contra incendio', href: '/productos/rociadores-contra-incendio/', desc: 'Sistemas húmedo, seco y preacción.' },
     ],
   },
   faq: {

@@ -498,7 +498,7 @@ export const hidrantesL3: ServiceL3Data = {
       { label: 'Red de hidrantes', href: '/blog/red-hidrantes-gabinetes-mangueras/', desc: 'Qué lleva y cómo se mantiene.' },
       { label: 'NTC 2024 y rociadores', href: '/blog/ntc-2024-rociadores-cuando/', desc: 'Qué exige CDMX por uso.' },
       { label: 'Venta de extintores', href: '/productos/extintores/', desc: 'El primer ataque al conato.' },
-      { label: 'Riesgo de incendio', href: '/herramientas/riesgo-de-incendio/', desc: 'Calcula tu grado de riesgo.' },
+      { label: 'Rociadores contra incendio', href: '/productos/rociadores-contra-incendio/', desc: 'Tipos e instalación.' },
     ],
   },
   faq: {

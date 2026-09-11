@@ -213,7 +213,7 @@ export const GIROS_CATALOGO: Record<string, GiroCatalogCard> = {
   botiquin: {
     title: 'Botiquín de primeros auxilios',
     description: 'Botiquín abastecido y señalizado para cumplir el mínimo de tu negocio.',
-    href: '/productos/#proteccion-primeros-auxilios',
+    href: '/productos/botiquin-primeros-auxilios/',
     ctaLabel: 'Botiquines',
     image: '/images/showcase/proteccion-primeros-auxilios.svg',
     imageAlt: 'Botiquín de primeros auxilios',
@@ -227,7 +227,7 @@ export const GIROS_CATALOGO: Record<string, GiroCatalogCard> = {
   lamparas: {
     title: 'Luces de emergencia',
     description: 'Encienden al cortarse la luz y mantienen visible la ruta de salida.',
-    href: '/productos/senalizacion/#luces-emergencia',
+    href: '/productos/lamparas-de-emergencia/',
     ctaLabel: 'Luces de emergencia',
     image: '/images/productos/senalizacion-luces-emergencia.avif',
     imageAlt: 'Luces de emergencia sobre una señal de salida',
