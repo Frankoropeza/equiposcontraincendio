@@ -289,75 +289,207 @@ export const TOOLS: readonly Tool[] = [
 // artículos del mapa editorial — una URL por intención.
 
 // ── NAV — menú principal del Header (FUENTE ÚNICA: escritorio + móvil) ────────
-export type NavLink = { label: string; href: string; desc?: string };
+// Rediseño 2026-09-10. Seis entradas en vez de ocho: Herramientas, Protección
+// Civil y Blog se agrupan en «Recursos», con lo que la barra de escritorio cabe
+// desde 1024 px (antes el menú hamburguesa cubría hasta 1279 px) y «Nosotros»,
+// que no estaba en el menú, entra como enlace directo.
+//
+// Contrato de los paneles:
+//   • panel 'mega'     → `groups` (columnas de enlaces con descripción) + `promo`
+//                        (tarjeta de acción a la derecha). Ancho completo.
+//   • panel 'dropdown' → `items` (lista corta). Se ancla bajo su disparador.
+//   • `href` + `allLabel` = enlace «ver todo» a la página hub de la sección; va
+//     en la cabecera del panel y como primera fila del acordeón móvil.
+//   • `match` = prefijos de ruta que marcan la entrada como activa.
+//   • `sub` = subtítulo de una línea (acordeón móvil y cabecera del panel).
+//
+// Reglas de contenido: etiquetas ≤ 32 caracteres; `desc` ≤ 60 caracteres, una
+// sola línea a 1280 px; nada se afirma que no esté en la página de destino.
+// Las categorías de producto sin página L3 propia enlazan a su ficha real, no
+// al catálogo: cuatro enlaces a /productos/ con textos distintos confunden al
+// usuario y al rastreador. TAXONOMY.categories[].href NO se toca (ProductLayout
+// lo usa para decidir la miga de categoría).
+export type NavLink = { label: string; href: string; desc?: string; external?: boolean };
+export type NavGroup = { title: string; href?: string; links: readonly NavLink[] };
+export type NavPromo = {
+  eyebrow: string;
+  title: string;
+  text: string;
+  cta: NavLink;
+  secondary?: NavLink;
+};
 export type NavItem = {
   label: string;
   href: string;
+  sub?: string;
   panel?: 'mega' | 'dropdown';
   allLabel?: string;
+  match?: readonly string[];
+  groups?: readonly NavGroup[];
   items?: readonly NavLink[];
+  promo?: NavPromo;
 };
+
 export const NAV: readonly NavItem[] = [
   {
     label: 'Productos',
     href: '/productos/',
+    sub: 'Extintores, detección, hidrantes y señalización',
     panel: 'mega',
-    allLabel: 'Equipos contra incendios',
-    items: PRODUCT_CATEGORIES.map((c) => ({ label: c.label, href: c.href })),
+    allLabel: 'Ver todos los productos',
+    groups: [
+      {
+        title: 'Categorías',
+        href: '/productos/',
+        links: [
+          { label: 'Extintores portátiles',     href: '/productos/extintores/',                         desc: 'PQS, CO₂, agua, clase K y agente limpio' },
+          { label: 'Detección y alarmas',       href: '/productos/detector-humo-fotoelectrico/',        desc: 'Detectores de humo y alarma contra incendio' },
+          { label: 'Hidrantes y mangueras',     href: '/productos/gabinete-manguera-contra-incendio/',  desc: 'Gabinetes con manguera contra incendio' },
+          { label: 'Señalización y emergencia', href: '/productos/senalizacion-fotoluminiscente/',      desc: 'Señalización fotoluminiscente de evacuación' },
+          { label: 'Accesorios y refacciones',  href: '/productos/soportes-accesorios-extintor/',       desc: 'Soportes, gabinetes y accesorios para extintor' },
+        ],
+      },
+      {
+        title: 'Extintores por agente',
+        href: '/productos/extintores/',
+        links: [
+          { label: 'Polvo químico seco PQS', href: '/productos/extintor-pqs/',           desc: 'Fuegos clase A, B y C · uso general' },
+          { label: 'Dióxido de carbono CO₂', href: '/productos/extintor-co2/',           desc: 'Riesgo eléctrico y líquidos inflamables' },
+          { label: 'Clase K',                href: '/productos/extintor-clase-k/',       desc: 'Cocinas con aceites y grasas' },
+          { label: 'Agua y espuma AFFF',     href: '/productos/extintor-agua/',          desc: 'Agua a presión, nebulizada y espuma' },
+          { label: 'Agente limpio',          href: '/productos/extintor-agente-limpio/', desc: 'Equipo electrónico, sin residuo' },
+        ],
+      },
+    ],
+    promo: {
+      eyebrow: 'Herramienta gratuita',
+      title: '¿Cuántos extintores necesitas?',
+      text: 'Calcula el mínimo por superficie y el agente de cada área con el criterio de la NOM-002-STPS-2010.',
+      cta: { label: 'Calcular extintores', href: '/herramientas/cuantos-extintores-necesito/' },
+      secondary: { label: 'Cotizar por WhatsApp', href: 'wa:productos', external: true },
+    },
   },
   {
     label: 'Servicios',
     href: '/servicios/',
-    panel: 'dropdown',
-    allLabel: 'Servicios contra incendio',
-    items: SERVICES.map((s) => ({ label: s.label, href: `/servicios/${s.id}/`, desc: s.desc })),
+    sub: 'Instalación, mantenimiento y cumplimiento',
+    panel: 'mega',
+    allLabel: 'Ver todos los servicios',
+    groups: [
+      {
+        title: 'Instalación y mantenimiento',
+        links: [
+          { label: 'Instalación de sistemas', href: '/servicios/instalacion/',         desc: 'Proyecto e instalación de equipo contra incendio' },
+          { label: 'Mantenimiento y recarga', href: '/servicios/mantenimiento/',       desc: 'Mantenimiento anual y recarga de extintores' },
+          { label: 'Prueba hidrostática',     href: '/servicios/prueba-hidrostatica/', desc: 'Prueba del cilindro cada 5 años (NOM-154)' },
+          { label: 'Inspección y dictamen',   href: '/servicios/inspeccion/',          desc: 'Revisión, pruebas y reporte del equipo' },
+        ],
+      },
+      {
+        title: 'Cumplimiento y capacitación',
+        links: [
+          { label: 'Diagnóstico de riesgo', href: '/servicios/diagnostico-de-riesgo/', desc: 'Grado de riesgo conforme a la NOM-002-STPS' },
+          { label: 'Capacitación y DC-3',   href: '/servicios/capacitacion-dc3/',      desc: 'Brigada y uso de extintores, con DC-3' },
+          { label: 'Gestión documental',    href: '/servicios/gestion-documental/',    desc: 'Expediente para Protección Civil y STPS' },
+        ],
+      },
+    ],
+    promo: {
+      eyebrow: 'Servicio en sitio',
+      title: 'CDMX y Estado de México',
+      text: 'Agenda mantenimiento, recarga o inspección y recibe la evidencia que te piden STPS y Protección Civil.',
+      cta: { label: 'Agendar servicio', href: 'wa:servicios', external: true },
+      secondary: { label: 'Zonas de cobertura', href: '/cobertura/' },
+    },
   },
   {
     label: 'Cobertura',
     href: '/cobertura/',
+    sub: 'Toda la CDMX y el Estado de México',
     panel: 'dropdown',
-    allLabel: 'Cobertura CDMX y Edomex',
-    items: COVERAGE_STATES.map((s) => ({ label: s.label, href: `/cobertura/${s.slug}/` })),
+    allLabel: 'Ver cobertura',
+    items: [
+      { label: 'Ciudad de México', href: '/cobertura/cdmx/',   desc: 'Servicio en toda la Ciudad de México' },
+      { label: 'Estado de México', href: '/cobertura/edomex/', desc: 'Servicio en el Estado de México' },
+    ],
   },
-  ...(SECTORS.length > 0
-    ? [{
-        label: 'Sectores',
-        href: '/sectores/',
-        panel: 'dropdown' as const,
-        allLabel: 'Todos los sectores',
-        items: SECTORS.map((s) => ({ label: s.label, href: `/sectores/${s.slug}/` })),
-      }]
-    : []),
   {
-    label: 'Herramientas',
+    label: 'Recursos',
     href: '/herramientas/',
-    panel: 'dropdown',
-    allLabel: 'Todas las herramientas',
-    items: [
-      ...TOOLS.map((t) => ({ label: t.label, href: `/herramientas/${t.slug}/`, desc: t.desc })),
-      { label: 'Formatos descargables', href: '/plantillas/', desc: 'Bitácora de extintores, acta de simulacro y censo de brigada.' },
+    sub: 'Herramientas, Protección Civil y guías',
+    panel: 'mega',
+    allLabel: 'Ver herramientas',
+    match: ['/herramientas/', '/plantillas/', '/proteccion-civil/', '/blog/'],
+    groups: [
+      {
+        title: 'Herramientas',
+        href: '/herramientas/',
+        links: [
+          { label: 'Cuántos extintores necesito', href: '/herramientas/cuantos-extintores-necesito/', desc: 'Mínimo por superficie y agente por área' },
+          { label: 'Riesgo de incendio',          href: '/herramientas/riesgo-de-incendio/',          desc: 'Ordinario o alto según la NOM-002-STPS' },
+          { label: 'Verifica tu extintor',        href: '/herramientas/verifica-tu-extintor/',        desc: 'Doce puntos para comprobar el servicio' },
+          { label: 'Formatos descargables',       href: '/plantillas/',                               desc: 'Bitácora, acta de simulacro y brigada' },
+        ],
+      },
+      {
+        title: 'Protección Civil',
+        href: '/proteccion-civil/',
+        links: [
+          { label: 'Qué exige Protección Civil', href: '/proteccion-civil/',        desc: 'Comparativa entre CDMX y Edomex' },
+          { label: 'Programa Interno en CDMX',   href: '/proteccion-civil/cdmx/',   desc: 'Trámite digital ante la SGIRPC' },
+          { label: 'Programa en Edomex',         href: '/proteccion-civil/edomex/', desc: 'Requisitos, plazo y fundamento' },
+        ],
+      },
+      {
+        title: 'Guías del blog',
+        href: '/blog/',
+        links: [
+          { label: 'Tipos de extintores',       href: '/blog/como-elegir-extintor-clase-fuego/',     desc: 'Guía por clase de fuego y agente' },
+          { label: 'Extintores por m²',         href: '/blog/cuantos-extintores-por-metro-cuadrado/', desc: 'Lo que exige la norma en México' },
+          { label: 'Recarga y mantenimiento',   href: '/blog/mantenimiento-recarga-extintores-nom/', desc: 'Qué exige la norma y cada cuándo' },
+          { label: 'STPS y Protección Civil',   href: '/blog/cumplimiento-stps-proteccion-civil/',   desc: 'Las dos verificaciones de tu inmueble' },
+        ],
+      },
     ],
+    promo: {
+      eyebrow: 'Herramienta gratuita',
+      title: 'Verifica tu extintor',
+      text: 'Doce puntos para saber si el servicio que te dieron es real y no solo una calcomanía.',
+      cta: { label: 'Verificar mi extintor', href: '/herramientas/verifica-tu-extintor/' },
+      secondary: { label: 'Todas las guías del blog', href: '/blog/' },
+    },
   },
-  {
-    label: 'Protección Civil',
-    href: '/proteccion-civil/',
-    panel: 'dropdown',
-    allLabel: 'Cobertura CDMX y Edomex',
-    items: [
-      { label: 'CDMX', href: '/proteccion-civil/cdmx/', desc: 'Programa Interno: plataforma digital de la SGIRPC.' },
-      { label: 'Estado de México', href: '/proteccion-civil/edomex/', desc: 'Programa Específico: requisitos, plazo y fundamento.' },
-    ],
-  },
-  { label: 'Blog', href: '/blog/' },
-  { label: 'Contacto', href: '/contacto/' },
+  { label: 'Nosotros', href: '/nosotros/', sub: 'Más de 35 años en el mercado mexicano' },
+  { label: 'Contacto', href: '/contacto/', sub: 'WhatsApp, teléfono y oficinas' },
 ];
 
-// ── SECTION_MENU — subtítulos del menú de secciones (FUENTE ÚNICA) ───────────
-// El <SectionMenu> bajo el hero se pinta en seis páginas y cada una repetía su
-// propio mapa de subtítulos. Al añadir Herramientas y Protección Civil al NAV,
-// esas copias empezaron a mostrar «Ver sección» para las secciones nuevas: la
-// misma barra decía cosas distintas según dónde estuvieras. Un solo mapa aquí y
-// un helper que arma los items resuelve el drift de raíz.
+/**
+ * Resuelve el `href` de un enlace del menú. Los destinos de WhatsApp se
+ * declaran como `wa:<clave de WA_MESSAGES>` para que el mensaje precargado
+ * salga de la fuente única y el enlace se arme siempre con waUrl().
+ */
+export function navHref(href: string): string {
+  if (href.startsWith('wa:')) {
+    const key = href.slice(3) as keyof typeof WA_MESSAGES;
+    return waUrl(WA_MESSAGES[key] ?? WA_MESSAGES.default);
+  }
+  return href;
+}
+
+// ── SECTION_MENU — barra de secciones bajo el hero (FUENTE ÚNICA) ────────────
+// Desacoplada de NAV desde el rediseño del header (2026-09-10): el menú
+// principal agrupa Herramientas, Protección Civil y Blog en «Recursos», pero la
+// barra de secciones conserva sus seis accesos directos, que son los que el
+// visitante usa para saltar de sección sin abrir paneles.
+export const SECTION_MENU: readonly { label: string; href: string }[] = [
+  { label: 'Productos',        href: '/productos/' },
+  { label: 'Servicios',        href: '/servicios/' },
+  { label: 'Cobertura',        href: '/cobertura/' },
+  { label: 'Herramientas',     href: '/herramientas/' },
+  { label: 'Protección Civil', href: '/proteccion-civil/' },
+  { label: 'Blog',             href: '/blog/' },
+];
+
 export const SECTION_MENU_SUB: Record<string, string> = {
   Productos: 'Equipos contra incendios',
   Servicios: 'Instalación y mantenimiento',
@@ -367,14 +499,76 @@ export const SECTION_MENU_SUB: Record<string, string> = {
   Blog: 'Guías y normatividad',
 };
 
-/** Items del menú de secciones: el NAV completo menos Contacto, con subtítulo. */
+/** Items del menú de secciones, con subtítulo. */
 export function sectionMenuItems(): { label: string; href: string; sub: string }[] {
-  return NAV.filter((n) => n.label !== 'Contacto').map((n) => ({
+  return SECTION_MENU.map((n) => ({
     label: n.label,
     href: n.href,
     sub: SECTION_MENU_SUB[n.label] ?? 'Ir a la sección',
   }));
 }
+
+// ── FOOTER_NAV — columnas de enlaces del Footer (FUENTE ÚNICA) ───────────────
+// Rediseño 2026-09-10: cuatro columnas del mismo tipo (enlaces), en vez de siete
+// columnas mezcladas con la ficha de la empresa. Etiquetas cortas: el footer es
+// un índice, no una vitrina (los títulos SEO completos de las fichas partían en
+// dos líneas). Sin duplicados entre columnas. En móvil cada columna es un
+// acordeón; en escritorio van abiertas.
+export const FOOTER_NAV: readonly NavGroup[] = [
+  {
+    title: 'Productos',
+    href: '/productos/',
+    links: [
+      { label: 'Catálogo completo',         href: '/productos/' },
+      { label: 'Extintores portátiles',     href: '/productos/extintores/' },
+      { label: 'Extintor PQS',              href: '/productos/extintor-pqs/' },
+      { label: 'Extintor CO₂',              href: '/productos/extintor-co2/' },
+      { label: 'Extintor clase K',          href: '/productos/extintor-clase-k/' },
+      { label: 'Detección y alarmas',       href: '/productos/detector-humo-fotoelectrico/' },
+      { label: 'Hidrantes y mangueras',     href: '/productos/gabinete-manguera-contra-incendio/' },
+      { label: 'Señalización y emergencia', href: '/productos/senalizacion-fotoluminiscente/' },
+    ],
+  },
+  {
+    title: 'Servicios',
+    href: '/servicios/',
+    links: [
+      { label: 'Todos los servicios',     href: '/servicios/' },
+      { label: 'Instalación de sistemas', href: '/servicios/instalacion/' },
+      { label: 'Mantenimiento y recarga', href: '/servicios/mantenimiento/' },
+      { label: 'Prueba hidrostática',     href: '/servicios/prueba-hidrostatica/' },
+      { label: 'Inspección y dictamen',   href: '/servicios/inspeccion/' },
+      { label: 'Diagnóstico de riesgo',   href: '/servicios/diagnostico-de-riesgo/' },
+      { label: 'Capacitación y DC-3',     href: '/servicios/capacitacion-dc3/' },
+      { label: 'Gestión documental',      href: '/servicios/gestion-documental/' },
+    ],
+  },
+  {
+    title: 'Recursos',
+    href: '/herramientas/',
+    links: [
+      { label: 'Herramientas',                href: '/herramientas/' },
+      { label: 'Cuántos extintores necesito', href: '/herramientas/cuantos-extintores-necesito/' },
+      { label: 'Riesgo de incendio',          href: '/herramientas/riesgo-de-incendio/' },
+      { label: 'Verifica tu extintor',        href: '/herramientas/verifica-tu-extintor/' },
+      { label: 'Formatos descargables',       href: '/plantillas/' },
+      { label: 'Protección Civil',            href: '/proteccion-civil/' },
+      { label: 'Blog',                        href: '/blog/' },
+    ],
+  },
+  {
+    title: 'Empresa',
+    href: '/nosotros/',
+    links: [
+      { label: 'Nosotros',                  href: '/nosotros/' },
+      { label: 'Cobertura',                 href: '/cobertura/' },
+      { label: 'Servicio en CDMX',          href: '/cobertura/cdmx/' },
+      { label: 'Servicio en Edomex',        href: '/cobertura/edomex/' },
+      { label: 'Contacto',                  href: '/contacto/' },
+      { label: 'Cotizar por WhatsApp',      href: 'wa:cotizacion', external: true },
+    ],
+  },
+];
 
 // ── SHOWCASE — vitrina de categorías de la home (cards con subcategorías) ─────
 export type ShowcaseSub = { label: string; href: string };

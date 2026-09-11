@@ -19,7 +19,7 @@ import ProcessSteps from "@components/ProcessSteps.astro";
 import CompanyAbout from "@components/CompanyAbout.astro";
 import FAQWithContact from "@components/FAQWithContact.astro";
 import CategoryFeature from "@components/CategoryFeature.astro";
-import { KEYWORDS, NAV, SHOWCASE, SERVICE_ANCHOR, WA_MESSAGES, waUrl, CONTACT } from "@config/site";
+import { KEYWORDS, SECTION_MENU, SECTION_MENU_SUB, SHOWCASE, SERVICE_ANCHOR, WA_MESSAGES, waUrl, CONTACT } from "@config/site";
 import {
   homeCategoryFeatures,
   homeCompany,
@@ -34,11 +34,11 @@ import { companyStats } from "@data/home";
 
 const waLink = waUrl();
 
-// ── Menú de secciones bajo el hero (data-driven desde NAV; excluye Contacto) ──
-const menuSecciones = NAV.filter((n) => n.label !== "Contacto").map((n) => ({
+// ── Menú de secciones bajo el hero (data-driven desde SECTION_MENU de site.ts) ──
+const menuSecciones = SECTION_MENU.map((n) => ({
   label: n.label,
   href: n.href,
-  sub: homeMenuSub[n.label] ?? "Ir a la sección",
+  sub: homeMenuSub[n.label] ?? SECTION_MENU_SUB[n.label] ?? "Ir a la sección",
 }));
 const menuCta = {
   label: "Cotizar por WhatsApp",
