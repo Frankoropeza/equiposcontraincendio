@@ -289,7 +289,7 @@ export const homeCategoryFeatures: HomeCategoryFeature[] = [
       { name: "Notifier" },
     ],
     ctaLabel: "Alarmas contra incendios",
-    ctaHref: "/productos/#deteccion-alarmas",
+    ctaHref: "/productos/deteccion-alarmas/",
     ctaSecondaryMsg: "Hola, quiero cotizar un sistema de detección y alarma contra incendio (detectores, panel y sirenas).",
     imgMain: { src: "/images/servicios/instalacion-deteccion-alarma.avif", alt: "Instalación de detectores de humo y alarma en un pasillo de oficinas" },
     imgA: { src: "/images/productos/dispositivos-deteccion-alarma.avif", alt: "Detectores de humo, estación manual y sirena estroboscópica" },

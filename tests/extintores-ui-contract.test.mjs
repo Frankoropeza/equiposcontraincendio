@@ -31,6 +31,7 @@ test('la L3 contiene los bloques y contratos del catálogo', () => {
 // (--trio / --duo) y cada vitrina declara un número de fichas múltiplo de 4.
 const L3 = [
   { page: 'src/pages/productos/extintores/index.astro', data: 'src/data/extintores.ts', list: 'extintoresTarjetas' },
+  { page: 'src/pages/productos/deteccion-alarmas/index.astro', data: 'src/data/deteccion-alarmas.ts', list: 'detTarjetas' },
   { page: 'src/pages/servicios/mantenimiento/index.astro', data: 'src/data/mantenimiento.ts', list: 'mantTarjetas' },
   { page: 'src/pages/servicios/prueba-hidrostatica/index.astro', data: 'src/data/prueba-hidrostatica.ts', list: 'phTarjetas' },
   { page: 'src/pages/servicios/inspeccion/index.astro', data: 'src/data/inspeccion.ts', list: 'inspTarjetas' },

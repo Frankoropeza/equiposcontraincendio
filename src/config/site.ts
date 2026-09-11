@@ -197,7 +197,7 @@ export const COMPANY = {
 export const TAXONOMY = {
   categories: [
     { slug: 'extintores',          label: 'Extintores',                badge: undefined, href: '/productos/extintores/' },
-    { slug: 'deteccion-alarmas',   label: 'Detección y alarmas',       badge: undefined, href: '/productos/' },
+    { slug: 'deteccion-alarmas',   label: 'Detección y alarmas',       badge: undefined, href: '/productos/deteccion-alarmas/' },
     { slug: 'hidrantes-mangueras', label: 'Hidrantes y mangueras',     badge: undefined, href: '/productos/' },
     { slug: 'senalizacion',        label: 'Señalización y emergencia', badge: undefined, href: '/productos/' },
     { slug: 'accesorios',          label: 'Accesorios y refacciones',  badge: undefined, href: '/productos/' },
@@ -343,7 +343,7 @@ export const NAV: readonly NavItem[] = [
         href: '/productos/',
         links: [
           { label: 'Extintores portátiles',     href: '/productos/extintores/',                         desc: 'PQS, CO₂, agua, clase K y agente limpio' },
-          { label: 'Detección y alarmas',       href: '/productos/detector-humo-fotoelectrico/',        desc: 'Detectores de humo y alarma contra incendio' },
+          { label: 'Detección y alarmas',       href: '/productos/deteccion-alarmas/',                  desc: 'Detectores de humo y alarma contra incendio' },
           { label: 'Hidrantes y mangueras',     href: '/productos/gabinete-manguera-contra-incendio/',  desc: 'Gabinetes con manguera contra incendio' },
           { label: 'Señalización y emergencia', href: '/productos/senalizacion-fotoluminiscente/',      desc: 'Señalización fotoluminiscente de evacuación' },
           { label: 'Accesorios y refacciones',  href: '/productos/soportes-accesorios-extintor/',       desc: 'Soportes, gabinetes y accesorios para extintor' },
@@ -524,7 +524,7 @@ export const FOOTER_NAV: readonly NavGroup[] = [
       { label: 'Extintor PQS',              href: '/productos/extintor-pqs/' },
       { label: 'Extintor CO₂',              href: '/productos/extintor-co2/' },
       { label: 'Extintor clase K',          href: '/productos/extintor-clase-k/' },
-      { label: 'Detección y alarmas',       href: '/productos/detector-humo-fotoelectrico/' },
+      { label: 'Detección y alarmas',       href: '/productos/deteccion-alarmas/' },
       { label: 'Hidrantes y mangueras',     href: '/productos/gabinete-manguera-contra-incendio/' },
       { label: 'Señalización y emergencia', href: '/productos/senalizacion-fotoluminiscente/' },
     ],
@@ -619,7 +619,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
   {
     slug: 'deteccion-alarmas',
     label: 'Detección y alarmas',
-    href: '/productos/#deteccion-alarmas',
+    href: '/productos/deteccion-alarmas/',
     image: '/images/servicios/instalacion-deteccion-alarma.avif',
     imageAlt: 'Detectores de humo y panel de alarma contra incendio',
     badge: 'NFPA 72 · Detección temprana',
@@ -627,8 +627,8 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
       'Detectores de humo y calor, paneles direccionables, estaciones manuales y sirenas NFPA.',
     subcategories: [
       { label: 'Detectores de humo', href: '/productos/detector-humo-fotoelectrico/' },
-      { label: 'Paneles direccionables', href: '/productos/#deteccion-alarmas' },
-      { label: 'Estaciones y sirenas', href: '/productos/#deteccion-alarmas' },
+      { label: 'Paneles direccionables', href: '/productos/deteccion-alarmas/#panel-alarma' },
+      { label: 'Estaciones y sirenas', href: '/productos/deteccion-alarmas/#estaciones-manuales' },
     ],
     ctaLabel: 'Alarmas contra incendios',
   },

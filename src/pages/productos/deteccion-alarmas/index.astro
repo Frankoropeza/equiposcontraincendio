@@ -1,0 +1,7 @@
+---
+// Página L3 de detección y alarmas: el patrón compartido vive en ServiceL3.
+import ServiceL3 from '@components/ServiceL3.astro';
+import { deteccionL3 } from '@data/deteccion-alarmas';
+---
+
+<ServiceL3 data={deteccionL3} />

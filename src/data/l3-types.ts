@@ -1,11 +1,12 @@
 // ============================================================================
-// src/data/l3-types.ts — Contrato de datos de una L3 de SERVICIO.
+// src/data/l3-types.ts — Contrato de datos de una L3 de servicio o producto.
 // ----------------------------------------------------------------------------
 // PATRÓN L3 canónico (aprobado 2026-09-10, referencia /servicios/mantenimiento/).
-// Toda L3 de servicio exporta UN objeto `ServiceL3Data` desde su
+// Toda L3 de servicio o producto exporta UN objeto `ServiceL3Data` desde su
 // src/data/<id>.ts y su página solo hace <ServiceL3 data={...} />. Así el orden
 // de bloques, los fondos y el diseño de las fichas no se pueden desviar por
 // copiar y pegar: hay una sola implementación (src/components/ServiceL3.astro).
+// Las L3 de producto usan el mismo tipo con `seccion` y `categoriaProductos`.
 //
 // Secuencia que pinta el componente (no se reordena por página):
 //   Hero → SectionMenu → TrustBar → vitrina (8 fichas con 3 specs) →
@@ -76,9 +77,13 @@ export type Modulo = {
 };
 
 export type ServiceL3Data = {
-  /** id de la colección `servicios` (debe estar en L3_PROPIAS de [...slug]). */
+  /** Servicio: id de la colección `servicios` (debe estar en L3_PROPIAS de [...slug]). Producto: slug de la categoría. */
   id: string;
   path: string;
+  /** Sección padre en las migas. Omitido = Servicios (/servicios/). Las L3 de producto declaran Productos. */
+  seccion?: { label: string; href: string };
+  /** Solo L3 de producto: `category` de la colección `productos` cuyas fichas forman el ItemList. Si existe, la página es CollectionPage + ItemList en vez de Service. */
+  categoriaProductos?: string;
   seo: {
     title: string;
     description: string;
