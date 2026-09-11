@@ -2,7 +2,7 @@
 title: "Extintores de CO₂ para riesgo eléctrico y líquidos"
 description: "Extintores de CO₂ para fuegos de clase B y C: no dejan residuo ni conducen electricidad. Portátiles de 5 a 20 lb y unidades sobre ruedas de 50 y 100 lb."
 category: extintores
-image: /images/productos/extintor-co2-45kg.svg
+image: /images/productos/extintor-co2-dioxido-de-carbono.avif
 price: "Cotizar"
 order: 2
 seoTitle: "Extintores CO2: venta y recarga para equipos eléctricos"

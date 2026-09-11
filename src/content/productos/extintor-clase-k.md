@@ -2,7 +2,7 @@
 title: "Extintores Clase K de químico húmedo para cocinas"
 description: "Extintores tipo K de químico húmedo para aceites y grasas de cocción. En 4, 6 y 9.46 L, para restaurantes, hoteles, comedores y cocinas comerciales."
 category: extintores
-image: /images/productos/extintor-clase-k-6l.svg
+image: /images/productos/extintor-clase-k-cocina-industrial.avif
 price: "Cotizar"
 order: 3
 seoTitle: "Extintor tipo K: venta y recarga para cocinas"

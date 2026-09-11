@@ -2,7 +2,7 @@
 title: "Extintores de agua, agua nebulizada y espuma AFFF"
 description: "Extintores de agua a presión (clase A), agua nebulizada (A y C) y espuma AFFF (A y B), portátiles y sobre ruedas, para sólidos y líquidos inflamables."
 category: extintores
-image: /images/productos/extintor-agua.svg
+image: /images/productos/extintor-de-agua-almacen-carton-clase-a.avif
 price: "Cotizar"
 order: 4
 seoTitle: "Extintores de agua y AFFF: venta en CDMX"

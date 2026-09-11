@@ -2,7 +2,7 @@
 title: "Extintores de agente limpio para equipo electrónico"
 description: "Extintores de agente limpio Halotron I y FE-36: no conducen electricidad ni dejan residuo. Para sites y equipo electrónico; desde 4.3 kg también cubren clase A."
 category: extintores
-image: /images/productos/extintor-agente-limpio.svg
+image: /images/productos/extintor-agente-limpio-site-de-servidores.avif
 price: "Cotizar"
 order: 5
 seoTitle: "Extintores de agente limpio: venta para sites"

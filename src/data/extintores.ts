@@ -67,17 +67,20 @@ export const extintoresPillars = [
 // usa la `description` del frontmatter porque mide 180–230 caracteres y la
 // tarjeta la cortaba con elipsis — medido en el navegador el 2026-09-10.
 // ctaLabel = keyword limpia del destino (regla de anchor text, tope ~24 car.).
-// image/imageAlt: fotografía de CONTEXTO de uso para la tarjeta de familia
-// (2026-09-10, a falta de foto de producto por agente). No sustituye a la
-// `image` de la ficha, que alimenta el schema Product y el OG: ahí se queda el
-// cartel hasta tener foto real del producto, salvo PQS, cuya foto sí muestra
-// extintores de la familia. El alt describe lo que se ve, no el producto.
+// image/imageAlt: 2026-09-11 — fotos de banco gratuito (Pexels / Unsplash,
+// licencia de uso comercial sin atribución) mientras llegan las fotos reales.
+// CO₂ muestra el extintor con corneta; clase K, agua y agente limpio muestran
+// el ÁREA que protegen (no hay foto libre fiel de esos agentes: una candidata
+// «de agua» resultó ser PQS en cilindro inoxidable al leer su etiqueta). Son
+// las mismas que la `image` de su ficha. El alt describe lo que se ve, nunca
+// afirma un agente que la foto no muestra. Registro de fuentes en Obsidian:
+// «2026-09-11 — Fotos de banco para extintores».
 export const extintoresFichas: Record<string, { badge: string; blurb: string; ctaLabel: string; image?: string; imageAlt?: string }> = {
   'extintor-pqs': { badge: 'Clases A · B · C', blurb: 'Un solo agente para sólidos, líquidos inflamables y equipo eléctrico. De 1 a 70 kg.', ctaLabel: 'Extintores PQS ABC', image: '/images/showcase/extintores-catalogo-profesional.avif', imageAlt: 'Extintores portátiles de distintas capacidades sobre piso de concreto' },
-  'extintor-co2': { badge: 'Clases B · C', blurb: 'Sin residuo para tableros, sites y electrónica. Portátil y móvil sobre ruedas.', ctaLabel: 'Extintores de CO₂', image: '/images/servicios/prueba-electrica-panel-alarma-incendio.avif', imageAlt: 'Muro con señalética de emergencia, extintor y estación manual en planta' },
-  'extintor-clase-k': { badge: 'Clase K · Cocina', blurb: 'Químico húmedo para aceites y grasas de cocción. Complementa el sistema de la campana.', ctaLabel: 'Extintores clase K', image: '/images/servicios/supresion-cocina-comercial.avif', imageAlt: 'Cocina comercial con campana y supresión clase K' },
-  'extintor-agua': { badge: 'Agua y espuma AFFF', blurb: 'Agua a presión para sólidos, nebulizada junto a equipo eléctrico y espuma para líquidos.', ctaLabel: 'Extintores de agua', image: '/images/servicios/instalacion-equipo-almacen.avif', imageAlt: 'Instalación de extintor y gabinete en almacén' },
-  'extintor-agente-limpio': { badge: 'Sin residuo', blurb: 'Halotron I y FE-36: sin residuo ni conductividad, para sites y equipo electrónico.', ctaLabel: 'Agente limpio', image: '/images/servicios/supresion-agente-limpio-data-center.avif', imageAlt: 'Cilindros de agente limpio protegiendo un data center' },
+  'extintor-co2': { badge: 'Clases B · C', blurb: 'Sin residuo para tableros, sites y electrónica. Portátil y móvil sobre ruedas.', ctaLabel: 'Extintores de CO₂', image: '/images/productos/extintor-co2-dioxido-de-carbono.avif', imageAlt: 'Extintor de CO₂ con corneta de descarga montado en muro' },
+  'extintor-clase-k': { badge: 'Clase K · Cocina', blurb: 'Químico húmedo para aceites y grasas de cocción. Complementa el sistema de la campana.', ctaLabel: 'Extintores clase K', image: '/images/productos/extintor-clase-k-cocina-industrial.avif', imageAlt: 'Cocina industrial de acero inoxidable con extintor junto a la línea de cocción' },
+  'extintor-agua': { badge: 'Agua y espuma AFFF', blurb: 'Agua a presión para sólidos, nebulizada junto a equipo eléctrico y espuma para líquidos.', ctaLabel: 'Extintores de agua', image: '/images/productos/extintor-de-agua-almacen-carton-clase-a.avif', imageAlt: 'Pasillo de almacén con tarimas de cajas de cartón, material de fuego clase A' },
+  'extintor-agente-limpio': { badge: 'Sin residuo', blurb: 'Halotron I y FE-36: sin residuo ni conductividad, para sites y equipo electrónico.', ctaLabel: 'Agente limpio', image: '/images/productos/extintor-agente-limpio-site-de-servidores.avif', imageAlt: 'Pasillo de un site de servidores, área que se protege con agente limpio' },
 };
 
 // ── Módulos por agente (CategoryFeature) ─────────────────────────────────────
@@ -101,7 +104,7 @@ export const extintoresFeatures = [
     ctaHref: '/productos/extintor-pqs/',
     ctaSecondaryLabel: 'Cotizar PQS',
     ctaMsg: 'Hola, quiero cotizar extintores PQS ABC. ¿Me ayudan a elegir la capacidad?',
-    imgMain: { src: '/images/showcase/extintores-catalogo-profesional.avif', alt: 'Extintores PQS, CO₂ y agente K de distintas capacidades' },
+    imgMain: { src: '/images/productos/extintores-pqs-abc-en-muro.avif', alt: 'Cinco extintores de polvo químico seco montados en un muro' },
     imgA: { src: '/images/general/inventario-proveedor-equipo-contra-incendio.avif', alt: 'Inventario de equipo de protección y extintores en bodega' },
     imgB: { src: '/images/servicios/instalacion-equipo-almacen.avif', alt: 'Instalación de extintor y gabinete en almacén' },
   },
@@ -122,8 +125,8 @@ export const extintoresFeatures = [
     ctaHref: '/productos/extintor-co2/',
     ctaSecondaryLabel: 'Cotizar CO₂',
     ctaMsg: 'Hola, quiero cotizar extintores de CO₂ para riesgo eléctrico. ¿Qué capacidad me recomiendan?',
-    imgMain: { src: '/images/servicios/supresion-agente-limpio-data-center.avif', alt: 'Site de servidores, el tipo de área donde se prefiere un agente sin residuo' },
-    imgA: { src: '/images/servicios/inspeccion-tablero-alarma-gabinete-manguera.avif', alt: 'Revisión del tablero de alarma en una planta industrial' },
+    imgMain: { src: '/images/productos/extintor-co2-descarga-con-corneta.avif', alt: 'Bombero sujetando un extintor de CO₂ por la corneta de descarga' },
+    imgA: { src: '/images/productos/extintor-pqs-y-extintor-co2-en-muro.avif', alt: 'Extintor PQS y extintor de CO₂ con corneta, lado a lado en un muro' },
     imgB: { src: '/images/servicios/prueba-electrica-panel-alarma-incendio.avif', alt: 'Señalética de emergencia, extintor y estación manual en muro de planta' },
   },
   {
@@ -143,9 +146,9 @@ export const extintoresFeatures = [
     ctaHref: '/productos/extintor-clase-k/',
     ctaSecondaryLabel: 'Cotizar clase K',
     ctaMsg: 'Hola, quiero cotizar extintores clase K para una cocina comercial.',
-    imgMain: { src: '/images/servicios/supresion-cocina-comercial.avif', alt: 'Cocina comercial con campana y supresión clase K' },
+    imgMain: { src: '/images/productos/extintor-cocina-de-restaurante.avif', alt: 'Cocinero en su estación con extintores montados al fondo de la cocina' },
     imgA: { src: '/images/showcase/extintores-variedad-colores-catalogo.avif', alt: 'Extintores de PQS, CO₂, agua y agente K comparados por agente' },
-    imgB: { src: '/images/servicios/etiquetado-inspeccion-extintor.avif', alt: 'Colocación de etiqueta y collarín de servicio en el extintor' },
+    imgB: { src: '/images/productos/cocina-comercial-campana-de-extraccion.avif', alt: 'Cocina comercial con campana de extracción sobre la plancha' },
   },
   {
     id: 'extintor-agua',
@@ -185,9 +188,9 @@ export const extintoresFeatures = [
     ctaHref: '/productos/extintor-agente-limpio/',
     ctaSecondaryLabel: 'Cotizar agente limpio',
     ctaMsg: 'Hola, quiero cotizar extintores de agente limpio para un site o equipo electrónico.',
-    imgMain: { src: '/images/servicios/supresion-agente-limpio-data-center.avif', alt: 'Cilindros de agente limpio protegiendo un data center' },
+    imgMain: { src: '/images/productos/agente-limpio-racks-de-servidores.avif', alt: 'Racks de servidores y cableado, equipo que no tolera residuo ni humedad' },
     imgA: { src: '/images/servicios/inspeccion-sistema-alarma-extintor.avif', alt: 'Ruta de evacuación señalizada junto a extintor en nave industrial' },
-    imgB: { src: '/images/servicios/etiquetado-inspeccion-extintor.avif', alt: 'Colocación de etiqueta y collarín de servicio en el extintor' },
+    imgB: { src: '/images/productos/site-de-servidores-gabinetes-rack.avif', alt: 'Hilera de gabinetes rack en un site de servidores' },
   },
 ];
 
