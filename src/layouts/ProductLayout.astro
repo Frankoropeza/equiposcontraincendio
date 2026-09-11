@@ -161,6 +161,8 @@ function shortDescription(value?: string) { return !value ? '' : value.length <=
 
 <style>
   .guide-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--sp-8); align-items: start; }
-  .guide-grid .prose { max-width: 68ch; }
+  /* 2026-09-11: la prosa ocupa el 100% de su columna; el límite de 68ch dejaba
+     un hueco de ~320 px entre el texto y la QuoteCard en desktop. */
+  .guide-grid .prose { max-width: none; }
   @media (min-width: 900px) { .guide-grid { grid-template-columns: minmax(0, 1fr) minmax(18rem, 25rem); } }
 </style>
