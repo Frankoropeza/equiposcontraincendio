@@ -91,3 +91,6 @@ Thumbs.db
 
 # Papelera local (el shell de Cowork no puede borrar archivos en la carpeta montada)
 /_to_delete/
+
+# Salidas que la app de Claude copia a la carpeta conectada (capturas, entregables): no son parte del sitio.
+/Claude outputs/
