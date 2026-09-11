@@ -9,9 +9,10 @@ import { girosQueLoNecesitan } from '@lib/giros-relacionados';
 export interface Props {
   path?: string;
   nombre?: string;
+  body?: string[];
 }
 
-const { path = Astro.url.pathname, nombre } = Astro.props;
+const { path = Astro.url.pathname, nombre, body = [] } = Astro.props;
 const { fichas } = await girosQueLoNecesitan(path);
 // El nombre llega en forma de título («Extintores de…»); a media frase va en
 // minúscula, salvo siglas («PQS…», «DC-3…»), que se respetan.
@@ -21,16 +22,31 @@ const enFrase = (s: string) => (/^[A-ZÁÉÍÓÚÑ]{2}/.test(s) ? s : s.charAt(0
 {fichas.length > 0 && (
   <section class="section" id="giros-que-lo-necesitan">
     <div class="container">
-      <SectionHeading
-        eyebrow="Directorio por giro"
-        title="Giros que lo"
-        titleAccent="necesitan"
-        desc={
-          nombre
-            ? `Negocios cuya ficha de Protección Civil recomienda ${enFrase(nombre)}.`
-            : 'Negocios cuya ficha de Protección Civil recomienda este equipo o servicio.'
-        }
-      />
+      {body.length > 0 ? (
+        <SectionHeading
+          layout="duo"
+          eyebrow="Directorio por giro"
+          title="Giros que lo"
+          titleAccent="necesitan"
+          desc={
+            nombre
+              ? `Negocios cuya ficha de Protección Civil recomienda ${enFrase(nombre)}.`
+              : 'Negocios cuya ficha de Protección Civil recomienda este equipo o servicio.'
+          }
+          body={body}
+        />
+      ) : (
+        <SectionHeading
+          eyebrow="Directorio por giro"
+          title="Giros que lo"
+          titleAccent="necesitan"
+          desc={
+            nombre
+              ? `Negocios cuya ficha de Protección Civil recomienda ${enFrase(nombre)}.`
+              : 'Negocios cuya ficha de Protección Civil recomienda este equipo o servicio.'
+          }
+        />
+      )}
       <div class="card-grid">
         {fichas.map((f, i) => (
           <CategoryCard

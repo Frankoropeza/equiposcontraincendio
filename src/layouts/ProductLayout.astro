@@ -15,7 +15,8 @@ import DataTable from '@components/DataTable.astro';
 import GirosQueLoNecesitan from '@components/GirosQueLoNecesitan.astro';
 import RelatedLinks from '@components/RelatedLinks.astro';
 import FAQWithContact from '@components/FAQWithContact.astro';
-import { FICHAS, FICHA_DEFAULT } from '@data/fichas';
+import { FICHAS, FICHA_DEFAULT, HEADS_DEFAULT } from '@data/fichas';
+import { FICHAS_HEADS } from '@data/fichas-heads';
 import { extintoresFichas } from '@data/extintores';
 import { EXT_FORMATO_LABEL } from '@data/extintores-catalogo';
 import { cierreExtintores, cierreGeneral, faltanParaCuatro } from '@data/cierre';
@@ -60,6 +61,7 @@ const fichaData = {
   norma: FICHAS[slug]?.norma ?? '',
   claves: FICHAS[slug]?.claves ?? [],
 };
+const heads = { ...HEADS_DEFAULT, ...(FICHAS_HEADS[slug] ?? {}) };
 const waLink = waUrl(`Hola, quiero cotizar: ${title}. ¿Precio y disponibilidad?`);
 const publicPrice = price && !/^\s*cotizar\s*$/i.test(price) ? price : undefined;
 const menuCta = { label: 'Cotizar por WhatsApp', href: waLink, sub: 'Te decimos cuál conviene', external: true };
@@ -125,11 +127,11 @@ function shortDescription(value?: string) { return !value ? '' : value.length <=
   <SectionMenu items={sectionMenuItems()} cta={menuCta} />
   <TrustBar items={fichaData.pillars} />
 
-  <ProductShowcase title={title} showcaseTitle={fichaData.showcaseTitle} image={image} claves={fichaData.claves} capacitySummary={capacitySummary} presentationSummary={presentationSummary} publicPrice={publicPrice} waLink={waLink} />
+  <ProductShowcase title={title} showcaseTitle={fichaData.showcaseTitle} showcaseAccent={fichaData.showcaseAccent} showcaseDesc={fichaData.showcaseDesc} body={heads.vitrina} image={image} claves={fichaData.claves} capacitySummary={capacitySummary} presentationSummary={presentationSummary} publicPrice={publicPrice} waLink={waLink} />
 
   <section class="section section--surface" id="presentaciones">
     <div class="container">
-      <SectionHeading layout="duo" eyebrow="Presentaciones" title="Presentaciones" titleAccent="y capacidades" desc="Compara capacidad, clases de fuego y uso sugerido. Al cotizar, menciona la presentación exacta y la cantidad." />
+      <SectionHeading layout="duo" eyebrow="Presentaciones" title="Presentaciones" titleAccent="y capacidades" desc="Compara capacidad, clases de fuego y uso sugerido. Al cotizar, menciona la presentación exacta y la cantidad." body={heads.presentaciones} />
       <div class="card-grid">
         {variantes.map((variante, index) => {
           const id = slugify(variante.nombre);
@@ -141,21 +143,21 @@ function shortDescription(value?: string) { return !value ? '' : value.length <=
     </div>
   </section>
 
-  {comparable.length >= 2 && <DataTable id="comparativa" eyebrow="Comparativa" title="Todas las presentaciones" titleAccent="frente a frente" desc="Capacidad, formato y clases de fuego de cada presentación." columns={['Presentación', 'Capacidad', 'Formato', 'Clases de fuego', 'Clasificación']} rows={tableRows} />}
+  {comparable.length >= 2 && <DataTable id="comparativa" eyebrow="Comparativa" title="Todas las presentaciones" titleAccent="frente a frente" desc="Capacidad, formato y clases de fuego de cada presentación." body={heads.comparativa} columns={['Presentación', 'Capacidad', 'Formato', 'Clases de fuego', 'Clasificación']} rows={tableRows} />}
 
   <section class="section section--surface">
     <div class="container">
-      <SectionHeading layout="duo" eyebrow="Guía de compra" title={fichaData.guia.title} titleAccent={fichaData.guia.titleAccent} desc={fichaData.guia.desc} />
+      <SectionHeading layout="duo" eyebrow="Guía de compra" title={fichaData.guia.title} titleAccent={fichaData.guia.titleAccent} desc={fichaData.guia.desc} body={heads.guia} />
       <div class="guide-grid"><article class="prose"><slot /></article><QuoteCard title={title} price={publicPrice} waLink={waLink} telHref={telUrl()} /></div>
     </div>
   </section>
 
-  <GirosQueLoNecesitan nombre={title} />
+  <GirosQueLoNecesitan nombre={title} body={heads.giros} />
 
-  <RelatedLinks title="Productos y servicios relacionados" desc="Otras presentaciones de la familia y el servicio que pide el equipo." links={relatedLinks} limit={8} />
+  <RelatedLinks eyebrow="Relacionados" title="Productos y servicios relacionados" desc="Otras presentaciones de la familia y el servicio que pide el equipo." body={heads.relacionados} links={relatedLinks} limit={8} />
   {/* Sin FAQ en el frontmatter no se pinta: el acordeón vacío se veía roto (fichas de detección, gabinetes, señalización y soportes). */}
   {faqs.length > 0 && (
-  <FAQWithContact items={faqs} waNumber={CONTACT.whatsapp} eyebrow="Preguntas frecuentes" title="Preguntas frecuentes" titleAccent={faqTitleAccent} desc="Respuestas breves para elegir, instalar y mantener este equipo." body={["Si tu caso es distinto, escríbenos con tu giro y superficie.", 'Te orientamos antes de cotizar.']} />
+  <FAQWithContact items={faqs} waNumber={CONTACT.whatsapp} eyebrow="Preguntas frecuentes" title="Preguntas frecuentes" titleAccent={faqTitleAccent} desc="Respuestas breves para elegir, instalar y mantener este equipo." body={heads.faq} />
   )}
 </PageLayout>
 

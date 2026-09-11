@@ -1,9 +1,14 @@
 ---
 // ProductShowcase — vitrina técnica de una ficha L4.
 // Contrato: recibe imagen, datos clave y resúmenes derivados de variantes.
+import SectionHeading from '@components/SectionHeading.astro';
+
 interface Props {
   title: string;
   showcaseTitle: string;
+  showcaseAccent?: string;
+  showcaseDesc?: string;
+  body?: string[];
   image?: string;
   claves: { label: string; value: string }[];
   capacitySummary?: string;
@@ -11,14 +16,14 @@ interface Props {
   publicPrice?: string;
   waLink: string;
 }
-const { title, showcaseTitle, image, claves, capacitySummary, presentationSummary, publicPrice, waLink } = Astro.props as Props;
+const { title, showcaseTitle, showcaseAccent, showcaseDesc, body, image, claves, capacitySummary, presentationSummary, publicPrice, waLink } = Astro.props as Props;
 ---
 <section class="section showcase">
-  <div class="container showcase__grid">
-    <div class="showcase__media">{image && <img src={image} alt={title} width="800" height="600" loading="lazy" decoding="async" />}</div>
-    <div class="showcase__data">
-      <p class="showcase__eyebrow">Ficha técnica</p>
-      <h2>{showcaseTitle}</h2>
+  <div class="container">
+    <SectionHeading layout="duo" eyebrow="Ficha técnica" title={showcaseTitle} titleAccent={showcaseAccent} desc={showcaseDesc} body={body} />
+    <div class="showcase__grid">
+      <div class="showcase__media">{image && <img src={image} alt={title} width="800" height="600" loading="lazy" decoding="async" />}</div>
+      <div class="showcase__data">
       <dl class="showcase__facts">
         {claves.map((item) => <div><dt>{item.label}</dt><dd>{item.value}</dd></div>)}
         {capacitySummary && <div><dt>Capacidades</dt><dd>{capacitySummary}</dd></div>}
@@ -29,14 +34,13 @@ const { title, showcaseTitle, image, claves, capacitySummary, presentationSummar
         <a class="btn btn--outline" href="#presentaciones">Presentaciones y capacidades</a>
         <a class="btn btn--primary" href={waLink} target="_blank" rel="noopener noreferrer">Cotizar por WhatsApp</a>
       </div>
+      </div>
     </div>
   </div>
 </section>
 <style>
   .showcase__grid { display: grid; grid-template-columns: 1fr; gap: var(--sp-8); align-items: center; }
   .showcase__media img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
-  .showcase__eyebrow { margin: 0 0 var(--sp-4); color: var(--c-primary); font-size: var(--text-xs); font-weight: var(--weight-bold); letter-spacing: .08em; text-transform: uppercase; }
-  .showcase__data h2 { margin: 0 0 var(--sp-6); font-family: var(--font-heading); font-size: var(--text-2xl); line-height: var(--leading-tight); }
   .showcase__facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 var(--sp-6); margin: 0; border-top: 1px solid var(--c-border); }
   .showcase__facts div { padding: var(--sp-4) 0; border-bottom: 1px solid var(--c-border); }
   .showcase__facts dt { color: var(--c-muted); font-size: var(--text-xs); font-weight: var(--weight-bold); letter-spacing: .04em; text-transform: uppercase; }

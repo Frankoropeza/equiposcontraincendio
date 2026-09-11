@@ -15,6 +15,36 @@
 // verificados del catálogo (bitácora de Obsidian, 2026-09-10).
 // ============================================================================
 
+// ----------------------------------------------------------------------------
+// 2026-09-11 · TODOS los encabezados de la ficha L4 van a dos columnas
+// (SectionHeading layout="duo"): IZQ eyebrow + título + acento + bajada;
+// DER dos párrafos de cuerpo con intención SEO y de marketing.
+// El cuerpo por ficha vive en `src/data/fichas-heads.ts` (FICHAS_HEADS); aquí
+// solo el contrato y el juego por defecto.
+// La columna derecha NO repite la bajada: el primer párrafo trabaja la keyword
+// y el criterio técnico, el segundo cierra con el beneficio comercial y la
+// acción (cotizar, medir, agendar servicio). Regla de copy intacta: nada que no
+// esté en el frontmatter o en la hoja de hechos verificados del catálogo.
+// ----------------------------------------------------------------------------
+export type HeadBody = [string, string];
+
+export type FichaHeads = {
+  /** Vitrina de datos clave (ProductShowcase). */
+  vitrina: HeadBody;
+  /** Presentaciones y capacidades (card-grid de variantes). */
+  presentaciones: HeadBody;
+  /** Comparativa (DataTable). */
+  comparativa: HeadBody;
+  /** Guía de compra (prose + QuoteCard). */
+  guia: HeadBody;
+  /** Giros que lo necesitan (directorio por giro). */
+  giros: HeadBody;
+  /** Productos y servicios relacionados. */
+  relacionados: HeadBody;
+  /** Preguntas frecuentes. */
+  faq: HeadBody;
+};
+
 export type Pillar = { icon: 'shield' | 'doc' | 'chat' | 'pin' | 'check' | 'clock'; title: string; desc: string };
 
 export type FichaData = {
@@ -34,6 +64,10 @@ export type FichaData = {
   guia: { title: string; titleAccent: string; desc: string };
   /** H2 de la vitrina de datos clave. */
   showcaseTitle: string;
+  /** Segunda línea (acento rojo) del H2 de la vitrina. */
+  showcaseAccent?: string;
+  /** Bajada del encabezado de la vitrina. */
+  showcaseDesc?: string;
   /** Acento del H2 de preguntas frecuentes («Preguntas frecuentes» + esto). */
   faqAccent: string;
 };
@@ -45,9 +79,42 @@ const PILLARS_DEFAULT: Pillar[] = [
   { icon: 'pin', title: 'CDMX y Estado de México', desc: 'Entregamos e instalamos en toda la zona metropolitana.' },
 ];
 
+export const HEADS_DEFAULT: FichaHeads = {
+  vitrina: [
+    'Los datos clave resumen lo que necesitas para comparar este equipo contra incendio con cualquier otra opción: agente, alcance, norma de producto y el servicio que pide una vez instalado.',
+    'Si ya sabes qué necesitas, escríbenos por WhatsApp con la cantidad y el domicilio de entrega; si todavía no, la ficha completa está abajo.',
+  ],
+  presentaciones: [
+    'Cada presentación cambia el alcance, el peso y el lugar donde conviene montarla. Compararlas antes de cotizar evita comprar de más en una zona y quedarte corto en otra.',
+    'Dinos superficie, giro y cuántos puntos quieres cubrir: te decimos qué presentación conviene y en qué cantidad, sin cobrar la visita de asesoría.',
+  ],
+  comparativa: [
+    'La tabla pone frente a frente capacidad, formato y clases de fuego de todas las presentaciones para que la decisión se tome con el dato, no con el precio de lista.',
+    'Es la misma tabla que usamos al cotizar. Si tu inmueble mezcla riesgos, lo normal es combinar dos presentaciones: te armamos el surtido.',
+  ],
+  guia: [
+    'Aquí va el criterio de compra completo: dónde conviene, qué capacidad elegir, a qué altura colocarlo y cada cuándo le toca mantenimiento conforme a la norma.',
+    'Léela antes de pedir precio. Con esas cuatro decisiones tomadas, la cotización sale en minutos y el equipo llega listo para pasar una inspección.',
+  ],
+  giros: [
+    'Cada ficha de Protección Civil lista el equipo que le piden a ese tipo de negocio. Si tu giro aparece abajo, ahí están sus requisitos completos y verificados.',
+    'Ver tu giro antes de comprar evita el error más caro: equiparte con lo que cabía en el presupuesto y no con lo que pide la norma para tu actividad.',
+  ],
+  relacionados: [
+    'El equipo contra incendio no trabaja solo: la señalización, el soporte y el servicio anual forman parte del mismo expediente que revisa la autoridad.',
+    'Cotiza todo con un mismo proveedor y te queda una sola factura, una sola visita y un solo calendario de mantenimiento.',
+  ],
+  faq: [
+    'Reunimos las dudas que más nos llegan por WhatsApp al cotizar este equipo, resueltas con la norma mexicana aplicable y con lo que vemos en instalaciones reales.',
+    'Si tu caso es distinto, escríbenos con tu giro y superficie: te orientamos antes de cotizar.',
+  ],
+};
+
 export const FICHA_DEFAULT: Omit<FichaData, 'heroBadge' | 'heroTitle' | 'descRight' | 'norma' | 'claves'> = {
   pillars: PILLARS_DEFAULT,
   showcaseTitle: 'Datos clave del equipo',
+  showcaseAccent: 'contra incendio',
+  showcaseDesc: 'Agente, clases de fuego, norma de producto y servicio que pide.',
   faqAccent: 'sobre este equipo',
   guia: { title: 'Lo que conviene saber', titleAccent: 'antes de comprar', desc: 'Dónde conviene, cómo elegir, dónde colocarlo y qué servicio pide.' },
 };
@@ -74,7 +141,9 @@ export const FICHAS: Record<string, FichaData> = {
       { label: 'Norma de producto', value: 'NOM-100-STPS-1994' },
       { label: 'Servicio', value: 'NOM-154-SCFI-2005 · con collarín' },
     ],
-    showcaseTitle: 'Datos clave del extintor PQS',
+    showcaseTitle: 'Datos clave',
+    showcaseAccent: 'del extintor PQS',
+    showcaseDesc: 'Agente, clases de fuego, norma de producto y servicio que pide el equipo.',
     faqAccent: 'sobre extintores PQS',
     guia: { title: 'Cómo elegir tu', titleAccent: 'extintor PQS', desc: 'Dónde conviene, qué capacidad elegir, dónde colocarlo y qué mantenimiento pide.' },
   },
@@ -99,7 +168,9 @@ export const FICHAS: Record<string, FichaData> = {
       { label: 'Norma de producto', value: 'NOM-102-STPS-1994' },
       { label: 'Servicio', value: 'NOM-154-SCFI-2005' },
     ],
-    showcaseTitle: 'Datos clave del extintor de CO₂',
+    showcaseTitle: 'Datos clave',
+    showcaseAccent: 'del extintor de CO₂',
+    showcaseDesc: 'Agente, clases cubiertas, norma de producto y servicio del cilindro.',
     faqAccent: 'sobre extintores de CO₂',
     guia: { title: 'Cómo elegir tu', titleAccent: 'extintor de CO₂', desc: 'Dónde conviene, qué capacidad elegir, dónde colocarlo y qué mantenimiento pide.' },
   },
@@ -124,7 +195,9 @@ export const FICHAS: Record<string, FichaData> = {
       { label: 'Norma de producto', value: 'Sin NOM específica · ref. NFPA 10' },
       { label: 'Servicio', value: 'NOM-154-SCFI-2005' },
     ],
-    showcaseTitle: 'Datos clave del extintor tipo K',
+    showcaseTitle: 'Datos clave',
+    showcaseAccent: 'del extintor tipo K',
+    showcaseDesc: 'Agente, clase de fuego, capacidades y servicio que pide en cocina.',
     faqAccent: 'sobre extintores tipo K',
     guia: { title: 'Cómo elegir tu', titleAccent: 'extintor tipo K', desc: 'Dónde va, qué capacidad elegir, dónde colocarlo y qué mantenimiento pide.' },
   },
@@ -149,7 +222,9 @@ export const FICHAS: Record<string, FichaData> = {
       { label: 'Norma de producto', value: 'NOM-103-STPS-1994' },
       { label: 'Servicio', value: 'NOM-154-SCFI-2005' },
     ],
-    showcaseTitle: 'Datos clave de los extintores de agua',
+    showcaseTitle: 'Datos clave',
+    showcaseAccent: 'de los extintores de agua',
+    showcaseDesc: 'Los tres agentes de la familia, las clases que cubre cada uno y su servicio.',
     faqAccent: 'sobre extintores de agua',
     guia: { title: 'Cómo elegir tu', titleAccent: 'extintor de agua', desc: 'Cuál de los tres te conviene, qué capacidad elegir y qué mantenimiento piden.' },
   },
@@ -174,7 +249,9 @@ export const FICHAS: Record<string, FichaData> = {
       { label: 'Norma de producto', value: 'Sin NOM específica · clasificación UL del fabricante' },
       { label: 'Servicio', value: 'NOM-154-SCFI-2005' },
     ],
-    showcaseTitle: 'Datos clave del extintor de agente limpio',
+    showcaseTitle: 'Datos clave',
+    showcaseAccent: 'del agente limpio',
+    showcaseDesc: 'Agentes Halotron I y FE-36, clases cubiertas y servicio del cilindro.',
     faqAccent: 'sobre agente limpio',
     guia: { title: 'Cómo elegir tu', titleAccent: 'extintor de agente limpio', desc: 'Qué clasificación necesitas, qué capacidad elegir y qué mantenimiento pide.' },
   },
@@ -199,7 +276,9 @@ export const FICHAS: Record<string, FichaData> = {
       { label: 'Interconexión', value: 'Cableada, inalámbrica o circuito de 2 hilos' },
       { label: 'Integración', value: 'Autónomo o panel compatible' },
     ],
-    showcaseTitle: 'Datos clave de los detectores de humo',
+    showcaseTitle: 'Datos clave',
+    showcaseAccent: 'de los detectores de humo',
+    showcaseDesc: 'Principio de detección, alimentación, tipo de aviso y pruebas periódicas.',
     faqAccent: 'sobre detectores de humo',
     guia: { title: 'Cómo elegir tu', titleAccent: 'detector de humo', desc: 'Compara alimentación, interconexión y compatibilidad para elegir el detector que necesita tu inmueble.' },
   },
@@ -224,7 +303,9 @@ export const FICHAS: Record<string, FichaData> = {
       { label: 'Montaje', value: 'Sobreponer o empotrable' },
       { label: 'Complemento', value: 'Extintor portátil en modelo combinado' },
     ],
-    showcaseTitle: 'Datos clave de los gabinetes con manguera',
+    showcaseTitle: 'Datos clave',
+    showcaseAccent: 'de los gabinetes con manguera',
+    showcaseDesc: 'Montaje, medidas, equipo que aloja y revisión del conjunto.',
     faqAccent: 'sobre gabinetes con manguera',
     guia: { title: 'Cómo elegir tu', titleAccent: 'gabinete con manguera', desc: 'Revisa recorrido, montaje y red hidráulica para pedir el gabinete que funcione en tu inmueble.' },
   },
@@ -249,7 +330,9 @@ export const FICHAS: Record<string, FichaData> = {
       { label: 'Condición segura', value: 'Punto de reunión y primeros auxilios' },
       { label: 'Material', value: 'Sustrato fotoluminiscente' },
     ],
-    showcaseTitle: 'Datos clave de la señalización fotoluminiscente',
+    showcaseTitle: 'Datos clave',
+    showcaseAccent: 'de la señalización fotoluminiscente',
+    showcaseDesc: 'Función de cada señal, material, ubicación y reposición.',
     faqAccent: 'sobre señalización fotoluminiscente',
     guia: { title: 'Cómo elegir tu', titleAccent: 'señalización', desc: 'Define mensaje, color, tamaño y ubicación para orientar a las personas y localizar equipos.' },
   },
@@ -274,7 +357,9 @@ export const FICHAS: Record<string, FichaData> = {
       { label: 'Material', value: 'Acero, correa y acabado a definir' },
       { label: 'Instalación', value: 'Anclaje según muro, vehículo o maquinaria' },
     ],
-    showcaseTitle: 'Datos clave de soportes y accesorios',
+    showcaseTitle: 'Datos clave',
+    showcaseAccent: 'de soportes y accesorios',
+    showcaseDesc: 'Tipo de montaje, extintor compatible y altura reglamentaria.',
     faqAccent: 'sobre soportes y accesorios',
     guia: { title: 'Cómo elegir tu', titleAccent: 'soporte o gabinete', desc: 'Compara diámetro, peso, ambiente y anclaje antes de montar o proteger tu extintor.' },
   },
@@ -300,7 +385,9 @@ export const FICHAS: Record<string, FichaData> = {
       { label: 'Tamaño', value: 'S ≥ L²/2000 (NOM-026)' },
       { label: 'Versiones', value: 'Estándar y fotoluminiscente' },
     ],
-    showcaseTitle: 'Datos clave de los señalamientos de seguridad',
+    showcaseTitle: 'Datos clave',
+    showcaseAccent: 'de los señalamientos',
+    showcaseDesc: 'Familias de señal, color y forma, medidas y norma aplicable.',
     faqAccent: 'sobre señalamientos de seguridad',
     guia: { title: 'Qué señal va', titleAccent: 'en cada área', desc: 'Tipos, colores, ubicación y tamaño de los señalamientos de un centro de trabajo.' },
   },
@@ -325,7 +412,9 @@ export const FICHAS: Record<string, FichaData> = {
       { label: 'Autonomía de referencia', value: '90 min (NFPA 101)' },
       { label: 'Ubicación', value: 'Rutas, escaleras y salidas' },
     ],
-    showcaseTitle: 'Datos clave de las lámparas de emergencia',
+    showcaseTitle: 'Datos clave',
+    showcaseAccent: 'de las lámparas de emergencia',
+    showcaseDesc: 'Autonomía, montaje, cobertura y prueba periódica de baterías.',
     faqAccent: 'sobre lámparas de emergencia',
     guia: { title: 'Dónde van las', titleAccent: 'lámparas de emergencia', desc: 'Lo que pide la norma, dónde se colocan y cómo elegir el modelo para cada punto.' },
   },
@@ -350,7 +439,9 @@ export const FICHAS: Record<string, FichaData> = {
       { label: 'Señal', value: 'Primeros auxilios (verde)' },
       { label: 'Revisión', value: 'Mensual, con bitácora' },
     ],
-    showcaseTitle: 'Datos clave del botiquín de primeros auxilios',
+    showcaseTitle: 'Datos clave',
+    showcaseAccent: 'del botiquín',
+    showcaseDesc: 'Contenido, montaje, personas que cubre y revisión del material.',
     faqAccent: 'sobre el botiquín de primeros auxilios',
     guia: { title: 'Qué debe tener', titleAccent: 'el botiquín de tu empresa', desc: 'Lo que pide la ley, el contenido base y dónde colocarlo.' },
   },
@@ -375,7 +466,9 @@ export const FICHAS: Record<string, FichaData> = {
       { label: 'Bulbo', value: 'Naranja 57 °C · rojo 68 °C · amarillo 79 °C' },
       { label: 'Obligatorios', value: 'Según uso y altura; siempre arriba de 23 m' },
     ],
-    showcaseTitle: 'Datos clave de los rociadores contra incendio',
+    showcaseTitle: 'Datos clave',
+    showcaseAccent: 'de los rociadores',
+    showcaseDesc: 'Tipos de rociador, esquemas de tubería y mantenimiento del sistema.',
     faqAccent: 'sobre rociadores contra incendio',
     guia: { title: 'Cómo funciona un', titleAccent: 'sistema de rociadores', desc: 'Cuándo son obligatorios, tipos de sistema, colores del bulbo y cómo se cotiza.' },
   },
@@ -400,7 +493,9 @@ export const FICHAS: Record<string, FichaData> = {
       { label: 'Corte', value: 'Electroválvula en la línea de gas' },
       { label: 'Integración', value: 'Autónomo o panel de alarma' },
     ],
-    showcaseTitle: 'Datos clave del detector de gas',
+    showcaseTitle: 'Datos clave',
+    showcaseAccent: 'del detector de gas',
+    showcaseDesc: 'Gas detectado, altura de montaje, tipo de aviso y calibración.',
     faqAccent: 'sobre detectores de gas',
     guia: { title: 'Cómo elegir tu', titleAccent: 'detector de gas', desc: 'Tipo de gas, dónde se coloca, corte automático y lo que pide la norma en la CDMX.' },
   },

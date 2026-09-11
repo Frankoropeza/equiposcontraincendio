@@ -16,10 +16,13 @@ interface Props {
   limit?: number
   title?: string
   desc?: string
+  eyebrow?: string
+  body?: string[]
   /** Links manuales. Si se pasan, se usan en lugar de PRODUCT_CATEGORIES. */
   links?: LinkItem[]
 }
-const { current = '', limit = 4, title = 'Explora también', desc, links } = Astro.props
+const { current = '', limit = 4, title = 'Explora también', desc, eyebrow, body = [], links } = Astro.props
+const SectionHeading: any = body.length > 0 ? (await import('@components/SectionHeading.astro')).default : undefined
 
 const source: LinkItem[] = links ?? PRODUCT_CATEGORIES.map((c) => ({
   slug: c.slug, label: c.label, href: c.href, desc: (c as any).badge ?? undefined,
@@ -37,12 +40,14 @@ const items = title && limitedItems.length > 4
     <div class="rel__inner">
       {/* title="" omite el encabezado: lo usa la barra lateral de la ficha,
           que ya tiene su propio h2 («También te puede servir»). */}
-      {title && (
+      {title && (body.length > 0 ? (
+        <SectionHeading layout="duo" {eyebrow} title={title} desc={desc} body={body} />
+      ) : (
         <header class="rel__head">
           <h2 class="rel__title">{title}</h2>
           {desc && <p class="rel__desc">{desc}</p>}
         </header>
-      )}
+      ))}
       <ul class="rel__grid" role="list">
         {items.map((item) => (
           <li>
