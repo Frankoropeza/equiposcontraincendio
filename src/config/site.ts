@@ -38,7 +38,7 @@ export const SITE = {
   lang: 'es-MX',
   locale: 'es-MX',
   description:
-    'Equipos contra incendios en CDMX y Edomex: venta de equipos contra incendios, instalación y mantenimiento con equipo certificado y documentación en regla.',
+    'Equipo contra incendio en CDMX y Edomex: venta de equipos contra incendios, instalación y mantenimiento con equipo certificado y documentación en regla.',
   defaultImage: '/images/og/default.png', // OG default 1200×630 PNG (SVG no renderiza en WhatsApp/FB/X).
 
   // MEDIDO en vivo 2026-08-12: Cloudflare Pages sirve /ruta → 308 → /ruta/ (200).
@@ -53,9 +53,12 @@ export const SITE = {
     // 60 % transaccional y `cdmx` está infraexplotado: solo el 30 % del contenido
     // y el 10 % de los H1 de la competencia lo usan. De ahí el verbo de compra y
     // la señal local. Ver el plan de contenido del index en el vault.
-    title: 'Equipos contra incendios | venta de equipos contra incendios', // 60 chars — decisión de Frank 2026-09-09.
+    // 2026-09-11 — Ahrefs (MX): «equipo contra incendio» 350/mes y «equipo contra
+    // incendios» 100, contra 70 del plural «equipos contra incendios». Frank eligió
+    // el singular para title y H1; el plural se queda en el cuerpo.
+    title: 'Equipo contra incendio | venta de equipo contra incendios', // 57 car. — decisión de Frank 2026-09-11.
     description:
-      'Equipos contra incendios en CDMX y Edomex: venta de equipos contra incendios, instalación y mantenimiento con equipo certificado y documentación en regla.',
+      'Equipo contra incendio en CDMX y Edomex: venta de equipos contra incendios, instalación y mantenimiento con equipo certificado y documentación en regla.',
     image: '/images/og/default.png',
     titleMaxLength: 60,
     descriptionMaxLength: 160,
@@ -121,8 +124,8 @@ export const SITE = {
 // patrón lo usan varios competidores de esta SERP (p. ej. IND LEMER, rank 2:
 // «Extintores y equipos contra incendios - Equipos Contra Incendio»).
 export const KEYWORDS = [
-  'equipos contra incendios',          // kw1 · principal (plural — así se busca)
-  'venta de equipos contra incendios', // kw2 · transaccional; repite kw1 a propósito
+  'equipo contra incendio',            // kw1 · principal (Ahrefs MX 2026-09-11: 350/mes; el plural, 70)
+  'venta de equipo contra incendios',  // kw2 · transaccional; repite kw1 a propósito
   'equipo certificado NOM',            // kw3 · ángulo diferencial; no cabe en el title
 ] as const;
 

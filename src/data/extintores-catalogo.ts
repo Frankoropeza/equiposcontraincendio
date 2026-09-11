@@ -37,7 +37,10 @@ export type LinkItem = { label: string; href: string };
 export const extSeo = {
   // NeuronWriter «venta de extintores» (2026-09-10, top 10 MX): el title de
   // la SERP usa extintor / incendio / México / venta de extintores / CDMX.
-  title: 'Venta de extintores contra incendio en México y CDMX', // 51 car.
+  // 2026-09-11 — Ahrefs MX: la cabeza es «extintores» (8.4k, KD 0) y «extintor»
+  // (21k, parent topic «extintores»); «venta de extintores» (250) tiene a
+  // «extintores» como parent. Por eso el title arranca con «Extintores».
+  title: 'Extintores contra incendio | venta de extintores en CDMX', // 56 car.
   description:
     'Venta de extintores contra incendio para empresas y negocios: PQS, CO₂, clase K, agua y agente limpio. Recarga y mantenimiento en CDMX y Edomex.',
   heroTitle: 'Venta de extintores contra incendio',

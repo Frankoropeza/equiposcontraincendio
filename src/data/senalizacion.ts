@@ -162,7 +162,9 @@ export const senalizacionL3: ServiceL3Data = {
   seccion: { label: 'Productos', href: '/productos/' },
   categoriaProductos: 'senalizacion',
   seo: {
-    title: 'Señales de protección civil y de emergencia en CDMX',
+    // 2026-09-11 — Ahrefs MX: «señales de protección civil» 4.3k (se queda) y el
+    // cluster «señalamiento/señalética/señal de extintor» suma ~5k en variantes.
+    title: 'Señales de protección civil y señalamientos de extintor',
     description:
       'Señales de protección civil: rutas, salidas, equipo contra incendio y punto de reunión, luces de emergencia y croquis para tu inmueble en CDMX y Edomex.',
     serviceName: 'Señalización de protección civil y emergencia',

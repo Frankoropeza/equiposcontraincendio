@@ -5,7 +5,7 @@ category: extintores
 image: /images/productos/extintor-co2-dioxido-de-carbono.avif
 price: "Cotizar"
 order: 2
-seoTitle: "Extintores CO2: venta y recarga para equipos eléctricos"
+seoTitle: "Extintor CO2: para qué sirve, capacidades y venta"
 seoDescription: "Venta de extintores CO2 en capacidades portátiles y sobre ruedas para fuegos B y C. Cotiza recarga y mantenimiento para tu instalación en CDMX y Edomex."
 variantes:
   - nombre: "Extintor CO₂ de 2.27 kg (5 lb)"

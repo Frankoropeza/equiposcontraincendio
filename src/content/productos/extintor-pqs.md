@@ -6,7 +6,7 @@ image: /images/showcase/extintores-catalogo-profesional.avif
 price: "Cotizar"
 featured: true
 order: 1
-seoTitle: "Extintores PQS ABC: venta y recarga en CDMX"
+seoTitle: "Extintor PQS ABC: para qué sirve y venta en CDMX"
 seoDescription: "Venta de extintores PQS ABC en capacidades portátiles y sobre ruedas. Cotiza recarga y mantenimiento para empresas en CDMX y Edomex según tu riesgo."
 variantes:
   - nombre: "Extintor PQS ABC de 1 kg"

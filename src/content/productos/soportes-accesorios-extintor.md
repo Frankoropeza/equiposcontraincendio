@@ -6,7 +6,7 @@ image: /images/showcase/refacciones-equipo-contra-incendio.avif
 price: "Cotizar"
 brand: "CONINC"
 order: 9
-seoTitle: "Soportes y gabinetes para extintor | accesorios"
+seoTitle: "Soporte para extintor, porta extintor y gabinetes"
 seoDescription: "Compara soportes, abrazaderas y gabinetes para instalar o proteger extintores portátiles en muro, vehículo o gabinete."
 faqs:
   - question: "¿Qué accesorio necesito para un extintor de pared?"

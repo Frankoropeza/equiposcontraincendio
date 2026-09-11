@@ -5,7 +5,7 @@ category: extintores
 image: /images/productos/extintor-de-agua-almacen-carton-clase-a.avif
 price: "Cotizar"
 order: 4
-seoTitle: "Extintores de agua y AFFF: venta en CDMX"
+seoTitle: "Extintor de agua y de espuma AFFF: venta en CDMX"
 seoDescription: "Venta de extintores de agua, nebulizada y espuma AFFF en capacidades portátiles y sobre ruedas. Compara clases y cotiza para tu operación en CDMX y Edomex."
 variantes:
   - nombre: "Extintor de agua a presión de 9 L"
