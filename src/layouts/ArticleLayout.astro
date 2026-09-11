@@ -39,6 +39,9 @@ import { slugify } from '@lib/slug'
 export interface Props {
   title: string;
   description: string;
+  /** <title> y meta description del head; si faltan, se usan title/description (que siguen siendo el H1 y la entradilla). */
+  seoTitle?: string;
+  seoDescription?: string;
   /** Slug de categoría (enum ARTICLE_CATEGORIES). */
   category?: string;
   /** Etiqueta legible de la categoría (BLOG_CATEGORIES). */
@@ -67,6 +70,8 @@ export interface Props {
 const {
   title,
   description,
+  seoTitle,
+  seoDescription,
   category,
   categoryLabel,
   pubDate,
@@ -160,8 +165,8 @@ const cta = CTA_BY_FUNNEL[funnel] ?? CTA_BY_FUNNEL.mofu;
 ---
 
 <PageLayout
-  title={title}
-  description={description}
+  title={seoTitle ?? title}
+  description={seoDescription ?? description}
   image={image}
   canonical={canonical}
   pageType="article"
