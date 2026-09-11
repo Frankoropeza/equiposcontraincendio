@@ -1,7 +1,8 @@
 # CONINC · EQUIPOSCONTRAINCENDIO.COM — venta, instalación y mantenimiento de equipo contra incendio
 
 > Venta de equipo contra incendio en México: extintores, detección y alarmas,
-> hidrantes y señalización, con instalación, mantenimiento, recarga e inspección.
+> hidrantes, rociadores, señalamientos de seguridad, lámparas de emergencia y botiquines,
+> con instalación, mantenimiento, recarga e inspección.
 > Cobertura en Ciudad de México y Estado de México. Cotización por contacto.
 
 Idioma: español (es-MX). País: México.
@@ -17,16 +18,21 @@ Idioma: español (es-MX). País: México.
 - Modelo de venta: fichas de producto con especificaciones y cotización directa (sin carrito).
 
 ## Productos (categorías del catálogo)
-- Extintores: PQS 6 kg, CO2 4.5 kg, clase K 6 L.
-- Detección y alarmas: detector de humo fotoeléctrico.
-- Hidrantes y mangueras: gabinete con manguera contra incendio.
-- Señalización y emergencia: señalización fotoluminiscente.
-- Accesorios y refacciones.
+- Extintores: PQS ABC, CO2, tipo K (químico húmedo), agua y espuma AFFF, agente limpio; portátiles y sobre ruedas.
+- Detección y alarmas: detectores de humo fotoeléctricos, temperatura y gas, paneles, estaciones manuales y sirenas.
+- Hidrantes y mangueras: gabinetes con manguera, red de hidrantes y rociadores contra incendio (venta e instalación).
+- Señalización y emergencia: señalamientos de seguridad industriales (NOM-026) y de protección civil (NOM-003-SSPC), señalización fotoluminiscente, lámparas de emergencia y botiquines de primeros auxilios.
+- Accesorios y refacciones: soportes, bases vehiculares, gabinetes para extintor y refacciones.
 
 ## Servicios
-- Instalación de sistemas y equipo contra incendio.
-- Mantenimiento y recarga de extintores conforme a norma.
-- Inspección y dictamen del equipo contra incendio.
+- Instalación de sistemas contra incendio (extintores, detección, red de hidrantes, rociadores, señalización).
+- Recarga y mantenimiento de extintores conforme a la NOM-154-SCFI-2005.
+- Prueba hidrostática de extintores.
+- Inspección técnica del equipo contra incendio.
+- Diagnóstico de riesgo de incendio (NOM-002-STPS-2010, Tabla A.1).
+- Capacitación de brigadas con constancia DC-3.
+- Gestión documental para STPS y Protección Civil.
+- CONINC no elabora ni firma el Programa Interno de Protección Civil: deja el equipo y el expediente que el programa documenta.
 
 ## Páginas clave
 - [Inicio](https://equiposcontraincendio.com/): presentación del catálogo y servicios.
@@ -41,13 +47,19 @@ Idioma: español (es-MX). País: México.
 - [Servicios](https://equiposcontraincendio.com/servicios/): instalación, mantenimiento, inspección, prueba hidrostática, diagnóstico de riesgo, capacitación DC-3 y gestión documental.
 - [Mantenimiento y recarga](https://equiposcontraincendio.com/servicios/mantenimiento/): recarga de extintores conforme a la NOM-154-SCFI-2005.
 - [Blog](https://equiposcontraincendio.com/blog/): guías técnicas y de normatividad.
-- [Tipos de extintores por clase de fuego y agente](https://equiposcontraincendio.com/blog/como-elegir-extintor-clase-fuego/): pilar de selección de extintores.
+- [Qué extintor comprar](https://equiposcontraincendio.com/blog/como-elegir-extintor-clase-fuego/): guía de compra por área (casa, negocio, cocina) y clase de fuego.
 - [STPS y Protección Civil: las dos verificaciones](https://equiposcontraincendio.com/blog/cumplimiento-stps-proteccion-civil/): pilar de normatividad, qué exige cada autoridad y qué evidencia sirve para ambas.
 - [Recarga y mantenimiento de extintores](https://equiposcontraincendio.com/blog/mantenimiento-recarga-extintores-nom/): qué exige la NOM-154 y cómo verificar al proveedor.
 - [Cobertura](https://equiposcontraincendio.com/cobertura/): CDMX y Estado de México.
 - [Herramientas](https://equiposcontraincendio.com/herramientas/): clasificador de riesgo, calculadora de extintores y verificador en 12 puntos.
 - [Recursos](https://equiposcontraincendio.com/recursos/): herramientas, formatos, trámites y guías para poner un inmueble al día.
-- [Directorio por giro](https://equiposcontraincendio.com/proteccion-civil/): requisitos de Protección Civil por tipo de negocio en CDMX y Edomex.
+- [Señalamientos de seguridad](https://equiposcontraincendio.com/productos/senalamientos-de-seguridad/): tipos (prohibición, obligación, precaución, información), colores NOM-026 y tamaño por distancia.
+- [Lámparas de emergencia](https://equiposcontraincendio.com/productos/lamparas-de-emergencia/): iluminación de emergencia para rutas y salidas (NOM-025-STPS-2008, 5.11).
+- [Botiquín de primeros auxilios para empresa](https://equiposcontraincendio.com/productos/botiquin-primeros-auxilios/): qué pide la LFT (art. 504) y qué debe contener.
+- [Rociadores contra incendio](https://equiposcontraincendio.com/productos/rociadores-contra-incendio/): tipos de rociador, sistemas húmedo, seco y preacción, cuándo son obligatorios.
+- [Protección Civil por giro](https://equiposcontraincendio.com/proteccion-civil/): trámites CDMX y Edomex y 23 fichas por tipo de negocio (restaurantes, oficinas, guarderías, bodegas, naves, plazas, condominios…).
+- [Requisitos de Protección Civil para empresas](https://equiposcontraincendio.com/blog/requisitos-proteccion-civil-negocio/): pilar de requisitos por giro, superficie y aforo.
+- [Programa Interno de Protección Civil](https://equiposcontraincendio.com/blog/programa-interno-proteccion-civil/): qué es, quién está obligado y quién lo elabora.
 - [Formatos descargables](https://equiposcontraincendio.com/plantillas/): bitácora de revisión, acta de simulacro y censo de brigada.
 - [Nosotros](https://equiposcontraincendio.com/nosotros/): quiénes somos.
 - [Contacto](https://equiposcontraincendio.com/contacto/): cotizaciones y contacto.
