@@ -363,6 +363,17 @@ export const NAV: readonly NavItem[] = [
           { label: 'Agente limpio',          href: '/productos/extintor-agente-limpio/', desc: 'Equipo electrónico, sin residuo' },
         ],
       },
+      {
+        title: 'Equipo de emergencia',
+        href: '/productos/',
+        links: [
+          { label: 'Señalamientos de seguridad', href: '/productos/senalamientos-de-seguridad/', desc: 'Protección civil e industriales NOM-026' },
+          { label: 'Lámparas de emergencia',     href: '/productos/lamparas-de-emergencia/',     desc: 'Rutas de evacuación y áreas de riesgo' },
+          { label: 'Botiquín para empresa',      href: '/productos/botiquin-primeros-auxilios/', desc: 'Lo que pide la ley y su contenido' },
+          { label: 'Rociadores contra incendio', href: '/productos/rociadores-contra-incendio/', desc: 'Venta e instalación de la red' },
+          { label: 'Detector de gas',            href: '/productos/detector-de-gas/',            desc: 'Gas LP y natural, con corte automático' },
+        ],
+      },
     ],
     promo: {
       eyebrow: 'Herramienta gratuita',
@@ -630,8 +641,8 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
       'Detectores de humo y calor, paneles direccionables, estaciones manuales y sirenas NFPA.',
     subcategories: [
       { label: 'Detectores de humo', href: '/productos/detector-humo-fotoelectrico/' },
+      { label: 'Detectores de gas', href: '/productos/detector-de-gas/' },
       { label: 'Paneles direccionables', href: '/productos/deteccion-alarmas/#panel-alarma' },
-      { label: 'Estaciones y sirenas', href: '/productos/deteccion-alarmas/#estaciones-manuales' },
     ],
     ctaLabel: 'Alarmas contra incendios',
   },
@@ -662,8 +673,8 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
       'Señalización fotoluminiscente, lámparas de emergencia y rutas de evacuación NOM-003.',
     subcategories: [
       { label: 'Señales de evacuación', href: '/productos/senalizacion-fotoluminiscente/' },
-      { label: 'Lámparas de emergencia', href: '/productos/senalizacion/#luces-emergencia' },
-      { label: 'Puntos de reunión', href: '/productos/senalizacion/#punto-de-reunion' },
+      { label: 'Lámparas de emergencia', href: '/productos/lamparas-de-emergencia/' },
+      { label: 'Señales de seguridad', href: '/productos/senalamientos-de-seguridad/' },
     ],
     ctaLabel: 'Señales de emergencia',
   },
@@ -677,7 +688,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
     blurb:
       'Rociadores automáticos, supresión de cocina clase K y agente limpio para tu site.',
     subcategories: [
-      { label: 'Rociadores automáticos', href: '/productos/#sistemas-supresion' },
+      { label: 'Rociadores automáticos', href: '/productos/rociadores-contra-incendio/' },
       { label: 'Supresión de cocina K', href: '/productos/#sistemas-supresion' },
       { label: 'Agente limpio', href: '/productos/#sistemas-supresion' },
     ],
@@ -693,7 +704,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
     blurb:
       'Botiquines y equipo de apoyo para que tu brigada responda a tiempo.',
     subcategories: [
-      { label: 'Botiquines', href: '/productos/#proteccion-primeros-auxilios' },
+      { label: 'Botiquines', href: '/productos/botiquin-primeros-auxilios/' },
       { label: 'Equipo de brigada', href: '/productos/#proteccion-primeros-auxilios' },
       { label: 'Mantas y camillas', href: '/productos/#proteccion-primeros-auxilios' },
     ],
