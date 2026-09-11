@@ -68,7 +68,10 @@ function imagesOf(collection) {
     .filter((f) => /\.mdx?$/.test(f))
     .flatMap((f) => {
       const src = fs.readFileSync(path.join(dir, f), 'utf8');
-      const m = src.match(/^image:\s*(\S+)\s*$/m) ?? src.match(/^heroImage:\s*(\S+)\s*$/m);
+      // Acepta el valor con o sin comillas (las fichas de `giros` lo llevan entre comillas).
+      const m =
+        src.match(/^image:\s*["']?([^"'\s]+)["']?\s*$/m) ??
+        src.match(/^heroImage:\s*["']?([^"'\s]+)["']?\s*$/m);
       return m ? [m[1]] : [];
     });
 }
@@ -83,7 +86,7 @@ function esPlaceholder(absPath) {
   }
 }
 
-const COLECCIONES = ['productos', 'servicios', 'articulos', 'zonas', 'casos'];
+const COLECCIONES = ['productos', 'servicios', 'articulos', 'zonas', 'casos', 'giros'];
 const targets = [...new Set(COLECCIONES.flatMap((c) => imagesOf(c)))];
 if (!targets.length) {
   console.log('gen-og — no hay imágenes de servicios/zonas que procesar.');

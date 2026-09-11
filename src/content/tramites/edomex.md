@@ -1,6 +1,7 @@
 ---
 title: "Programas de Protección Civil en el Estado de México: qué pide el trámite"
 description: "Qué exige el Estado de México para inscribir o revalidar un Programa Específico de Protección Civil: a quién aplica, requisitos, plazo de respuesta, resultado y fundamento jurídico."
+cardDescription: "Programa Específico: requisitos, plazo, revalidación y fundamento."
 label: "Estado de México"
 entidad: "Estado de México"
 autoridad: "Coordinación General de Protección Civil y Gestión Integral del Riesgo (Secretaría General de Gobierno)"

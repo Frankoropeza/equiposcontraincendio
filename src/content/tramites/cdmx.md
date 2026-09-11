@@ -1,6 +1,7 @@
 ---
 title: "Programa Interno de Protección Civil en la CDMX: cómo se presenta"
 description: "Cómo funciona hoy el Programa Interno de Protección Civil en la Ciudad de México: la plataforma digital de la SGIRPC, quién puede presentarlo y dónde verificar si tu establecimiento está obligado."
+cardDescription: "Programa Interno en línea: quién lo presenta y a quién obliga."
 label: "CDMX"
 entidad: "Ciudad de México"
 autoridad: "Secretaría de Gestión Integral de Riesgos y Protección Civil (SGIRPC)"

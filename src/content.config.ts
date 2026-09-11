@@ -382,6 +382,8 @@ const tramites = defineCollection({
     .object({
       title: z.string().min(10).max(110),
       description: z.string().min(70).max(280),
+      /** Texto corto de la tarjeta del hub (la description completa se corta a 1280 px). */
+      cardDescription: z.string().max(70).optional(),
       /** Nombre corto para el hub y las migas. */
       label: z.string().min(3).max(60),
       /** Entidad o demarcación a la que aplica. */
