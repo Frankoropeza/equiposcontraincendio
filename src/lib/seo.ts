@@ -912,6 +912,22 @@ export function faqSchema(items: FaqItem[]) {
   };
 }
 
+export type WebPageData = { name: string; description: string; path: string; dateModified: Date | string; about: string };
+
+/** Página informativa con fecha de verificación y tema visible. */
+export function webPageSchema(data: WebPageData) {
+  return {
+    '@type': 'WebPage',
+    name: data.name,
+    description: data.description,
+    url: absUrl(data.path),
+    dateModified: data.dateModified instanceof Date ? data.dateModified.toISOString().slice(0, 10) : data.dateModified,
+    about: { '@type': 'Thing', name: data.about },
+    inLanguage: SITE.locale ?? 'es-MX',
+    isPartOf: { '@id': WEBSITE_ID },
+  };
+}
+
 export type ListItem = { name: string; path: string; image?: string; description?: string };
 
 /**
@@ -1095,7 +1111,7 @@ export function reviewSchema(input: { items: Review[]; aggregate?: AggregateRati
  */
 const CTX = 'https://schema.org';
 
-export type PageType = 'home' | 'page' | 'category' | 'product' | 'service' | 'article' | 'directory' | 'faq' | 'techArticle';
+export type PageType = 'home' | 'page' | 'category' | 'product' | 'service' | 'article' | 'directory' | 'faq' | 'techArticle' | 'webPage';
 
 export type SchemaData = {
   breadcrumbs?: Crumb[];          // si se pasa → se emite BreadcrumbList (1 vez)
@@ -1104,6 +1120,7 @@ export type SchemaData = {
   article?: ArticleData;
   techArticle?: TechArticleData;  // opt-in: emite TechArticle (docs/módulos)
   faqs?: FaqItem[];
+  webPage?: WebPageData;
   list?: { name: string; description: string; path: string; items: ListItem[]; areaServed?: string };
   areaServed?: string[];          // override de LocalBusiness en páginas de zona
 };
@@ -1138,6 +1155,9 @@ export function buildSchema(pageType: PageType, data: SchemaData = {}): object[]
       // así puede acompañar a service/category sin pisarlos. Aquí solo
       // marca el tipo «techArticle» para que og:type/SEO se ajusten si
       // hace falta en el futuro. No-op intencional.
+      break;
+    case 'webPage':
+      if (data.webPage) out.push({ '@context': CTX, ...webPageSchema(data.webPage) });
       break;
     case 'category':
     case 'directory':

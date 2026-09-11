@@ -1,0 +1,171 @@
+---
+// /recursos/ — hub público de herramientas, formatos, trámites y guías.
+// Los datos vienen de `src/data/recursos`; esta página solo compone el patrón L2.
+// Sin animaciones salvo botones; las tarjetas usan la retícula global de cuatro.
+import PageLayout from '@layouts/PageLayout.astro';
+import Hero from '@components/Hero.astro';
+import SectionMenu from '@components/SectionMenu.astro';
+import TrustBar from '@components/TrustBar.astro';
+import SectionHeading from '@components/SectionHeading.astro';
+import CategoryCard from '@components/CategoryCard.astro';
+import CategoryFeature from '@components/CategoryFeature.astro';
+import RiskGuide from '@components/RiskGuide.astro';
+import NormsTable from '@components/NormsTable.astro';
+import ProcessSteps from '@components/ProcessSteps.astro';
+import CompanyAbout from '@components/CompanyAbout.astro';
+import RelatedLinks from '@components/RelatedLinks.astro';
+import FAQWithContact from '@components/FAQWithContact.astro';
+import { CONTACT, waUrl, sectionMenuItems } from '@config/site';
+import { companyStats } from '@data/home';
+import {
+  recursosPillars,
+  recursosCards,
+  recursosFeatures,
+  recursosGuia,
+  recursosColumns,
+  recursosNormRows,
+  recursosSteps,
+  recursosCompany,
+  recursosRelated,
+  recursosFaqs,
+} from '@data/recursos';
+
+const schemaData = {
+  list: {
+    name: 'Recursos de Protección Civil',
+    description: 'Herramientas, formatos, trámites y guías para poner un inmueble al día.',
+    path: '/recursos/',
+    items: recursosCards.map((card) => ({
+      name: card.label,
+      path: card.href,
+      image: card.image,
+      description: card.blurb,
+    })),
+  },
+  faqs: recursosFaqs,
+};
+const pageDescription =
+  'Herramientas, formatos, trámites y directorio por giro para revisar Protección Civil, ' +
+  'equipo contra incendio y documentación en CDMX y Edomex.';
+---
+
+<PageLayout
+  title="Recursos de Protección Civil para negocios"
+  description={pageDescription}
+  pageType="directory"
+  schemaData={schemaData}
+  breadcrumbs={[{ label: 'Recursos' }]}
+  guia={false}
+>
+  {/* ─── Hero ─── */}
+  <Hero
+    badge="Gratis y sin registro"
+    title="Recursos para poner"
+    accent="tu inmueble al día"
+    subtitle="Herramientas, formatos, trámites y guías para saber qué revisar antes de una visita."
+    descRight={[
+      'Empieza por tu giro o por tu nivel de riesgo; cada recurso indica el siguiente paso y su fuente.',
+    ]}
+    ctas={[
+      { text: 'Directorio por giro', href: '/proteccion-civil/', variant: 'outline' },
+      {
+        text: 'Consultar por WhatsApp',
+        href: waUrl('Hola, quiero orientación para poner mi inmueble al día.'),
+        variant: 'primary',
+        whatsapp: true,
+      },
+    ]}
+  />
+
+  {/* ─── Navegación y confianza ─── */}
+  <SectionMenu
+    items={sectionMenuItems()}
+    cta={{
+      label: 'Consultar mi caso',
+      href: waUrl('Hola, quiero orientación para poner mi inmueble al día.'),
+      external: true,
+    }}
+  />
+  <TrustBar items={recursosPillars} />
+
+  {/* ─── Tarjetas de recursos ─── */}
+  <section class="section section--surface">
+    <div class="container">
+      <SectionHeading
+        layout="duo"
+        eyebrow="Recursos"
+        title="Empieza por la"
+        titleAccent="pregunta que tienes"
+        desc="Cada tarjeta te lleva al recurso que resuelve una decisión concreta."
+      />
+      <div class="card-grid">
+        {recursosCards.map((card, index) => <CategoryCard {...card} index={index} />)}
+      </div>
+    </div>
+  </section>
+
+  {/* ─── Módulos de recurso ─── */}
+  {recursosFeatures.map((feature) => <CategoryFeature {...feature} />)}
+
+  {/* ─── Guía de decisión ─── */}
+  <RiskGuide
+    eyebrow="Ruta recomendada"
+    title="Qué abrir"
+    titleAccent="primero"
+    desc="Elige el recurso según la pregunta que necesitas resolver."
+    rows={recursosGuia}
+    columns={recursosColumns}
+  />
+
+  {/* ─── Normas y trámites ─── */}
+  <NormsTable
+    eyebrow="Con fuente"
+    title="Normas y trámites"
+    titleAccent="a la vista"
+    desc="Cada recurso parte de una fuente que puedes revisar."
+    rows={recursosNormRows}
+  />
+
+  {/* ─── Proceso ─── */}
+  <ProcessSteps
+    eyebrow="Cómo usar los recursos"
+    title="Ocho pasos y"
+    titleAccent="sabes por dónde seguir"
+    desc="Ordena el caso antes de comprar o presentar documentos."
+    steps={recursosSteps}
+  />
+
+  {/* ─── Información institucional ─── */}
+  <section class="section section--surface">
+    <div class="container">
+      <SectionHeading
+        layout="duo"
+        eyebrow="Sobre estos recursos"
+        title="Información para"
+        titleAccent="decidir mejor"
+        desc="Orientan; no sustituyen a la autoridad ni a quien firma."
+      />
+      <CompanyAbout
+        que={recursosCompany.que}
+        como={recursosCompany.como}
+        stats={companyStats}
+        cta={{
+          label: 'Consultar por WhatsApp',
+          href: waUrl('Hola, quiero orientación sobre un recurso de Protección Civil.'),
+          external: true,
+        }}
+      />
+    </div>
+  </section>
+
+  {/* ─── Enlaces relacionados ─── */}
+  <RelatedLinks
+    title="Sigue por aquí"
+    desc="Lo que suele hacer falta después."
+    links={recursosRelated}
+    limit={4}
+  />
+
+  {/* ─── Preguntas frecuentes ─── */}
+  <FAQWithContact items={recursosFaqs} waNumber={CONTACT.whatsapp} />
+</PageLayout>

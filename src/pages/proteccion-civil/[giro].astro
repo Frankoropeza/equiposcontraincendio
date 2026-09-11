@@ -1,0 +1,20 @@
+---
+// /proteccion-civil/[giro]/ — ruta estática para cada ficha publicada por giro.
+// Obtiene entradas de la colección `giros` y delega la composición a GiroL3.
+// Sin animaciones salvo botones; la retícula de tarjetas se define en GiroL3.
+import { getCollection, render } from 'astro:content';
+import GiroL3 from '@components/GiroL3.astro';
+
+export async function getStaticPaths() {
+  const giros = await getCollection('giros', ({ data }) => !data.draft);
+  return giros.map((entry) => ({
+    params: { giro: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<GiroL3 {entry} {Content} />

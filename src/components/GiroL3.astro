@@ -1,0 +1,404 @@
+---
+// GiroL3 — composición de fichas de Protección Civil por giro.
+// Lee una entrada de `giros`, sus fichas hermanas y artículos publicados.
+// Mantiene secciones estáticas, sin animaciones salvo botones y retículas de cuatro.
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import PageLayout from '@layouts/PageLayout.astro';
+import Hero from './Hero.astro';
+import SectionMenu from './SectionMenu.astro';
+import TrustBar from './TrustBar.astro';
+import RiskGuide from './RiskGuide.astro';
+import DataTable from './DataTable.astro';
+import ServiceCard from './ServiceCard.astro';
+import NormsTable from './NormsTable.astro';
+import ProcessSteps from './ProcessSteps.astro';
+import CompanyAbout from './CompanyAbout.astro';
+import RelatedLinks from './RelatedLinks.astro';
+import FAQWithContact from './FAQWithContact.astro';
+import SectionHeading from './SectionHeading.astro';
+import { CONTACT, waUrl } from '@config/site';
+import { pcPillars } from '@data/proteccion-civil';
+import {
+  aplicaColumns,
+  avisoGiro,
+  baseEntidad,
+  giroCompany,
+  pasosGiro,
+  PRIO_LABEL,
+  TAG_LABEL,
+} from '@data/giros-comun';
+import { GIROS_CATALOGO } from '@data/giros-catalogo';
+import { companyStats } from '@data/home';
+import { relDesc } from '@data/related-desc';
+
+interface Props {
+  entry: CollectionEntry<'giros'>;
+  Content: any;
+}
+
+const { entry, Content } = Astro.props as Props;
+const d = entry.data;
+const formatDate = (date: Date) =>
+  date.toLocaleDateString('es-MX', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+const entityRows = (entity: 'cdmx' | 'edomex') =>
+  d.documentos
+    .filter((item) => item.entidad === entity || item.entidad === 'ambas')
+    .map((item) => [item.doc, item.fund, TAG_LABEL[item.tag].label]);
+const giros = await getCollection('giros', ({ data }) => !data.draft);
+const articles = await getCollection('articulos', ({ data }) => !data.draft);
+const related = d.hermanos.flatMap((id) => {
+  const found = giros.find((item) => item.id === id);
+
+  return found
+    ? [
+        {
+          label: found.data.nombre,
+          href: `/proteccion-civil/${found.id}/`,
+          desc: found.data.cardDescription,
+        },
+      ]
+    : [];
+});
+const support = d.enlacesSoporte.flatMap((href) => {
+  const article = articles.find((item) => `/blog/${item.id}/` === href);
+
+  return article
+    ? [
+        {
+          label: article.data.title,
+          href,
+          desc: relDesc('articulos', article.id, article.data.description),
+        },
+      ]
+    : [];
+});
+const links = [
+  ...related,
+  ...support,
+  {
+    label: 'Protección Civil',
+    href: '/proteccion-civil/',
+    desc: 'Directorio y trámites por entidad.',
+  },
+];
+const schemaData = {
+  webPage: {
+    name: d.seoTitle,
+    description: d.seoDescription,
+    path: `/proteccion-civil/${entry.id}/`,
+    dateModified: d.verifiedAt,
+    about: d.nombre,
+  },
+  faqs: d.faqs,
+};
+---
+
+<PageLayout
+  title={d.seoTitle}
+  description={d.seoDescription}
+  image={d.image}
+  pageType="webPage"
+  schemaData={schemaData}
+  breadcrumbs={[
+    { label: 'Recursos', href: '/recursos/' },
+    { label: 'Protección Civil', href: '/proteccion-civil/' },
+    { label: d.nombre },
+  ]}
+  guia={false}
+>
+  {/* ─── Hero ─── */}
+  <Hero
+    badge={d.heroBadge}
+    title={d.h1}
+    accent={d.h1Accent}
+    descRight={d.intro}
+    ctas={[
+      {
+        text: 'Diagnóstico de riesgo',
+        href: '/servicios/diagnostico-de-riesgo/',
+        variant: 'outline',
+      },
+      {
+        text: 'Hablar por WhatsApp',
+        href: waUrl(d.waMessage),
+        variant: 'primary',
+        whatsapp: true,
+      },
+    ]}
+  />
+
+  {/* ─── Navegación y confianza ─── */}
+  <SectionMenu
+    items={[
+      { label: 'Requisitos', href: '#requisitos', sub: 'Documentos y riesgo' },
+      { label: 'Equipo', href: '#equipo', sub: 'Qué revisar' },
+      { label: 'Guía', href: '#guia', sub: 'Por áreas' },
+      { label: 'Fuentes', href: '#fuentes', sub: 'Normas y enlaces' },
+    ]}
+    cta={{ label: 'Consultar mi giro', href: waUrl(d.waMessage), external: true }}
+  />
+  <TrustBar items={pcPillars} />
+
+  {/* ─── Aviso de alcance ─── */}
+  <section class="notice">
+    <div class="container">
+      <strong>{avisoGiro.title}</strong>
+      <p>{avisoGiro.body}</p>
+      <small>Verificado el {formatDate(d.verifiedAt)}</small>
+    </div>
+  </section>
+
+  {/* ─── Clasificación y requisitos ─── */}
+  <RiskGuide
+    eyebrow="Clasifica primero"
+    title="¿Esto te"
+    titleAccent="aplica?"
+    desc="El nivel se determina por el inmueble y la actividad."
+    rows={d.aplica.map((item) => ({
+      nivel: item.nivel,
+      ejemplos: item.criterio,
+      minimo: item.tramite,
+      complementos: item.firma,
+    }))}
+    columns={aplicaColumns}
+  />
+  <div id="requisitos">
+    <DataTable
+      surface
+      id="documentos-cdmx"
+      eyebrow="Documentos"
+      title="Checklist para"
+      titleAccent="CDMX"
+      desc="Incluye los documentos compartidos entre entidades."
+      columns={['Documento', 'Fundamento', 'Tipo']}
+      rows={entityRows('cdmx')}
+      note={baseEntidad.cdmx.items.join(' · ')}
+      ctaLabel={baseEntidad.cdmx.ctaLabel}
+      ctaHref={baseEntidad.cdmx.href}
+    />
+    <DataTable
+      id="documentos-edomex"
+      eyebrow="Documentos"
+      title="Checklist para Estado de"
+      titleAccent="México"
+      desc="Incluye los documentos compartidos entre entidades."
+      columns={['Documento', 'Fundamento', 'Tipo']}
+      rows={entityRows('edomex')}
+      note={baseEntidad.edomex.items.join(' · ')}
+      ctaLabel={baseEntidad.edomex.ctaLabel}
+      ctaHref={baseEntidad.edomex.href}
+    />
+  </div>
+
+  {/* ─── Equipo y preparación ─── */}
+  <DataTable
+    surface
+    id="equipo"
+    eyebrow="Equipo"
+    title="Qué equipo"
+    titleAccent="revisar"
+    desc="La prioridad orienta qué resolver primero."
+    columns={['Equipo', 'Dónde y para qué', 'Fundamento', 'Prioridad']}
+    rows={d.equipo.map((item) => [
+      item.item,
+      item.uso,
+      item.fund,
+      PRIO_LABEL[item.prio as keyof typeof PRIO_LABEL],
+    ])}
+  />
+  <section class="checks">
+    <div class="container">
+      <div>
+        <h2>Señalización</h2>
+        <ul>{d.senalizacion.map((item) => <li>{item}</li>)}</ul>
+      </div>
+      <div>
+        <h2>Capacitación</h2>
+        <ul>{d.capacitacion.map((item) => <li>{item}</li>)}</ul>
+      </div>
+    </div>
+  </section>
+
+  {/* ─── Guía y errores comunes ─── */}
+  <section class="guide" id="guia">
+    <div class="container">
+      <SectionHeading
+        layout="duo"
+        eyebrow="Guía del giro"
+        title="Lo que cambia en"
+        titleAccent={d.nombre.toLowerCase()}
+        desc="Detalle por área y situación."
+      />
+      <article class="prose"><Content /></article>
+    </div>
+  </section>
+  <section class="errors">
+    <div class="container">
+      <SectionHeading
+        layout="duo"
+        eyebrow="Errores comunes"
+        title="Lo que más"
+        titleAccent="observaciones genera"
+        desc="Revisa estos puntos antes de una visita."
+      />
+      <ul>
+        {d.errores.map((item) => (
+          <li><strong>{item.title}.</strong> {item.desc}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  {/* ─── Equipo y servicios ─── */}
+  <section class="showcase">
+    <div class="container">
+      <SectionHeading
+        layout="duo"
+        eyebrow="Equipo y servicios"
+        title="Equipo y servicios para"
+        titleAccent={d.nombre.toLowerCase()}
+        desc="Salidas directas a las fichas y servicios publicados."
+      />
+      <div class="card-grid">
+        {d.vitrina.map((key) => {
+          const card = GIROS_CATALOGO[key];
+          return card && <ServiceCard {...card} href={card.whatsapp ? waUrl(card.href) : card.href} />;
+        })}
+      </div>
+    </div>
+  </section>
+
+  {/* ─── Normas y proceso ─── */}
+  <NormsTable
+    eyebrow="Normas y fuentes"
+    title="De dónde sale"
+    titleAccent="cada punto"
+    desc="El alcance cambia según la entidad y el inmueble."
+    rows={d.normas}
+  />
+  <ProcessSteps
+    eyebrow="Cómo ponerte al día"
+    title="Ocho pasos para"
+    titleAccent="ordenar tu giro"
+    desc="Empieza por clasificar y termina con el expediente."
+    steps={pasosGiro}
+  />
+
+  {/* ─── Información institucional ─── */}
+  <section class="company-section">
+    <div class="container">
+      <SectionHeading
+        layout="duo"
+        eyebrow="CONINC"
+        title="Qué hacemos"
+        titleAccent="en tu inmueble"
+        desc="Equipo y documentación, sin prometer firmas que no emitimos."
+      />
+      <CompanyAbout
+        que={giroCompany.que}
+        como={giroCompany.como}
+        stats={companyStats}
+        cta={{ label: 'Consultar por WhatsApp', href: waUrl(d.waMessage), external: true }}
+      />
+    </div>
+  </section>
+
+  {/* ─── Fuentes ─── */}
+  <section id="fuentes" class="sources">
+    <div class="container">
+      <h2>Fuentes consultadas</h2>
+      <ul>
+        {d.sources.map((source) => (
+          <li><a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  {/* ─── Enlaces y FAQ ─── */}
+  <RelatedLinks
+    title="También te puede servir"
+    desc="Guías y fichas relacionadas."
+    links={links}
+    limit={links.length}
+  />
+  <FAQWithContact items={d.faqs} waNumber={CONTACT.whatsapp} />
+</PageLayout>
+
+<style>
+  .notice,
+  .checks,
+  .guide,
+  .errors,
+  .showcase,
+  .company-section,
+  .sources {
+    padding: var(--section-py) 0;
+  }
+  .notice {
+    background: var(--c-surface);
+    border-block: 1px solid var(--c-border);
+  }
+  .notice p {
+    max-width: 80ch;
+    color: var(--c-muted);
+    line-height: var(--leading-relaxed);
+  }
+  .notice small {
+    color: var(--c-muted);
+  }
+  .checks {
+    background: var(--c-surface);
+  }
+  .checks .container {
+    display: grid;
+    gap: var(--sp-5);
+  }
+  .checks h2 {
+    font-size: var(--text-xl);
+  }
+  .checks ul,
+  .errors ul {
+    margin: 0;
+    padding-left: 1.25rem;
+  }
+  .checks li,
+  .errors li {
+    margin-bottom: var(--sp-3);
+    line-height: var(--leading-relaxed);
+  }
+  .guide,
+  .showcase,
+  .sources {
+    background: var(--c-white);
+  }
+  .prose {
+    max-width: 78ch;
+    line-height: var(--leading-relaxed);
+  }
+  .errors,
+  .company-section {
+    background: var(--c-surface);
+  }
+  .errors ul {
+    display: grid;
+    gap: var(--sp-3);
+  }
+  .sources a {
+    color: var(--c-primary);
+  }
+  @media (min-width: 768px) {
+    .checks .container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .errors ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

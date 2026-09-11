@@ -325,7 +325,7 @@ export const deteccionL3: ServiceL3Data = {
       ctaLabel: 'Cotizar detectores',
       ctaMsg: 'Hola, quiero cotizar detectores de gas para cocina o cuarto de máquinas.',
       ctaSecondaryLabel: 'Guía para restaurantes',
-      ctaSecondaryHref: '/blog/proteccion-civil-restaurantes/',
+      ctaSecondaryHref: '/proteccion-civil/restaurantes/',
       imgMain: { src: '/images/servicios/supresion-cocina-comercial.avif', alt: 'Cocina comercial con campana y equipos de combustión' },
       imgA: { src: '/images/servicios/cuarto-bomba-contra-incendio.avif', alt: 'Cuarto de máquinas con motores y tablero de control' },
       imgB: { src: '/images/productos/panel-alarma-contra-incendio.avif', alt: 'Panel de alarma al que se integran los detectores' },

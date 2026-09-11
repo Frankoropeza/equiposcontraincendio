@@ -82,4 +82,4 @@ Se revisa cada mes, se le da mantenimiento al menos una vez al año y se recarga
 
 El clase K no tiene una norma mexicana de producto específica. Como referencia técnica se usa la **NFPA 10**, que no es ley federal, pero define la clase K y cómo seleccionar el extintor. El servicio se rige por la **NOM-154-SCFI-2005** y la colocación, por la **NOM-002-STPS-2010**.
 
-Si estás preparando la visita de Protección Civil, revisa también la [guía de Protección Civil para restaurantes](/blog/proteccion-civil-restaurantes/). Para cotizar, cuéntanos cuántos equipos de cocción tienes y qué tamaño tiene la cocina.
+Si estás preparando la visita de Protección Civil, revisa también la [ficha de Protección Civil para restaurantes](/proteccion-civil/restaurantes/). Para cotizar, cuéntanos cuántos equipos de cocción tienes y qué tamaño tiene la cocina.

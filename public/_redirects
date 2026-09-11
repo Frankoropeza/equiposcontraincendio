@@ -24,3 +24,10 @@ https://www.equiposcontraincendio.com/* https://equiposcontraincendio.com/:splat
 # Civil, que ningún sitio hermano cubre.
 /blog/nom-002-stps-2010/ /blog/cumplimiento-stps-proteccion-civil/ 301
 /blog/nom-002-stps-2010 /blog/cumplimiento-stps-proteccion-civil/ 301
+
+# 2026-09-11 · Directorio de Protección Civil por giro (decisión D1 de Frank):
+# las guías del blog con la misma intención se fusionaron en su ficha por giro.
+/blog/proteccion-civil-restaurantes/ /proteccion-civil/restaurantes/ 301
+/blog/proteccion-civil-restaurantes /proteccion-civil/restaurantes/ 301
+/blog/edificio-oficinas-propietario-o-arrendatario/ /proteccion-civil/oficinas/ 301
+/blog/edificio-oficinas-propietario-o-arrendatario /proteccion-civil/oficinas/ 301

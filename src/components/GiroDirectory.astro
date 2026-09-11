@@ -1,0 +1,232 @@
+---
+// GiroDirectory — directorio filtrable de fichas de Protección Civil por giro.
+// Recibe las entradas publicadas de `giros`; los grupos, etiquetas y cierres
+// viven en los módulos de datos. Sin animaciones salvo botones; retícula de cuatro.
+import type { CollectionEntry } from 'astro:content';
+import CategoryCard from './CategoryCard.astro';
+import CatalogCierreCard from './CatalogCierreCard.astro';
+import SectionHeading from './SectionHeading.astro';
+import { GRUPOS, FILTRO_RIESGO, RIESGO_LABEL } from '@data/giros-comun';
+import { cierreGeneral } from '@data/cierre';
+
+const { giros } = Astro.props as { giros: CollectionEntry<'giros'>[] };
+const items = [...giros].sort((a, b) => a.data.orden - b.data.orden);
+const grupos = Object.entries(GRUPOS).filter(([id]) =>
+  items.some((item) => item.data.grupo === id),
+);
+const cierre = [
+  {
+    badge: '¿Tu giro no aparece?',
+    title: '¿No encuentras tu giro?',
+    description: 'Cuéntanos tu actividad, metros y aforo para revisar qué aplica primero.',
+    href: '/servicios/diagnostico-de-riesgo/',
+    ctaLabel: 'Diagnóstico de riesgo',
+    image: '/images/servicios/auditoria-seguridad-contra-incendio.avif',
+    imageAlt: 'Diagnóstico de riesgo de incendio en un inmueble',
+  },
+  ...cierreGeneral,
+];
+---
+
+{/* ─── Directorio por giro ─── */}
+<section class="giro-directory section section--surface" id="por-giro">
+  <div class="container">
+    <SectionHeading
+      layout="duo"
+      eyebrow="Por tipo de negocio"
+      title="Qué revisar según"
+      titleAccent="tu giro"
+      desc="Elige tu actividad para ver documentos, equipo y errores comunes."
+      body={[
+        'Las fichas separan obligaciones, lo que suelen pedir en ventanilla y buenas prácticas.',
+      ]}
+    />
+    <div class="giro-directory__filters" hidden>
+      <div>
+        <strong>Tipo de negocio</strong>
+        <div class="giro-directory__chips">
+          <button type="button" data-grupo="" aria-pressed="true">Todos</button>
+          {grupos.map(([id, label]) => (
+            <button type="button" data-grupo={id} aria-pressed="false">{label}</button>
+          ))}
+        </div>
+      </div>
+      <div>
+        <strong>Riesgo probable</strong>
+        <div class="giro-directory__chips">
+          <button type="button" data-riesgo="" aria-pressed="true">Todos</button>
+          {FILTRO_RIESGO.map((risk) => (
+            <button
+              type="button"
+              data-riesgo={risk.id}
+              data-incluye={risk.incluye.join(',')}
+              aria-pressed="false"
+            >
+              {risk.label}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+    <p class="giro-directory__count" aria-live="polite"></p>
+    <div class="giro-directory__grid card-grid">
+      {items.map((item, index) => (
+        <div
+          data-giro-card
+          data-grupo={item.data.grupo}
+          data-riesgo={item.data.riesgoProbable}
+        >
+          <CategoryCard
+            label={item.data.nombre}
+            href={`/proteccion-civil/${item.id}/`}
+            image={item.data.image}
+            imageAlt={item.data.imageAlt}
+            badge={RIESGO_LABEL[item.data.riesgoProbable as keyof typeof RIESGO_LABEL]}
+            blurb={item.data.cardDescription}
+            ctaLabel={item.data.ctaLabel}
+            index={index}
+          />
+        </div>
+      ))}
+      {cierre.map((ficha) => <CatalogCierreCard ficha={ficha} />)}
+    </div>
+  </div>
+</section>
+
+<script>
+  const root = document.querySelector<HTMLElement>('.giro-directory');
+
+  if (root) {
+    const filters = root.querySelector<HTMLElement>('.giro-directory__filters');
+    const cards = [...root.querySelectorAll<HTMLElement>('[data-giro-card]')];
+    const closing = [...root.querySelectorAll<HTMLElement>('[data-cierre]')];
+    const count = root.querySelector<HTMLElement>('.giro-directory__count');
+    const state = { grupo: '', riesgo: '' };
+
+    const read = () => {
+      const params = new URLSearchParams(location.search);
+      state.grupo = params.get('grupo') ?? '';
+      state.riesgo = params.get('riesgo') ?? '';
+    };
+    const close = (visible: number) => {
+      const grid = root.querySelector<HTMLElement>('.giro-directory__grid');
+      const columns = grid
+        ? getComputedStyle(grid).gridTemplateColumns.split(' ').filter(Boolean).length || 1
+        : 1;
+      const missing = visible ? (columns - (visible % columns)) % columns : 0;
+
+      closing.forEach((card, index) => {
+        card.hidden = index >= missing;
+      });
+    };
+    const apply = () => {
+      const risks = root
+        .querySelector<HTMLButtonElement>(`[data-riesgo="${state.riesgo}"]`)
+        ?.dataset.incluye?.split(',') ?? [];
+      let visible = 0;
+
+      cards.forEach((card) => {
+        const match =
+          (!state.grupo || card.dataset.grupo === state.grupo) &&
+          (!state.riesgo || risks.includes(card.dataset.riesgo ?? ''));
+        card.hidden = !match;
+        if (match) visible++;
+      });
+      close(visible);
+      if (count) count.textContent = `Mostrando ${visible} de ${cards.length} giros`;
+      root
+        .querySelectorAll<HTMLButtonElement>('[data-grupo], [data-riesgo]')
+        .forEach((button) => {
+          const key = button.dataset.grupo !== undefined ? 'grupo' : 'riesgo';
+          button.setAttribute(
+            'aria-pressed',
+            (button.dataset[key] ?? '') === state[key] ? 'true' : 'false',
+          );
+        });
+    };
+    const refresh = () => {
+      const params = new URLSearchParams(location.search);
+      state.grupo ? params.set('grupo', state.grupo) : params.delete('grupo');
+      state.riesgo ? params.set('riesgo', state.riesgo) : params.delete('riesgo');
+      history.replaceState(
+        null,
+        '',
+        `${location.pathname}${params.size ? `?${params}` : ''}#por-giro`,
+      );
+      apply();
+    };
+
+    root.addEventListener('click', (event) => {
+      const button = (event.target as HTMLElement).closest<HTMLButtonElement>(
+        '[data-grupo], [data-riesgo]',
+      );
+      if (!button) return;
+      if (button.dataset.grupo !== undefined) state.grupo = button.dataset.grupo;
+      else state.riesgo = button.dataset.riesgo ?? '';
+      refresh();
+    });
+    addEventListener('popstate', () => {
+      read();
+      apply();
+    });
+
+    const grid = root.querySelector<HTMLElement>('.giro-directory__grid');
+    if (grid && 'ResizeObserver' in window) {
+      new ResizeObserver(() => apply()).observe(grid);
+    }
+    if (filters) filters.hidden = false;
+    read();
+    apply();
+  }
+</script>
+
+<style>
+  .giro-directory__filters {
+    display: grid;
+    gap: var(--sp-4);
+    padding: var(--sp-4);
+    margin-bottom: var(--sp-4);
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+  }
+
+  /* Los hijos de una retícula no encogen por debajo de su contenido: sin
+     min-width: 0, la fila de chips (flex con overflow-x) empuja el ancho de la
+     página en móvil (medido: 254 px de desborde a 390 px). */
+  .giro-directory__filters > div {
+    min-width: 0;
+  }
+  .giro-directory__filters[hidden] {
+    display: none;
+  }
+  .giro-directory__filters strong {
+    display: block;
+    margin-bottom: var(--sp-2);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+  }
+  .giro-directory__chips {
+    display: flex;
+    gap: var(--sp-2);
+    overflow-x: auto;
+  }
+  .giro-directory__chips button {
+    white-space: nowrap;
+    border: 1px solid var(--c-border);
+    padding: .5rem .75rem;
+    border-radius: var(--radius-full);
+    background: var(--c-white);
+    color: var(--c-ink);
+  }
+  .giro-directory__chips button[aria-pressed="true"] {
+    background: var(--c-primary);
+    color: #fff;
+    border-color: var(--c-primary);
+  }
+  .giro-directory__count {
+    color: var(--c-muted);
+    font-size: var(--text-sm);
+    margin: 0 0 var(--sp-4);
+  }
+</style>

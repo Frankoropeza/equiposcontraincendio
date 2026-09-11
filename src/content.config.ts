@@ -421,6 +421,31 @@ const tramites = defineCollection({
     .strict(),
 });
 
+// ── Colección: giros (Protección Civil por tipo de negocio) ────────────────
+const giros = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/giros' }),
+  schema: z
+    .object({
+      title: z.string(), nombre: z.string(), h1: z.string(), h1Accent: z.string(), heroBadge: z.string(),
+      cardDescription: z.string().max(90), ctaLabel: z.string().max(24), image: z.string(), imageAlt: z.string(),
+      seoTitle: z.string().max(60), seoDescription: z.string().min(120).max(160), kwPrincipal: z.string(),
+      impactoCdmx: z.string(), impactoEdomex: z.string(), waMessage: z.string(), fusionaDe: z.string().optional(),
+      grupo: z.enum(['alimentos-y-bebidas', 'hospedaje-y-eventos', 'oficinas-y-servicios', 'educacion-y-cuidado', 'salud', 'comercio', 'deporte-y-bienestar', 'industria-y-logistica', 'movilidad', 'habitacional', 'por-nivel-de-riesgo']),
+      riesgoProbable: z.enum(['bajo', 'bajo-medio', 'medio', 'medio-alto', 'alto']),
+      prioridad: z.enum(['alta', 'media', 'baja']), orden: z.number(),
+      intro: z.array(z.string()).min(1).max(3), kwSecundarias: z.array(z.string()),
+      aplica: z.array(z.object({ nivel: z.string(), criterio: z.string(), tramite: z.string(), firma: z.string() })).length(3),
+      documentos: z.array(z.object({ entidad: z.enum(['cdmx', 'edomex', 'ambas']), doc: z.string(), fund: z.string(), tag: z.enum(['OL', 'RI', 'BP']), confianza: z.enum(['alta', 'media']).optional() })),
+      equipo: z.array(z.object({ item: z.string(), uso: z.string(), fund: z.string(), prio: z.enum(['B', 'R', 'E']), tag: z.string() })),
+      senalizacion: z.array(z.string()), capacitacion: z.array(z.string()), errores: z.array(z.object({ title: z.string(), desc: z.string() })),
+      vitrina: z.array(z.string()).length(8), hermanos: z.array(z.string()).length(4), enlacesSoporte: z.array(z.string()),
+      normas: z.array(z.object({ norma: z.string(), alcance: z.string(), aplica: z.string() })),
+      faqs: z.array(z.object({ question: z.string(), answer: z.string() })).min(4).max(8),
+      sources: z.array(z.object({ label: z.string(), url: z.string().url() })).min(1), verifiedAt: z.coerce.date(), draft: z.boolean().optional(),
+    })
+    .strict(),
+});
+
 // ── Export ────────────────────────────────────────────────────────────────────
 // Borra las colecciones que el proyecto no use (un sitio puede no tener `zonas`
 // o `casos`). Mantén `articulos` si hay blog (siempre .mdx — D3).
@@ -431,4 +456,5 @@ export const collections = {
   zonas,
   plantillas,
   tramites,
+  giros,
 };

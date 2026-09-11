@@ -25,6 +25,7 @@ import ProcessSteps from '@components/ProcessSteps.astro'
 import CompanyAbout from '@components/CompanyAbout.astro'
 import RelatedLinks from '@components/RelatedLinks.astro'
 import FAQWithContact from '@components/FAQWithContact.astro'
+import GiroDirectory from '@components/GiroDirectory.astro'
 import { getCollection } from 'astro:content'
 import { CONTACT, waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
 import {
@@ -43,10 +44,11 @@ import { cierreProteccionCivil, faltanParaCuatro } from '@data/cierre'
 const tramites = (await getCollection('tramites', ({ data }) => !data.draft)).sort(
   (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0),
 )
+const giros = await getCollection('giros', ({ data }) => !data.draft)
 const fmt = (d: Date) =>
   d.toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })
 
-const menuSecciones = sectionMenuItems()
+const menuSecciones = [{ label: 'Por giro', href: '#por-giro', sub: 'Requisitos por negocio' }, ...sectionMenuItems()]
 const menuCta = {
   label: 'Tengo una visita encima',
   href: waUrl(WA_MESSAGES.urgente),
@@ -99,6 +101,8 @@ const schemaData = {
 
   {/* ─── Barra de confianza (pilares honestos) ─── */}
   <TrustBar items={pcPillars} />
+
+  <GiroDirectory {giros} />
 
   <section class="section section--surface">
     <div class="container">

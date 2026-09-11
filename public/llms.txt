@@ -46,6 +46,8 @@ Idioma: español (es-MX). País: México.
 - [Recarga y mantenimiento de extintores](https://equiposcontraincendio.com/blog/mantenimiento-recarga-extintores-nom/): qué exige la NOM-154 y cómo verificar al proveedor.
 - [Cobertura](https://equiposcontraincendio.com/cobertura/): CDMX y Estado de México.
 - [Herramientas](https://equiposcontraincendio.com/herramientas/): clasificador de riesgo, calculadora de extintores y verificador en 12 puntos.
+- [Recursos](https://equiposcontraincendio.com/recursos/): herramientas, formatos, trámites y guías para poner un inmueble al día.
+- [Directorio por giro](https://equiposcontraincendio.com/proteccion-civil/): requisitos de Protección Civil por tipo de negocio en CDMX y Edomex.
 - [Formatos descargables](https://equiposcontraincendio.com/plantillas/): bitácora de revisión, acta de simulacro y censo de brigada.
 - [Nosotros](https://equiposcontraincendio.com/nosotros/): quiénes somos.
 - [Contacto](https://equiposcontraincendio.com/contacto/): cotizaciones y contacto.

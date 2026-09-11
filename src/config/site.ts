@@ -415,12 +415,22 @@ export const NAV: readonly NavItem[] = [
   },
   {
     label: 'Recursos',
-    href: '/herramientas/',
+    href: '/recursos/',
     sub: 'Herramientas, Protección Civil y guías',
     panel: 'mega',
-    allLabel: 'Ver herramientas',
-    match: ['/herramientas/', '/plantillas/', '/proteccion-civil/', '/blog/'],
+    allLabel: 'Ver todos los recursos',
+    match: ['/recursos/', '/herramientas/', '/plantillas/', '/proteccion-civil/', '/blog/'],
     groups: [
+      {
+        title: 'Por tipo de negocio',
+        href: '/proteccion-civil/',
+        links: [
+          { label: 'Restaurantes', href: '/proteccion-civil/restaurantes/', desc: 'Clase K, detector de gas y dictamen de gas LP' },
+          { label: 'Oficinas', href: '/proteccion-civil/oficinas/', desc: 'Quién presenta qué y el extintor del site' },
+          { label: 'Locales comerciales', href: '/proteccion-civil/locales-comerciales/', desc: 'Extintor, señales y visto bueno municipal' },
+          { label: 'Guarderías', href: '/proteccion-civil/guarderias/', desc: 'Lo que exige la NOM-009 al centro' },
+        ],
+      },
       {
         title: 'Herramientas',
         href: '/herramientas/',
@@ -438,16 +448,6 @@ export const NAV: readonly NavItem[] = [
           { label: 'Qué exige Protección Civil', href: '/proteccion-civil/',        desc: 'Comparativa entre CDMX y Edomex' },
           { label: 'Programa Interno en CDMX',   href: '/proteccion-civil/cdmx/',   desc: 'Trámite digital ante la SGIRPC' },
           { label: 'Programa en Edomex',         href: '/proteccion-civil/edomex/', desc: 'Requisitos, plazo y fundamento' },
-        ],
-      },
-      {
-        title: 'Guías del blog',
-        href: '/blog/',
-        links: [
-          { label: 'Tipos de extintores',       href: '/blog/como-elegir-extintor-clase-fuego/',     desc: 'Guía por clase de fuego y agente' },
-          { label: 'Extintores por m²',         href: '/blog/cuantos-extintores-por-metro-cuadrado/', desc: 'Lo que exige la norma en México' },
-          { label: 'Recarga y mantenimiento',   href: '/blog/mantenimiento-recarga-extintores-nom/', desc: 'Qué exige la norma y cada cuándo' },
-          { label: 'STPS y Protección Civil',   href: '/blog/cumplimiento-stps-proteccion-civil/',   desc: 'Las dos verificaciones de tu inmueble' },
         ],
       },
     ],
