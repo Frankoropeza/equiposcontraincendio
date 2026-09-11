@@ -179,6 +179,19 @@ const jsonLd = buildSchema(pageType, schemaData);
     {jsonLd.map((node) => (
       <script type="application/ld+json" is:inline set:html={JSON.stringify(node)} />
     ))}
+
+    {/* ── TruConversion (heatmaps/funnels/grabaciones) — cuenta 63920, alta 2026-09-11 ── */}
+    <script is:inline type="text/javascript">
+        var _tip = _tip || [];
+        (function(d,s,id){
+            var js, tjs = d.getElementsByTagName(s)[0];
+            if(d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.async = true;
+            js.src = d.location.protocol + '//app.truconversion.com/ti-js/63920/ac0b5.js';
+            tjs.parentNode.insertBefore(js, tjs);
+        }(document, 'script', 'ti-js'));
+    </script>
   </head>
 
   <body>
