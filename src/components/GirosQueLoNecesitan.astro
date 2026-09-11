@@ -1,0 +1,60 @@
+---
+// GirosQueLoNecesitan — muestra fichas de Protección Civil que recomiendan esta página.
+// Datos y orden: girosQueLoNecesitan. Autor: Codex por encargo de Claude, 2026-09-11.
+import CategoryCard from '@components/CategoryCard.astro';
+import SectionHeading from '@components/SectionHeading.astro';
+import { RIESGO_LABEL } from '@data/giros-comun';
+import { girosQueLoNecesitan } from '@lib/giros-relacionados';
+
+export interface Props {
+  path?: string;
+  nombre?: string;
+}
+
+const { path = Astro.url.pathname, nombre } = Astro.props;
+const { fichas } = await girosQueLoNecesitan(path);
+// El nombre llega en forma de título («Extintores de…»); a media frase va en
+// minúscula, salvo siglas («PQS…», «DC-3…»), que se respetan.
+const enFrase = (s: string) => (/^[A-ZÁÉÍÓÚÑ]{2}/.test(s) ? s : s.charAt(0).toLowerCase() + s.slice(1));
+---
+
+{fichas.length > 0 && (
+  <section class="section" id="giros-que-lo-necesitan">
+    <div class="container">
+      <SectionHeading
+        eyebrow="Directorio por giro"
+        title="Giros que lo"
+        titleAccent="necesitan"
+        desc={
+          nombre
+            ? `Negocios cuya ficha de Protección Civil recomienda ${enFrase(nombre)}.`
+            : 'Negocios cuya ficha de Protección Civil recomienda este equipo o servicio.'
+        }
+      />
+      <div class="card-grid">
+        {fichas.map((f, i) => (
+          <CategoryCard
+            label={f.data.nombre}
+            href={`/proteccion-civil/${f.id}/`}
+            image={f.data.image}
+            imageAlt={f.data.imageAlt}
+            badge={RIESGO_LABEL[f.data.riesgoProbable]}
+            blurb={f.data.cardDescription}
+            ctaLabel="Ver requisitos"
+            index={i}
+          />
+        ))}
+        <CategoryCard
+          label="Ver todo el directorio"
+          href="/proteccion-civil/#por-giro"
+          image="/images/servicios/auditoria-seguridad-contra-incendio.avif"
+          imageAlt="Revisión de seguridad contra incendio en un establecimiento"
+          badge="Directorio completo"
+          blurb="Requisitos de Protección Civil por tipo de negocio en CDMX y Edomex."
+          ctaLabel="Ver directorio"
+          index={fichas.length}
+        />
+      </div>
+    </div>
+  </section>
+)}
