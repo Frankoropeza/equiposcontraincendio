@@ -314,7 +314,7 @@ export const homeCategoryFeatures: HomeCategoryFeature[] = [
       { name: "Ames" },
     ],
     ctaLabel: "Mangueras contra incendio",
-    ctaHref: "/productos/#hidrantes-mangueras",
+    ctaHref: "/productos/hidrantes-mangueras/",
     ctaSecondaryMsg: "Hola, quiero cotizar gabinetes, mangueras o una red hidráulica contra incendio conforme a la NFPA 14.",
     imgMain: { src: "/images/showcase/gabinete-manguera-hidrante.avif", alt: "Gabinete rojo con manguera contra incendio e hidrante en muro" },
     imgA: { src: "/images/showcase/gabinetes-estaciones-contra-incendio.avif", alt: "Gabinete de manguera junto a estación manual y extintor de pared" },

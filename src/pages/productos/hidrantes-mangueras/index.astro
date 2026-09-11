@@ -1,0 +1,7 @@
+---
+// Página L3 de hidrantes y mangueras: el patrón compartido vive en ServiceL3.
+import ServiceL3 from '@components/ServiceL3.astro';
+import { hidrantesL3 } from '@data/hidrantes-mangueras';
+---
+
+<ServiceL3 data={hidrantesL3} />

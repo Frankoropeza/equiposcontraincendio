@@ -34,6 +34,7 @@ Idioma: español (es-MX). País: México.
 - [Extintor PQS ABC](https://equiposcontraincendio.com/productos/extintor-pqs/): ficha de producto.
 - [Extintor de CO2](https://equiposcontraincendio.com/productos/extintor-co2/): ficha de producto.
 - [Detección y alarmas](https://equiposcontraincendio.com/productos/deteccion-alarmas/): detectores de humo, temperatura y gas, paneles, estaciones y sirenas.
+- [Hidrantes y mangueras](https://equiposcontraincendio.com/productos/hidrantes-mangueras/): gabinetes con manguera, conexiones de 2½ pulg, tomas siamesas, válvulas y bombeo.
 - [Detector de humo fotoeléctrico](https://equiposcontraincendio.com/productos/detector-humo-fotoelectrico/): ficha de producto.
 - [Servicios](https://equiposcontraincendio.com/servicios/): instalación, mantenimiento, inspección, prueba hidrostática, diagnóstico de riesgo, capacitación DC-3 y gestión documental.
 - [Mantenimiento y recarga](https://equiposcontraincendio.com/servicios/mantenimiento/): recarga de extintores conforme a la NOM-154-SCFI-2005.
