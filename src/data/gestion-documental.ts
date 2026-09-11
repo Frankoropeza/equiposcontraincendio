@@ -383,8 +383,11 @@ export const gestionDocumentalL3: ServiceL3Data = {
       { num: '01', title: 'Inventario documental', desc: 'Qué documentos existen, de qué equipo y de qué proveedor, y cuáles vencieron.' },
       { num: '02', title: 'Recopilación', desc: 'Fichas técnicas, constancias de servicio y de capacitación, actas de simulacro.' },
       { num: '03', title: 'Orden por equipo', desc: 'Cada documento ligado a su equipo, en un índice con su fundamento.' },
-      { num: '04', title: 'Reposición', desc: 'Lo que falta se genera desde hoy: servicio, ficha del fabricante o capacitación.' },
-      { num: '05', title: 'Programa y bitácora', desc: 'Calendario anual y bitácora mensual armados para mantenerlo al día.' },
+      { num: '04', title: 'Detección de faltantes', desc: 'Separamos lo que falta, está vencido o no corresponde al equipo.' },
+      { num: '05', title: 'Reposición', desc: 'Lo faltante se genera desde hoy: servicio, ficha o capacitación.' },
+      { num: '06', title: 'Índice del expediente', desc: 'Dejamos un índice que muestra el documento y su fundamento.' },
+      { num: '07', title: 'Programa anual', desc: 'Armamos el calendario de revisión y pruebas del equipo.' },
+      { num: '08', title: 'Bitácora mensual', desc: 'Integramos la bitácora para mantener el expediente actualizado.' },
     ],
   },
   normas: {

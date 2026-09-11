@@ -248,10 +248,13 @@ export const serviciosNormRows: NormRow[] = [
 export type Step = { num: string; title: string; desc: string };
 export const serviciosSteps: Step[] = [
   { num: '01', title: 'Levantamiento', desc: 'Recorremos el inmueble o revisamos tu inventario: qué equipo hay, dónde está y cuándo vence cada pieza.' },
-  { num: '02', title: 'Programa y cotización', desc: 'Propuesta con el servicio que toca, cuándo toca y qué cuesta. Si son muchos equipos, se programa por etapas.' },
-  { num: '03', title: 'Servicio en sitio', desc: 'Se atiende sin parar tu operación y, cuando el equipo sale a taller, se coordina para no dejar el inmueble sin protección.' },
-  { num: '04', title: 'Evidencia y constancias', desc: 'Etiqueta y collarín sobre el equipo, reporte del servicio y las constancias que correspondan.' },
-  { num: '05', title: 'Aviso antes del vencimiento', desc: 'Te avisamos cuándo toca la siguiente recarga, la prueba hidrostática o la capacitación.' },
+  { num: '02', title: 'Revisión del alcance', desc: 'Definimos si corresponde instalación, mantenimiento, prueba, inspección o capacitación.' },
+  { num: '03', title: 'Programa y cotización', desc: 'Propuesta con el servicio que toca, cuándo toca y qué cuesta; puede organizarse por etapas.' },
+  { num: '04', title: 'Agenda del servicio', desc: 'Coordinamos la atención en sitio y la salida a taller cuando el equipo lo requiere.' },
+  { num: '05', title: 'Servicio en sitio', desc: 'Atendemos el equipo y procuramos no dejar áreas sin protección durante el trabajo.' },
+  { num: '06', title: 'Revisión en taller', desc: 'Cuando aplica, abrimos, probamos, reparamos o recargamos el equipo según el servicio.' },
+  { num: '07', title: 'Evidencia y constancias', desc: 'Dejamos etiqueta, collarín, reporte y las constancias que correspondan.' },
+  { num: '08', title: 'Aviso de vigencia', desc: 'Te avisamos cuándo toca la siguiente recarga, prueba hidrostática o capacitación.' },
 ];
 
 // ── Sobre el servicio ────────────────────────────────────────────────────────

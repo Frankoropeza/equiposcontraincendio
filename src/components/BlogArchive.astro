@@ -12,7 +12,8 @@ import SectionHeading from '@components/SectionHeading.astro'
 import CategoryCard from '@components/CategoryCard.astro'
 import BlogSidebar from '@components/BlogSidebar.astro'
 import Pagination from '@components/Pagination.astro'
-import { BLOG_CATEGORIES } from '@config/site'
+import { BLOG_CATEGORIES, waUrl } from '@config/site'
+import { cierreGeneral, faltanParaCuatro } from '@data/cierre'
 
 type Post = {
   id: string
@@ -52,6 +53,9 @@ const CAT_LABEL: Record<string, string> = Object.fromEntries(
   BLOG_CATEGORIES.map((c) => [c.slug, c.label]),
 )
 const excludeSlugs = posts.map((p) => p.id)
+const cierreItems = current === total
+  ? cierreGeneral.slice(0, faltanParaCuatro(posts.length))
+  : []
 ---
 
 <section class="section">
@@ -67,7 +71,7 @@ const excludeSlugs = posts.map((p) => p.id)
 
     <div class="archive">
       <div class="archive__main">
-        <div class="grid">
+        <div class="card-grid">
           {posts.map((a, i) => (
             <CategoryCard
               label={a.data.title}
@@ -80,12 +84,25 @@ const excludeSlugs = posts.map((p) => p.id)
               index={i}
             />
           ))}
+          {cierreItems.map((ficha, i) => (
+            <CategoryCard
+              label={ficha.title}
+              href={ficha.whatsapp ? waUrl(ficha.href) : ficha.href}
+              image={ficha.image}
+              imageAlt={ficha.imageAlt}
+              badge={ficha.badge}
+              blurb={ficha.description}
+              ctaLabel={ficha.ctaLabel}
+              index={posts.length + i}
+              external={ficha.whatsapp}
+            />
+          ))}
         </div>
 
         <Pagination current={current} total={total} base={base} />
       </div>
 
-      <BlogSidebar currentCategory={currentCategory} excludeSlugs={excludeSlugs} />
+      <BlogSidebar layout="band" currentCategory={currentCategory} excludeSlugs={excludeSlugs} />
     </div>
   </div>
 </section>
@@ -119,26 +136,7 @@ const excludeSlugs = posts.map((p) => p.id)
     min-width: 0;
   }
 
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--sp-5);
-  }
-
-  @media (min-width: 640px) {
-    .grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
   @media (min-width: 1024px) {
-    .archive {
-      grid-template-columns: minmax(0, 1fr) 20rem;
-      gap: var(--sp-8);
-    }
-
-    .grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    .archive { gap: var(--sp-8); }
   }
 </style>

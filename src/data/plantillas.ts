@@ -136,11 +136,14 @@ export const plantillasNormRows: NormRow[] = [
 // ── Cómo se usan ─────────────────────────────────────────────────────────────
 export type Step = { num: string; title: string; desc: string };
 export const plantillasSteps: Step[] = [
-  { num: '01', title: 'Descarga el que te toca', desc: 'Cada formato tiene su página, con el paso a paso de llenado y la obligación de la que sale.' },
-  { num: '02', title: 'Llénalo con el recorrido real', desc: 'Un formato llenado de memoria el día de la visita se nota: las fechas son idénticas y nadie recuerda qué se observó.' },
-  { num: '03', title: 'Fírmalo quien corresponde', desc: 'La evidencia vale por el nombre que la respalda. Sin firma es una hoja impresa.' },
-  { num: '04', title: 'Archívalo donde se pueda mostrar', desc: 'En el inmueble y en el expediente: en una verificación se piden en sitio, no por correo.' },
-  { num: '05', title: 'Actualízalo cuando cambie algo', desc: 'Extintor nuevo, simulacro hecho o brigadista que se va: el papel se corrige el mismo día.' },
+  { num: '01', title: 'Descarga el formato', desc: 'Elige la bitácora, el acta o el censo según la obligación que vas a registrar.' },
+  { num: '02', title: 'Revisa sus campos', desc: 'Identifica los datos del inmueble, equipos, personas, fechas y firmas que solicita.' },
+  { num: '03', title: 'Llénalo con el hecho', desc: 'Registra el recorrido, simulacro o capacitación mientras ocurre, no de memoria.' },
+  { num: '04', title: 'Anota hallazgos', desc: 'Deja por escrito lo observado y las áreas de oportunidad que requieran seguimiento.' },
+  { num: '05', title: 'Define responsables', desc: 'Asigna responsable y fecha compromiso a cada acción correctiva del registro.' },
+  { num: '06', title: 'Fírmalo quien corresponde', desc: 'Recaba las firmas del responsable, jefe de brigada o testigo que pida el formato.' },
+  { num: '07', title: 'Archívalo con evidencia', desc: 'Guárdalo junto con etiquetas, constancias, actas y comprobantes del expediente.' },
+  { num: '08', title: 'Actualízalo al cambiar', desc: 'Corrige el documento cuando cambie un equipo, una persona o se haga otro ejercicio.' },
 ];
 
 export const plantillasCompany = {

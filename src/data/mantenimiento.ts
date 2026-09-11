@@ -412,8 +412,11 @@ export const mantSteps: Step[] = [
   { num: '01', title: 'Inventario', desc: 'Contamos los equipos con su agente, capacidad, fecha del último servicio y de la prueba hidrostática.' },
   { num: '02', title: 'En sitio o en taller', desc: 'Definimos qué se atiende en tu inmueble y qué sale a taller, sin dejar áreas sin protección.' },
   { num: '03', title: 'Apertura y revisión', desc: 'Se despresuriza, se abre y se revisa el cilindro por dentro y por fuera, con válvula, manómetro y manguera.' },
-  { num: '04', title: 'Refacciones y recarga', desc: 'Piezas desgastadas cambiadas por refacciones certificadas, recarga, presurizado y prueba de fugas.' },
-  { num: '05', title: 'Etiqueta y entrega', desc: 'Etiqueta nueva, collarín cuando aplica, orden de servicio foliada y la fecha del siguiente servicio.' },
+  { num: '04', title: 'Refacciones', desc: 'Cambiamos las piezas desgastadas por refacciones certificadas.' },
+  { num: '05', title: 'Recarga y presurizado', desc: 'Recargamos el agente, presurizamos el equipo y hacemos la prueba de fugas.' },
+  { num: '06', title: 'Etiqueta y collarín', desc: 'Colocamos la etiqueta nueva y el collarín cuando aplica.' },
+  { num: '07', title: 'Orden de servicio', desc: 'Dejamos la orden de servicio foliada como evidencia del trabajo realizado.' },
+  { num: '08', title: 'Entrega y vigencia', desc: 'Entregamos el equipo e indicamos la fecha del siguiente servicio.' },
 ];
 
 // ── Normas: qué le exigen al SERVICIO de mantenimiento ───────────────────────

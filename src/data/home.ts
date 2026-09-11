@@ -128,11 +128,14 @@ export const homeNormRows: HomeNormRow[] = [
 ];
 
 export const homeSteps: HomeStep[] = [
-  { num: "01", title: "Asesoría y diagnóstico", desc: "Nos cuentas tu giro, tamaño y lo que pide la inspección; identificamos el riesgo y lo que necesitas." },
-  { num: "02", title: "Cotización clara", desc: "Propuesta con producto, cantidad y precio. Si el presupuesto es acotado, proponemos por fases." },
-  { num: "03", title: "Suministro e instalación", desc: "Entregamos el equipo y, cuando aplica, lo instalamos: detección, hidrantes, extintores y señalización." },
-  { num: "04", title: "Documentación", desc: "Ficha técnica, constancias de servicio y, si lo necesitas, constancias DC-3 para tu expediente." },
-  { num: "05", title: "Mantenimiento y avisos", desc: "Te recordamos la revisión anual, la recarga y la prueba hidrostática (cada 5 años) para que no caduque tu protección." },
+  { num: "01", title: "Asesoría inicial", desc: "Nos cuentas tu giro, tamaño y lo que pide la inspección; identificamos el riesgo." },
+  { num: "02", title: "Levantamiento", desc: "Revisamos el inmueble, sus áreas, equipos y lo que se guarda en cada zona." },
+  { num: "03", title: "Clasificación del riesgo", desc: "Aplicamos la NOM-002 para definir el grado de riesgo y el equipo que corresponde." },
+  { num: "04", title: "Cotización clara", desc: "Propuesta con producto, cantidad y precio; si aplica, se plantea por fases." },
+  { num: "05", title: "Suministro", desc: "Entregamos extintores, detección, hidrantes, mangueras y señalización según el alcance." },
+  { num: "06", title: "Instalación", desc: "Cuando aplica, montamos el equipo y lo ubicamos conforme a las distancias y alturas." },
+  { num: "07", title: "Documentación", desc: "Entregamos fichas técnicas, reportes y constancias para integrar a tu expediente." },
+  { num: "08", title: "Mantenimiento", desc: "Te recordamos la revisión anual, la recarga y la prueba hidrostática cuando corresponde." },
 ];
 
 export const homeCompany: HomeCompany = {

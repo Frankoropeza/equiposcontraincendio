@@ -2,7 +2,7 @@
 // ============================================================================
 // ProcessSteps.astro — "Cómo trabajamos" en pasos (fondo oscuro).
 // ----------------------------------------------------------------------------
-// Proceso de trabajo en 4–5 pasos numerados sobre fondo tinta. Da claridad y
+// Proceso de trabajo en 8 pasos numerados, en filas de 4 sobre fondo tinta. Da claridad y
 // reduce fricción ("¿qué pasa si te escribo?"). Contenido = proceso real del
 // negocio (sin promesas que no se puedan cumplir, p. ej. tiempos garantizados).
 // Encabezado vía SectionHeading (duo, dark). ORIGEN del patrón: PROYECTORED ProcesoIndex.
@@ -30,6 +30,9 @@ const {
   body = [],
   steps,
 } = Astro.props;
+if (steps.length % 4 !== 0) {
+  throw new Error(`ProcessSteps requiere un múltiplo de 4 pasos; recibió ${steps.length}.`);
+}
 ---
 
 <section class="process">
@@ -124,13 +127,14 @@ const {
 
   @media (min-width: 640px) {
     .process__grid { grid-template-columns: repeat(2, 1fr); }
-    .step { border-top: 1px solid rgba(255,255,255,.10); }
+    .step { border-top: 1px solid rgba(255,255,255,.10); border-right: 1px solid rgba(255,255,255,.10); }
     .step:nth-child(-n+2) { border-top: none; }
-    .step:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.10); }
+    .step:nth-child(2n) { border-right: none; }
   }
   @media (min-width: 1024px) {
-    .process__grid { grid-template-columns: repeat(5, 1fr); }
-    .step { border-top: none; border-right: 1px solid rgba(255,255,255,.10); }
-    .step:last-child { border-right: none; }
+    .process__grid { grid-template-columns: repeat(4, 1fr); }
+    .step { border-top: 1px solid rgba(255,255,255,.10); border-right: 1px solid rgba(255,255,255,.10); }
+    .step:nth-child(-n+4) { border-top: none; }
+    .step:nth-child(4n) { border-right: none; }
   }
 </style>

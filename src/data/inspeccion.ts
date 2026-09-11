@@ -382,8 +382,11 @@ export const inspeccionL3: ServiceL3Data = {
       { num: '01', title: 'Datos del inmueble', desc: 'Giro, superficie, niveles y lo que se almacena; planos si los tienes.' },
       { num: '02', title: 'Recorrido completo', desc: 'Inventario de todo el equipo con ubicación, estado y vencimiento.' },
       { num: '03', title: 'Pruebas', desc: 'Funcionamiento de detección y alarma donde existe, manómetros y vigencias.' },
-      { num: '04', title: 'Reporte priorizado', desc: 'Hallazgos con fundamento, separados en obligatorios y recomendables.' },
-      { num: '05', title: 'Plan por etapas', desc: 'Qué corregir primero, qué puede esperar y cuánto cuesta cada etapa.' },
+      { num: '04', title: 'Clasificación hallazgos', desc: 'Separamos incumplimientos, vencimientos, riesgos y falta de evidencia.' },
+      { num: '05', title: 'Fundamento normativo', desc: 'Relacionamos cada hallazgo con la norma que lo sustenta.' },
+      { num: '06', title: 'Reporte priorizado', desc: 'Ordenamos lo obligatorio y lo recomendable para facilitar la decisión.' },
+      { num: '07', title: 'Plan por etapas', desc: 'Definimos qué corregir primero y qué puede esperar.' },
+      { num: '08', title: 'Entrega del reporte', desc: 'Entregamos el reporte con prioridades y el alcance documentado.' },
     ],
   },
   normas: {

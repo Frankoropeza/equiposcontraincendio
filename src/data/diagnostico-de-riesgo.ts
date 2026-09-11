@@ -385,8 +385,11 @@ export const diagnosticoL3: ServiceL3Data = {
       { num: '01', title: 'Datos y planos', desc: 'Giro, superficie, niveles, procesos y planos del inmueble si los tienes.' },
       { num: '02', title: 'Recorrido e inventario', desc: 'Todas las áreas, con el volumen de gases, líquidos y sólidos que se guardan.' },
       { num: '03', title: 'Clasificación', desc: 'Cada concepto contra su umbral de la Tabla 1 de la NOM-002-STPS-2010.' },
-      { num: '04', title: 'Equipo y distribución', desc: 'Mínimo exigible, agente por área, capacidad y ubicación sobre plano.' },
-      { num: '05', title: 'Documento de respaldo', desc: 'Criterio aplicado, resultado y la norma que sustenta cada decisión.' },
+      { num: '04', title: 'Mínimo exigible', desc: 'Definimos el mínimo de equipo que corresponde al grado de riesgo.' },
+      { num: '05', title: 'Agente por área', desc: 'Elegimos el agente según lo que puede arder en cada zona.' },
+      { num: '06', title: 'Distribución en plano', desc: 'Marcamos capacidad y ubicación del equipo sobre el plano.' },
+      { num: '07', title: 'Criterio aplicado', desc: 'Relacionamos cada decisión con la tabla o norma que la sustenta.' },
+      { num: '08', title: 'Documento de respaldo', desc: 'Entregamos resultado, equipo y distribución recomendados.' },
     ],
   },
   normas: {

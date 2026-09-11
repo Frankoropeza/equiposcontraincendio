@@ -173,10 +173,14 @@ export const herramientasFeatures = [
 
 // ── Cómo funcionan (ProcessSteps, fondo oscuro) ──
 export const herramientasSteps = [
-  { num: '01', title: 'Elige tu pregunta', desc: 'Riesgo de incendio, cuántos extintores necesitas, si tu equipo actual está en regla o qué formato te falta: cada herramienta resuelve una duda concreta.' },
-  { num: '02', title: 'Captura los datos de tu inmueble', desc: 'Superficie, inventario de sustancias o los doce puntos de revisión: información que ya conoces de tu negocio, sin trámites.' },
-  { num: '03', title: 'Obtén tu resultado con su criterio', desc: 'Ves el resultado y la norma exacta de la que sale, para no tener que interpretarla tú mismo.' },
-  { num: '04', title: 'Decide tu siguiente paso', desc: 'Si necesitas equipo, servicio o una segunda opinión, cotiza por WhatsApp con el resultado ya en mano.' },
+  { num: '01', title: 'Elige tu pregunta', desc: 'Cada herramienta resuelve una duda concreta sobre riesgo, equipo o formatos.' },
+  { num: '02', title: 'Abre la herramienta', desc: 'Entra al cálculo de riesgo, cantidad de extintores, verificación o formatos.' },
+  { num: '03', title: 'Captura los datos', desc: 'Ingresa superficie, inventario o los puntos de revisión que ya conoces.' },
+  { num: '04', title: 'Revisa el criterio', desc: 'La herramienta muestra la norma o tabla de la que sale cada resultado.' },
+  { num: '05', title: 'Obtén tu resultado', desc: 'Ves el número, la clasificación o los hallazgos de tu consulta.' },
+  { num: '06', title: 'Contrasta tu caso', desc: 'Compara el resultado con las notas y límites que aparecen en la herramienta.' },
+  { num: '07', title: 'Guarda la referencia', desc: 'Conserva el resultado o formato como punto de partida para tu expediente.' },
+  { num: '08', title: 'Decide tu siguiente paso', desc: 'Si necesitas equipo o servicio, comparte el resultado por WhatsApp.' },
 ]
 
 // ── FAQ propio de herramientas ──

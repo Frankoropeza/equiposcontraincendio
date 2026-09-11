@@ -156,11 +156,14 @@ export const coberturaNormRows: NormRow[] = [
 // ── Cómo se agenda una visita ────────────────────────────────────────────────
 export type Step = { num: string; title: string; desc: string };
 export const coberturaSteps: Step[] = [
-  { num: '01', title: 'Dinos dónde estás', desc: 'Alcaldía o municipio y tipo de inmueble. Con eso sabemos si entra en la ruta y qué equipo lleva el técnico.' },
+  { num: '01', title: 'Dinos dónde estás', desc: 'Alcaldía o municipio y tipo de inmueble; así ubicamos la ruta de atención.' },
   { num: '02', title: 'Confirmamos cobertura', desc: 'Te decimos de frente si hay servicio en sitio en tu ubicación o si conviene resolverlo con envío de equipo.' },
-  { num: '03', title: 'Agendamos día y hora', desc: 'Se coordina por WhatsApp según la disponibilidad real de agenda, no con una promesa que luego no se cumple.' },
-  { num: '04', title: 'Visita y servicio', desc: 'El técnico llega con el equipo y la herramienta; si algo debe salir a taller, se avisa antes de moverlo.' },
-  { num: '05', title: 'Documentación local', desc: 'Se entrega la evidencia con el formato que pide Protección Civil de tu alcaldía o municipio.' },
+  { num: '03', title: 'Definimos el alcance', desc: 'Acordamos si será suministro, instalación, mantenimiento, inspección o capacitación.' },
+  { num: '04', title: 'Agendamos día y hora', desc: 'Coordinamos por WhatsApp según la disponibilidad real de agenda.' },
+  { num: '05', title: 'Visita y servicio', desc: 'El técnico llega con equipo y herramienta; si algo va a taller, se avisa antes.' },
+  { num: '06', title: 'Trabajo en sitio', desc: 'Se realiza el servicio acordado en tu inmueble y se revisan los puntos del alcance.' },
+  { num: '07', title: 'Documentación local', desc: 'Entregamos la evidencia con el formato que pide tu alcaldía o municipio.' },
+  { num: '08', title: 'Seguimiento de vigencia', desc: 'Queda identificado cuándo toca la siguiente revisión o servicio.' },
 ];
 
 // ── Sobre la cobertura ───────────────────────────────────────────────────────

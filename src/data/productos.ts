@@ -91,11 +91,14 @@ export const productosNormRows: NormRow[] = [
 // fin; aquí se describe la COMPRA concreta, que es la fricción de esta página
 // (no hay carrito ni precios públicos, así que hay que explicar el camino).
 export const productosSteps: Step[] = [
-  { num: '01', title: 'Dinos qué inmueble proteges', desc: 'Giro, superficie y número de niveles por WhatsApp. Con eso se dimensiona el equipo; no hace falta que sepas de normas.' },
-  { num: '02', title: 'Te decimos qué y cuánto', desc: 'Lista con el agente, la capacidad y la cantidad mínima que pide la norma para tu caso. Sin renglones de más.' },
-  { num: '03', title: 'Cotización con disponibilidad', desc: 'Precio por pieza y por volumen, con existencia y tiempo de entrega reales. Si el presupuesto es acotado, se propone por fases.' },
-  { num: '04', title: 'Entrega e instalación', desc: 'Se entrega en sitio y, cuando aplica, se instala, se monta a la altura reglamentaria y se señaliza.' },
-  { num: '05', title: 'Papel y vigencia', desc: 'Ficha técnica y constancia de servicio para tu expediente, más el aviso de cuándo toca recarga o prueba hidrostática.' },
+  { num: '01', title: 'Dinos qué inmueble proteges', desc: 'Giro, superficie y niveles por WhatsApp. Con eso se dimensiona el equipo.' },
+  { num: '02', title: 'Revisamos el riesgo', desc: 'Identificamos lo que puede arder y el grado de riesgo que corresponde al inmueble.' },
+  { num: '03', title: 'Te decimos qué y cuánto', desc: 'Lista con agente, capacidad y cantidad mínima que pide la norma para tu caso.' },
+  { num: '04', title: 'Cotización por alcance', desc: 'Precio por pieza y volumen, con existencia real; si aplica, se propone por fases.' },
+  { num: '05', title: 'Confirmas el equipo', desc: 'Aclaramos la propuesta y dejamos definido el producto, la cantidad y el servicio incluido.' },
+  { num: '06', title: 'Entrega en sitio', desc: 'Entregamos el equipo y, cuando aplica, coordinamos su instalación y señalización.' },
+  { num: '07', title: 'Instalación conforme', desc: 'Montamos el equipo a la altura y distancia de recorrido que corresponden.' },
+  { num: '08', title: 'Papel y vigencia', desc: 'Entregamos ficha técnica y constancia, con aviso de recarga o prueba hidrostática.' },
 ];
 
 // ── Sobre el catálogo ────────────────────────────────────────────────────────

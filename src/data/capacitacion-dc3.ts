@@ -381,9 +381,12 @@ export const capacitacionL3: ServiceL3Data = {
     steps: [
       { num: '01', title: 'Personas y turnos', desc: 'Cuántos participan, en qué turnos y qué brigadas hay que cubrir.' },
       { num: '02', title: 'Temario a la medida', desc: 'Ajustado al giro, al grado de riesgo y al equipo que hay en el inmueble.' },
-      { num: '03', title: 'Teoría', desc: 'Clases de fuego, uso del equipo, roles de brigada y rutas del inmueble.' },
-      { num: '04', title: 'Práctica con fuego', desc: 'Fuego controlado en exterior, con el agente y el equipo reales.' },
-      { num: '05', title: 'Constancias y evidencia', desc: 'DC-3 por participante, listas de asistencia y fotos de la sesión.' },
+      { num: '03', title: 'Clases de fuego', desc: 'Repasamos las clases de fuego y el agente que corresponde a cada una.' },
+      { num: '04', title: 'Roles y rutas', desc: 'Revisamos roles de brigada, rutas y el equipo del inmueble.' },
+      { num: '05', title: 'Práctica con fuego', desc: 'Fuego controlado en exterior, con el agente y equipo reales.' },
+      { num: '06', title: 'Participación', desc: 'Cada participante acciona un extintor durante la práctica.' },
+      { num: '07', title: 'Listas y fotos', desc: 'Integramos listas de asistencia y fotos de la sesión.' },
+      { num: '08', title: 'Constancias DC-3', desc: 'Entregamos la DC-3 correspondiente a cada participante.' },
     ],
   },
   normas: {

@@ -246,11 +246,14 @@ export const extintoresNormRows: NormRow[] = [
 // En /productos/ el proceso es la COMPRA; aquí es lo que le toca al extintor
 // desde que se elige hasta que se retimbra o se da de baja.
 export const extintoresSteps: Step[] = [
-  { num: '01', title: 'Se elige por clase de fuego', desc: 'El agente sale de lo que puede arder en cada zona; la capacidad, de la superficie y del nivel de riesgo.' },
-  { num: '02', title: 'Se coloca donde se alcanza', desc: 'A no más de 1.50 m del piso, señalizado, sin obstáculos y dentro de la distancia de recorrido de su clase.' },
-  { num: '03', title: 'Se revisa cada mes', desc: 'Lo hace tu propio personal: presión, seguro, manguera y acceso libre, con registro en la bitácora.' },
-  { num: '04', title: 'Se mantiene cada año', desc: 'Un proveedor lo revisa y recarga conforme a la NOM-154, y deja etiqueta y collarín. También tras cualquier descarga.' },
-  { num: '05', title: 'Prueba hidrostática a 5 años', desc: 'Si el cilindro pasa la prueba, se retimbra y sigue en servicio; si no la pasa, se da de baja.' },
+  { num: '01', title: 'Se elige por clase de fuego', desc: 'El agente sale de lo que puede arder; la capacidad, de la superficie y el riesgo.' },
+  { num: '02', title: 'Se define la capacidad', desc: 'La superficie, el nivel de riesgo y el área determinan el tamaño del equipo.' },
+  { num: '03', title: 'Se ubica en el área', desc: 'Se distribuye por clase de fuego y distancia de recorrido de cada zona.' },
+  { num: '04', title: 'Se coloca accesible', desc: 'A no más de 1.50 m del piso, señalizado y sin obstáculos para alcanzarlo.' },
+  { num: '05', title: 'Se revisa cada mes', desc: 'Tu personal verifica presión, seguro, manguera y acceso, y lo registra en la bitácora.' },
+  { num: '06', title: 'Se mantiene cada año', desc: 'Un proveedor lo revisa y recarga conforme a la NOM-154, con etiqueta y collarín.' },
+  { num: '07', title: 'Se prueba el cilindro', desc: 'La prueba hidrostática corresponde cuando llega su fecha o antes si hubo daño.' },
+  { num: '08', title: 'Se retimbra o se da de baja', desc: 'Si pasa la prueba sigue en servicio; si no, se retira documentando el resultado.' },
 ];
 
 export const extintoresCompany = {

@@ -1,6 +1,6 @@
 ---
 // ============================================================================
-// BlogSidebar.astro — columna lateral del blog (índice y archivos de categoría).
+// BlogSidebar.astro — columna lateral o franja de enlaces del blog.
 // ----------------------------------------------------------------------------
 // POR QUÉ (estrategia editorial 2026-09-09 · §6 Enlazado interno): el blog no es
 // un archivo, es la red que reparte autoridad hacia las páginas que venden. El
@@ -26,8 +26,9 @@ interface Props {
   currentCategory?: string
   /** Slugs de artículos ya visibles en la página (no se repiten en «destacadas»). */
   excludeSlugs?: string[]
+  layout?: 'aside' | 'band'
 }
-const { currentCategory = '', excludeSlugs = [] } = Astro.props
+const { currentCategory = '', excludeSlugs = [], layout = 'aside' } = Astro.props
 
 const articulos = await getCollection('articulos', ({ data }) => !data.draft)
 const productos = await getCollection('productos', ({ data }) => !data.draft)
@@ -60,7 +61,7 @@ const catalogo = productos
 const waHref = waUrl(WA_MESSAGES.blog)
 ---
 
-<aside class="bsb" aria-label="Explora el blog y el catálogo">
+<aside class:list={['bsb', layout === 'band' && 'bsb--band']} aria-label="Explora el blog y el catálogo">
   {categorias.length > 0 && (
     <section class="bsb__w">
       <h2 class="bsb__t">Categorías</h2>
@@ -91,7 +92,7 @@ const waHref = waUrl(WA_MESSAGES.blog)
     <a class="bsb__all" href="/servicios/">Todos los servicios →</a>
   </section>
 
-  {destacadas.length > 0 && (
+  {layout === 'aside' && destacadas.length > 0 && (
     <section class="bsb__w">
       <h2 class="bsb__t">Guías destacadas</h2>
       <ul class="bsb__posts" role="list">
@@ -142,6 +143,26 @@ const waHref = waUrl(WA_MESSAGES.blog)
     display: grid;
     gap: var(--sp-5);
     align-content: start;
+  }
+
+  .bsb--band {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .bsb--band .bsb__w--cta {
+    grid-column: 1 / -1;
+  }
+
+  @media (min-width: 640px) {
+    .bsb--band {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .bsb--band {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
   }
 
   .bsb__w {

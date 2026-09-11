@@ -123,11 +123,14 @@ export const pcNormRows: NormRow[] = [
 // ── Qué hacer cuando llega el requerimiento ─────────────────────────────────
 export type Step = { num: string; title: string; desc: string };
 export const pcSteps: Step[] = [
-  { num: '01', title: 'Confirma si estás obligado', desc: 'En CDMX se valida en la plataforma con Llave CDMX; en Edomex depende de que tu giro se clasifique como de mediano o alto riesgo.' },
-  { num: '02', title: 'Clasifica el riesgo del inmueble', desc: 'De ahí sale casi todo lo demás: cuánto equipo te pide la norma y si necesitas brigada.' },
-  { num: '03', title: 'Pon el inmueble en condiciones', desc: 'Equipo vigente, señalización, rutas y brigada capacitada. El papel describe el inmueble; si el inmueble no cumple, el papel no lo salva.' },
-  { num: '04', title: 'Reúne la evidencia', desc: 'Bitácoras, etiquetas de servicio, actas de simulacro y constancias DC-3 del personal.' },
-  { num: '05', title: 'El programa lo firma quien puede', desc: 'En CDMX, un ROPC o ROPCI registrado; en Edomex, con carta de corresponsabilidad de quien lo elaboró.' },
+  { num: '01', title: 'Confirma si estás obligado', desc: 'En CDMX se valida en la plataforma con Llave CDMX; en Edomex depende del giro y su riesgo.' },
+  { num: '02', title: 'Clasifica el riesgo', desc: 'De ahí sale cuánto equipo pide la norma y si necesitas brigada.' },
+  { num: '03', title: 'Pon el equipo al día', desc: 'Verifica equipo vigente, señalización, rutas y brigada capacitada antes del trámite.' },
+  { num: '04', title: 'Corrige las condiciones', desc: 'Resuelve faltantes del inmueble; el programa describe la realidad, no la reemplaza.' },
+  { num: '05', title: 'Reúne la evidencia', desc: 'Junta bitácoras, etiquetas, actas de simulacro y constancias DC-3 del personal.' },
+  { num: '06', title: 'Separa lo local', desc: 'Identifica los requisitos propios de CDMX o Estado de México para tu inmueble.' },
+  { num: '07', title: 'El programa lo firma', desc: 'En CDMX, un ROPC o ROPCI registrado; en Edomex, con carta de corresponsabilidad.' },
+  { num: '08', title: 'Integra el expediente', desc: 'Ordena el programa y la evidencia para presentar el trámite ante la autoridad.' },
 ];
 
 export const pcCompany = {

@@ -379,7 +379,10 @@ export const instalacionL3: ServiceL3Data = {
       { num: '02', title: 'Propuesta técnica', desc: 'Alcance por sistema, con la norma que cubre cada partida y el calendario por etapas.' },
       { num: '03', title: 'Suministro', desc: 'Extintores, detección y alarma, red hidráulica y señalización.' },
       { num: '04', title: 'Instalación', desc: 'Montaje y ubicación conforme a las distancias de recorrido y alturas aplicables.' },
-      { num: '05', title: 'Pruebas y entrega', desc: 'Puesta en marcha, reporte de pruebas, planos, memoria y fichas técnicas.' },
+      { num: '05', title: 'Montaje por sistema', desc: 'Instalamos extintores, detección, alarma, red hidráulica y señalización.' },
+      { num: '06', title: 'Puesta en marcha', desc: 'Probamos el funcionamiento del sistema instalado.' },
+      { num: '07', title: 'Planos y memoria', desc: 'Integramos planos, memoria y fichas técnicas del alcance.' },
+      { num: '08', title: 'Reporte y entrega', desc: 'Entregamos el reporte de pruebas y la documentación correspondiente.' },
     ],
   },
   normas: {

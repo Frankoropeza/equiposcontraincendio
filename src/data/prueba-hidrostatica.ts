@@ -364,10 +364,13 @@ export const pruebaHidrostaticaL3: ServiceL3Data = {
     ],
     steps: [
       { num: '01', title: 'Inspección previa', desc: 'Corrosión, abolladuras, roscas y contraseña. Si el equipo es obsoleto o tiene daño evidente, se detiene aquí.' },
-      { num: '02', title: 'Descarga y desmontaje', desc: 'Se despresuriza, se recupera el agente cuando procede y se retiran válvula, manguera y accesorios.' },
-      { num: '03', title: 'Prueba con agua', desc: 'El cilindro se presuriza por encima de su presión de trabajo y se observa: deformación permanente y fugas.' },
-      { num: '04', title: 'Secado y rearmado', desc: 'Secado interior completo, rearmado, recarga del agente, presurizado y prueba de fugas.' },
-      { num: '05', title: 'Marca y constancia', desc: 'Marca permanente con la fecha y constancia del resultado. El que no aprueba se retira, documentado.' },
+      { num: '02', title: 'Descarga y desmontaje', desc: 'Se despresuriza, se recupera el agente cuando procede y se retiran sus accesorios.' },
+      { num: '03', title: 'Prueba con agua', desc: 'El cilindro se presuriza y se observa si presenta deformación permanente o fugas.' },
+      { num: '04', title: 'Secado interior', desc: 'Se seca por completo el interior para evitar corrosión y daño al agente.' },
+      { num: '05', title: 'Rearmado y recarga', desc: 'Se rearma, se recarga el agente, se presuriza y se prueba que no haya fugas.' },
+      { num: '06', title: 'Marca permanente', desc: 'Se coloca en el cilindro la marca permanente con la fecha de la prueba.' },
+      { num: '07', title: 'Constancia', desc: 'Se entrega la constancia del resultado junto con el equipo.' },
+      { num: '08', title: 'Retiro si no aprueba', desc: 'El cilindro que no aprueba se retira de servicio y se documenta el motivo.' },
     ],
   },
   normas: {

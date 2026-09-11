@@ -126,3 +126,81 @@ test('las transiciones quedan limitadas a controles y enlaces accionables', () =
     }
   }
 });
+
+test('ProcessSteps y todos sus datos usan ocho pasos con textos acotados', () => {
+  const component = fs.readFileSync(path.join(ROOT, 'src/components/ProcessSteps.astro'), 'utf8');
+  assert.match(component, /steps\.length\s*%\s*4/);
+  assert.match(component, /repeat\(4/);
+
+  const dataFiles = [
+    ['src/data/home.ts', 'homeSteps'],
+    ['src/data/servicios.ts', 'serviciosSteps'],
+    ['src/data/productos.ts', 'productosSteps'],
+    ['src/data/cobertura.ts', 'coberturaSteps'],
+    ['src/data/herramientas.ts', 'herramientasSteps'],
+    ['src/data/plantillas.ts', 'plantillasSteps'],
+    ['src/data/proteccion-civil.ts', 'pcSteps'],
+    ['src/data/extintores.ts', 'extintoresSteps'],
+    ['src/data/mantenimiento.ts', 'mantSteps'],
+  ];
+  for (const [file, name] of dataFiles) {
+    const source = fs.readFileSync(path.join(ROOT, file), 'utf8');
+    const start = source.indexOf(`export const ${name}`);
+    assert.ok(start !== -1, `${file} no exporta ${name}`);
+    const end = source.indexOf('\n];', start);
+    const block = source.slice(start, end === -1 ? source.length : end);
+    const steps = [...block.matchAll(/num:\s*['"]\d+['"],\s*title:\s*['"]([^'"]+)['"],\s*desc:\s*['"]([^'"]+)['"]/g)];
+    assert.equal(steps.length, 8, `${name}: debe tener 8 pasos`);
+    for (const [, title, desc] of steps) {
+      assert.ok(title.length <= 30, `${name}: título demasiado largo: ${title}`);
+      assert.ok(desc.length <= 110, `${name}: descripción demasiado larga: ${desc}`);
+    }
+  }
+
+  for (const file of [
+    'prueba-hidrostatica.ts',
+    'inspeccion.ts',
+    'diagnostico-de-riesgo.ts',
+    'capacitacion-dc3.ts',
+    'gestion-documental.ts',
+    'instalacion.ts',
+  ]) {
+    const source = fs.readFileSync(path.join(ROOT, 'src/data', file), 'utf8');
+    const processStart = source.indexOf('proceso:');
+    const start = source.indexOf('steps: [', processStart);
+    const end = source.indexOf('\n    ],', start);
+    const block = source.slice(start, end === -1 ? source.length : end);
+    const steps = [...block.matchAll(/num:\s*['"]\d+['"],\s*title:\s*['"]([^'"]+)['"],\s*desc:\s*['"]([^'"]+)['"]/g)];
+    assert.equal(steps.length, 8, `${file}: proceso debe tener 8 pasos`);
+    for (const [, title, desc] of steps) {
+      assert.ok(title.length <= 30, `${file}: título demasiado largo: ${title}`);
+      assert.ok(desc.length <= 110, `${file}: descripción demasiado larga: ${desc}`);
+    }
+  }
+
+  for (const file of [
+    'acta-simulacro-evacuacion.md',
+    'bitacora-revision-extintores.md',
+    'censo-brigada-emergencia.md',
+  ]) {
+    const source = fs.readFileSync(path.join(ROOT, 'src/content/plantillas', file), 'utf8');
+    const block = source.slice(source.indexOf('steps:'), source.indexOf('seoTitle:'));
+    const steps = [...block.matchAll(/^\s*-\s*"([^"]+)"/gm)];
+    assert.equal(steps.length, 8, `${file}: debe tener 8 pasos`);
+    for (const [, step] of steps) {
+      const [title] = step.split(':', 1);
+      assert.ok(title.length <= 30, `${file}: título demasiado largo: ${title}`);
+      assert.ok(step.length <= 110, `${file}: descripción demasiado larga: ${step}`);
+    }
+  }
+});
+
+test('el archivo del blog usa la retícula global y completa filas de cuatro', () => {
+  const archive = fs.readFileSync(path.join(ROOT, 'src/components/BlogArchive.astro'), 'utf8');
+  assert.match(archive, /card-grid/);
+  assert.match(archive, /cierreGeneral/);
+  assert.match(archive, /faltanParaCuatro/);
+  const site = fs.readFileSync(path.join(ROOT, 'src/config/site.ts'), 'utf8');
+  const pageSize = Number(site.match(/BLOG_PAGE_SIZE\s*=\s*(\d+)/)?.[1]);
+  assert.ok(pageSize > 0 && pageSize % 4 === 0, 'BLOG_PAGE_SIZE debe ser múltiplo de 4');
+});
