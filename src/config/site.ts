@@ -199,7 +199,7 @@ export const TAXONOMY = {
     { slug: 'extintores',          label: 'Extintores',                badge: undefined, href: '/productos/extintores/' },
     { slug: 'deteccion-alarmas',   label: 'Detección y alarmas',       badge: undefined, href: '/productos/deteccion-alarmas/' },
     { slug: 'hidrantes-mangueras', label: 'Hidrantes y mangueras',     badge: undefined, href: '/productos/hidrantes-mangueras/' },
-    { slug: 'senalizacion',        label: 'Señalización y emergencia', badge: undefined, href: '/productos/' },
+    { slug: 'senalizacion',        label: 'Señalización y emergencia', badge: undefined, href: '/productos/senalizacion/' },
     { slug: 'accesorios',          label: 'Accesorios y refacciones',  badge: undefined, href: '/productos/' },
   ],
   // Los `id` DEBEN coincidir con los nombres de archivo de src/content/servicios/
@@ -345,7 +345,7 @@ export const NAV: readonly NavItem[] = [
           { label: 'Extintores portátiles',     href: '/productos/extintores/',                         desc: 'PQS, CO₂, agua, clase K y agente limpio' },
           { label: 'Detección y alarmas',       href: '/productos/deteccion-alarmas/',                  desc: 'Detectores de humo y alarma contra incendio' },
           { label: 'Hidrantes y mangueras',     href: '/productos/hidrantes-mangueras/',               desc: 'Gabinetes con manguera contra incendio' },
-          { label: 'Señalización y emergencia', href: '/productos/senalizacion-fotoluminiscente/',      desc: 'Señalización fotoluminiscente de evacuación' },
+          { label: 'Señalización y emergencia', href: '/productos/senalizacion/',                       desc: 'Señalización fotoluminiscente de evacuación' },
           { label: 'Accesorios y refacciones',  href: '/productos/soportes-accesorios-extintor/',       desc: 'Soportes, gabinetes y accesorios para extintor' },
         ],
       },
@@ -526,7 +526,7 @@ export const FOOTER_NAV: readonly NavGroup[] = [
       { label: 'Extintor clase K',          href: '/productos/extintor-clase-k/' },
       { label: 'Detección y alarmas',       href: '/productos/deteccion-alarmas/' },
       { label: 'Hidrantes y mangueras',     href: '/productos/hidrantes-mangueras/' },
-      { label: 'Señalización y emergencia', href: '/productos/senalizacion-fotoluminiscente/' },
+      { label: 'Señalización y emergencia', href: '/productos/senalizacion/' },
     ],
   },
   {
@@ -651,7 +651,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
   {
     slug: 'senalizacion',
     label: 'Señalización y emergencia',
-    href: '/productos/#senalizacion',
+    href: '/productos/senalizacion/',
     image: '/images/productos/senalizacion-luces-emergencia.avif',
     imageAlt: 'Señal de salida de emergencia, lámpara autónoma y plano de evacuación',
     badge: 'NOM-003 · Fotoluminiscente',
@@ -659,8 +659,8 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
       'Señalización fotoluminiscente, lámparas de emergencia y rutas de evacuación NOM-003.',
     subcategories: [
       { label: 'Señales de evacuación', href: '/productos/senalizacion-fotoluminiscente/' },
-      { label: 'Lámparas de emergencia', href: '/productos/#senalizacion' },
-      { label: 'Puntos de reunión', href: '/productos/#senalizacion' },
+      { label: 'Lámparas de emergencia', href: '/productos/senalizacion/#luces-emergencia' },
+      { label: 'Puntos de reunión', href: '/productos/senalizacion/#punto-de-reunion' },
     ],
     ctaLabel: 'Señales de emergencia',
   },

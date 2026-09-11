@@ -339,7 +339,7 @@ export const homeCategoryFeatures: HomeCategoryFeature[] = [
       { name: "Indexx" },
     ],
     ctaLabel: "Señales de emergencia",
-    ctaHref: "/productos/#senalizacion",
+    ctaHref: "/productos/senalizacion/",
     ctaSecondaryMsg: "Hola, quiero cotizar señalización fotoluminiscente y lámparas de emergencia para mi inmueble.",
     imgMain: { src: "/images/servicios/prueba-electrica-panel-alarma-incendio.avif", alt: "Muro con señalética de emergencia, extintor y estación manual" },
     imgA: { src: "/images/servicios/inspeccion-sistema-alarma-extintor.avif", alt: "Señalización de ruta de evacuación y extintor señalizado en nave industrial" },
