@@ -326,10 +326,6 @@ export const extintoresFaqs = [
     answer: 'Es un extintor cuyo agente se evapora al descargarse: no conduce la electricidad y no deja residuo. Se usa en sites, telecomunicaciones y equipo delicado. Las presentaciones chicas cubren las clases B y C; desde 4.3 kg (FE-36) o 5 kg (Halotron I) el fabricante también las clasifica para clase A.',
   },
   {
-    question: '¿Tengo que recargar un extintor que usé solo un poco?',
-    answer: 'Sí. La NOM-002-STPS-2010 pide recargarlo después de su uso, aunque haya sido un disparo corto. Con menos agente y menos presión, el extintor ya no garantiza su descarga completa la próxima vez.',
-  },
-  {
     question: '¿Cuánto dura un extintor?',
     answer: 'En México el cilindro no tiene una fecha de caducidad fija. Sigue en servicio mientras pase la prueba hidrostática, que se hace al menos cada 5 años (NOM-154-SCFI-2005, 5.6), y no tenga corrosión, golpes ni deformaciones. Los 12 años que a veces se mencionan vienen de la NFPA 10 y no aplican aquí.',
   },

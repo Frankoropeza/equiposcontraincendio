@@ -42,6 +42,9 @@ export const extSeo = {
     'Venta de extintores contra incendio para empresas y negocios: PQS, CO₂, clase K, agua y agente limpio. Recarga y mantenimiento en CDMX y Edomex.',
   heroTitle: 'Venta de extintores contra incendio',
   heroAccent: 'para empresas y negocios',
+  // og:image propia (antes caía en /images/og/default.png). ogShareImage()
+  // la resuelve a /images/og/showcase-extintores-catalogo-profesional.jpg.
+  image: '/images/showcase/extintores-catalogo-profesional.avif',
 };
 // ── Etiquetas de los ejes de filtro ─────────────────────────────────────────
 export const EXT_AGENTE_LABEL: Record<ExtAgente, string> = {

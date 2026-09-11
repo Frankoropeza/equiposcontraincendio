@@ -127,8 +127,13 @@ const {
 
   /* Botón: llena su celda, contenido centrado. Sin borde ni redondeo propios
   (la barra es continua); los divisores los ponen las celdas. */
+  /* min-width: 0 → el botón puede encogerse por debajo de su palabra más larga.
+  Sin esto, entre 800 y ~950 px «Herramientas» y el CTA «Cotizar por WhatsApp»
+  empujaban la barra 9–24 px fuera del viewport (scroll horizontal en todo el
+  sitio, medido 2026-09-11). */
   .secbtn {
     flex: 1;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -150,10 +155,15 @@ const {
     outline-offset: -2px;
   }
 
+  /* flex-wrap: si la celda no alcanza, el icono sube sobre la etiqueta en vez
+  de desbordar la celda. */
   .secbtn__top {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     gap: var(--sp-2);
+    row-gap: 2px;
   }
 
   .secbtn__icon {
@@ -163,6 +173,7 @@ const {
   }
 
   .secbtn__label {
+    min-width: 0;
     font-family: var(--font-heading);
     font-weight: var(--weight-semibold);
     font-size: var(--text-base);

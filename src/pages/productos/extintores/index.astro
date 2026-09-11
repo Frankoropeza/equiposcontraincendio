@@ -81,7 +81,9 @@ const schemaData = {
     items: fichas.map((p) => ({
       name: p.data.title,
       path: `/productos/${p.id}/`,
-      image: p.data.image,
+      // Los SVG son carteles «Imagen próximamente»: no se publican como imagen
+      // de producto en el ItemList. Al llegar la foto real, entra sola.
+      image: p.data.image?.endsWith('.svg') ? undefined : p.data.image,
       description: p.data.description,
     })),
   },
@@ -92,6 +94,7 @@ const schemaData = {
 <PageLayout
   title={extSeo.title}
   description={extSeo.description}
+  image={extSeo.image}
   pageType="category"
   schemaData={schemaData}
   breadcrumbs={[{ label: 'Productos', href: '/productos/' }, { label: 'Extintores' }]}
