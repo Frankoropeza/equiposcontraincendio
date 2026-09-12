@@ -151,11 +151,16 @@ export const FICHAS: Record<string, FichaData> = {
     guia: { title: 'Cómo elegir tu', titleAccent: 'extintor PQS', desc: 'Dónde conviene, qué capacidad elegir, dónde colocarlo y qué mantenimiento pide.' },
   },
   'extintor-co2': {
-    heroBadge: 'CO₂ · Clases B y C · NOM-102-STPS',
-    heroTitle: 'Extintores de CO₂,',
-    heroAccent: 'sin residuo',
+    heroBadge: 'CO2 · Clases B y C · NOM-102-STPS',
+    // H1 2026-09-12: NeuronWriter (query 43219af2ddd69e38, keyword «extintor co2»,
+    // 1,400/mo en Ahrefs MX vs 500/mo de «extintor de co2») pide `carbono`/
+    // `dioxido de carbono` en el 80-100% de los H1 que rankean y `kilogramo` en el 10%;
+    // el mejor competidor real (Carlisa, content_score 74) también combina «CO2» +
+    // «dióxido de carbono» en su H1.
+    heroTitle: 'Extintores de CO2 o dióxido de carbono,',
+    heroAccent: 'de 2 a 45 kilogramos',
     descRight: [
-      'El CO₂ le quita el oxígeno a la flama, no conduce la electricidad y se disipa sin dejar rastro. Es el extintor que va junto a tableros, sites y equipo electrónico.',
+      'El CO2 le quita el oxígeno a la flama, no conduce la electricidad y se disipa sin dejar rastro. Es el extintor que va junto a tableros, sites y equipo electrónico.',
       'Abajo comparas sus presentaciones y encuentras sus límites: no está clasificado para papel, madera ni cartón.',
     ],
     pillars: [
@@ -166,16 +171,16 @@ export const FICHAS: Record<string, FichaData> = {
     ],
     norma: 'NOM-102-STPS-1994',
     claves: [
-      { label: 'Agente', value: 'Dióxido de carbono (CO₂)' },
+      { label: 'Agente', value: 'Dióxido de carbono (CO2)' },
       { label: 'Clases de fuego', value: 'B y C' },
       { label: 'Norma de producto', value: 'NOM-102-STPS-1994' },
       { label: 'Servicio', value: 'NOM-154-SCFI-2005' },
     ],
     showcaseTitle: 'Datos clave',
-    showcaseAccent: 'del extintor de CO₂',
+    showcaseAccent: 'del extintor de CO2',
     showcaseDesc: 'Agente, clases cubiertas, norma de producto y servicio del cilindro.',
-    faqAccent: 'sobre extintores de CO₂',
-    guia: { title: 'Cómo elegir tu', titleAccent: 'extintor de CO₂', desc: 'Dónde conviene, qué capacidad elegir, dónde colocarlo y qué mantenimiento pide.' },
+    faqAccent: 'sobre extintores de CO2',
+    guia: { title: 'Cómo elegir tu', titleAccent: 'extintor de CO2', desc: 'Dónde conviene, qué capacidad elegir, dónde colocarlo y qué mantenimiento pide.' },
   },
   'extintor-clase-k': {
     heroBadge: 'Agente K · Clase K · Cocinas comerciales',
