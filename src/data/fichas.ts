@@ -122,8 +122,11 @@ export const FICHA_DEFAULT: Omit<FichaData, 'heroBadge' | 'heroTitle' | 'descRig
 export const FICHAS: Record<string, FichaData> = {
   'extintor-pqs': {
     heroBadge: 'PQS ABC · Clases A, B y C · NOM-100-STPS',
-    heroTitle: 'Extintores PQS ABC,',
-    heroAccent: 'el más versátil',
+    // H1 2026-09-11: NeuronWriter (query 4d6983f9fede769f) pide `kilogramo` en el
+    // 44% de los H1 que rankean y `tipo abc` en el 11%; Ahrefs da 450/mes a
+    // «extintor pqs» y 250 a «extintor abc» en MX.
+    heroTitle: 'Extintores PQS tipo ABC,',
+    heroAccent: 'de 1 a 70 kilogramos',
     descRight: [
       'Con un solo equipo cubres papel y cartón, gasolina o solventes, y equipo eléctrico con corriente. Por eso es el extintor que más se instala en oficinas, comercios, bodegas y vehículos.',
       'Abajo comparas sus ocho presentaciones y encuentras cómo elegir la capacidad, dónde colocarlo y qué mantenimiento pide.',

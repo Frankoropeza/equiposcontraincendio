@@ -6,8 +6,8 @@ image: /images/showcase/extintores-catalogo-profesional.avif
 price: "Cotizar"
 featured: true
 order: 1
-seoTitle: "Extintor PQS ABC: para qué sirve y venta en CDMX"
-seoDescription: "Venta de extintores PQS ABC en capacidades portátiles y sobre ruedas. Cotiza recarga y mantenimiento para empresas en CDMX y Edomex según tu riesgo."
+seoTitle: "Extintor PQS ABC de polvo químico seco: venta en CDMX"
+seoDescription: "Extintor de PQS tipo ABC de fosfato monoamónico, de 1 a 70 kilogramos. Venta, instalación y recarga certificada NOM-154 para empresas en CDMX y Edomex."
 variantes:
   - nombre: "Extintor PQS ABC de 1 kg"
     badge: "Compacto"
@@ -94,6 +94,10 @@ variantes:
     clases: [A, B, C]
     usos: [industria]
 faqs:
+  - question: "¿Qué es un extintor de PQS y de qué está hecho?"
+    answer: "Es un extintor cuyo agente extintor es polvo químico seco. El tipo ABC usa fosfato monoamónico, que funde sobre el material y corta la reacción en cadena del fuego; el polvo BC, de bicarbonato de sodio, no cubre sólidos. El cilindro es de acero, con válvula, manómetro y manguera de descarga."
+  - question: "¿Cuál es la diferencia entre un extintor PQS y uno de CO₂?"
+    answer: "El PQS cubre las clases A, B y C y deja un polvo fino que hay que limpiar. El CO₂ solo cubre B y C, no deja residuo y por eso se instala junto a equipos eléctricos energizados y electrónica. En un mismo inmueble suelen convivir: PQS en las áreas generales y CO₂ en el site o el tablero."
   - question: "¿Para qué sirve un extintor PQS ABC?"
     answer: "Para apagar fuegos de sólidos como papel o madera (clase A), de líquidos inflamables como gasolina o solventes (clase B) y de equipo eléctrico con corriente (clase C). Es el más versátil, aunque deja un polvo fino que hay que limpiar después."
   - question: "¿Qué capacidad de extintor PQS necesito?"
@@ -153,4 +157,24 @@ El mantenimiento y la [recarga de extintores](/servicios/mantenimiento/) los hac
 
 La norma de producto del polvo químico seco es la **NOM-100-STPS-1994**. La contraseña oficial que identifica al producto certificado se rige por la **NOM-106-SCFI-2017**, y el servicio, por la **NOM-154-SCFI-2005**.
 
-Para cotizar, mándanos por WhatsApp el giro, la superficie aproximada y cuántos equipos crees necesitar. Te respondemos con la presentación que conviene, el precio y la disponibilidad; la marca y el modelo se confirman en ese momento.
+### Qué es y cómo funciona un extintor de PQS
+
+El agente extintor es polvo químico seco. En el **tipo ABC** es fosfato monoamónico, que a la temperatura del fuego se funde sobre el material y forma una costra que lo aísla del oxígeno, además de romper la reacción en cadena de la combustión: por eso la extinción funciona igual sobre un sólido que sobre un líquido inflamable. El polvo BC, de bicarbonato de sodio, actúa solo sobre las clases B y C y no sirve para papel, madera ni cartón, así que en un negocio común conviene seleccionar siempre el ABC.
+
+La descripción técnica del equipo es sencilla: cilindro de acero con el polvo y un gas impulsor, válvula con seguro, manómetro a la vista y manguera o boquilla de descarga. El manómetro es el indicador de que está cargado; si la aguja salió de la franja verde, el extintor no va a responder aunque se vea nuevo.
+
+### Lo que un extintor PQS no apaga
+
+No está clasificado para fuegos de clase D, los de metales combustibles como magnesio o sodio, que piden un agente específico. Tampoco es el indicado sobre aceite de cocción, que es clase K, ni frente a equipos eléctricos energizados delicados, donde el polvo es corrosivo para contactos y tarjetas y conviene un [extintor de CO₂](/productos/extintor-co2/) o de [agente limpio](/productos/extintor-agente-limpio/).
+
+### Certificación, almacenamiento y vida útil
+
+Al comprar conviene exigir dos cosas: que el producto lleve la contraseña oficial de certificación conforme a la NOM-106-SCFI-2017 y que el servicio de recarga entregue su etiqueta y su dictamen técnico conforme a la NOM-154-SCFI-2005. En México ese es el marco aplicable: los criterios de la NFPA 10 son una referencia internacional y no sustituyen a la norma mexicana.
+
+La vida útil del equipo depende del cilindro, no del polvo. Un extintor guardado en un ambiente húmedo o corrosivo —patio, andén, almacenamiento a la intemperie— se deteriora antes, y por eso ahí conviene gabinete. La prueba hidrostática cada cinco años es la que dice si el cilindro sigue siendo seguro para cargar de nuevo.
+
+### Costo, disponibilidad y entrega
+
+Para cotizar, mándanos por WhatsApp el giro, la superficie aproximada y cuántos equipos crees necesitar. Te respondemos con la presentación que conviene, el costo y la disponibilidad; la marca y el modelo se confirman en ese momento. Los tiempos de entrega y la distribución dentro de CDMX y el Estado de México se acuerdan al cerrar la cotización, y la instalación con soporte y señalamiento se puede incluir en la misma visita.
+
+Si el equipo entra a un programa de seguridad industrial, también damos la capacitación del personal que lo va a usar: un extintor efectivo es el que alguien sabe descolgar, verificar y accionar en los primeros segundos.
