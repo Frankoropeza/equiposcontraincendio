@@ -80,6 +80,10 @@ faqs:
     answer: "El de agua a presión y el de espuma AFFF, no: conducen la corriente y ponen en riesgo a quien los usa. La excepción es el agua nebulizada desionizada, que el fabricante clasifica también para clase C."
   - question: "¿Qué diferencia hay entre el extintor de agua y el de espuma AFFF?"
     answer: "Los dos son a base de agua, pero la AFFF lleva un espumante que forma una película sobre el líquido inflamable. Por eso el agua a presión es solo para sólidos (clase A) y la espuma cubre además líquidos inflamables (clase B)."
+  - question: "¿Cuáles son los extintores a base de agua?"
+    answer: "Son tres, dentro de los diferentes tipos de extintores que existen: el de agua a presión, para sólidos combustibles (clase A); el de agua nebulizada, con clase A y la clasificación adicional C del fabricante para cercanía con equipo eléctrico; y el de espuma AFFF, que suma la clase B para líquidos inflamables. Los tres extinguen por el mismo principio: enfriar el material hasta cortar la combustión."
+  - question: "¿Cómo funciona un extintor de agua?"
+    answer: "El agua absorbe una gran cantidad de calor al evaporarse, y el calor es uno de los tres elementos del triángulo del fuego junto con el combustible y el oxígeno. Al enfriar el material por debajo de su temperatura de combustión se logra la extinción. Por eso es eficaz contra sólidos que dejan brasa, pero no basta contra líquidos inflamables ni debe usarse en un incendio eléctrico activo."
   - question: "¿El agua nebulizada sirve para gasolina o solventes?"
     answer: "No. Su clasificación es 2A:C: cubre sólidos y equipo eléctrico, pero no líquidos inflamables. Para esos riesgos van espuma AFFF, PQS o CO₂."
   - question: "¿Qué norma regula los extintores de agua?"
@@ -100,11 +104,25 @@ faqs:
 
 La familia de **extintores de agua** reúne tres equipos que se parecen por fuera y trabajan distinto: el de agua a presión, el de agua nebulizada y el de espuma AFFF. Los tres apagan enfriando, que es lo que mejor funciona contra lo que deja brasa, como papel, madera, cartón o tela. La diferencia está en qué más pueden atacar.
 
+### Cómo funciona un extintor de agua
+
+Apaga por el mismo principio en los tres casos: el agua absorbe calor al evaporarse y retira uno de los tres elementos del triángulo del fuego —combustible, oxígeno y calor— hasta que el material baja de su temperatura de combustión y se logra la extinción. Esa es también la razón de sus límites: no ataca el combustible ni el oxígeno, así que es poco eficaz si el líquido inflamable sigue expuesto (de ahí la espuma, que sí forma una película) y el chorro no debe dirigirse a un incendio eléctrico activo, porque conduce la corriente.
+
 ### Tres extintores, tres usos
 
 - **Agua a presión (clase A).** Para archivos, bodegas de material seco, carpinterías y áreas con textiles, sin polvo que limpiar después. Una ficha técnica de referencia del mercado reporta, para el portátil de 9 L, 45 segundos de descarga y 9 m de alcance mínimo.
 - **Agua nebulizada (clases A y C).** Agua desionizada que sale en una niebla muy fina. El fabricante la clasifica 2A:C, así que puede usarse donde hay equipo eléctrico. Se ve en hospitales, telecomunicaciones y cuartos limpios. No es para líquidos inflamables.
-- **Espuma AFFF (clases A y B).** El espumante forma una película sobre el líquido y corta los vapores que alimentan la flama. Sirve en talleres, patios de maniobra y almacenes de combustibles. No es apta para alcoholes ni solventes polares.
+- **Espuma AFFF (clases A y B).** El espumante forma una película sobre el líquido y corta los vapores que alimentan la flama. Sirve en talleres, patios de maniobra y almacenes de gasolina, diésel, aceites y otros combustibles líquidos. No es apta para alcoholes ni solventes polares.
+
+Para decidir de un vistazo cuál cubre tu riesgo:
+
+| Extintor | Clase A (sólidos) | Clase B (líquidos inflamables) | Clase C (equipo eléctrico) | Deja residuo |
+|---|---|---|---|---|
+| Agua a presión | Sí | No | No | No |
+| Agua nebulizada | Sí | No | Sí (2A:C) | No |
+| Espuma AFFF | Sí | Sí | No | No |
+
+A diferencia del [extintor de PQS](/productos/extintor-pqs/), que cubre A, B y C en un solo equipo pero deja un polvo fino difícil de limpiar, los extintores de agua no dejan residuo, a cambio de cubrir menos clases por unidad.
 
 ### La advertencia que no se negocia
 
@@ -126,10 +144,10 @@ La parte más alta del extintor no debe quedar a más de 1.50 m del piso, y tien
 
 ### Mantenimiento y recarga
 
-Se revisan cada mes, llevan mantenimiento al menos una vez al año y se recargan después de cualquier uso. El servicio lo presta un proveedor conforme a la NOM-154-SCFI-2005, y el cilindro pasa [prueba hidrostática](/servicios/prueba-hidrostatica/) al menos cada cinco años. También damos [recarga de extintores](/servicios/mantenimiento/) a los que ya tienes instalados.
+Se revisan cada mes, llevan mantenimiento al menos una vez al año y se recargan después de cualquier uso. El servicio lo presta un proveedor conforme a la NOM-154-SCFI-2005, y el cilindro pasa [prueba hidrostática](/servicios/prueba-hidrostatica/) al menos cada cinco años. También damos [recarga de extintores](/servicios/mantenimiento/) a los que ya tienes instalados. Revisarlo a tiempo es la parte de prevención que más barato sale, y el manejo correcto en el momento del incendio depende de que el equipo esté listo para descargar.
 
 ### Norma aplicable
 
 La **NOM-103-STPS-1994** regula los extintores a base de agua con presión contenida, incluidos los que llevan aditivos espumantes, para fuegos de clase A y B. En el agua nebulizada, la clase C la da la clasificación de su fabricante.
 
-Al cotizar, dinos qué se guarda en el lugar y si hay equipo eléctrico cerca; con eso te decimos cuál de los tres te conviene.
+Al cotizar, dinos qué se guarda en el lugar y si hay equipo eléctrico cerca; con eso te decimos cuál de los tres conviene a la protección contra incendios de tu operación.
