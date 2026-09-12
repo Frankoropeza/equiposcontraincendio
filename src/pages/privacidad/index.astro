@@ -8,6 +8,7 @@ import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
 import SectionMenu from '@components/SectionMenu.astro'
 import { SITE, CONTACT, waUrl, WA_MESSAGES } from '@config/site'
+import EmailLink from '@components/EmailLink.astro'
 
 const actualizado = '23 de junio de 2026'
 const responsable = SITE.organization.legalName || SITE.name
@@ -47,7 +48,7 @@ const cierreCta = { label: 'Escríbenos por WhatsApp', href: waUrl(WA_MESSAGES.c
           <strong>{responsable}</strong> (en adelante, «{SITE.name}», «nosotros» o «el Responsable»), con domicilio
           en {CONTACT.street}, {CONTACT.city}, {CONTACT.state}, C.P. {CONTACT.postalCode}, México, es responsable
           del tratamiento de tus datos personales. Para cualquier asunto relacionado con este aviso o con tus datos,
-          puedes escribirnos al {CONTACT.phone} o a <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>.
+          puedes escribirnos al {CONTACT.phone} o a <EmailLink email={CONTACT.email}>{CONTACT.email}</EmailLink>.
         </p>
 
         <h2>2. Datos personales que tratamos</h2>
@@ -78,7 +79,7 @@ const cierreCta = { label: 'Escríbenos por WhatsApp', href: waUrl(WA_MESSAGES.c
         </ul>
         <p>
           Puedes negarte al tratamiento de tus datos para las finalidades secundarias enviando un correo a
-          <a href={`mailto:${CONTACT.email}`}> {CONTACT.email}</a>. Tu negativa no será motivo para negarte los
+          <EmailLink email={CONTACT.email}> {CONTACT.email}</EmailLink>. Tu negativa no será motivo para negarte los
           servicios que solicites ni afectará la relación que tengas con nosotros.
         </p>
 
@@ -111,7 +112,7 @@ const cierreCta = { label: 'Escríbenos por WhatsApp', href: waUrl(WA_MESSAGES.c
           sean inexactos, a <strong>Cancelar</strong>los cuando consideres que no se requieren para las finalidades
           señaladas y a <strong>Oponerte</strong> a su tratamiento para fines específicos (derechos ARCO).
         </p>
-        <p>Para ejercerlos, envía tu solicitud a <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a> e incluye:</p>
+        <p>Para ejercerlos, envía tu solicitud a <EmailLink email={CONTACT.email}>{CONTACT.email}</EmailLink> e incluye:</p>
         <ul>
           <li>Tu nombre y un medio para comunicarte la respuesta.</li>
           <li>Copia de una identificación que acredite tu identidad (o la representación legal, en su caso).</li>
@@ -125,7 +126,7 @@ const cierreCta = { label: 'Escríbenos por WhatsApp', href: waUrl(WA_MESSAGES.c
         <h2>8. Revocación del consentimiento y limitación de uso</h2>
         <p>
           En cualquier momento puedes revocar el consentimiento que nos otorgaste, así como limitar el uso o
-          divulgación de tus datos, mediante una solicitud a <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+          divulgación de tus datos, mediante una solicitud a <EmailLink email={CONTACT.email}>{CONTACT.email}</EmailLink>
           con los mismos requisitos señalados para los derechos ARCO. Es posible que, por obligaciones legales,
           debamos seguir tratando ciertos datos aun después de tu solicitud.
         </p>

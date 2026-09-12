@@ -6,6 +6,7 @@ import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
 import SectionMenu from '@components/SectionMenu.astro'
 import { SITE, CONTACT, waUrl, WA_MESSAGES } from '@config/site'
+import EmailLink from '@components/EmailLink.astro'
 
 const actualizado = '23 de junio de 2026'
 
@@ -76,7 +77,7 @@ const cierreCta = { label: 'Escríbenos por WhatsApp', href: waUrl(WA_MESSAGES.c
         <p>
           Actualizaremos esta política cuando cambien las cookies que utilizamos o la normatividad aplicable.
           Publicaremos la versión vigente en esta página. Si tienes dudas, escríbenos a
-          <a href={`mailto:${CONTACT.email}`}> {CONTACT.email}</a> o al {CONTACT.phone}.
+          <EmailLink email={CONTACT.email}> {CONTACT.email}</EmailLink> o al {CONTACT.phone}.
         </p>
       </div>
     </div>

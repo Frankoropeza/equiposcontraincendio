@@ -1,5 +1,6 @@
 ---
 import { NAV, SITE, CONTACT, navHref, waUrl, telUrl, WA_MESSAGES } from '@config/site'
+import EmailLink from '@components/EmailLink.astro'
 
 interface Props {
   guia?: boolean
@@ -281,7 +282,7 @@ const CHEVRON_SVG = `<svg class="nav-chevron" width="14" height="14" viewBox="0 
       <a href={telUrl()} class="mob-call" aria-label={`Llamar al ${CONTACT.phone}`}><Fragment set:html={PHONE_SVG} /> Llamar</a>
     </div>
     {schedule && <p class="mob-foot__meta">{schedule}</p>}
-    <a href={`mailto:${CONTACT.email}`} class="mob-foot__email">{CONTACT.email}</a>
+    <EmailLink email={CONTACT.email} class="mob-foot__email">{CONTACT.email}</EmailLink>
   </div>
 </div>
 

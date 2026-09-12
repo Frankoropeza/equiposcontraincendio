@@ -35,6 +35,7 @@ interface Props {
   titleAccent?: string
   desc?: string
   body?: string[]
+  headingAs?: 'h1' | 'h2'
 }
 const {
   posts,
@@ -47,6 +48,7 @@ const {
   titleAccent,
   desc,
   body = [],
+  headingAs = 'h2',
 } = Astro.props
 
 const CAT_LABEL: Record<string, string> = Object.fromEntries(
@@ -67,6 +69,7 @@ const cierreItems = current === total
       titleAccent={titleAccent}
       desc={desc}
       body={body}
+      as={headingAs}
     />
 
     <div class="archive">

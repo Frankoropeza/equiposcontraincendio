@@ -12,6 +12,7 @@ import SectionHeading from '@components/SectionHeading.astro'
 import SectionMenu from '@components/SectionMenu.astro'
 import TrustBar from '@components/TrustBar.astro'
 import RelatedLinks from '@components/RelatedLinks.astro'
+import EmailLink from '@components/EmailLink.astro'
 import { SITE, COMPANY, CONTACT, waUrl, telUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
 import { homePillars } from '@data/home'
 
@@ -27,7 +28,7 @@ const canales = [
   },
   {
     k: 'mail', titulo: 'Correo', dato: CONTACT.email, sub: 'Para propuestas y documentos',
-    href: `mailto:${CONTACT.email}`, external: false, cta: 'Enviar correo',
+    href: undefined, external: false, cta: 'Enviar correo',
   },
   {
     k: 'pin', titulo: 'Visítanos', dato: CONTACT.street, sub: CONTACT.city,
@@ -93,7 +94,17 @@ const ICON = {
       />
 
       <div class="canales">
-        {canales.map((c) => (
+        {canales.map((c) => c.k === 'mail' ? (
+          <EmailLink email={CONTACT.email} class="canal">
+            <span class="canal__icon" set:html={ICON[c.k as keyof typeof ICON]} />
+            <span class="canal__body">
+              <span class="canal__titulo">{c.titulo}</span>
+              <span class="canal__dato">{c.dato}</span>
+              <span class="canal__sub">{c.sub}</span>
+            </span>
+            <span class="canal__cta">{c.cta} →</span>
+          </EmailLink>
+        ) : (
           <a class="canal" href={c.href} target={c.external ? '_blank' : undefined} rel={c.external ? 'noopener noreferrer' : undefined}>
             <span class="canal__icon" set:html={ICON[c.k as keyof typeof ICON]} />
             <span class="canal__body">

@@ -12,6 +12,7 @@ import {
   telUrl,
   WA_MESSAGES,
 } from '@config/site'
+import EmailLink from '@components/EmailLink.astro'
 
 interface Cert {
   label: string
@@ -118,7 +119,7 @@ const SOCIAL_ICONS: Record<string, string> = {
           <a href={waDefault} target="_blank" rel="noopener noreferrer">WhatsApp</a>
           <a href={telLink}>Llamar</a>
         </div>
-        <a href={`mailto:${CONTACT.email}`} class="footer__email"><Fragment set:html={MAIL_SVG} /> <span>{CONTACT.email}</span></a>
+        <EmailLink email={CONTACT.email} class="footer__email"><Fragment set:html={MAIL_SVG} /> <span>{CONTACT.email}</span></EmailLink>
       </section>
 
       <section class="footer__cell" aria-labelledby="footer-office-title">
