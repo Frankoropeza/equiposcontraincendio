@@ -52,6 +52,16 @@ faqs:
     answer: "La NOM-002-STPS-2010 fija 10 m como distancia máxima de recorrido hasta un extintor clase K, que debe colocarse a no más de 1.50 m del piso."
   - question: "¿Qué norma aplica al extintor clase K?"
     answer: "No hay una norma mexicana de producto específica. Se toma como referencia la NFPA 10, y el mantenimiento y la recarga se prestan conforme a la NOM-154-SCFI-2005."
+  - question: "¿Cuántos extintores tipo K necesita una cocina?"
+    answer: "Depende del número y tamaño de equipos de cocción, no de los metros del local. La referencia práctica es cubrir la línea caliente con un equipo a la vista y verificar que el recorrido hasta el extintor de clase K no pase de 10 metros, que es la distancia más corta de todas las clases."
+  - question: "¿Dónde se coloca el extintor de clase K en un restaurante?"
+    answer: "En la ruta de salida de la cocina, visible y accesible desde la línea de cocción, pero nunca tan pegado a la freidora que haya que meterse al fuego para alcanzarlo. Se monta con la parte superior a máximo 1.50 m del piso y con su señalamiento."
+  - question: "¿Cómo se usa un extintor tipo K?"
+    answer: "Se aplica desde la distancia recomendada y en abanico sobre la superficie del aceite, nunca con chorro directo, para no salpicar grasa encendida. El agente saponifica el aceite y forma una capa que evita que se reencienda mientras enfría."
+  - question: "¿Puedo usar un extintor de polvo sobre aceite de cocina?"
+    answer: "No es lo indicado. El polvo no enfría el aceite ni evita la reignición, y sobre una freidora puede dispersar grasa ardiendo. La clase K existe justamente porque los agentes convencionales fallan en ese escenario, aunque algún proveedor los haya vendido como equivalentes."
+  - question: "¿Cada cuándo se da servicio a un extintor clase K?"
+    answer: "Revisión visual mensual, mantenimiento al menos una vez al año y recarga después de cualquier uso, aunque haya sido parcial. El cilindro pasa prueba hidrostática al menos cada cinco años y al terminar el servicio debe llevar su etiqueta y collarín."
 ---
 
 Una freidora encendida es de los fuegos más traicioneros de un negocio. El aceite llega a temperaturas tan altas que el agua lo hace saltar y el polvo químico no alcanza a enfriarlo. Para eso existe el **extintor tipo K** (clase K): su agente, un químico húmedo, sale en forma de niebla, no salpica el aceite y forma una capa que lo separa del aire mientras lo enfría.

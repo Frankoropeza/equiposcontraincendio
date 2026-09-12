@@ -104,6 +104,16 @@ faqs:
     answer: "Puede dañarlos. El polvo se mete en contactos, ventiladores y tarjetas. Junto a servidores o tableros de control conviene un extintor de CO₂ o de agente limpio."
   - question: "¿Cada cuándo se recarga un extintor PQS?"
     answer: "Se revisa cada mes, se le da mantenimiento al menos una vez al año y se recarga después de cualquier uso. El cilindro pasa prueba hidrostática al menos cada cinco años y, al terminar el servicio, lleva etiqueta y collarín."
+  - question: "¿Cuántos extintores PQS necesito en mi negocio?"
+    answer: "La NOM-002-STPS-2010 pide al menos un extintor por cada 300 m² en riesgo ordinario y uno por cada 200 m² en riesgo alto, con un mínimo de uno por nivel. Además ningún punto del inmueble debe quedar a más de 23 metros de recorrido del extintor más cercano."
+  - question: "¿A qué altura se instala un extintor PQS?"
+    answer: "La parte superior del extintor no debe quedar a más de 1.50 m del piso, y el equipo tiene que estar visible, libre de obstáculos y con su señalamiento de ubicación. Si va en zona de tránsito de montacargas o a la intemperie, conviene gabinete en lugar de soporte descubierto."
+  - question: "¿Qué significa la clasificación 2A:10B:C de un extintor PQS?"
+    answer: "Es la clasificación de laboratorio del equipo: la letra indica la clase de fuego y el número, cuánto fuego apaga en pruebas normalizadas. Entre dos extintores del mismo peso, el de número mayor rinde más, así que es el dato que conviene comparar antes que el precio."
+  - question: "¿Qué diferencia hay entre PQS ABC y PQS BC?"
+    answer: "El polvo ABC es de fosfato monoamónico y cubre sólidos, líquidos inflamables y equipo eléctrico. El polvo BC, de bicarbonato, no está clasificado para clase A: no sirve para papel, madera ni cartón. Para un negocio promedio, el ABC es el que resuelve las tres situaciones."
+  - question: "¿El extintor PQS caduca?"
+    answer: "El extintor no caduca por fecha, pero sí su servicio: revisión visual mensual, mantenimiento al menos anual conforme a la NOM-002-STPS-2010 y prueba hidrostática del cilindro al menos cada cinco años según la NOM-154-SCFI-2005. Si el manómetro salió del verde o perdió el sello, hay que atenderlo aunque se vea nuevo."
 ---
 
 Los **extintores PQS ABC** son los que más vas a ver en oficinas, comercios, bodegas y camionetas de reparto, y hay una razón práctica: con un solo equipo cubres sólidos como papel o cartón (clase A), líquidos inflamables como gasolina o solventes (clase B) y equipo eléctrico con corriente (clase C). Si en tu negocio hay un poco de todo, casi siempre se empieza por aquí.

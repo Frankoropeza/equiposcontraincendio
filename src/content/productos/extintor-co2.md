@@ -79,6 +79,18 @@ faqs:
     answer: "Hay que tener cuidado. En espacios pequeños o mal ventilados reduce el oxígeno disponible también para quien lo usa. Además, la descarga es muy fría, así que se sujeta por las zonas de agarre del fabricante."
   - question: "¿Cada cuándo se da mantenimiento a un extintor de CO₂?"
     answer: "Se revisa cada mes, lleva mantenimiento al menos una vez al año y se recarga después de cualquier uso. En la revisión se comprueba que conserve la capacidad nominal de su etiqueta, y el cilindro pasa prueba hidrostática al menos cada cinco años."
+  - question: "¿Qué capacidad de extintor de CO₂ necesito?"
+    answer: "Para un tablero o un rack aislado suele bastar un portátil de 5 a 10 lb; para site, subestación o cuarto de máquinas conviene de 15 a 20 lb, y para áreas grandes con mucho equipo, unidades sobre ruedas de 50 o 100 lb. El peso importa: quien lo vaya a usar tiene que poder descolgarlo."
+  - question: "¿Por qué el extintor de CO₂ no deja residuo?"
+    answer: "Porque el agente es un gas que desplaza el oxígeno y se disipa solo, sin polvo ni espuma. Por eso se instala junto a servidores, tableros y equipo de laboratorio, donde la limpieza posterior de un polvo químico costaría más que el propio conato."
+  - question: "¿Se congela la corneta del extintor de CO₂?"
+    answer: "Sí. Al descargar, el gas se expande y enfría mucho la corneta y el tubo, por eso se sujeta por el mango aislado y nunca por la boquilla. Es un motivo más para capacitar a quien vaya a usarlo antes de necesitarlo."
+  - question: "¿Cuántos extintores de CO₂ debo poner por área eléctrica?"
+    answer: "El criterio práctico es uno por tablero o rack crítico, y verificar que el recorrido hasta el extintor no supere los 15 metros cuando el riesgo dominante es de clase B. En cuartos con papel además de electrónica, se combina con un PQS ABC."
+  - question: "¿El extintor de CO₂ sirve en una cocina?"
+    answer: "Sirve para el tablero eléctrico y para el equipo de la cocina, pero no para el aceite caliente: ahí va un extintor tipo K de químico húmedo. El chorro de CO₂ además puede salpicar la grasa encendida y ampliar el fuego."
+  - question: "¿Qué mantenimiento pide el cilindro de CO₂?"
+    answer: "Revisión visual mensual, mantenimiento al menos anual y pesaje del cilindro para confirmar la carga, porque el CO₂ no lleva manómetro confiable. El cilindro pasa prueba hidrostática al menos cada cinco años conforme a la NOM-154-SCFI-2005."
 ---
 
 Los **extintores de CO₂** son los que se ponen junto a tableros eléctricos, sites y equipo electrónico. El dióxido de carbono le quita el oxígeno a la flama, no conduce la electricidad y se disipa sin dejar residuo. Después de usarlo no hay polvo que limpiar ni equipo dañado por el agente.

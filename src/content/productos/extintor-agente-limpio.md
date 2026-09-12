@@ -88,6 +88,16 @@ faqs:
     answer: "No hay una norma mexicana de producto específica para este agente, como sí la hay para el PQS, el CO₂ o el agua. La referencia es la clasificación del fabricante. En el centro de trabajo aplican las revisiones de la NOM-002-STPS-2010, y el servicio se presta conforme a la NOM-154-SCFI-2005."
   - question: "¿Cada cuándo se recarga un extintor de agente limpio?"
     answer: "Se revisa cada mes, se le da mantenimiento al menos una vez al año y se recarga después de cualquier uso. El cilindro pasa prueba hidrostática al menos cada cinco años."
+  - question: "¿Dónde conviene un extintor de agente limpio?"
+    answer: "En sites, cuartos de telecomunicaciones, salas de control, quirófanos, laboratorios y oficinas con equipo electrónico crítico: apaga sin dejar residuo y sin conducir electricidad, así que el equipo protegido no sale dañado por el propio agente."
+  - question: "¿Qué capacidad de agente limpio necesito?"
+    answer: "Para un rack o un tablero suele bastar la presentación portátil chica; para un site completo se sube de capacidad o se instalan dos equipos. Si además hay papel y cartón en el cuarto, conviene la capacidad que ya viene clasificada para clase A."
+  - question: "¿Conviene más agente limpio o CO₂?"
+    answer: "El CO₂ cuesta menos y tampoco deja residuo, pero enfría bruscamente y desplaza oxígeno, lo que lo hace incómodo en cuartos pequeños. El agente limpio es más caro y más amable con el equipo y con quien lo opera. En áreas sin electrónica crítica, un PQS bien elegido resuelve por mucho menos."
+  - question: "¿El agente limpio daña la capa de ozono?"
+    answer: "Halotron I y FE-36 son los sustitutos que se comercializan en lugar del halón 1211, precisamente por su comportamiento ambiental. Son los agentes limpios que se consiguen hoy en el mercado mexicano para extintores portátiles."
+  - question: "¿Cada cuándo se da servicio a un extintor de agente limpio?"
+    answer: "Revisión visual mensual, mantenimiento al menos una vez al año y recarga después de cualquier uso. El cilindro pasa prueba hidrostática al menos cada cinco años según la NOM-154-SCFI-2005 y regresa con su etiqueta y collarín de servicio."
 ---
 
 Apagar un conato en un site con polvo químico tiene un costo que llega después: el polvo se queda en cada servidor. Los **extintores de agente limpio** resuelven ese problema. El agente sale como gas o como un líquido que se evapora, no conduce la electricidad y no deja residuo, así que el equipo que proteges no termina dañado por el agente.

@@ -86,6 +86,16 @@ faqs:
     answer: "La NOM-103-STPS-1994, que cubre los extintores a base de agua con presión contenida, incluidos los que llevan espumante, para fuegos de clase A y B. El mantenimiento y la recarga se prestan conforme a la NOM-154-SCFI-2005."
   - question: "¿Qué capacidad de extintor de agua necesito?"
     answer: "En portátil hay de 6, 9 y 9.46 L según el tipo, y unidades móviles de 50 L para naves y patios. La elección depende de lo que puede arder, la superficie y quién va a operar el equipo."
+  - question: "¿Dónde conviene un extintor de agua a presión?"
+    answer: "En áreas donde domina el sólido combustible: archivos, bodegas de papel y cartón, carpinterías, textileras y almacenes. Es de clase A, así que no se instala frente a tableros energizados ni en zonas con solventes o combustibles líquidos."
+  - question: "¿Qué es el agua nebulizada y en qué se diferencia?"
+    answer: "Es agua descargada en gotas muy finas, que enfrían más rápido y no forman un chorro conductor: por eso queda clasificada para clase A y también para clase C. Es la opción cuando hay sólidos combustibles cerca de equipo eléctrico."
+  - question: "¿La espuma AFFF sirve para gasolina y solventes?"
+    answer: "Sí. La espuma forma una película sobre el líquido que corta el vapor y evita la reignición, por eso cubre clases A y B. Es el agente de talleres, zonas de carga de combustible y bodegas de pinturas o solventes."
+  - question: "¿Los extintores de agua se congelan?"
+    answer: "En la zona metropolitana no suele ser un problema, pero en exteriores fríos o cámaras de refrigeración sí hay que preverlo: un cilindro con agua congelada no descarga. En esos puntos conviene otro agente."
+  - question: "¿Qué mantenimiento pide un extintor de agua o de espuma?"
+    answer: "Revisión visual mensual, mantenimiento al menos anual y recarga tras cualquier uso. El cilindro pasa prueba hidrostática al menos cada cinco años conforme a la NOM-154-SCFI-2005, y al terminar el servicio debe entregarse con etiqueta y collarín."
 ---
 
 La familia de **extintores de agua** reúne tres equipos que se parecen por fuera y trabajan distinto: el de agua a presión, el de agua nebulizada y el de espuma AFFF. Los tres apagan enfriando, que es lo que mejor funciona contra lo que deja brasa, como papel, madera, cartón o tela. La diferencia está en qué más pueden atacar.
