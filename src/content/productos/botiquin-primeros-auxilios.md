@@ -6,13 +6,19 @@ image: /images/productos/botiquin-primeros-auxilios-empresa.avif
 price: "Cotizar"
 brand: "CONINC"
 order: 11
-seoTitle: "Botiquín de primeros auxilios para empresa: qué debe tener"
-seoDescription: "Botiquín de primeros auxilios para empresa: qué debe contener, de pared o portátil, dónde se coloca y qué piden la LFT y Protección Civil. CDMX y Edomex."
+seoTitle: "Botiquín de primeros auxilios para empresas: qué debe tener"
+seoDescription: "Botiquín de primeros auxilios para empresas: qué debe contener, de pared o portátil, dónde se coloca y qué piden la LFT y Protección Civil. CDMX y Edomex."
 faqs:
   - question: "¿Es obligatorio tener botiquín en una empresa?"
     answer: "Sí. La Ley Federal del Trabajo, en su artículo 504, obliga al patrón a mantener en el centro de trabajo los medicamentos y el material de curación necesarios para primeros auxilios y a capacitar a personal para prestarlos. En la Ciudad de México, la ley de protección civil también incluye el botiquín en las medidas mínimas de los negocios de bajo riesgo."
   - question: "¿Qué debe contener un botiquín de primeros auxilios en una empresa?"
     answer: "No encontramos una norma mexicana que fije una lista cerrada para el botiquín de un centro de trabajo: el contenido se define según los riesgos del lugar y el número de personas. Como base, gasas estériles, vendas, cinta microporosa, apósitos, guantes desechables, solución antiséptica, tijeras de punta roma, manta térmica, compresas frías instantáneas y una mascarilla para reanimación."
+  - question: "¿Qué es un botiquín tipo A y aplica en mi empresa?"
+    answer: "La clasificación por tipos (A, B, C) no es una norma mexicana para el botiquín de un centro de trabajo común: se usa más en primeros auxilios de campo o en la normativa de otros países. En México no hay una lista cerrada; lo que importa es que el contenido cubra los riesgos reales de tu operación, como explicamos arriba."
+  - question: "¿Qué no debe llevar un botiquín de primeros auxilios en el trabajo?"
+    answer: "Medicamentos sin indicación médica, material caducado, y objetos o instrumentos que requieran capacitación clínica que la brigada no tiene (como material de sutura). El botiquín es para primeros auxilios y curaciones básicas, no para tratamiento médico."
+  - question: "¿Me pueden sancionar por no tener botiquín en mi empresa?"
+    answer: "Puede señalarse como observación en una verificación de protección civil o como parte de las observaciones de una inspección de la Secretaría del Trabajo, según el caso. No damos una tabla de multas porque varía por autoridad y entidad; lo seguro es tenerlo completo y evitar el riesgo de la observación."
   - question: "¿Puede llevar medicamentos?"
     answer: "Con cautela. El botiquín de un centro de trabajo es para curaciones y primeros auxilios; administrar medicamentos es decisión médica. Si tu empresa decide incluir alguno, que sea con el criterio de su servicio médico o de quien capacita a la brigada."
   - question: "¿Dónde se coloca el botiquín?"
@@ -75,10 +81,19 @@ No hay una lista oficial cerrada para el botiquín de un centro de trabajo: el c
 - Manta térmica y compresas frías instantáneas
 - Mascarilla para reanimación
 
-En cocinas conviene sumar material para quemaduras; en talleres y laboratorios, lavado de ojos.
+En cocinas conviene sumar material para quemaduras; en talleres, laboratorios y botiquines industriales, lavado de ojos y material para golpes o cortes con herramienta.
 
 ## Cuántos y dónde
 
 En un local pequeño basta uno, visible y señalizado. En inmuebles grandes, uno por nivel o por área de riesgo, más el **portátil de la brigada**. Colócalo lejos del calor y la humedad, con su [señal de primeros auxilios](/productos/senalamientos-de-seguridad/) encima, y revísalo cada mes. La [capacitación de la brigada](/servicios/capacitacion-dc3/) enseña a usarlo.
+
+## Cómo revisar tu botiquín en 4 pasos
+
+1. Verifica existencias contra tu lista base y anota lo que falta.
+2. Revisa fechas de caducidad de gasas, soluciones y compresas; retira lo vencido.
+3. Repón lo usado o caducado antes de cerrar la revisión, no después.
+4. Anota la revisión en la bitácora, con fecha y responsable, para la brigada y para protección civil.
+
+Hazlo cada mes, junto con la revisión de tus [extintores](/productos/extintor-pqs/); así ambos quedan en la misma bitácora.
 
 Los modelos están sujetos a disponibilidad; al cotizar te confirmamos existencia y tiempo de entrega.
