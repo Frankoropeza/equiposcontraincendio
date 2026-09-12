@@ -95,17 +95,23 @@ faqs:
   - question: "¿Conviene más agente limpio o CO₂?"
     answer: "El CO₂ cuesta menos y tampoco deja residuo, pero enfría bruscamente y desplaza oxígeno, lo que lo hace incómodo en cuartos pequeños. El agente limpio es más caro y más amable con el equipo y con quien lo opera. En áreas sin electrónica crítica, un PQS bien elegido resuelve por mucho menos."
   - question: "¿El agente limpio daña la capa de ozono?"
-    answer: "Halotron I y FE-36 son los sustitutos que se comercializan en lugar del halón 1211, precisamente por su comportamiento ambiental. Son los agentes limpios que se consiguen hoy en el mercado mexicano para extintores portátiles."
+    answer: "Halotron I es un HCFC de potencial de agotamiento de ozono muy bajo, y FE-36 es un HFC sin potencial de agotamiento de ozono. Los dos se comercializan como sustitutos del halón 1211 bajo el Protocolo de Montreal, precisamente por su comportamiento con la capa de ozono, y son los agentes limpios que se consiguen hoy en el mercado mexicano para extintores portátiles."
   - question: "¿Cada cuándo se da servicio a un extintor de agente limpio?"
     answer: "Revisión visual mensual, mantenimiento al menos una vez al año y recarga después de cualquier uso. El cilindro pasa prueba hidrostática al menos cada cinco años según la NOM-154-SCFI-2005 y regresa con su etiqueta y collarín de servicio."
 ---
 
 Apagar un conato en un site con polvo químico tiene un costo que llega después: el polvo se queda en cada servidor. Los **extintores de agente limpio** resuelven ese problema. El agente sale como gas o como un líquido que se evapora, no conduce la electricidad y no deja residuo, así que el equipo que proteges no termina dañado por el agente.
 
+### Cómo funciona un extintor de agente limpio
+
+El agente sale como líquido a presión y se evapora casi al instante al salir de la boquilla. Ese cambio de estado absorbe una gran cantidad de calor del fuego, igual que el agua, pero sin dejar un líquido en la superficie. A diferencia del CO2, no actúa desplazando el oxígeno del cuarto, así que no representa el mismo riesgo de asfixia y es seguro en espacios ocupados por personas mientras se apaga el incendio.
+
+> **La diferencia que más importa en un site ocupado:** el agente limpio no desplaza el oxígeno del cuarto. El CO2 sí, y en concentraciones de apagado puede ser peligroso para quien esté dentro. Por eso el agente limpio es la opción cuando el espacio va a seguir ocupado durante la descarga.
+
 ### Dos agentes: Halotron I y FE-36
 
-- **Halotron I:** presentaciones de 2.5, 5, 11 y 15.5 lb (de 1.1 a 7 kg). El fabricante clasifica las de 2.5 y 5 lb solo para fuegos de clase B y C; las de 11 y 15.5 lb suman la clase A (1-A:10-B:C y 2-A:10-B:C).
-- **FE-36 (HFC-236fa):** presentaciones de 9.5 y 13.25 lb (4.3 y 6 kg), clasificadas 1-A:10-B:C y 2-A:10-B:C.
+- **Halotron I:** agente halogenado hidroclorofluorocarbonado (HCFC), no un gas inerte como el Inergen, en presentaciones de 2.5, 5, 11 y 15.5 lb (de 1.1 a 7 kg). El fabricante clasifica las de 2.5 y 5 lb solo para fuegos de clase B y C; las de 11 y 15.5 lb suman la clase A (1-A:10-B:C y 2-A:10-B:C).
+- **FE-36 (HFC-236fa):** un hidrofluorocarbono (HFC), en presentaciones de 9.5 y 13.25 lb (4.3 y 6 kg), clasificadas 1-A:10-B:C y 2-A:10-B:C.
 
 ### Dónde conviene y dónde no
 
@@ -119,7 +125,7 @@ Empieza por la clasificación que necesitas. Si en el área solo hay equipo elé
 
 ### Dónde colocarlo
 
-Cerca de la entrada del cuarto que protege y sin estorbar el acceso a los racks o al tablero, a no más de 1.50 m del piso, visible y señalizado. Para riesgos de clase A y C, la distancia máxima de recorrido es de 23 m. Completa el punto con un [soporte para extintor](/productos/soportes-accesorios-extintor/) y su [señalización](/productos/senalizacion-fotoluminiscente/).
+Cerca de la entrada del cuarto que protege y sin estorbar el acceso a los racks o al tablero, a no más de 1.50 m del piso, visible y señalizado. Para riesgos de clase A y C, la distancia máxima de recorrido es de 23 m, conforme a la NOM-002-STPS-2010. Completa el punto con un [soporte para extintor](/productos/soportes-accesorios-extintor/) y su [señalización](/productos/senalizacion-fotoluminiscente/).
 
 ### Mantenimiento y recarga
 
