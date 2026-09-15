@@ -1,12 +1,20 @@
 ---
+// EmailLink — mailto: a salvo de la ofuscación de correo de Cloudflare.
+// Cloudflare (Scrape Shield) reescribe los mailto: a /cdn-cgi/l/email-protection,
+// que un crawler sin JS ve como 404 (Ahrefs Site Audit 2026-09-11). Los
+// comentarios <!--email_off--> … <!--/email_off--> (sintaxis documentada por
+// Cloudflare) excluyen el enlace de esa reescritura.
+// `...rest` propaga el atributo data-astro-cid-* del padre: sin él, los estilos
+// scoped del Footer/Header (.footer__email[data-astro-cid-…]) no aplican.
 interface Props {
   email: string
   class?: string
+  [key: string]: unknown
 }
 
-const { email, class: className } = Astro.props
+const { email, class: className, ...rest } = Astro.props
 ---
 
 <!--email_off-->
-<a href={`mailto:${email}`} class={className}><slot /></a>
-<!--email_on-->
+<a href={`mailto:${email}`} class={className} {...rest}><slot /></a>
+<!--/email_off-->
