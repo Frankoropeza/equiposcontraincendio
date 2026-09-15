@@ -12,6 +12,7 @@
 // chocaría con este rest param.
 //
 // La página 1 nunca vive en /pagina/1/ (sería un duplicado del archivo).
+// Las páginas N>=2 van noindex,follow; la página 1 permanece indexable.
 // ============================================================================
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
@@ -95,6 +96,8 @@ const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog)
     { label: 'Blog', href: '/blog/' },
     ...(page > 1 ? [{ label, href: base }, { label: `Página ${page}` }] : [{ label }]),
   ]}
+  noindex={page > 1}
+  follow={true}
   guia={false}
 >
   {page > 1 && <link slot="head" rel="prev" href={prevUrl} />}

@@ -779,11 +779,15 @@ export function serviceSchema(s: ServiceData) {
     url,
     ...(s.image ? { image: absImage(s.image) } : {}),
     provider: { '@id': BUSINESS_ID },
-    areaServed: (s.areaServed ?? (SITE.business as any)?.areaServed ?? ['Ciudad de México']).map((name: string) => ({ '@type': 'City', name })),
+    areaServed: (s.areaServed ?? (SITE.business as any)?.areaServed ?? ['Ciudad de México']).map((name: string) => ({ '@type': 'AdministrativeArea', name })),
     availableChannel: {
       '@type': 'ServiceChannel',
       serviceUrl: url,
-      servicePhone: CONTACT.phoneRaw ?? CONTACT.phone,
+      servicePhone: {
+        '@type': 'ContactPoint',
+        telephone: CONTACT.phoneRaw ?? CONTACT.phone,
+        contactType: 'customer service',
+      },
     },
     ...(s.priceRange
       ? {

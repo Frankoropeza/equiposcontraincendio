@@ -6,7 +6,7 @@
 // con el mismo listado serían contenido duplicado. Esta ruta arranca en la 2.
 //
 // SEO de la paginación:
-//   • Indexable con canonical propio (cada página lista artículos distintos).
+//   • noindex,follow con canonical propio (criterio Site Audit 2026-09-15: igual que los archivos de etiqueta; fuera del sitemap).
 //   • title y meta description propios, con el número de página — nunca los
 //     mismos que la página 1.
 //   • rel=prev / rel=next en el <head> (PageLayout reenvía el slot "head").
@@ -63,6 +63,8 @@ const schemaData = {
   pageType="category"
   schemaData={schemaData}
   breadcrumbs={[{ label: 'Blog', href: '/blog/' }, { label: `Página ${page}` }]}
+  noindex={true}
+  follow={true}
   guia={false}
 >
   <link slot="head" rel="prev" href={prevUrl} />
