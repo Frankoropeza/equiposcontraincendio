@@ -57,8 +57,9 @@ export const SITE = {
     // incendios» 100, contra 70 del plural «equipos contra incendios». Frank eligió
     // el singular para title y H1; el plural se queda en el cuerpo.
     title: 'Equipo contra incendio | venta de equipo contra incendios', // 57 car. — decisión de Frank 2026-09-11.
+    // 2026-09-15 — description según terms_txt.desc de NEURONwriter (query 4193151777ab1331).
     description:
-      'Equipo contra incendio en CDMX y Edomex: venta de equipos contra incendios, instalación y mantenimiento con equipo certificado y documentación en regla.',
+      'Equipo contra incendio en CDMX y Edomex: extintores, detectores, mangueras y sistemas contra incendio certificados, con asesoría, instalación y mantenimiento.',
     image: '/images/og/default.png',
     titleMaxLength: 60,
     descriptionMaxLength: 160,

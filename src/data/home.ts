@@ -188,6 +188,11 @@ export const homeFaqs: HomeFaq[] = [
       "La NOM-002-STPS-2010 obliga a todo centro de trabajo a clasificar su grado de riesgo de incendio —ordinario o alto— según la superficie y el material combustible que maneja. De esa clasificación dependen el número y tipo de extintores, la necesidad de detección y de red de hidrantes, la brigada y el programa anual de revisión. También fija la revisión mensual a cargo del propio personal.",
   },
   {
+    question: "¿Cuánto cuesta un sistema anti incendio?",
+    answer:
+      "Depende de la superficie, el grado de riesgo y el tipo de sistema: no cuesta lo mismo equipar una oficina con extintores y detectores de humo que instalar un sistema contra incendio con red de hidrantes o rociadores, que requiere cálculo hidráulico, tubería y bomba. Por eso no publicamos una tarifa única: con el giro, la superficie y, si los tienes, los planos, te enviamos una cotización desglosada por equipo, instalación y documentación.",
+  },
+  {
     question: "¿Cuáles son los dispositivos de protección contra incendios?",
     answer:
       "Los que actúan solos y los que opera una persona. Automáticos: detectores de humo y calor, paneles de alarma, rociadores y sistemas de supresión de cocina o de agente limpio. Manuales: extintores portátiles, estaciones manuales de alarma, gabinetes con manguera e hidrantes. Un inmueble bien protegido combina ambos según su grado de riesgo.",
@@ -249,7 +254,7 @@ export const homeCategoryFeatures: HomeCategoryFeature[] = [
     eyebrow: "Categoría · NOM-154 · A · B · C · K",
     title: "Extintores portátiles para",
     titleAccent: "cada clase de fuego",
-    description: "El extintor correcto depende de lo que puede arder en tu inmueble. Manejamos polvo químico seco (PQS) para oficinas y comercios, CO₂ para equipo eléctrico y agente K para cocinas, con recarga y mantenimiento conforme a norma.",
+    description: "El extintor correcto depende de lo que puede arder en tu inmueble. Manejamos extintores de polvo químico seco (PQS) para oficinas y comercios, CO₂ para equipo eléctrico y agente K para cocinas, con recarga y mantenimiento conforme a norma.",
     features: [
       { label: "PQS ABC multipropósito", desc: "Oficinas, escuelas, comercios y bodegas. Cubre clases A, B y C." },
       { label: "CO₂ para cuartos eléctricos", desc: "No conduce ni deja residuo sobre tableros y electrónica. Clases B y C." },
@@ -273,9 +278,9 @@ export const homeCategoryFeatures: HomeCategoryFeature[] = [
   {
     surface: true,
     eyebrow: "Categoría · NFPA 72 · Detección temprana",
-    title: "Alarmas contra incendios",
-    titleAccent: "que avisan a tiempo",
-    description: "Un incendio detectado a tiempo todavía se controla. Integramos detectores de humo y calor, paneles direccionables, estaciones manuales y sirenas dimensionados a tu inmueble, para que alerte y se evacúe antes de que el fuego crezca.",
+    title: "Detectores de humo y alarmas",
+    titleAccent: "contra incendios",
+    description: "Un incendio detectado en su etapa inicial todavía se controla. Integramos detectores de humo y calor, paneles direccionables, estaciones manuales y sirenas dimensionados a tu inmueble: cada detector de humo da la alerta para evacuar antes de que el fuego crezca.",
     features: [
       { label: "Detectores de humo", desc: "Fotoeléctricos, para el humo lento de pasillos, oficinas y almacenes." },
       { label: "Detectores de calor", desc: "Para cocinas y áreas con vapor o polvo, donde el humo daría falsas alarmas." },
@@ -347,9 +352,9 @@ export const homeCategoryFeatures: HomeCategoryFeature[] = [
   },
   {
     eyebrow: "Categoría · NFPA 13 · Supresión automática",
-    title: "Sistemas fijos",
+    title: "Sistemas contra incendio fijos",
     titleAccent: "que actúan solos",
-    description: "Los sistemas automáticos actúan en segundos, antes de que el personal intervenga. Proyectamos e instalamos rociadores, supresión de cocina clase K y agente limpio para sites, con cálculo hidráulico y memoria para tu expediente.",
+    description: "Un sistema contra incendio automático actúa en segundos, antes de que el personal intervenga. Diseñamos e instalamos rociadores, supresión de cocina clase K y agente limpio para sites, con cálculo hidráulico del suministro de agua y memoria para tu expediente.",
     features: [
       { label: "Rociadores automáticos", desc: "Solo se activa el rociador expuesto al calor, no todo el sistema." },
       { label: "Supresión de cocina clase K", desc: "En campana: apaga aceites y grasas y corta el gas automáticamente." },
