@@ -31,7 +31,7 @@ export const pcFeatures = [
     id: 'cdmx',
     eyebrow: 'Ciudad de México · SGIRPC · Plataforma digital',
     title: 'En la Ciudad de México',
-    titleAccent: 'el trámite es en línea',
+    titleAccent: 'es un trámite en línea',
     description:
       'La CDMX concentra el Programa Interno en una plataforma digital de la SGIRPC con dos puertas: una para público en general, donde se valida con Llave CDMX si tu establecimiento está obligado, y otra reservada a responsables oficiales registrados, que es por donde se ingresa el programa.',
     features: [
@@ -54,7 +54,7 @@ export const pcFeatures = [
     title: 'En el Estado de México',
     titleAccent: 'el trámite es presencial',
     description:
-      'El Estado de México evalúa Programas Específicos de Protección Civil por la homoclave 1254 del RETyS. Aplica a giros comerciales, industriales y de servicios clasificados como de mediano y alto riesgo, se presenta de forma presencial y la cédula señala un plazo máximo de 15 días hábiles.',
+      'En materia de protección civil, el Estado de México evalúa Programas Específicos por la homoclave 1254 del RETyS. Aplica a giros comerciales, industriales y de servicios clasificados como de mediano y alto riesgo, se presenta de forma presencial y la cédula señala un plazo máximo de 15 días hábiles.',
     features: [
       { label: 'Mediano y alto riesgo', desc: 'Esa clasificación es la que decide si tienes que inscribir el programa.' },
       { label: 'Siete requisitos', desc: 'Solicitud, programa, carta, acta, calendario, croquis y pago de derechos.' },
@@ -125,8 +125,8 @@ export type Step = { num: string; title: string; desc: string };
 export const pcSteps: Step[] = [
   { num: '01', title: 'Confirma si estás obligado', desc: 'En CDMX se valida en la plataforma con Llave CDMX; en Edomex depende del giro y su riesgo.' },
   { num: '02', title: 'Clasifica el riesgo', desc: 'De ahí sale cuánto equipo pide la norma y si necesitas brigada.' },
-  { num: '03', title: 'Pon el equipo al día', desc: 'Verifica equipo vigente, señalización, rutas y brigada capacitada antes del trámite.' },
-  { num: '04', title: 'Corrige las condiciones', desc: 'Resuelve faltantes del inmueble; el programa describe la realidad, no la reemplaza.' },
+  { num: '03', title: 'Pon el equipo al día', desc: 'Verifica equipo vigente, señalización, rutas de evacuación y brigada capacitada antes de la inspección.' },
+  { num: '04', title: 'Corrige las condiciones', desc: 'Resuelve faltantes y medidas de seguridad del inmueble; el programa describe la realidad, no la reemplaza.' },
   { num: '05', title: 'Reúne la evidencia', desc: 'Junta bitácoras, etiquetas, actas de simulacro y constancias DC-3 del personal.' },
   { num: '06', title: 'Separa lo local', desc: 'Identifica los requisitos propios de CDMX o Estado de México para tu inmueble.' },
   { num: '07', title: 'El programa lo firma', desc: 'En CDMX, un ROPC o ROPCI registrado; en Edomex, con carta de corresponsabilidad.' },
@@ -137,7 +137,7 @@ export const pcCompany = {
   que: {
     title: 'Qué hacemos y qué no',
     body: [
-      'Preparamos el inmueble y el expediente técnico: diagnóstico de riesgo, equipo contra incendio conforme a la norma, señalización, capacitación de brigada con constancia y la documentación del equipo, ordenada como se presenta.',
+      'Te damos asesoría y preparamos el inmueble y el expediente técnico: diagnóstico de riesgo, equipo contra incendio conforme a la norma, señalización, capacitación de brigada con constancia y la documentación del equipo, ordenada como se presenta.',
       'Lo que no hacemos es firmar el programa. Esa firma corresponde a quien está registrado para ello, y decirlo claro nos parece más útil que prometerlo y subcontratarlo sin avisar.',
     ],
   },
@@ -166,6 +166,18 @@ export const pcFaqs = [
   {
     question: '¿Cómo sé si mi establecimiento está obligado?',
     answer: 'En la Ciudad de México, la plataforma de la SGIRPC tiene un acceso para público en general donde, iniciando sesión con Llave CDMX, se valida si el establecimiento lo requiere. En el Estado de México depende de que tu giro se clasifique como de mediano o alto riesgo. En ambos casos conviene confirmarlo antes de contratar a nadie.',
+  },
+  {
+    question: '¿Cómo sacar un permiso de Protección Civil?',
+    answer: 'Depende de la entidad. En la Ciudad de México es un trámite en línea: primero se valida con Llave CDMX, en la plataforma digital de la SGIRPC, si el establecimiento está obligado, y el Programa Interno lo ingresa un responsable oficial registrado. En el Estado de México, los Programas Específicos de mediano y alto riesgo se presentan de forma presencial (homoclave 1254 del RETyS). En los dos casos conviene llegar con el inmueble al día: equipo, señalización, rutas de evacuación y brigada.',
+  },
+  {
+    question: '¿Qué te pide Protección Civil para un negocio?',
+    answer: 'Depende del giro y del grado de riesgo. En la visita de inspección se revisan sobre todo las medidas de seguridad: extintores vigentes y bien ubicados, señalización y rutas de evacuación, detección cuando aplica, brigada capacitada y, si el establecimiento está obligado, el Programa Interno con su evidencia. Cada ficha por giro de esta sección detalla lo que le aplica.',
+  },
+  {
+    question: '¿Qué es un dictamen o visto bueno de Protección Civil?',
+    answer: 'Es el documento con el que la autoridad en materia de protección civil —la del municipio, la alcaldía o el estado, según el lugar— hace constar que un establecimiento cumple las medidas de seguridad que le revisó. El nombre, los requisitos y el costo cambian de un municipio a otro (visto bueno, dictamen o constancia de medidas preventivas), por eso aquí solo publicamos lo que confirmamos en la fuente oficial de la CDMX y del Estado de México.',
   },
   {
     question: '¿Por qué hay datos que no publican?',
