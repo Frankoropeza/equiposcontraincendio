@@ -12,7 +12,6 @@ import SectionMenu from "@components/SectionMenu.astro";
 import SectionHeading from "@components/SectionHeading.astro";
 import CategoryCard from "@components/CategoryCard.astro";
 import ServiceCard from "@components/ServiceCard.astro";
-import TrustBar from "@components/TrustBar.astro";
 import RiskGuide from "@components/RiskGuide.astro";
 import NormsTable from "@components/NormsTable.astro";
 import ProcessSteps from "@components/ProcessSteps.astro";
@@ -26,7 +25,6 @@ import {
   homeFaqs,
   homeMenuSub,
   homeNormRows,
-  homePillars,
   homeRiskRows,
   homeSteps,
 } from "@data/home";
@@ -92,9 +90,6 @@ const servicios = (await getCollection("servicios", ({ data }) => !data.draft))
   />
 
   <SectionMenu items={menuSecciones} cta={menuCta} />
-
-  {/* ─── Barra de confianza (pilares honestos) ─── */}
-  <TrustBar items={homePillars} />
 
   {/* ─── Catálogo: vitrina de categorías (SHOWCASE) ─── */}
   <section class="section section--surface">
