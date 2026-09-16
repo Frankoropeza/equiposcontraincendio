@@ -186,6 +186,22 @@ export const herramientasSteps = [
 // ── FAQ propio de herramientas ──
 export const herramientasFaqs = [
   {
+    question: '¿Qué es la NOM-002-STPS-2010?',
+    answer: 'Es la Norma Oficial Mexicana de la Secretaría del Trabajo y Previsión Social sobre condiciones de seguridad, prevención y protección contra incendios en los centros de trabajo. Obliga a clasificar el riesgo de incendio del inmueble y, según ese grado, a contar con extintores, detectores, brigada contra incendio, plan de atención a emergencias, instrucciones de seguridad y, en riesgo alto, la protección adicional que corresponda.',
+  },
+  {
+    question: '¿Qué diferencia hay entre riesgo de incendio ordinario y alto?',
+    answer: 'La Tabla 1 de la NOM-002-STPS-2010 clasifica el centro de trabajo con seis criterios: superficie construida, inventario de gases, líquidos inflamables, líquidos combustibles, sólidos combustibles y materiales pirofóricos o explosivos. Basta con rebasar uno para quedar en riesgo alto, que pide más extintores por metro cuadrado y medidas adicionales. El clasificador de riesgo hace esa comparación por ti.',
+  },
+  {
+    question: '¿Cuántos extintores debe tener una empresa?',
+    answer: 'La NOM-002-STPS-2010 pide al menos un extintor por cada 300 m² en riesgo ordinario y uno por cada 200 m² en riesgo alto, nunca menos de uno por nivel, y respetar la distancia máxima de recorrido hasta el equipo. La calculadora de extintores aplica esas reglas a tu superficie y número de niveles.',
+  },
+  {
+    question: '¿La NOM-002-STPS-2010 aplica según el número de trabajadores?',
+    answer: 'Aplica a todos los centros de trabajo del país. Lo que cambia las obligaciones es el grado de riesgo de incendio del inmueble, no el tamaño de la plantilla: por eso la primera herramienta que conviene usar es el clasificador de riesgo.',
+  },
+  {
     question: '¿Estas herramientas sustituyen un dictamen o estudio oficial?',
     answer: 'No. Orientan y te dan un punto de partida con el mismo criterio que aplica la autoridad, pero el estudio o dictamen formal para tu expediente ante Protección Civil o STPS lo debe elaborar y firmar quien está facultado para ello. Si quieres que lo hagamos nosotros, escríbenos.',
   },
@@ -249,7 +265,7 @@ export const herramientasComparativa: ToolRow[] = [
 // calculadora inventada, y lo que permite discutir el resultado con datos.
 export type NormRow = { norma: string; alcance: string; aplica: string };
 export const herramientasNormRows: NormRow[] = [
-  { norma: 'NOM-002-STPS-2010, Tabla 1', alcance: 'Los seis criterios que clasifican el riesgo: superficie, gases, líquidos inflamables y combustibles, sólidos y sustancias comburentes', aplica: 'Clasificador de riesgo' },
+  { norma: 'NOM-002-STPS-2010, Tabla 1', alcance: 'Los seis criterios que clasifican el riesgo: superficie, gases, líquidos inflamables, líquidos combustibles, sólidos combustibles y materiales pirofóricos o explosivos', aplica: 'Clasificador de riesgo' },
   { norma: 'NOM-002-STPS-2010, 5.1 y 7.17', alcance: 'Un extintor por cada 300 m² en riesgo ordinario y por cada 200 m² en alto, nunca menos de uno por nivel', aplica: 'Calculadora de extintores' },
   { norma: 'NOM-002-STPS-2010, Tabla 1', alcance: 'Distancia máxima de recorrido: 23 m para clases A, C y D; 15 m clase B (10 m en riesgo alto); 10 m clase K', aplica: 'Calculadora de extintores' },
   { norma: 'NOM-002-STPS-2010, 7.18', alcance: 'Revisión mensual del extintor y mantenimiento al menos una vez al año', aplica: 'Verificador de 12 puntos' },
