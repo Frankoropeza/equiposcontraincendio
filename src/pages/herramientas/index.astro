@@ -3,8 +3,8 @@
 // /herramientas/ — Hub de herramientas de utilidad pública (L2).
 // ----------------------------------------------------------------------------
 // AL PATRÓN L2 (2026-09-10), igual que /productos, /servicios y /cobertura:
-//   Hero → SectionMenu → TrustBar → tarjetas → módulos CategoryFeature →
-//   RiskGuide → NormsTable → ProcessSteps → CompanyAbout → RelatedLinks →
+//   Hero → SectionMenu → tarjetas → módulos CategoryFeature → RiskGuide →
+//   NormsTable → ProcessSteps → CompanyAbout → RelatedLinks →
 //   FAQ + Contacto
 // El SectionMenu de cierre que tenía esta página lo sustituye RelatedLinks,
 // que es como cierran las otras tres. Todo el contenido vive en
@@ -22,7 +22,7 @@ import CategoryCard from '@components/CategoryCard.astro'
 import CategoryFeature from '@components/CategoryFeature.astro'
 import ProcessSteps from '@components/ProcessSteps.astro'
 import FAQWithContact from '@components/FAQWithContact.astro'
-import { CONTACT, waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
+import { CONTACT, waUrl, sectionMenuItems } from '@config/site'
 import RiskGuide from '@components/RiskGuide.astro'
 import NormsTable from '@components/NormsTable.astro'
 import CompanyAbout from '@components/CompanyAbout.astro'
@@ -35,6 +35,7 @@ import {
   herramientasComparativa,
   herramientasNormRows,
   herramientasCompany,
+  herramientasConsultaMsg,
   herramientasRelated,
 } from '@data/herramientas'
 
@@ -46,9 +47,9 @@ import {
 
 const menuSecciones = sectionMenuItems()
 const menuCta = {
-  label: 'Cotizar por WhatsApp',
-  href: waUrl(WA_MESSAGES.default),
-  sub: 'Respuesta inmediata',
+  label: 'Consultar mi resultado',
+  href: waUrl(herramientasConsultaMsg),
+  sub: 'Te decimos qué sigue',
   external: true,
 }
 
@@ -83,14 +84,14 @@ const schemaData = {
     title="Herramientas de la"
     accent="NOM-002-STPS-2010"
     accentNowrap
-    subtitle="Cuatro herramientas gratuitas de prevención y protección contra incendios en los centros de trabajo: en qué grado de riesgo de incendio estoy, cuántos extintores necesito, si el equipo que ya tengo está en regla y con qué lo documento."
+    subtitle="Herramientas gratuitas de prevención y protección contra incendios en los centros de trabajo: en qué grado de riesgo de incendio estás, cuántos extintores necesitas, si el equipo que ya tienes está en regla y con qué documentarlo."
     descRight={[
-      'Aplican los criterios de la NOM-002-STPS-2010 y de la NOM-154-SCFI-2005, y cada una cita de dónde sale su número. Sin registro, sin correo y sin letras chiquitas.',
-      'Orientan, no dictaminan: el estudio o el dictamen formal lo elabora y lo firma quien está facultado. Si prefieres que lo hagamos nosotros, escríbenos.',
+      'Aplican los criterios de la NOM-002-STPS-2010 y de la NOM-154-SCFI-2005, y cada una cita de dónde sale su número. No requieren registro ni datos de contacto.',
+      'Orientan, no dictaminan: el estudio o el dictamen formal lo elabora y lo firma quien está facultado. Si necesitas apoyo, revisamos contigo el resultado y lo que corresponde corregir en el inmueble.',
     ]}
     ctas={[
-      { text: 'Equipos contra incendios', href: '/productos/', variant: 'outline' },
-      { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.default), variant: 'primary', whatsapp: true },
+      { text: 'Clasificar mi riesgo', href: '/herramientas/riesgo-de-incendio/', variant: 'outline' },
+      { text: 'Consultar por WhatsApp', href: waUrl(herramientasConsultaMsg), variant: 'primary', whatsapp: true },
     ]}
   />
 
@@ -106,9 +107,8 @@ const schemaData = {
         titleAccent="verifica tu equipo"
         desc="Cada herramienta cita la norma de la que sale su criterio."
         body={[
-          'Las hicimos porque son las preguntas que más nos llegan por WhatsApp antes de una cotización: qué grado de riesgo tengo, cuántos extintores me piden, si el servicio que me dieron el año pasado sirvió de algo y con qué lo dejo por escrito.',
+          'Responden las preguntas que más recibimos antes de una cotización: qué grado de riesgo corresponde al inmueble, cuántos extintores exige la norma, si el último servicio se hizo conforme a norma y con qué documento se registra.',
           'La Norma Oficial Mexicana NOM-002-STPS-2010, «Condiciones de seguridad – Prevención y protección contra incendios en los centros de trabajo», de la Secretaría del Trabajo y Previsión Social, obliga a toda empresa a clasificar su riesgo de incendio (ordinario o alto) y, con base en ese grado, a contar con extintores, detección, plan de atención a emergencias, instrucciones de seguridad y, en riesgo alto, brigada contra incendio. Estas herramientas convierten esos requisitos en números concretos para tu inmueble.',
-          'Son gratuitas, no piden registro y funcionan igual si eres cliente nuestro o no.',
         ]}
       />
 
@@ -131,20 +131,12 @@ const schemaData = {
   </section>
 
   {/* ─── Módulos de detalle por herramienta (CategoryFeature) ─── */}
-  {HERRAMIENTAS_FEATURES.map((c) => (
+  {HERRAMIENTAS_FEATURES.map(({ ctaSecondaryMsg, ...feature }) => (
     <CategoryFeature
-      eyebrow={c.eyebrow}
-      title={c.title}
-      titleAccent={c.titleAccent}
-      description={c.description}
-      features={c.features}
-      ctaLabel={c.ctaLabel}
-      ctaHref={c.ctaHref}
-      ctaSecondaryLabel={c.ctaSecondaryLabel}
-      ctaSecondaryHref={c.ctaSecondaryHref}
-      imgMain={c.imgMain}
-      imgA={c.imgA}
-      imgB={c.imgB}
+      {...feature}
+      ctaSecondaryLabel="Consultar por WhatsApp"
+      ctaSecondaryHref={waUrl(ctaSecondaryMsg)}
+      ctaSecondaryExternal
     />
   ))}
 
@@ -155,7 +147,7 @@ const schemaData = {
     titleAccent="de prevención y protección contra incendios"
     desc="Para que abras la que necesitas sin tener que probarlas todas."
     body={[
-      'Las cuatro parten de la misma idea: darte el número antes de que alguien te lo convierta en cotización. Cambia la pregunta que responden y los datos que hay que tener a la mano.',
+      'Todas parten de la misma idea: conocer el número antes de solicitar una cotización. Cambia la pregunta que responden y los datos que hay que tener a la mano.',
       'Si no sabes por dónde empezar, empieza por el riesgo: casi todo lo demás —cuántos extintores, si necesitas brigada— depende de ese primer resultado.',
     ]}
     rows={herramientasComparativa}
@@ -172,7 +164,7 @@ const schemaData = {
     titleAccent="y de dónde sale cada número"
     desc="Cada resultado cita el artículo o la tabla de la que sale."
     body={[
-      'Una calculadora que no dice de dónde saca su número no sirve para discutir con nadie. Aquí está el sustento normativo de cada cálculo, para que puedas verificarlo o defenderlo ante una verificación.',
+      'Un cálculo sin fuente no se puede verificar ni sostener ante la autoridad. Aquí está el sustento normativo de cada resultado, para que puedas comprobarlo en una verificación.',
       'Además de la revisión mensual de los extintores, la norma fija los requerimientos para la prevención de incendios en todo centro de trabajo: medios de detección, instrucciones de seguridad aplicables en cada área, un plan de atención a emergencias, el croquis o plano con la ubicación del equipo y las rutas, un programa anual de capacitación y al menos un simulacro al año. Con riesgo de incendio alto suma brigadas con equipo de protección personal para sus integrantes, dos simulacros al año, alarmas de incendio y sistemas fijos contra incendio.',
       'Las NOM son obligatorias en México; el criterio de las herramientas no va más allá de lo que ellas dicen.',
     ]}
@@ -184,9 +176,13 @@ const schemaData = {
   {/* ─── Cómo funcionan (ProcessSteps, fondo oscuro) ─── */}
   <ProcessSteps
     eyebrow="Cómo funcionan"
-    title="Ocho pasos para evaluar tu"
+    title="Cómo evaluar tu"
     titleAccent="centro de trabajo"
     desc="Sin trámites ni tecnicismos: capturas lo que ya sabes de tu inmueble y la herramienta hace el cálculo."
+    body={[
+      'El orden importa: el grado de riesgo define la cantidad de equipo, y el equipo instalado define qué hay que revisar y registrar.',
+      'Cada paso se apoya en una de las herramientas de esta sección y en la norma de la que sale su criterio.',
+    ]}
     steps={comoFuncionaSteps}
   />
 
@@ -201,13 +197,13 @@ const schemaData = {
         desc="Un cliente que entiende el porqué de su número compra mejor."
         body={[
           'Publicamos las cuentas en vez de guardarlas: es la forma más rápida de que dejes de depender de la palabra de un proveedor, el nuestro incluido.',
-          '¿Tu resultado no te cuadra o no sabes cómo seguir? Escríbenos y lo revisamos contigo.',
+          'Si tu resultado no coincide con lo que tienes instalado, escríbenos y lo revisamos contigo.',
         ]}
       />
       <CompanyAbout
         que={herramientasCompany.que}
         como={herramientasCompany.como}
-        cta={{ label: 'Consultar mi resultado', href: waUrl('Hola, usé sus herramientas y quiero revisar mi resultado.'), external: true }}
+        cta={{ label: 'Consultar mi resultado', href: waUrl(herramientasConsultaMsg), external: true }}
       />
     </div>
   </section>
@@ -225,8 +221,23 @@ const schemaData = {
 </PageLayout>
 
 <style>
-  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
-  .section { padding: var(--sp-8) 0; }
-  .section--surface { background: var(--c-surface); }
-  @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
+  .container {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-px);
+  }
+
+  .section {
+    padding: var(--sp-8) 0;
+  }
+
+  .section--surface {
+    background: var(--c-surface);
+  }
+
+  @media (min-width: 768px) {
+    .section {
+      padding: var(--sp-10) 0;
+    }
+  }
 </style>

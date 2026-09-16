@@ -15,6 +15,7 @@
 // de la que sale su criterio y deja claro que el dictamen lo firma quien está
 // facultado. Esa frase no es un descargo legal decorativo: es la diferencia
 // entre una herramienta útil y una que mete al usuario en un problema.
+// CTA como el index: primario a la herramienta, secundario WhatsApp (Consultar por WhatsApp).
 // ============================================================================
 
 export const herramientasCards = [
@@ -24,7 +25,7 @@ export const herramientasCards = [
     image: '/images/servicios/inspeccion-sistema-alarma-extintor.avif',
     imageAlt: 'Inspección de sistema de alarma y extintor en un centro de trabajo',
     badge: 'NOM-002-STPS-2010',
-    blurb: 'Los mismos seis criterios que aplica la autoridad: basta con uno para pasar a riesgo alto.',
+    blurb: 'Criterios de la Tabla 1 de la NOM-002: basta uno para pasar a riesgo alto.',
     ctaLabel: 'Clasificar mi riesgo',
     subcategories: [
       { label: 'La Tabla 1 explicada', href: '/blog/riesgo-de-incendio-tabla-1-nom-002/' },
@@ -52,10 +53,10 @@ export const herramientasCards = [
     image: '/images/servicios/inspeccion-gabinete-hidrante-extintor.avif',
     imageAlt: 'Revisión de gabinete de hidrante y extintor en sitio',
     badge: 'NOM-154-SCFI-2005',
-    blurb: 'Doce puntos para saber si el servicio del año pasado fue real o solo una calcomanía.',
+    blurb: 'Puntos observables para comprobar si el último servicio fue conforme a norma.',
     ctaLabel: 'Verificar mi extintor',
     subcategories: [
-      { label: '12 señales de servicio real', href: '/blog/como-saber-si-mantenimiento-extintor-es-real/' },
+      { label: 'Señales de servicio real', href: '/blog/como-saber-si-mantenimiento-extintor-es-real/' },
       { label: 'Verificar al proveedor', href: '/blog/mantenimiento-recarga-extintores-nom/' },
       { label: 'Leer el manómetro', href: '/blog/manometro-extintor-zonas-que-significan/' },
     ],
@@ -80,23 +81,36 @@ export const herramientasCards = [
 // Mismo patrón que /servicios (CategoryFeature uniforme: sin flip ni surface):
 // izquierda info + bullets, derecha galería 1 grande + 2 chicas. Uno por
 // tarjeta, en el mismo orden que el grid de arriba.
-export const herramientasFeatures = [
+export type HerramientaFeature = {
+  eyebrow: string;
+  title: string;
+  titleAccent: string;
+  description: string;
+  features: { label: string; desc: string }[];
+  ctaLabel: string;
+  ctaHref: string;
+  ctaSecondaryMsg: string;
+  imgMain: { src: string; alt: string };
+  imgA: { src: string; alt: string };
+  imgB: { src: string; alt: string };
+};
+
+export const herramientasFeatures: HerramientaFeature[] = [
   {
     eyebrow: 'Herramienta gratuita · NOM-002-STPS-2010',
     title: 'Riesgo de incendio:',
     titleAccent: 'ordinario o alto, en minutos',
     description:
-      'Captura los datos de tu inmueble y aplica los mismos seis criterios de la Tabla 1 que usa la autoridad: superficie, gases, líquidos inflamables y combustibles, y sustancias corrosivas o comburentes. Con que uno solo alcance su umbral, todo el centro de trabajo pasa a riesgo alto.',
+      'Captura los datos de tu inmueble y aplica los criterios de la Tabla 1 de la NOM-002-STPS-2010: superficie construida e inventario de gases inflamables, líquidos inflamables, líquidos combustibles, sólidos combustibles y materiales pirofóricos o explosivos. Con que uno solo alcance su umbral, todo el centro de trabajo pasa a riesgo alto.',
     features: [
-      { label: 'Los seis criterios', desc: 'Superficie e inventario de gases, líquidos y sustancias con umbral propio.' },
+      { label: 'Criterios de la Tabla 1', desc: 'Superficie e inventario de gases, líquidos, sólidos y pirofóricos.' },
       { label: 'Resultado inmediato', desc: 'Ordinario o alto, con el criterio exacto que definió tu clasificación.' },
       { label: 'De qué depende después', desc: 'Cuántos extintores te pide la norma y si necesitas brigada.' },
       { label: 'Orienta, no dictamina', desc: 'El estudio formal para tu expediente lo firma quien está facultado.' },
     ],
     ctaLabel: 'Clasificar mi riesgo',
     ctaHref: '/herramientas/riesgo-de-incendio/',
-    ctaSecondaryLabel: 'La Tabla 1 explicada',
-    ctaSecondaryHref: '/blog/riesgo-de-incendio-tabla-1-nom-002/',
+    ctaSecondaryMsg: 'Hola, usé la herramienta de riesgo de incendio y quiero revisar mi resultado.',
     imgMain: { src: '/images/servicios/auditoria-seguridad-contra-incendio.avif', alt: 'Diagnóstico de riesgo de incendio en un centro de trabajo' },
     imgA: { src: '/images/servicios/cuarto-bomba-contra-incendio.avif', alt: 'Cuarto de bomba contra incendio en nave industrial' },
     imgB: { src: '/images/servicios/instalacion-deteccion-alarma.avif', alt: 'Instalación de detección y alarma contra incendio' },
@@ -115,8 +129,7 @@ export const herramientasFeatures = [
     ],
     ctaLabel: 'Calcular mis extintores',
     ctaHref: '/herramientas/cuantos-extintores-necesito/',
-    ctaSecondaryLabel: 'Extintores por m²',
-    ctaSecondaryHref: '/blog/cuantos-extintores-por-metro-cuadrado/',
+    ctaSecondaryMsg: 'Hola, calculé cuántos extintores necesito y quiero cotizarlos.',
     imgMain: { src: '/images/servicios/instalacion-equipo-almacen.avif', alt: 'Suministro de equipo contra incendio en almacén' },
     imgA: { src: '/images/showcase/extintores-catalogo-profesional.avif', alt: 'Extintores de distintas capacidades en catálogo' },
     imgB: { src: '/images/servicios/supresion-cocina-comercial.avif', alt: 'Supresión de incendios en cocina comercial' },
@@ -124,19 +137,18 @@ export const herramientasFeatures = [
   {
     eyebrow: 'Herramienta gratuita · NOM-154-SCFI-2005',
     title: 'Verifica tu extintor',
-    titleAccent: 'en 12 puntos',
+    titleAccent: 'antes de la verificación',
     description:
-      'El problema más común de este mercado no es el extintor: es la calcomanía sin servicio detrás. Marca lo que se cumple hoy en tu inmueble y sabrás, sin herramientas ni conocimientos técnicos, en qué estás parado antes de que llegue una verificación real.',
+      'Una etiqueta de servicio no garantiza que el mantenimiento se haya realizado. Marca lo que se cumple hoy en tu inmueble y sabrás, sin herramientas ni conocimientos técnicos, en qué situación está tu equipo antes de que llegue una verificación.',
     features: [
-      { label: 'Doce puntos observables', desc: 'Etiqueta, collarín, manómetro, seguro y más, sin tecnicismos.' },
-      { label: 'La calcomanía sin servicio', desc: 'La causa número uno de extintores que no funcionan cuando se necesitan.' },
+      { label: 'Puntos observables', desc: 'Etiqueta, collarín, manómetro y contraseña oficial, sin tecnicismos.' },
+      { label: 'Servicio comprobable', desc: 'Una etiqueta sin servicio real detrás no garantiza que el equipo funcione.' },
       { label: 'Autoevaluación, no dictamen', desc: 'Sirve para llegar con preguntas concretas a tu proveedor.' },
       { label: 'Agenda revisión con un clic', desc: 'Si algo falla, cotiza la corrección directo por WhatsApp.' },
     ],
     ctaLabel: 'Verificar mi extintor',
     ctaHref: '/herramientas/verifica-tu-extintor/',
-    ctaSecondaryLabel: '12 señales de servicio real',
-    ctaSecondaryHref: '/blog/como-saber-si-mantenimiento-extintor-es-real/',
+    ctaSecondaryMsg: 'Hola, revisé mi extintor con su verificador y quiero corregir lo que falló.',
     imgMain: { src: '/images/servicios/etiquetado-inspeccion-extintor.avif', alt: 'Etiquetado e inspección de extintor en sitio' },
     imgA: { src: '/images/servicios/prueba-hidrostatica-extintor.avif', alt: 'Prueba hidrostática de extintor' },
     imgB: { src: '/images/servicios/inspeccion-recarga-extintores.avif', alt: 'Inspección y recarga de extintores' },
@@ -146,7 +158,7 @@ export const herramientasFeatures = [
     title: 'Formatos',
     titleAccent: 'listos para llenar hoy',
     description:
-      'Tres documentos que Protección Civil y la STPS piden ver en tu expediente, ya armados: bitácora de revisión mensual de extintores, acta de simulacro de evacuación y censo de brigada de emergencia. Descárgalos en Excel o PDF y empieza a llenarlos hoy mismo.',
+      'Los registros que respaldan tu expediente ante Protección Civil y la STPS, ya armados: bitácora de revisión mensual de extintores, acta de simulacro de evacuación y censo de brigada de emergencia. Descárgalos en Excel o PDF y úsalos desde la próxima revisión.',
     features: [
       { label: 'Bitácora de revisión', desc: 'Una fila por extintor, una casilla por mes, con qué revisar cada vez.' },
       { label: 'Acta de simulacro', desc: 'Hipótesis, tiempos, puntos observados y áreas de oportunidad.' },
@@ -155,8 +167,7 @@ export const herramientasFeatures = [
     ],
     ctaLabel: 'Formatos descargables',
     ctaHref: '/plantillas/',
-    ctaSecondaryLabel: 'Bitácora de revisión',
-    ctaSecondaryHref: '/plantillas/bitacora-revision-extintores/',
+    ctaSecondaryMsg: 'Hola, descargué sus formatos y quiero ayuda para integrar mi expediente.',
     imgMain: { src: '/images/servicios/capacitacion-brigada-extintores.avif', alt: 'Capacitación de brigada en el uso de extintores' },
     imgA: { src: '/images/casos/entrega-servicio-equipo-contra-incendio.avif', alt: 'Entrega de servicio de equipo contra incendio' },
     imgB: { src: '/images/servicios/inspeccion-gabinete-manguera-contra-incendio.avif', alt: 'Revisión de gabinete y manguera contra incendio' },
@@ -165,14 +176,14 @@ export const herramientasFeatures = [
 
 // ── Cómo funcionan (ProcessSteps, fondo oscuro) ──
 export const herramientasSteps = [
-  { num: '01', title: 'Elige tu pregunta', desc: 'Cada herramienta resuelve una duda concreta sobre riesgo, equipo o formatos.' },
-  { num: '02', title: 'Abre la herramienta', desc: 'Entra al cálculo de riesgo, cantidad de extintores, verificación o formatos.' },
-  { num: '03', title: 'Captura los datos', desc: 'Ingresa superficie, inventario o los puntos de revisión que ya conoces.' },
-  { num: '04', title: 'Revisa el criterio', desc: 'La herramienta muestra la norma o tabla de la que sale cada resultado.' },
-  { num: '05', title: 'Obtén tu resultado', desc: 'Ves el número, la clasificación o los hallazgos de tu consulta.' },
-  { num: '06', title: 'Contrasta tu caso', desc: 'Compara el resultado con las notas y límites que aparecen en la herramienta.' },
-  { num: '07', title: 'Guarda la referencia', desc: 'Conserva el resultado o formato como punto de partida para tu expediente.' },
-  { num: '08', title: 'Decide tu siguiente paso', desc: 'Si necesitas equipo o servicio, comparte el resultado por WhatsApp.' },
+  { num: '01', title: 'Clasifica el riesgo', desc: 'Captura superficie e inventario; el grado de riesgo condiciona el resto de las obligaciones.' },
+  { num: '02', title: 'Calcula el equipo', desc: 'Con el grado de riesgo, obtén el mínimo de extintores por superficie y por nivel.' },
+  { num: '03', title: 'Asigna el agente por área', desc: 'Cocina, cuarto eléctrico o almacén de inflamables requieren un agente específico.' },
+  { num: '04', title: 'Revisa el recorrido', desc: 'Comprueba que cada punto del inmueble quede dentro de la distancia máxima al extintor.' },
+  { num: '05', title: 'Verifica el equipo instalado', desc: 'Revisa etiqueta, collarín, manómetro y contraseña oficial de cada extintor.' },
+  { num: '06', title: 'Registra la revisión mensual', desc: 'Anota cada revisión en la bitácora; es la evidencia que pide la NOM-002.' },
+  { num: '07', title: 'Documenta simulacros y brigada', desc: 'Usa el acta de simulacro y el censo de brigada para integrar el expediente.' },
+  { num: '08', title: 'Atiende lo pendiente', desc: 'Comparte el resultado por WhatsApp si necesitas equipo, servicio o una revisión en sitio.' },
 ]
 
 // ── FAQ propio de herramientas ──
@@ -182,8 +193,16 @@ export const herramientasFaqs = [
     answer: 'Es la Norma Oficial Mexicana de la Secretaría del Trabajo y Previsión Social sobre condiciones de seguridad, prevención y protección contra incendios en los centros de trabajo. Obliga a clasificar el riesgo de incendio del inmueble y, según ese grado, a contar con extintores, detectores, plan de atención a emergencias, instrucciones de seguridad y simulacros; en riesgo alto suma la brigada contra incendio y los sistemas fijos de protección.',
   },
   {
+    question: '¿Cuál es la norma de extintores en México?',
+    answer: 'Son varias, cada una con su alcance. La NOM-002-STPS-2010 fija cuántos extintores debe tener un centro de trabajo, dónde se colocan y cada cuándo se revisan; la NOM-154-SCFI-2005 regula el servicio de mantenimiento, la recarga y la prueba hidrostática, y la NOM-106-SCFI-2017 establece la contraseña oficial que acredita al producto certificado.',
+  },
+  {
+    question: '¿A qué altura debe estar un extintor según la NOM-002?',
+    answer: 'La NOM-002-STPS-2010 establece que el extintor se coloque a no más de 1.50 m del piso, medido a la parte más alta del equipo, en un lugar visible, de fácil acceso y libre de obstáculos.',
+  },
+  {
     question: '¿Qué diferencia hay entre riesgo de incendio ordinario y alto?',
-    answer: 'La Tabla 1 de la NOM-002-STPS-2010 clasifica el centro de trabajo con seis criterios: superficie construida, inventario de gases, líquidos inflamables, líquidos combustibles, sólidos combustibles y materiales pirofóricos o explosivos. Basta con rebasar uno para quedar en riesgo alto, que pide más extintores por metro cuadrado y medidas adicionales. El clasificador de riesgo hace esa comparación por ti.',
+    answer: 'La Tabla 1 de la NOM-002-STPS-2010 clasifica el centro de trabajo con criterios de superficie construida e inventario de gases, líquidos inflamables, líquidos combustibles, sólidos combustibles y materiales pirofóricos o explosivos. Basta con rebasar uno para quedar en riesgo alto, que pide más extintores por metro cuadrado y medidas adicionales. El clasificador de riesgo hace esa comparación por ti.',
   },
   {
     question: '¿Cuántos extintores debe tener una empresa?',
@@ -195,11 +214,11 @@ export const herramientasFaqs = [
   },
   {
     question: '¿Estas herramientas sustituyen un dictamen o estudio oficial?',
-    answer: 'No. Orientan y te dan un punto de partida con el mismo criterio que aplica la autoridad, pero el estudio o dictamen formal para tu expediente ante Protección Civil o STPS lo debe elaborar y firmar quien está facultado para ello. Si quieres que lo hagamos nosotros, escríbenos.',
+    answer: 'No. Orientan y te dan un punto de partida con el mismo criterio que aplica la autoridad, pero el estudio o dictamen formal para tu expediente ante Protección Civil o STPS lo debe elaborar y firmar quien está facultado para ello. Si necesitas apoyo, revisamos contigo el resultado y las correcciones en el inmueble.',
   },
   {
     question: '¿Necesito registrarme o dar mi correo para usarlas?',
-    answer: 'No. Las cuatro son gratuitas, sin registro y sin necesidad de correo: capturas tus datos o descargas el formato, y decides si quieres compartirlo con nosotros por WhatsApp.',
+    answer: 'No. Todas son gratuitas, sin registro y sin necesidad de correo: capturas tus datos o descargas el formato, y decides si quieres compartirlo con nosotros por WhatsApp.',
   },
   {
     question: '¿Mis datos se guardan o los ve alguien más?',
@@ -257,12 +276,12 @@ export const herramientasComparativa: ToolRow[] = [
 // calculadora inventada, y lo que permite discutir el resultado con datos.
 export type NormRow = { norma: string; alcance: string; aplica: string };
 export const herramientasNormRows: NormRow[] = [
-  { norma: 'NOM-002-STPS-2010, Tabla 1', alcance: 'Los seis criterios que clasifican el riesgo: superficie, gases, líquidos inflamables, líquidos combustibles, sólidos combustibles y materiales pirofóricos o explosivos', aplica: 'Clasificador de riesgo' },
+  { norma: 'NOM-002-STPS-2010, Tabla 1', alcance: 'Los criterios que clasifican el riesgo: superficie, gases, líquidos inflamables, líquidos combustibles, sólidos combustibles y materiales pirofóricos o explosivos', aplica: 'Clasificador de riesgo' },
   { norma: 'NOM-002-STPS-2010, 5.1 y 7.17', alcance: 'Un extintor por cada 300 m² en riesgo ordinario y por cada 200 m² en alto, nunca menos de uno por nivel', aplica: 'Calculadora de extintores' },
   { norma: 'NOM-002-STPS-2010, Tabla 1', alcance: 'Distancia máxima de recorrido: 23 m para clases A, C y D; 15 m clase B (10 m en riesgo alto); 10 m clase K', aplica: 'Calculadora de extintores' },
-  { norma: 'NOM-002-STPS-2010, 7.18', alcance: 'Revisión mensual del extintor y mantenimiento al menos una vez al año', aplica: 'Verificador de 12 puntos' },
-  { norma: 'NOM-154-SCFI-2005, 5.6', alcance: 'Prueba hidrostática del cilindro cada cinco años y marcado de la fecha sobre el equipo', aplica: 'Verificador de 12 puntos' },
-  { norma: 'NOM-106-SCFI-2017', alcance: 'Contraseña oficial del producto certificado: el sello que debe llevar el extintor', aplica: 'Verificador de 12 puntos' },
+  { norma: 'NOM-002-STPS-2010, 7.18', alcance: 'Revisión mensual del extintor y mantenimiento al menos una vez al año', aplica: 'Verificador de extintor' },
+  { norma: 'NOM-154-SCFI-2005, 5.6', alcance: 'Prueba hidrostática del cilindro cada cinco años y marcado de la fecha sobre el equipo', aplica: 'Verificador de extintor' },
+  { norma: 'NOM-106-SCFI-2017', alcance: 'Contraseña oficial del producto certificado: el sello que debe llevar el extintor', aplica: 'Verificador de extintor' },
   { norma: 'Programa Interno de Protección Civil', alcance: 'Evidencia documental que se presenta en una verificación', aplica: 'Formatos descargables' },
 ];
 
@@ -271,8 +290,8 @@ export const herramientasCompany = {
   que: {
     title: 'Por qué publicamos las cuentas',
     body: [
-      'La mayoría de los proveedores guarda estos números para dártelos ya convertidos en cotización. Nosotros preferimos publicarlos: un cliente que entiende por qué necesita nueve extintores y no cuatro compra mejor, discute mejor y no vuelve a caer con quien le venda de más.',
-      'Las cuatro herramientas son gratuitas, sin registro y sin correo. El cálculo ocurre en tu navegador: no guardamos ni enviamos tus datos a ningún lado, salvo que decidas compartirlos al escribirnos.',
+      'Publicamos los criterios de cálculo para que cualquier empresa pueda comprobar cuánto equipo le corresponde antes de cotizar. Un cliente que entiende el origen de su número toma mejores decisiones de compra.',
+      'Las herramientas son gratuitas, sin registro y sin correo. El cálculo ocurre en tu navegador: no guardamos ni enviamos tus datos a ningún lado, salvo que decidas compartirlos al escribirnos.',
     ],
   },
   como: {
@@ -284,6 +303,10 @@ export const herramientasCompany = {
     ],
   },
 };
+
+// ── Consulta de resultado ───────────────────────────────────────────────────
+export const herramientasConsultaMsg =
+  'Hola, usé sus herramientas y quiero revisar mi resultado.';
 
 // ── Enlaces relacionados ─────────────────────────────────────────────────────
 // Sustituyen al SectionMenu de cierre que tenía la página: mismo destino, pero
