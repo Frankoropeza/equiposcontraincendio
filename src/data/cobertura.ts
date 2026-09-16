@@ -74,7 +74,7 @@ export const zoneFeatures: ZoneFeature[] = [
     features: [
       { label: 'Las 16 alcaldías', desc: 'De Álvaro Obregón a Xochimilco, con visita y entrega en sitio.' },
       { label: 'Servicio presencial', desc: 'Instalación, mantenimiento, inspección y capacitación en tu inmueble.' },
-      { label: 'Entrega con factura', desc: 'Extintores, detección, hidrantes y señalización con ficha técnica.' },
+      { label: 'Entrega con factura', desc: 'Extintores portátiles, detección, gabinetes, accesorios y señalética con ficha técnica.' },
       { label: 'Expediente para PC-CDMX', desc: 'Constancias y evidencia con el formato que pide la alcaldía.' },
     ],
     ctaLabel: 'Cotizar en CDMX',
@@ -163,7 +163,7 @@ export const coberturaSteps: Step[] = [
   { num: '05', title: 'Visita y servicio', desc: 'El técnico llega con los extintores, el equipo y la herramienta; si algo va a taller, se avisa antes.' },
   { num: '06', title: 'Trabajo en sitio', desc: 'Se realiza el servicio acordado en tu inmueble y se revisan los puntos del alcance.' },
   { num: '07', title: 'Documentación local', desc: 'Entregamos la evidencia con el formato que pide tu alcaldía o municipio.' },
-  { num: '08', title: 'Seguimiento de vigencia', desc: 'Queda identificado cuándo toca la siguiente revisión o servicio.' },
+  { num: '08', title: 'Seguimiento de vigencia', desc: 'Queda identificado cuándo toca la siguiente revisión o servicio durante la vida útil de cada extintor.' },
 ];
 
 // ── Sobre la cobertura ───────────────────────────────────────────────────────
@@ -171,7 +171,7 @@ export const coberturaCompany = {
   que: {
     title: 'Qué significa servicio en sitio',
     body: [
-      'Servicio en sitio quiere decir que el técnico va a tu inmueble: instala, da mantenimiento y recarga a tus extintores, inspecciona, capacita a la brigada para responder a un conato de incendio y entrega el equipo —extintores de polvo químico seco y de CO₂, detectores de humo, señalamientos, gabinetes y soportes— con su factura y su ficha técnica. No es asesoría a distancia ni envío por paquetería.',
+      'Servicio en sitio quiere decir que el técnico va a tu inmueble: instala, da mantenimiento y recarga a tus extintores, inspecciona, capacita a la brigada en evacuación y en cómo responder a un conato de incendio y entrega el equipo —extintores de polvo químico seco y de CO₂, detectores de humo, señalamientos, gabinetes y soportes— con su factura y su ficha técnica. No es asesoría a distancia ni envío por paquetería.',
       'Trabajamos en la Ciudad de México, los municipios conurbados del Estado de México y el resto del estado según ubicación. Fuera de esas zonas coordinamos envío de equipo, pero lo decimos claro antes de cotizar.',
     ],
   },
