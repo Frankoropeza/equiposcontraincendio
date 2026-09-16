@@ -38,7 +38,7 @@ const schemaData = {
   list: {
     name: 'Blog de equipo contra incendio',
     description:
-      'Guías sobre extintores, mantenimiento, sistemas contra incendio y normatividad mexicana aplicable a empresas.',
+      'Guías de prevención y protección contra incendios para empresas: extintores, mantenimiento, sistemas contra incendio y normatividad mexicana.',
     path: '/blog/',
     items: posts.map((a) => ({
       name: a.data.title,
@@ -51,8 +51,8 @@ const schemaData = {
 ---
 
 <PageLayout
-  title="Blog de equipo contra incendio en México"
-  description="Guías sobre extintores, recarga y mantenimiento, sistemas contra incendio y lo que exige la norma mexicana a tu empresa, explicado claro."
+  title="Prevención de incendios en empresas: guías y normas"
+  description="Guías de prevención y protección contra incendios para empresas en México: extintores, mantenimiento, sistemas contra incendio y lo que exige la NOM-002-STPS-2010."
   pageType="category"
   schemaData={schemaData}
   breadcrumbs={[{ label: 'Blog' }]}
@@ -61,9 +61,9 @@ const schemaData = {
   {/* ─── Hero (componente compartido, copy de cara al cliente) ─── */}
   <Hero
     badge="Guías y normatividad"
-    title="Guías de"
-    accent="seguridad contra incendio"
-    subtitle="Artículos prácticos para elegir, instalar y mantener tu equipo contra incendio, y entender qué pide la normatividad mexicana — explicado claro, sin tecnicismos de más."
+    title="Guías de prevención"
+    accent={"y\u00a0protección contra\u00a0incendios"}
+    subtitle="Medidas de prevención de incendios para tu empresa: cómo elegir, instalar y mantener tu equipo contra incendio y qué pide la normatividad mexicana, explicado claro y sin tecnicismos de más."
     descRight={[
       'Aquí publicamos guías sobre equipo contra incendio: cómo elegir un extintor según la clase de fuego, qué exige la NOM-154-SCFI para el mantenimiento y la recarga, y cómo mantener tu inmueble protegido y en regla.',
       'Contenido pensado para que tomes mejores decisiones de protección, con información confiable y aplicada a tu caso. ¿Tienes una duda puntual? Escríbenos por WhatsApp.',
@@ -82,11 +82,11 @@ const schemaData = {
     total={total}
     base="/blog/"
     eyebrow="Últimos artículos"
-    title="Guías y"
-    titleAccent="normatividad"
+    title="Seguridad contra incendios:"
+    titleAccent="guías y normatividad"
     desc="Lo esencial sobre extintores, mantenimiento y cumplimiento, explicado claro."
     body={[
-      'Reunimos guías prácticas sobre protección contra incendio: qué equipo necesitas según tu riesgo, cada cuándo darle servicio y qué pide la norma para pasar una inspección.',
+      'Reunimos guías prácticas de prevención y protección contra incendios: qué equipo necesitas según tu grado de riesgo, cada cuándo darle servicio, cómo organizar la brigada y los simulacros, y qué pide la NOM-002-STPS-2010 para pasar una inspección de Protección Civil o de la STPS.',
       'Cada artículo va al grano y, cuando aplica, te conecta con el producto o servicio que resuelve tu caso.',
     ]}
   />
