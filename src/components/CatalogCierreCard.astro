@@ -3,6 +3,7 @@
 import { waUrl } from '@config/site';
 import type { FichaCierre } from '@data/extintores-catalogo';
 import { srcsetFor } from '@lib/img';
+import Card from './Card.astro';
 
 interface Props {
   ficha: FichaCierre;
@@ -13,7 +14,7 @@ const { ficha, visible = false } = Astro.props as Props;
 const href = ficha.whatsapp ? waUrl(ficha.href) : ficha.href;
 ---
 
-<article class="catalog-cierre" class:list={{ 'catalog-cierre--visible': visible }} hidden={!visible} data-cierre={!visible}>
+<Card variant="cierre" class:list={['catalog-cierre', { 'catalog-cierre--visible': visible }]} hidden={!visible} data-cierre={!visible}>
   <img
     class="catalog-cierre__image"
     src={ficha.image}
@@ -42,20 +43,9 @@ const href = ficha.whatsapp ? waUrl(ficha.href) : ficha.href;
       {ficha.ctaLabel}
     </a>
   </div>
-</article>
+</Card>
 
 <style>
-  .catalog-cierre {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    min-width: 0;
-    overflow: hidden;
-    border: 1px solid var(--c-border);
-    border-radius: var(--radius-lg);
-    background: var(--c-white);
-  }
-
   .catalog-cierre[hidden] {
     display: none;
   }
@@ -63,19 +53,11 @@ const href = ficha.whatsapp ? waUrl(ficha.href) : ficha.href;
   /* height:auto — sin él manda el atributo height="400" y la imagen no respeta
   el 16:10: la ficha crecía ~130 px y estiraba toda su fila. */
   .catalog-cierre__image {
-    width: 100%;
     height: auto;
     flex-shrink: 0;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-    background: var(--c-surface);
   }
 
   .catalog-cierre__body {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    padding: var(--sp-5);
     background: var(--c-surface);
   }
 

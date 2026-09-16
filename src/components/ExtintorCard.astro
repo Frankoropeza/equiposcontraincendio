@@ -4,6 +4,7 @@
 // los campos opcionales de capacidad, formato, clases, uso y validación.
 import { waUrl } from '@config/site';
 import { srcsetFor } from '@lib/img';
+import Card from './Card.astro';
 import {
   EXT_ACCESORIOS,
   EXT_AGENTE_INFO,
@@ -45,7 +46,7 @@ const accesorios = item.formato
   : [];
 ---
 
-<article
+<Card variant="extintor"
   class="ecard"
   id={item.id}
   data-agente={item.agente}
@@ -159,37 +160,13 @@ const accesorios = item.formato
       </a>}
     </div>
   </div>
-</article>
+</Card>
 
 <style>
-  .ecard {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    min-width: 0;
-    overflow: hidden;
-    border: 1px solid var(--c-border);
-    border-radius: var(--radius-lg);
-    background: var(--c-white);
-    box-shadow: var(--shadow-sm);
-  }
+  .ecard { box-shadow: var(--shadow-sm); }
 
   .ecard[hidden] {
     display: none;
-  }
-
-  .ecard__image {
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-    background: var(--c-surface);
-  }
-
-  .ecard__body {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    padding: var(--sp-5);
   }
 
   .ecard__header {
