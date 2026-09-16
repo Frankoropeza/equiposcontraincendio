@@ -6,8 +6,8 @@ image: /images/showcase/refacciones-equipo-contra-incendio.avif
 price: "Cotizar"
 brand: "CONINC"
 order: 9
-seoTitle: "Soporte para extintor, porta extintor y gabinetes"
-seoDescription: "Compara soportes, abrazaderas y gabinetes para instalar o proteger extintores portátiles en muro, vehículo o gabinete."
+seoTitle: "Soporte y base para extintor, porta extintor y gabinetes"
+seoDescription: "Compara soporte para extintor de pared, base para extintor vehicular, porta extintor con abrazadera y gabinetes para proteger extintores portátiles."
 faqs:
   - question: "¿Qué accesorio necesito para un extintor de pared?"
     answer: "Para un extintor de pared puedes usar un gancho o una abrazadera mural con correa. La compatibilidad depende del aro, diámetro, peso cargado y geometría del cilindro."
@@ -59,8 +59,8 @@ variantes:
     waText: "Hola, necesito cotizar un gabinete empotrable para extintor"
 ficha:
   heroBadge: Soportes · Gabinetes · Abrazaderas · Montaje mural y vehicular
-  heroTitle: Soportes y accesorios
-  heroAccent: para extintores
+  heroTitle: Soporte y base
+  heroAccent: para extintor
   descRight:
     - Encuentra soportes de pared, abrazaderas, bases vehiculares y gabinetes de sobreponer o empotrables.
     - Comparte las medidas del extintor y el lugar de montaje para revisar diámetro, peso, ambiente y anclaje.
@@ -88,7 +88,7 @@ ficha:
     - label: Instalación
       value: Anclaje según muro, vehículo o maquinaria
   showcaseTitle: Datos clave
-  showcaseAccent: de soportes y accesorios
+  showcaseAccent: del soporte y porta extintor
   showcaseDesc: Tipo de montaje, extintor compatible y altura reglamentaria.
   faqAccent: sobre soportes y accesorios
   guia:

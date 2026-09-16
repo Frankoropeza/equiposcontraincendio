@@ -118,7 +118,7 @@ fichaHeads:
     - Cuéntanos superficie, altura y giro y te decimos por dónde empezar.
 ---
 
-Un sistema de rociadores **ataca el incendio mientras empieza**, sin esperar a que alguien lo vea: el calor abre solo el rociador que está sobre el fuego y el agua lo controla antes de que se extienda. Por eso es el sistema fijo más común en naves, bodegas, plazas, hoteles y edificios altos.
+Un sistema de rociadores —también llamados aspersores contra incendio o *sprinklers*— **ataca el incendio mientras empieza**, sin esperar a que alguien lo vea: el calor abre solo el rociador que está sobre el fuego y el agua lo controla antes de que se extienda. Por eso es el sistema fijo más común en naves, bodegas, plazas, hoteles y edificios altos.
 
 ## Cuándo son obligatorios
 
