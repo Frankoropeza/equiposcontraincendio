@@ -7,7 +7,6 @@ import type { CollectionEntry } from 'astro:content';
 import PageLayout from '@layouts/PageLayout.astro';
 import Hero from './Hero.astro';
 import SectionMenu from './SectionMenu.astro';
-import TrustBar from './TrustBar.astro';
 import RiskGuide from './RiskGuide.astro';
 import DataTable from './DataTable.astro';
 import ServiceCard from './ServiceCard.astro';
@@ -143,7 +142,6 @@ const schemaData = {
     ]}
     cta={{ label: 'Consultar mi giro', href: waUrl(d.waMessage), external: true }}
   />
-  <TrustBar items={pcPillars} />
 
   {/* ─── Aviso de alcance ─── */}
   <section class="notice">

@@ -6,7 +6,6 @@
 import PageLayout from '@layouts/PageLayout.astro';
 import Hero from '@components/Hero.astro';
 import SectionMenu from '@components/SectionMenu.astro';
-import TrustBar from '@components/TrustBar.astro';
 import SectionHeading from '@components/SectionHeading.astro';
 import CategoryCard from '@components/CategoryCard.astro';
 import CategoryFeature from '@components/CategoryFeature.astro';
@@ -320,8 +319,6 @@ const schemaData = {
 
   <SectionMenu items={menuSecciones} cta={menuCta} />
 
-  {/* ─── Barra de confianza (pilares honestos) ─── */}
-  <TrustBar items={pillars} />
 
   {/* ─── Categorías (vitrina SHOWCASE) ─── */}
   <section class="section section--surface" id="categorias">

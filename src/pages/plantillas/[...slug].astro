@@ -9,7 +9,6 @@ import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
 import SectionMenu from '@components/SectionMenu.astro'
 import SectionHeading from '@components/SectionHeading.astro'
-import TrustBar from '@components/TrustBar.astro'
 import ProcessSteps from '@components/ProcessSteps.astro'
 import QuoteCard from '@components/QuoteCard.astro'
 import RelatedLinks from '@components/RelatedLinks.astro'
@@ -94,7 +93,6 @@ const relatedPlantilla = Array.from(new Map([
     items={sectionMenuItems()}
     cta={{ label: 'Gestión documental', href: waHref, sub: 'Que lo llevemos nosotros', external: true }}
   />
-  <TrustBar items={plantillasPillars} />
 
   <section class="section section--surface" id="descarga">
     <div class="container">

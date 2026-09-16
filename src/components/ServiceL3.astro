@@ -9,7 +9,6 @@ import SectionMenu from '@components/SectionMenu.astro';
 import SectionHeading from '@components/SectionHeading.astro';
 import ServiceCard from '@components/ServiceCard.astro';
 import CategoryFeature from '@components/CategoryFeature.astro';
-import TrustBar from '@components/TrustBar.astro';
 import RiskGuide from '@components/RiskGuide.astro';
 import NormsTable from '@components/NormsTable.astro';
 import ProcessSteps from '@components/ProcessSteps.astro';
@@ -88,7 +87,6 @@ const schemaData = data.categoriaProductos
     items={sectionMenuItems()}
     cta={{ label: 'Cotizar por WhatsApp', href: waUrl(data.wa), sub: data.menuCtaSub, external: true }}
   />
-  <TrustBar items={data.pillars} />
 
   {/* ─── Vitrina ─── */}
   <section class="section" id={data.vitrina.id}>

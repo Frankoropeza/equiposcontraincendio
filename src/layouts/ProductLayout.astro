@@ -4,7 +4,6 @@
 import PageLayout from './PageLayout.astro';
 import Hero from '@components/Hero.astro';
 import SectionMenu from '@components/SectionMenu.astro';
-import TrustBar from '@components/TrustBar.astro';
 import SectionHeading from '@components/SectionHeading.astro';
 import ExtintorCard from '@components/ExtintorCard.astro';
 import ProductShowcase from '@components/ProductShowcase.astro';
@@ -130,7 +129,6 @@ function shortDescription(value?: string) { return !value ? '' : value.length <=
     { text: 'Cotizar por WhatsApp', href: waLink, variant: 'primary', whatsapp: true },
   ]} />
   <SectionMenu items={sectionMenuItems()} cta={menuCta} />
-  <TrustBar items={fichaData.pillars} />
 
   <ProductShowcase title={title} showcaseTitle={fichaData.showcaseTitle} showcaseAccent={fichaData.showcaseAccent} showcaseDesc={fichaData.showcaseDesc} body={heads.vitrina} image={image} claves={fichaData.claves} capacitySummary={capacitySummary} presentationSummary={presentationSummary} publicPrice={publicPrice} waLink={waLink} />
 

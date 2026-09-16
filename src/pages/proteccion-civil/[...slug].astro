@@ -8,7 +8,6 @@
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
 import SectionMenu from '@components/SectionMenu.astro'
-import TrustBar from '@components/TrustBar.astro'
 import SectionHeading from '@components/SectionHeading.astro'
 import DataTable from '@components/DataTable.astro'
 import QuoteCard from '@components/QuoteCard.astro'
@@ -95,7 +94,6 @@ const relatedTramite = Array.from(new Map([
     items={sectionMenuItems()}
     cta={{ label: 'Preparar el inmueble', href: waHref, sub: 'Equipo y expediente', external: true }}
   />
-  <TrustBar items={pcPillars} />
 
   <DataTable
     eyebrow="Datos del trámite"
