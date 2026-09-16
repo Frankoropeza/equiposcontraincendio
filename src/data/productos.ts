@@ -363,7 +363,7 @@ export const productosCategoryFeatures: ProductosCategoryFeature[] = [
   {
     eyebrow: 'EPP · NOM-115-STPS',
     title: 'Protección personal para',
-    titleAccent: 'tu personal de respuesta',
+    titleAccent: 'tu brigada de respuesta',
     description:
       'Quien interviene en una emergencia no debe exponerse de más. Surtimos cascos, guantes térmicos, trajes de aproximación y protección respiratoria conforme a la NOM-115-STPS, para que tu brigada interna actúe con seguridad.',
     features: [
@@ -644,7 +644,7 @@ export const productosSteps: Step[] = [
   },
   {
     num: '08',
-    title: 'Papel y vigencia',
+    title: 'Documentación y vigencia',
     desc: 'Entregamos ficha técnica y constancia, con aviso de recarga o prueba hidrostática.',
   },
 ];
@@ -669,7 +669,7 @@ export const productosCompany = {
       },
       {
         title: 'El precio depende del volumen',
-        desc: 'Cambia por cantidad y por si incluye instalación o servicio; por eso no hay una lista pública que engañe.',
+        desc: 'Cambia por cantidad y por si incluye instalación o servicio; por eso no se publica una lista de precios que no aplicaría a tu caso.',
       },
       {
         title: 'Equipo certificado con su papel',

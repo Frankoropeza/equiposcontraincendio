@@ -753,7 +753,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
 // Tope práctico: 24 caracteres (más allá el botón parte en dos líneas).
 export const SERVICE_ANCHOR: Record<string, string> = {
   'instalacion':           'Instalación de sistemas',
-  'mantenimiento':         'Recarga de extintores',
+  'mantenimiento':         'Mantenimiento de extintores',
   'prueba-hidrostatica':   'Prueba hidrostática',
   'inspeccion':            'Inspección y dictamen',
   'diagnostico-de-riesgo': 'Diagnóstico de riesgo',

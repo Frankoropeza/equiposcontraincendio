@@ -1,7 +1,9 @@
 ---
-// /servicios/ — Landing de Servicios (categoría L2). HOMOLOGADA con /productos:
-// Hero → SectionMenu → TrustBar → tarjetas → módulos CategoryFeature → FAQ.
-// Mismos componentes compartidos; copy propio de servicios.
+// /servicios/ — Landing L2 de servicios. Responde «¿qué servicio me toca,
+// cada cuándo y qué evidencia deja?». Estructura: Hero → SectionMenu →
+// tarjetas de servicio → módulos CategoryFeature → Calendario (RiskGuide) →
+// NormsTable → ProcessSteps → Sobre el servicio → Reseñas → RelatedLinks → FAQ.
+// El copy vive en src/data/servicios.ts; esta página solo compone. Sin TrustBar.
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
 import SectionMenu from '@components/SectionMenu.astro'
@@ -13,6 +15,7 @@ import RiskGuide from '@components/RiskGuide.astro'
 import NormsTable from '@components/NormsTable.astro'
 import ProcessSteps from '@components/ProcessSteps.astro'
 import CompanyAbout from '@components/CompanyAbout.astro'
+import Testimonios from '@components/Testimonios.astro'
 import RelatedLinks from '@components/RelatedLinks.astro'
 import {
   serviceFeatures,
@@ -21,9 +24,13 @@ import {
   serviciosSteps,
   serviciosCompany,
   serviciosRelated,
+  serviciosFaqs,
+  serviciosTestimoniosHead,
+  serviciosTestimoniosNombres,
 } from '@data/servicios'
 import ServiceCard from '@components/ServiceCard.astro'
 import { getCollection } from 'astro:content'
+import { testimonios } from '@data/testimonios'
 import { SERVICES, SERVICE_ANCHOR, CONTACT, waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
 
 // Menú de secciones: subtítulos desde SECTION_MENU_SUB (site.ts), no un mapa
@@ -32,7 +39,7 @@ const menuSecciones = sectionMenuItems()
 const menuCta = {
   label: 'Cotizar por WhatsApp',
   href: waUrl(WA_MESSAGES.servicios),
-  sub: 'Respuesta inmediata',
+  sub: 'Te decimos qué te toca',
   external: true,
 }
 
@@ -46,55 +53,16 @@ const SERVICE_META = Object.fromEntries(
   serviciosCol.map((s) => [s.id, { image: s.data.image, badge: s.data.badge }]),
 ) as Record<string, { image?: string; badge?: string }>
 
-const faqs = [
-  {
-    question: '¿Cada cuándo se da mantenimiento o recarga a un extintor?',
-    answer: 'El mantenimiento y recarga se realiza conforme a la NOM-154-SCFI-2005 (de forma anual como práctica habitual). Además, en centros de trabajo la NOM-002-STPS-2010 pide una revisión mensual a cargo del personal.',
-  },
-  {
-    question: '¿Cada cuándo se hace la prueba hidrostática?',
-    answer: 'En México la prueba hidrostática se realiza cada 5 años para extintores de agua, CO₂ y PQS, conforme a la NOM-154-SCFI-2005 (o antes si el cilindro se golpea). El dato de “12 años” es de la NFPA 10 de Estados Unidos, no es norma mexicana.',
-  },
-  {
-    question: '¿Cuáles son los tipos de sistemas contra incendios?',
-    answer: 'Los más comunes en empresas son cinco: los sistemas de detección de incendio y los sistemas de alarma contra incendios, que detectan y notifican con detectores de humo o calor, estaciones manuales y sirenas; la red de hidrantes con gabinetes y mangueras, más el hidrante o toma siamesa para bomberos; los rociadores automáticos, donde cada rociador descarga agua solo si detecta calor; la supresión clase K en campanas de cocina, y el agente limpio para sites y cuartos eléctricos. Juntos forman la detección y supresión de un sistema contra incendio, y se complementan con extintores portátiles y señalización para cada caso de emergencia.',
-  },
-  {
-    question: '¿Cuánto cuesta un sistema contra incendios?',
-    answer: 'No hay un precio de lista, porque el alcance cambia con cada inmueble: la superficie, el grado de riesgo, los niveles y los sistemas que exige la norma. Por eso el servicio arranca con un levantamiento; con él se arma una cotización por etapas que separa equipo, instalación, pruebas y documentación.',
-  },
-  {
-    question: '¿Qué equipos y sistemas de protección contra incendios necesita una empresa?',
-    answer: 'Contar con sistemas contra incendios adecuados es la base de la prevención de incendios en un centro de trabajo, y lo que corresponde lo define el grado de riesgo de incendio que marca la NOM-002-STPS-2010. Todo centro de trabajo necesita extintores con su mantenimiento anual y revisión mensual; la detección, la red de hidrantes y la brigada dependen de si el riesgo es ordinario o alto. En la Ciudad de México, además, la señalización de rutas se pide aun en bajo riesgo.',
-  },
-  {
-    question: '¿Cómo elegir una empresa de sistemas contra incendio?',
-    answer: 'Pide que revise tu inmueble antes de cotizar, que la cotización separe equipo, instalación y documentación, y que cada servicio deje evidencia: etiqueta y collarín conforme a la NOM-154-SCFI-2005, reporte por escrito y constancias DC-3 cuando capacita. El equipo que te entregue debe traer la contraseña oficial de su certificación de producto.',
-  },
-  {
-    question: '¿La instalación incluye planos y memoria de diseño?',
-    answer: 'Sí. El servicio de instalación incluye cálculo, planos y memoria técnica, para que tengas la documentación que pide Protección Civil y tu aseguradora.',
-  },
-  {
-    question: '¿Me entregan dictamen o constancia para Protección Civil y STPS?',
-    answer: 'Sí. Cada servicio se entrega con su reporte o constancia correspondiente, listos para integrar a tu expediente ante Protección Civil y STPS. El equipo que suministramos llega con la contraseña oficial de su certificación de producto y, en sistemas fijos, con certificado de puesta en marcha.',
-  },
-  {
-    question: '¿Puedo cotizar servicio y producto en el mismo mensaje?',
-    answer: 'Claro. Puedes pedir, por ejemplo, suministro de extintores junto con su instalación y mantenimiento en una sola cotización por WhatsApp.',
-  },
-  {
-    question: '¿En qué zonas dan servicio?',
-    answer: 'Atendemos la Ciudad de México, el Estado de México y la zona metropolitana. Cuéntanos dónde estás y te confirmamos cobertura y tiempos.',
-  },
-]
+const serviciosTestimonios = serviciosTestimoniosNombres
+  .map((nombre) => testimonios.find((testimonio) => testimonio.nombre === nombre))
+  .filter((testimonio): testimonio is (typeof testimonios)[number] => Boolean(testimonio))
 ---
 
 <PageLayout
   title="Empresa de sistemas contra incendio en CDMX y Edomex"
   description="Empresa de sistemas contra incendio en CDMX y Edomex: servicio de instalación, mantenimiento y recarga, inspección, prueba hidrostática y capacitación DC-3."
   pageType="category"
-  schemaData={{ faqs }}
+  schemaData={{ faqs: serviciosFaqs }}
   breadcrumbs={[{ label: 'Servicios' }]}
   guia={false}
 >
@@ -106,10 +74,10 @@ const faqs = [
     subtitle="De la instalación al mantenimiento, la recarga y la inspección: acompañamos tu sistema contra incendio durante toda su vida útil."
     descRight={[
       'Un equipo contra incendio protege si está bien elegido, bien instalado y vigente. Por eso ofrecemos el ciclo completo y no solo la venta de equipos: diseño e instalación, mantenimiento y recarga, e inspección con dictamen.',
-      'Trabajamos conforme a la normatividad aplicable —NOM-002-STPS-2010 y NOM-154-SCFI-2005—, con los mismos estándares de seguridad para cada sistema contra incendio que instalamos o revisamos, y te entregamos un reporte claro de lo realizado.',
+      'Trabajamos conforme a la NOM-002-STPS-2010 y la NOM-154-SCFI-2005, con el mismo estándar de seguridad para cada sistema contra incendio que instalamos o revisamos, y cada servicio termina con un reporte claro de lo realizado.',
     ]}
     ctas={[
-      { text: 'Nuestros servicios', href: '#servicios', variant: 'outline' },
+      { text: 'Servicios contra incendio', href: '#servicios', variant: 'outline' },
       { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.servicios), variant: 'primary', whatsapp: true },
     ]}
   />
@@ -123,13 +91,12 @@ const faqs = [
       <SectionHeading
         layout="duo"
         eyebrow="Lo que hacemos"
-        title="Siete servicios para tu"
+        title="Servicios para tu"
         titleAccent="sistema contra incendio"
-        desc="Del proyecto de cada sistema y su instalación al expediente en regla, con la vigencia siempre al día."
+        desc="Del proyecto y la instalación al expediente en regla, con la vigencia de cada equipo al día."
         body={[
-          'La protección contra incendios no se compra una vez: se instala, se revisa, se recarga, se prueba y se documenta. Cada uno de esos momentos tiene su servicio y su periodicidad.',
-          'La instalación y mantenimiento de sistemas contra incendios es un solo ciclo: sistemas de alarma y detección con detección de humo, red de hidrantes con su cuarto de bombas, sistemas de rociadores automáticos, extintores y señalización. El diseño e ingeniería de cada sistema parte del cálculo hidráulico y del grado de riesgo del inmueble; un sistema mal dimensionado no ayuda a prevenir incendios ni a controlarlos.',
-          'Cada tarjeta lleva a la página del servicio, con lo que incluye, cómo se trabaja y las preguntas que más nos hacen sobre seguridad contra incendios.',
+          'La protección contra incendios no se compra una vez: se diseña, se instala, se revisa, se recarga, se prueba y se documenta. Cada etapa tiene su servicio, su periodicidad y su evidencia, y solo así el sistema sirve para prevenir incendios y controlarlos a tiempo.',
+          'Atendemos el ciclo completo de instalación y mantenimiento de sistemas contra incendios —sistemas de alarma y detección de humo, red de hidrantes con su cuarto de bombas, rociadores automáticos, extintores y señalización—, con un diseño e ingeniería que parten del cálculo hidráulico y del grado de riesgo del inmueble.',
         ]}
       />
       <div class="card-grid">
@@ -162,22 +129,13 @@ const faqs = [
   </section>
 
   {/* ─── Módulos de servicio (CategoryFeature) — diseño uniforme, copy propio ─── */}
-  {serviceFeatures.map((c) => (
+  {serviceFeatures.map(({ id, ctaSecondaryMsg, ...feature }) => (
     <CategoryFeature
-      anchorId={c.id}
-      eyebrow={c.eyebrow}
-      title={c.title}
-      titleAccent={c.titleAccent}
-      description={c.description}
-      features={c.features}
-      ctaLabel={c.ctaLabel}
-      ctaHref={waUrl(c.ctaMsg)}
-      ctaExternal
-      ctaSecondaryLabel={c.ctaSecondaryLabel}
-      ctaSecondaryHref={c.ctaSecondaryHref}
-      imgMain={c.imgMain}
-      imgA={c.imgA}
-      imgB={c.imgB}
+      {...feature}
+      anchorId={id}
+      ctaSecondaryLabel="Cotizar por WhatsApp"
+      ctaSecondaryHref={waUrl(ctaSecondaryMsg)}
+      ctaSecondaryExternal
     />
   ))}
 
@@ -185,7 +143,7 @@ const faqs = [
   <RiskGuide
     eyebrow="Calendario de servicio"
     title="Protección contra incendios: cada cuándo toca"
-    titleAccent="y qué papel te deja"
+    titleAccent="y qué evidencia deja"
     desc="La periodicidad no la fija el proveedor: la fija la norma."
     body={[
       'La pregunta que más se repite no es cuánto cuesta, sino cada cuándo toca. Aquí está el calendario completo, con la norma que obliga cada servicio y la evidencia que debe quedar en tu expediente.',
@@ -216,9 +174,9 @@ const faqs = [
   {/* ─── Cómo se contrata (proceso, fondo oscuro) ─── */}
   <ProcessSteps
     eyebrow="Cómo se contrata"
-    title="Diseño e ingeniería, del levantamiento"
-    titleAccent="al aviso de vencimiento"
-    desc="Primero se revisa qué tienes; cotizar sin eso es dar un número al aire."
+    title="Diseño e ingeniería del servicio,"
+    titleAccent="del levantamiento al aviso de vencimiento"
+    desc="Primero se revisa qué equipo tienes y en qué estado está; así la cotización corresponde a tu inmueble."
     body={[
       'El servicio no termina cuando se firma el reporte: termina cuando te avisamos que toca el siguiente, para que la vigencia no se pierda por olvido.',
       'El proceso es el mismo para tres extintores de oficina que para una red hidráulica completa; solo cambia el tamaño del programa.',
@@ -234,9 +192,9 @@ const faqs = [
         eyebrow="Sobre el servicio"
         title="Seguridad contra incendios con"
         titleAccent="un solo interlocutor"
-        desc="Del proyecto al expediente, sin pelotear entre tres proveedores."
+        desc="Del proyecto al expediente, sin coordinar a tres proveedores para un mismo inmueble."
         body={[
-          'Cubrimos el ciclo completo de la protección contra incendios, con más de 35 años de experiencia en el mercado mexicano: la misma persona que instaló sabe qué toca revisar y cuándo vence.',
+          'Cubrimos el ciclo completo de la protección contra incendios, con más de 35 años de experiencia en el mercado mexicano: el mismo equipo que instaló lleva el registro de qué toca revisar y cuándo vence.',
           'Agenda por WhatsApp y habla directo con quien resuelve.',
         ]}
       />
@@ -248,6 +206,9 @@ const faqs = [
     </div>
   </section>
 
+  {/* ─── Reseñas del servicio ─── */}
+  <Testimonios items={serviciosTestimonios} {...serviciosTestimoniosHead} />
+
   {/* ─── Interlinking a las otras secciones ─── */}
   <RelatedLinks
     title="Sigue por aquí"
@@ -257,7 +218,7 @@ const faqs = [
   />
 
   {/* ─── FAQ + Contacto ─── */}
-  <FAQWithContact items={faqs} waNumber={CONTACT.whatsapp} />
+  <FAQWithContact items={serviciosFaqs} waNumber={CONTACT.whatsapp} />
 </PageLayout>
 
 <style>
