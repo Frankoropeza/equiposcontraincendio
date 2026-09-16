@@ -29,6 +29,7 @@
 import { defineCollection, reference, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { SITE } from './config/site';
+import { serviceL3Schema } from './data/l3-schema';
 
 // ── Helpers reutilizables ────────────────────────────────────────────────────
 
@@ -448,6 +449,12 @@ const giros = defineCollection({
     .strict(),
 });
 
+// ── Colección: l3 (copy estructurado de páginas L3) ────────────────────────
+const l3 = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/l3' }),
+  schema: serviceL3Schema,
+});
+
 // ── Export ────────────────────────────────────────────────────────────────────
 // Borra las colecciones que el proyecto no use (un sitio puede no tener `zonas`
 // o `casos`). Mantén `articulos` si hay blog (siempre .mdx — D3).
@@ -459,4 +466,5 @@ export const collections = {
   plantillas,
   tramites,
   giros,
+  l3,
 };

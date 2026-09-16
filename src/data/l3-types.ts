@@ -2,8 +2,10 @@
 // src/data/l3-types.ts — Contrato de datos de una L3 de servicio o producto.
 // ----------------------------------------------------------------------------
 // PATRÓN L3 canónico (aprobado 2026-09-10, referencia /servicios/mantenimiento/).
-// Toda L3 de servicio o producto exporta UN objeto `ServiceL3Data` desde su
-// src/data/<id>.ts y su página solo hace <ServiceL3 data={...} />. Así el orden
+// Toda L3 de servicio o producto guarda UN objeto `ServiceL3Data` como frontmatter
+// de src/content/l3/<seccion>/<id>.md (colección `l3`, validada por
+// l3-schema.ts; Fase 2, 2026-09-17) —o, mientras no se migre, en src/data/<id>.ts—
+// y su página solo hace <ServiceL3 data={...} />. Así el orden
 // de bloques, los fondos y el diseño de las fichas no se pueden desviar por
 // copiar y pegar: hay una sola implementación (src/components/ServiceL3.astro).
 // Las L3 de producto usan el mismo tipo con `seccion` y `categoriaProductos`.
@@ -21,109 +23,17 @@
 //   módulo: 4 features, label ≤ 27, desc ≤ 78
 // ============================================================================
 
-export type Spec = { label: string; value: string };
+import type { z } from 'astro:content';
+import { galleryImageSchema, headingSchema, moduloSchema, normRowSchema, pillarSchema, riskRowSchema, serviceL3Schema, specSchema, stepSchema, tableBlockSchema, tarjetaSchema } from './l3-schema';
 
-export type Tarjeta = {
-  title: string;
-  href: string;
-  image: string;
-  imageAlt: string;
-  badge: string;
-  description: string;
-  specs: Spec[];
-  ctaLabel: string;
-};
-
-/** Encabezado de sección (SectionHeading layout="duo" y equivalentes). */
-export type Heading = {
-  eyebrow: string;
-  title: string;
-  titleAccent: string;
-  desc: string;
-  body: string[];
-};
-
-export type TableBlock = Heading & {
-  id: string;
-  columns: readonly string[];
-  rows: string[][];
-  note?: string;
-  ctaLabel?: string;
-  ctaHref?: string;
-};
-
-export type RiskRow = { nivel: string; ejemplos: string; minimo: string; complementos: string };
-export type NormRow = { norma: string; alcance: string; aplica: string };
-export type Step = { num: string; title: string; desc: string };
-export type GalleryImage = { src: string; alt: string };
-export type Pillar = { icon: 'shield' | 'doc' | 'chat' | 'pin' | 'check' | 'clock'; title: string; desc: string };
-
-export type Modulo = {
-  id: string;
-  eyebrow: string;
-  title: string;
-  titleAccent: string;
-  description: string;
-  features: { label: string; desc: string }[];
-  /** CTA primario: cotizar por WhatsApp con este mensaje. */
-  ctaLabel: string;
-  ctaMsg: string;
-  /** CTA secundario: página relacionada (anchor = keyword del destino). */
-  ctaSecondaryLabel: string;
-  ctaSecondaryHref: string;
-  imgMain: GalleryImage;
-  imgA: GalleryImage;
-  imgB: GalleryImage;
-};
-
-export type ServiceL3Data = {
-  /** Servicio: id de la colección `servicios` (debe estar en L3_PROPIAS de [...slug]). Producto: slug de la categoría. */
-  id: string;
-  path: string;
-  /** Sección padre en las migas. Omitido = Servicios (/servicios/). Las L3 de producto declaran Productos. */
-  seccion?: { label: string; href: string };
-  /** Solo L3 de producto: `category` de la colección `productos` cuyas fichas forman el ItemList. Si existe, la página es CollectionPage + ItemList en vez de Service. */
-  categoriaProductos?: string;
-  seo: {
-    title: string;
-    description: string;
-    serviceName: string;
-    serviceType: string;
-    image: string;
-  };
-  /** Etiqueta de la L3 en las migas: Servicios › <breadcrumb>. */
-  breadcrumb: string;
-  /** Mensaje de WhatsApp de la página (Hero, SectionMenu y CompanyAbout). */
-  wa: string;
-  menuCtaSub: string;
-  hero: {
-    badge: string;
-    title: string;
-    accent: string;
-    subtitle: string;
-    descRight: string[];
-    /** CTA outline del Hero: ancla a la vitrina. */
-    outlineText: string;
-  };
-  pillars: Pillar[];
-  vitrina: Heading & { id: string; tarjetas: Tarjeta[] };
-  tablaPrincipal: TableBlock;
-  guia: Heading & {
-    columns: [string, string, string, string];
-    rows: RiskRow[];
-    note?: string;
-    ctaLabel?: string;
-    ctaHref?: string;
-  };
-  tabla2: TableBlock;
-  modulos: Modulo[];
-  decision: TableBlock;
-  proceso: Heading & { steps: Step[] };
-  normas: Heading & { columns: [string, string, string]; rows: NormRow[]; note?: string };
-  empresa: Heading & {
-    que: { title: string; body: string[] };
-    como: { title: string; pillars: { title: string; desc: string }[] };
-  };
-  related: { title: string; desc: string; links: { label: string; href: string; desc: string }[] };
-  faq: Omit<Heading, 'title'> & { items: { question: string; answer: string }[] };
-};
+export type Spec = z.infer<typeof specSchema>;
+export type Tarjeta = z.infer<typeof tarjetaSchema>;
+export type Heading = z.infer<typeof headingSchema>;
+export type TableBlock = z.infer<typeof tableBlockSchema>;
+export type RiskRow = z.infer<typeof riskRowSchema>;
+export type NormRow = z.infer<typeof normRowSchema>;
+export type Step = z.infer<typeof stepSchema>;
+export type GalleryImage = z.infer<typeof galleryImageSchema>;
+export type Pillar = z.infer<typeof pillarSchema>;
+export type Modulo = z.infer<typeof moduloSchema>;
+export type ServiceL3Data = z.infer<typeof serviceL3Schema>;

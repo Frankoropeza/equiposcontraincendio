@@ -2,8 +2,15 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import test from 'node:test';
+import YAML from 'yaml';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
+const readFrontmatter = (file) => {
+  const source = fs.readFileSync(path.join(ROOT, file), 'utf8');
+  const match = source.match(/^---\n([\s\S]*?)\n---/);
+  assert.ok(match, `${file} no contiene frontmatter`);
+  return YAML.parse(match[1]);
+};
 
 test('slugify conserva la equivalencia ASCII del subíndice ₂', async () => {
   const source = fs.readFileSync(path.join(ROOT, 'src/lib/slug.ts'), 'utf8');
@@ -35,7 +42,7 @@ const L3 = [
   { page: 'src/pages/productos/hidrantes-mangueras/index.astro', data: 'src/data/hidrantes-mangueras.ts', list: 'hidTarjetas' },
   { page: 'src/pages/productos/senalizacion/index.astro', data: 'src/data/senalizacion.ts', list: 'senTarjetas' },
   { page: 'src/pages/productos/accesorios/index.astro', data: 'src/data/accesorios.ts', list: 'accTarjetas' },
-  { page: 'src/pages/servicios/mantenimiento/index.astro', data: 'src/data/mantenimiento.ts', list: 'mantTarjetas' },
+  { page: 'src/pages/servicios/mantenimiento/index.astro', content: 'src/content/l3/servicios/mantenimiento.md' },
   { page: 'src/pages/servicios/prueba-hidrostatica/index.astro', data: 'src/data/prueba-hidrostatica.ts', list: 'phTarjetas' },
   { page: 'src/pages/servicios/inspeccion/index.astro', data: 'src/data/inspeccion.ts', list: 'inspTarjetas' },
   { page: 'src/pages/servicios/diagnostico-de-riesgo/index.astro', data: 'src/data/diagnostico-de-riesgo.ts', list: 'diagTarjetas' },
@@ -52,7 +59,13 @@ test('las L3 no usan retículas de 3 ni de 2 columnas', () => {
 });
 
 test('cada vitrina L3 tiene fichas en múltiplos de 4, con 3 specs cada una', () => {
-  for (const { data, list } of L3) {
+  for (const { data, list, content } of L3) {
+    if (content) {
+      const fichas = readFrontmatter(content).vitrina.tarjetas;
+      assert.ok(fichas.length > 0 && fichas.length % 4 === 0, `${content}: ${fichas.length} fichas (debe ser múltiplo de 4)`);
+      assert.ok(fichas.every(({ specs }) => specs.length === 3), `${content}: cada ficha lleva exactamente 3 specs`);
+      continue;
+    }
     const source = fs.readFileSync(path.join(ROOT, data), 'utf8');
     const start = source.indexOf(`export const ${list}`);
     assert.ok(start !== -1, `${data} no exporta ${list}`);
@@ -145,9 +158,18 @@ test('ProcessSteps y todos sus datos usan ocho pasos con textos acotados', () =>
     ['src/data/plantillas.ts', 'plantillasSteps'],
     ['src/data/proteccion-civil.ts', 'pcSteps'],
     ['src/data/extintores.ts', 'extintoresSteps'],
-    ['src/data/mantenimiento.ts', 'mantSteps'],
+    ['src/content/l3/servicios/mantenimiento.md', 'mantenimientoL3'],
   ];
   for (const [file, name] of dataFiles) {
+    if (file.endsWith('.md')) {
+      const steps = readFrontmatter(file).proceso.steps;
+      assert.equal(steps.length, 8, `${name}: debe tener 8 pasos`);
+      for (const { title, desc } of steps) {
+        assert.ok(title.length <= 30, `${name}: título demasiado largo: ${title}`);
+        assert.ok(desc.length <= 110, `${name}: descripción demasiado larga: ${desc}`);
+      }
+      continue;
+    }
     const source = fs.readFileSync(path.join(ROOT, file), 'utf8');
     const start = source.indexOf(`export const ${name}`);
     assert.ok(start !== -1, `${file} no exporta ${name}`);

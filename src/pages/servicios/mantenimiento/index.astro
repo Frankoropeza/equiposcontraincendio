@@ -1,7 +1,10 @@
 ---
 // Página L3 de mantenimiento: el patrón compartido vive en ServiceL3.
 import ServiceL3 from '@components/ServiceL3.astro';
-import { mantenimientoL3 } from '@data/mantenimiento';
+import { getEntry } from 'astro:content';
+
+const entry = await getEntry('l3', 'servicios/mantenimiento');
+if (!entry) throw new Error('Falta la entrada L3: servicios/mantenimiento');
 ---
 
-<ServiceL3 data={mantenimientoL3} />
+<ServiceL3 data={entry.data} />
