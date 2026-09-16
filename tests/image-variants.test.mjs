@@ -11,9 +11,9 @@ function files(directory) {
   })
 }
 
-test('each AVIF wider than 800px has a 640px variant', async () => {
-  for (const file of files('public/images').filter((file) => file.endsWith('.avif') && !file.endsWith('-640.avif'))) {
+test('each AVIF wider than 800px has 640px and 800px variants', async () => {
+  for (const file of files('public/images').filter((file) => file.endsWith('.avif') && !/-(640|800)\.avif$/.test(file))) {
     const { width } = await sharp(file).metadata()
-    if ((width ?? 0) > 800) assert.ok(fs.existsSync(file.replace(/\.avif$/, '-640.avif')), `Missing ${file.replace(/\.avif$/, '-640.avif')}`)
+    if ((width ?? 0) > 800) for (const w of [640, 800]) assert.ok(fs.existsSync(file.replace(/\.avif$/, `-${w}.avif`)), `Missing ${w}px variant of ${file}`)
   }
 })
