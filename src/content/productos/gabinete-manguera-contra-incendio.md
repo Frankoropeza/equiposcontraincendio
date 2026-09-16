@@ -6,7 +6,7 @@ image: /images/productos/extintor-oficina-gabinete.avif
 price: "Cotizar"
 brand: "CONINC"
 order: 7
-seoTitle: "Gabinetes con manguera contra incendio 1½\""
+seoTitle: "Gabinete contra incendio para hidrante y manguera 1½\""
 seoDescription: "Compara gabinetes de sobreponer, empotrar y combinados para manguera contra incendio de 1½ pulgadas, con válvula, chiflón y, según el modelo, extintor."
 faqs:
   - question: "¿Qué longitud de manguera puedo elegir?"
@@ -54,8 +54,8 @@ variantes:
     waText: "Hola, necesito cotizar un gabinete combinado para manguera de 1.5 pulgadas y extintor"
 ficha:
   heroBadge: Manguera 1½ pulg · Sobreponer, empotrable o combinado
-  heroTitle: Gabinetes con manguera
-  heroAccent: para la red hidráulica
+  heroTitle: Gabinetes contra incendio
+  heroAccent: para hidrante y manguera
   descRight:
     - Elige gabinetes sobrepuestos o empotrables con mangueras de 15 o 30 metros, o una configuración combinada con extintor.
     - Antes de instalar, revisa presión, caudal, alcance y ubicación contra el proyecto hidráulico de tu inmueble.
@@ -83,12 +83,12 @@ ficha:
     - label: Complemento
       value: Extintor portátil en modelo combinado
   showcaseTitle: Datos clave
-  showcaseAccent: de los gabinetes con manguera
+  showcaseAccent: del gabinete para hidrante
   showcaseDesc: Montaje, medidas, equipo que aloja y revisión del conjunto.
-  faqAccent: sobre gabinetes con manguera
+  faqAccent: sobre gabinetes contra incendio
   guia:
-    title: Cómo elegir tu
-    titleAccent: gabinete con manguera
+    title: Cómo elegir tu gabinete
+    titleAccent: de sobreponer o empotrar
     desc: Revisa recorrido, montaje y red hidráulica para pedir el gabinete que funcione en tu inmueble.
 fichaHeads:
   vitrina:

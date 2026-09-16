@@ -8,7 +8,7 @@ seccion:
 categoriaProductos: senalizacion
 seo:
   title: Señales de protección civil y señalamientos de extintor
-  description: "Señales de protección civil: rutas, salidas, equipo contra incendio y punto de reunión, luces de emergencia y croquis para tu inmueble en CDMX y Edomex."
+  description: "Señales y señalamientos de protección civil: rutas, salidas, equipo contra incendio, punto de reunión, luces de emergencia y croquis en CDMX y Edomex."
   serviceName: Señalización de protección civil y emergencia
   serviceType: Suministro e instalación de señalización de protección civil y emergencia
   image: /images/productos/senalizacion-luces-emergencia.avif

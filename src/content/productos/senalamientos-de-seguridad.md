@@ -7,13 +7,13 @@ price: "Cotizar"
 brand: "CONINC"
 order: 9
 seoTitle: "Señalamientos de seguridad: tipos, colores y venta"
-seoDescription: "Señalamientos de seguridad industrial y de protección civil: prohibición, obligación, precaución e información según la NOM-026. Venta en CDMX y Edomex."
+seoDescription: "Señalamientos y señalética de seguridad industrial y de protección civil: prohibición, obligación, precaución e información según la NOM-026. Venta en CDMX."
 faqs:
   - question: "¿Qué son los señalamientos de seguridad?"
     answer: "Son señales que comunican, con un color, una forma y un símbolo, una prohibición, una obligación, un peligro o una condición segura dentro de un centro de trabajo. En México, su color, forma y significado los fija la NOM-026-STPS-2008; las señales de protección civil siguen la NOM-003-SSPC-2011."
   - question: "¿Cuáles son los tipos de señalamientos de seguridad?"
     answer: "Cuatro, más las del equipo contra incendio: prohibición (círculo rojo con banda diagonal), obligación (círculo azul), precaución o advertencia (triángulo amarillo con borde negro) e información o condición segura (verde). Las del equipo contra incendio son rojas y señalan dónde está el extintor, el hidrante o la alarma."
-  - question: "¿Qué significan los colores de seguridad?"
+  - question: "¿Qué significan las señales de seguridad según su color?"
     answer: "Rojo: paro, prohibición e identificación del equipo contra incendio. Amarillo: advertencia de peligro. Verde: condición segura, como rutas de evacuación, salidas y primeros auxilios. Azul: obligación, como el uso de equipo de protección personal."
   - question: "¿De qué tamaño debe ser un señalamiento?"
     answer: "Depende de la distancia desde la que se tiene que leer. La NOM-026-STPS-2008 relaciona la superficie de la señal con esa distancia: S ≥ L²/2000, con S en metros cuadrados y L en metros, para distancias de 5 a 50 m. Una señal que se lee a 10 m necesita al menos 500 cm²."
@@ -126,6 +126,8 @@ fichaHeads:
 ---
 
 Un señalamiento de seguridad no decora un muro: **le dice a alguien qué no hacer, qué ponerse, de qué cuidarse o por dónde salir**, y tiene que entenderse en un segundo. Por eso su color, su forma y su símbolo no se eligen por gusto: los fija la **NOM-026-STPS-2008** para los centros de trabajo y la **NOM-003-SSPC-2011** para las señales de protección civil.
+
+Señales de seguridad, señalética de seguridad o señalamientos: en la práctica se usan como sinónimos, y lo que importa es el significado de cada señal. Las señales y símbolos de seguridad combinan tres cosas que la norma fija: el color (qué tipo de mensaje es), la forma (prohibición, obligación, advertencia o información) y el símbolo (la acción o el riesgo concreto).
 
 ## Los cuatro tipos y qué comunica cada uno
 
