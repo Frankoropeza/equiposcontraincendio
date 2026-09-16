@@ -40,7 +40,7 @@ export const serviceFeatures: ServiceFeature[] = [
     id: 'instalacion',
     eyebrow: 'Instalación · Proyecto a la medida · NOM-002-STPS',
     title: 'Instalación de sistemas contra incendio',
-    titleAccent: 'dimensionada a tu riesgo',
+    titleAccent: 'detección y alarma, hidrantes y rociadores',
     description:
       'Hacemos el diseño e instalamos sistemas de principio a fin: sistemas de detección y alarma contra incendios, red de hidrantes, rociadores automáticos, extintores y señalización, con cálculo hidráulico, planos y memoria técnica según el riesgo y la superficie del inmueble, no a partir de un paquete genérico.',
     features: [
