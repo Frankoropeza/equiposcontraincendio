@@ -2,7 +2,7 @@
 // ============================================================================
 // ProcessSteps.astro — "Cómo trabajamos" en pasos (fondo oscuro).
 // ----------------------------------------------------------------------------
-// Proceso de trabajo en 8 pasos numerados, en filas de 4 sobre fondo tinta. Da claridad y
+// Proceso de trabajo en 8 pasos, en filas de 4 sobre fondo tinta. Da claridad y
 // reduce fricción ("¿qué pasa si te escribo?"). Contenido = proceso real del
 // negocio (sin promesas que no se puedan cumplir, p. ej. tiempos garantizados).
 // Encabezado vía SectionHeading (duo, dark). ORIGEN del patrón: PROYECTORED ProcesoIndex.
@@ -50,7 +50,6 @@ if (steps.length % 4 !== 0) {
     <ol class="process__grid" role="list" aria-label="Proceso de trabajo">
       {steps.map((p) => (
         <li class="step">
-          <span class="step__num" aria-hidden="true">{p.num}</span>
           <div class="step__body">
             <h3 class="step__title">{p.title}</h3>
             <p class="step__desc">{p.desc}</p>
@@ -88,14 +87,6 @@ if (steps.length % 4 !== 0) {
     border-top: 1px solid rgba(255,255,255,.10);
   }
   .step:first-child { border-top: none; }
-  .step__num {
-    font-family: var(--font-heading);
-    font-size: var(--text-3xl);
-    font-weight: var(--weight-black);
-    color: var(--c-primary-light);
-    letter-spacing: -.04em;
-    line-height: 1;
-  }
   /* Título de paso: ALTURA FIJA de 2 líneas. Con altura libre, los pasos de
      título largo empujaban su descripción hacia abajo y la fila quedaba
      dentada — el mismo defecto que se corrigió en las tarjetas. Es `height` y

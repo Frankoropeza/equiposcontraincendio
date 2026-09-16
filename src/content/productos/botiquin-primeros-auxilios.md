@@ -134,12 +134,12 @@ En cocinas conviene sumar material para quemaduras; en talleres, laboratorios y 
 
 En un local pequeño basta uno, visible y señalizado. En inmuebles grandes, uno por nivel o por área de riesgo, más el **portátil de la brigada**. Colócalo lejos del calor y la humedad, con su [señal de primeros auxilios](/productos/senalamientos-de-seguridad/) encima, y revísalo cada mes. La [capacitación de la brigada](/servicios/capacitacion-dc3/) enseña a usarlo.
 
-## Cómo revisar tu botiquín en 4 pasos
+## Cómo revisar tu botiquín
 
-1. Verifica existencias contra tu lista base y anota lo que falta.
-2. Revisa fechas de caducidad de gasas, soluciones y compresas; retira lo vencido.
-3. Repón lo usado o caducado antes de cerrar la revisión, no después.
-4. Anota la revisión en la bitácora, con fecha y responsable, para la brigada y para protección civil.
+- Verifica existencias contra tu lista base y anota lo que falta.
+- Revisa fechas de caducidad de gasas, soluciones y compresas; retira lo vencido.
+- Repón lo usado o caducado antes de cerrar la revisión, no después.
+- Anota la revisión en la bitácora, con fecha y responsable, para la brigada y para protección civil.
 
 Hazlo cada mes, junto con la revisión de tus [extintores](/productos/extintor-pqs/); así ambos quedan en la misma bitácora.
 
