@@ -3,9 +3,9 @@
 // /proteccion-civil/ — Hub de trámites por entidad (L2).
 // ----------------------------------------------------------------------------
 // AL PATRÓN L2 (2026-09-10), igual que el resto de secciones:
-//   Hero → SectionMenu → TrustBar → tarjetas → módulos CategoryFeature →
-//   RiskGuide → NormsTable → ProcessSteps → CompanyAbout → RelatedLinks →
-//   FAQ + Contacto
+//   Hero → SectionMenu → directorio por giro → fichas por entidad → módulos
+//   CategoryFeature → RiskGuide → NormsTable → ProcessSteps → CompanyAbout →
+//   RelatedLinks → FAQ + Contacto
 // El SectionMenu de cierre lo sustituye RelatedLinks, como en las demás L2.
 //
 // Data-driven desde la colección `tramites`, donde `sources` y `verifiedAt` son
@@ -26,7 +26,7 @@ import RelatedLinks from '@components/RelatedLinks.astro'
 import FAQWithContact from '@components/FAQWithContact.astro'
 import GiroDirectory from '@components/GiroDirectory.astro'
 import { getCollection } from 'astro:content'
-import { CONTACT, waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
+import { CONTACT, waUrl, sectionMenuItems } from '@config/site'
 import {
   pcFeatures,
   pcComparativa,
@@ -35,6 +35,7 @@ import {
   pcCompany,
   pcRelated,
   pcFaqs,
+  pcRequerimientoMsg,
 } from '@data/proteccion-civil'
 import { cierreProteccionCivil, faltanParaCuatro } from '@data/cierre'
 
@@ -47,9 +48,9 @@ const fmt = (d: Date) =>
 
 const menuSecciones = [{ label: 'Por giro', href: '#por-giro', sub: 'Requisitos por negocio' }, ...sectionMenuItems()]
 const menuCta = {
-  label: 'Tengo una visita encima',
-  href: waUrl(WA_MESSAGES.urgente),
-  sub: 'Atención el mismo día',
+  label: 'Tengo un requerimiento',
+  href: waUrl(pcRequerimientoMsg),
+  sub: 'Qué atender primero',
   external: true,
 }
 
@@ -73,7 +74,7 @@ const schemaData = {
 
 <PageLayout
   title="Trámite y permiso de Protección Civil en CDMX y Edomex"
-  description="Cómo tramitar el permiso de Protección Civil de tu negocio en CDMX y Edomex: Programa Interno, visto bueno y dictamen, con fuente oficial y 23 giros."
+  description="Cómo tramitar el permiso de Protección Civil de tu negocio en CDMX y Edomex: Programa Interno, visto bueno y dictamen, con fuente oficial y requisitos por giro."
   pageType="category"
   schemaData={schemaData}
   breadcrumbs={[{ label: 'Protección Civil' }]}
@@ -83,14 +84,14 @@ const schemaData = {
     badge="Guía de trámite · con fuente oficial"
     title="Trámite de Protección Civil"
     accent={"en\u00a0CDMX\u00a0y\u00a0Edomex"}
-    subtitle="La pregunta con la que empieza casi todo cliente es la misma: «me pidieron el programa de protección civil, ¿y ahora qué?»."
+    subtitle="Qué exige Protección Civil a tu negocio en la Ciudad de México y el Estado de México, por entidad y por giro, con la fuente oficial de cada requisito."
     descRight={[
       'Reunimos, por entidad, cómo tramitar el permiso de Protección Civil de tu negocio: quién recibe el trámite, a quién aplica, qué se entrega y en qué se fundamenta — citando siempre de dónde salió el dato y en qué fecha lo verificamos.',
-      'Publicamos sólo lo confirmado en la fuente oficial. Lo que no, aparece marcado como pendiente con el enlace para consultarlo directo. No damos por hecho un requisito.',
+      'Publicamos solo lo confirmado en la fuente oficial. Lo que no, aparece marcado como pendiente con el enlace para consultarlo directo. No damos por hecho un requisito.',
     ]}
     ctas={[
       { text: 'Clasificar mi riesgo', href: '/herramientas/riesgo-de-incendio/', variant: 'outline' },
-      { text: 'Hablar por WhatsApp', href: waUrl(WA_MESSAGES.urgente), variant: 'primary', whatsapp: true },
+      { text: 'Revisar mi requerimiento', href: waUrl(pcRequerimientoMsg), variant: 'primary', whatsapp: true },
     ]}
   />
 
@@ -104,12 +105,12 @@ const schemaData = {
       <SectionHeading
         layout="duo"
         eyebrow="Por entidad"
-        title="Ciudad de México y"
-        titleAccent="Estado de México"
+        title="Requisitos de Protección Civil por entidad:"
+        titleAccent="Ciudad de México y Estado de México"
         desc="Las dos entidades donde damos servicio."
         body={[
           'Cada ficha resume el trámite estatal y enlaza a la cédula oficial. Empezamos por las dos entidades que atendemos; las demarcaciones se suman conforme podamos verificar la fuente de cada una.',
-          'Si tu inmueble ya tiene el requerimiento encima, lo urgente no es el papel: es que el inmueble aguante la revisión.',
+          'Si el requerimiento ya llegó, la prioridad es que el inmueble cumpla en la visita de inspección; el expediente se integra en paralelo.',
         ]}
       />
 
@@ -144,28 +145,20 @@ const schemaData = {
   </section>
 
   {/* ─── Módulos por entidad (CategoryFeature) ─── */}
-  {pcFeatures.map((c) => (
+  {pcFeatures.map(({ id, ctaSecondaryMsg, ...feature }) => (
     <CategoryFeature
-      anchorId={c.id}
-      eyebrow={c.eyebrow}
-      title={c.title}
-      titleAccent={c.titleAccent}
-      description={c.description}
-      features={c.features}
-      ctaLabel={c.ctaLabel}
-      ctaHref={c.ctaHref}
-      ctaSecondaryLabel={c.ctaSecondaryLabel}
-      ctaSecondaryHref={c.ctaSecondaryHref}
-      imgMain={c.imgMain}
-      imgA={c.imgA}
-      imgB={c.imgB}
+      {...feature}
+      anchorId={id}
+      ctaSecondaryLabel="Cotizar por WhatsApp"
+      ctaSecondaryHref={waUrl(ctaSecondaryMsg)}
+      ctaSecondaryExternal
     />
   ))}
 
   {/* ─── Comparativa entidad por entidad ─── */}
   <RiskGuide
     eyebrow="Lado a lado"
-    title="La misma obligación,"
+    title="Permiso de Protección Civil: la misma obligación,"
     titleAccent="dos trámites distintos"
     desc="Quién lo recibe, a quién aplica, cómo se presenta y qué obtienes."
     body={[
@@ -182,11 +175,11 @@ const schemaData = {
   {/* ─── En qué se apoya cada cosa ─── */}
   <NormsTable
     eyebrow="Fundamento"
-    title="Qué obliga a qué,"
-    titleAccent="y dónde está escrito"
+    title="Fundamento en materia de Protección Civil:"
+    titleAccent="qué obliga y dónde está escrito"
     desc="La norma federal es una; el instrumento local, otro."
     body={[
-      'La confusión más cara de esta sección: cumplir la NOM-002 no es tener el programa en regla, y tener el programa no exime de la NOM. Son obligaciones distintas, con autoridades distintas.',
+      'Una confusión frecuente y costosa: cumplir la NOM-002 no es tener el programa en regla, y tener el programa no exime de la NOM. Son obligaciones distintas, con autoridades distintas.',
       'Aquí está qué establece cada ordenamiento y a cuál de las dos entidades aplica.',
     ]}
     rows={pcNormRows}
@@ -198,11 +191,11 @@ const schemaData = {
   <ProcessSteps
     eyebrow="Ya te lo pidieron"
     title="Empieza por el inmueble,"
-    titleAccent="no por el papel"
+    titleAccent="no por la carpeta de Protección Civil"
     desc="Un programa bien redactado no salva a un inmueble que no cumple."
     body={[
       'El orden importa: el programa describe el inmueble, así que si los extintores están vencidos o las rutas bloqueadas, el documento solo deja por escrito lo que está mal.',
-      'Estos ocho pasos son los que seguimos con cualquier cliente que llega con un requerimiento encima.',
+      'Estos son los pasos que seguimos con cualquier cliente que recibe un requerimiento de la autoridad.',
     ]}
     steps={pcSteps}
   />
@@ -218,13 +211,13 @@ const schemaData = {
         desc="Con la fuente enlazada y la fecha en que se verificó."
         body={[
           'Estos trámites cambian y un dato correcto envejece sin avisar. Por eso cada ficha lleva su fecha y su enlace: para que puedas comprobarlo tú mismo.',
-          '¿Tienes el requerimiento encima? Escríbenos con lo que te pidieron y lo revisamos.',
+          'Si ya recibiste un requerimiento, envíanos el documento y revisamos qué corresponde atender primero.',
         ]}
       />
       <CompanyAbout
         que={pcCompany.que}
         como={pcCompany.como}
-        cta={{ label: 'Tengo un requerimiento', href: waUrl('Hola, tengo un requerimiento de Protección Civil y necesito poner mi inmueble en regla.'), external: true }}
+        cta={{ label: 'Tengo un requerimiento', href: waUrl(pcRequerimientoMsg), external: true }}
       />
     </div>
   </section>
@@ -242,8 +235,23 @@ const schemaData = {
 </PageLayout>
 
 <style>
-  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
-  .section { padding: var(--sp-8) 0; }
-  .section--surface { background: var(--c-surface); }
-  @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
+  .container {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-px);
+  }
+
+  .section {
+    padding: var(--sp-8) 0;
+  }
+
+  .section--surface {
+    background: var(--c-surface);
+  }
+
+  @media (min-width: 768px) {
+    .section {
+      padding: var(--sp-10) 0;
+    }
+  }
 </style>
