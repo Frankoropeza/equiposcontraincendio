@@ -7,7 +7,7 @@ price: "Cotizar"
 brand: "CONINC"
 order: 7
 seoTitle: "Detector de gas LP y natural: venta e instalación"
-seoDescription: "Detector de gas LP y gas natural para cocinas, calderas y cuartos de máquinas: dónde se coloca, corte automático y lo que pide la NTC 2024 en la CDMX."
+seoDescription: "Detector y sensor de gas LP y natural para cocinas, calderas y cuartos de máquinas: dónde se coloca, corte automático y lo que pide la NTC 2024 en CDMX."
 faqs:
   - question: "¿Dónde se coloca un detector de gas?"
     answer: "Depende del gas. El gas LP pesa más que el aire y se acumula abajo, así que su detector va cerca del piso; el gas natural es más ligero y sube, así que el suyo va cerca del techo. En ambos casos, cerca del equipo de combustión y lejos de puertas, ventanas y extractores que diluyan la fuga. La altura exacta la indica el fabricante."
@@ -114,7 +114,7 @@ fichaHeads:
     - "Dinos qué gas usas y cuántos equipos de consumo tienes: te proponemos la distribución."
 ---
 
-Una fuga de gas no se ve y, en una cocina con ruido y extracción, casi no se huele. El **detector de gas** avisa en cuanto la concentración sube, y con una **electroválvula** puede cerrar el paso del gas antes de que alguien tenga que reaccionar.
+Una fuga de gas no se ve y, en una cocina con ruido y extracción, casi no se huele. El **detector de gas** —también llamado sensor de gas o detector de fugas de gas— avisa en cuanto la concentración sube, y con una **electroválvula** puede cerrar el paso del gas antes de que alguien tenga que reaccionar.
 
 ## Qué pide la norma en la CDMX
 
