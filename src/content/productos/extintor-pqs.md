@@ -120,7 +120,7 @@ faqs:
     answer: "El extintor no caduca por fecha, pero sí su servicio: revisión visual mensual, mantenimiento al menos anual conforme a la NOM-002-STPS-2010 y prueba hidrostática del cilindro al menos cada cinco años según la NOM-154-SCFI-2005. Si el manómetro salió del verde o perdió el sello, hay que atenderlo aunque se vea nuevo."
 ficha:
   heroBadge: PQS ABC · Clases A, B y C · NOM-100-STPS
-  heroTitle: Extintores PQS tipo ABC,
+  heroTitle: Extintor PQS de polvo químico seco,
   heroAccent: de 1 a 70 kilogramos
   descRight:
     - Con un solo equipo cubres papel y cartón, gasolina o solventes, y equipo eléctrico con corriente. Por eso es el extintor que más se instala en oficinas, comercios, bodegas y vehículos.
@@ -149,7 +149,7 @@ ficha:
     - label: Servicio
       value: NOM-154-SCFI-2005 · con collarín
   showcaseTitle: Datos clave
-  showcaseAccent: del extintor PQS
+  showcaseAccent: del extintor de PQS tipo ABC
   showcaseDesc: Agente, clases de fuego, norma de producto y servicio que pide el equipo.
   faqAccent: sobre extintores PQS
   guia:

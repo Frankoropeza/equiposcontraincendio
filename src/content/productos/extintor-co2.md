@@ -5,7 +5,7 @@ category: extintores
 image: /images/productos/extintor-co2-dioxido-de-carbono.avif
 price: "Cotizar"
 order: 2
-seoTitle: "Extintor CO2 tipo BC: capacidades y venta en CDMX"
+seoTitle: "Extintor de CO2 tipo BC: capacidades y venta en CDMX"
 seoDescription: "Extintor de CO2 (dióxido de carbono): no conduce electricidad ni deja residuo. Portátiles y sobre ruedas para fuegos B y C. Cotiza en CDMX y Edomex."
 variantes:
   - nombre: "Extintor CO2 de 2.27 kg (5 lb)"
@@ -97,7 +97,7 @@ faqs:
     answer: "Revisión visual mensual, mantenimiento al menos anual y pesaje del cilindro para confirmar la carga, porque el CO2 no lleva manómetro confiable. El cilindro pasa prueba hidrostática al menos cada cinco años conforme a la NOM-154-SCFI-2005."
 ficha:
   heroBadge: CO2 · Clases B y C · NOM-102-STPS
-  heroTitle: Extintores de CO2 o dióxido de carbono,
+  heroTitle: Extintor de CO2 o dióxido de carbono,
   heroAccent: de 2 a 45 kilogramos
   descRight:
     - El CO2 le quita el oxígeno a la flama, no conduce la electricidad y se disipa sin dejar rastro. Es el extintor que va junto a tableros, sites y equipo electrónico.
@@ -126,12 +126,12 @@ ficha:
     - label: Servicio
       value: NOM-154-SCFI-2005
   showcaseTitle: Datos clave
-  showcaseAccent: del extintor de CO2
+  showcaseAccent: del extintor de dióxido de carbono
   showcaseDesc: Agente, clases cubiertas, norma de producto y servicio del cilindro.
   faqAccent: sobre extintores de CO2
   guia:
-    title: Cómo elegir tu
-    titleAccent: extintor de CO2
+    title: Cómo elegir tu extintor CO2
+    titleAccent: para fuego tipo BC
     desc: Dónde conviene, qué capacidad elegir, dónde colocarlo y qué mantenimiento pide.
 fichaHeads:
   vitrina:

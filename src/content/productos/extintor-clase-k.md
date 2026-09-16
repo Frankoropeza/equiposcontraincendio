@@ -68,8 +68,8 @@ faqs:
     answer: "Revisión visual mensual, mantenimiento al menos una vez al año y recarga después de cualquier uso, aunque haya sido parcial. El cilindro pasa prueba hidrostática al menos cada cinco años y al terminar el servicio debe llevar su etiqueta y collarín."
 ficha:
   heroBadge: Agente K · Clase K · Cocinas comerciales
-  heroTitle: Extintores tipo K,
-  heroAccent: para cocinas
+  heroTitle: Extintor tipo K o clase K,
+  heroAccent: para fuego de cocina
   descRight:
     - El químico húmedo sale en niebla, no salpica el aceite y forma una capa que lo aísla del aire mientras lo enfría. Es el extintor para la freidora y la línea de cocción.
     - Complementa, no sustituye, el sistema fijo de la campana. Abajo encuentras cómo elegir la capacidad para tu cocina y dónde colocarlo.
@@ -97,12 +97,12 @@ ficha:
     - label: Servicio
       value: NOM-154-SCFI-2005
   showcaseTitle: Datos clave
-  showcaseAccent: del extintor tipo K
+  showcaseAccent: del extintor clase K
   showcaseDesc: Agente, clase de fuego, capacidades y servicio que pide en cocina.
   faqAccent: sobre extintores tipo K
   guia:
-    title: Cómo elegir tu
-    titleAccent: extintor tipo K
+    title: Cómo elegir tu extintor tipo K
+    titleAccent: para grasa y aceite de cocina
     desc: Dónde va, qué capacidad elegir, dónde colocarlo y qué mantenimiento pide.
 fichaHeads:
   vitrina:

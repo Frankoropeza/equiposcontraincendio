@@ -5,7 +5,7 @@ category: extintores
 image: /images/productos/extintor-de-agua-almacen-carton-clase-a.avif
 price: "Cotizar"
 order: 4
-seoTitle: "Extintor de agua y de espuma AFFF: venta en CDMX"
+seoTitle: "Extintor de agua a presión y de espuma AFFF: venta en CDMX"
 seoDescription: "Venta de extintores de agua, nebulizada y espuma AFFF en capacidades portátiles y sobre ruedas. Compara clases y cotiza para tu operación en CDMX y Edomex."
 variantes:
   - nombre: "Extintor de agua a presión de 9 L"
@@ -102,8 +102,8 @@ faqs:
     answer: "Revisión visual mensual, mantenimiento al menos anual y recarga tras cualquier uso. El cilindro pasa prueba hidrostática al menos cada cinco años conforme a la NOM-154-SCFI-2005, y al terminar el servicio debe entregarse con etiqueta y collarín."
 ficha:
   heroBadge: Agua, nebulizada y AFFF · NOM-103-STPS
-  heroTitle: Extintores de agua
-  heroAccent: y espuma AFFF
+  heroTitle: Extintor de agua a presión
+  heroAccent: y de espuma AFFF
   descRight:
     - "Tres extintores que apagan enfriando: agua a presión para sólidos, agua nebulizada para sólidos junto a equipo eléctrico y espuma AFFF para líquidos inflamables."
     - El agua a presión y la espuma conducen la electricidad. Abajo comparas los tres y ves cuál conviene en cada caso.
@@ -131,7 +131,7 @@ ficha:
     - label: Servicio
       value: NOM-154-SCFI-2005
   showcaseTitle: Datos clave
-  showcaseAccent: de los extintores de agua
+  showcaseAccent: del extintor de agua para apagar fuego clase A
   showcaseDesc: Los tres agentes de la familia, las clases que cubre cada uno y su servicio.
   faqAccent: sobre extintores de agua
   guia:
