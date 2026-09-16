@@ -187,7 +187,7 @@ export const plantillasFaqs = [
   },
   {
     question: '¿Sirven también para la STPS?',
-    answer: 'Sí, como evidencia de apoyo. La NOM-002-STPS-2010 pide la revisión mensual de los extintores, la realización de simulacros y la integración de la brigada contra incendio; estos formatos sirven para dejarlo por escrito. Si tu entidad o tu auditor usan un formato oficial propio, ese es el que prevalece.',
+    answer: 'Sí, como evidencia de apoyo. La NOM-002-STPS-2010 pide la revisión mensual de los extintores, la realización de simulacros y, en riesgo alto, la integración de la brigada contra incendio; estos formatos sirven para dejarlo por escrito. Si tu entidad o tu auditor usan un formato oficial propio, ese es el que prevalece.',
   },
   {
     question: '¿Qué debe llevar un formato de simulacro de evacuación?',

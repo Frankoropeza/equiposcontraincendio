@@ -187,7 +187,7 @@ export const herramientasSteps = [
 export const herramientasFaqs = [
   {
     question: '¿Qué es la NOM-002-STPS-2010?',
-    answer: 'Es la Norma Oficial Mexicana de la Secretaría del Trabajo y Previsión Social sobre condiciones de seguridad, prevención y protección contra incendios en los centros de trabajo. Obliga a clasificar el riesgo de incendio del inmueble y, según ese grado, a contar con extintores, detectores, brigada contra incendio, plan de atención a emergencias, instrucciones de seguridad y, en riesgo alto, la protección adicional que corresponda.',
+    answer: 'Es la Norma Oficial Mexicana de la Secretaría del Trabajo y Previsión Social sobre condiciones de seguridad, prevención y protección contra incendios en los centros de trabajo. Obliga a clasificar el riesgo de incendio del inmueble y, según ese grado, a contar con extintores, detectores, plan de atención a emergencias, instrucciones de seguridad y simulacros; en riesgo alto suma la brigada contra incendio y los sistemas fijos de protección.',
   },
   {
     question: '¿Qué diferencia hay entre riesgo de incendio ordinario y alto?',
