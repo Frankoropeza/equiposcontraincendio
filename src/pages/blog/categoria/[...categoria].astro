@@ -80,9 +80,9 @@ const schemaData = {
 
 const cierreItems = [
   { label: 'Todo el blog', href: '/blog/', sub: 'Todos los artículos' },
-  { label: 'Servicios', href: '/servicios/', sub: 'Lo que ofrecemos' },
-  { label: 'Contacto', href: '/contacto/', sub: 'Hablemos de tu proyecto' },
-  { label: 'Inicio', href: '/', sub: 'Volver a la home' },
+  { label: 'Servicios', href: '/servicios/', sub: 'Instalación y mantenimiento' },
+  { label: 'Contacto', href: '/contacto/', sub: 'Teléfono, WhatsApp y oficinas' },
+  { label: 'Inicio', href: '/', sub: 'Volver al inicio' },
 ]
 const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog), sub: 'Te decimos qué necesitas', external: true }
 ---
@@ -105,13 +105,13 @@ const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog)
 
   <Hero
     badge="Blog"
-    title={label.split(' ')[0]}
-    accent={label.split(' ').slice(1).join(' ') || 'del blog'}
+    title={`${label}:`}
+    accent={"guías\u00a0para\u00a0empresas"}
     subtitle={intro}
     descRight={body}
     ctas={[
       ...(cta ? [{ text: cta.label, href: cta.href, variant: 'outline' as const }] : []),
-      { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog), variant: 'primary' as const, whatsapp: true },
+      { text: 'Consultar por WhatsApp', href: waUrl(WA_MESSAGES.blog), variant: 'primary' as const, whatsapp: true },
     ]}
   />
 
@@ -123,8 +123,7 @@ const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog)
     currentCategory={categoria}
     eyebrow={page > 1 ? `Página ${page} de ${total}` : 'Archivo de categoría'}
     title={`Artículos sobre ${label.toLowerCase()}`}
-    desc={`${posts.length} ${posts.length === 1 ? 'artículo' : 'artículos'} en esta página.`}
-    body={body}
+    desc={`Guías sobre ${label.toLowerCase()}, de la más reciente a la más antigua.`}
   />
 
   <SectionMenu items={cierreItems} cta={cierreCta} ariaLabel="Sigue explorando el blog" />

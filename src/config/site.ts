@@ -821,11 +821,11 @@ export const BLOG_CATEGORIES: readonly BlogCategory[] = [
     label: 'Mantenimiento y recarga',
     seoTitle: 'Mantenimiento y recarga de extintores',
     seoDescription:
-      'Cada cuándo se recarga un extintor, qué exige la NOM-154, qué incluye un servicio serio y cómo verificar que el mantenimiento se hizo bien.',
+      'Cada cuándo se recarga un extintor, qué exige la NOM-154, qué incluye un servicio profesional y cómo verificar que el mantenimiento se hizo bien.',
     intro:
       'Vigencias, recarga, prueba hidrostática e inspección: lo que mantiene tu equipo operativo y tu expediente en regla.',
     body: [
-      'Un extintor sin mantenimiento vigente es un extintor que no cuenta en una verificación, aunque esté colgado en la pared. En esta sección explicamos las frecuencias que pide la norma, qué incluye un servicio profesional y cómo detectar a un proveedor que solo pinta el cilindro.',
+      'Un extintor sin mantenimiento vigente es un extintor que no cuenta en una verificación, aunque esté colgado en la pared. En esta sección explicamos las frecuencias que pide la norma, qué incluye un servicio profesional y cómo comprobar que se realizó conforme a norma.',
       'Damos servicio de mantenimiento, recarga, prueba hidrostática e inspección en CDMX y Estado de México.',
     ],
     cta: { label: 'Mantenimiento de extintores', href: '/servicios/mantenimiento/' },
@@ -853,8 +853,8 @@ export const BLOG_CATEGORIES: readonly BlogCategory[] = [
     intro:
       'Qué exige cada norma mexicana a tu centro de trabajo y cómo se demuestra ante la STPS o Protección Civil.',
     body: [
-      'La mayoría de las empresas no compra equipo contra incendio por gusto: lo compra porque una norma o una verificación se lo exige. En esta sección traducimos las normas aplicables a acciones concretas y verificables, con la clave completa de cada una.',
-      'Si tienes una visita encima o un expediente incompleto, podemos hacer el diagnóstico y armar la documentación.',
+      'En esta sección traducimos las normas aplicables a acciones concretas y verificables, con la clave completa de cada una y la autoridad que revisa su cumplimiento.',
+      'Si tienes una verificación próxima o un expediente incompleto, podemos revisar el inmueble y ordenar la documentación.',
     ],
     cta: { label: 'Inspección y dictamen', href: '/servicios/inspeccion/' },
   },
@@ -881,7 +881,7 @@ export const BLOG_CATEGORIES: readonly BlogCategory[] = [
     intro:
       'Qué necesita tu giro en concreto: restaurantes, oficinas, bodegas y edificios, más señalización y evacuación.',
     body: [
-      'El riesgo de una cocina no se parece al de una bodega ni al de un piso de oficinas, y el equipo exigible tampoco. En esta sección resolvemos la pregunta que de verdad hace el dueño de un negocio: qué me van a pedir a mí.',
+      'El riesgo de una cocina no se parece al de una bodega ni al de un piso de oficinas, y el equipo exigible tampoco. En esta sección respondemos, por giro, qué equipo y qué medidas corresponden a cada tipo de negocio.',
       'Hacemos el levantamiento del inmueble y proponemos el equipo mínimo exigible para tu giro, en CDMX y Estado de México.',
     ],
     cta: { label: 'Diagnóstico de riesgo', href: '/servicios/diagnostico-de-riesgo/' },
@@ -891,7 +891,7 @@ export const BLOG_CATEGORIES: readonly BlogCategory[] = [
     label: 'Costos y decisión de compra',
     seoTitle: 'Costos de equipo contra incendio',
     seoDescription:
-      'De qué depende el precio de un extintor, qué debe incluir una cotización seria de equipo contra incendio y cómo comparar proveedores sin llevarte sorpresas.',
+      'De qué depende el precio de un extintor, qué debe incluir una cotización completa de equipo contra incendio y cómo comparar proveedores con criterio.',
     intro:
       'De qué depende el precio, qué debe incluir una cotización y cómo comparar proveedores sin sorpresas.',
     body: [

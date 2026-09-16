@@ -3,6 +3,9 @@
 // /blog/ — Landing del Blog (página 1 del archivo).
 // ----------------------------------------------------------------------------
 // L2 homologada: Hero → SectionMenu → listado con barra lateral → paginación.
+// 2026-09-16: el hero enlaza al pilar /blog/prevencion-de-incendios-en-empresas/,
+// dueño de la primaria «prevención de incendios» (500/mes, Ahrefs doc 18/26):
+// el hub reparte autoridad hacia la guía que debe posicionar.
 // El listado, la barra y la paginación viven en BlogArchive (pieza compartida
 // con /blog/pagina/N/ y con los archivos de categoría).
 //
@@ -63,14 +66,14 @@ const schemaData = {
     badge="Guías y normatividad"
     title="Guías de prevención"
     accent={"y\u00a0protección contra\u00a0incendios"}
-    subtitle="Medidas de prevención de incendios para tu empresa: cómo elegir, instalar y mantener tu equipo contra incendio y qué pide la normatividad mexicana, explicado claro y sin tecnicismos de más."
+    subtitle="Medidas de prevención de incendios para tu empresa: cómo elegir, instalar y mantener tu equipo contra incendio y qué pide la normatividad mexicana, con lenguaje claro y sin tecnicismos innecesarios."
     descRight={[
       'Aquí publicamos guías sobre equipo contra incendio: cómo elegir un extintor según la clase de fuego, qué exige la NOM-154-SCFI para el mantenimiento y la recarga, y cómo mantener tu inmueble protegido y en regla.',
-      'Contenido pensado para que tomes mejores decisiones de protección, con información confiable y aplicada a tu caso. ¿Tienes una duda puntual? Escríbenos por WhatsApp.',
+      'Contenido pensado para que tomes decisiones de protección informadas y aplicadas a tu inmueble. ¿Tienes una duda puntual? Escríbenos por WhatsApp.',
     ]}
     ctas={[
-      { text: 'Equipos contra incendios', href: '/productos/', variant: 'outline' },
-      { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog), variant: 'primary', whatsapp: true },
+      { text: 'Prevención de incendios', href: '/blog/prevencion-de-incendios-en-empresas/', variant: 'outline' },
+      { text: 'Consultar por WhatsApp', href: waUrl(WA_MESSAGES.blog), variant: 'primary', whatsapp: true },
     ]}
   />
 
@@ -84,10 +87,10 @@ const schemaData = {
     eyebrow="Últimos artículos"
     title="Seguridad contra incendios:"
     titleAccent="guías y normatividad"
-    desc="Lo esencial sobre extintores, mantenimiento y cumplimiento, explicado claro."
+    desc="Lo esencial sobre extintores, mantenimiento y cumplimiento, con lenguaje claro."
     body={[
       'Reunimos guías prácticas de prevención y protección contra incendios: qué equipo necesitas según tu grado de riesgo, cada cuándo darle servicio, cómo organizar la brigada y los simulacros, y qué pide la NOM-002-STPS-2010 para pasar una inspección de Protección Civil o de la STPS.',
-      'Cada artículo va al grano y, cuando aplica, te conecta con el producto o servicio que resuelve tu caso.',
+      'Cada artículo responde una pregunta concreta y, cuando aplica, enlaza al producto o servicio relacionado.',
     ]}
   />
 </PageLayout>
