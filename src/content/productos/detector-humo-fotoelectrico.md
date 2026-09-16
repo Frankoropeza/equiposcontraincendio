@@ -7,7 +7,7 @@ price: "Cotizar"
 brand: "CONINC"
 order: 6
 seoTitle: "Detector de humo fotoeléctrico: autónomo y para panel"
-seoDescription: "Compara detectores de humo fotoeléctricos: batería, interconectados, humo y CO, o para panel de alarma."
+seoDescription: "Compara detectores de humo fotoeléctricos para detección temprana: autónomos de batería, interconectados, combinados con CO o para panel de alarma."
 faqs:
   - question: "¿Qué detector de humo se adapta mejor a mi instalación?"
     answer: "Puedes elegir un modelo autónomo con batería AA, batería sellada de 10 años o alimentación de 120 V. También hay opciones interconectadas, combinadas con monóxido de carbono y de dos hilos para panel."

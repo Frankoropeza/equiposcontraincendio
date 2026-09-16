@@ -835,7 +835,7 @@ export const BLOG_CATEGORIES: readonly BlogCategory[] = [
     label: 'Sistemas contra incendio',
     seoTitle: 'Sistemas contra incendio: guías técnicas',
     seoDescription:
-      'Qué integra un sistema contra incendio: detección y alarma, hidrantes, gabinetes, mangueras y supresión. Criterios de selección e instalación para inmuebles en México.',
+      'Qué integra un sistema contra incendio: detección y alarma, hidrantes, gabinetes, mangueras y supresión, y cómo se eligen para inmuebles en México.',
     intro:
       'Detección y alarma, red de hidrantes, gabinetes y sistemas de supresión: qué lleva cada uno y qué se revisa al instalarlo.',
     body: [

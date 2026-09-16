@@ -7,7 +7,7 @@ price: "Cotizar"
 brand: "CONINC"
 order: 7
 seoTitle: "Gabinetes con manguera contra incendio 1½\""
-seoDescription: "Compara gabinetes de sobreponer, empotrar y combinados para manguera contra incendio de 1½ pulgadas."
+seoDescription: "Compara gabinetes de sobreponer, empotrar y combinados para manguera contra incendio de 1½ pulgadas, con válvula, chiflón y, según el modelo, extintor."
 faqs:
   - question: "¿Qué longitud de manguera puedo elegir?"
     answer: "Puedes elegir manguera de 15 o 30 metros, según el recorrido previsto en el inmueble. El modelo combinado también admite manguera de hasta 30 metros y un extintor portátil."

@@ -34,7 +34,6 @@ import RelatedLinks from "@components/RelatedLinks.astro";
 import FAQAccordion from "@components/FAQAccordion.astro";
 import CTABanner from "@components/CTABanner.astro";
 import { SITE, waUrl } from "@config/site";
-import { slugify } from '@lib/slug'
 import { srcsetFor } from '@lib/img'
 
 export interface Props {
@@ -81,7 +80,6 @@ const {
   image,
   imageAlt,
   canonical,
-  tags = [],
   funnel = 'mofu',
   headings = [],
   faqs = [],
@@ -225,12 +223,6 @@ const cta = CTA_BY_FUNNEL[funnel] ?? CTA_BY_FUNNEL.mofu;
             <RelatedLinks title="" links={commercial.map((r) => ({ label: r.label, href: r.href, desc: r.description }))} />
           </div>
         )}
-        {tags.length > 0 && (
-          <div class="post__widget">
-            <h2>Temas</h2>
-            <ul class="post__tags">{tags.map((t) => <li><a href={`/blog/tag/${slugify(t)}/`}>#{t}</a></li>)}</ul>
-          </div>
-        )}
         {related.length > 0 && (
           <div class="post__widget">
             <h2>Sigue leyendo</h2>
@@ -266,8 +258,6 @@ const cta = CTA_BY_FUNNEL[funnel] ?? CTA_BY_FUNNEL.mofu;
   .post__sidebar { display: grid; gap: var(--space-5); align-content: start; }
   .post__widget { padding: var(--space-5); border: 1px solid var(--color-border); border-radius: var(--radius-lg); }
   .post__widget--cta { background: var(--color-surface); }
-  .post__tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2); }
-  .post__tags a { font-size: var(--text-sm); color: var(--color-text-muted); text-decoration: none; }
 
   /* Índice del artículo — anclas a los H2 (Astro genera los id). */
   .toc { margin: 0 0 var(--space-7); padding: var(--space-5); border: 1px solid var(--color-border); border-left: 3px solid var(--color-accent); border-radius: var(--radius-lg); background: var(--color-surface); }
