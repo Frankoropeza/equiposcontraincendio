@@ -38,17 +38,17 @@ test('la L3 contiene los bloques y contratos del catálogo', () => {
 // (--trio / --duo) y cada vitrina declara un número de fichas múltiplo de 4.
 const L3 = [
   { page: 'src/pages/productos/extintores/index.astro', data: 'src/data/extintores.ts', list: 'extintoresTarjetas' },
-  { page: 'src/pages/productos/deteccion-alarmas/index.astro', data: 'src/data/deteccion-alarmas.ts', list: 'detTarjetas' },
-  { page: 'src/pages/productos/hidrantes-mangueras/index.astro', data: 'src/data/hidrantes-mangueras.ts', list: 'hidTarjetas' },
-  { page: 'src/pages/productos/senalizacion/index.astro', data: 'src/data/senalizacion.ts', list: 'senTarjetas' },
-  { page: 'src/pages/productos/accesorios/index.astro', data: 'src/data/accesorios.ts', list: 'accTarjetas' },
+  { page: 'src/pages/productos/deteccion-alarmas/index.astro', content: 'src/content/l3/productos/deteccion-alarmas.md' },
+  { page: 'src/pages/productos/hidrantes-mangueras/index.astro', content: 'src/content/l3/productos/hidrantes-mangueras.md' },
+  { page: 'src/pages/productos/senalizacion/index.astro', content: 'src/content/l3/productos/senalizacion.md' },
+  { page: 'src/pages/productos/accesorios/index.astro', content: 'src/content/l3/productos/accesorios.md' },
   { page: 'src/pages/servicios/mantenimiento/index.astro', content: 'src/content/l3/servicios/mantenimiento.md' },
-  { page: 'src/pages/servicios/prueba-hidrostatica/index.astro', data: 'src/data/prueba-hidrostatica.ts', list: 'phTarjetas' },
-  { page: 'src/pages/servicios/inspeccion/index.astro', data: 'src/data/inspeccion.ts', list: 'inspTarjetas' },
-  { page: 'src/pages/servicios/diagnostico-de-riesgo/index.astro', data: 'src/data/diagnostico-de-riesgo.ts', list: 'diagTarjetas' },
-  { page: 'src/pages/servicios/capacitacion-dc3/index.astro', data: 'src/data/capacitacion-dc3.ts', list: 'capTarjetas' },
-  { page: 'src/pages/servicios/gestion-documental/index.astro', data: 'src/data/gestion-documental.ts', list: 'docTarjetas' },
-  { page: 'src/pages/servicios/instalacion/index.astro', data: 'src/data/instalacion.ts', list: 'instTarjetas' },
+  { page: 'src/pages/servicios/prueba-hidrostatica/index.astro', content: 'src/content/l3/servicios/prueba-hidrostatica.md' },
+  { page: 'src/pages/servicios/inspeccion/index.astro', content: 'src/content/l3/servicios/inspeccion.md' },
+  { page: 'src/pages/servicios/diagnostico-de-riesgo/index.astro', content: 'src/content/l3/servicios/diagnostico-de-riesgo.md' },
+  { page: 'src/pages/servicios/capacitacion-dc3/index.astro', content: 'src/content/l3/servicios/capacitacion-dc3.md' },
+  { page: 'src/pages/servicios/gestion-documental/index.astro', content: 'src/content/l3/servicios/gestion-documental.md' },
+  { page: 'src/pages/servicios/instalacion/index.astro', content: 'src/content/l3/servicios/instalacion.md' },
 ];
 
 test('las L3 no usan retículas de 3 ni de 2 columnas', () => {
@@ -184,21 +184,16 @@ test('ProcessSteps y todos sus datos usan ocho pasos con textos acotados', () =>
   }
 
   for (const file of [
-    'prueba-hidrostatica.ts',
-    'inspeccion.ts',
-    'diagnostico-de-riesgo.ts',
-    'capacitacion-dc3.ts',
-    'gestion-documental.ts',
-    'instalacion.ts',
+    'prueba-hidrostatica.md',
+    'inspeccion.md',
+    'diagnostico-de-riesgo.md',
+    'capacitacion-dc3.md',
+    'gestion-documental.md',
+    'instalacion.md',
   ]) {
-    const source = fs.readFileSync(path.join(ROOT, 'src/data', file), 'utf8');
-    const processStart = source.indexOf('proceso:');
-    const start = source.indexOf('steps: [', processStart);
-    const end = source.indexOf('\n    ],', start);
-    const block = source.slice(start, end === -1 ? source.length : end);
-    const steps = [...block.matchAll(/num:\s*['"]\d+['"],\s*title:\s*['"]([^'"]+)['"],\s*desc:\s*['"]([^'"]+)['"]/g)];
+    const steps = readFrontmatter(`src/content/l3/servicios/${file}`).proceso.steps;
     assert.equal(steps.length, 8, `${file}: proceso debe tener 8 pasos`);
-    for (const [, title, desc] of steps) {
+    for (const { title, desc } of steps) {
       assert.ok(title.length <= 30, `${file}: título demasiado largo: ${title}`);
       assert.ok(desc.length <= 110, `${file}: descripción demasiado larga: ${desc}`);
     }

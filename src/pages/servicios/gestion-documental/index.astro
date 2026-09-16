@@ -1,7 +1,10 @@
 ---
 // Página L3 de gestión documental: el patrón compartido vive en ServiceL3.
 import ServiceL3 from '@components/ServiceL3.astro';
-import { gestionDocumentalL3 } from '@data/gestion-documental';
+import { getEntry } from 'astro:content';
+
+const entry = await getEntry('l3', 'servicios/gestion-documental');
+if (!entry) throw new Error('Falta la entrada L3: servicios/gestion-documental');
 ---
 
-<ServiceL3 data={gestionDocumentalL3} />
+<ServiceL3 data={entry.data} />

@@ -1,7 +1,10 @@
 ---
 // Página L3 de prueba hidrostática: el patrón compartido vive en ServiceL3.
 import ServiceL3 from '@components/ServiceL3.astro';
-import { pruebaHidrostaticaL3 } from '@data/prueba-hidrostatica';
+import { getEntry } from 'astro:content';
+
+const entry = await getEntry('l3', 'servicios/prueba-hidrostatica');
+if (!entry) throw new Error('Falta la entrada L3: servicios/prueba-hidrostatica');
 ---
 
-<ServiceL3 data={pruebaHidrostaticaL3} />
+<ServiceL3 data={entry.data} />

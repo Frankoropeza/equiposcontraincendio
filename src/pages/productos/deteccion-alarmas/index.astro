@@ -1,7 +1,10 @@
 ---
 // Página L3 de detección y alarmas: el patrón compartido vive en ServiceL3.
 import ServiceL3 from '@components/ServiceL3.astro';
-import { deteccionL3 } from '@data/deteccion-alarmas';
+import { getEntry } from 'astro:content';
+
+const entry = await getEntry('l3', 'productos/deteccion-alarmas');
+if (!entry) throw new Error('Falta la entrada L3: productos/deteccion-alarmas');
 ---
 
-<ServiceL3 data={deteccionL3} />
+<ServiceL3 data={entry.data} />

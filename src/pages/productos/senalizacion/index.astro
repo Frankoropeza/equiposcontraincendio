@@ -1,7 +1,10 @@
 ---
 // Página L3 de señalización y emergencia: el patrón compartido vive en ServiceL3.
 import ServiceL3 from '@components/ServiceL3.astro';
-import { senalizacionL3 } from '@data/senalizacion';
+import { getEntry } from 'astro:content';
+
+const entry = await getEntry('l3', 'productos/senalizacion');
+if (!entry) throw new Error('Falta la entrada L3: productos/senalizacion');
 ---
 
-<ServiceL3 data={senalizacionL3} />
+<ServiceL3 data={entry.data} />

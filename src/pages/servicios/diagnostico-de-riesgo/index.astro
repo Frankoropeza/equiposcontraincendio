@@ -1,7 +1,10 @@
 ---
 // Página L3 de diagnóstico de riesgo: el patrón compartido vive en ServiceL3.
 import ServiceL3 from '@components/ServiceL3.astro';
-import { diagnosticoL3 } from '@data/diagnostico-de-riesgo';
+import { getEntry } from 'astro:content';
+
+const entry = await getEntry('l3', 'servicios/diagnostico-de-riesgo');
+if (!entry) throw new Error('Falta la entrada L3: servicios/diagnostico-de-riesgo');
 ---
 
-<ServiceL3 data={diagnosticoL3} />
+<ServiceL3 data={entry.data} />

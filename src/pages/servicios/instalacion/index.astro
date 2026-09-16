@@ -1,7 +1,10 @@
 ---
 // Página L3 de instalación de sistemas: el patrón compartido vive en ServiceL3.
 import ServiceL3 from '@components/ServiceL3.astro';
-import { instalacionL3 } from '@data/instalacion';
+import { getEntry } from 'astro:content';
+
+const entry = await getEntry('l3', 'servicios/instalacion');
+if (!entry) throw new Error('Falta la entrada L3: servicios/instalacion');
 ---
 
-<ServiceL3 data={instalacionL3} />
+<ServiceL3 data={entry.data} />

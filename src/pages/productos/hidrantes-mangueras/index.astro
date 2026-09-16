@@ -1,7 +1,10 @@
 ---
 // Página L3 de hidrantes y mangueras: el patrón compartido vive en ServiceL3.
 import ServiceL3 from '@components/ServiceL3.astro';
-import { hidrantesL3 } from '@data/hidrantes-mangueras';
+import { getEntry } from 'astro:content';
+
+const entry = await getEntry('l3', 'productos/hidrantes-mangueras');
+if (!entry) throw new Error('Falta la entrada L3: productos/hidrantes-mangueras');
 ---
 
-<ServiceL3 data={hidrantesL3} />
+<ServiceL3 data={entry.data} />
