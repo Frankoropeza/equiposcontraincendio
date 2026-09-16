@@ -11,7 +11,7 @@
 // DISTRIBUCIÓN. El TÍTULO de la sección va APARTE con el complemento
 // SectionHeading layout="duo" (regla del sistema: todos los títulos en duo).
 // Este componente es el CUERPO, de arriba a abajo:
-//   1. Dos columnas  → "Qué hacemos" (párrafos) · "Cómo lo hacemos" (pilares num.).
+//   1. Dos columnas  → "Qué hacemos" (párrafos) · "Cómo lo hacemos" (pilares).
 //   2. Cifras        → tira de señales de confianza (números reales del negocio).
 //   3. CTA           → una sola acción principal.
 //
@@ -45,17 +45,16 @@ const { que, como, cta } = Astro.props;
 
     <section class="company__card company__card--como">
       <h3 class="company__sub">{como.title}</h3>
-      <ol class="company__pillars" role="list">
-        {como.pillars.map((p: Pillar, i: number) => (
+      <ul class="company__pillars" role="list">
+        {como.pillars.map((p: Pillar) => (
           <li class="company__pillar">
-            <span class="company__pillar-num" aria-hidden="true">{i + 1}</span>
             <div class="company__pillar-body">
               <p class="company__pillar-title">{p.title}</p>
               <p class="company__pillar-desc">{p.desc}</p>
             </div>
           </li>
         ))}
-      </ol>
+      </ul>
     </section>
   </div>
 
@@ -116,7 +115,7 @@ const { que, como, cta } = Astro.props;
     color: var(--c-ink-2);
   }
 
-  /* ── Pilares numerados (Cómo lo hacemos) ── */
+  /* ── Pilares (Cómo lo hacemos) ── */
   .company__pillars {
     list-style: none;
     margin: 0;
@@ -126,25 +125,7 @@ const { que, como, cta } = Astro.props;
     gap: var(--sp-4);
   }
 
-  .company__pillar {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--sp-3);
-  }
-
-  .company__pillar-num {
-    flex-shrink: 0;
-    display: grid;
-    place-items: center;
-    width: 30px;
-    height: 30px;
-    border-radius: var(--radius-full);
-    background: var(--c-primary);
-    color: #fff;
-    font-family: var(--font-heading);
-    font-weight: var(--weight-bold);
-    font-size: var(--text-sm);
-  }
+  .company__pillar { display: block; }
 
   .company__pillar-body {
     display: flex;
