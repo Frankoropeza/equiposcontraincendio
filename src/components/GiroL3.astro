@@ -27,7 +27,6 @@ import {
   TAG_LABEL,
 } from '@data/giros-comun';
 import { GIROS_CATALOGO } from '@data/giros-catalogo';
-import { companyStats } from '@data/home';
 import { relDesc } from '@data/related-desc';
 
 interface Props {
@@ -300,7 +299,6 @@ const schemaData = {
       <CompanyAbout
         que={giroCompany.que}
         como={giroCompany.como}
-        stats={companyStats}
         cta={{ label: 'Consultar por WhatsApp', href: waUrl(d.waMessage), external: true }}
       />
     </div>

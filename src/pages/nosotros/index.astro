@@ -17,7 +17,7 @@ import CompanyAbout from '@components/CompanyAbout.astro'
 import RelatedLinks from '@components/RelatedLinks.astro'
 import FAQWithContact from '@components/FAQWithContact.astro'
 import { COMPANY, CONTACT, SHOWCASE, WA_MESSAGES, sectionMenuItems, telUrl, waUrl } from '@config/site'
-import { companyStats, homeCompany, homeSteps } from '@data/home'
+import { homeCompany, homeSteps } from '@data/home'
 import {
   fichaEmpresa, loQueNoHacemos, nosotrosFaqs, nosotrosHero, nosotrosMeta,
   principios, serviciosTabla, trayectoria,
@@ -77,7 +77,7 @@ const menuCta = {
   <section class="section section--surface">
     <div class="container">
       <SectionHeading layout="duo" eyebrow="Sobre la empresa" title="Equipo y servicio" titleAccent="con contexto" desc={COMPANY.summary} />
-      <CompanyAbout que={homeCompany.que} como={homeCompany.como} stats={companyStats} cta={{ label: 'Hablar por WhatsApp', href: waUrl(WA_MESSAGES.contacto), external: true }} />
+      <CompanyAbout que={homeCompany.que} como={homeCompany.como} cta={{ label: 'Hablar por WhatsApp', href: waUrl(WA_MESSAGES.contacto), external: true }} />
     </div>
   </section>
 

@@ -16,26 +16,24 @@
 //   3. CTA           → una sola acción principal.
 //
 // Reutilizable y data-driven: la página pasa el contenido (no hay datos
-// hardcodeados). Mobile-first; en móvil las columnas y las cifras se apilan.
+// hardcodeados). Mobile-first; en móvil las columnas se apilan.
+// 2026-09-17: se retiró la tira de cifras (stats) por decisión de Frank.
 //
 // PROPS
 //   que   → { title, body: string[] }                "Qué hacemos".
 //   como  → { title, pillars: {title,desc}[] }        "Cómo lo hacemos".
-//   stats → { value, label }[]   cifras de confianza (REALES, nunca inventadas).
 //   cta   → { label, href, external? }                acción principal.
 //
 // ESTILO: tokens de src/styles/tokens.css. A11y: encabezados jerárquicos, listas
 // reales, foco visible.
 // ============================================================================
 export type Pillar = { title: string; desc: string };
-export type Stat = { value: string; label: string };
 interface Props {
   que: { title: string; body: string[] };
   como: { title: string; pillars: Pillar[] };
-  stats?: Stat[];
   cta?: { label: string; href: string; external?: boolean };
 }
-const { que, como, stats = [], cta } = Astro.props;
+const { que, como, cta } = Astro.props;
 ---
 
 <div class="company">
@@ -61,16 +59,6 @@ const { que, como, stats = [], cta } = Astro.props;
     </section>
   </div>
 
-  {stats.length > 0 && (
-    <ul class="company__stats" role="list" aria-label="Cifras de la empresa">
-      {stats.map((s: Stat) => (
-        <li class="company__stat">
-          <span class="company__stat-value">{s.value}</span>
-          <span class="company__stat-label">{s.label}</span>
-        </li>
-      ))}
-    </ul>
-  )}
 
   {cta && (
     <a
@@ -178,37 +166,9 @@ const { que, como, stats = [], cta } = Astro.props;
   }
 
   /* ── Cifras de confianza ── */
-  .company__stats {
-    list-style: none;
-    margin: 0;
-    padding: var(--sp-6);
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--sp-5);
-    background: var(--c-surface);
-    border: 1px solid var(--c-border);
-    border-radius: var(--radius-lg);
-  }
 
-  .company__stat {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    text-align: center;
-  }
 
-  .company__stat-value {
-    font-family: var(--font-heading);
-    font-weight: var(--weight-black);
-    font-size: var(--text-3xl);
-    line-height: 1;
-    color: var(--c-primary);
-  }
 
-  .company__stat-label {
-    font-size: var(--text-sm);
-    color: var(--c-muted);
-  }
 
   /* ── CTA ── */
   .company__cta {
@@ -244,16 +204,7 @@ const { que, como, stats = [], cta } = Astro.props;
       gap: var(--sp-6);
     }
 
-    .company__stats {
-      grid-template-columns: repeat(4, 1fr);
-    }
 
-    .company__stat {
-      border-left: 1px solid var(--c-border);
-    }
 
-    .company__stat:first-child {
-      border-left: 0;
-    }
   }
 </style>

@@ -23,7 +23,6 @@ import {
   productosCompany,
   productosRelated,
 } from '@data/productos';
-import { companyStats } from '@data/home';
 import { getCollection } from 'astro:content';
 import { SHOWCASE, CONTACT, waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site';
 import { cierreGeneral, faltanParaCuatro } from '@data/cierre';
@@ -473,7 +472,6 @@ const schemaData = {
       <CompanyAbout
         que={productosCompany.que}
         como={productosCompany.como}
-        stats={companyStats}
         cta={{ label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.productos), external: true }}
       />
     </div>

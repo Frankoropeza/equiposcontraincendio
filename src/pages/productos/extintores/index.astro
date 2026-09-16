@@ -36,7 +36,6 @@ import {
   extMarcasNota,
   extSecciones,
 } from '@data/extintores-catalogo';
-import { companyStats } from '@data/home';
 
 const entry = await getEntry('l3', 'productos/extintores');
 if (!entry || entry.data.kind !== 'extintores') throw new Error('Falta la entrada L3: productos/extintores');
@@ -247,7 +246,6 @@ const schemaData = {
       <CompanyAbout
         que={extintoresCompany.que}
         como={extintoresCompany.como}
-        stats={companyStats}
         cta={{ label: 'Cotizar por WhatsApp', href: waUrl(WA_EXTINTORES), external: true }}
       />
     </div>

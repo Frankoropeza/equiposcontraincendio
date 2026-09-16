@@ -28,7 +28,6 @@ import {
   homeRiskRows,
   homeSteps,
 } from "@data/home";
-import { companyStats } from "@data/home";
 
 const waLink = waUrl();
 
@@ -242,7 +241,6 @@ const servicios = (await getCollection("servicios", ({ data }) => !data.draft))
       <CompanyAbout
         que={homeCompany.que}
         como={homeCompany.como}
-        stats={companyStats}
         cta={{ label: "Hablar por WhatsApp", href: waLink, external: true }}
       />
     </div>

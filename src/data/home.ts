@@ -140,18 +140,6 @@ export const homeCompany: HomeCompany = {
   },
 };
 
-// ── Cifras de CONINC para CompanyAbout (tira de confianza) ──────────────────
-// Solo cifras REALES: la trayectoria la declaró el negocio (2026-09-10) y las
-// otras tres se cuentan en el propio sitio (entidades de COVERAGE_STATES,
-// servicios de TAXONOMY.services y familias de SHOWCASE). Si una de esas listas
-// cambia, esta cifra se actualiza sola. Siempre 4 (regla de múltiplos de 4).
-export const companyStats: { value: string; label: string }[] = [
-  { value: "+35", label: "años en el mercado mexicano" },
-  { value: String(COVERAGE_STATES.length), label: "entidades: CDMX y Estado de México" },
-  { value: String(SERVICES.length), label: "servicios contra incendio" },
-  { value: String(SHOWCASE.length), label: "familias de equipo" },
-];
-
 export const homeFaqs: HomeFaq[] = [
   // Las cuatro primeras son las «People Also Ask» LITERALES de Google para
   // «equipos contra incendios» (NeuronWriter, 2026-09-09). Responderlas con la

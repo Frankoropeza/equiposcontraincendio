@@ -19,7 +19,6 @@ import FAQWithContact from '@components/FAQWithContact.astro';
 import DataTable from '@components/DataTable.astro';
 import { getCollection } from 'astro:content';
 import { CONTACT, waUrl, sectionMenuItems } from '@config/site';
-import { companyStats } from '@data/home';
 
 interface Props {
   data: ServiceL3Data;
@@ -168,7 +167,6 @@ const schemaData = data.categoriaProductos
       <CompanyAbout
         que={data.empresa.que}
         como={data.empresa.como}
-        stats={companyStats}
         cta={{ label: 'Cotizar por WhatsApp', href: waUrl(data.wa), external: true }}
       />
     </div>
