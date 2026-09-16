@@ -126,7 +126,7 @@ export const serviceFeatures: ServiceFeature[] = [
     title: 'Diagnóstico de riesgo',
     titleAccent: 'para no comprar de más',
     description:
-      'Antes de cotizar equipo conviene saber en qué nivel de riesgo cae el inmueble, porque de ahí salen la densidad de extintores, la distancia de recorrido y si hace falta brigada. Se clasifica conforme a la Tabla 1 de la NOM-002-STPS.',
+      'Antes de cotizar equipo conviene saber en qué nivel de riesgo de incendio cae el inmueble, porque de ahí salen la densidad de extintores, la distancia de recorrido y si hace falta brigada. Se clasifica conforme a la Tabla 1 de la NOM-002-STPS.',
     features: [
       { label: 'Clasificación del riesgo', desc: 'Ordinario o alto, según superficie y cantidad de material combustible.' },
       { label: 'Densidad y recorrido', desc: 'Un extintor por cada 300 m², o por cada 200 m² si el riesgo es alto.' },
