@@ -16,9 +16,11 @@ import RiskGuide from "@components/RiskGuide.astro";
 import NormsTable from "@components/NormsTable.astro";
 import ProcessSteps from "@components/ProcessSteps.astro";
 import CompanyAbout from "@components/CompanyAbout.astro";
+import Testimonios from "@components/Testimonios.astro";
 import FAQWithContact from "@components/FAQWithContact.astro";
 import CategoryFeature from "@components/CategoryFeature.astro";
 import { KEYWORDS, SECTION_MENU, SECTION_MENU_SUB, SHOWCASE, SERVICE_ANCHOR, WA_MESSAGES, waUrl, CONTACT } from "@config/site";
+import { testimonios } from "@data/testimonios";
 import {
   homeCategoryFeatures,
   homeCompany,
@@ -247,6 +249,9 @@ const servicios = (await getCollection("servicios", ({ data }) => !data.draft))
   </section>
 
   {/* ─── FAQ + Contacto ─── */}
+  {/* ─── Reseñas de clientes (textos reales, con autorización) ─── */}
+  <Testimonios items={testimonios} />
+
   <FAQWithContact items={homeFaqs} waNumber={CONTACT.whatsapp} />
 
 </PageLayout>
