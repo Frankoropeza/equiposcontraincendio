@@ -80,17 +80,17 @@ const relatedPlantilla = Array.from(new Map([
     subtitle={d.description}
     descRight={[
       'Descárgalo gratis, sin registro, en formato editable y en PDF para imprimir.',
-      'Si prefieres no llenarlo tú, podemos apoyarte con la gestión documental de tu inmueble.',
+      'Si prefieres delegarlo, podemos apoyarte con la gestión documental de tu inmueble.',
     ]}
     ctas={[
       { text: `Descargar ${d.files[0].ext}`, href: d.files[0].href, variant: 'outline' },
-      { text: 'Que lo llevemos nosotros', href: waHref, variant: 'primary', whatsapp: true },
+      { text: 'Gestión del expediente', href: waHref, variant: 'primary', whatsapp: true },
     ]}
   />
 
   <SectionMenu
     items={sectionMenuItems()}
-    cta={{ label: 'Gestión documental', href: waHref, sub: 'Que lo llevemos nosotros', external: true }}
+    cta={{ label: 'Gestión documental', href: waHref, sub: 'Integramos tu expediente', external: true }}
   />
 
   <section class="section section--surface" id="descarga">
@@ -152,7 +152,7 @@ const relatedPlantilla = Array.from(new Map([
           title={d.label}
           waLink={waHref}
           telHref={telUrl()}
-          eyebrow="¿Prefieres no llenarlo tú?"
+          eyebrow="¿Prefieres delegarlo?"
           items={['Bitácora al día', 'Etiqueta y collarín en regla', 'Expediente listo para la visita']}
           showPrice={false}
           ctaLabel="Gestión documental por WhatsApp"
