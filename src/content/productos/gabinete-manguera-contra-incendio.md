@@ -9,6 +9,10 @@ order: 7
 seoTitle: "Gabinete contra incendio para hidrante y manguera 1½\""
 seoDescription: "Compara gabinetes de sobreponer, empotrar y combinados para manguera contra incendio de 1½ pulgadas, con válvula, chiflón y, según el modelo, extintor."
 faqs:
+  - question: "¿Qué es un gabinete contra incendio?"
+    answer: "Es la caja metálica que aloja, junto a una toma de la red hidráulica o hidrante, la manguera de 1½ pulgadas, su válvula y el chiflón, y en algunos modelos también un extintor portátil. Su función es que el equipo esté protegido, señalizado y listo para usarse en segundos."
+  - question: "¿Cuáles son los tipos de gabinetes contra incendio?"
+    answer: "Por montaje, de sobreponer (se fija sobre el muro) o de empotrar (queda dentro del muro); por contenido, solo para manguera o combinados, con espacio adicional para un extintor. La elección depende del muro, del paso de circulación y del proyecto hidráulico del inmueble."
   - question: "¿Qué longitud de manguera puedo elegir?"
     answer: "Puedes elegir manguera de 15 o 30 metros, según el recorrido previsto en el inmueble. El modelo combinado también admite manguera de hasta 30 metros y un extintor portátil."
   - question: "¿Qué diferencia hay entre sobreponer y empotrar?"
