@@ -8,7 +8,6 @@
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
 import SectionMenu from '@components/SectionMenu.astro'
-import TrustBar from '@components/TrustBar.astro'
 import DataTable from '@components/DataTable.astro'
 import SectionHeading from '@components/SectionHeading.astro'
 import QuoteCard from '@components/QuoteCard.astro'
@@ -18,7 +17,7 @@ import CompanyAbout from '@components/CompanyAbout.astro'
 import RelatedLinks from '@components/RelatedLinks.astro'
 import FAQWithContact from '@components/FAQWithContact.astro'
 import { COMPANY, CONTACT, SHOWCASE, WA_MESSAGES, sectionMenuItems, telUrl, waUrl } from '@config/site'
-import { companyStats, homeCompany, homePillars, homeSteps } from '@data/home'
+import { companyStats, homeCompany, homeSteps } from '@data/home'
 import {
   fichaEmpresa, loQueNoHacemos, nosotrosFaqs, nosotrosHero, nosotrosMeta,
   principios, serviciosTabla, trayectoria,
@@ -37,7 +36,6 @@ const menuCta = {
     { text: 'Nuestros servicios', href: '/servicios/', variant: 'outline' },
   ]} />
   <SectionMenu items={menuSecciones} cta={menuCta} />
-  <TrustBar items={homePillars} />
 
   <DataTable {...fichaEmpresa} />
 

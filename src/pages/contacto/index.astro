@@ -10,11 +10,9 @@ import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
 import SectionHeading from '@components/SectionHeading.astro'
 import SectionMenu from '@components/SectionMenu.astro'
-import TrustBar from '@components/TrustBar.astro'
 import RelatedLinks from '@components/RelatedLinks.astro'
 import EmailLink from '@components/EmailLink.astro'
 import { SITE, COMPANY, CONTACT, waUrl, telUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
-import { homePillars } from '@data/home'
 
 // Canales de contacto — data-driven. Cada uno con su acción (href) y su ícono.
 const canales = [
@@ -77,7 +75,6 @@ const ICON = {
   />
 
   <SectionMenu items={menuSecciones} cta={menuCta} />
-  <TrustBar items={homePillars} />
 
   <section class="section">
     <div class="container">

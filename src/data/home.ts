@@ -3,12 +3,6 @@
 
 import { COVERAGE_STATES, SERVICES, SHOWCASE } from "@config/site";
 
-export type HomePillar = {
-  icon: string;
-  title: string;
-  desc: string;
-};
-
 export type HomeRiskRow = {
   nivel: string;
   ejemplos: string;
@@ -84,16 +78,6 @@ export const homeMenuSub: Record<string, string> = {
   Cobertura: "Zonas que atendemos",
   Blog: "Guías y normatividad",
 };
-
-// La trayectoria va PRIMERO: es la credencial institucional de CONINC confirmada
-// por el negocio (2026-09-10) y esta barra se repite en home, nosotros, contacto
-// y cobertura. «Asesoría honesta» pasa a /nosotros/ (principios).
-export const homePillars: HomePillar[] = [
-  { icon: "clock", title: "Más de 35 años", desc: "CONINC vende equipo contra incendio en el mercado mexicano desde hace más de 35 años." },
-  { icon: "shield", title: "Conforme a norma", desc: "Equipo y servicio alineados a la NOM-154-SCFI, la NOM-002-STPS y la NOM-003-SSPC." },
-  { icon: "doc", title: "Listo para Protección Civil", desc: "Te entregamos ficha técnica y constancias de servicio para tu expediente ante PC y STPS." },
-  { icon: "pin", title: "CDMX y Estado de México", desc: "Atención y entrega en la Ciudad de México, el Estado de México y la zona metropolitana." },
-];
 
 export const homeRiskRows: HomeRiskRow[] = [
   {
