@@ -20,19 +20,6 @@ hero:
     - "Un sistema contra incendio no se compra por catálogo: se dimensiona al inmueble. La NOM-002 clasifica el riesgo y de ahí sale cuánto equipo va y dónde; el diseño de la red hidráulica y de la detección sigue sus propias referencias técnicas."
     - Aquí está qué hace cada sistema, qué errores de instalación vemos más, cómo cambia el trabajo si es obra nueva o un inmueble operando y qué documentación recibes. Escríbenos con el giro y la superficie para empezar por el levantamiento.
   outlineText: Qué instalamos
-pillars:
-  - icon: check
-    title: Dimensionado a tu riesgo
-    desc: El alcance sale del levantamiento y la clasificación, no de un paquete.
-  - icon: doc
-    title: Planos y memoria
-    desc: Lo instalado queda documentado para tu expediente y tu aseguradora.
-  - icon: shield
-    title: Con pruebas
-    desc: Cada sistema se prueba y se pone en marcha antes de entregarse.
-  - icon: clock
-    title: Sin detener tu operación
-    desc: Se trabaja por etapas y áreas para que el inmueble siga protegido.
 vitrina:
   id: que-instalamos
   eyebrow: Qué instalamos

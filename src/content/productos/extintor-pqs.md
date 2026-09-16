@@ -125,19 +125,6 @@ ficha:
   descRight:
     - Con un solo equipo cubres papel y cartón, gasolina o solventes, y equipo eléctrico con corriente. Por eso es el extintor que más se instala en oficinas, comercios, bodegas y vehículos.
     - Abajo comparas sus ocho presentaciones y encuentras cómo elegir la capacidad, dónde colocarlo y qué mantenimiento pide.
-  pillars:
-    - icon: check
-      title: Tres clases, un equipo
-      desc: Sólidos, líquidos inflamables y equipo eléctrico con el mismo extintor.
-    - icon: doc
-      title: Ficha y collarín
-      desc: Sale con ficha técnica; con el servicio lleva etiqueta y collarín.
-    - icon: clock
-      title: Recarga y mantenimiento
-      desc: Servicio anual y prueba hidrostática con quien te lo vendió.
-    - icon: pin
-      title: CDMX y Estado de México
-      desc: Entregamos e instalamos en toda la zona metropolitana.
   norma: NOM-100-STPS-1994
   claves:
     - label: Agente

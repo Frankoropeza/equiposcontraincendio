@@ -6,19 +6,6 @@ hero:
   descRight:
     - "El extintor correcto depende de lo que puede arder en cada zona: cartón en la bodega, aceite en la cocina, tableros en el cuarto eléctrico. Con el agente equivocado, el fuego puede no apagarse o quien lo usa puede salir lastimado."
     - Aquí están las 29 presentaciones que cotizamos, con su capacidad, las clases de fuego que cubren y el tipo de negocio donde convienen. Si prefieres que lo veamos juntos, escríbenos por WhatsApp.
-pillars:
-  - icon: check
-    title: Asesoría por zona
-    desc: Te decimos qué agente va en cada área de tu inmueble, en lugar de uno para todo.
-  - icon: doc
-    title: Papeles en orden
-    desc: Ficha técnica del equipo y etiqueta de servicio para tu expediente de Protección Civil.
-  - icon: clock
-    title: Recarga y mantenimiento
-    desc: Mantenimiento anual, recarga y prueba hidrostática con quien te vendió el equipo.
-  - icon: pin
-    title: CDMX y Estado de México
-    desc: Entregamos e instalamos en toda la zona metropolitana.
 fichas:
   extintor-pqs:
     badge: Clases A · B · C

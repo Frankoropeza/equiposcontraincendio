@@ -24,19 +24,6 @@ hero:
     - Un sistema de detección y alarma no se arma con el mismo detector en todas partes. En una oficina conviene el de humo; en una cocina, ese mismo detector se dispara con el vapor y termina desconectado. Cada área lleva el dispositivo de lo que ahí puede pasar.
     - Aquí está qué detector va en cada área, cuándo conviene un panel convencional y cuándo uno direccionable, y qué te exige la norma federal y, si estás en la Ciudad de México, la NTC de 2024. Escríbenos con el giro, la superficie y los niveles.
   outlineText: Detectores y paneles
-pillars:
-  - icon: check
-    title: Detector por área
-    desc: Humo, temperatura o gas según lo que puede pasar en cada zona.
-  - icon: doc
-    title: Norma en cada partida
-    desc: Sabes qué es obligatorio y qué es buena práctica antes de aprobar.
-  - icon: shield
-    title: Probado por zona
-    desc: Nada se entrega sin que cada zona active el aviso.
-  - icon: clock
-    title: Revisión anual
-    desc: Pruebas y bitácora del programa anual de la NOM-002.
 vitrina:
   id: dispositivos
   eyebrow: Qué incluye un sistema

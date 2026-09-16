@@ -24,19 +24,6 @@ hero:
     - El extintor apaga un conato; cuando el fuego lo rebasa, lo que sigue es la red hidráulica. Una red que se ve completa pero no tiene presión al abrir la válvula da una seguridad falsa, por eso cada componente se elige con el cálculo de la red y no por catálogo.
     - Aquí está qué hace cada componente, cuándo la red es obligatoria, qué cambió con la NTC de 2024 en la Ciudad de México —que eliminó el gabinete con manguera para uso del público— y qué se revisa cada año. Escríbenos con el giro, la superficie y los niveles.
   outlineText: Componentes de la red
-pillars:
-  - icon: check
-    title: Calculada, no estimada
-    desc: Cada componente sale del cálculo de caudal y presión.
-  - icon: doc
-    title: Al día con la NTC 2024
-    desc: Sabemos qué cambió en CDMX y qué sigue igual.
-  - icon: shield
-    title: Probada al entregar
-    desc: La red se prueba antes de darla por buena.
-  - icon: clock
-    title: Revisión anual
-    desc: Pruebas y bitácora del programa anual de la NOM-002.
 vitrina:
   id: componentes
   eyebrow: Componentes de la red

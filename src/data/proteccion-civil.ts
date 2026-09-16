@@ -18,13 +18,6 @@
 export type Feature = { label: string; desc: string };
 export type GalleryImage = { src: string; alt: string };
 
-export const pcPillars = [
-  { icon: 'doc', title: 'Con fuente oficial', desc: 'Cada dato enlaza a la cédula del trámite o al portal de la autoridad que lo publica.' },
-  { icon: 'clock', title: 'Verificado con fecha', desc: 'Cada ficha lleva el día en que se comprobó, porque estos trámites cambian.' },
-  { icon: 'shield', title: 'Lo dudoso va marcado', desc: 'Lo que no pudimos confirmar aparece como pendiente, no como requisito.' },
-  { icon: 'chat', title: 'Te preparamos el inmueble', desc: 'El programa lo firma quien está registrado; nosotros dejamos el inmueble y el expediente listos.' },
-];
-
 // ── Módulos por entidad ──────────────────────────────────────────────────────
 export const pcFeatures = [
   {

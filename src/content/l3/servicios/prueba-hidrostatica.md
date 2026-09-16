@@ -20,19 +20,6 @@ hero:
     - "El mantenimiento anual comprueba que el extintor funcione. La prueba hidrostática comprueba otra cosa: que el cilindro no vaya a fallar mientras funciona. La corrosión interna y los golpes le quitan resistencia sin que se note por fuera, con el manómetro en verde y la pintura intacta."
     - Aquí está cada cuándo la exige la norma mexicana, qué cambia según el tipo de cilindro, qué pasa si no aprueba y qué evidencia debe quedar. Si tienes el inventario a la mano, mándalo por WhatsApp y te programamos la prueba por lotes.
   outlineText: Prueba por tipo
-pillars:
-  - icon: check
-    title: Plazo de la NOM, no de la NFPA
-    desc: Programamos a 5 años, como pide la NOM-154, no a los 12 de la NFPA 10.
-  - icon: doc
-    title: Marca y constancia
-    desc: Fecha permanente en el cilindro y constancia del resultado por equipo.
-  - icon: shield
-    title: Secado completo
-    desc: El paso que evita que el agente se apelmace o el cilindro se corroa por dentro.
-  - icon: clock
-    title: Lo que falla se documenta
-    desc: El cilindro que no aprueba se retira de servicio y queda por escrito.
 vitrina:
   id: por-tipo
   eyebrow: Prueba por tipo de cilindro

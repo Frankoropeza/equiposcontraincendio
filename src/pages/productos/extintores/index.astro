@@ -40,7 +40,7 @@ import { companyStats } from '@data/home';
 
 const entry = await getEntry('l3', 'productos/extintores');
 if (!entry || entry.data.kind !== 'extintores') throw new Error('Falta la entrada L3: productos/extintores');
-const { hero: extintoresHero, pillars: extintoresPillars, tarjetas: extintoresTarjetas, features: extintoresFeatures, clases: extintoresClases, normRows: extintoresNormRows, steps: extintoresSteps, company: extintoresCompany, related: extintoresRelated, faqs: extintoresFaqs } = entry.data;
+const { hero: extintoresHero, tarjetas: extintoresTarjetas, features: extintoresFeatures, clases: extintoresClases, normRows: extintoresNormRows, steps: extintoresSteps, company: extintoresCompany, related: extintoresRelated, faqs: extintoresFaqs } = entry.data;
 
 const fichas = (
   await getCollection('productos', ({ data }) => !data.draft && data.category === 'extintores')

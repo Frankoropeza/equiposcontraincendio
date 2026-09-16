@@ -70,19 +70,6 @@ ficha:
   descRight:
     - "Señales industriales y de protección civil: prohibido fumar, uso obligatorio de equipo de protección, riesgo eléctrico, ruta de evacuación, salida y extintor."
     - El color, la forma y el tamaño salen de la NOM-026-STPS-2008; el tamaño se calcula con la distancia desde la que se lee cada señal.
-  pillars:
-    - icon: check
-      title: La señal que toca
-      desc: Color, forma y símbolo según la NOM-026 y la NOM-003-SSPC.
-    - icon: doc
-      title: Tamaño calculado
-      desc: Cada señal dimensionada a su distancia de observación.
-    - icon: shield
-      title: Industriales y de PC
-      desc: Riesgo eléctrico, EPP, prohibiciones, rutas y equipo contra incendio.
-    - icon: pin
-      title: CDMX y Estado de México
-      desc: Entregamos e instalamos en toda la zona metropolitana.
   norma: NOM-026-STPS-2008 · NOM-003-SSPC-2011
   claves:
     - label: Tipos

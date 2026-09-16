@@ -20,19 +20,6 @@ hero:
     - Recargar no es lo mismo que dar mantenimiento. La recarga repone el agente; el mantenimiento abre el extintor, revisa el cilindro por dentro, cambia lo desgastado y comprueba que no tenga fugas. Un servicio que solo rellena y pega una etiqueta te devuelve el extintor igual que como llegó.
     - Aquí está lo que se le hace a cada tipo de extintor, qué debe traer cuando regresa y cuándo conviene recargarlo o reemplazarlo. Si tienes el inventario a la mano, mándalo por WhatsApp y te cotizamos.
   outlineText: Recarga por tipo
-pillars:
-  - icon: check
-    title: Apertura y revisión interna
-    desc: Cada extintor se despresuriza y se abre; no se limita a rellenar el agente.
-  - icon: doc
-    title: Etiqueta y orden de servicio
-    desc: Etiqueta completa, collarín cuando aplica y orden foliada para tu expediente.
-  - icon: shield
-    title: Garantía de un año
-    desc: La NOM-154 obliga a garantizar el funcionamiento un año con el seguro intacto.
-  - icon: clock
-    title: Aviso de vencimiento
-    desc: Te avisamos cuándo toca el siguiente servicio y la prueba hidrostática.
 vitrina:
   eyebrow: Recarga por tipo de extintor
   title: Cada agente

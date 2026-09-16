@@ -102,19 +102,6 @@ ficha:
   descRight:
     - El CO2 le quita el oxígeno a la flama, no conduce la electricidad y se disipa sin dejar rastro. Es el extintor que va junto a tableros, sites y equipo electrónico.
     - "Abajo comparas sus presentaciones y encuentras sus límites: no está clasificado para papel, madera ni cartón."
-  pillars:
-    - icon: check
-      title: Sin residuo
-      desc: No deja polvo sobre tableros, servidores ni equipo electrónico.
-    - icon: shield
-      title: No conduce
-      desc: Se usa junto a equipo eléctrico con corriente.
-    - icon: clock
-      title: Recarga y mantenimiento
-      desc: Servicio anual y prueba hidrostática con quien te lo vendió.
-    - icon: pin
-      title: CDMX y Estado de México
-      desc: Entregamos e instalamos en toda la zona metropolitana.
   norma: NOM-102-STPS-1994
   claves:
     - label: Agente

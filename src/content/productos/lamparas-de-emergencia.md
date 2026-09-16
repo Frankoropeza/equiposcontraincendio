@@ -63,19 +63,6 @@ ficha:
   descRight:
     - Lámparas LED de dos faros, de sobreponer, industriales y señales de salida iluminadas que encienden solas al cortarse la energía.
     - Se colocan en la ruta de evacuación, escaleras y salidas, donde un corte de luz se vuelve un riesgo.
-  pillars:
-    - icon: check
-      title: Encienden solas
-      desc: Detectan el corte de energía y alumbran con su batería.
-    - icon: shield
-      title: Ruta visible
-      desc: Escaleras, cambios de dirección y puertas de salida iluminados.
-    - icon: doc
-      title: Lo que pide la NOM-025
-      desc: Iluminación de emergencia donde el corte de luz es un riesgo.
-    - icon: pin
-      title: Instalación incluida
-      desc: Las montamos en CDMX y el Estado de México.
   norma: NOM-025-STPS-2008, 5.11
   claves:
     - label: Fuente

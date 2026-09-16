@@ -63,19 +63,6 @@ ficha:
   descRight:
     - Elige gabinetes sobrepuestos o empotrables con mangueras de 15 o 30 metros, o una configuración combinada con extintor.
     - Antes de instalar, revisa presión, caudal, alcance y ubicación contra el proyecto hidráulico de tu inmueble.
-  pillars:
-    - icon: check
-      title: Alcance según recorrido
-      desc: Elige 15 o 30 metros según la distancia que deba cubrir la manguera.
-    - icon: shield
-      title: Acceso inmediato
-      desc: La puerta con visor mantiene disponibles manguera, válvula y chiflón.
-    - icon: doc
-      title: Listo para tu red
-      desc: Define conexiones y accesorios de acuerdo con la red hidráulica existente.
-    - icon: pin
-      title: Montaje a la medida
-      desc: Escoge la instalación que mejor funcione con tu muro y circulación.
   norma: NFPA 14 como referencia técnica
   claves:
     - label: Manguera

@@ -24,19 +24,6 @@ hero:
     - Un extintor bien elegido pero tirado en el piso, colgado a dos metros o suelto en la cabina de una camioneta no sirve en una emergencia. El accesorio correcto depende del diámetro, el peso cargado y el lugar, no del catálogo.
     - Aquí está qué accesorio conviene en cada lugar y, sobre todo, qué pieza puedes comprar e instalar tú y cuál solo cambia el taller en el mantenimiento. Escríbenos con la capacidad del extintor y dónde va.
   outlineText: Accesorios y piezas
-pillars:
-  - icon: check
-    title: Por cilindro
-    desc: Diámetro, peso cargado y anclaje antes de elegir.
-  - icon: pin
-    title: A la altura correcta
-    desc: Parte alta a no más de 1.50 m (NOM-002, 7.17).
-  - icon: shield
-    title: Mismo modelo
-    desc: Refacciones del modelo del extintor, nada adaptado.
-  - icon: doc
-    title: Evidencia real
-    desc: Etiqueta y collarín solo con el servicio.
 vitrina:
   id: accesorios
   eyebrow: Accesorios y piezas

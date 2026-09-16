@@ -63,19 +63,6 @@ ficha:
   descRight:
     - Rociadores automáticos colgantes, montantes, de pared y ocultos, e instalación de la red a partir del proyecto del inmueble.
     - Se abren solo los rociadores que alcanzan su temperatura y controlan el fuego mientras empieza, sin esperar a que alguien lo vea.
-  pillars:
-    - icon: check
-      title: Actúan solos
-      desc: El calor abre el rociador que está sobre el fuego.
-    - icon: shield
-      title: Sistema a la medida
-      desc: Húmedo, seco o preacción, según el inmueble.
-    - icon: doc
-      title: Cuándo son obligatorios
-      desc: NTC 2024 en CDMX y sistemas fijos de la NOM-002 en riesgo alto.
-    - icon: pin
-      title: Instalación
-      desc: Instalamos la red en CDMX y el Estado de México.
   norma: NTC-PA 2024 (CDMX) · NFPA 13 y 25 como referencia
   claves:
     - label: Tipos

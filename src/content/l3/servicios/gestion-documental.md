@@ -20,19 +20,6 @@ hero:
     - "En una verificación no solo se revisa el equipo: se pide el papel que demuestra que está vigente y que el personal está capacitado. Casi siempre ese papel existe, pero repartido entre tres proveedores, un cajón y el correo de alguien que ya no trabaja ahí."
     - Aquí está qué lleva el expediente, quién genera cada documento, cuánto tiempo se guarda y qué no cubre este servicio. Escríbenos con el giro y la superficie para empezar por el inventario.
   outlineText: Qué lleva el expediente
-pillars:
-  - icon: doc
-    title: Un solo expediente
-    desc: Todo el papel del equipo en un índice, sin importar quién lo generó.
-  - icon: check
-    title: Sin historial inventado
-    desc: Lo que no existe se genera desde hoy, nunca hacia atrás.
-  - icon: clock
-    title: Al día con cada servicio
-    desc: La evidencia se actualiza con cada mantenimiento, no la semana previa.
-  - icon: shield
-    title: Con su fundamento
-    desc: Cada apartado del índice dice qué norma lo pide.
 vitrina:
   id: que-lleva
   eyebrow: Qué lleva el expediente

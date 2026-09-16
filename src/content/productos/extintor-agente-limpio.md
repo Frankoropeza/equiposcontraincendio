@@ -105,19 +105,6 @@ ficha:
   descRight:
     - "El agente se evapora al salir: no conduce la electricidad y no deja residuo. Protege servidores y equipo delicado sin dañarlos."
     - Las presentaciones chicas cubren clases B y C; desde 4.3 kg (FE-36) o 5 kg (Halotron I) también la A.
-  pillars:
-    - icon: check
-      title: Sin residuo
-      desc: El agente se evapora; el equipo protegido no se ensucia.
-    - icon: shield
-      title: No conduce
-      desc: Se usa junto a equipo eléctrico con corriente.
-    - icon: clock
-      title: Recarga y mantenimiento
-      desc: Servicio anual y prueba hidrostática con quien te lo vendió.
-    - icon: pin
-      title: CDMX y Estado de México
-      desc: Entregamos e instalamos en toda la zona metropolitana.
   norma: Clasificación del fabricante
   claves:
     - label: Agentes

@@ -64,19 +64,6 @@ ficha:
   descRight:
     - Botiquines de pared para cada área, portátiles para la brigada y compactos para vehículos, con su señal de primeros auxilios.
     - La Ley Federal del Trabajo pide tener el material de curación a la mano; el contenido se ajusta a los riesgos de tu centro de trabajo.
-  pillars:
-    - icon: check
-      title: A la mano
-      desc: Visible, señalizado y cerca de las áreas de mayor riesgo.
-    - icon: shield
-      title: Para la brigada
-      desc: Versión portátil para atender en el punto de reunión.
-    - icon: doc
-      title: Lo que pide la ley
-      desc: LFT art. 504 y medidas mínimas de protección civil.
-    - icon: pin
-      title: CDMX y Estado de México
-      desc: Entregamos en toda la zona metropolitana.
   norma: Ley Federal del Trabajo, art. 504
   claves:
     - label: Formatos

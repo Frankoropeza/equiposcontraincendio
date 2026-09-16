@@ -20,19 +20,6 @@ hero:
     - Tener extintores no sirve si nadie sabe usarlos. Una persona que nunca ha accionado uno no lo hará bien bajo estrés, y eso solo lo cambia la práctica. Por eso cada curso incluye fuego controlado con el agente que hay en tu inmueble.
     - Aquí está qué capacitación exige la NOM-002 según tu grado de riesgo, qué hace cada brigada, qué es de verdad la DC-3 y qué mitos conviene ignorar. Escríbenos con el número de personas y de turnos para cotizar.
   outlineText: Qué capacitamos
-pillars:
-  - icon: check
-    title: Con fuego controlado
-    desc: Práctica real con el agente de tu inmueble, en exterior y con seguridad.
-  - icon: doc
-    title: DC-3 por participante
-    desc: Formato oficial de la STPS, firmado por el agente capacitador.
-  - icon: shield
-    title: Sin vigencias inventadas
-    desc: "La DC-3 no caduca por norma: lo exigible es el programa anual."
-  - icon: clock
-    title: Por turnos
-    desc: Se agenda para que la brigada cubra todos los turnos, no solo uno.
 vitrina:
   id: que-capacitamos
   eyebrow: Qué capacitamos

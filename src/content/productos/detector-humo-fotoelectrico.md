@@ -65,19 +65,6 @@ ficha:
   descRight:
     - Elige entre modelos autónomos, interconectados, combinados con monóxido de carbono o compatibles con panel de alarma.
     - Así puedes cubrir un espacio sin panel, mantener respaldo por batería o llevar la alerta entre equipos compatibles.
-  pillars:
-    - icon: check
-      title: Alerta donde estás
-      desc: Los modelos autónomos avisan con sonido dentro del espacio protegido.
-    - icon: shield
-      title: Opciones conectadas
-      desc: Interconecta equipos compatibles o intégralos a un sistema de dos hilos.
-    - icon: doc
-      title: Compatibilidad por modelo
-      desc: Confirma base, panel, tensión y notificación antes de instalar.
-    - icon: pin
-      title: Montaje interior
-      desc: Hay opciones para plafón y otros espacios interiores.
   norma: NOM-002-STPS-2010
   claves:
     - label: Sensor

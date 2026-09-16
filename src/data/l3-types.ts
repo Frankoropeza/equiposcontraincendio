@@ -24,7 +24,7 @@
 // ============================================================================
 
 import type { z } from 'astro/zod';
-import { galleryImageSchema, headingSchema, moduloSchema, normRowSchema, pillarSchema, riskRowSchema, serviceL3Schema, specSchema, stepSchema, tableBlockSchema, tarjetaSchema } from './l3-schema';
+import { galleryImageSchema, headingSchema, moduloSchema, normRowSchema, riskRowSchema, serviceL3Schema, specSchema, stepSchema, tableBlockSchema, tarjetaSchema } from './l3-schema';
 
 export type Spec = z.infer<typeof specSchema>;
 export type Tarjeta = z.infer<typeof tarjetaSchema>;
@@ -34,6 +34,5 @@ export type RiskRow = z.infer<typeof riskRowSchema>;
 export type NormRow = z.infer<typeof normRowSchema>;
 export type Step = z.infer<typeof stepSchema>;
 export type GalleryImage = z.infer<typeof galleryImageSchema>;
-export type Pillar = z.infer<typeof pillarSchema>;
 export type Modulo = z.infer<typeof moduloSchema>;
 export type ServiceL3Data = z.infer<typeof serviceL3Schema>;

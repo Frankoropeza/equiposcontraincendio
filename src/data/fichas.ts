@@ -1,14 +1,7 @@
 // Valores de respaldo para las fichas L4; el contenido vive en el frontmatter.
-import type { FichaData, FichaHeads, HeadBody, Pillar } from './ficha-schema';
+import type { FichaData, FichaHeads, HeadBody } from './ficha-schema';
 
-export type { FichaData, FichaHeads, HeadBody, Pillar };
-
-export const PILLARS_DEFAULT: Pillar[] = [
-  { icon: 'doc', title: 'Ficha técnica incluida', desc: 'Cada equipo sale con su ficha técnica para tu expediente.' },
-  { icon: 'check', title: 'Instalación y señalamiento', desc: 'Lo montamos a la altura correcta y con su señal, si lo necesitas.' },
-  { icon: 'clock', title: 'Recarga y mantenimiento', desc: 'Servicio anual y recarga con el mismo proveedor que te lo vendió.' },
-  { icon: 'pin', title: 'CDMX y Estado de México', desc: 'Entregamos e instalamos en toda la zona metropolitana.' },
-];
+export type { FichaData, FichaHeads, HeadBody };
 
 export const HEADS_DEFAULT: FichaHeads = {
   vitrina: ['Los datos clave resumen lo que necesitas para comparar este equipo contra incendio con cualquier otra opción: agente, alcance, norma de producto y el servicio que pide una vez instalado.', 'Si ya sabes qué necesitas, escríbenos por WhatsApp con la cantidad y el domicilio de entrega; si todavía no, la ficha completa está abajo.'],
@@ -21,7 +14,6 @@ export const HEADS_DEFAULT: FichaHeads = {
 };
 
 export const FICHA_DEFAULT: Omit<FichaData, 'heroBadge' | 'heroTitle' | 'descRight' | 'norma' | 'claves'> = {
-  pillars: PILLARS_DEFAULT,
   showcaseTitle: 'Datos clave del equipo',
   showcaseAccent: 'contra incendio',
   showcaseDesc: 'Agente, clases de fuego, norma de producto y servicio que pide.',

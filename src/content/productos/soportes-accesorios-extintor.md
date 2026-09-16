@@ -64,19 +64,6 @@ ficha:
   descRight:
     - Encuentra soportes de pared, abrazaderas, bases vehiculares y gabinetes de sobreponer o empotrables.
     - Comparte las medidas del extintor y el lugar de montaje para revisar diámetro, peso, ambiente y anclaje.
-  pillars:
-    - icon: check
-      title: Fijación estable
-      desc: Mantén el extintor visible, protegido de golpes y separado del piso.
-    - icon: shield
-      title: Retiro sin herramientas
-      desc: Usa soluciones que permitan liberar el equipo cuando necesites atender una emergencia.
-    - icon: doc
-      title: Compatibilidad comprobable
-      desc: Parte de la capacidad, marca o medidas del extintor que ya tienes.
-    - icon: pin
-      title: Para muro o vehículo
-      desc: Escoge una alternativa para instalación mural, vehículo, maquinaria o gabinete.
   norma: Compatibilidad con tu extintor
   claves:
     - label: Montaje

@@ -59,19 +59,6 @@ ficha:
   descRight:
     - "Detectores de gas LP y gas natural para cocinas comerciales, calderas y cuartos de máquinas: autónomos, con electroválvula de corte o conectados al panel de alarma."
     - Avisan de la fuga antes de que se convierta en incendio o explosión y, con electroválvula, cierran el paso del gas sin esperar a nadie.
-  pillars:
-    - icon: check
-      title: Aviso antes del fuego
-      desc: Alarma sonora y visual en cuanto registra la fuga.
-    - icon: shield
-      title: Corte automático
-      desc: Con electroválvula, cierra la línea de gas por sí solo.
-    - icon: doc
-      title: Cuándo es obligatorio
-      desc: "NTC 2024 en CDMX: obra nueva, remodelación o cambio de uso."
-    - icon: pin
-      title: Instalación
-      desc: Lo instalamos en CDMX y el Estado de México.
   norma: NTC-PA 2024 (CDMX), numeral 4.4.5.2
   claves:
     - label: Gases

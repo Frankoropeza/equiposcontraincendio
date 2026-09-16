@@ -16,13 +16,6 @@
 // no estén ya verificadas en esas páginas.
 // ============================================================================
 
-export const recursosPillars = [
-  { icon: 'check', title: 'Gratis y sin registro', desc: 'Herramientas, formatos y guías abiertos: sin correo y sin cuenta.' },
-  { icon: 'doc', title: 'Con fuente oficial', desc: 'Cada requisito lleva la ley, la norma o la cédula de donde sale.' },
-  { icon: 'shield', title: 'Orientan, no dictaminan', desc: 'Te dicen qué revisar; la autoridad y el tercero acreditado deciden.' },
-  { icon: 'chat', title: 'Atención por WhatsApp', desc: '¿No sabes qué te aplica? Escríbenos y te orientamos sin costo.' },
-];
-
 export const recursosCards = [
   {
     label: 'Directorio por tipo de negocio',

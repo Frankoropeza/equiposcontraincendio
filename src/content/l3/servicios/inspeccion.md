@@ -20,19 +20,6 @@ hero:
     - "La inspección responde una pregunta concreta: si mañana llega una verificación, ¿qué encontraría? Casi nunca es un sistema completo que falla. Son extintores vencidos, equipo tapado con mercancía, una cocina sin clase K o señales que no se ven desde la ruta."
     - Aquí está qué revisamos en cada sistema, contra qué norma lo comparamos, qué es lo que más falla y qué recibes al final. Escríbenos con el giro y la superficie aproximada para agendar.
   outlineText: Qué revisamos
-pillars:
-  - icon: check
-    title: Obligatorio o recomendable
-    desc: El reporte separa lo que exige la norma de lo que solo conviene mejorar.
-  - icon: doc
-    title: Equipo por equipo
-    desc: Inventario con ubicación, estado y vencimiento de cada pieza.
-  - icon: shield
-    title: Con fundamento
-    desc: Cada hallazgo dice qué norma incumple y por qué importa.
-  - icon: clock
-    title: Plan por etapas
-    desc: Prioridades para presupuestar sin resolver todo de golpe.
 vitrina:
   id: sistemas
   eyebrow: Qué revisamos

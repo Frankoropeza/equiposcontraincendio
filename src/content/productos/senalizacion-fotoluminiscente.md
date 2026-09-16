@@ -63,19 +63,6 @@ ficha:
   descRight:
     - Encuentra señales para rutas, salidas, extintores, hidrantes, puntos de reunión y primeros auxilios.
     - El levantamiento de tu inmueble define mensaje, tamaño, orientación y cantidad según la distancia de observación.
-  pillars:
-    - icon: check
-      title: Orienta la salida
-      desc: Indica recorridos y puertas de emergencia para facilitar la evacuación.
-    - icon: shield
-      title: Identifica equipos
-      desc: Ayuda a localizar extintores, hidrantes y puntos de atención.
-    - icon: doc
-      title: Visibilidad nocturna
-      desc: El material conserva una referencia visual cuando el lugar queda oscuro.
-    - icon: pin
-      title: Ubicación precisa
-      desc: Ajusta cada señal a las rutas, equipos y condiciones reales del inmueble.
   norma: NOM-003-SSPC-2011
   claves:
     - label: Evacuación

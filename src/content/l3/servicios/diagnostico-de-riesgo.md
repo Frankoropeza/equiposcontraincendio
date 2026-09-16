@@ -20,19 +20,6 @@ hero:
     - "Antes de comprar el primer extintor hay una pregunta que decide todo lo demás: ¿qué grado de riesgo tiene este inmueble? De esa respuesta salen el mínimo de extintores, si la brigada es obligatoria y qué tan grande debe ser el expediente."
     - El error más común es clasificar por el giro del negocio y no por lo que realmente hay dentro. Aquí están los seis criterios de la norma, lo que cambia según el resultado y lo que recibes al final.
   outlineText: Qué evaluamos
-pillars:
-  - icon: check
-    title: Por inventario, no por giro
-    desc: Contamos lo que realmente se guarda, no lo que suele tener tu tipo de negocio.
-  - icon: doc
-    title: Documento de respaldo
-    desc: La clasificación queda por escrito, con el criterio y la norma aplicados.
-  - icon: shield
-    title: Ni corto ni de más
-    desc: Equipo exigible por norma, sin sistemas que tu riesgo no pide.
-  - icon: pin
-    title: Distribución por área
-    desc: Agente, capacidad y ubicación de cada extintor sobre tu plano.
 vitrina:
   id: que-evaluamos
   eyebrow: Qué evaluamos

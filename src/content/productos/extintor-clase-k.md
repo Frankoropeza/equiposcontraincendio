@@ -73,19 +73,6 @@ ficha:
   descRight:
     - El químico húmedo sale en niebla, no salpica el aceite y forma una capa que lo aísla del aire mientras lo enfría. Es el extintor para la freidora y la línea de cocción.
     - Complementa, no sustituye, el sistema fijo de la campana. Abajo encuentras cómo elegir la capacidad para tu cocina y dónde colocarlo.
-  pillars:
-    - icon: check
-      title: Hecho para aceite
-      desc: Formulado para aceites y grasas de cocción.
-    - icon: shield
-      title: A 10 m como máximo
-      desc: Distancia de recorrido para clase K en la NOM-002-STPS.
-    - icon: clock
-      title: Recarga y mantenimiento
-      desc: Servicio anual y prueba hidrostática con quien te lo vendió.
-    - icon: pin
-      title: CDMX y Estado de México
-      desc: Entregamos e instalamos en toda la zona metropolitana.
   norma: Referencia técnica NFPA 10
   claves:
     - label: Agente

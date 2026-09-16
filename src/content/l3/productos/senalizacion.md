@@ -24,19 +24,6 @@ hero:
     - "En una evacuación la gente no piensa: sigue señales. Con humo, sin luz y con prisa, una señal del color equivocado, demasiado chica para la distancia o tapada por mercancía es como no tener ninguna."
     - Aquí está qué señal va en cada punto, qué significa cada color, cómo se calcula el tamaño con la fórmula de la NOM-026 y qué la mantiene visible cuando se corta la energía. Escríbenos con el giro, la superficie y los niveles.
   outlineText: Qué señales llevas
-pillars:
-  - icon: check
-    title: La señal que toca
-    desc: Color, forma y símbolo de la NOM-003-SSPC y la NOM-026.
-  - icon: doc
-    title: Tamaño calculado
-    desc: Cada señal dimensionada a su distancia de observación.
-  - icon: shield
-    title: Visible sin energía
-    desc: Fotoluminiscente y luces de emergencia en la ruta.
-  - icon: pin
-    title: Sobre tu inmueble real
-    desc: Del levantamiento al croquis, sin rutas contradictorias.
 vitrina:
   id: senales
   eyebrow: Qué señales llevas

@@ -107,19 +107,6 @@ ficha:
   descRight:
     - "Tres extintores que apagan enfriando: agua a presión para sólidos, agua nebulizada para sólidos junto a equipo eléctrico y espuma AFFF para líquidos inflamables."
     - El agua a presión y la espuma conducen la electricidad. Abajo comparas los tres y ves cuál conviene en cada caso.
-  pillars:
-    - icon: check
-      title: Apaga enfriando
-      desc: Lo más eficaz contra papel, madera, cartón y tela.
-    - icon: shield
-      title: Tres agentes
-      desc: Agua a presión (A), nebulizada (A y C) y espuma AFFF (A y B).
-    - icon: clock
-      title: Recarga y mantenimiento
-      desc: Servicio anual y prueba hidrostática con quien te lo vendió.
-    - icon: pin
-      title: CDMX y Estado de México
-      desc: Entregamos e instalamos en toda la zona metropolitana.
   norma: NOM-103-STPS-1994
   claves:
     - label: Agentes

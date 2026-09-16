@@ -17,14 +17,6 @@
 // entre una herramienta útil y una que mete al usuario en un problema.
 // ============================================================================
 
-// ── Barra de confianza (pilares honestos, vía componente TrustBar) ──
-export const herramientasPillars = [
-  { icon: 'check', title: 'Gratis y sin registro', desc: 'Sin correo, sin cuenta y sin letras chiquitas: usa la herramienta y ve tu resultado al instante.' },
-  { icon: 'doc', title: 'Basadas en la norma', desc: 'Cada criterio cita de dónde sale: NOM-002-STPS-2010 y NOM-154-SCFI-2005.' },
-  { icon: 'shield', title: 'Orientan, no dictaminan', desc: 'Dan un punto de partida claro; el estudio o dictamen formal lo elabora y lo firma quien está facultado.' },
-  { icon: 'chat', title: 'Atención por WhatsApp', desc: '¿Tu resultado da riesgo alto o no sabes cómo seguir? Escríbenos y te orientamos sin costo.' },
-]
-
 export const herramientasCards = [
   {
     label: 'Riesgo de incendio: ordinario o alto',

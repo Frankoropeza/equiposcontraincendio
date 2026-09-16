@@ -17,13 +17,6 @@
 export type Feature = { label: string; desc: string };
 export type GalleryImage = { src: string; alt: string };
 
-export const plantillasPillars = [
-  { icon: 'check', title: 'Gratis y sin registro', desc: 'Se descargan directo, en editable y en PDF para imprimir. Sin correo ni cuenta.' },
-  { icon: 'doc', title: 'Con la norma citada', desc: 'Cada formato dice de qué obligación sale y qué se revisa o registra en él.' },
-  { icon: 'shield', title: 'Son de apoyo', desc: 'No sustituyen el programa interno ni la documentación que exija la autoridad en cada caso.' },
-  { icon: 'chat', title: 'O lo llevamos nosotros', desc: 'Si prefieres no cargar con el expediente, la gestión documental es un servicio.' },
-];
-
 // ── Módulos por formato ──────────────────────────────────────────────────────
 export const plantillasFeatures = [
   {
