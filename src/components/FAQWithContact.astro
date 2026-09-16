@@ -1,13 +1,8 @@
 ---
 // FAQWithContact.astro — FAQ 2 columnas: acordeón izq + formulario WhatsApp der.
 // Header homologado con SectionHeading layout="duo" (patrón canónico del sitio).
-import FAQAccordion from '@components/FAQAccordion.astro'
+import FAQAccordion, { type FAQItem } from '@components/FAQAccordion.astro'
 import SectionHeading from '@components/SectionHeading.astro'
-
-interface FAQItem {
-  question: string
-  answer: string
-}
 
 interface Props {
   items: FAQItem[]

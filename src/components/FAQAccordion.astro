@@ -1,6 +1,7 @@
 ---
 // FAQAccordion.astro — Acordeón de preguntas frecuentes accesible con <details>/<summary>. ORIGEN: MESECI/src/components/FAQ.astro (acordeón nativo, primer item abierto) + FaqCotizacionIndex de PROYECTORED.
-// JSON-LD FAQPage: emitSchema=false por defecto. El patrón canónico centraliza el schema en seo.ts (anti-duplicación). Actívalo SÓLO si esta es la única fuente de las FAQs de la página y seo.ts no las emite.
+// Primitiva ÚNICA de FAQ del sitio (Fase 2, F2.4). FAQWithContact la compone con el formulario.
+// El JSON-LD FAQPage NO se emite aquí: lo centraliza seo.ts (una sola fuente, sin duplicados).
 export interface FAQItem {
   question: string
   answer: string   // admite HTML (set:html)
@@ -9,24 +10,12 @@ interface Props {
   items: FAQItem[]
   title?: string
   headingId?: string
-  /** true → emite <script type="application/ld+json"> FAQPage. Default false (lo hace seo.ts). */
-  emitSchema?: boolean
   /** Abrir el primer item por defecto. */
   openFirst?: boolean
   /** true → sin <section> con padding/centrado; para incrustar en una columna. */
   bare?: boolean
 }
-const { items = [], title = 'Preguntas frecuentes', headingId = 'faq-heading', emitSchema = false, openFirst = true, bare = false } = Astro.props
-
-const faqSchema = emitSchema ? {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: items.map((item) => ({
-    '@type': 'Question',
-    name: item.question,
-    acceptedAnswer: { '@type': 'Answer', text: item.answer.replace(/<[^>]+>/g, '') },
-  })),
-} : null
+const { items = [], title = 'Preguntas frecuentes', headingId = 'faq-heading', openFirst = true, bare = false } = Astro.props
 ---
 
 <section class:list={['faq', bare && 'faq--bare']} aria-labelledby={title ? headingId : undefined}>
@@ -44,7 +33,6 @@ const faqSchema = emitSchema ? {
       ))}
     </div>
   </div>
-  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
 </section>
 
 <style>
