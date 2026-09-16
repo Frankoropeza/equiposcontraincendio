@@ -66,6 +66,18 @@ const faqs = [
     answer: 'En México la prueba hidrostática se realiza cada 5 años para extintores de agua, CO₂ y PQS, conforme a la NOM-154-SCFI-2005 (o antes si el cilindro se golpea). El dato de “12 años” es de la NFPA 10 de Estados Unidos, no es norma mexicana.',
   },
   {
+    question: '¿Cuáles son los tipos de sistemas contra incendios?',
+    answer: 'Los más comunes en empresas son cinco: el sistema de detección y alarma, que avisa con detectores de humo o calor, estaciones manuales y sirenas; la red de hidrantes con gabinetes y mangueras; los rociadores automáticos, que descargan agua solo donde hay calor; la supresión clase K en campanas de cocina, y el agente limpio para sites y cuartos eléctricos. Se complementan con extintores portátiles y señalización.',
+  },
+  {
+    question: '¿Cuánto cuesta un sistema contra incendios?',
+    answer: 'No hay un precio de lista, porque el alcance cambia con cada inmueble: la superficie, el grado de riesgo, los niveles y los sistemas que exige la norma. Por eso el servicio arranca con un levantamiento; con él se arma una cotización por etapas que separa equipo, instalación, pruebas y documentación.',
+  },
+  {
+    question: '¿Qué equipos y sistemas de protección contra incendios necesita una empresa?',
+    answer: 'Lo define el grado de riesgo que marca la NOM-002-STPS-2010. Todo centro de trabajo necesita extintores con su mantenimiento anual y revisión mensual; la detección, la red de hidrantes y la brigada dependen de si el riesgo es ordinario o alto. En la Ciudad de México, además, la señalización de rutas se pide aun en bajo riesgo.',
+  },
+  {
     question: '¿La instalación incluye planos y memoria de diseño?',
     answer: 'Sí. El servicio de instalación incluye cálculo, planos y memoria técnica, para que tengas la documentación que pide Protección Civil y tu aseguradora.',
   },
@@ -85,8 +97,8 @@ const faqs = [
 ---
 
 <PageLayout
-  title="Servicios contra incendio en CDMX y Estado de México"
-  description="Servicios contra incendio en CDMX y Estado de México: instalación, mantenimiento y recarga de extintores, e inspección y dictamen. Cotiza por WhatsApp."
+  title="Empresa de sistemas contra incendio en CDMX y Edomex"
+  description="Empresa de sistemas contra incendio en CDMX y Edomex: servicio de instalación, mantenimiento y recarga, inspección, prueba hidrostática y capacitación DC-3."
   pageType="category"
   schemaData={{ faqs }}
   breadcrumbs={[{ label: 'Servicios' }]}
@@ -95,11 +107,11 @@ const faqs = [
   {/* ─── Hero (componente compartido, idéntico al index y a /productos) ─── */}
   <Hero
     badge="Servicios · CDMX y Estado de México"
-    title="No solo vendemos:"
-    accent="instalamos y mantenemos"
-    subtitle="De la instalación al mantenimiento, la recarga y la inspección: acompañamos tu protección contra incendio durante toda su vida útil."
+    title="Servicios y sistemas"
+    accent="contra incendio"
+    subtitle="De la instalación al mantenimiento, la recarga y la inspección: acompañamos tu sistema contra incendio durante toda su vida útil."
     descRight={[
-      'Un equipo contra incendio protege si está bien elegido, bien instalado y vigente. Por eso ofrecemos el ciclo completo y no solo la venta: proyecto e instalación, mantenimiento y recarga, e inspección con dictamen.',
+      'Un equipo contra incendio protege si está bien elegido, bien instalado y vigente. Por eso ofrecemos el ciclo completo y no solo la venta de equipos: diseño e instalación, mantenimiento y recarga, e inspección con dictamen.',
       'Trabajamos conforme a la normatividad aplicable —NOM-002-STPS-2010 y NOM-154-SCFI-2005— y te entregamos un reporte claro de lo realizado.',
     ]}
     ctas={[
@@ -119,11 +131,11 @@ const faqs = [
       <SectionHeading
         layout="duo"
         eyebrow="Lo que hacemos"
-        title="Siete servicios,"
-        titleAccent="un ciclo completo"
+        title="Siete servicios para tu"
+        titleAccent="sistema contra incendio"
         desc="Del proyecto y la instalación al expediente en regla, con la vigencia siempre al día."
         body={[
-          'La protección contra incendio no se compra una vez: se instala, se revisa, se recarga, se prueba y se documenta. Cada uno de esos momentos tiene su servicio y su periodicidad.',
+          'La protección contra incendios no se compra una vez: se instala, se revisa, se recarga, se prueba y se documenta. Cada uno de esos momentos tiene su servicio y su periodicidad.',
           'Cada tarjeta lleva a la página del servicio, con lo que incluye, cómo se trabaja y las preguntas que más nos hacen.',
         ]}
       />
@@ -196,11 +208,11 @@ const faqs = [
   {/* ─── Respaldo normativo del servicio ─── */}
   <NormsTable
     eyebrow="Respaldo normativo"
-    title="Qué le exige la norma"
+    title="Qué exigen la NOM y la NFPA"
     titleAccent="a cada servicio"
     desc="Un servicio sin evidencia es, para la autoridad, un servicio que no ocurrió."
     body={[
-      'La norma no solo manda dar mantenimiento: manda cómo hacerlo y qué rastro debe dejar. Aquí está qué exige cada una y a qué parte del servicio aplica.',
+      'La Norma Oficial Mexicana no solo manda dar mantenimiento: manda cómo hacerlo y qué rastro debe dejar. Aquí está qué exige cada una y a qué parte del servicio aplica.',
       'Las NFPA se listan como referencia técnica internacional. No son ley federal en México, aunque tu aseguradora o tu corporativo sí pueden pedirlas.',
     ]}
     rows={serviciosNormRows}
@@ -227,11 +239,11 @@ const faqs = [
       <SectionHeading
         layout="duo"
         eyebrow="Sobre el servicio"
-        title="Siete servicios,"
+        title="Una empresa contra incendio,"
         titleAccent="un solo interlocutor"
         desc="Del proyecto al expediente, sin pelotear entre tres proveedores."
         body={[
-          'Cubrimos el ciclo completo de la protección contra incendio, así que la misma persona que instaló sabe qué toca revisar y cuándo vence.',
+          'Cubrimos el ciclo completo de la protección contra incendios, con más de 35 años de experiencia en el mercado mexicano: la misma persona que instaló sabe qué toca revisar y cuándo vence.',
           'Agenda por WhatsApp y habla directo con quien resuelve.',
         ]}
       />

@@ -39,10 +39,10 @@ export const serviceFeatures: ServiceFeature[] = [
   {
     id: 'instalacion',
     eyebrow: 'Instalación · Proyecto a la medida · NOM-002-STPS',
-    title: 'Instalación de sistemas',
+    title: 'Instalación de sistemas contra incendio',
     titleAccent: 'dimensionada a tu riesgo',
     description:
-      'Proyectamos e instalamos tu protección de principio a fin: detección y alarma, red de hidrantes, extintores y señalización, calculados según el riesgo y la superficie del inmueble y no a partir de un paquete genérico.',
+      'Hacemos el diseño de sistemas y los instalamos de principio a fin: sistemas de detección y alarma contra incendios, red de hidrantes, rociadores automáticos, extintores y señalización, con cálculo hidráulico, planos y memoria técnica según el riesgo y la superficie del inmueble, no a partir de un paquete genérico.',
     features: [
       { label: 'Detección y alarma', desc: 'Detectores, panel y sirenas dimensionados a la superficie real.' },
       { label: 'Red hidráulica', desc: 'Gabinetes, mangueras y válvulas con cálculo conforme a la NFPA 14.' },
@@ -61,9 +61,9 @@ export const serviceFeatures: ServiceFeature[] = [
     id: 'mantenimiento',
     eyebrow: 'Mantenimiento · Anual · NOM-002 7.18',
     title: 'Mantenimiento y recarga',
-    titleAccent: 'para equipo siempre vigente',
+    titleAccent: 'de equipos contra incendio',
     description:
-      'Un extintor sirve solo si está vigente. La revisión es mensual y el mantenimiento anual, y de ambos tiene que quedar evidencia. Damos el servicio conforme a norma, con etiqueta y collarín, y avisamos antes de que venza.',
+      'Un extintor sirve solo si está vigente. La revisión es mensual y el mantenimiento anual, y de ambos tiene que quedar evidencia. Damos mantenimiento preventivo y, cuando el equipo falla, correctivo, conforme a norma, con etiqueta y collarín, y avisamos antes de que venza.',
     features: [
       { label: 'Recarga conforme a norma', desc: 'Con etiqueta y collarín de servicio que acreditan el mantenimiento.' },
       { label: 'Revisión mensual guiada', desc: 'Te dejamos la bitácora y el criterio para la verificación del personal.' },
@@ -270,7 +270,7 @@ export const serviciosCompany = {
     title: 'Cómo se agenda',
     pillars: [
       { title: 'Primero el levantamiento', desc: 'Sin saber qué equipo tienes y cuándo vence, cualquier cotización es un número al aire.' },
-      { title: 'Sin parar tu operación', desc: 'Se agenda por turnos o por etapas para que el inmueble no quede sin protección.' },
+      { title: 'Sin parar tu operación', desc: 'Se agenda por turnos o por etapas para cuidar la continuidad de las operaciones sin dejar el inmueble sin protección.' },
       { title: 'Con evidencia siempre', desc: 'Cada servicio deja etiqueta, reporte y constancia para tu expediente.' },
     ],
   },
