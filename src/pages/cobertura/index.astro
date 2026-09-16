@@ -54,6 +54,22 @@ const faqs = [
     answer: 'Damos servicio en sitio en la Ciudad de México, el Estado de México y la zona metropolitana. Si estás en otra ubicación, escríbenos y te confirmamos si podemos llegar o atenderte a distancia.',
   },
   {
+    question: '¿Dónde hay extintores cerca de mí?',
+    answer: 'Si tu inmueble está en la Ciudad de México o en la zona conurbada del Estado de México, te llevamos los extintores y damos el servicio en sitio: venta, recarga, mantenimiento e instalación. Escríbenos por WhatsApp con tu alcaldía o municipio y te confirmamos cobertura y fecha.',
+  },
+  {
+    question: '¿Qué precio tienen los extintores?',
+    answer: 'Varía según el agente, la capacidad y la cantidad: no cuesta lo mismo un extintor PQS de 4.5 kg para oficina que uno de CO₂ para un cuarto eléctrico o uno clase K para cocina. Cotizamos por WhatsApp con precio por pieza y por volumen, con existencia real.',
+  },
+  {
+    question: '¿Cuánto cobran por cargar un extintor?',
+    answer: 'El precio de la recarga depende del tipo de extintor (PQS, CO₂, clase K o agua), de su capacidad y de cuántos equipos sean, por eso se cotiza por lote. El servicio se hace conforme a la NOM-154-SCFI-2005 y deja etiqueta y collarín; si el cilindro ya cumplió cinco años, se suma la prueba hidrostática.',
+  },
+  {
+    question: '¿Qué tipo de extintor conviene para una casa o un negocio?',
+    answer: 'Para la mayoría de casas, oficinas y comercios, un extintor PQS ABC de polvo químico seco es la opción versátil. Las cocinas comerciales necesitan además un extintor clase K, y los cuartos eléctricos o sites, uno de CO₂. Si nos dices el giro y la superficie, te decimos cuántos y de qué capacidad.',
+  },
+  {
     question: '¿Cobran por el traslado o la visita?',
     answer: 'Depende de la zona y del servicio. Para la mayoría de CDMX y EdoMex la visita va incluida en el servicio; si hay algún costo de traslado, te lo decimos claro al cotizar, antes de cualquier compromiso.',
   },
@@ -73,8 +89,8 @@ const faqs = [
 ---
 
 <PageLayout
-  title="Cobertura — CDMX y Estado de México"
-  description="Cobertura de equipo contra incendio: servicio en sitio en la Ciudad de México, el Estado de México y la zona metropolitana. Cotiza por WhatsApp."
+  title="Extintores cerca de mí en CDMX y Estado de México"
+  description="Venta, recarga y mantenimiento de extintores cerca de ti: servicio en sitio en las 16 alcaldías de la CDMX y en la zona conurbada del Estado de México."
   pageType="category"
   schemaData={{ faqs }}
   breadcrumbs={[{ label: 'Cobertura' }]}
@@ -83,11 +99,11 @@ const faqs = [
   {/* ─── Hero (componente compartido, copy de cara al cliente) ─── */}
   <Hero
     badge="Cobertura · CDMX y Estado de México"
-    title="Estamos donde"
-    accent="está tu inmueble"
-    subtitle="Servicio en sitio en la Ciudad de México, el Estado de México y la zona metropolitana: venta, instalación, mantenimiento e inspección de equipo contra incendio."
+    title="Venta y recarga de extintores"
+    accent="cerca de ti"
+    subtitle="Servicio en sitio en la Ciudad de México, el Estado de México y la zona metropolitana: venta y recarga de extintores, mantenimiento, instalación e inspección de equipo contra incendio."
     descRight={[
-      'Atendemos donde está tu inmueble. Coordinamos la visita para instalar, dar mantenimiento o inspeccionar tu equipo contra incendio, y entregamos el producto con su documentación.',
+      'Si buscas extintores cerca de ti, atendemos donde está tu inmueble: coordinamos la visita para el servicio de recarga de extintores, el mantenimiento de extintores, la instalación o la inspección de tu equipo contra incendio, y entregamos cada extintor con su ficha técnica y su documentación.',
       'Cada zona tiene su página con el detalle de cobertura. Dinos tu alcaldía o municipio y te confirmamos servicio y tiempos por WhatsApp.',
     ]}
     ctas={[
@@ -107,11 +123,11 @@ const faqs = [
       <SectionHeading
         layout="duo"
         eyebrow="Zonas que atendemos"
-        title="Servicio en"
-        titleAccent="tu zona"
+        title="Extintores y servicio"
+        titleAccent="en tu zona"
         desc="Ciudad de México, Estado de México y zona metropolitana — cada una con su página."
         body={[
-          'Damos servicio en sitio donde está tu inmueble: instalación, mantenimiento, inspección y entrega de equipo. Elige tu zona para ver el detalle de cobertura.',
+          'Damos servicio en sitio donde está tu inmueble: venta de extintores, recarga, mantenimiento preventivo, instalación, inspección y entrega de equipo. Elige tu zona para ver el detalle de cobertura.',
           '¿No ves tu ubicación? Escríbenos por WhatsApp y te confirmamos si llegamos a tu zona.',
         ]}
       />
@@ -168,8 +184,8 @@ const faqs = [
   {/* ─── Alcance por zona ─── */}
   <RiskGuide
     eyebrow="Alcance por zona"
-    title="Hasta dónde llegamos"
-    titleAccent="y con qué alcance"
+    title="Hasta dónde llevamos"
+    titleAccent="extintores y servicio"
     desc="Antes de cotizar conviene saber si hay servicio en sitio en tu ubicación."
     body={[
       'No todas las zonas tienen el mismo alcance, y decirlo de frente evita agendar una visita que no se puede cumplir. Aquí está qué incluye cada zona y cómo se coordina.',

@@ -67,10 +67,10 @@ export const zoneFeatures: ZoneFeature[] = [
   {
     id: 'cdmx',
     eyebrow: 'Cobertura · Ciudad de México · Servicio en sitio',
-    title: 'Servicio directo en',
+    title: 'Venta y recarga de extintores en',
     titleAccent: 'toda la Ciudad de México',
     description:
-      'Operamos en las 16 alcaldías con visita en sitio para venta, instalación, mantenimiento e inspección. La particularidad de la CDMX es el trámite: el Programa Interno se ingresa en plataforma digital y lo presenta un tercero acreditado.',
+      'Operamos en las 16 alcaldías con visita en sitio para venta de extintores, recarga, mantenimiento preventivo, instalación e inspección. La particularidad de la CDMX es el trámite: el Programa Interno se ingresa en plataforma digital y lo presenta un tercero acreditado.',
     features: [
       { label: 'Las 16 alcaldías', desc: 'De Álvaro Obregón a Xochimilco, con visita y entrega en sitio.' },
       { label: 'Servicio presencial', desc: 'Instalación, mantenimiento, inspección y capacitación en tu inmueble.' },
@@ -88,10 +88,10 @@ export const zoneFeatures: ZoneFeature[] = [
   {
     id: 'edomex',
     eyebrow: 'Cobertura · Estado de México · Servicio en sitio',
-    title: 'Cobertura en la zona',
+    title: 'Extintores y mantenimiento en la zona',
     titleAccent: 'metropolitana y EdoMex',
     description:
-      'Atendemos los municipios conurbados con servicio en sitio, donde predominan naves, bodegas y plantas. Aquí el Programa Interno es un trámite presencial ante el estado, obligatorio para inmuebles de riesgo mediano y alto.',
+      'Atendemos los municipios conurbados con servicio en sitio de mantenimiento de extintores, recarga e instalación, donde predominan naves, bodegas y plantas. Aquí el Programa Interno es un trámite presencial ante el estado, obligatorio para inmuebles de riesgo mediano y alto.',
     features: [
       { label: 'Municipios conurbados', desc: 'Naucalpan, Tlalnepantla, Ecatepec, Neza, Cuautitlán y alrededores.' },
       { label: 'Servicio presencial', desc: 'Instalación, mantenimiento, inspección y capacitación en tu inmueble.' },
@@ -160,7 +160,7 @@ export const coberturaSteps: Step[] = [
   { num: '02', title: 'Confirmamos cobertura', desc: 'Te decimos de frente si hay servicio en sitio en tu ubicación o si conviene resolverlo con envío de equipo.' },
   { num: '03', title: 'Definimos el alcance', desc: 'Acordamos si será suministro, instalación, mantenimiento, inspección o capacitación.' },
   { num: '04', title: 'Agendamos día y hora', desc: 'Coordinamos por WhatsApp según la disponibilidad real de agenda.' },
-  { num: '05', title: 'Visita y servicio', desc: 'El técnico llega con equipo y herramienta; si algo va a taller, se avisa antes.' },
+  { num: '05', title: 'Visita y servicio', desc: 'El técnico llega con los extintores, el equipo y la herramienta; si algo va a taller, se avisa antes.' },
   { num: '06', title: 'Trabajo en sitio', desc: 'Se realiza el servicio acordado en tu inmueble y se revisan los puntos del alcance.' },
   { num: '07', title: 'Documentación local', desc: 'Entregamos la evidencia con el formato que pide tu alcaldía o municipio.' },
   { num: '08', title: 'Seguimiento de vigencia', desc: 'Queda identificado cuándo toca la siguiente revisión o servicio.' },
@@ -171,7 +171,7 @@ export const coberturaCompany = {
   que: {
     title: 'Qué significa servicio en sitio',
     body: [
-      'Servicio en sitio quiere decir que el técnico va a tu inmueble: instala, da mantenimiento, inspecciona, capacita a la brigada y entrega el equipo con su factura y su ficha técnica. No es asesoría a distancia ni envío por paquetería.',
+      'Servicio en sitio quiere decir que el técnico va a tu inmueble: instala, da mantenimiento y recarga a tus extintores, inspecciona, capacita a la brigada para responder a un conato de incendio y entrega el equipo —extintores de polvo químico seco y de CO₂, detectores de humo, señalamientos, gabinetes y soportes— con su factura y su ficha técnica. No es asesoría a distancia ni envío por paquetería.',
       'Trabajamos en la Ciudad de México, los municipios conurbados del Estado de México y el resto del estado según ubicación. Fuera de esas zonas coordinamos envío de equipo, pero lo decimos claro antes de cotizar.',
     ],
   },
