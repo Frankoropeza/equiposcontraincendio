@@ -3,9 +3,9 @@ kind: service
 id: mantenimiento
 path: /servicios/mantenimiento/
 seo:
-  title: Recarga y mantenimiento de extintores en CDMX | NOM-154
-  description: "Recarga y mantenimiento de extintores en CDMX y Edomex conforme a la NOM-154: apertura, revisión interna, prueba hidrostática, etiqueta y collarín."
-  serviceName: Recarga y mantenimiento de extintores
+  title: Mantenimiento de extintores en CDMX y Edomex | NOM-154
+  description: "Mantenimiento de extintores en CDMX y Edomex conforme a la NOM-154: revisión de extintores, apertura, recarga, prueba hidrostática, etiqueta y collarín."
+  serviceName: Mantenimiento de extintores
   serviceType: Mantenimiento y recarga de extintores
   image: /images/servicios/inspeccion-recarga-extintores.avif
 breadcrumb: Mantenimiento y recarga
@@ -13,7 +13,7 @@ wa: "Hola, quiero cotizar la recarga y el mantenimiento de mis extintores. Tengo
 menuCtaSub: Manda tu inventario
 hero:
   badge: Servicio NOM-154 · CDMX y Estado de México
-  title: Recarga y mantenimiento
+  title: Mantenimiento
   accent: de extintores
   subtitle: Abrimos, revisamos, recargamos y probamos cada extintor conforme a la NOM-154-SCFI-2005, y te lo devolvemos con etiqueta, collarín cuando aplica y orden de servicio para tu expediente.
   descRight:
@@ -163,7 +163,7 @@ tablaPrincipal:
   desc: Son tres trabajos distintos, con plazos distintos y evidencia distinta.
   body:
     - La confusión más cara del mercado es pagar una recarga creyendo que se compró un mantenimiento. La tabla muestra qué se hace en cada caso y qué debe quedar como prueba.
-    - La revisión mensual la hace tu personal y no la sustituye el proveedor; lo demás sí se contrata.
+    - La revisión mensual la hace tu personal y no la sustituye el proveedor; el mantenimiento a extintores, con su revisión de extintores por dentro, sí se contrata.
   columns:
     - Trabajo
     - Qué se le hace al extintor
@@ -560,7 +560,7 @@ faq:
     - Si tu caso no aparece aquí, escríbenos con el tipo, la capacidad y la cantidad de extintores. Con eso te decimos qué servicio les toca.
     - Las respuestas citan la norma cuando aplica; lo que depende del estado de cada equipo lo revisamos al abrirlo.
   items:
-    - question: ¿Cuánto cuesta la recarga de un extintor?
+    - question: ¿Cuánto cuesta el mantenimiento de un extintor?
       answer: "Depende del agente, la capacidad, la cantidad de equipos y de si hace falta cambiar refacciones o hacer la prueba hidrostática. Recargar un PQS de 6 kg no cuesta lo mismo que un agente limpio de la misma capacidad. Mándanos por WhatsApp el tipo, la capacidad y cuántos tienes, y te cotizamos con precio real. Desconfía de un precio muy por debajo del resto: suele ser una recarga sin apertura ni revisión interna."
     - question: ¿Cuál es la diferencia entre recarga y mantenimiento de extintores?
       answer: "La recarga repone el agente y vuelve a presurizar el equipo. El mantenimiento es el procedimiento completo: se despresuriza, se abre, se revisa el cilindro por dentro y por fuera, se cambian las piezas desgastadas, se recarga, se presuriza y se prueba contra fugas. Un extintor puede recargarse sin haber recibido mantenimiento real, y ahí está el problema de los servicios baratos."
