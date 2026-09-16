@@ -44,7 +44,7 @@ export const serviceFeatures: ServiceFeature[] = [
     description:
       'Hacemos el diseño e instalamos sistemas de principio a fin: sistemas de detección y alarma contra incendios, red de hidrantes, rociadores automáticos, extintores y señalización, con cálculo hidráulico, planos y memoria técnica según el riesgo y la superficie del inmueble, no a partir de un paquete genérico.',
     features: [
-      { label: 'Detección y alarma', desc: 'Detectores, panel y sirenas dimensionados a la superficie real.' },
+      { label: 'Detección y alarma', desc: 'Detectores, panel, sirenas y luces estroboscópicas para alertar a las personas, a la medida de la superficie real.' },
       { label: 'Red hidráulica', desc: 'Gabinetes, mangueras y válvulas con cálculo conforme a la NFPA 14.' },
       { label: 'Extintores y señalización', desc: 'Ubicación y capacidad según la NOM-002-STPS y la NOM-003-SSPC.' },
       { label: 'Planos y memoria', desc: 'Documentación técnica lista para presentar a Protección Civil.' },
@@ -126,7 +126,7 @@ export const serviceFeatures: ServiceFeature[] = [
     title: 'Diagnóstico de riesgo',
     titleAccent: 'para no comprar de más',
     description:
-      'Antes de cotizar equipo conviene saber en qué nivel de riesgo de incendio cae el inmueble, porque de ahí salen la densidad de extintores, la distancia de recorrido y si hace falta brigada. Se clasifica conforme a la Tabla 1 de la NOM-002-STPS.',
+      'Antes de cotizar equipo conviene saber en qué nivel de riesgo de incendio cae el inmueble, porque de ahí salen la densidad de extintores, la distancia de recorrido y si hace falta brigada. Se clasifica conforme a la Tabla 1 de la NOM-002-STPS, y así se reduce el riesgo de incendio sin comprar de más.',
     features: [
       { label: 'Clasificación del riesgo', desc: 'Ordinario o alto, según superficie y cantidad de material combustible.' },
       { label: 'Densidad y recorrido', desc: 'Un extintor por cada 300 m², o por cada 200 m² si el riesgo es alto.' },
@@ -263,7 +263,7 @@ export const serviciosCompany = {
     title: 'Qué cubre el servicio',
     body: [
       'Acompañamos la protección contra incendio durante toda su vida útil: instalación, mantenimiento y recarga, prueba hidrostática, inspección con dictamen, diagnóstico de riesgo, capacitación de brigada con DC-3 y gestión del expediente ante Protección Civil y STPS.',
-      'Atendemos oficinas, comercios, escuelas, restaurantes, bodegas y naves industriales en CDMX y Estado de México, con el mismo criterio para tres extintores que para una red hidráulica completa.',
+      'Atendemos oficinas, edificios comerciales, escuelas, restaurantes, bodegas y naves industriales en CDMX y Estado de México, con el mismo criterio para tres extintores que para una red hidráulica completa.',
     ],
   },
   como: {
