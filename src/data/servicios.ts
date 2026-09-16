@@ -42,7 +42,7 @@ export const serviceFeatures: ServiceFeature[] = [
     title: 'Instalación de sistemas contra incendio',
     titleAccent: 'dimensionada a tu riesgo',
     description:
-      'Hacemos el diseño de sistemas y los instalamos de principio a fin: sistemas de detección y alarma contra incendios, red de hidrantes, rociadores automáticos, extintores y señalización, con cálculo hidráulico, planos y memoria técnica según el riesgo y la superficie del inmueble, no a partir de un paquete genérico.',
+      'Hacemos el diseño e instalamos sistemas de principio a fin: sistemas de detección y alarma contra incendios, red de hidrantes, rociadores automáticos, extintores y señalización, con cálculo hidráulico, planos y memoria técnica según el riesgo y la superficie del inmueble, no a partir de un paquete genérico.',
     features: [
       { label: 'Detección y alarma', desc: 'Detectores, panel y sirenas dimensionados a la superficie real.' },
       { label: 'Red hidráulica', desc: 'Gabinetes, mangueras y válvulas con cálculo conforme a la NFPA 14.' },
@@ -63,7 +63,7 @@ export const serviceFeatures: ServiceFeature[] = [
     title: 'Mantenimiento y recarga',
     titleAccent: 'de equipos contra incendio',
     description:
-      'Un extintor sirve solo si está vigente. La revisión es mensual y el mantenimiento anual, y de ambos tiene que quedar evidencia. Damos mantenimiento preventivo y, cuando el equipo falla, correctivo, conforme a norma, con etiqueta y collarín, y avisamos antes de que venza.',
+      'Un extintor sirve solo si está vigente. La revisión es mensual y el mantenimiento anual, y de ambos tiene que quedar evidencia. Damos mantenimiento preventivo y correctivo —este último cuando el equipo falla— conforme a norma, con etiqueta y collarín, y avisamos antes de que venza.',
     features: [
       { label: 'Recarga conforme a norma', desc: 'Con etiqueta y collarín de servicio que acreditan el mantenimiento.' },
       { label: 'Revisión mensual guiada', desc: 'Te dejamos la bitácora y el criterio para la verificación del personal.' },
@@ -147,7 +147,7 @@ export const serviceFeatures: ServiceFeature[] = [
     title: 'Capacitación de brigada',
     titleAccent: 'y constancias DC-3',
     description:
-      'Tener extintores no basta si nadie sabe usarlos. Capacitamos a tu personal en uso y manejo, conato de incendio y evacuación, con práctica real de fuego, y emitimos la constancia DC-3 que acredita la capacitación ante la STPS.',
+      'Tener extintores no basta si nadie sabe usarlos en caso de incendio. Capacitamos a tu personal en uso y manejo, conato de incendio y evacuación, con práctica real de fuego, y emitimos la constancia DC-3 que acredita la capacitación ante la STPS.',
     features: [
       { label: 'Uso y manejo de extintor', desc: 'Práctica con fuego real y con el agente que hay en tu inmueble.' },
       { label: 'Brigada y evacuación', desc: 'Roles, rutas, punto de reunión y coordinación del simulacro.' },
