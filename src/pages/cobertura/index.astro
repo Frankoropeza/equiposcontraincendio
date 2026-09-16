@@ -1,7 +1,9 @@
 ---
-// /cobertura/ — Landing de Cobertura (zonas atendidas). L2 HOMOLOGADA con
-// /productos y /servicios: Hero → SectionMenu → TrustBar → tarjetas →
-// módulos CategoryFeature → FAQ. Copy de cara al cliente (sin meta-SEO).
+// /cobertura/ — Landing L2 de cobertura. Responde «¿me atienden en mi zona,
+// con qué alcance y cómo se agenda?». Estructura: Hero → SectionMenu →
+// tarjetas de zona → módulos CategoryFeature → Alcance por zona (RiskGuide) →
+// NormsTable → ProcessSteps → Sobre la cobertura → Reseñas → RelatedLinks → FAQ.
+// El copy vive en src/data/cobertura.ts; esta página solo compone. Sin TrustBar.
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
 import SectionMenu from '@components/SectionMenu.astro'
@@ -13,6 +15,7 @@ import RiskGuide from '@components/RiskGuide.astro'
 import NormsTable from '@components/NormsTable.astro'
 import ProcessSteps from '@components/ProcessSteps.astro'
 import CompanyAbout from '@components/CompanyAbout.astro'
+import Testimonios from '@components/Testimonios.astro'
 import RelatedLinks from '@components/RelatedLinks.astro'
 import {
   zoneCard,
@@ -22,8 +25,12 @@ import {
   coberturaSteps,
   coberturaCompany,
   coberturaRelated,
+  coberturaFaqs,
+  coberturaTestimoniosHead,
+  coberturaTestimoniosNombres,
 } from '@data/cobertura'
 import { cierreCobertura, cierreGeneral, faltanParaCuatro } from '@data/cierre'
+import { testimonios } from '@data/testimonios'
 import { COVERAGE_STATES, CONTACT, waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
 
 const tipoLabel = (t: string) => (t === 'operativo' ? 'Servicio en sitio' : 'Atención a distancia')
@@ -34,55 +41,20 @@ const menuSecciones = sectionMenuItems()
 const menuCta = {
   label: 'Cotizar por WhatsApp',
   href: waUrl(WA_MESSAGES.cotizar),
-  sub: 'Respuesta inmediata',
+  sub: 'Confirmamos tu zona',
   external: true,
 }
 
-const faqs = [
-  {
-    question: '¿Qué zonas atienden?',
-    answer: 'Damos servicio en sitio en la Ciudad de México, el Estado de México y la zona metropolitana. Si estás en otra ubicación, escríbenos y te confirmamos si podemos llegar o atenderte a distancia.',
-  },
-  {
-    question: '¿Dónde hay extintores cerca de mí?',
-    answer: 'Si tu inmueble está en la Ciudad de México o en la zona conurbada del Estado de México, te llevamos los extintores y damos el servicio en sitio: venta, recarga, mantenimiento e instalación. Escríbenos por WhatsApp con tu alcaldía o municipio y te confirmamos cobertura y fecha.',
-  },
-  {
-    question: '¿Qué precio tienen los extintores?',
-    answer: 'Varía según el agente, la capacidad y la cantidad: no cuesta lo mismo un extintor PQS de 4.5 kg para oficina que uno de CO₂ para un tablero eléctrico, uno clase K para cocina o uno de espuma AFFF para líquidos inflamables. Cotizamos por WhatsApp con precio por pieza y por volumen, con existencia real.',
-  },
-  {
-    question: '¿Cuánto cobran por cargar un extintor?',
-    answer: 'El precio de la recarga depende del tipo de extintor (PQS, CO₂, clase K o agua), de su capacidad y de cuántos equipos sean, por eso se cotiza por lote. El servicio se hace conforme a la NOM-154-SCFI-2005 y deja etiqueta y collarín; si el cilindro ya cumplió cinco años, se suma la prueba hidrostática.',
-  },
-  {
-    question: '¿Qué tipo de extintor conviene para una casa o un negocio?',
-    answer: 'Para la mayoría de casas, unidades habitacionales, oficinas y comercios, un extintor PQS ABC de polvo químico seco es la opción versátil. Las cocinas comerciales necesitan además un extintor clase K, y los cuartos eléctricos o sites, uno de CO₂. Si nos dices el giro, la superficie y el nivel de riesgo, te decimos cuántos extintores portátiles necesitas y de qué capacidad.',
-  },
-  {
-    question: '¿Cobran por el traslado o la visita?',
-    answer: 'Depende de la zona y del servicio. Para la mayoría de CDMX y EdoMex la visita va incluida en el servicio; si hay algún costo de traslado, te lo decimos claro al cotizar, antes de cualquier compromiso.',
-  },
-  {
-    question: '¿Hacen entregas a domicilio del equipo?',
-    answer: 'Sí. Entregamos extintores, detección, señalización e hidrantes en CDMX y Estado de México, con factura y ficha técnica. Coordinamos día y hora por WhatsApp.',
-  },
-  {
-    question: '¿En cuánto tiempo pueden ir?',
-    answer: 'Depende de la disponibilidad de agenda y de tu ubicación. Cuéntanos qué necesitas y dónde estás, y te confirmamos la fecha más próxima de visita o entrega.',
-  },
-  {
-    question: '¿Atienden fuera de CDMX y Estado de México?',
-    answer: 'Para venta de equipo podemos coordinar envíos a otras zonas; para instalación y mantenimiento en sitio, consúltanos según la ubicación. Escríbenos y lo revisamos.',
-  },
-]
+const coberturaTestimonios = coberturaTestimoniosNombres
+  .map((nombre) => testimonios.find((testimonio) => testimonio.nombre === nombre))
+  .filter((testimonio): testimonio is (typeof testimonios)[number] => Boolean(testimonio))
 ---
 
 <PageLayout
   title="Extintores cerca de mí en CDMX y Estado de México"
   description="Venta, recarga y mantenimiento de extintores cerca de ti: servicio en sitio en las 16 alcaldías de la CDMX y en la zona conurbada del Estado de México."
   pageType="category"
-  schemaData={{ faqs }}
+  schemaData={{ faqs: coberturaFaqs }}
   breadcrumbs={[{ label: 'Cobertura' }]}
   guia={false}
 >
@@ -93,8 +65,8 @@ const faqs = [
     accent={"cerca\u00a0de\u00a0ti"}
     subtitle="Servicio en sitio en la Ciudad de México, el Estado de México y la zona metropolitana: venta y recarga de extintores, mantenimiento, instalación e inspección de equipo contra incendio."
     descRight={[
-      'Si buscas extintores cerca de ti, atendemos donde está tu inmueble: coordinamos la visita para el servicio de recarga de extintores, el mantenimiento de extintores, la instalación o la inspección de tu equipo contra incendio, y entregamos cada extintor con su ficha técnica y su documentación.',
-      'Cada zona tiene su página con el detalle de cobertura. Dinos tu alcaldía o municipio y te confirmamos servicio y tiempos por WhatsApp.',
+      'Si buscas extintores cerca de ti, vamos a donde está tu inmueble: coordinamos la visita para la venta y la recarga de extintores, el mantenimiento, la instalación o la inspección de tu equipo contra incendio, y entregamos cada extintor con su ficha técnica y su documentación.',
+      'Cada zona tiene su página con el detalle de cobertura. Indícanos tu alcaldía o municipio por WhatsApp y te confirmamos el servicio y la fecha de visita.',
     ]}
     ctas={[
       { text: 'Zonas que atendemos', href: '#zonas', variant: 'outline' },
@@ -115,7 +87,7 @@ const faqs = [
         titleAccent="en tu zona"
         desc="Ciudad de México, Estado de México y zona metropolitana — cada una con su página."
         body={[
-          'Damos servicio en sitio donde está tu inmueble: venta de extintores, recarga, mantenimiento preventivo, instalación, inspección y entrega de equipo. Elige tu zona para ver el detalle de cobertura.',
+          'Damos servicio en sitio donde está tu inmueble: venta de extintores, recarga, mantenimiento preventivo, instalación, inspección y entrega de equipo. Elige tu zona para consultar el alcance de cobertura.',
           '¿No ves tu ubicación? Escríbenos por WhatsApp y te confirmamos si llegamos a tu zona.',
         ]}
       />
@@ -150,22 +122,13 @@ const faqs = [
   </section>
 
   {/* ─── Módulos de zona (CategoryFeature) — diseño uniforme, copy propio ─── */}
-  {zoneFeatures.map((c) => (
+  {zoneFeatures.map(({ id, ctaSecondaryMsg, ...feature }) => (
     <CategoryFeature
-      anchorId={c.id}
-      eyebrow={c.eyebrow}
-      title={c.title}
-      titleAccent={c.titleAccent}
-      description={c.description}
-      features={c.features}
-      ctaLabel={c.ctaLabel}
-      ctaHref={waUrl(c.ctaMsg)}
-      ctaExternal
-      ctaSecondaryLabel={c.ctaSecondaryLabel}
-      ctaSecondaryHref={c.ctaSecondaryHref}
-      imgMain={c.imgMain}
-      imgA={c.imgA}
-      imgB={c.imgB}
+      {...feature}
+      anchorId={id}
+      ctaSecondaryLabel="Cotizar por WhatsApp"
+      ctaSecondaryHref={waUrl(ctaSecondaryMsg)}
+      ctaSecondaryExternal
     />
   ))}
 
@@ -193,7 +156,7 @@ const faqs = [
     titleAccent="el trámite no"
     desc="Las NOM aplican igual en las dos entidades; el Programa Interno cambia."
     body={[
-      'La confusión más común de esta página: cumplir la NOM-002 no es lo mismo que tener el Programa Interno en regla. Lo primero es federal; lo segundo lo pide tu entidad, con su propio procedimiento.',
+      'La confusión más frecuente: cumplir la NOM-002 no es lo mismo que tener el Programa Interno en regla. Lo primero es federal; lo segundo lo pide tu entidad, con su propio procedimiento.',
       'Por eso el expediente que sirve en la Ciudad de México no se arma igual que el del Estado de México, aunque el equipo instalado sea idéntico.',
     ]}
     rows={coberturaNormRows}
@@ -208,8 +171,8 @@ const faqs = [
     titleAccent="a la visita en sitio"
     desc="Primero se confirma la cobertura; después se cotiza y se agenda."
     body={[
-      'Confirmar la zona antes de cotizar evita el problema clásico: una propuesta aceptada que después no se puede ejecutar porque el inmueble queda fuera de ruta.',
-      'La fecha se fija con la disponibilidad real del día. Preferimos decir «el jueves» y cumplirlo, a prometer «hoy mismo» y fallar.',
+      'Confirmar la zona antes de cotizar evita aceptar una propuesta que después no puede ejecutarse porque el inmueble queda fuera de ruta.',
+      'La fecha se fija con la disponibilidad real del día: se confirma una fecha que se pueda cumplir, no un plazo optimista.',
     ]}
     steps={coberturaSteps}
   />
@@ -220,11 +183,11 @@ const faqs = [
       <SectionHeading
         layout="duo"
         eyebrow="Sobre la cobertura"
-        title="Dos entidades,"
+        title="Ciudad y Estado de México,"
         titleAccent="un mismo estándar"
         desc="El mismo criterio técnico para una oficina en la ciudad que para una nave en el estado."
         body={[
-          'Servicio en sitio significa que el técnico va a tu inmueble con el equipo y la herramienta, no que se resuelve por teléfono.',
+          'Cada visita se atiende con el mismo procedimiento, la misma evidencia y el mismo seguimiento de vigencia, sin importar la entidad.',
           'Dinos tu ubicación por WhatsApp y te confirmamos cobertura antes de cualquier compromiso.',
         ]}
       />
@@ -236,6 +199,9 @@ const faqs = [
     </div>
   </section>
 
+  {/* ─── Reseñas de cobertura ─── */}
+  <Testimonios items={coberturaTestimonios} {...coberturaTestimoniosHead} />
+
   {/* ─── Interlinking a las otras secciones ─── */}
   <RelatedLinks
     title="Sigue por aquí"
@@ -245,12 +211,27 @@ const faqs = [
   />
 
   {/* ─── FAQ + Contacto ─── */}
-  <FAQWithContact items={faqs} waNumber={CONTACT.whatsapp} />
+  <FAQWithContact items={coberturaFaqs} waNumber={CONTACT.whatsapp} />
 </PageLayout>
 
 <style>
-  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
-  .section { padding: var(--sp-8) 0; }
-  .section--surface { background: var(--c-surface); }
-  @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
+  .container {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-px);
+  }
+
+  .section {
+    padding: var(--sp-8) 0;
+  }
+
+  .section--surface {
+    background: var(--c-surface);
+  }
+
+  @media (min-width: 768px) {
+    .section {
+      padding: var(--sp-10) 0;
+    }
+  }
 </style>
