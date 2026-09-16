@@ -182,6 +182,18 @@ export const plantillasFaqs = [
     answer: 'Cada mes. La NOM-002-STPS-2010 pide en su apartado 7.18 la revisión mensual del extintor, además del mantenimiento anual. La revisión mensual la puede hacer tu propio personal; lo que no puede faltar es el registro con fecha y firma.',
   },
   {
+    question: '¿Qué formatos de protección civil necesita una empresa?',
+    answer: 'Depende de la entidad y del programa interno de cada inmueble, pero en casi todos los expedientes aparecen tres registros: la revisión periódica del equipo contra incendio, el acta de cada simulacro y la integración de las brigadas de emergencia. Son justo los tres formatos que publicamos aquí.',
+  },
+  {
+    question: '¿Sirven también para la STPS?',
+    answer: 'Sí, como evidencia de apoyo. La NOM-002-STPS-2010 pide la revisión mensual de los extintores, la realización de simulacros y la integración de la brigada contra incendio; estos formatos sirven para dejarlo por escrito. Si tu entidad o tu auditor usan un formato oficial propio, ese es el que prevalece.',
+  },
+  {
+    question: '¿Qué debe llevar un formato de simulacro de evacuación?',
+    answer: 'Como mínimo: datos del inmueble, fecha y hipótesis del ejercicio, participantes, hora de la alarma y tiempos de evacuación, puntos observados, acciones correctivas y las firmas de quien coordinó. Nuestra acta de simulacro ya trae esos campos.',
+  },
+  {
     question: '¿Quién debe firmar el acta de simulacro?',
     answer: 'Quien coordinó el ejercicio y el responsable de la unidad interna de protección civil del inmueble. Lo importante no es la firma en sí, sino que haya alguien con nombre que responda por lo que dice el acta.',
   },
