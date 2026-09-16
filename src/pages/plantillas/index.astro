@@ -3,7 +3,7 @@
 // /plantillas/ — Hub de formatos descargables (L2).
 // ----------------------------------------------------------------------------
 // AL PATRÓN L2 (2026-09-10), igual que el resto de secciones:
-//   Hero → SectionMenu → TrustBar → tarjetas → módulos CategoryFeature →
+//   Hero → SectionMenu → tarjetas → módulos CategoryFeature →
 //   RiskGuide → NormsTable → ProcessSteps → CompanyAbout → RelatedLinks →
 //   FAQ + Contacto
 // El SectionMenu de cierre lo sustituye RelatedLinks, como en las demás L2.
@@ -38,6 +38,8 @@ import {
   plantillasCompany,
   plantillasRelated,
   plantillasFaqs,
+  plantillasConsultaMsg,
+  plantillasCardCta,
 } from '@data/plantillas'
 
 const plantillas = (await getCollection('plantillas', ({ data }) => !data.draft)).sort(
@@ -82,14 +84,14 @@ const schemaData = {
     badge="Descarga gratis · sin registro"
     title={"Formatos de protección\u00a0civil"}
     accent={"para\u00a0descargar\u00a0gratis"}
-    subtitle="La bitácora de revisión de extintores, el formato de simulacro de evacuación y el censo de la brigada de emergencia: tres registros que Protección Civil y la STPS piden ver y que casi ninguna empresa tiene a la mano."
+    subtitle="La bitácora de revisión de extintores, el formato de simulacro de evacuación y el censo de la brigada de emergencia: los registros que respaldan tu expediente ante Protección Civil y la STPS."
     descRight={[
-      'Están listos para llenar, en formato editable y en PDF para imprimir. Cada uno viene con su página, donde explicamos de qué norma sale y cómo se llena sin que el papel diga una cosa y el inmueble otra.',
+      'Están listos para llenar, en formato editable y en PDF para imprimir. Cada uno tiene su página, donde explicamos de qué norma sale y cómo se llena para que el registro coincida con lo que hay en el inmueble.',
       'Son formatos de apoyo: no sustituyen el programa interno de protección civil ni la documentación que exija la autoridad competente en cada caso.',
     ]}
     ctas={[
-      { text: 'Herramientas de cálculo', href: '/herramientas/', variant: 'outline' },
-      { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.default), variant: 'primary', whatsapp: true },
+      { text: 'Bitácora de extintores', href: '/plantillas/bitacora-revision-extintores/', variant: 'outline' },
+      { text: 'Consultar por WhatsApp', href: waUrl(plantillasConsultaMsg), variant: 'primary', whatsapp: true },
     ]}
   />
 
@@ -105,7 +107,7 @@ const schemaData = {
         titleAccent="descarga, llena y archiva"
         desc="Cada formato explica de qué norma sale y cómo se llena."
         body={[
-          'Los hicimos con lo que vemos en campo: bitácoras firmadas de golpe el día de la visita, simulacros sin acta y brigadas censadas hace tres años con la mitad de la gente que ya no trabaja ahí.',
+          'Están pensados para evitar errores comunes en un expediente: bitácoras llenadas el mismo día de la visita, simulacros sin acta y censos de brigada que no reflejan al personal actual.',
           'Entra a cada formato para ver el paso a paso de llenado y descargarlo en el formato que prefieras.',
         ]}
       />
@@ -119,7 +121,7 @@ const schemaData = {
             imageAlt={p.data.imageAlt}
             badge={p.data.files.map((f) => f.ext).join(' · ')}
             blurb={p.data.description}
-            ctaLabel="Descargar formato"
+            ctaLabel={plantillasCardCta[p.id] ?? 'Descargar formato'}
             index={i}
           />
         ))}
@@ -141,33 +143,25 @@ const schemaData = {
   </section>
 
   {/* ─── Módulos por formato (CategoryFeature) ─── */}
-  {plantillasFeatures.map((c) => (
+  {plantillasFeatures.map(({ id, ctaSecondaryMsg, ...feature }) => (
     <CategoryFeature
-      anchorId={c.id}
-      eyebrow={c.eyebrow}
-      title={c.title}
-      titleAccent={c.titleAccent}
-      description={c.description}
-      features={c.features}
-      ctaLabel={c.ctaLabel}
-      ctaHref={c.ctaHref}
-      ctaSecondaryLabel={c.ctaSecondaryLabel}
-      ctaSecondaryHref={c.ctaSecondaryHref}
-      imgMain={c.imgMain}
-      imgA={c.imgA}
-      imgB={c.imgB}
+      {...feature}
+      anchorId={id}
+      ctaSecondaryLabel="Consultar por WhatsApp"
+      ctaSecondaryHref={waUrl(ctaSecondaryMsg)}
+      ctaSecondaryExternal
     />
   ))}
 
   {/* ─── Cada cuándo se llena y quién lo firma ─── */}
   <RiskGuide
     eyebrow="Cada cuándo y quién firma"
-    title="El papel no se llena"
-    titleAccent="cuando llega la visita"
+    title="Bitácora, acta y censo:"
+    titleAccent="cada cuándo se llenan y quién firma"
     desc="Cada formato tiene su periodicidad y su responsable."
     body={[
       'La pregunta que sigue a la descarga es siempre la misma: cada cuándo hay que llenarlo y de quién tiene que ser la firma. Aquí está, formato por formato.',
-      'La diferencia entre un expediente que aguanta una revisión y uno que no está justo aquí: fechas que corresponden a recorridos reales y firmas de personas que existen en la empresa.',
+      'La diferencia entre un expediente sólido y uno débil está aquí: fechas que corresponden a recorridos reales y firmas de personas que forman parte de la empresa.',
     ]}
     rows={plantillasCalendario}
     columns={['Documento', 'Cada cuándo se llena', 'Quién lo firma', 'Dónde queda']}
@@ -179,12 +173,12 @@ const schemaData = {
   {/* ─── De qué obligación sale cada formato ─── */}
   <NormsTable
     eyebrow="De dónde sale cada formato"
-    title="Ninguno es"
-    titleAccent="un invento de forma"
+    title="De qué obligación sale"
+    titleAccent="cada formato"
     desc="Cada documento responde a una obligación concreta."
     body={[
       'Un formato que no corresponde a ninguna obligación es papeleo. Aquí está de qué norma o instrumento sale cada uno y qué parte del expediente cubre.',
-      'Incluimos también lo que estos formatos NO cubren, que es donde más se confunde la gente: el servicio del extintor se acredita con su etiqueta y su collarín, no con la bitácora.',
+      'Incluimos también lo que estos formatos no cubren, que es donde se presenta la confusión más frecuente: el servicio del extintor se acredita con su etiqueta y su collarín, no con la bitácora.',
     ]}
     rows={plantillasNormRows}
     columns={['Norma o instrumento', 'Qué establece', 'Qué formato lo cubre']}
@@ -195,11 +189,11 @@ const schemaData = {
   <ProcessSteps
     eyebrow="Cómo se usan"
     title="De la descarga"
-    titleAccent="al expediente que aguanta"
-    desc="Descargarlo es lo fácil; que el papel diga la verdad es lo que cuenta."
+    titleAccent="al expediente en regla"
+    desc="El valor del formato está en que el registro coincida con lo que ocurrió."
     body={[
       'Un formato bien llenado no es el que tiene todas las casillas marcadas: es el que se puede contrastar con el inmueble y coincide.',
-      'Si prefieres no cargar con esto, la gestión documental es un servicio: lo llevamos nosotros y lo mantenemos al día todo el año.',
+      'Si prefieres delegarlo, la gestión documental es un servicio: integramos el expediente y lo mantenemos al día todo el año.',
     ]}
     steps={plantillasSteps}
   />
@@ -210,18 +204,18 @@ const schemaData = {
       <SectionHeading
         layout="duo"
         eyebrow="Sobre estos formatos"
-        title="Hechos con lo que"
-        titleAccent="vemos en campo"
-        desc="Bitácoras firmadas de golpe, simulacros sin acta y censos de hace tres años."
+        title="Formatos de apoyo"
+        titleAccent="para un expediente verificable"
+        desc="Pensados para registrar lo que ocurre en el inmueble, con fecha y responsable."
         body={[
-          'Los publicamos gratis porque el problema casi nunca es la voluntad: es que nadie tiene el formato a la mano cuando toca registrar.',
-          '¿Prefieres que el expediente lo llevemos nosotros? Escríbenos y lo vemos.',
+          'Los publicamos gratis para que cualquier empresa tenga a la mano el registro que corresponde en el momento de llenarlo.',
+          'Si prefieres que integremos y mantengamos el expediente, escríbenos.',
         ]}
       />
       <CompanyAbout
         que={plantillasCompany.que}
         como={plantillasCompany.como}
-        cta={{ label: 'Que lo llevemos nosotros', href: waUrl('Hola, quiero que ustedes lleven el mantenimiento y el expediente de mi inmueble.'), external: true }}
+        cta={{ label: 'Gestión del expediente', href: waUrl('Hola, quiero que ustedes lleven el mantenimiento y el expediente de mi inmueble.'), external: true }}
       />
     </div>
   </section>
@@ -239,8 +233,23 @@ const schemaData = {
 </PageLayout>
 
 <style>
-  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
-  .section { padding: var(--sp-8) 0; }
-  .section--surface { background: var(--c-surface); }
-  @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
+  .container {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-px);
+  }
+
+  .section {
+    padding: var(--sp-8) 0;
+  }
+
+  .section--surface {
+    background: var(--c-surface);
+  }
+
+  @media (min-width: 768px) {
+    .section {
+      padding: var(--sp-10) 0;
+    }
+  }
 </style>

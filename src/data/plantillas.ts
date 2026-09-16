@@ -12,30 +12,45 @@
 //
 // Las tarjetas y su listado siguen leyéndose de la colección `plantillas`;
 // aquí vive lo que la página no puede sacar del frontmatter.
+// CTA como el index: primario a la página del formato, secundario WhatsApp.
 // ============================================================================
 
 export type Feature = { label: string; desc: string };
 export type GalleryImage = { src: string; alt: string };
 
 // ── Módulos por formato ──────────────────────────────────────────────────────
-export const plantillasFeatures = [
+export type PlantillaFeature = {
+  id: string;
+  eyebrow: string;
+  title: string;
+  titleAccent: string;
+  description: string;
+  features: Feature[];
+  ctaLabel: string;
+  ctaHref: string;
+  ctaSecondaryMsg: string;
+  imgMain: GalleryImage;
+  imgA: GalleryImage;
+  imgB: GalleryImage;
+};
+
+export const plantillasFeatures: PlantillaFeature[] = [
   {
     id: 'bitacora-revision-extintores',
     eyebrow: 'Bitácora · Mensual · NOM-002-STPS 7.18',
     title: 'Bitácora de revisión',
-    titleAccent: 'mensual de extintores',
+    titleAccent: 'y check list de extintores',
     description:
-      'La revisión mensual la hace tu propio personal y no cuesta nada, pero sin registro no existe para la autoridad. Una fila por extintor, una casilla por mes y el detalle de qué mirar cada vez, para que la bitácora refleje el recorrido real y no se firme de golpe el día de la visita.',
+      'La revisión mensual la realiza tu propio personal, pero sin registro no hay evidencia ante la autoridad. Una fila por extintor, una casilla por mes y el check list de qué revisar cada vez, para que la bitácora refleje el recorrido real y no se llene el mismo día de la visita.',
     features: [
       { label: 'Una fila por extintor', desc: 'Ubicación, tipo, capacidad y número de serie de cada equipo del inmueble.' },
-      { label: 'Una casilla por mes', desc: 'Doce meses a la vista: se nota de inmediato el hueco que falta.' },
+      { label: 'Una casilla por mes', desc: 'El año completo a la vista: un mes sin registro se identifica de inmediato.' },
       { label: 'Qué revisar cada vez', desc: 'Presión, seguro, manguera, acceso libre y señalización, punto por punto.' },
       { label: 'Firma de quien revisó', desc: 'La evidencia vale por el nombre que la respalda, no por la casilla marcada.' },
     ],
     ctaLabel: 'Descargar bitácora',
     ctaHref: '/plantillas/bitacora-revision-extintores/',
-    ctaSecondaryLabel: 'Verifica tu extintor',
-    ctaSecondaryHref: '/herramientas/verifica-tu-extintor/',
+    ctaSecondaryMsg: 'Hola, descargué la bitácora de extintores y quiero ayuda con la revisión mensual.',
     imgMain: { src: '/images/servicios/inspeccion-gabinete-manguera-contra-incendio.avif', alt: 'Revisión mensual de un gabinete y su extintor en sitio' },
     imgA: { src: '/images/servicios/etiquetado-inspeccion-extintor.avif', alt: 'Etiqueta y collarín de servicio en un extintor' },
     imgB: { src: '/images/servicios/inspeccion-gabinete-hidrante-extintor.avif', alt: 'Recorrido de revisión de extintores e hidrante' },
@@ -46,7 +61,7 @@ export const plantillasFeatures = [
     title: 'Acta de simulacro',
     titleAccent: 'de evacuación',
     description:
-      'Un simulacro sin acta es un simulacro que no ocurrió. El formato recoge la hipótesis, los tiempos reales, lo que se observó y las acciones correctivas, que es justo lo que convierte el ejercicio en algo útil y no en una hora perdida de operación.',
+      'Sin acta, un simulacro no deja evidencia. El formato funciona como cédula de evaluación del ejercicio: recoge la hipótesis, los tiempos medidos, lo que se observó y las acciones correctivas, que es lo que convierte el simulacro en una mejora verificable.',
     features: [
       { label: 'Hipótesis del ejercicio', desc: 'Qué se simuló, en qué área y con cuánta gente dentro del inmueble.' },
       { label: 'Tiempos medidos', desc: 'De la alarma a la salida y al pase de lista en el punto de reunión.' },
@@ -55,8 +70,7 @@ export const plantillasFeatures = [
     ],
     ctaLabel: 'Descargar acta',
     ctaHref: '/plantillas/acta-simulacro-evacuacion/',
-    ctaSecondaryLabel: 'Capacitación de brigada',
-    ctaSecondaryHref: '/servicios/capacitacion-dc3/',
+    ctaSecondaryMsg: 'Hola, necesito apoyo para organizar y documentar un simulacro de evacuación.',
     imgMain: { src: '/images/casos/entrega-servicio-equipo-contra-incendio.avif', alt: 'Personal reunido durante un ejercicio de evacuación' },
     imgA: { src: '/images/servicios/inspeccion-sistema-alarma-extintor.avif', alt: 'Ruta de evacuación señalizada en nave industrial' },
     imgB: { src: '/images/servicios/prueba-electrica-panel-alarma-incendio.avif', alt: 'Prueba del panel de alarma antes de un simulacro' },
@@ -67,17 +81,16 @@ export const plantillasFeatures = [
     title: 'Censo de brigada',
     titleAccent: 'de emergencia',
     description:
-      'El censo que más veces vemos desactualizado: gente que ya no trabaja ahí sigue apareciendo como jefe de piso. Integrantes, brigada asignada, rol, contacto y la constancia que acredita su capacitación, en una sola hoja que se actualiza cuando rota el personal.',
+      'Un censo desactualizado deja a la brigada sin responsables reales. Reúne integrantes, brigada asignada, rol, contacto y la constancia que acredita su capacitación, en una sola hoja que se actualiza cuando rota el personal.',
     features: [
       { label: 'Integrantes por brigada', desc: 'Evacuación, primeros auxilios, combate de incendio y comunicación.' },
       { label: 'Rol y suplente', desc: 'Quién cubre cuando el titular está de vacaciones o en otro turno.' },
-      { label: 'Contacto interno', desc: 'Extensión, celular y área, para localizarlos sin buscar en recursos humanos.' },
+      { label: 'Contacto interno', desc: 'Extensión, celular y área, para localizarlos de inmediato.' },
       { label: 'Constancia DC-3', desc: 'Fecha y folio de la capacitación que respalda a cada integrante.' },
     ],
     ctaLabel: 'Descargar censo',
     ctaHref: '/plantillas/censo-brigada-emergencia/',
-    ctaSecondaryLabel: 'Constancias DC-3',
-    ctaSecondaryHref: '/servicios/capacitacion-dc3/',
+    ctaSecondaryMsg: 'Hola, quiero capacitar a mi brigada y tener sus constancias DC-3 al día.',
     imgMain: { src: '/images/servicios/capacitacion-brigada-extintores.avif', alt: 'Brigada de emergencia durante su capacitación' },
     imgA: { src: '/images/showcase/equipo-proteccion-bomberos-epp.avif', alt: 'Equipo de protección personal de la brigada' },
     imgB: { src: '/images/general/hero-proveedor-equipo-contra-incendio.avif', alt: 'Personal capacitado revisando el equipo del inmueble' },
@@ -134,7 +147,7 @@ export const plantillasSteps: Step[] = [
   { num: '03', title: 'Llénalo con el hecho', desc: 'Registra el recorrido, simulacro o capacitación mientras ocurre, no de memoria.' },
   { num: '04', title: 'Anota hallazgos', desc: 'Deja por escrito lo observado y las áreas de oportunidad que requieran seguimiento.' },
   { num: '05', title: 'Define responsables', desc: 'Asigna responsable y fecha compromiso a cada acción correctiva del registro.' },
-  { num: '06', title: 'Fírmalo quien corresponde', desc: 'Recaba las firmas del responsable, jefe de brigada o testigo que pida el formato.' },
+  { num: '06', title: 'Recaba las firmas', desc: 'Firman el responsable, el jefe de brigada o el testigo que pida el formato.' },
   { num: '07', title: 'Archívalo con evidencia', desc: 'Guárdalo junto con etiquetas, constancias, actas y comprobantes del expediente.' },
   { num: '08', title: 'Actualízalo al cambiar', desc: 'Corrige el documento cuando cambie un equipo, una persona o se haga otro ejercicio.' },
 ];
@@ -143,25 +156,35 @@ export const plantillasCompany = {
   que: {
     title: 'Por qué los publicamos',
     body: [
-      'Tres documentos que la autoridad pide ver y que casi nadie tiene a la mano. Los armamos con lo que encontramos en campo: bitácoras firmadas de golpe el día de la visita, simulacros sin acta y censos de brigada de hace tres años con la mitad de la gente que ya no trabaja ahí.',
+      'Los registros que respaldan la revisión del equipo, los simulacros y la brigada, preparados para llenarse en el momento en que ocurre cada actividad.',
       'Están en formato editable y en PDF para imprimir. Son de apoyo: no sustituyen el programa interno de protección civil ni la documentación que exija la autoridad competente en cada caso.',
     ],
   },
   como: {
     title: 'Cómo sacarles provecho',
     pillars: [
-      { title: 'El papel sigue al hecho', desc: 'Primero se revisa el extintor y luego se registra; al revés es solo llenar casillas.' },
+      { title: 'El papel sigue al hecho', desc: 'Primero se revisa el extintor y luego se registra; registrar sin revisar no genera evidencia válida.' },
       { title: 'Una firma, un responsable', desc: 'Lo que da valor a la evidencia es que alguien con nombre la respalde.' },
-      { title: 'O lo llevamos nosotros', desc: 'Si prefieres no cargar con el expediente, la gestión documental es un servicio.' },
+      { title: 'Gestión documental', desc: 'Si prefieres delegar el expediente, lo integramos y lo mantenemos al día.' },
     ],
   },
+};
+
+// ── Consulta de formatos ────────────────────────────────────────────────────
+export const plantillasConsultaMsg =
+  'Hola, descargué sus formatos y quiero ayuda para integrar mi expediente.';
+
+export const plantillasCardCta: Record<string, string> = {
+  'bitacora-revision-extintores': 'Bitácora de extintores',
+  'acta-simulacro-evacuacion': 'Acta de simulacro',
+  'censo-brigada-emergencia': 'Censo de brigada',
 };
 
 export const plantillasRelated = [
   { label: 'Gestión documental', href: '/servicios/gestion-documental/', desc: 'Que el expediente lo llevemos nosotros, al día todo el año.' },
   { label: 'Qué exige Protección Civil', href: '/proteccion-civil/', desc: 'Requisitos del trámite en CDMX y Estado de México.' },
   { label: 'Capacitación de brigada', href: '/servicios/capacitacion-dc3/', desc: 'Constancias DC-3 para respaldar tu censo.' },
-  { label: 'Verifica tu extintor', href: '/herramientas/verifica-tu-extintor/', desc: 'Doce puntos antes de llenar la bitácora.' },
+  { label: 'Verifica tu extintor', href: '/herramientas/verifica-tu-extintor/', desc: 'Revisión guiada antes de llenar la bitácora.' },
 ];
 
 // ── FAQ propio ───────────────────────────────────────────────────────────────
@@ -175,8 +198,12 @@ export const plantillasFaqs = [
     answer: 'Cada mes. La NOM-002-STPS-2010 pide en su apartado 7.18 la revisión mensual del extintor, además del mantenimiento anual. La revisión mensual la puede hacer tu propio personal; lo que no puede faltar es el registro con fecha y firma.',
   },
   {
+    question: '¿Qué es un check list de extintores?',
+    answer: 'Es la lista de verificación que se usa en la revisión mensual de cada extintor: presión, seguro, manguera, acceso libre y señalización. Nuestra bitácora integra ese check list con una fila por extintor y una casilla por mes, como pide la NOM-002-STPS-2010 en su apartado 7.18.',
+  },
+  {
     question: '¿Qué formatos de protección civil necesita una empresa?',
-    answer: 'Depende de la entidad y del programa interno de cada inmueble, pero en casi todos los expedientes aparecen tres registros: la revisión periódica del equipo contra incendio, el acta de cada simulacro y la integración de las brigadas de emergencia. Son justo los tres formatos que publicamos aquí.',
+    answer: 'Depende de la entidad y del programa interno de cada inmueble. Los expedientes suelen incluir, entre otros, la revisión periódica del equipo contra incendio, el acta de cada simulacro y la integración de las brigadas de emergencia, que son los registros que publicamos aquí.',
   },
   {
     question: '¿Sirven también para la STPS?',
@@ -187,8 +214,12 @@ export const plantillasFaqs = [
     answer: 'Como mínimo: datos del inmueble, fecha y hipótesis del ejercicio, participantes, hora de la alarma y tiempos de evacuación, puntos observados, acciones correctivas y las firmas de quien coordinó. Nuestra acta de simulacro ya trae esos campos.',
   },
   {
+    question: '¿Qué es una cédula de evaluación de simulacro?',
+    answer: 'Es el registro con el que se evalúa un simulacro: hipótesis, tiempos, participación y observaciones. Nuestra acta de simulacro reúne esos datos junto con las acciones correctivas; si tu entidad o tu programa interno usan una cédula oficial, esa es la que prevalece.',
+  },
+  {
     question: '¿Quién debe firmar el acta de simulacro?',
-    answer: 'Quien coordinó el ejercicio y el responsable de la unidad interna de protección civil del inmueble. Lo importante no es la firma en sí, sino que haya alguien con nombre que responda por lo que dice el acta.',
+    answer: 'Quien coordinó el ejercicio y el responsable de la unidad interna de protección civil del inmueble. Lo importante es que haya una persona identificada que responda por el contenido del acta.',
   },
   {
     question: '¿En qué formato se descargan?',
