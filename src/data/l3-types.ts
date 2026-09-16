@@ -23,7 +23,7 @@
 //   módulo: 4 features, label ≤ 27, desc ≤ 78
 // ============================================================================
 
-import type { z } from 'astro:content';
+import type { z } from 'astro/zod';
 import { galleryImageSchema, headingSchema, moduloSchema, normRowSchema, pillarSchema, riskRowSchema, serviceL3Schema, specSchema, stepSchema, tableBlockSchema, tarjetaSchema } from './l3-schema';
 
 export type Spec = z.infer<typeof specSchema>;
