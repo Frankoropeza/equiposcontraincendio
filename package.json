@@ -10,6 +10,7 @@
     "dev": "astro dev",
     "build": "node scripts/check-demo.mjs && astro check && astro build",
     "test": "node --test tests/*.test.mjs",
+    "images:variants": "node scripts/make-variants.mjs",
     "check:variants": "node scripts/check-variants.mjs",
     "preview": "astro preview",
     "check": "astro check",

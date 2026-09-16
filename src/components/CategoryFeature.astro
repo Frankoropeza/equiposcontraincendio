@@ -3,6 +3,7 @@
 // Izquierda: eyebrow + título + descripción + bullets + marcas + CTA.
 // Derecha: galería 3 imágenes (1 grande arriba + 2 pequeñas abajo).
 // Reutilizable para cada una de las 8 categorías del showcase.
+import { srcsetFor } from '@lib/img'
 
 interface Brand {
   name: string
@@ -155,6 +156,8 @@ const {
           height="500"
           loading="lazy"
           decoding="async"
+          srcset={srcsetFor(imgMain.src)}
+          sizes="(min-width: 1024px) 50vw, 100vw"
           class="cf__img"
         />
       </figure>
@@ -167,6 +170,8 @@ const {
             height="300"
             loading="lazy"
             decoding="async"
+            srcset={srcsetFor(imgA.src)}
+            sizes="(min-width: 1280px) 300px, (min-width: 768px) 45vw, 100vw"
             class="cf__img"
           />
         </figure>
@@ -178,6 +183,8 @@ const {
             height="300"
             loading="lazy"
             decoding="async"
+            srcset={srcsetFor(imgB.src)}
+            sizes="(min-width: 1280px) 300px, (min-width: 768px) 45vw, 100vw"
             class="cf__img"
           />
         </figure>

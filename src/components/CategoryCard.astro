@@ -46,6 +46,7 @@
 //
 // ESTILO: tokens de src/styles/tokens.css. A11y: filas de 44 px, foco visible.
 // ============================================================================
+import { srcsetFor } from '@lib/img';
 export type Sub = { label: string; href: string };
 interface Props {
   label: string;
@@ -91,6 +92,8 @@ const RowTag = disabled ? "span" : "a";
           width="640" height="400"
           loading={eager ? "eager" : "lazy"}
           decoding="async"
+          srcset={srcsetFor(image)}
+          sizes="(min-width: 1280px) 300px, (min-width: 768px) 45vw, 100vw"
           fetchpriority={priority ? "high" : undefined}
           class="ccard__img"
         />

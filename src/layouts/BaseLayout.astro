@@ -34,6 +34,7 @@ import "../styles/tokens.css";
 // estilos scoped de cada componente con !important quirúrgico). Breakpoints
 // canónicos 1024/768/640/480/380. Ver src/styles/mobile.css.
 import "../styles/mobile.css";
+import IconSprite from '@components/IconSprite.astro';
 
 export interface Props {
   /** Título de la página (sin marca; ≤60). Opcional si pasas `keywords`. */
@@ -183,16 +184,20 @@ const jsonLd = buildSchema(pageType, schemaData);
     ))}
 
     {/* ── TruConversion (heatmaps/funnels/grabaciones) — cuenta 63920, alta 2026-09-11 ── */}
+    {/* Se difiere por Lighthouse 2026-09-15: 90 KB, 68 KB sin usar y bloquea bfcache. */}
     <script is:inline type="text/javascript">
-        var _tip = _tip || [];
-        (function(d,s,id){
-            var js, tjs = d.getElementsByTagName(s)[0];
-            if(d.getElementById(id)) { return; }
-            js = d.createElement(s); js.id = id;
-            js.async = true;
-            js.src = d.location.protocol + '//app.truconversion.com/ti-js/63920/ac0b5.js';
-            tjs.parentNode.insertBefore(js, tjs);
-        }(document, 'script', 'ti-js'));
+      var _tip = _tip || [];
+      (function () {
+        var load = function () {
+          if (document.getElementById('ti-js')) return;
+          var js = document.createElement('script');
+          js.id = 'ti-js'; js.async = true;
+          js.src = document.location.protocol + '//app.truconversion.com/ti-js/63920/ac0b5.js';
+          document.getElementsByTagName('script')[0].parentNode.insertBefore(js, document.getElementsByTagName('script')[0]);
+        };
+        ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(function (event) { window.addEventListener(event, load, { once: true, passive: true }); });
+        window.addEventListener('load', function () { window.setTimeout(load, 6000); }, { once: true });
+      }());
     </script>
   </head>
 
@@ -205,6 +210,7 @@ const jsonLd = buildSchema(pageType, schemaData);
       puede faltar; no rompe nada — solo desperdicia el primer Tab.
     */}
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    <IconSprite />
     <slot />
   </body>
 </html>

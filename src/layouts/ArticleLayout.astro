@@ -35,6 +35,7 @@ import FAQAccordion from "@components/FAQAccordion.astro";
 import CTABanner from "@components/CTABanner.astro";
 import { SITE, waUrl } from "@config/site";
 import { slugify } from '@lib/slug'
+import { srcsetFor } from '@lib/img'
 
 export interface Props {
   title: string;
@@ -190,7 +191,7 @@ const cta = CTA_BY_FUNNEL[funnel] ?? CTA_BY_FUNNEL.mofu;
 
     {image && (
       <figure class="post__hero">
-        <img src={image} alt={imageAlt ?? title} width="1200" height="630" fetchpriority="high" />
+        <img src={image} alt={imageAlt ?? title} width="1200" height="630" fetchpriority="high" decoding="async" srcset={srcsetFor(image)} sizes="(min-width: 1024px) 800px, 100vw" />
       </figure>
     )}
 

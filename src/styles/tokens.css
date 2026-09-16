@@ -28,6 +28,11 @@ para que los componentes extraídos rendericen sin reescritura. Migrar a nombres
   --c-whatsapp-rgb: 37, 211, 102;
   --c-whatsapp-dark: #1ebe57;
   --c-whatsapp-active: #19a34a;
+  /* 2026-09-16 · AA: verde WhatsApp para fondo de botón con texto blanco (5.0:1) y su hover. */
+  --c-whatsapp-aa: #15803d;
+  --c-whatsapp-aa-dark: #166534;
+  /* 2026-09-16 · AA: acento rojo legible sobre fondos oscuros (--c-ink): 6.4:1. */
+  --c-primary-on-dark: #f87171;
   --c-bg: #ffffff;
   --color-bg: #ffffff;
   /* alias usado por ServiceLayout (fondo de dl/toc) */
@@ -152,6 +157,18 @@ body {
   background: var(--c-bg);
   line-height: var(--leading-normal);
   -webkit-font-smoothing: antialiased;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 img,

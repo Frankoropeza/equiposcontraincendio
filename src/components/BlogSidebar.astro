@@ -20,6 +20,7 @@
 // ============================================================================
 import { getCollection } from 'astro:content'
 import { SERVICES, COVERAGE_STATES, BLOG_CATEGORIES, waUrl, WA_MESSAGES } from '@config/site'
+import { srcsetFor } from '@lib/img'
 
 interface Props {
   /** Categoría de la página actual: se marca como activa en el widget. */
@@ -99,7 +100,7 @@ const waHref = waUrl(WA_MESSAGES.blog)
         {destacadas.map((a) => (
           <li>
             <a class="bsb__post" href={`/blog/${a.id}/`}>
-              <img src={a.data.heroImage} alt="" width="80" height="60" loading="lazy" decoding="async" />
+              <img src={a.data.heroImage} alt="" width="80" height="60" loading="lazy" decoding="async" srcset={srcsetFor(a.data.heroImage)} sizes="80px" />
               <span>{a.data.title}</span>
             </a>
           </li>

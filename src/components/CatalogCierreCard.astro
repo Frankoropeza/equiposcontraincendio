@@ -2,6 +2,7 @@
 // CatalogCierreCard.astro — ficha de servicio que completa la última fila del catálogo.
 import { waUrl } from '@config/site';
 import type { FichaCierre } from '@data/extintores-catalogo';
+import { srcsetFor } from '@lib/img';
 
 interface Props {
   ficha: FichaCierre;
@@ -21,6 +22,8 @@ const href = ficha.whatsapp ? waUrl(ficha.href) : ficha.href;
     height="400"
     loading="lazy"
     decoding="async"
+    srcset={srcsetFor(ficha.image)}
+    sizes="(min-width: 1280px) 300px, (min-width: 768px) 45vw, 100vw"
   />
 
   <div class="catalog-cierre__body">

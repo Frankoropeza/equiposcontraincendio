@@ -2,6 +2,7 @@
 // ProductShowcase — vitrina técnica de una ficha L4.
 // Contrato: recibe imagen, datos clave y resúmenes derivados de variantes.
 import SectionHeading from '@components/SectionHeading.astro';
+import { srcsetFor } from '@lib/img';
 
 interface Props {
   title: string;
@@ -22,7 +23,7 @@ const { title, showcaseTitle, showcaseAccent, showcaseDesc, body, image, claves,
   <div class="container">
     <SectionHeading layout="duo" eyebrow="Ficha técnica" title={showcaseTitle} titleAccent={showcaseAccent} desc={showcaseDesc} body={body} />
     <div class="showcase__grid">
-      <div class="showcase__media">{image && <img src={image} alt={title} width="800" height="600" loading="lazy" decoding="async" />}</div>
+      <div class="showcase__media">{image && <img src={image} alt={title} width="800" height="600" loading="lazy" decoding="async" srcset={srcsetFor(image)} sizes="(min-width: 1024px) 50vw, 100vw" />}</div>
       <div class="showcase__data">
       <dl class="showcase__facts">
         {claves.map((item) => <div><dt>{item.label}</dt><dd>{item.value}</dd></div>)}

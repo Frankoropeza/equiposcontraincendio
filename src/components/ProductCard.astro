@@ -6,6 +6,7 @@
 // Imagen estática con width/height (anti-CLS). Para WhatsApp directo usa waUrl
 // en el href que pases.
 //
+import { srcsetFor } from '@lib/img'
 // REDISEÑO 2026-09-10 — CONTRATO DE TARJETA COMPARTIDO
 // Misma geometría que CategoryCard y ServiceCard, para que los grids del sitio
 // se lean como un solo sistema: media 16/10 con badge, título de altura fija de
@@ -47,6 +48,7 @@ const eager = priority || index < 4
           width="640" height="360"
           loading={eager ? 'eager' : 'lazy'}
           decoding="async"
+          srcset={srcsetFor(image)}
           fetchpriority={priority ? 'high' : undefined}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 320px"
           class="pcard__img"

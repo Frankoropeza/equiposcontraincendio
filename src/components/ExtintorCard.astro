@@ -3,6 +3,7 @@
 // Contrato: recibe un item normalizado desde la L3, con agente obligatorio y
 // los campos opcionales de capacidad, formato, clases, uso y validación.
 import { waUrl } from '@config/site';
+import { srcsetFor } from '@lib/img';
 import {
   EXT_ACCESORIOS,
   EXT_AGENTE_INFO,
@@ -62,6 +63,8 @@ const accesorios = item.formato
       height="400"
       loading="lazy"
       decoding="async"
+      srcset={srcsetFor(item.imagen)}
+      sizes="(min-width: 1280px) 300px, (min-width: 768px) 45vw, 100vw"
     />
   )}
 
