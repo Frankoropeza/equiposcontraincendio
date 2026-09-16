@@ -1,4 +1,5 @@
 ---
+kind: service
 id: hidrantes-mangueras
 path: /productos/hidrantes-mangueras/
 seccion:

@@ -56,6 +56,66 @@ variantes:
     desc: "Indica la ubicación del botiquín o del área destinada a primeros auxilios para reducir el tiempo de búsqueda. El formato debe distinguirse de las señales destinadas al equipo contra incendio."
     specs: "Condición segura · Fondo verde · Cruz de primeros auxilios · Sustrato fotoluminiscente"
     waText: "Hola, necesito cotizar señales fotoluminiscentes para primeros auxilios"
+ficha:
+  heroBadge: Evacuación · Equipo contra incendio · NOM-003-SSPC-2011
+  heroTitle: Señalización fotoluminiscente
+  heroAccent: que se ve sin luz
+  descRight:
+    - Encuentra señales para rutas, salidas, extintores, hidrantes, puntos de reunión y primeros auxilios.
+    - El levantamiento de tu inmueble define mensaje, tamaño, orientación y cantidad según la distancia de observación.
+  pillars:
+    - icon: check
+      title: Orienta la salida
+      desc: Indica recorridos y puertas de emergencia para facilitar la evacuación.
+    - icon: shield
+      title: Identifica equipos
+      desc: Ayuda a localizar extintores, hidrantes y puntos de atención.
+    - icon: doc
+      title: Visibilidad nocturna
+      desc: El material conserva una referencia visual cuando el lugar queda oscuro.
+    - icon: pin
+      title: Ubicación precisa
+      desc: Ajusta cada señal a las rutas, equipos y condiciones reales del inmueble.
+  norma: NOM-003-SSPC-2011
+  claves:
+    - label: Evacuación
+      value: Ruta y salida de emergencia
+    - label: Equipo
+      value: Extintor e hidrante
+    - label: Condición segura
+      value: Punto de reunión y primeros auxilios
+    - label: Material
+      value: Sustrato fotoluminiscente
+  showcaseTitle: Datos clave
+  showcaseAccent: de la señalización fotoluminiscente
+  showcaseDesc: Función de cada señal, material, ubicación y reposición.
+  faqAccent: sobre señalización fotoluminiscente
+  guia:
+    title: Cómo elegir tu
+    titleAccent: señalización
+    desc: Define mensaje, color, tamaño y ubicación para orientar a las personas y localizar equipos.
+fichaHeads:
+  vitrina:
+    - La señalización fotoluminiscente carga luz durante el día y sigue visible cuando se corta la energía, que es justo el momento en que la gente tiene que encontrar la salida.
+    - Cubre rutas de evacuación, salidas, equipo contra incendio, punto de reunión y primeros auxilios, con el diseño que corresponde a cada función.
+  presentaciones:
+    - "Las presentaciones se organizan por función: ruta y sentido de evacuación, salida de emergencia, ubicación de extintor e hidrante, punto de reunión y botiquín."
+    - El material y la altura de montaje cambian si la señal va a muro, a bandera o a nivel de piso en un pasillo largo.
+  comparativa:
+    - La tabla compara las señales fotoluminiscentes por función, forma y ubicación típica, para armar una ruta continua en lugar de señales sueltas.
+    - "Una ruta se evalúa completa: si un tramo queda sin señal de sentido, la evacuación se rompe ahí."
+  guia:
+    - "Aquí está el criterio: cómo trazar la ruta de evacuación, qué señal va en cada punto, a qué altura se coloca y cómo se combina con lámparas de emergencia."
+    - Te ayudamos a levantar el recorrido y a dejar el juego instalado y documentado.
+  giros:
+    - Escuelas, hoteles, oficinas, plazas, hospitales y naves son los giros donde la ficha de Protección Civil revisa la ruta de evacuación señalizada de principio a fin.
+    - Abre la ficha de tu actividad y checa qué más va junto con la señalización.
+  relacionados:
+    - La señalización fotoluminiscente trabaja con las lámparas de emergencia, la señalización de seguridad NOM-026 y la ubicación visible de extintores e hidrantes.
+    - Cotízalo como conjunto y la ruta queda coherente en una sola visita.
+  faq:
+    - "Contestamos lo típico: diferencia entre fotoluminiscente y reflejante, cuánto tiempo permanece visible, qué señales son obligatorias y cada cuándo se reponen."
+    - Dinos cuántos niveles y salidas tiene el inmueble y te armamos la propuesta.
 ---
 
 La **señalización fotoluminiscente** almacena energía de la iluminación ambiental y emite luz durante un tiempo al quedar a oscuras. Su desempeño depende del material, la carga luminosa previa, la instalación y las condiciones del lugar.

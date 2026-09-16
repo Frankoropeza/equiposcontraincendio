@@ -12,6 +12,7 @@ export const galleryImageSchema = z.object({ src: z.string(), alt: z.string() })
 export const pillarSchema = z.object({ icon: z.enum(['shield', 'doc', 'chat', 'pin', 'check', 'clock']), title: z.string(), desc: z.string() }).strict();
 export const moduloSchema = z.object({ id: z.string(), eyebrow: z.string(), title: z.string(), titleAccent: z.string(), description: z.string(), features: z.array(z.object({ label: z.string(), desc: z.string() }).strict()), ctaLabel: z.string(), ctaMsg: z.string(), ctaSecondaryLabel: z.string(), ctaSecondaryHref: z.string(), imgMain: galleryImageSchema, imgA: galleryImageSchema, imgB: galleryImageSchema }).strict();
 export const serviceL3Schema = z.object({
+  kind: z.literal('service').default('service'),
   id: z.string(), path: z.string(), seccion: z.object({ label: z.string(), href: z.string() }).strict().optional(), categoriaProductos: z.string().optional(),
   seo: z.object({ title: z.string(), description: z.string(), serviceName: z.string(), serviceType: z.string(), image: z.string() }).strict(), breadcrumb: z.string(), wa: z.string(), menuCtaSub: z.string(),
   hero: z.object({ badge: z.string(), title: z.string(), accent: z.string(), subtitle: z.string(), descRight: z.array(z.string()), outlineText: z.string() }).strict(), pillars: z.array(pillarSchema),
@@ -22,4 +23,26 @@ export const serviceL3Schema = z.object({
   empresa: headingSchema.extend({ que: z.object({ title: z.string(), body: z.array(z.string()) }).strict(), como: z.object({ title: z.string(), pillars: z.array(z.object({ title: z.string(), desc: z.string() }).strict()) }).strict() }).strict(),
   related: z.object({ title: z.string(), desc: z.string(), links: z.array(z.object({ label: z.string(), href: z.string(), desc: z.string() }).strict()) }).strict(),
   faq: z.object({ eyebrow: z.string(), titleAccent: z.string(), desc: z.string(), body: z.array(z.string()), items: z.array(z.object({ question: z.string(), answer: z.string() }).strict()) }).strict(),
+}).strict();
+
+const extintoresFichaSchema = z.object({ badge: z.string(), blurb: z.string(), ctaLabel: z.string(), image: z.string().optional(), imageAlt: z.string().optional() }).strict();
+const extintoresFeatureSchema = z.object({
+  id: z.string(), eyebrow: z.string(), title: z.string(), titleAccent: z.string(), description: z.string(),
+  features: z.array(z.object({ label: z.string(), desc: z.string() }).strict()), ctaLabel: z.string(), ctaHref: z.string(),
+  ctaSecondaryLabel: z.string(), ctaMsg: z.string(), imgMain: galleryImageSchema, imgA: galleryImageSchema, imgB: galleryImageSchema,
+}).strict();
+const faqItemSchema = z.object({ question: z.string(), answer: z.string() }).strict();
+
+export const extintoresL3Schema = z.object({
+  kind: z.literal('extintores'),
+  hero: z.object({ badge: z.string(), subtitle: z.string(), descRight: z.tuple([z.string(), z.string()]) }).strict(),
+  pillars: z.array(pillarSchema),
+  fichas: z.record(z.string(), extintoresFichaSchema),
+  features: z.array(extintoresFeatureSchema), clases: z.array(riskRowSchema), normRows: z.array(normRowSchema), steps: z.array(stepSchema),
+  company: z.object({
+    que: z.object({ title: z.string(), body: z.array(z.string()) }).strict(),
+    como: z.object({ title: z.string(), pillars: z.array(z.object({ title: z.string(), desc: z.string() }).strict()) }).strict(),
+  }).strict(),
+  related: z.array(z.object({ label: z.string(), href: z.string(), desc: z.string() }).strict()),
+  faqs: z.array(faqItemSchema), tarjetas: z.array(tarjetaSchema),
 }).strict();

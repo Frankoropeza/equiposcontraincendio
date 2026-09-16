@@ -52,6 +52,66 @@ variantes:
     desc: "Gabinete con compartimentos para concentrar una manguera de 1½ pulgadas y un extintor portátil en un mismo punto. Las dimensiones se ajustan a la longitud de manguera y al extintor seleccionado."
     specs: "Montaje a definir · Manguera hasta 30 m · Compartimento para extintor · Puerta con visor"
     waText: "Hola, necesito cotizar un gabinete combinado para manguera de 1.5 pulgadas y extintor"
+ficha:
+  heroBadge: Manguera 1½ pulg · Sobreponer, empotrable o combinado
+  heroTitle: Gabinetes con manguera
+  heroAccent: para la red hidráulica
+  descRight:
+    - Elige gabinetes sobrepuestos o empotrables con mangueras de 15 o 30 metros, o una configuración combinada con extintor.
+    - Antes de instalar, revisa presión, caudal, alcance y ubicación contra el proyecto hidráulico de tu inmueble.
+  pillars:
+    - icon: check
+      title: Alcance según recorrido
+      desc: Elige 15 o 30 metros según la distancia que deba cubrir la manguera.
+    - icon: shield
+      title: Acceso inmediato
+      desc: La puerta con visor mantiene disponibles manguera, válvula y chiflón.
+    - icon: doc
+      title: Listo para tu red
+      desc: Define conexiones y accesorios de acuerdo con la red hidráulica existente.
+    - icon: pin
+      title: Montaje a la medida
+      desc: Escoge la instalación que mejor funcione con tu muro y circulación.
+  norma: NFPA 14 como referencia técnica
+  claves:
+    - label: Manguera
+      value: 1½ pulgadas
+    - label: Longitudes
+      value: 15 m o 30 m
+    - label: Montaje
+      value: Sobreponer o empotrable
+    - label: Complemento
+      value: Extintor portátil en modelo combinado
+  showcaseTitle: Datos clave
+  showcaseAccent: de los gabinetes con manguera
+  showcaseDesc: Montaje, medidas, equipo que aloja y revisión del conjunto.
+  faqAccent: sobre gabinetes con manguera
+  guia:
+    title: Cómo elegir tu
+    titleAccent: gabinete con manguera
+    desc: Revisa recorrido, montaje y red hidráulica para pedir el gabinete que funcione en tu inmueble.
+fichaHeads:
+  vitrina:
+    - El gabinete contra incendio aloja manguera de 1½ pulgadas, válvula angular y chiflón, y en los modelos combinados también el extintor portátil. Es el punto donde el usuario del inmueble ataca un fuego que ya superó al extintor.
+    - Hay de sobreponer, de empotrar y combinados, en distintas medidas. Dinos el tipo de muro y el diámetro de tu toma y te decimos cuál entra.
+  presentaciones:
+    - "Las presentaciones cambian por montaje —sobreponer o empotrar— y por lo que llevan dentro: solo manguera, manguera con extintor, o gabinete para equipo de mayor alcance."
+    - En obra nueva casi siempre conviene empotrar; en inmueble existente, sobreponer evita romper muro y acelera la instalación.
+  comparativa:
+    - La tabla compara los gabinetes por tipo de montaje, medidas y contenido, que es el dato que necesita el instalador antes de abrir el muro.
+    - "Recuerda que el gabinete es el mueble: la manguera, la válvula y el chiflón se cotizan por separado si tu toma ya existe."
+  guia:
+    - "Aquí va lo que hay que definir antes de comprar: dónde se ubica respecto a la ruta de evacuación, a qué altura se monta, si empotras o sobrepones y qué equipo va a alojar realmente."
+    - Con eso claro te cotizamos el gabinete y, si lo necesitas, la manguera y los accesorios para dejarlo operando.
+  giros:
+    - Naves industriales, bodegas, plazas comerciales, hoteles y edificios con sistema de hidrantes son los giros donde la ficha de Protección Civil pide gabinete con manguera además de extintores.
+    - Abre la ficha de tu actividad para ver el equipo completo que te van a revisar.
+  relacionados:
+    - "El gabinete forma parte del sistema de hidrantes: manguera, válvula, chiflón, señalización de equipo contra incendio y la revisión periódica del conjunto."
+    - Lo cotizamos completo para que no te falte una pieza el día de la instalación.
+  faq:
+    - "Resolvemos lo que más se pregunta: qué medida de gabinete necesitas, si conviene empotrar, qué debe contener y cada cuándo se revisa la manguera."
+    - Mándanos una foto del muro y de la toma existente y te confirmamos el modelo.
 ---
 
 El gabinete protege y mantiene accesibles los elementos de una **red hidráulica contra incendio**. Una configuración habitual integra manguera, válvula angular y chiflón en un punto visible; no sustituye el cálculo de la red ni la capacitación de la brigada.

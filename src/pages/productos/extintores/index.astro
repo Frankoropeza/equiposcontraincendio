@@ -22,7 +22,7 @@ import ExtintorCatalog from '@components/ExtintorCatalog.astro';
 import UsoGrid from '@components/UsoGrid.astro';
 import BrandGrid from '@components/BrandGrid.astro';
 import DataTable from '@components/DataTable.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import { CONTACT, waUrl, sectionMenuItems } from '@config/site';
 import { slugify } from '@lib/slug';
 import {
@@ -37,19 +37,11 @@ import {
   extMarcasNota,
   extSecciones,
 } from '@data/extintores-catalogo';
-import {
-  extintoresHero,
-  extintoresPillars,
-  extintoresTarjetas,
-  extintoresFeatures,
-  extintoresClases,
-  extintoresNormRows,
-  extintoresSteps,
-  extintoresCompany,
-  extintoresRelated,
-  extintoresFaqs,
-} from '@data/extintores';
 import { companyStats } from '@data/home';
+
+const entry = await getEntry('l3', 'productos/extintores');
+if (!entry || entry.data.kind !== 'extintores') throw new Error('Falta la entrada L3: productos/extintores');
+const { hero: extintoresHero, pillars: extintoresPillars, tarjetas: extintoresTarjetas, features: extintoresFeatures, clases: extintoresClases, normRows: extintoresNormRows, steps: extintoresSteps, company: extintoresCompany, related: extintoresRelated, faqs: extintoresFaqs } = entry.data;
 
 const fichas = (
   await getCollection('productos', ({ data }) => !data.draft && data.category === 'extintores')

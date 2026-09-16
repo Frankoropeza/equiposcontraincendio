@@ -118,6 +118,66 @@ faqs:
     answer: "El polvo ABC es de fosfato monoamónico y cubre sólidos, líquidos inflamables y equipo eléctrico. El polvo BC, de bicarbonato, no está clasificado para clase A: no sirve para papel, madera ni cartón. Para un negocio promedio, el ABC es el que resuelve las tres situaciones."
   - question: "¿El extintor PQS caduca?"
     answer: "El extintor no caduca por fecha, pero sí su servicio: revisión visual mensual, mantenimiento al menos anual conforme a la NOM-002-STPS-2010 y prueba hidrostática del cilindro al menos cada cinco años según la NOM-154-SCFI-2005. Si el manómetro salió del verde o perdió el sello, hay que atenderlo aunque se vea nuevo."
+ficha:
+  heroBadge: PQS ABC · Clases A, B y C · NOM-100-STPS
+  heroTitle: Extintores PQS tipo ABC,
+  heroAccent: de 1 a 70 kilogramos
+  descRight:
+    - Con un solo equipo cubres papel y cartón, gasolina o solventes, y equipo eléctrico con corriente. Por eso es el extintor que más se instala en oficinas, comercios, bodegas y vehículos.
+    - Abajo comparas sus ocho presentaciones y encuentras cómo elegir la capacidad, dónde colocarlo y qué mantenimiento pide.
+  pillars:
+    - icon: check
+      title: Tres clases, un equipo
+      desc: Sólidos, líquidos inflamables y equipo eléctrico con el mismo extintor.
+    - icon: doc
+      title: Ficha y collarín
+      desc: Sale con ficha técnica; con el servicio lleva etiqueta y collarín.
+    - icon: clock
+      title: Recarga y mantenimiento
+      desc: Servicio anual y prueba hidrostática con quien te lo vendió.
+    - icon: pin
+      title: CDMX y Estado de México
+      desc: Entregamos e instalamos en toda la zona metropolitana.
+  norma: NOM-100-STPS-1994
+  claves:
+    - label: Agente
+      value: Polvo químico seco ABC
+    - label: Clases de fuego
+      value: A, B y C
+    - label: Norma de producto
+      value: NOM-100-STPS-1994
+    - label: Servicio
+      value: NOM-154-SCFI-2005 · con collarín
+  showcaseTitle: Datos clave
+  showcaseAccent: del extintor PQS
+  showcaseDesc: Agente, clases de fuego, norma de producto y servicio que pide el equipo.
+  faqAccent: sobre extintores PQS
+  guia:
+    title: Cómo elegir tu
+    titleAccent: extintor PQS
+    desc: Dónde conviene, qué capacidad elegir, dónde colocarlo y qué mantenimiento pide.
+fichaHeads:
+  vitrina:
+    - "El extintor PQS ABC usa polvo químico seco a base de fosfato monoamónico: interrumpe la reacción en fuegos de sólidos (clase A), líquidos inflamables (clase B) y equipo eléctrico energizado (clase C), bajo la NOM-100-STPS-1994."
+    - Es el equipo de arranque de casi cualquier inmueble en CDMX y Edomex. Dinos giro y superficie y te decimos cuántos y de qué capacidad, con entrega e instalación.
+  presentaciones:
+    - Las presentaciones de extintor PQS van del compacto de 1 kg para vehículo a la unidad sobre ruedas de 70 kg. La capacidad define el alcance, el tiempo de descarga y quién puede manejarlo sin entrenamiento previo.
+    - En la práctica, la mayoría de oficinas y comercios resuelve con 4.5 y 6 kg, y deja los equipos móviles para bodega y patio de maniobras. Te armamos la mezcla en una sola cotización.
+  comparativa:
+    - "Comparar las ocho presentaciones de PQS de golpe evita el error más común: comprar todo del mismo tamaño. La clasificación UL (2A:10B:C, 4A:60B:C…) dice cuánto fuego apaga realmente cada equipo."
+    - "La distancia máxima de recorrido hasta un extintor es de 23 m para clase A y C, y de 15 o 10 m cuando el riesgo dominante es clase B: esa medida, no el metraje, define cuántos necesitas."
+  guia:
+    - "Elegir extintor PQS se reduce a cuatro decisiones: qué clase de fuego domina en cada área, qué capacidad aguanta quien lo va a usar, a qué altura se monta (máximo 1.50 m del piso a la parte superior) y quién le da el mantenimiento anual."
+    - Resuélvelas antes de pedir precio y la cotización sale en minutos, con el equipo listo para pasar una inspección de Protección Civil sin observaciones.
+  giros:
+    - "El PQS aparece en casi todas las fichas de Protección Civil porque cubre las tres clases de fuego que conviven en un negocio promedio: papel y cartón, combustibles líquidos y tableros eléctricos."
+    - "Abre la ficha de tu giro y compárala con lo que ya tienes instalado: ahí está el listado completo de equipo, señalización y documentación que revisan."
+  relacionados:
+    - "El extintor PQS rara vez viaja solo: pide su soporte o gabinete, su señalamiento de ubicación y el servicio anual que le imprime etiqueta y collarín conforme a la NOM-154-SCFI-2005."
+    - Cotizarlo todo con el mismo proveedor te deja una sola factura, una visita de instalación y un calendario único de recarga.
+  faq:
+    - "Reunimos las preguntas que más nos llegan al cotizar extintores PQS: para qué sirve cada capacidad, cuántos exige la norma, cada cuándo se recarga y qué hacer si el manómetro cayó fuera del verde."
+    - "Si tu caso no está aquí, escríbenos con tu giro y superficie: te orientamos antes de cotizar y sin compromiso."
 ---
 
 Los **extintores PQS ABC** son los que más vas a ver en oficinas, comercios, bodegas y camionetas de reparto, y hay una razón práctica: con un solo equipo cubres sólidos como papel o cartón (clase A), líquidos inflamables como gasolina o solventes (clase B) y equipo eléctrico con corriente (clase C). Si en tu negocio hay un poco de todo, casi siempre se empieza por aquí.

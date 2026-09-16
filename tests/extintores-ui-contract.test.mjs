@@ -37,7 +37,7 @@ test('la L3 contiene los bloques y contratos del catálogo', () => {
 // Vigila las L3 del PATRÓN L3 canónico: ninguna usa las variantes en retiro
 // (--trio / --duo) y cada vitrina declara un número de fichas múltiplo de 4.
 const L3 = [
-  { page: 'src/pages/productos/extintores/index.astro', data: 'src/data/extintores.ts', list: 'extintoresTarjetas' },
+  { page: 'src/pages/productos/extintores/index.astro', content: 'src/content/l3/productos/extintores.md' },
   { page: 'src/pages/productos/deteccion-alarmas/index.astro', content: 'src/content/l3/productos/deteccion-alarmas.md' },
   { page: 'src/pages/productos/hidrantes-mangueras/index.astro', content: 'src/content/l3/productos/hidrantes-mangueras.md' },
   { page: 'src/pages/productos/senalizacion/index.astro', content: 'src/content/l3/productos/senalizacion.md' },
@@ -61,19 +61,12 @@ test('las L3 no usan retículas de 3 ni de 2 columnas', () => {
 test('cada vitrina L3 tiene fichas en múltiplos de 4, con 3 specs cada una', () => {
   for (const { data, list, content } of L3) {
     if (content) {
-      const fichas = readFrontmatter(content).vitrina.tarjetas;
+      const frontmatter = readFrontmatter(content);
+      const fichas = frontmatter.vitrina?.tarjetas ?? frontmatter.tarjetas;
       assert.ok(fichas.length > 0 && fichas.length % 4 === 0, `${content}: ${fichas.length} fichas (debe ser múltiplo de 4)`);
       assert.ok(fichas.every(({ specs }) => specs.length === 3), `${content}: cada ficha lleva exactamente 3 specs`);
       continue;
     }
-    const source = fs.readFileSync(path.join(ROOT, data), 'utf8');
-    const start = source.indexOf(`export const ${list}`);
-    assert.ok(start !== -1, `${data} no exporta ${list}`);
-    const block = source.slice(start, source.indexOf('\n];', start));
-    const fichas = (block.match(/ctaLabel:/g) ?? []).length;
-    const specs = (block.match(/\{ label: '[^']+', value: '[^']+' \}/g) ?? []).length;
-    assert.ok(fichas > 0 && fichas % 4 === 0, `${list}: ${fichas} fichas (debe ser múltiplo de 4)`);
-    assert.equal(specs, fichas * 3, `${list}: cada ficha lleva exactamente 3 specs`);
   }
 });
 
@@ -157,12 +150,13 @@ test('ProcessSteps y todos sus datos usan ocho pasos con textos acotados', () =>
     ['src/data/herramientas.ts', 'herramientasSteps'],
     ['src/data/plantillas.ts', 'plantillasSteps'],
     ['src/data/proteccion-civil.ts', 'pcSteps'],
-    ['src/data/extintores.ts', 'extintoresSteps'],
+    ['src/content/l3/productos/extintores.md', 'extintoresL3'],
     ['src/content/l3/servicios/mantenimiento.md', 'mantenimientoL3'],
   ];
   for (const [file, name] of dataFiles) {
     if (file.endsWith('.md')) {
-      const steps = readFrontmatter(file).proceso.steps;
+      const frontmatter = readFrontmatter(file);
+      const steps = frontmatter.proceso?.steps ?? frontmatter.steps;
       assert.equal(steps.length, 8, `${name}: debe tener 8 pasos`);
       for (const { title, desc } of steps) {
         assert.ok(title.length <= 30, `${name}: título demasiado largo: ${title}`);

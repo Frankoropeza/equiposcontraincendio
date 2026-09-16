@@ -66,6 +66,66 @@ faqs:
     answer: "No es lo indicado. El polvo no enfría el aceite ni evita la reignición, y sobre una freidora puede dispersar grasa ardiendo. La clase K existe justamente porque los agentes convencionales fallan en ese escenario, aunque algún proveedor los haya vendido como equivalentes."
   - question: "¿Cada cuándo se da servicio a un extintor clase K?"
     answer: "Revisión visual mensual, mantenimiento al menos una vez al año y recarga después de cualquier uso, aunque haya sido parcial. El cilindro pasa prueba hidrostática al menos cada cinco años y al terminar el servicio debe llevar su etiqueta y collarín."
+ficha:
+  heroBadge: Agente K · Clase K · Cocinas comerciales
+  heroTitle: Extintores tipo K,
+  heroAccent: para cocinas
+  descRight:
+    - El químico húmedo sale en niebla, no salpica el aceite y forma una capa que lo aísla del aire mientras lo enfría. Es el extintor para la freidora y la línea de cocción.
+    - Complementa, no sustituye, el sistema fijo de la campana. Abajo encuentras cómo elegir la capacidad para tu cocina y dónde colocarlo.
+  pillars:
+    - icon: check
+      title: Hecho para aceite
+      desc: Formulado para aceites y grasas de cocción.
+    - icon: shield
+      title: A 10 m como máximo
+      desc: Distancia de recorrido para clase K en la NOM-002-STPS.
+    - icon: clock
+      title: Recarga y mantenimiento
+      desc: Servicio anual y prueba hidrostática con quien te lo vendió.
+    - icon: pin
+      title: CDMX y Estado de México
+      desc: Entregamos e instalamos en toda la zona metropolitana.
+  norma: Referencia técnica NFPA 10
+  claves:
+    - label: Agente
+      value: Químico húmedo
+    - label: Clase de fuego
+      value: K (aceites y grasas de cocción)
+    - label: Norma de producto
+      value: Sin NOM específica · ref. NFPA 10
+    - label: Servicio
+      value: NOM-154-SCFI-2005
+  showcaseTitle: Datos clave
+  showcaseAccent: del extintor tipo K
+  showcaseDesc: Agente, clase de fuego, capacidades y servicio que pide en cocina.
+  faqAccent: sobre extintores tipo K
+  guia:
+    title: Cómo elegir tu
+    titleAccent: extintor tipo K
+    desc: Dónde va, qué capacidad elegir, dónde colocarlo y qué mantenimiento pide.
+fichaHeads:
+  vitrina:
+    - El extintor tipo K usa químico húmedo (acetato de potasio) que saponifica el aceite de cocción y forma una capa que impide la reignición. Es el único agente clasificado para clase K, la de grasas y aceites vegetales.
+    - Restaurantes, hoteles, comedores industriales y cocinas oscuras lo llevan por norma y por seguro. Te decimos cuántos van según el número de freidoras y planchas.
+  presentaciones:
+    - Las presentaciones de clase K son de 4, 6 y 9.46 L. El volumen se elige por el tamaño del equipo de cocción a cubrir, no por el tamaño de la cocina.
+    - Lo habitual es un equipo a la vista de la línea caliente y otro cerca de la salida. Si tienes campana con sistema fijo, el extintor K es el complemento, no el sustituto.
+  comparativa:
+    - La tabla pone frente a frente las tres capacidades de extintor tipo K con su clasificación y su uso sugerido, para que la freidora grande no quede protegida con el equipo más chico.
+    - "El recorrido máximo hasta un extintor de clase K es de 10 m: en una cocina comercial eso suele significar más de una unidad."
+  guia:
+    - "Aquí va lo que hay que decidir antes de comprar un extintor de cocina: qué litraje por tipo de equipo, dónde montarlo sin que estorbe la operación, cómo se usa (a distancia y en abanico) y qué mantenimiento pide."
+    - "También aclaramos la confusión más cara: el PQS no sustituye al clase K sobre aceite caliente, aunque el proveedor lo haya vendido así."
+  giros:
+    - Restaurantes, cafeterías, panaderías, hoteles, comedores de empresa y cocinas de escuela son los giros donde la ficha de Protección Civil pide clase K junto al extintor de uso general.
+    - Abre la ficha de tu giro y revisa el listado completo antes de la visita de verificación.
+  relacionados:
+    - Una cocina comercial completa suma extintor tipo K, extintor de uso general para el resto del local, señalización, detección de gas y el servicio anual de todo el equipo.
+    - Lo cotizamos junto y coordinamos la instalación en un solo día, fuera de tu horario de servicio.
+  faq:
+    - "Respondemos las dudas frecuentes del extintor tipo K: por qué el polvo no sirve sobre aceite, cuántos litros necesita tu cocina, si sustituye al sistema de campana y cada cuándo se le da servicio."
+    - Mándanos el número de freidoras, planchas y estufas y te decimos exactamente qué llevas.
 ---
 
 Una freidora encendida es de los incendios más traicioneros de un negocio: el calor del aceite es tan alto que el agua lo hace saltar y el polvo químico no alcanza a enfriarlo. Para ese escenario existe el **extintor tipo K** (clase K): su agente extintor, un químico húmedo, se descarga en forma de niebla fina, sin causar salpicadura de aceite ardiendo, y forma una capa que lo separa del aire mientras lo enfría.

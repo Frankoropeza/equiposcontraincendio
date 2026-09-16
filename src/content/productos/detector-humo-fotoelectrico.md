@@ -58,6 +58,66 @@ variantes:
     desc: "Detector para integrarse a un sistema de alarma contra incendio mediante un circuito compatible de dos hilos. La base, el panel, la tensión y los dispositivos de notificación deben validarse como sistema."
     specs: "Sensor fotoeléctrico · Circuito de 2 hilos · Base separable · Integración con panel compatible"
     waText: "Hola, necesito cotizar detectores fotoeléctricos de 2 hilos para un panel de alarma"
+ficha:
+  heroBadge: Fotoeléctrico · Autónomo, interconectado o para panel
+  heroTitle: Detectores de humo
+  heroAccent: que avisan a tiempo
+  descRight:
+    - Elige entre modelos autónomos, interconectados, combinados con monóxido de carbono o compatibles con panel de alarma.
+    - Así puedes cubrir un espacio sin panel, mantener respaldo por batería o llevar la alerta entre equipos compatibles.
+  pillars:
+    - icon: check
+      title: Alerta donde estás
+      desc: Los modelos autónomos avisan con sonido dentro del espacio protegido.
+    - icon: shield
+      title: Opciones conectadas
+      desc: Interconecta equipos compatibles o intégralos a un sistema de dos hilos.
+    - icon: doc
+      title: Compatibilidad por modelo
+      desc: Confirma base, panel, tensión y notificación antes de instalar.
+    - icon: pin
+      title: Montaje interior
+      desc: Hay opciones para plafón y otros espacios interiores.
+  norma: NOM-002-STPS-2010
+  claves:
+    - label: Sensor
+      value: Fotoeléctrico
+    - label: Alimentación
+      value: Batería AA, sellada o 120 V con respaldo
+    - label: Interconexión
+      value: Cableada, inalámbrica o circuito de 2 hilos
+    - label: Integración
+      value: Autónomo o panel compatible
+  showcaseTitle: Datos clave
+  showcaseAccent: de los detectores de humo
+  showcaseDesc: Principio de detección, alimentación, tipo de aviso y pruebas periódicas.
+  faqAccent: sobre detectores de humo
+  guia:
+    title: Cómo elegir tu
+    titleAccent: detector de humo
+    desc: Compara alimentación, interconexión y compatibilidad para elegir el detector que necesita tu inmueble.
+fichaHeads:
+  vitrina:
+    - El detector de humo fotoeléctrico reacciona a las partículas del humo lento y denso —el de un cable recalentado o un colchón— antes de que haya flama. Es la detección temprana que da tiempo a evacuar.
+    - Hay versión autónoma de batería, interconectada, combinada con monóxido de carbono y para panel de alarma direccionable. Te decimos cuál va según el inmueble.
+  presentaciones:
+    - "Las presentaciones cambian por cómo se alimenta y cómo avisa: autónomo, interconectado entre sí, combinado con CO o cableado al panel de alarma contra incendio."
+    - En casa habitación y oficina chica basta el autónomo; en hotel, escuela o nave con panel, el detector tiene que reportar a la central.
+  comparativa:
+    - La tabla compara los modelos de detector de humo por alimentación, cobertura y tipo de aviso, que es lo que define si el equipo sirve para tu inmueble o solo para un cuarto.
+    - "El criterio de colocación pesa tanto como el modelo: techo, lejos de difusores de aire y de la salida de la cocina, para no vivir con falsas alarmas."
+  guia:
+    - "Aquí está lo que hay que decidir: fotoeléctrico o combinado, autónomo o a panel, cuántos por superficie y dónde NO se montan para evitar disparos por vapor o polvo."
+    - Con eso definido, la instalación se hace en una visita y la memoria técnica queda lista para tu expediente.
+  giros:
+    - Hoteles, escuelas, guarderías, oficinas, bodegas y edificios de departamentos son los giros donde la ficha de Protección Civil pide sistema de detección además de extintores.
+    - Revisa la ficha de tu actividad para saber si te exigen panel o basta con detección autónoma.
+  relacionados:
+    - La detección de humo trabaja junto con alarma audible, lámparas de emergencia, señalización de ruta de evacuación y los extintores del piso.
+    - Lo integramos como un solo proyecto, con una sola fecha de instalación y de pruebas.
+  faq:
+    - "Contestamos las dudas frecuentes: diferencia entre fotoeléctrico e iónico, cuántos detectores por superficie, por qué suenan sin motivo y cada cuándo se prueban y se cambia la batería."
+    - Mándanos plano o metros cuadrados por nivel y te proponemos la distribución.
 ---
 
 La **detección temprana** permite alertar antes de que un incendio se desarrolle. El **detector fotoeléctrico** es una opción habitual para percibir partículas de humo de combustión lenta.

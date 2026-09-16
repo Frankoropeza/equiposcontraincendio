@@ -1,4 +1,5 @@
 ---
+kind: service
 id: mantenimiento
 path: /servicios/mantenimiento/
 seo:

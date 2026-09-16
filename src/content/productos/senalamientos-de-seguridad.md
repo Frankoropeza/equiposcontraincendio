@@ -63,6 +63,66 @@ variantes:
 relatedServices:
   - inspeccion
   - gestion-documental
+ficha:
+  heroBadge: Prohibición · Obligación · Precaución · Información · NOM-026-STPS-2008
+  heroTitle: Señalamientos de seguridad
+  heroAccent: para tu centro de trabajo
+  descRight:
+    - "Señales industriales y de protección civil: prohibido fumar, uso obligatorio de equipo de protección, riesgo eléctrico, ruta de evacuación, salida y extintor."
+    - El color, la forma y el tamaño salen de la NOM-026-STPS-2008; el tamaño se calcula con la distancia desde la que se lee cada señal.
+  pillars:
+    - icon: check
+      title: La señal que toca
+      desc: Color, forma y símbolo según la NOM-026 y la NOM-003-SSPC.
+    - icon: doc
+      title: Tamaño calculado
+      desc: Cada señal dimensionada a su distancia de observación.
+    - icon: shield
+      title: Industriales y de PC
+      desc: Riesgo eléctrico, EPP, prohibiciones, rutas y equipo contra incendio.
+    - icon: pin
+      title: CDMX y Estado de México
+      desc: Entregamos e instalamos en toda la zona metropolitana.
+  norma: NOM-026-STPS-2008 · NOM-003-SSPC-2011
+  claves:
+    - label: Tipos
+      value: Prohibición, obligación, precaución, información
+    - label: Colores
+      value: Rojo, azul, amarillo y verde
+    - label: Tamaño
+      value: S ≥ L²/2000 (NOM-026)
+    - label: Versiones
+      value: Estándar y fotoluminiscente
+  showcaseTitle: Datos clave
+  showcaseAccent: de los señalamientos
+  showcaseDesc: Familias de señal, color y forma, medidas y norma aplicable.
+  faqAccent: sobre señalamientos de seguridad
+  guia:
+    title: Qué señal va
+    titleAccent: en cada área
+    desc: Tipos, colores, ubicación y tamaño de los señalamientos de un centro de trabajo.
+fichaHeads:
+  vitrina:
+    - "Los señalamientos de seguridad comunican sin texto: color y forma geométrica definen si la señal prohíbe, obliga, previene, informa o ubica equipo contra incendio, conforme a la NOM-026-STPS-2008."
+    - Es el elemento más barato del expediente y el que más observaciones genera en una visita, casi siempre por medida o ubicación incorrecta.
+  presentaciones:
+    - Las presentaciones cubren las cinco familias de señal —prohibición, obligación, precaución, información y equipo contra incendio— en los materiales y medidas que se usan en centro de trabajo.
+    - La medida se elige por distancia máxima de observación, no por lo que se ve bien de cerca. Dinos las distancias y te armamos el juego.
+  comparativa:
+    - La tabla ordena las señales por tipo, color, forma y uso, para que el juego que compres corresponda a los riesgos reales de tu inmueble y no a un paquete genérico.
+    - "Un señalamiento correcto mal ubicado cuenta como faltante: por eso incluimos el criterio de colocación junto a cada familia."
+  guia:
+    - "Aquí va lo que hay que decidir: qué señales te aplican por actividad, qué medida según la distancia de observación, dónde se montan y cómo se combinan con la señalización de ruta de evacuación."
+    - Con eso resuelto te entregamos el juego completo y, si lo necesitas, lo instalamos.
+  giros:
+    - "Todo centro de trabajo señaliza, pero el juego cambia por giro: la ficha de Protección Civil de tu actividad dice qué señales esperan encontrar en la visita."
+    - "Compárala con lo que tienes puesto hoy: ahí suelen aparecer los faltantes."
+  relacionados:
+    - "La señalización acompaña a extintores, gabinetes, salidas de emergencia, lámparas de emergencia y punto de reunión: es lo que hace visible el equipo que ya compraste."
+    - Cotiza el juego junto con el equipo y te queda todo en la misma entrega.
+  faq:
+    - "Resolvemos las dudas frecuentes: qué señales son obligatorias, qué medida corresponde a cada distancia, si deben ser fotoluminiscentes y cada cuándo se reponen."
+    - Mándanos el listado de áreas y te proponemos el juego completo.
 ---
 
 Un señalamiento de seguridad no decora un muro: **le dice a alguien qué no hacer, qué ponerse, de qué cuidarse o por dónde salir**, y tiene que entenderse en un segundo. Por eso su color, su forma y su símbolo no se eligen por gusto: los fija la **NOM-026-STPS-2008** para los centros de trabajo y la **NOM-003-SSPC-2011** para las señales de protección civil.

@@ -1,4 +1,5 @@
 ---
+kind: service
 id: deteccion-alarmas
 path: /productos/deteccion-alarmas/
 seccion:

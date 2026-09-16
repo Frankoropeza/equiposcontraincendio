@@ -95,6 +95,66 @@ faqs:
     answer: "Sirve para el tablero eléctrico y para el equipo de la cocina, pero no para el aceite caliente: ahí va un extintor tipo K de químico húmedo. El chorro de CO2 además puede salpicar la grasa encendida y ampliar el fuego."
   - question: "¿Qué mantenimiento pide el cilindro de CO2?"
     answer: "Revisión visual mensual, mantenimiento al menos anual y pesaje del cilindro para confirmar la carga, porque el CO2 no lleva manómetro confiable. El cilindro pasa prueba hidrostática al menos cada cinco años conforme a la NOM-154-SCFI-2005."
+ficha:
+  heroBadge: CO2 · Clases B y C · NOM-102-STPS
+  heroTitle: Extintores de CO2 o dióxido de carbono,
+  heroAccent: de 2 a 45 kilogramos
+  descRight:
+    - El CO2 le quita el oxígeno a la flama, no conduce la electricidad y se disipa sin dejar rastro. Es el extintor que va junto a tableros, sites y equipo electrónico.
+    - "Abajo comparas sus presentaciones y encuentras sus límites: no está clasificado para papel, madera ni cartón."
+  pillars:
+    - icon: check
+      title: Sin residuo
+      desc: No deja polvo sobre tableros, servidores ni equipo electrónico.
+    - icon: shield
+      title: No conduce
+      desc: Se usa junto a equipo eléctrico con corriente.
+    - icon: clock
+      title: Recarga y mantenimiento
+      desc: Servicio anual y prueba hidrostática con quien te lo vendió.
+    - icon: pin
+      title: CDMX y Estado de México
+      desc: Entregamos e instalamos en toda la zona metropolitana.
+  norma: NOM-102-STPS-1994
+  claves:
+    - label: Agente
+      value: Dióxido de carbono (CO2)
+    - label: Clases de fuego
+      value: B y C
+    - label: Norma de producto
+      value: NOM-102-STPS-1994
+    - label: Servicio
+      value: NOM-154-SCFI-2005
+  showcaseTitle: Datos clave
+  showcaseAccent: del extintor de CO2
+  showcaseDesc: Agente, clases cubiertas, norma de producto y servicio del cilindro.
+  faqAccent: sobre extintores de CO2
+  guia:
+    title: Cómo elegir tu
+    titleAccent: extintor de CO2
+    desc: Dónde conviene, qué capacidad elegir, dónde colocarlo y qué mantenimiento pide.
+fichaHeads:
+  vitrina:
+    - "El extintor de CO₂ desplaza el oxígeno y enfría la zona de la flama sin dejar residuo ni conducir electricidad, por eso es el equipo de tableros, sites y laboratorios. Norma de producto: NOM-102-STPS-1994."
+    - "No está clasificado para clase A: donde hay papel, cartón o madera se combina con un PQS. Te decimos qué mezcla conviene según lo que tengas en cada cuarto."
+  presentaciones:
+    - "Las presentaciones de CO₂ van de 5 a 20 lb en portátil y de 50 a 100 lb sobre ruedas. El cilindro es de alta presión, así que el peso sube rápido: importa quién lo va a descolgar y usar."
+    - Para un site pequeño suele bastar un portátil junto a la puerta; para subestación o cuarto de máquinas conviene la unidad móvil. Dinos el área y te damos la combinación.
+  comparativa:
+    - La tabla compara capacidad, formato y clasificación de cada extintor de CO₂ para que elijas por alcance real y no por precio por kilo, que es donde se pierde cobertura.
+    - Con riesgo eléctrico, la referencia práctica es un equipo por tablero o rack crítico, más el recorrido máximo de 15 m que aplica cuando domina la clase B.
+  guia:
+    - "Aquí está el criterio completo del CO₂: dónde conviene frente al agente limpio, qué capacidad elegir por tipo de cuarto, por qué no se instala en espacios confinados sin ventilación y qué servicio pide el cilindro."
+    - También te decimos cuándo NO es el equipo indicado, que es la parte que casi ningún proveedor explica antes de facturar.
+  giros:
+    - Sites, subestaciones, cocinas con equipo eléctrico, talleres y laboratorios son los giros donde la ficha de Protección Civil termina pidiendo CO₂ junto al extintor de polvo.
+    - "Revisa la ficha de tu actividad: ahí viene el equipo mínimo, la señalización y el expediente que te van a solicitar en la visita."
+  relacionados:
+    - El CO₂ convive con el agente limpio, el PQS y la señalización de riesgo eléctrico; y como todo cilindro de alta presión, entra al calendario de mantenimiento anual y prueba hidrostática.
+    - Arma el paquete completo con nosotros y te queda una sola fecha de servicio para todo el inmueble.
+  faq:
+    - "Resolvemos lo que más se pregunta sobre extintores de CO₂: por qué no sirven para papel, si dañan el equipo electrónico, cuánto pesa cada presentación y cada cuándo se recargan."
+    - Cuéntanos qué vas a proteger y te confirmamos si el CO₂ es el agente correcto antes de que gastes.
 ---
 
 Los **extintores de CO2** son los que se ponen junto a tableros eléctricos, sites y equipo electrónico. El dióxido de carbono le quita el oxígeno a la flama, no conduce la electricidad y se disipa sin dejar residuo. Después de usarlo no hay polvo que limpiar ni equipo dañado por el agente.

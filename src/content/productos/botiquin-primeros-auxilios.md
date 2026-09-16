@@ -57,6 +57,66 @@ variantes:
 relatedServices:
   - capacitacion-dc3
   - gestion-documental
+ficha:
+  heroBadge: De pared · Portátil · Vehicular · LFT art. 504
+  heroTitle: Botiquín de primeros auxilios
+  heroAccent: para tu empresa
+  descRight:
+    - Botiquines de pared para cada área, portátiles para la brigada y compactos para vehículos, con su señal de primeros auxilios.
+    - La Ley Federal del Trabajo pide tener el material de curación a la mano; el contenido se ajusta a los riesgos de tu centro de trabajo.
+  pillars:
+    - icon: check
+      title: A la mano
+      desc: Visible, señalizado y cerca de las áreas de mayor riesgo.
+    - icon: shield
+      title: Para la brigada
+      desc: Versión portátil para atender en el punto de reunión.
+    - icon: doc
+      title: Lo que pide la ley
+      desc: LFT art. 504 y medidas mínimas de protección civil.
+    - icon: pin
+      title: CDMX y Estado de México
+      desc: Entregamos en toda la zona metropolitana.
+  norma: Ley Federal del Trabajo, art. 504
+  claves:
+    - label: Formatos
+      value: Pared, portátil y vehicular
+    - label: Contenido
+      value: Según los riesgos del centro de trabajo
+    - label: Señal
+      value: Primeros auxilios (verde)
+    - label: Revisión
+      value: Mensual, con bitácora
+  showcaseTitle: Datos clave
+  showcaseAccent: del botiquín
+  showcaseDesc: Contenido, montaje, personas que cubre y revisión del material.
+  faqAccent: sobre el botiquín de primeros auxilios
+  guia:
+    title: Qué debe tener
+    titleAccent: el botiquín de tu empresa
+    desc: Lo que pide la ley, el contenido base y dónde colocarlo.
+fichaHeads:
+  vitrina:
+    - "El botiquín de primeros auxilios es equipo obligatorio de centro de trabajo: la Ley Federal del Trabajo lo exige y Protección Civil lo revisa junto con la brigada y el expediente."
+    - Hay de pared y portátiles, con contenido distinto según si atiende una oficina, una nave o una brigada que sale a campo.
+  presentaciones:
+    - "Las presentaciones se eligen por número de personas y por tipo de riesgo: gabinete de pared para punto fijo, maletín portátil para brigada y versiones reforzadas para nave o taller."
+    - Dinos cuántos trabajadores hay por turno y qué riesgos existen y te decimos qué botiquín y cuántos puntos.
+  comparativa:
+    - La tabla compara los botiquines por capacidad, montaje y uso previsto, para que el contenido corresponda al riesgo de tu actividad y no a un kit genérico de farmacia.
+    - "El contenido es tan revisable como el mueble: material caducado cuenta como faltante en una inspección."
+  guia:
+    - "Aquí va lo que conviene resolver: qué debe contener según tu giro, dónde se coloca para que sea accesible, quién lo administra y cada cuándo se revisa y repone."
+    - Te entregamos el botiquín surtido y, si lo necesitas, el formato de control para el expediente.
+  giros:
+    - Oficinas, comercios, naves, restaurantes, escuelas y obras son giros donde la ficha de Protección Civil pide botiquín, brigada de primeros auxilios y su registro.
+    - Abre la ficha de tu actividad y revisa qué se te exige además del equipo.
+  relacionados:
+    - El botiquín forma parte del paquete de emergencia junto con señalización de primeros auxilios, lámparas de emergencia y la capacitación de la brigada.
+    - Cotízalo con el resto del equipo y te queda una sola entrega y un solo expediente.
+  faq:
+    - "Contestamos lo que más se pregunta: qué debe contener, cuántos botiquines necesitas, si puede incluir medicamentos y cada cuándo se revisa el material."
+    - Dinos giro y número de trabajadores y te armamos el contenido.
 ---
 
 El botiquín es el equipo de emergencia que más se usa en un centro de trabajo: una cortada, una quemadura, una caída. Por eso lo piden la **Ley Federal del Trabajo** y la regulación de **protección civil**, y por eso importa más que esté **completo y a la mano** que su tamaño.

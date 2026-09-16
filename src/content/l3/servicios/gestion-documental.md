@@ -1,4 +1,5 @@
 ---
+kind: service
 id: gestion-documental
 path: /servicios/gestion-documental/
 seo:

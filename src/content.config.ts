@@ -29,7 +29,8 @@
 import { defineCollection, reference, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { SITE } from './config/site';
-import { serviceL3Schema } from './data/l3-schema';
+import { extintoresL3Schema, serviceL3Schema } from './data/l3-schema';
+import { fichaHeadsSchema, fichaSchema } from './data/ficha-schema';
 
 // ── Helpers reutilizables ────────────────────────────────────────────────────
 
@@ -167,6 +168,8 @@ const productos = defineCollection({
       // Interlinking tipado entre colecciones — reference() (D1).
       relatedProducts: z.array(reference('productos')).optional(),
       relatedServices: z.array(reference('servicios')).optional(),
+      ficha: fichaSchema.optional(),
+      fichaHeads: fichaHeadsSchema.optional(),
       faqs: faqSchema,
       featured: z.boolean().default(false),
       order: z.number().default(0),
@@ -452,7 +455,8 @@ const giros = defineCollection({
 // ── Colección: l3 (copy estructurado de páginas L3) ────────────────────────
 const l3 = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/l3' }),
-  schema: serviceL3Schema,
+  // El discriminante conserva la inferencia de `entry.data` tras getEntry().
+  schema: z.discriminatedUnion('kind', [serviceL3Schema, extintoresL3Schema]),
 });
 
 // ── Export ────────────────────────────────────────────────────────────────────

@@ -57,6 +57,66 @@ variantes:
     desc: "Aloja el extintor dentro del espesor disponible del muro para reducir salientes en la circulación. Requiere coordinar vano, profundidad, marco y acceso con la obra del inmueble."
     specs: "Montaje empotrable · Marco perimetral · Puerta con visor · Medida según extintor"
     waText: "Hola, necesito cotizar un gabinete empotrable para extintor"
+ficha:
+  heroBadge: Soportes · Gabinetes · Abrazaderas · Montaje mural y vehicular
+  heroTitle: Soportes y accesorios
+  heroAccent: para extintores
+  descRight:
+    - Encuentra soportes de pared, abrazaderas, bases vehiculares y gabinetes de sobreponer o empotrables.
+    - Comparte las medidas del extintor y el lugar de montaje para revisar diámetro, peso, ambiente y anclaje.
+  pillars:
+    - icon: check
+      title: Fijación estable
+      desc: Mantén el extintor visible, protegido de golpes y separado del piso.
+    - icon: shield
+      title: Retiro sin herramientas
+      desc: Usa soluciones que permitan liberar el equipo cuando necesites atender una emergencia.
+    - icon: doc
+      title: Compatibilidad comprobable
+      desc: Parte de la capacidad, marca o medidas del extintor que ya tienes.
+    - icon: pin
+      title: Para muro o vehículo
+      desc: Escoge una alternativa para instalación mural, vehículo, maquinaria o gabinete.
+  norma: Compatibilidad con tu extintor
+  claves:
+    - label: Montaje
+      value: Mural, vehicular o gabinete
+    - label: Compatibilidad
+      value: Diámetro, peso y geometría del cilindro
+    - label: Material
+      value: Acero, correa y acabado a definir
+    - label: Instalación
+      value: Anclaje según muro, vehículo o maquinaria
+  showcaseTitle: Datos clave
+  showcaseAccent: de soportes y accesorios
+  showcaseDesc: Tipo de montaje, extintor compatible y altura reglamentaria.
+  faqAccent: sobre soportes y accesorios
+  guia:
+    title: Cómo elegir tu
+    titleAccent: soporte o gabinete
+    desc: Compara diámetro, peso, ambiente y anclaje antes de montar o proteger tu extintor.
+fichaHeads:
+  vitrina:
+    - "El soporte para extintor no es un accesorio opcional: la norma pide el equipo montado, visible y señalizado, con la parte superior a no más de 1.50 m del piso. Un extintor en el suelo es observación segura."
+    - Aquí están los soportes de pared, abrazaderas, bases vehiculares y gabinetes para proteger el equipo en exterior o en zona de tránsito.
+  presentaciones:
+    - Las presentaciones cubren soporte de pared, abrazadera, base de piso, montaje vehicular y gabinete de sobreponer o empotrar, cada uno para un tipo de extintor y de ubicación.
+    - "El soporte se elige por el peso y el diámetro del cilindro: el de 4.5 kg y el de 9 kg no usan la misma pieza."
+  comparativa:
+    - La tabla compara los accesorios por tipo de montaje, extintor compatible y ubicación recomendada, para que el pedido salga completo a la primera.
+    - "En exterior, patio o pasillo de montacargas, conviene gabinete en vez de soporte descubierto: el equipo dura y sigue siendo visible."
+  guia:
+    - "Aquí va lo que hay que decidir: qué soporte por capacidad de extintor, a qué altura se monta, cuándo conviene gabinete y qué señalamiento lo acompaña."
+    - Con eso resuelto, tu extintor queda montado como pide la norma y localizable a distancia.
+  giros:
+    - Todo inmueble con extintores necesita montarlos bien; la ficha de Protección Civil de tu giro indica dónde deben estar y cómo se señalizan.
+    - Revisa tu actividad y compárala con lo que hoy tienes instalado.
+  relacionados:
+    - Los soportes y gabinetes se cotizan junto con el extintor, su señalamiento de ubicación y el servicio anual de recarga y mantenimiento.
+    - Un solo pedido y una sola visita de instalación para todo el inmueble.
+  faq:
+    - "Resolvemos lo frecuente: a qué altura va el extintor, qué soporte corresponde a cada capacidad, cuándo se necesita gabinete y cómo se monta en vehículo."
+    - Dinos qué extintores tienes y dónde van y te decimos qué accesorios llevas.
 ---
 
 El montaje correcto mantiene el extintor visible, accesible y protegido de golpes o movimientos. Un accesorio no es universal: debe seleccionarse por **diámetro, peso cargado, geometría del cilindro, ambiente y tipo de anclaje**.

@@ -1,4 +1,5 @@
 ---
+kind: service
 id: diagnostico-de-riesgo
 path: /servicios/diagnostico-de-riesgo/
 seo:

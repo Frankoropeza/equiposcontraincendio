@@ -1,4 +1,5 @@
 ---
+kind: service
 id: senalizacion
 path: /productos/senalizacion/
 seccion:

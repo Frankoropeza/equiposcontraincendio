@@ -1,4 +1,5 @@
 ---
+kind: service
 id: inspeccion
 path: /servicios/inspeccion/
 seo:

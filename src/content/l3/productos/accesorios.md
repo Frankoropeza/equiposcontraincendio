@@ -1,4 +1,5 @@
 ---
+kind: service
 id: accesorios
 path: /productos/accesorios/
 seccion:

@@ -98,6 +98,66 @@ faqs:
     answer: "Halotron I es un HCFC de potencial de agotamiento de ozono muy bajo, y FE-36 es un HFC sin potencial de agotamiento de ozono. Los dos se comercializan como sustitutos del halón 1211 bajo el Protocolo de Montreal, precisamente por su comportamiento con la capa de ozono, y son los agentes limpios que se consiguen hoy en el mercado mexicano para extintores portátiles."
   - question: "¿Cada cuándo se da servicio a un extintor de agente limpio?"
     answer: "Revisión visual mensual, mantenimiento al menos una vez al año y recarga después de cualquier uso. El cilindro pasa prueba hidrostática al menos cada cinco años según la NOM-154-SCFI-2005 y regresa con su etiqueta y collarín de servicio."
+ficha:
+  heroBadge: Agente limpio · Halotron I y FE-36 · Clases B, C y A
+  heroTitle: Extintores de agente limpio,
+  heroAccent: para equipo sensible
+  descRight:
+    - "El agente se evapora al salir: no conduce la electricidad y no deja residuo. Protege servidores y equipo delicado sin dañarlos."
+    - Las presentaciones chicas cubren clases B y C; desde 4.3 kg (FE-36) o 5 kg (Halotron I) también la A.
+  pillars:
+    - icon: check
+      title: Sin residuo
+      desc: El agente se evapora; el equipo protegido no se ensucia.
+    - icon: shield
+      title: No conduce
+      desc: Se usa junto a equipo eléctrico con corriente.
+    - icon: clock
+      title: Recarga y mantenimiento
+      desc: Servicio anual y prueba hidrostática con quien te lo vendió.
+    - icon: pin
+      title: CDMX y Estado de México
+      desc: Entregamos e instalamos en toda la zona metropolitana.
+  norma: Clasificación del fabricante
+  claves:
+    - label: Agentes
+      value: Halotron I · FE-36 (HFC-236fa)
+    - label: Clases de fuego
+      value: B y C; A desde 4.3 o 5 kg
+    - label: Norma de producto
+      value: Sin NOM específica · clasificación UL del fabricante
+    - label: Servicio
+      value: NOM-154-SCFI-2005
+  showcaseTitle: Datos clave
+  showcaseAccent: del agente limpio
+  showcaseDesc: Agentes Halotron I y FE-36, clases cubiertas y servicio del cilindro.
+  faqAccent: sobre agente limpio
+  guia:
+    title: Cómo elegir tu
+    titleAccent: extintor de agente limpio
+    desc: Qué clasificación necesitas, qué capacidad elegir y qué mantenimiento pide.
+fichaHeads:
+  vitrina:
+    - El agente limpio (Halotron I y FE-36) es un gas que no conduce electricidad, no deja residuo y se evapora sin dañar tarjetas ni servidores. Desde 4.3 kg también queda clasificado para clase A.
+    - Es el equipo de sites, cuartos de telecom, quirófanos y salas de control, donde el polvo del PQS haría más daño que el propio conato.
+  presentaciones:
+    - Las presentaciones de agente limpio cubren desde el portátil chico junto al rack hasta unidades de mayor capacidad para sala completa. La clasificación UL de cada una indica el fuego real que apaga.
+    - Si el cuarto tiene papel además de equipo, conviene la capacidad que ya incluye clase A. Te decimos cuál desde la descripción del sitio.
+  comparativa:
+    - La tabla compara capacidad, formato y clasificación de cada extintor de agente limpio, el dato que justifica su precio frente a un CO₂ del mismo tamaño.
+    - "La diferencia práctica está en el residuo y en el riesgo para el equipo: el agente limpio no enfría el metal ni desplaza el aire del cuarto como el CO₂."
+  guia:
+    - Aquí va cuándo conviene agente limpio frente a CO₂, qué capacidad elegir por tamaño de site, dónde montarlo respecto a la puerta y qué mantenimiento pide el cilindro.
+    - "También te decimos cuándo no vale la pena: en áreas sin electrónica crítica, un PQS bien elegido cuesta mucho menos."
+  giros:
+    - Sites, centros de datos, oficinas con sala de servidores, telecomunicaciones, laboratorios y salas de control son los giros donde la ficha de Protección Civil admite o sugiere agente limpio.
+    - Abre la ficha de tu actividad y revisa qué más te van a pedir además del extintor.
+  relacionados:
+    - El agente limpio suele ir acompañado de detección temprana de humo, señalización de riesgo eléctrico y un PQS en las áreas comunes del mismo piso.
+    - Cotiza el conjunto y te dejamos un solo expediente con las fichas técnicas de todo el equipo.
+  faq:
+    - "Resolvemos lo típico del agente limpio: si daña los equipos, en qué se diferencia del CO₂, si sirve para papel y cada cuándo se le da servicio."
+    - Cuéntanos qué hay dentro del cuarto y te confirmamos el agente correcto.
 ---
 
 Apagar un conato en un site con polvo químico tiene un costo que llega después: el polvo se queda en cada servidor. Los **extintores de agente limpio** resuelven ese problema. El agente sale como gas o como un líquido que se evapora, no conduce la electricidad y no deja residuo, así que el equipo que proteges no termina dañado por el agente.

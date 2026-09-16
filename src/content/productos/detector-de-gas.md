@@ -52,6 +52,66 @@ variantes:
 relatedServices:
   - instalacion
   - inspeccion
+ficha:
+  heroBadge: Gas LP · Gas natural · NTC-PA 2024, 4.4.5.2
+  heroTitle: Detector de gas
+  heroAccent: para cocinas y cuartos de máquinas
+  descRight:
+    - "Detectores de gas LP y gas natural para cocinas comerciales, calderas y cuartos de máquinas: autónomos, con electroválvula de corte o conectados al panel de alarma."
+    - Avisan de la fuga antes de que se convierta en incendio o explosión y, con electroválvula, cierran el paso del gas sin esperar a nadie.
+  pillars:
+    - icon: check
+      title: Aviso antes del fuego
+      desc: Alarma sonora y visual en cuanto registra la fuga.
+    - icon: shield
+      title: Corte automático
+      desc: Con electroválvula, cierra la línea de gas por sí solo.
+    - icon: doc
+      title: Cuándo es obligatorio
+      desc: "NTC 2024 en CDMX: obra nueva, remodelación o cambio de uso."
+    - icon: pin
+      title: Instalación
+      desc: Lo instalamos en CDMX y el Estado de México.
+  norma: NTC-PA 2024 (CDMX), numeral 4.4.5.2
+  claves:
+    - label: Gases
+      value: Gas LP y gas natural
+    - label: Colocación
+      value: LP cerca del piso · natural cerca del techo
+    - label: Corte
+      value: Electroválvula en la línea de gas
+    - label: Integración
+      value: Autónomo o panel de alarma
+  showcaseTitle: Datos clave
+  showcaseAccent: del detector de gas
+  showcaseDesc: Gas detectado, altura de montaje, tipo de aviso y calibración.
+  faqAccent: sobre detectores de gas
+  guia:
+    title: Cómo elegir tu
+    titleAccent: detector de gas
+    desc: Tipo de gas, dónde se coloca, corte automático y lo que pide la norma en la CDMX.
+fichaHeads:
+  vitrina:
+    - "El detector de gas avisa antes de que la mezcla llegue a concentración inflamable. Cambia el sensor y la posición según el gas: el LP es más pesado que el aire y se acumula abajo; el natural sube al techo."
+    - Hay equipos autónomos, con electroválvula que corta el suministro y modelos conectados al panel de alarma. Te decimos cuál pide tu instalación.
+  presentaciones:
+    - Las presentaciones van del detector de gas autónomo de enchufe al sistema con electroválvula de corte automático y al sensor cableado a panel, con aviso a la central.
+    - Cocinas comerciales, cuartos de calderas, cuartos de máquinas y bodegas con tanque estacionario son los casos donde el corte automático se paga solo.
+  comparativa:
+    - La tabla compara los detectores de gas por tipo de gas, forma de aviso y si accionan o no la electroválvula, que es la diferencia entre enterarte y evitar el evento.
+    - "La altura de montaje no es opcional: sensor bajo para gas LP, alto para gas natural. Un equipo bien elegido mal colocado no detecta nada."
+  guia:
+    - "Aquí va el criterio: qué gas manejas, cuántos puntos de fuga probables hay, si necesitas corte automático y cómo se integra con el panel y con la alarma audible."
+    - Con eso resuelto, la instalación y las pruebas se hacen en la misma visita, con constancia para tu expediente.
+  giros:
+    - Restaurantes, panaderías, tortillerías, hoteles, lavanderías y naves con caldera son los giros donde la ficha de Protección Civil menciona detección de gas.
+    - Abre la ficha de tu actividad y revisa qué más va junto con el detector.
+  relacionados:
+    - La detección de gas se cotiza normalmente junto con el extintor tipo K de la cocina, la detección de humo y la señalización de la zona de riesgo.
+    - Te lo dejamos como un solo proyecto, con una visita de instalación y un calendario de pruebas.
+  faq:
+    - "Resolvemos lo que más se pregunta: dónde se coloca según el gas, si conviene el corte automático, cada cuándo se calibra y qué hacer cuando el detector alarma."
+    - "Dinos qué gas usas y cuántos equipos de consumo tienes: te proponemos la distribución."
 ---
 
 Una fuga de gas no se ve y, en una cocina con ruido y extracción, casi no se huele. El **detector de gas** avisa en cuanto la concentración sube, y con una **electroválvula** puede cerrar el paso del gas antes de que alguien tenga que reaccionar.

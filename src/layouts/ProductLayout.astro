@@ -15,13 +15,13 @@ import DataTable from '@components/DataTable.astro';
 import GirosQueLoNecesitan from '@components/GirosQueLoNecesitan.astro';
 import RelatedLinks from '@components/RelatedLinks.astro';
 import FAQWithContact from '@components/FAQWithContact.astro';
-import { FICHAS, FICHA_DEFAULT, HEADS_DEFAULT } from '@data/fichas';
-import { FICHAS_HEADS } from '@data/fichas-heads';
-import { extintoresFichas } from '@data/extintores';
+import { FICHA_DEFAULT, HEADS_DEFAULT } from '@data/fichas';
 import { EXT_FORMATO_LABEL } from '@data/extintores-catalogo';
 import { cierreExtintores, cierreGeneral, faltanParaCuatro } from '@data/cierre';
 import { CONTACT, waUrl, telUrl, TAXONOMY, sectionMenuItems } from '@config/site';
 import { slugify } from '@lib/slug';
+import { getEntry } from 'astro:content';
+import type { FichaData, FichaHeads } from '@data/fichas';
 
 export interface Props {
   slug: string;
@@ -42,6 +42,8 @@ export interface Props {
   faqs?: { question: string; answer: string }[];
   related?: { label: string; href: string; description?: string }[];
   variantes?: Variante[];
+  ficha?: FichaData;
+  fichaHeads?: Partial<FichaHeads>;
 }
 
 export interface Variante {
@@ -51,17 +53,20 @@ export interface Variante {
 }
 
 const { slug, title, description, category, seoTitle, seoDescription, image, canonical, price,
-  faqs = [], related = [], variantes = [] } = Astro.props;
+  faqs = [], related = [], variantes = [], ficha, fichaHeads } = Astro.props;
 const fichaData = {
   ...FICHA_DEFAULT,
-  ...(FICHAS[slug] ?? {}),
-  heroBadge: FICHAS[slug]?.heroBadge ?? TAXONOMY.categories.find((item) => item.slug === category)?.label ?? category,
-  heroTitle: FICHAS[slug]?.heroTitle ?? title,
-  descRight: FICHAS[slug]?.descRight ?? [description],
-  norma: FICHAS[slug]?.norma ?? '',
-  claves: FICHAS[slug]?.claves ?? [],
+  ...(ficha ?? {}),
+  heroBadge: ficha?.heroBadge ?? TAXONOMY.categories.find((item) => item.slug === category)?.label ?? category,
+  heroTitle: ficha?.heroTitle ?? title,
+  descRight: ficha?.descRight ?? [description],
+  norma: ficha?.norma ?? '',
+  claves: ficha?.claves ?? [],
 };
-const heads = { ...HEADS_DEFAULT, ...(FICHAS_HEADS[slug] ?? {}) };
+const heads = { ...HEADS_DEFAULT, ...(fichaHeads ?? {}) };
+const extintoresEntry = await getEntry('l3', 'productos/extintores');
+if (!extintoresEntry || extintoresEntry.data.kind !== 'extintores') throw new Error('Falta la entrada L3: productos/extintores');
+const extintoresFichas = extintoresEntry.data.fichas;
 const waLink = waUrl(`Hola, quiero cotizar: ${title}. ¿Precio y disponibilidad?`);
 const publicPrice = price && !/^\s*cotizar\s*$/i.test(price) ? price : undefined;
 const menuCta = { label: 'Cotizar por WhatsApp', href: waLink, sub: 'Te decimos cuál conviene', external: true };

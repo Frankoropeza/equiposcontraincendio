@@ -1,4 +1,5 @@
 ---
+kind: service
 id: capacitacion-dc3
 path: /servicios/capacitacion-dc3/
 seo:

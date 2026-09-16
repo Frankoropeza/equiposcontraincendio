@@ -1,4 +1,5 @@
 ---
+kind: service
 id: instalacion
 path: /servicios/instalacion/
 seo:

@@ -56,6 +56,66 @@ variantes:
 relatedServices:
   - instalacion
   - inspeccion
+ficha:
+  heroBadge: Colgante · Montante · Pared · Oculto · NFPA 13 como referencia
+  heroTitle: Rociadores contra incendio
+  heroAccent: que actúan solos
+  descRight:
+    - Rociadores automáticos colgantes, montantes, de pared y ocultos, e instalación de la red a partir del proyecto del inmueble.
+    - Se abren solo los rociadores que alcanzan su temperatura y controlan el fuego mientras empieza, sin esperar a que alguien lo vea.
+  pillars:
+    - icon: check
+      title: Actúan solos
+      desc: El calor abre el rociador que está sobre el fuego.
+    - icon: shield
+      title: Sistema a la medida
+      desc: Húmedo, seco o preacción, según el inmueble.
+    - icon: doc
+      title: Cuándo son obligatorios
+      desc: NTC 2024 en CDMX y sistemas fijos de la NOM-002 en riesgo alto.
+    - icon: pin
+      title: Instalación
+      desc: Instalamos la red en CDMX y el Estado de México.
+  norma: NTC-PA 2024 (CDMX) · NFPA 13 y 25 como referencia
+  claves:
+    - label: Tipos
+      value: Colgante, montante, de pared y oculto
+    - label: Sistemas
+      value: Húmedo, seco, preacción y diluvio
+    - label: Bulbo
+      value: Naranja 57 °C · rojo 68 °C · amarillo 79 °C
+    - label: Obligatorios
+      value: Según uso y altura; siempre arriba de 23 m
+  showcaseTitle: Datos clave
+  showcaseAccent: de los rociadores
+  showcaseDesc: Tipos de rociador, esquemas de tubería y mantenimiento del sistema.
+  faqAccent: sobre rociadores contra incendio
+  guia:
+    title: Cómo funciona un
+    titleAccent: sistema de rociadores
+    desc: Cuándo son obligatorios, tipos de sistema, colores del bulbo y cómo se cotiza.
+fichaHeads:
+  vitrina:
+    - "El rociador automático actúa sobre el fuego en su origen: cada cabeza abre por temperatura, de forma individual, y descarga solo donde hace falta. Es el sistema que contiene un incendio sin que nadie esté presente."
+    - Los sistemas se arman por tipo de tubería —húmeda, seca o preacción— según la temperatura del área y lo que se esté protegiendo.
+  presentaciones:
+    - Las presentaciones cubren los tipos de rociador (colgante, montante, lateral, oculto) y los esquemas de tubería húmeda, seca y preacción, cada uno para un escenario distinto de nave, bodega u oficina.
+    - "En áreas que se congelan o en cuartos con electrónica crítica, el sistema no es el mismo que en una oficina: ahí es donde se define el proyecto."
+  comparativa:
+    - La tabla compara los tipos de rociador y de sistema por área de aplicación y condición de operación, que es la base del cálculo hidráulico posterior.
+    - "Ningún sistema de rociadores se cotiza en serio sin plano y uso del inmueble: la tabla te sirve para llegar a esa conversación con criterio."
+  guia:
+    - "Aquí está lo que conviene entender antes de invertir: cuándo son obligatorios, qué tipo de sistema pide tu inmueble, cómo se dimensiona la reserva de agua y qué mantenimiento exige después."
+    - Si tu proyecto ya está en marcha, mándanos planos y uso por área y lo revisamos contigo.
+  giros:
+    - Naves, bodegas de alto apilamiento, plazas comerciales, hoteles, hospitales y estacionamientos son los giros donde Protección Civil y las aseguradoras empujan hacia rociadores.
+    - Revisa la ficha de tu actividad para ver qué se pide en tu caso además del sistema fijo.
+  relacionados:
+    - Un sistema de rociadores convive con hidrantes y gabinetes, detección y alarma, señalización y los extintores portátiles que siguen siendo obligatorios.
+    - Te ayudamos a ordenar todo el proyecto en una sola ruta, por etapas si el presupuesto lo pide.
+  faq:
+    - "Contestamos lo esencial: cuándo son obligatorios, cuánto cuesta aproximarse al proyecto, si se activan todos a la vez (no) y qué mantenimiento pide el sistema."
+    - Cuéntanos superficie, altura y giro y te decimos por dónde empezar.
 ---
 
 Un sistema de rociadores **ataca el incendio mientras empieza**, sin esperar a que alguien lo vea: el calor abre solo el rociador que está sobre el fuego y el agua lo controla antes de que se extienda. Por eso es el sistema fijo más común en naves, bodegas, plazas, hoteles y edificios altos.

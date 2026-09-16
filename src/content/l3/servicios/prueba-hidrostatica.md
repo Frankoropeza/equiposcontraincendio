@@ -1,4 +1,5 @@
 ---
+kind: service
 id: prueba-hidrostatica
 path: /servicios/prueba-hidrostatica/
 seo:

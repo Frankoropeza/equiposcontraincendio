@@ -4,7 +4,7 @@ import ServiceL3 from '@components/ServiceL3.astro';
 import { getEntry } from 'astro:content';
 
 const entry = await getEntry('l3', 'servicios/prueba-hidrostatica');
-if (!entry) throw new Error('Falta la entrada L3: servicios/prueba-hidrostatica');
+if (!entry || 'kind' in entry.data && entry.data.kind === 'extintores') throw new Error('Falta la entrada L3: servicios/prueba-hidrostatica');
 ---
 
 <ServiceL3 data={entry.data} />

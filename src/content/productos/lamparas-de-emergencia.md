@@ -56,6 +56,66 @@ variantes:
 relatedServices:
   - instalacion
   - inspeccion
+ficha:
+  heroBadge: LED · Batería de respaldo · NOM-025-STPS-2008, 5.11
+  heroTitle: Lámparas de emergencia
+  heroAccent: para rutas y salidas
+  descRight:
+    - Lámparas LED de dos faros, de sobreponer, industriales y señales de salida iluminadas que encienden solas al cortarse la energía.
+    - Se colocan en la ruta de evacuación, escaleras y salidas, donde un corte de luz se vuelve un riesgo.
+  pillars:
+    - icon: check
+      title: Encienden solas
+      desc: Detectan el corte de energía y alumbran con su batería.
+    - icon: shield
+      title: Ruta visible
+      desc: Escaleras, cambios de dirección y puertas de salida iluminados.
+    - icon: doc
+      title: Lo que pide la NOM-025
+      desc: Iluminación de emergencia donde el corte de luz es un riesgo.
+    - icon: pin
+      title: Instalación incluida
+      desc: Las montamos en CDMX y el Estado de México.
+  norma: NOM-025-STPS-2008, 5.11
+  claves:
+    - label: Fuente
+      value: LED con batería recargable
+    - label: Modelos
+      value: Dos faros, sobreponer, industrial y salida
+    - label: Autonomía de referencia
+      value: 90 min (NFPA 101)
+    - label: Ubicación
+      value: Rutas, escaleras y salidas
+  showcaseTitle: Datos clave
+  showcaseAccent: de las lámparas de emergencia
+  showcaseDesc: Autonomía, montaje, cobertura y prueba periódica de baterías.
+  faqAccent: sobre lámparas de emergencia
+  guia:
+    title: Dónde van las
+    titleAccent: lámparas de emergencia
+    desc: Lo que pide la norma, dónde se colocan y cómo elegir el modelo para cada punto.
+fichaHeads:
+  vitrina:
+    - La lámpara de emergencia enciende sola cuando se va la luz y mantiene iluminada la ruta de evacuación con batería de respaldo, conforme al criterio de iluminación de la NOM-025-STPS-2008.
+    - Escaleras, pasillos sin ventanas, salidas y cuartos de máquinas son los puntos donde un apagón deja de ser molestia y se vuelve riesgo.
+  presentaciones:
+    - "Las presentaciones cambian por tipo de luminaria, autonomía de batería y montaje: de muro, de sobreponer, con faros direccionables o combinadas con señal de salida."
+    - La autonomía se elige por el tiempo real que toma evacuar tu inmueble, no por el número más grande de la caja.
+  comparativa:
+    - La tabla compara las lámparas de emergencia por autonomía, tipo de montaje y cobertura, para colocar el equipo adecuado en cada tramo de la ruta.
+    - "Un pasillo largo pide más de una luminaria: lo que importa es que no queden tramos oscuros entre una y otra."
+  guia:
+    - "Aquí va lo que hay que definir: cuántas lámparas por tramo, qué autonomía, dónde se montan respecto a escaleras y salidas, y cada cuándo se prueban las baterías."
+    - Con eso resuelto, la instalación se hace en una visita y queda registro para tu expediente.
+  giros:
+    - Escuelas, hoteles, oficinas, hospitales, plazas y naves son los giros donde la ficha de Protección Civil revisa iluminación de emergencia junto con la señalización.
+    - Revisa la ficha de tu actividad para ver el conjunto que te van a pedir.
+  relacionados:
+    - Las lámparas de emergencia se cotizan normalmente junto con señalización fotoluminiscente de ruta y salida, y con la detección y alarma del inmueble.
+    - Te lo dejamos como un solo proyecto de evacuación, instalado y probado.
+  faq:
+    - "Resolvemos lo frecuente: cuántas lámparas necesitas, cuánta autonomía pide la norma, si deben probarse cada mes y cuándo se cambian las baterías."
+    - Mándanos plano o metros por nivel y te proponemos la distribución.
 ---
 
 Cuando se va la luz con el inmueble lleno, lo que evita el tropiezo en la escalera no es el extintor: es la **iluminación de emergencia**. Una lámpara de emergencia enciende sola al detectar el corte y deja visible la ruta de evacuación el tiempo necesario para salir.
