@@ -19,6 +19,7 @@
 // ============================================================================
 import { getCollection, render } from 'astro:content'
 import ArticleLayout from '@layouts/ArticleLayout.astro'
+import { relDesc } from '@data/related-desc'
 import { blogCategory } from '@config/site'
 
 export async function getStaticPaths() {
@@ -46,9 +47,9 @@ export async function getStaticPaths() {
     )
 
     const related = [...declared, ...sameCategory, ...rest].slice(0, 3).map((a) => ({
-      label: a.data.title,
+      label: a.data.cardTitle ?? a.data.title,
       href: `/blog/${a.id}/`,
-      description: a.data.description,
+      description: a.data.cardDescription ?? a.data.description,
     }))
 
     // ── Ruta comercial del artículo ───────────────────────────────────────
@@ -56,11 +57,11 @@ export async function getStaticPaths() {
       ...(d.relatedServices ?? [])
         .map((ref) => byId(servicios, ref.id))
         .filter(Boolean)
-        .map((s) => ({ label: s!.data.title, href: `/servicios/${s!.id}/`, description: s!.data.description })),
+        .map((s) => ({ label: s!.data.cardTitle ?? s!.data.title, href: `/servicios/${s!.id}/`, description: relDesc('servicios', s!.id, s!.data.cardDescription ?? s!.data.description) })),
       ...(d.relatedProducts ?? [])
         .map((ref) => byId(productos, ref.id))
         .filter(Boolean)
-        .map((p) => ({ label: p!.data.title, href: `/productos/${p!.id}/`, description: p!.data.description })),
+        .map((p) => ({ label: p!.data.cardTitle ?? p!.data.title, href: `/productos/${p!.id}/`, description: p!.data.cardDescription ?? p!.data.description })),
     ].slice(0, 3)
 
     return { params: { slug: articulo.id }, props: { articulo, related, commercial } }
