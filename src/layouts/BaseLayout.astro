@@ -153,16 +153,9 @@ const jsonLd = buildSchema(pageType, schemaData);
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#c62828" />
 
-    {/*
-      ── Fuentes self-hosted anti-CLS (C3) ──
-      Esta PLANTILLA usa la pila system-ui de tokens.css (sin woff2 propios), por
-      eso los preload van comentados: descomentándolos sin el archivo real darían
-      404. Al elegir tipografía propia, coloca los woff2 en /public/fonts, ajusta
-      --font-body / --font-heading en src/styles/tokens.css y descomenta:
-        <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin />
-        <link rel="preload" href="/fonts/outfit-700.woff2" as="font" type="font/woff2" crossorigin />
-      Self-host + font-display:swap + preload. NO Google Fonts CDN.
-    */}
+    {/* ── Fuentes autohospedadas (F3.5): Outfit e Inter con font-display: swap. ── */}
+    <link rel="preload" href="/fonts/inter-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/outfit-latin-v1.woff2" as="font" type="font/woff2" crossorigin />
 
     {/*
       ── Preconnect CDN de imágenes (E3) — opcional ──

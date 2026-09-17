@@ -3,6 +3,29 @@ Canónico: familia --c-* / --sp-* (origen PROYECTORED). Importar UNA sola vez en
 Resuelve el anti-patrón C2 (doble fuente de tokens). NO redefinir estos valores en otro archivo.
 El bloque "PUENTE DE ALIAS" mapea nombres heredados (MESECI --color-*, --space-*) al canónico
 para que los componentes extraídos rendericen sin reescritura. Migrar a nombres canónicos es deuda de roadmap. */
+/* ─── FUENTES AUTOHOSPEDADAS (F3.5, 2026-09-16) ────────────────────────────
+Outfit (títulos) e Inter (texto) estaban declaradas en --font-* pero nunca se
+servían: cada equipo pintaba su fuente del sistema. Ahora viajan desde /fonts/
+como variables (eje wght) con subconjunto latino + los signos que usa el sitio
+(₂ ″ → ≥ – —): Inter 400–700 (26 KB) y Outfit 500–800 (20 KB). Licencia OFL en
+public/fonts/LICENSE-*.txt. Si cambias el archivo, sube el sufijo -vN (caché
+inmutable en public/_headers). */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/inter-latin-v1.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 500 800;
+  font-display: swap;
+  src: url('/fonts/outfit-latin-v1.woff2') format('woff2');
+}
+
 :root {
   /* ---------- COLOR (marca) ---------- */
   --c-primary: #c62828;
