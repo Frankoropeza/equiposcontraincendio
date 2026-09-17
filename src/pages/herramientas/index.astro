@@ -37,6 +37,7 @@ import {
   herramientasCompany,
   herramientasConsultaMsg,
   herramientasRelated,
+  herramientasFaqHead,
 } from '@data/herramientas'
 
 // ── Tarjetas del hub (4, homologadas con el header: 3 herramientas + formatos).
@@ -217,7 +218,7 @@ const schemaData = {
   />
 
   {/* ─── FAQ + Contacto ─── */}
-  <FAQWithContact items={faqs} waNumber={CONTACT.whatsapp} />
+  <FAQWithContact items={faqs} waNumber={CONTACT.whatsapp} {...herramientasFaqHead} />
 </PageLayout>
 
 <style>

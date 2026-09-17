@@ -28,6 +28,7 @@ import {
   coberturaFaqs,
   coberturaTestimoniosHead,
   coberturaTestimoniosNombres,
+  coberturaFaqHead,
 } from '@data/cobertura'
 import { cierreCobertura, cierreGeneral, faltanParaCuatro } from '@data/cierre'
 import { testimonios } from '@data/testimonios'
@@ -211,7 +212,7 @@ const coberturaTestimonios = coberturaTestimoniosNombres
   />
 
   {/* ─── FAQ + Contacto ─── */}
-  <FAQWithContact items={coberturaFaqs} waNumber={CONTACT.whatsapp} />
+  <FAQWithContact items={coberturaFaqs} waNumber={CONTACT.whatsapp} {...coberturaFaqHead} />
 </PageLayout>
 
 <style>

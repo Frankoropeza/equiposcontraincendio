@@ -181,8 +181,8 @@ export const plantillasCardCta: Record<string, string> = {
 };
 
 export const plantillasRelated = [
-  { label: 'Gestión documental', href: '/servicios/gestion-documental/', desc: 'Que el expediente lo llevemos nosotros, al día todo el año.' },
-  { label: 'Qué exige Protección Civil', href: '/proteccion-civil/', desc: 'Requisitos del trámite en CDMX y Estado de México.' },
+  { label: 'Gestión documental', href: '/servicios/gestion-documental/', desc: 'Nosotros llevamos el expediente todo el año.' },
+  { label: 'Qué exige Protección Civil', href: '/proteccion-civil/', desc: 'Dónde se presentan los formatos llenos.' },
   { label: 'Capacitación de brigada', href: '/servicios/capacitacion-dc3/', desc: 'Constancias DC-3 para respaldar tu censo.' },
   { label: 'Verifica tu extintor', href: '/herramientas/verifica-tu-extintor/', desc: 'Revisión guiada antes de llenar la bitácora.' },
 ];
@@ -230,3 +230,15 @@ export const plantillasFaqs = [
     answer: 'Sí. Son gratuitos y sin registro para cualquier empresa. Si después quieres que nosotros llevemos el mantenimiento y el expediente, escríbenos; si no, quédate con los formatos y úsalos.',
   },
 ];
+
+/** Encabezado del bloque FAQ + contacto (C3, 2026-09-16): propio de esta L2,
+ *  antes era el genérico de FAQWithContact repetido en seis páginas. */
+export const plantillasFaqHead = {
+  title: 'Preguntas sobre',
+  titleAccent: 'formatos de Protección Civil',
+  desc: 'Cuándo se llena cada formato, quién lo firma y qué autoridad lo revisa.',
+  body: [
+    'Resolvemos las dudas al usar los formatos descargables: cada cuándo se llena la bitácora, qué lleva un acta de simulacro y si sirven para la STPS además de Protección Civil.',
+    'Si necesitas un formato que no está aquí, pídelo en el formulario y te decimos si lo tenemos.',
+  ],
+}

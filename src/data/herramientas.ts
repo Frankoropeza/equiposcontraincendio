@@ -312,8 +312,20 @@ export const herramientasConsultaMsg =
 // Sustituyen al SectionMenu de cierre que tenía la página: mismo destino, pero
 // con el componente que usan las otras tres L2, para que todas cierren igual.
 export const herramientasRelated = [
-  { label: 'Formatos descargables', href: '/plantillas/', desc: 'Bitácora de revisión, acta de simulacro y censo de brigada.' },
-  { label: 'Qué exige Protección Civil', href: '/proteccion-civil/', desc: 'Requisitos del trámite en CDMX y Estado de México.' },
-  { label: 'Equipos contra incendios', href: '/productos/', desc: 'Extintores, detección, hidrantes y señalización.' },
-  { label: 'Servicios contra incendio', href: '/servicios/', desc: 'Instalación, mantenimiento, inspección y capacitación.' },
+  { label: 'Formatos descargables', href: '/plantillas/', desc: 'Documenta el resultado en la bitácora.' },
+  { label: 'Qué exige Protección Civil', href: '/proteccion-civil/', desc: 'Qué piden además del cálculo de extintores.' },
+  { label: 'Equipos contra incendios', href: '/productos/', desc: 'Compra los extintores que te dio el cálculo.' },
+  { label: 'Servicios contra incendio', href: '/servicios/', desc: 'Instalación y mantenimiento tras el cálculo.' },
 ];
+
+/** Encabezado del bloque FAQ + contacto (C3, 2026-09-16): propio de esta L2,
+ *  antes era el genérico de FAQWithContact repetido en seis páginas. */
+export const herramientasFaqHead = {
+  title: 'Preguntas sobre',
+  titleAccent: 'la NOM-002-STPS-2010',
+  desc: 'Qué calculan las herramientas, en qué normas se basan y qué hacer con el resultado.',
+  body: [
+    'Explicamos la norma que sostiene cada herramienta: cómo se clasifica el riesgo de incendio, cuántos extintores pide y a qué altura se colocan, además de cómo tratamos tus datos.',
+    'Si el resultado te deja dudas o marca riesgo alto, envíalo en el formulario y lo revisamos contigo.',
+  ],
+}

@@ -685,21 +685,33 @@ export const productosRelated = [
   {
     label: 'Servicios contra incendio',
     href: '/servicios/',
-    desc: 'Instalación, mantenimiento, recarga e inspección del equipo.',
+    desc: 'Instalamos y mantenemos el equipo que elegiste.',
   },
   {
     label: 'Cobertura CDMX y Edomex',
     href: '/cobertura/',
-    desc: 'Zonas donde entregamos, instalamos y damos servicio.',
+    desc: 'Entrega e instalación en CDMX y Edomex.',
   },
   {
     label: 'Calculadora de extintores',
     href: '/herramientas/cuantos-extintores-necesito/',
-    desc: 'Cuántos necesitas según superficie y nivel de riesgo.',
+    desc: 'Calcula cuántos pide la norma para tu inmueble.',
   },
   {
     label: 'Formatos descargables',
     href: '/plantillas/',
-    desc: 'Bitácora de revisión, acta de simulacro y censo de brigada.',
+    desc: 'Bitácora para registrar la revisión del equipo.',
   },
 ];
+
+/** Encabezado del bloque FAQ + contacto (C3, 2026-09-16): propio de esta L2,
+ *  antes era el genérico de FAQWithContact repetido en seis páginas. */
+export const productosFaqHead = {
+  title: 'Preguntas sobre',
+  titleAccent: 'material contra incendios',
+  desc: 'Qué equipo necesitas, qué exige la norma y cómo compramos, entregamos y facturamos.',
+  body: [
+    'Resolvemos las dudas que llegan antes de cotizar material contra incendios: cómo elegir el equipo según el riesgo, qué pide la NOM-002-STPS-2010 y qué cambia según el giro del inmueble.',
+    'Si tu caso no aparece, escríbenos en el formulario con el giro y la superficie y te respondemos por WhatsApp.',
+  ],
+}

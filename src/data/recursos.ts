@@ -268,7 +268,7 @@ export const recursosCompany = {
 
 export const recursosRelated = [
   { label: 'Diagnóstico de riesgo', href: '/servicios/diagnostico-de-riesgo/', desc: 'Clasificación del inmueble y lista de lo que falta.' },
-  { label: 'Gestión documental', href: '/servicios/gestion-documental/', desc: 'Expediente de equipo ordenado para Protección Civil y STPS.' },
+  { label: 'Gestión documental', href: '/servicios/gestion-documental/', desc: 'Expediente listo para Protección Civil y STPS.' },
   { label: 'Capacitación y DC-3', href: '/servicios/capacitacion-dc3/', desc: 'Brigada y uso de extintores con constancia.' },
   { label: 'Catálogo de extintores', href: '/productos/extintores/', desc: 'PQS, CO₂, clase K, agua y agente limpio.' },
 ];

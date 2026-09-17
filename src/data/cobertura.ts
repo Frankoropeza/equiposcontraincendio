@@ -35,7 +35,7 @@ export const zoneCard: Record<string, { src: string; alt: string; badge: string;
     src: '/images/servicios/instalacion-deteccion-alarma.avif',
     alt: 'Instalación de detección y alarma en un edificio de oficinas de la CDMX',
     badge: 'Las 16 alcaldías',
-    blurb: 'Servicio en sitio en las 16 alcaldías, con el expediente en el formato que pide Protección Civil de la ciudad.',
+    blurb: 'Servicio en sitio en todas las alcaldías, con el expediente que pide Protección Civil.',
     cta: 'Cobertura en CDMX',
   },
   edomex: {
@@ -185,9 +185,9 @@ export const coberturaCompany = {
 
 // ── Enlaces relacionados ─────────────────────────────────────────────────────
 export const coberturaRelated = [
-  { label: 'Qué exige Protección Civil', href: '/proteccion-civil/', desc: 'Requisitos del trámite en CDMX y Estado de México.' },
-  { label: 'Servicios contra incendio', href: '/servicios/', desc: 'Instalación, mantenimiento, inspección y capacitación.' },
-  { label: 'Equipos contra incendios', href: '/productos/', desc: 'Extintores, detección, hidrantes y señalización.' },
+  { label: 'Qué exige Protección Civil', href: '/proteccion-civil/', desc: 'Requisitos del trámite según tu municipio.' },
+  { label: 'Servicios contra incendio', href: '/servicios/', desc: 'Lo que hacemos en sitio dentro de la zona.' },
+  { label: 'Equipos contra incendios', href: '/productos/', desc: 'Equipo con entrega en CDMX y Edomex.' },
   { label: 'Contacto directo', href: '/contacto/', desc: 'Teléfono, WhatsApp y domicilio de oficinas.' },
 ];
 
@@ -242,3 +242,15 @@ export const coberturaFaqs: { question: string; answer: string }[] = [
     answer: 'Para venta de equipo podemos coordinar envíos a otras zonas; para instalación y mantenimiento en sitio, consúltanos según la ubicación. Escríbenos y lo revisamos.',
   },
 ];
+
+/** Encabezado del bloque FAQ + contacto (C3, 2026-09-16): propio de esta L2,
+ *  antes era el genérico de FAQWithContact repetido en seis páginas. */
+export const coberturaFaqHead = {
+  title: 'Preguntas sobre',
+  titleAccent: 'zonas, traslados y entregas',
+  desc: 'Dónde damos servicio, cuánto tardamos en llegar y qué pasa fuera de CDMX y Edomex.',
+  body: [
+    'Aclaramos lo que conviene saber antes de pedir una visita o una entrega: zonas que atendemos, precios de referencia de extintores y recarga, costo de traslado y tiempos de llegada.',
+    'Si tu inmueble está en el límite de una zona, indícalo en el formulario y confirmamos la cobertura por WhatsApp.',
+  ],
+}

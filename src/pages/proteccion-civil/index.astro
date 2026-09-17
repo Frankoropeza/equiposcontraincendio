@@ -36,6 +36,7 @@ import {
   pcRelated,
   pcFaqs,
   pcRequerimientoMsg,
+  pcFaqHead,
 } from '@data/proteccion-civil'
 import { cierreProteccionCivil, faltanParaCuatro } from '@data/cierre'
 
@@ -231,7 +232,7 @@ const schemaData = {
   />
 
   {/* ─── FAQ + Contacto ─── */}
-  <FAQWithContact items={pcFaqs} waNumber={CONTACT.whatsapp} />
+  <FAQWithContact items={pcFaqs} waNumber={CONTACT.whatsapp} {...pcFaqHead} />
 </PageLayout>
 
 <style>

@@ -272,10 +272,10 @@ export const serviciosCompany = {
 
 // ── Enlaces relacionados ─────────────────────────────────────────────────────
 export const serviciosRelated = [
-  { label: 'Equipos contra incendios', href: '/productos/', desc: 'Extintores, detección, hidrantes y señalización.' },
-  { label: 'Verifica tu extintor', href: '/herramientas/verifica-tu-extintor/', desc: 'Revisión guiada para saber si tu equipo está vigente.' },
-  { label: 'Qué exige Protección Civil', href: '/proteccion-civil/', desc: 'Requisitos del trámite en CDMX y Estado de México.' },
-  { label: 'Formatos descargables', href: '/plantillas/', desc: 'Bitácora de revisión, acta de simulacro y censo de brigada.' },
+  { label: 'Equipos contra incendios', href: '/productos/', desc: 'El equipo que instalamos y damos mantenimiento.' },
+  { label: 'Verifica tu extintor', href: '/herramientas/verifica-tu-extintor/', desc: 'Revisa si tu extintor necesita servicio.' },
+  { label: 'Qué exige Protección Civil', href: '/proteccion-civil/', desc: 'El servicio que respalda tu trámite.' },
+  { label: 'Formatos descargables', href: '/plantillas/', desc: 'Registra en bitácora cada servicio recibido.' },
 ];
 
 // ── Reseñas del servicio ────────────────────────────────────────────────────
@@ -337,3 +337,15 @@ export const serviciosFaqs: { question: string; answer: string }[] = [
     answer: 'Atendemos la Ciudad de México, el Estado de México y la zona metropolitana. Cuéntanos dónde estás y te confirmamos cobertura y tiempos.',
   },
 ];
+
+/** Encabezado del bloque FAQ + contacto (C3, 2026-09-16): propio de esta L2,
+ *  antes era el genérico de FAQWithContact repetido en seis páginas. */
+export const serviciosFaqHead = {
+  title: 'Preguntas sobre',
+  titleAccent: 'sistemas contra incendios',
+  desc: 'Periodicidad, costos, entregables y cómo elegir a quien instala y da mantenimiento.',
+  body: [
+    'Estas son las preguntas que más recibimos antes de contratar instalación o mantenimiento: cada cuándo se da servicio, qué tipos de sistemas existen y qué documentación se entrega al terminar.',
+    'Si necesitas un servicio que no aparece aquí, descríbelo en el formulario y te decimos si lo cubrimos y en qué plazo.',
+  ],
+}

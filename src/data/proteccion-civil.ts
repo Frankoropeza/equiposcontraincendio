@@ -166,10 +166,10 @@ export const pcCompany = {
 };
 
 export const pcRelated = [
-  { label: 'Gestión documental', href: '/servicios/gestion-documental/', desc: 'Ordenamos y mantenemos al día el expediente del inmueble.' },
-  { label: 'Diagnóstico de riesgo', href: '/servicios/diagnostico-de-riesgo/', desc: 'Clasificación conforme a la Tabla 1 de la NOM-002.' },
-  { label: 'Formatos descargables', href: '/plantillas/', desc: 'Bitácora, acta de simulacro y censo de brigada.' },
-  { label: 'Cobertura CDMX y Edomex', href: '/cobertura/', desc: 'Dónde damos servicio en sitio y cómo se agenda.' },
+  { label: 'Gestión documental', href: '/servicios/gestion-documental/', desc: 'El expediente listo para la visita.' },
+  { label: 'Diagnóstico de riesgo', href: '/servicios/diagnostico-de-riesgo/', desc: 'Clasificación de riesgo que pide el trámite.' },
+  { label: 'Formatos descargables', href: '/plantillas/', desc: 'Bitácora, acta y censo para la carpeta.' },
+  { label: 'Cobertura CDMX y Edomex', href: '/cobertura/', desc: 'Visitas en sitio en CDMX y Edomex.' },
 ];
 
 export const pcFaqs = [
@@ -218,3 +218,15 @@ export const pcFaqs = [
     answer: 'Por el inmueble, no por el papel. Un programa bien redactado no pasa una visita si los extintores están vencidos o las rutas bloqueadas. Escríbenos con lo que te pidieron y revisamos primero qué hay que corregir en sitio.',
   },
 ];
+
+/** Encabezado del bloque FAQ + contacto (C3, 2026-09-16): propio de esta L2,
+ *  antes era el genérico de FAQWithContact repetido en seis páginas. */
+export const pcFaqHead = {
+  title: 'Preguntas sobre',
+  titleAccent: 'trámites de Protección Civil',
+  desc: 'Programa Interno, visto bueno, carpeta y Unidad Interna, con el fundamento de cada respuesta.',
+  body: [
+    'Respondemos las dudas que más aparecen al preparar un trámite de Protección Civil: quién está obligado, qué documentos piden en la visita y qué significa cada término del expediente.',
+    'Si ya tienes un requerimiento o una visita programada, compártelo en el formulario y te decimos por dónde empezar.',
+  ],
+}
