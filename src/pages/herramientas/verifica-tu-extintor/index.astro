@@ -221,6 +221,13 @@ const menuCta = {
 </PageLayout>
 
 <script>
+  // F3.5: el scope de estilos es una clase astro-XXXX (scopedStyleStrategy
+  // 'class'); reescribir className la borraba. Se conserva al cambiar el estado.
+  const setPanelClass = (el: HTMLElement, cls: string) => {
+    const scope = [...el.classList].filter((c) => c.startsWith('astro-'))
+    el.className = [cls, ...scope].join(' ')
+  }
+
   const form = document.getElementById('chk-form') as HTMLFormElement | null
   const out = document.getElementById('chk-res') as HTMLElement | null
 
@@ -262,7 +269,7 @@ const menuCta = {
           'Con estos huecos, una verificación te levantaría observaciones. Lo urgente es el estado y la vigencia del equipo; la bitácora, la señalización y la capacitación se ordenan después.'
       }
 
-      out.className = `panel panel--res ${mod}`
+      setPanelClass(out, `panel panel--res ${mod}`)
       out.innerHTML = `
         <div class="res__head">
           <p class="res__eyebrow">Resultado</p>
@@ -306,7 +313,7 @@ const menuCta = {
     })
 
     form.addEventListener('reset', () => {
-      out.className = 'panel panel--res res--empty'
+      setPanelClass(out, 'panel panel--res res--empty')
       out.innerHTML = PLACEHOLDER
     })
   }

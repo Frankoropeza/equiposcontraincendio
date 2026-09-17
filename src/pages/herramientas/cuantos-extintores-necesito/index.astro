@@ -275,6 +275,13 @@ const AREAS = [
 </PageLayout>
 
 <script>
+  // F3.5: el scope de estilos es una clase astro-XXXX (scopedStyleStrategy
+  // 'class'); reescribir className la borraba. Se conserva al cambiar el estado.
+  const setPanelClass = (el: HTMLElement, cls: string) => {
+    const scope = [...el.classList].filter((c) => c.startsWith('astro-'))
+    el.className = [cls, ...scope].join(' ')
+  }
+
   const form = document.getElementById('ext-form') as HTMLFormElement | null
   const out = document.getElementById('ext-res') as HTMLElement | null
 
@@ -317,7 +324,7 @@ const AREAS = [
       const sup = n(data.get('superficie'))
 
       if (sup <= 0) {
-        out.className = 'panel panel--res res--warn'
+        setPanelClass(out, 'panel panel--res res--warn')
         out.innerHTML =
           '<p class="res__tag">Falta la superficie</p><p class="res__sub">Captura la superficie construida en metros cuadrados para calcular el mínimo.</p>'
         form.querySelector<HTMLInputElement>('input[name="superficie"]')?.focus()
@@ -352,7 +359,7 @@ const AREAS = [
         ...especificos.map((it) => ({ tipo: it.tipo, cant: it.cant, motivo: it.motivo })),
       ]
 
-      out.className = 'panel panel--res'
+      setPanelClass(out, 'panel panel--res')
       out.innerHTML = `
         <div class="res__head">
           <p class="res__eyebrow">Resultado</p>
@@ -423,7 +430,7 @@ const AREAS = [
     })
 
     form.addEventListener('reset', () => {
-      out.className = 'panel panel--res res--empty'
+      setPanelClass(out, 'panel panel--res res--empty')
       out.innerHTML = PLACEHOLDER
       form.querySelectorAll<HTMLInputElement>('input[name^="qty-"]').forEach((q) => {
         q.disabled = true

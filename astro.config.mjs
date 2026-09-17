@@ -169,6 +169,11 @@ export default defineConfig({
     inlineStylesheets: 'never',
   },
 
+  // F3.5 (2026-09-16): el scope de los estilos va como clase (astro-XXXX) en vez
+  // de atributo data-astro-cid-*. Misma especificidad (0,1,0); ~140 mil
+  // atributos menos en el dist.
+  scopedStyleStrategy: 'class',
+
   integrations: [sitemap(sitemapOptions), mdx()],
 
   vite: {

@@ -218,6 +218,13 @@ const CAMPOS = [
 </PageLayout>
 
 <script>
+  // F3.5: el scope de estilos es una clase astro-XXXX (scopedStyleStrategy
+  // 'class'); reescribir className la borraba. Se conserva al cambiar el estado.
+  const setPanelClass = (el: HTMLElement, cls: string) => {
+    const scope = [...el.classList].filter((c) => c.startsWith('astro-'))
+    el.className = [cls, ...scope].join(' ')
+  }
+
   const form = document.getElementById('riesgo-form') as HTMLFormElement | null
   const out = document.getElementById('riesgo-res') as HTMLElement | null
 
@@ -260,7 +267,7 @@ const CAMPOS = [
       const porArea = alto ? 200 : 300
       const minExt = superficie > 0 ? Math.ceil(superficie / porArea) : 0
 
-      out.className = alto ? 'panel panel--res res--alto' : 'panel panel--res res--ordinario'
+      setPanelClass(out, alto ? 'panel panel--res res--alto' : 'panel panel--res res--ordinario')
       out.innerHTML = `
         <div class="res__head">
           <p class="res__eyebrow">Resultado</p>
@@ -313,7 +320,7 @@ const CAMPOS = [
     })
 
     form.addEventListener('reset', () => {
-      out.className = 'panel panel--res res--empty'
+      setPanelClass(out, 'panel panel--res res--empty')
       out.innerHTML = PLACEHOLDER
     })
   }
