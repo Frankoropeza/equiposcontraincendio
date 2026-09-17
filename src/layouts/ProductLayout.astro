@@ -102,7 +102,7 @@ const relatedCandidates = [
     return { label: item.label, href: item.href, desc: extintoresFichas[id]?.badge ?? shortDescription(item.description) };
   }),
   ...(category === 'extintores' ? [
-    { label: 'Recarga de extintores', href: '/servicios/mantenimiento/', desc: 'Servicio anual y recarga, NOM-154.' },
+    { label: 'Mantenimiento de extintores', href: '/servicios/mantenimiento/', desc: 'Servicio anual y recarga, NOM-154.' },
     { label: 'Cuántos extintores necesito', href: '/herramientas/cuantos-extintores-necesito/', desc: 'Cantidad inicial para tu inmueble.' },
   ] : []),
 ];

@@ -4,7 +4,7 @@ id: diagnostico-de-riesgo
 path: /servicios/diagnostico-de-riesgo/
 seo:
   title: Diagnóstico de riesgo de incendio | NOM-002-STPS Tabla 1
-  description: "Diagnóstico de riesgo de incendio en CDMX y Edomex: clasificamos tu inmueble en ordinario o alto con la Tabla 1 de la NOM-002 y te decimos qué equipo te toca."
+  description: "Estudio de riesgo de incendio en CDMX y Edomex: clasificamos tu inmueble en ordinario o alto con la Tabla 1 de la NOM-002 y te decimos qué equipo te toca."
   serviceName: Diagnóstico de riesgo de incendio
   serviceType: Clasificación del riesgo de incendio conforme a la NOM-002-STPS-2010
   image: /images/servicios/auditoria-seguridad-contra-incendio.avif
@@ -105,7 +105,7 @@ vitrina:
       image: /images/servicios/inspeccion-sistema-alarma-extintor.avif
       imageAlt: Ruta de evacuación señalizada en nave industrial
       badge: Herramienta gratis
-      description: Oriéntate tú mismo con los seis criterios de la Tabla 1 antes de cotizar.
+      description: Oriéntate tú mismo con los criterios de la Tabla 1 antes de cotizar.
       specs:
         - label: Criterios
           value: Seis de la Tabla 1
@@ -145,7 +145,7 @@ vitrina:
 tablaPrincipal:
   id: tabla-1
   eyebrow: NOM-002-STPS-2010, Tabla 1
-  title: Los seis criterios
+  title: Los criterios de la Tabla 1
   titleAccent: que deciden tu grado de riesgo
   desc: "La tabla no promedia ni pondera: basta con que un solo concepto alcance su umbral."
   body:

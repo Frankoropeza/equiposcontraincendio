@@ -75,7 +75,7 @@ export const cierrePlantillas: FichaCierre[] = [
   {
     badge: 'Herramienta gratis',
     title: 'Verifica tu extintor',
-    description: 'Doce puntos para saber en minutos si tu extintor está vigente.',
+    description: 'Revisa en minutos si tu extintor está vigente.',
     href: '/herramientas/verifica-tu-extintor/',
     ctaLabel: 'Verifica tu extintor',
     image: '/images/servicios/inspeccion-gabinete-hidrante-extintor.avif',

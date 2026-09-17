@@ -47,7 +47,7 @@ vitrina:
           value: Máx. 1.50 m
         - label: Se elige
           value: Por cilindro
-      ctaLabel: Soportes para extintor
+      ctaLabel: Soporte para extintor
     - title: Soportes vehiculares
       href: "#soporte-vehicular"
       image: /images/showcase/extintores-catalogo-profesional.avif
@@ -131,7 +131,7 @@ vitrina:
           value: NOM-002, 7.18
         - label: Evidencia
           value: Etiqueta nueva
-      ctaLabel: Recarga de extintores
+      ctaLabel: Mantenimiento de extintores
     - title: Señal de extintor
       href: /productos/senalizacion/
       image: /images/productos/senalizacion-luces-emergencia.avif
@@ -194,7 +194,7 @@ tablaPrincipal:
       - Nunca se compran sueltos
       - Sin el servicio que los respalde, no son evidencia
   note: "Si una refacción de tu extintor está dañada, el camino es el mantenimiento: el taller despresuriza el equipo, cambia la pieza por una del mismo modelo, lo recarga, lo prueba y le pone su etiqueta."
-  ctaLabel: Recarga de extintores
+  ctaLabel: Mantenimiento de extintores
   ctaHref: /servicios/mantenimiento/
 guia:
   eyebrow: Señales de mal montaje
@@ -297,7 +297,7 @@ modulos:
         desc: Del piso a la parte más alta del extintor.
     ctaLabel: Cotizar soportes
     ctaMsg: "Hola, quiero cotizar soportes de pared para extintor. Mis extintores son de (capacidad):"
-    ctaSecondaryLabel: Soportes para extintor
+    ctaSecondaryLabel: Soporte para extintor
     ctaSecondaryHref: /productos/soportes-accesorios-extintor/
     imgMain:
       src: /images/servicios/instalacion-equipo-almacen.avif
@@ -324,7 +324,7 @@ modulos:
         desc: Orientación y fijación según la unidad.
     ctaLabel: Cotizar soportes
     ctaMsg: "Hola, quiero cotizar soportes vehiculares para extintor. Son para (vehículos o maquinaria):"
-    ctaSecondaryLabel: Soportes para extintor
+    ctaSecondaryLabel: Soporte para extintor
     ctaSecondaryHref: /productos/soportes-accesorios-extintor/
     imgMain:
       src: /images/showcase/extintores-catalogo-profesional.avif
@@ -351,7 +351,7 @@ modulos:
         desc: Según la capacidad y el diámetro del cilindro.
     ctaLabel: Cotizar gabinetes
     ctaMsg: "Hola, quiero cotizar gabinetes para extintor (sobreponer o empotrable). Mis extintores son de (capacidad):"
-    ctaSecondaryLabel: Gabinetes con manguera
+    ctaSecondaryLabel: Hidrantes contra incendio
     ctaSecondaryHref: /productos/hidrantes-mangueras/
     imgMain:
       src: /images/productos/extintor-oficina-gabinete.avif
@@ -378,7 +378,7 @@ modulos:
         desc: Recarga, presurizado y prueba de fugas.
     ctaLabel: Cotizar servicio
     ctaMsg: "Hola, mi extintor necesita una refacción (válvula, manómetro o manguera). Es de (capacidad y agente):"
-    ctaSecondaryLabel: Recarga de extintores
+    ctaSecondaryLabel: Mantenimiento de extintores
     ctaSecondaryHref: /servicios/mantenimiento/
     imgMain:
       src: /images/showcase/refacciones-equipo-contra-incendio.avif
@@ -405,7 +405,7 @@ modulos:
         desc: Boquilla revisada por la grasa que acumula.
     ctaLabel: Cotizar servicio
     ctaMsg: "Hola, la manguera o boquilla de mi extintor está dañada. Es de (capacidad y agente):"
-    ctaSecondaryLabel: Recarga de extintores
+    ctaSecondaryLabel: Mantenimiento de extintores
     ctaSecondaryHref: /servicios/mantenimiento/
     imgMain:
       src: /images/servicios/inspeccion-recarga-extintores.avif
@@ -468,8 +468,8 @@ decision:
       - Tipo de unidad y capacidad
     - - Manguera, manómetro o válvula dañados
       - Mantenimiento con refacción del mismo modelo
-      - Recarga de extintores
-  ctaLabel: Recarga de extintores
+      - Mantenimiento de extintores
+  ctaLabel: Mantenimiento de extintores
   ctaHref: /servicios/mantenimiento/
 proceso:
   eyebrow: Cómo se elige
@@ -563,10 +563,10 @@ related:
   title: Productos, servicios y guías relacionados
   desc: Lo que suele hacer falta junto con el accesorio.
   links:
-    - label: Soportes para extintor
+    - label: Soporte para extintor
       href: /productos/soportes-accesorios-extintor/
       desc: Seis modelos de soporte y gabinete.
-    - label: Recarga de extintores
+    - label: Mantenimiento de extintores
       href: /servicios/mantenimiento/
       desc: Donde se cambian las piezas.
     - label: Venta de extintores

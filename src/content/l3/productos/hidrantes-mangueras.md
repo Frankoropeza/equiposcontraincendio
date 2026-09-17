@@ -131,7 +131,7 @@ vitrina:
           value: NOM-026-STPS
         - label: Entrega
           value: Planos y pruebas
-      ctaLabel: Instalar sistemas
+      ctaLabel: Instalación de sistemas
     - title: Revisión de la red
       href: /servicios/inspeccion/
       image: /images/servicios/inspeccion-gabinete-manguera-contra-incendio.avif
@@ -196,7 +196,7 @@ tablaPrincipal:
   note: "La presión y el caudal que necesita tu red no se estiman: salen de la memoria de cálculo del punto más desfavorable. Un gabinete instalado no demuestra que la red tenga presión cuando se abre la válvula."
 guia:
   eyebrow: Cuándo es obligatoria
-  title: Red hidráulica
+  title: Red contra incendios
   titleAccent: obligatoria según tu inmueble
   desc: La NOM-002 la liga al riesgo alto; en CDMX, la NTC de 2024 la liga al uso, el tamaño y la altura.
   body:
@@ -292,7 +292,7 @@ modulos:
         desc: Según el recorrido que resuelve el proyecto.
     ctaLabel: Cotizar gabinetes
     ctaMsg: Hola, quiero cotizar gabinetes con manguera contra incendio (sobreponer o empotrable).
-    ctaSecondaryLabel: Gabinetes con manguera
+    ctaSecondaryLabel: Gabinete contra incendio
     ctaSecondaryHref: /productos/gabinete-manguera-contra-incendio/
     imgMain:
       src: /images/showcase/gabinetes-estaciones-contra-incendio.avif
@@ -567,7 +567,7 @@ related:
   title: Productos, servicios y guías relacionados
   desc: Lo que suele hacer falta junto con la red hidráulica.
   links:
-    - label: Gabinetes con manguera
+    - label: Gabinete contra incendio
       href: /productos/gabinete-manguera-contra-incendio/
       desc: Cinco configuraciones.
     - label: Instalación de sistemas

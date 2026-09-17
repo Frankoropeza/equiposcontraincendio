@@ -275,7 +275,7 @@ export const TOOLS: readonly Tool[] = [
   {
     slug: 'verifica-tu-extintor',
     label: 'Verifica tu extintor',
-    desc: 'Doce puntos para saber si el servicio que te dieron es real y no una calcomanía.',
+    desc: 'Revisa si el servicio que te dieron es real y no una calcomanía.',
     norm: 'NOM-154-SCFI-2005',
     image: '/images/servicios/inspeccion-gabinete-hidrante-extintor.avif',
     imageAlt: 'Revisión de gabinete de hidrante y extintor en sitio',
@@ -452,7 +452,7 @@ export const NAV: readonly NavItem[] = [
         links: [
           { label: 'Cuántos extintores necesito', href: '/herramientas/cuantos-extintores-necesito/', desc: 'Mínimo por superficie y agente por área' },
           { label: 'Riesgo de incendio',          href: '/herramientas/riesgo-de-incendio/',          desc: 'Ordinario o alto según la NOM-002-STPS' },
-          { label: 'Verifica tu extintor',        href: '/herramientas/verifica-tu-extintor/',        desc: 'Doce puntos para comprobar el servicio' },
+          { label: 'Verifica tu extintor',        href: '/herramientas/verifica-tu-extintor/',        desc: 'Revisión guiada para comprobar el servicio' },
           { label: 'Formatos descargables',       href: '/plantillas/',                               desc: 'Bitácora, acta de simulacro y brigada' },
         ],
       },
@@ -469,7 +469,7 @@ export const NAV: readonly NavItem[] = [
     promo: {
       eyebrow: 'Herramienta gratuita',
       title: 'Verifica tu extintor',
-      text: 'Doce puntos para saber si el servicio que te dieron es real y no solo una calcomanía.',
+      text: 'Revisa si el servicio que te dieron es real y no solo una calcomanía.',
       cta: { label: 'Verificar mi extintor', href: '/herramientas/verifica-tu-extintor/' },
       secondary: { label: 'Todas las guías del blog', href: '/blog/' },
     },

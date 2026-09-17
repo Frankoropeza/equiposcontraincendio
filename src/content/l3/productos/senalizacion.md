@@ -131,7 +131,7 @@ vitrina:
           value: Desde la ruta
         - label: Entrega
           value: Croquis
-      ctaLabel: Instalar sistemas
+      ctaLabel: Instalación de sistemas
     - title: Revisión de señalización
       href: /servicios/inspeccion/
       image: /images/servicios/inspeccion-tablero-alarma-gabinete-manguera.avif
@@ -196,8 +196,8 @@ tablaPrincipal:
   note: En la Ciudad de México, un establecimiento mercantil que no requiere Programa Interno igual debe exhibir el 911 y la señalización de qué hacer ante sismo e incendio (Ley de Establecimientos Mercantiles, art. 10, fracc. XII).
 guia:
   eyebrow: Qué significa cada color
-  title: Los colores de seguridad
-  titleAccent: y lo que exige cada uno
+  title: Señales de protección civil
+  titleAccent: y su significado por color
   desc: La NOM-026-STPS-2008 fija el significado de cada color; la NOM-003-SSPC-2011 lo aplica a las señales de protección civil.
   body:
     - La NOM-026 aplica a los centros de trabajo y la NOM-003-SSPC a las señales y avisos de protección civil en cualquier inmueble; la segunda remite a la primera en lo que no cubre. Por eso en un centro de trabajo suelen pedirse las dos.
@@ -276,7 +276,7 @@ modulos:
         desc: Ninguna flecha lleva a una puerta cerrada.
     ctaLabel: Cotizar señales
     ctaMsg: Hola, quiero cotizar señales fotoluminiscentes de ruta de evacuación y salida de emergencia.
-    ctaSecondaryLabel: Señales de evacuación
+    ctaSecondaryLabel: Señalización fotoluminiscente
     ctaSecondaryHref: /productos/senalizacion-fotoluminiscente/
     imgMain:
       src: /images/productos/senalizacion-luces-emergencia.avif
@@ -544,7 +544,7 @@ related:
   links:
     - label: Señales de evacuación
       href: /productos/senalizacion-fotoluminiscente/
-      desc: Seis señales fotoluminiscentes.
+      desc: Señales fotoluminiscentes por función.
     - label: Instalación de sistemas
       href: /servicios/instalacion/
       desc: Levantamiento e instalación.
@@ -588,6 +588,8 @@ faq:
       answer: "No encontramos un numeral mexicano que las haga obligatorias con una duración fija. Son criterio técnico: si se corta la energía, la luz de emergencia es lo que mantiene visible la ruta. La NFPA 101, referencia técnica, pide 90 minutos de iluminación de emergencia."
     - question: ¿Qué es el croquis de evacuación y quién lo pide?
       answer: Es el plano del inmueble con las rutas, las salidas, el equipo contra incendio y el punto de reunión. En el Estado de México, el trámite de Protección Civil pide un croquis de distribución con señalamientos. Lo hacemos a partir del levantamiento, pero no sustituye al Programa Interno, que firma un tercero acreditado.
+    - question: ¿Qué significa el señalamiento de extintor verde?
+      answer: "Ninguna norma lo contempla: la señal de un extintor es roja, porque el rojo identifica al equipo contra incendio en la NOM-026-STPS-2008 y en la NOM-003-SSPC-2011. El verde indica condición segura, como rutas de evacuación, salidas y primeros auxilios. Si en tu inmueble hay una señal de extintor en verde, conviene cambiarla por la roja para que nadie la confunda con una salida."
     - question: ¿Dónde va la señal de un extintor?
       answer: Sobre el equipo, visible desde la circulación, para ubicarlo aunque el cilindro quede oculto por un mueble o una columna. Es roja, porque señala equipo contra incendio, y no debe confundirse con una señal de salida. El extintor mismo va a no más de 1.50 m del piso, conforme a la NOM-002-STPS-2010.
     - question: ¿Cada cuánto se cambia la señalización?

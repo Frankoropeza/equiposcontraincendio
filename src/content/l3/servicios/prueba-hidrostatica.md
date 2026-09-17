@@ -100,7 +100,7 @@ vitrina:
         - label: Sin fecha
           value: Prueba y placa
       ctaLabel: Cuándo toca
-    - title: Recarga de extintores
+    - title: Mantenimiento de extintores
       href: /servicios/mantenimiento/
       image: /images/servicios/inspeccion-recarga-extintores.avif
       imageAlt: Recarga y mantenimiento de extintores en taller de servicio
@@ -113,7 +113,7 @@ vitrina:
           value: NOM-002, 7.18
         - label: Se combina
           value: Con la prueba
-      ctaLabel: Recarga de extintores
+      ctaLabel: Mantenimiento de extintores
     - title: Inspección y dictamen
       href: /servicios/inspeccion/
       image: /images/servicios/inspeccion-gabinete-hidrante-extintor.avif
@@ -265,7 +265,7 @@ modulos:
         desc: Tras aprobar se recarga y regresa con etiqueta y collarín.
     ctaLabel: Cotizar prueba de PQS
     ctaMsg: "Hola, quiero cotizar la prueba hidrostática de extintores PQS. Tengo estas capacidades y cantidades:"
-    ctaSecondaryLabel: Extintores PQS ABC
+    ctaSecondaryLabel: Extintor PQS
     ctaSecondaryHref: /productos/extintor-pqs/
     imgMain:
       src: /images/servicios/prueba-hidrostatica-extintor.avif
@@ -292,7 +292,7 @@ modulos:
         desc: Al menos cada 5 años, igual que el agua y el PQS.
     ctaLabel: Cotizar prueba de CO₂
     ctaMsg: "Hola, quiero cotizar la prueba hidrostática de extintores de CO₂. Tengo estas capacidades y cantidades:"
-    ctaSecondaryLabel: Extintores de CO₂
+    ctaSecondaryLabel: Extintor de CO2
     ctaSecondaryHref: /productos/extintor-co2/
     imgMain:
       src: /images/servicios/prueba-electrica-panel-alarma-incendio.avif
@@ -319,7 +319,7 @@ modulos:
         desc: La fecha queda en el cilindro, no solo en la etiqueta.
     ctaLabel: Cotizar prueba de agua
     ctaMsg: Hola, quiero cotizar la prueba hidrostática de extintores de agua o espuma.
-    ctaSecondaryLabel: Extintores de agua
+    ctaSecondaryLabel: Extintor de agua
     ctaSecondaryHref: /productos/extintor-agua/
     imgMain:
       src: /images/servicios/instalacion-equipo-almacen.avif
@@ -346,7 +346,7 @@ modulos:
         desc: Te decimos qué aplica a cada equipo antes de cotizar.
     ctaLabel: Cotizar clase K o limpio
     ctaMsg: "Hola, quiero cotizar la prueba de extintores clase K o de agente limpio. Tengo estos modelos:"
-    ctaSecondaryLabel: Extintores clase K
+    ctaSecondaryLabel: Extintor tipo K
     ctaSecondaryHref: /productos/extintor-clase-k/
     imgMain:
       src: /images/servicios/supresion-cocina-comercial.avif
@@ -483,7 +483,7 @@ related:
   title: Servicios y guías relacionados
   desc: Lo que conviene revisar antes y después de probar tus extintores.
   links:
-    - label: Recarga de extintores
+    - label: Mantenimiento de extintores
       href: /servicios/mantenimiento/
       desc: Mantenimiento anual y recarga, NOM-154.
     - label: Inspección y dictamen
@@ -491,7 +491,7 @@ related:
       desc: Vencimientos y faltantes por equipo.
     - label: Verifica tu extintor
       href: /herramientas/verifica-tu-extintor/
-      desc: Doce puntos para saber si está vigente.
+      desc: Revisa si tu extintor está vigente.
     - label: Bitácora de extintores
       href: /plantillas/bitacora-revision-extintores/
       desc: Formato gratuito para la revisión mensual.

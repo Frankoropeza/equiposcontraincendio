@@ -399,7 +399,7 @@ export const GIROS_CATALOGO: Record<string, GiroCatalogCard> = {
   },
   verifica: {
     title: 'Verifica tu extintor',
-    description: 'Doce puntos para saber si el servicio que te dieron fue real.',
+    description: 'Revisa si el servicio que te dieron fue real.',
     href: '/herramientas/verifica-tu-extintor/',
     ctaLabel: 'Verifica tu extintor',
     image: '/images/servicios/inspeccion-gabinete-hidrante-extintor.avif',

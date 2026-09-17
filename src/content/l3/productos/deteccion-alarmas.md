@@ -47,7 +47,7 @@ vitrina:
           value: Autónomo o panel
         - label: Modelos
           value: Seis variantes
-      ctaLabel: Detectores de humo
+      ctaLabel: Detector de humo
     - title: Detectores de temperatura
       href: "#det-temperatura"
       image: /images/servicios/cuarto-bomba-contra-incendio.avif
@@ -131,7 +131,7 @@ vitrina:
           value: Zona por zona
         - label: Entrega
           value: Planos y memoria
-      ctaLabel: Instalar sistemas
+      ctaLabel: Instalación de sistemas
     - title: Revisión y pruebas
       href: /servicios/inspeccion/
       image: /images/servicios/inspeccion-tablero-alarma-gabinete-manguera.avif
@@ -246,8 +246,8 @@ guia:
 tabla2:
   id: convencional-o-direccionable
   eyebrow: Panel de alarma
-  title: Convencional
-  titleAccent: o direccionable
+  title: "Panel de alarma contra incendio:"
+  titleAccent: convencional o direccionable
   desc: Los dos avisan igual; la diferencia está en qué tan exacto te dicen dónde está el fuego.
   body:
     - "El panel convencional agrupa varios detectores en una zona: sabes que hay alarma en el segundo piso, pero no en qué detector. El direccionable asigna una dirección a cada dispositivo y te dice cuál se activó."
@@ -292,7 +292,7 @@ modulos:
         desc: Se integra al sistema con su base y su panel.
     ctaLabel: Cotizar detectores
     ctaMsg: "Hola, quiero cotizar detectores de humo fotoeléctricos. Mi inmueble es (giro y superficie):"
-    ctaSecondaryLabel: Detectores de humo
+    ctaSecondaryLabel: Detector de humo
     ctaSecondaryHref: /productos/detector-humo-fotoelectrico/
     imgMain:
       src: /images/servicios/instalacion-deteccion-alarma.avif
@@ -564,7 +564,7 @@ related:
   title: Productos, servicios y guías relacionados
   desc: Lo que suele hacer falta junto con la detección y la alarma.
   links:
-    - label: Detectores de humo
+    - label: Detector de humo
       href: /productos/detector-humo-fotoelectrico/
       desc: Seis modelos fotoeléctricos.
     - label: Instalación de sistemas

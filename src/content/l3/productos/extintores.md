@@ -5,36 +5,36 @@ hero:
   subtitle: PQS, CO₂, clase K, agua, espuma y agente limpio, portátiles y sobre ruedas. Te ayudamos a elegir el correcto y después le damos la recarga y el mantenimiento que pide la norma.
   descRight:
     - "El extintor correcto depende de lo que puede arder en cada zona: cartón en la bodega, aceite en la cocina, tableros en el cuarto eléctrico. Con el agente equivocado, el fuego puede no apagarse o quien lo usa puede salir lastimado."
-    - Aquí están las 29 presentaciones que cotizamos, con su capacidad, las clases de fuego que cubren y el tipo de negocio donde convienen. Si prefieres que lo veamos juntos, escríbenos por WhatsApp.
+    - Aquí están las presentaciones que cotizamos, con su capacidad, las clases de fuego que cubren y el tipo de negocio donde convienen. Si prefieres que lo veamos juntos, escríbenos por WhatsApp.
 fichas:
   extintor-pqs:
     badge: Clases A · B · C
     blurb: Un solo agente para sólidos, líquidos inflamables y equipo eléctrico. De 1 a 70 kg.
-    ctaLabel: Extintores PQS ABC
+    ctaLabel: Extintor PQS
     image: /images/showcase/extintores-catalogo-profesional.avif
     imageAlt: Extintores portátiles de distintas capacidades sobre piso de concreto
   extintor-co2:
     badge: Clases B · C
     blurb: Sin residuo para tableros, sites y electrónica. Portátil y móvil sobre ruedas.
-    ctaLabel: Extintores de CO₂
+    ctaLabel: Extintor de CO2
     image: /images/productos/extintor-co2-dioxido-de-carbono.avif
     imageAlt: Extintor de CO₂ con corneta de descarga montado en muro
   extintor-clase-k:
     badge: Clase K · Cocina
     blurb: Químico húmedo para aceites y grasas de cocción. Complementa el sistema de la campana.
-    ctaLabel: Extintores clase K
+    ctaLabel: Extintor tipo K
     image: /images/productos/extintor-clase-k-cocina-industrial.avif
     imageAlt: Cocina industrial de acero inoxidable con extintor junto a la línea de cocción
   extintor-agua:
     badge: Agua y espuma AFFF
     blurb: Agua a presión para sólidos, nebulizada junto a equipo eléctrico y espuma para líquidos.
-    ctaLabel: Extintores de agua
+    ctaLabel: Extintor de agua
     image: /images/productos/extintor-de-agua-almacen-carton-clase-a.avif
     imageAlt: Pasillo de almacén con tarimas de cajas de cartón, material de fuego clase A
   extintor-agente-limpio:
     badge: Sin residuo
     blurb: "Halotron I y FE-36: sin residuo ni conductividad, para sites y equipo electrónico."
-    ctaLabel: Agente limpio
+    ctaLabel: Extintor agente limpio
     image: /images/productos/extintor-agente-limpio-site-de-servidores.avif
     imageAlt: Pasillo de un site de servidores, área que se protege con agente limpio
 features:
@@ -52,7 +52,7 @@ features:
         desc: El polvo cubre el área y puede dañar electrónica; hay que limpiar después.
       - label: No va en la cocina
         desc: "Contra aceite de cocción no basta: bajo la campana va agente K."
-    ctaLabel: Extintores PQS ABC
+    ctaLabel: Extintor PQS
     ctaHref: /productos/extintor-pqs/
     ctaSecondaryLabel: Cotizar PQS
     ctaMsg: Hola, quiero cotizar extintores PQS ABC. ¿Me ayudan a elegir la capacidad?
@@ -79,7 +79,7 @@ features:
         desc: Sobre papel o madera la brasa puede volver a encender.
       - label: Cuidado en cuartos chicos
         desc: En un recinto cerrado reduce el oxígeno disponible para quien lo usa.
-    ctaLabel: Extintores de CO₂
+    ctaLabel: Extintor de CO2
     ctaHref: /productos/extintor-co2/
     ctaSecondaryLabel: Cotizar CO₂
     ctaMsg: Hola, quiero cotizar extintores de CO₂ para riesgo eléctrico. ¿Qué capacidad me recomiendan?
@@ -106,7 +106,7 @@ features:
         desc: Distancia máxima de recorrido para la clase K en la NOM-002-STPS.
       - label: No sustituye la campana
         desc: El sistema fijo de supresión sigue siendo la primera línea.
-    ctaLabel: Extintores clase K
+    ctaLabel: Extintor tipo K
     ctaHref: /productos/extintor-clase-k/
     ctaSecondaryLabel: Cotizar clase K
     ctaMsg: Hola, quiero cotizar extintores clase K para una cocina comercial.
@@ -133,7 +133,7 @@ features:
         desc: Forma una película sobre el líquido inflamable; cubre clases A y B.
       - label: Portátil y sobre ruedas
         desc: De 6 a 9.46 L en portátil y unidades móviles de 50 L.
-    ctaLabel: Extintores de agua
+    ctaLabel: Extintor de agua
     ctaHref: /productos/extintor-agua/
     ctaSecondaryLabel: Cotizar agua o espuma
     ctaMsg: Hola, quiero cotizar extintores de agua o de espuma AFFF. ¿Cuál me conviene?
@@ -160,7 +160,7 @@ features:
         desc: Las presentaciones mayores también cubren sólidos (según fabricante).
       - label: Dos agentes
         desc: Halotron I de 1.1 a 7 kg y FE-36 de 4.3 y 6 kg.
-    ctaLabel: Agente limpio
+    ctaLabel: Extintor agente limpio
     ctaHref: /productos/extintor-agente-limpio/
     ctaSecondaryLabel: Cotizar agente limpio
     ctaMsg: Hola, quiero cotizar extintores de agente limpio para un site o equipo electrónico.
@@ -273,10 +273,10 @@ related:
   - label: Capacitación en extintores
     href: /servicios/capacitacion-dc3/
     desc: Uso de extintores, con DC-3.
-  - label: Señalamiento de extintor
+  - label: Señalización fotoluminiscente
     href: /productos/senalizacion-fotoluminiscente/
     desc: Señal fotoluminiscente.
-  - label: Gabinetes con manguera
+  - label: Gabinete contra incendio
     href: /productos/gabinete-manguera-contra-incendio/
     desc: Cuando el conato supera al extintor.
   - label: Tipos de extintores
@@ -326,7 +326,7 @@ tarjetas:
         value: 1 a 70 kg
       - label: Norma
         value: NOM-100-STPS
-    ctaLabel: Extintores PQS ABC
+    ctaLabel: Extintor PQS
   - title: Extintores de CO₂
     href: /productos/extintor-co2/
     image: /images/productos/extintor-co2-dioxido-de-carbono.avif
@@ -340,7 +340,7 @@ tarjetas:
         value: 2.27 a 45.4 kg
       - label: Norma
         value: NOM-102-STPS
-    ctaLabel: Extintores de CO₂
+    ctaLabel: Extintor de CO2
   - title: Extintores clase K
     href: /productos/extintor-clase-k/
     image: /images/productos/extintor-clase-k-cocina-industrial.avif
@@ -354,7 +354,7 @@ tarjetas:
         value: 4 a 9.46 L
       - label: Referencia
         value: NFPA 10
-    ctaLabel: Extintores clase K
+    ctaLabel: Extintor tipo K
   - title: Extintores de agua y espuma
     href: /productos/extintor-agua/
     image: /images/productos/extintor-de-agua-almacen-carton-clase-a.avif
@@ -368,7 +368,7 @@ tarjetas:
         value: 6 a 50 L
       - label: Norma
         value: NOM-103-STPS
-    ctaLabel: Extintores de agua
+    ctaLabel: Extintor de agua
   - title: Extintores de agente limpio
     href: /productos/extintor-agente-limpio/
     image: /images/productos/extintor-agente-limpio-site-de-servidores.avif
@@ -382,8 +382,8 @@ tarjetas:
         value: 1.1 a 7 kg
       - label: Clase A
         value: Desde 4.3 kg
-    ctaLabel: Agente limpio
-  - title: Recarga de extintores
+    ctaLabel: Extintor agente limpio
+  - title: Mantenimiento de extintores
     href: /servicios/mantenimiento/
     image: /images/servicios/inspeccion-recarga-extintores.avif
     imageAlt: Recarga y mantenimiento de extintores en taller de servicio
@@ -396,7 +396,7 @@ tarjetas:
         value: NOM-154-SCFI
       - label: Evidencia
         value: Etiqueta nueva
-    ctaLabel: Recarga de extintores
+    ctaLabel: Mantenimiento de extintores
   - title: Soportes y gabinetes para extintor
     href: /productos/soportes-accesorios-extintor/
     image: /images/productos/extintor-oficina-gabinete.avif
@@ -410,7 +410,7 @@ tarjetas:
         value: 1.50 m
       - label: Norma
         value: NOM-002-STPS
-    ctaLabel: Soportes para extintor
+    ctaLabel: Soporte para extintor
   - title: ¿Cuántos extintores necesito?
     href: /herramientas/cuantos-extintores-necesito/
     image: /images/servicios/auditoria-seguridad-contra-incendio.avif

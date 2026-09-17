@@ -23,8 +23,8 @@ hero:
 vitrina:
   id: que-lleva
   eyebrow: Qué lleva el expediente
-  title: Cinco apartados,
-  titleAccent: un solo índice
+  title: La carpeta de protección civil
+  titleAccent: en un solo índice
   desc: El expediente del equipo contra incendio se arma con documentos que ya existen o que se generan con cada servicio.
   body:
     - "Ningún documento del expediente se «tramita» aparte: la etiqueta sale del mantenimiento, la constancia de la capacitación y el acta del simulacro. Lo que hacemos es reunirlos, ordenarlos y detectar lo que falta."
@@ -299,7 +299,7 @@ modulos:
         desc: La evidencia vale sin importar quién dio el servicio.
     ctaLabel: Cotizar expediente
     ctaMsg: Hola, tengo documentos de servicio de varios proveedores y quiero ordenarlos.
-    ctaSecondaryLabel: Recarga de extintores
+    ctaSecondaryLabel: Mantenimiento de extintores
     ctaSecondaryHref: /servicios/mantenimiento/
     imgMain:
       src: /images/servicios/etiquetado-inspeccion-extintor.avif
@@ -520,7 +520,7 @@ related:
     - label: Inspección y dictamen
       href: /servicios/inspeccion/
       desc: El estado real del equipo.
-    - label: Recarga de extintores
+    - label: Mantenimiento de extintores
       href: /servicios/mantenimiento/
       desc: Etiqueta y collarín nuevos.
     - label: Capacitación DC-3

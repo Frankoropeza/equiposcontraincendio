@@ -4,7 +4,7 @@ id: instalacion
 path: /servicios/instalacion/
 seo:
   title: "Sistemas contra incendio: instalación en CDMX y Edomex"
-  description: "Instalación de sistemas contra incendio en CDMX y Edomex: extintores, detección y alarma, red hidráulica y señalización, con planos, memoria técnica y fichas."
+  description: "Instalación contra incendios en CDMX y Edomex: sistemas con extintores, detección y alarma, red hidráulica y señalización, con planos, memoria técnica y fichas."
   serviceName: Instalación de sistemas contra incendio
   serviceType: Proyecto e instalación de sistemas contra incendio
   image: /images/servicios/integracion-sistemas-contra-incendio.avif
@@ -128,7 +128,7 @@ vitrina:
         - label: Entrega
           value: CDMX y Edomex
       ctaLabel: Venta de extintores
-    - title: Recarga de extintores
+    - title: Mantenimiento de extintores
       href: /servicios/mantenimiento/
       image: /images/servicios/inspeccion-recarga-extintores.avif
       imageAlt: Recarga y mantenimiento de extintores en taller de servicio
@@ -141,7 +141,7 @@ vitrina:
           value: NOM-154-SCFI
         - label: Evidencia
           value: Etiqueta nueva
-      ctaLabel: Recarga de extintores
+      ctaLabel: Mantenimiento de extintores
 tablaPrincipal:
   id: sistemas
   eyebrow: Capas del sistema
@@ -261,7 +261,7 @@ modulos:
         desc: Señal de ubicación visible desde la ruta.
     ctaLabel: Cotizar instalación
     ctaMsg: Hola, quiero cotizar la instalación de extintores en mi inmueble.
-    ctaSecondaryLabel: Soportes para extintor
+    ctaSecondaryLabel: Soporte para extintor
     ctaSecondaryHref: /productos/soportes-accesorios-extintor/
     imgMain:
       src: /images/servicios/instalacion-equipo-almacen.avif
@@ -288,7 +288,7 @@ modulos:
         desc: Cada zona probada antes de poner el sistema en marcha.
     ctaLabel: Cotizar detección
     ctaMsg: Hola, quiero cotizar la instalación de un sistema de detección y alarma contra incendio.
-    ctaSecondaryLabel: Detectores de humo
+    ctaSecondaryLabel: Detector de humo
     ctaSecondaryHref: /productos/detector-humo-fotoelectrico/
     imgMain:
       src: /images/servicios/instalacion-deteccion-alarma.avif
@@ -315,7 +315,7 @@ modulos:
         desc: Presión y funcionamiento antes de entregarla.
     ctaLabel: Cotizar red hidráulica
     ctaMsg: Hola, quiero cotizar la instalación de una red hidráulica contra incendio.
-    ctaSecondaryLabel: Gabinetes con manguera
+    ctaSecondaryLabel: Gabinete contra incendio
     ctaSecondaryHref: /productos/gabinete-manguera-contra-incendio/
     imgMain:
       src: /images/servicios/integracion-sistemas-contra-incendio.avif
@@ -342,7 +342,7 @@ modulos:
         desc: Extintores, gabinetes y alarmas ubicables a simple vista.
     ctaLabel: Cotizar señalización
     ctaMsg: Hola, quiero cotizar la señalización y rutas de evacuación de mi inmueble.
-    ctaSecondaryLabel: Señalamiento de extintor
+    ctaSecondaryLabel: Señalización fotoluminiscente
     ctaSecondaryHref: /productos/senalizacion-fotoluminiscente/
     imgMain:
       src: /images/productos/senalizacion-luces-emergencia.avif
@@ -509,7 +509,7 @@ related:
     - label: Diagnóstico de riesgo
       href: /servicios/diagnostico-de-riesgo/
       desc: Qué te toca instalar.
-    - label: Recarga de extintores
+    - label: Mantenimiento de extintores
       href: /servicios/mantenimiento/
       desc: Mantenimiento anual, NOM-154.
     - label: Inspección y dictamen

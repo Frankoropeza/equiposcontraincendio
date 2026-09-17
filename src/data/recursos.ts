@@ -93,7 +93,7 @@ export const recursosCards = [
     image: '/images/servicios/inspeccion-gabinete-hidrante-extintor.avif',
     imageAlt: 'Revisión de gabinete de hidrante y extintor en sitio',
     badge: 'NOM-154-SCFI-2005',
-    blurb: 'Doce puntos para saber si el servicio que te dieron fue real.',
+    blurb: 'Revisa si el servicio que te dieron fue real.',
     ctaLabel: 'Verifica tu extintor',
     subcategories: [
       { label: 'Servicio real o no', href: '/blog/como-saber-si-mantenimiento-extintor-es-real/' },
@@ -162,7 +162,7 @@ export const recursosFeatures = [
     features: [
       { label: 'Riesgo de incendio', desc: 'Ordinario o alto con los criterios de la Tabla 1.' },
       { label: 'Cuántos extintores', desc: 'Mínimo por superficie y agente por área.' },
-      { label: 'Verifica tu extintor', desc: 'Doce puntos para detectar un servicio falso.' },
+      { label: 'Verifica tu extintor', desc: 'Revisión guiada para detectar un servicio falso.' },
       { label: 'Orientan, no dictaminan', desc: 'El estudio formal lo firma quien está facultado.' },
     ],
     ctaLabel: 'Ver herramientas',
@@ -222,7 +222,7 @@ export const recursosGuia: RecursoRow[] = [
   { nivel: '¿Qué me pide Protección Civil para mi negocio?', ejemplos: 'Directorio por giro', minimo: 'Documentos, equipo y errores de tu giro', complementos: 'Ficha de trámite de tu entidad' },
   { nivel: '¿Mi inmueble es de riesgo ordinario o alto?', ejemplos: 'Riesgo de incendio', minimo: 'Tu clasificación con el criterio que la define', complementos: 'Cuántos extintores necesito' },
   { nivel: '¿Cuántos extintores tengo que tener?', ejemplos: 'Cuántos extintores necesito', minimo: 'Mínimo por superficie y agente por área', complementos: 'Catálogo de extintores' },
-  { nivel: '¿El servicio que me dieron fue real?', ejemplos: 'Verifica tu extintor', minimo: 'Doce puntos revisados en tu equipo', complementos: 'Mantenimiento y recarga' },
+  { nivel: '¿El servicio que me dieron fue real?', ejemplos: 'Verifica tu extintor', minimo: 'Revisión punto por punto de tu equipo', complementos: 'Mantenimiento y recarga' },
   { nivel: '¿Qué papeles me faltan?', ejemplos: 'Formatos descargables', minimo: 'Bitácora, acta de simulacro y censo', complementos: 'Gestión documental' },
   { nivel: '¿Cómo se presenta el Programa Interno?', ejemplos: 'Trámite en CDMX o Edomex', minimo: 'Quién lo firma, modalidad y fuentes', complementos: 'Diagnóstico de riesgo' },
 ];

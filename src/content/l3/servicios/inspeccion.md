@@ -3,8 +3,8 @@ kind: service
 id: inspeccion
 path: /servicios/inspeccion/
 seo:
-  title: Inspección de equipo contra incendio en CDMX | dictamen
-  description: "Inspección de equipo contra incendio en CDMX y Edomex: extintores, detección, red hidráulica y señalización, con reporte priorizado antes de la verificación."
+  title: Inspección y revisión de extintores en CDMX | dictamen
+  description: "Inspección de equipo contra incendio y revisión de extintores en CDMX y Edomex: detección, red hidráulica y señalización, con reporte priorizado."
   serviceName: Inspección y dictamen de equipo contra incendio
   serviceType: Inspección de equipo contra incendio
   image: /images/servicios/inspeccion-tablero-alarma-gabinete-manguera.avif
@@ -23,8 +23,8 @@ hero:
 vitrina:
   id: sistemas
   eyebrow: Qué revisamos
-  title: Cinco sistemas,
-  titleAccent: un solo recorrido
+  title: Revisión de extintores y sistemas
+  titleAccent: en un solo recorrido
   desc: La inspección cubre todo el equipo contra incendio del inmueble, no solo los extintores.
   body:
     - "Un verificador no revisa por separado: recorre el inmueble y ve todo a la vez. Por eso la inspección sigue ese mismo recorrido y deja el estado de cada sistema en un solo reporte."
@@ -114,7 +114,7 @@ vitrina:
         - label: Define
           value: Cuánto equipo
       ctaLabel: Diagnóstico de riesgo
-    - title: Recarga de extintores
+    - title: Mantenimiento de extintores
       href: /servicios/mantenimiento/
       image: /images/servicios/inspeccion-recarga-extintores.avif
       imageAlt: Recarga y mantenimiento de extintores en taller de servicio
@@ -127,7 +127,7 @@ vitrina:
           value: NOM-154-SCFI
         - label: Evidencia
           value: Etiqueta nueva
-      ctaLabel: Recarga de extintores
+      ctaLabel: Mantenimiento de extintores
     - title: Gestión documental
       href: /servicios/gestion-documental/
       image: /images/general/hero-proveedor-equipo-contra-incendio.avif
@@ -295,7 +295,7 @@ modulos:
         desc: Se avisa al personal antes de activar el sistema.
     ctaLabel: Cotizar prueba de alarma
     ctaMsg: Hola, quiero cotizar la inspección y prueba de mi sistema de detección y alarma.
-    ctaSecondaryLabel: Detectores de humo
+    ctaSecondaryLabel: Detector de humo
     ctaSecondaryHref: /productos/detector-humo-fotoelectrico/
     imgMain:
       src: /images/servicios/inspeccion-tablero-alarma-gabinete-manguera.avif
@@ -322,7 +322,7 @@ modulos:
         desc: Libre, señalizado y con llave a la mano.
     ctaLabel: Cotizar red hidráulica
     ctaMsg: Hola, quiero cotizar la inspección de la red hidráulica contra incendio de mi inmueble.
-    ctaSecondaryLabel: Gabinetes con manguera
+    ctaSecondaryLabel: Gabinete contra incendio
     ctaSecondaryHref: /productos/gabinete-manguera-contra-incendio/
     imgMain:
       src: /images/servicios/inspeccion-gabinete-manguera-contra-incendio.avif
@@ -349,7 +349,7 @@ modulos:
         desc: Señalizado y conocido por el personal.
     ctaLabel: Cotizar señalización
     ctaMsg: Hola, quiero revisar la señalización y las rutas de evacuación de mi inmueble.
-    ctaSecondaryLabel: Señalamiento de extintor
+    ctaSecondaryLabel: Señalización fotoluminiscente
     ctaSecondaryHref: /productos/senalizacion-fotoluminiscente/
     imgMain:
       src: /images/productos/senalizacion-luces-emergencia.avif
@@ -516,7 +516,7 @@ related:
     - label: Diagnóstico de riesgo
       href: /servicios/diagnostico-de-riesgo/
       desc: Ordinario o alto, según la Tabla 1.
-    - label: Recarga de extintores
+    - label: Mantenimiento de extintores
       href: /servicios/mantenimiento/
       desc: Mantenimiento anual y recarga, NOM-154.
     - label: Gestión documental
@@ -530,7 +530,7 @@ related:
       desc: Distancia, altura y cantidad.
     - label: Verifica tu extintor
       href: /herramientas/verifica-tu-extintor/
-      desc: Doce puntos para revisarlo tú.
+      desc: Revisión guiada para hacerla tú.
     - label: Riesgo de incendio
       href: /herramientas/riesgo-de-incendio/
       desc: Calcula si es ordinario o alto.

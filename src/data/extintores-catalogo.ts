@@ -145,7 +145,7 @@ export const EXT_ACCESORIOS: Record<ExtFormato, LinkItem[]> = {
   ],
   movil: [
     { label: 'Señalización', href: '/productos/senalizacion-fotoluminiscente/' },
-    { label: 'Recarga de extintores', href: '/servicios/mantenimiento/' },
+    { label: 'Mantenimiento de extintores', href: '/servicios/mantenimiento/' },
   ],
 };
 
@@ -337,10 +337,10 @@ export const extCatalogoCierre: FichaCierre[] = [
   },
   {
     badge: 'Servicio NOM-154',
-    title: 'Recarga de extintores',
+    title: 'Mantenimiento de extintores',
     description: 'Mantenimiento anual, recarga tras cualquier uso y prueba hidrostática del cilindro.',
     href: '/servicios/mantenimiento/',
-    ctaLabel: 'Recarga de extintores',
+    ctaLabel: 'Mantenimiento de extintores',
     image: '/images/servicios/inspeccion-recarga-extintores.avif',
     imageAlt: 'Recarga y mantenimiento de extintores en taller de servicio',
   },
