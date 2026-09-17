@@ -48,7 +48,7 @@ Idioma: español (es-MX). País: México.
 - [Servicios](https://equiposcontraincendio.com/servicios/): instalación, mantenimiento, inspección, prueba hidrostática, diagnóstico de riesgo, capacitación DC-3 y gestión documental.
 - [Mantenimiento y recarga](https://equiposcontraincendio.com/servicios/mantenimiento/): recarga de extintores conforme a la NOM-154-SCFI-2005.
 - [Blog](https://equiposcontraincendio.com/blog/): guías técnicas y de normatividad.
-- [Qué extintor comprar](https://equiposcontraincendio.com/blog/como-elegir-extintor-clase-fuego/): guía de compra por área (casa, negocio, cocina) y clase de fuego.
+- [Tipos de extintores](https://equiposcontraincendio.com/blog/tipos-de-extintores/): guía de compra por área (casa, negocio, cocina) y clase de fuego.
 - [STPS y Protección Civil: las dos verificaciones](https://equiposcontraincendio.com/blog/cumplimiento-stps-proteccion-civil/): pilar de normatividad, qué exige cada autoridad y qué evidencia sirve para ambas.
 - [Recarga y mantenimiento de extintores](https://equiposcontraincendio.com/blog/mantenimiento-recarga-extintores-nom/): qué exige la NOM-154 y cómo verificar al proveedor.
 - [Cobertura](https://equiposcontraincendio.com/cobertura/): CDMX y Estado de México.

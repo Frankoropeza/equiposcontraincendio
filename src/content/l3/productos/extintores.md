@@ -280,7 +280,7 @@ related:
     href: /productos/gabinete-manguera-contra-incendio/
     desc: Cuando el conato supera al extintor.
   - label: Tipos de extintores
-    href: /blog/como-elegir-extintor-clase-fuego/
+    href: /blog/tipos-de-extintores/
     desc: Clases de fuego y agentes, explicados.
   - label: Cotizar extintores
     href: /contacto/

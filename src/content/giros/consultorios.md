@@ -77,7 +77,7 @@ vitrina: [pqs, agente_limpio, co2, botiquin, senalizacion, soportes, capacitacio
 hermanos: [clinicas-y-hospitales, farmacias, laboratorios, comercios-de-bajo-riesgo]
 enlacesSoporte:
   - "/blog/requisitos-proteccion-civil-negocio/"
-  - "/blog/como-elegir-extintor-clase-fuego/"
+  - "/blog/tipos-de-extintores/"
   - "/blog/que-revisa-proteccion-civil/"
 normas:
   - { norma: "Ley de GIRPC, art. 64 (CDMX)", alcance: "Piso mínimo del bajo riesgo: extintor, botiquín, señalización, capacitación y directorio", aplica: "Consultorios de bajo riesgo en CDMX" }

@@ -124,7 +124,7 @@ export const recursosCards = [
     blurb: 'Normas, mantenimiento y cumplimiento explicados para quien tiene que resolverlo.',
     ctaLabel: 'Guías del blog',
     subcategories: [
-      { label: 'Tipos de extintores', href: '/blog/como-elegir-extintor-clase-fuego/' },
+      { label: 'Tipos de extintores', href: '/blog/tipos-de-extintores/' },
       { label: 'Recarga y mantenimiento', href: '/blog/mantenimiento-recarga-extintores-nom/' },
       { label: 'Señalización y rutas', href: '/blog/senalizacion-rutas-evacuacion-nom/' },
     ],

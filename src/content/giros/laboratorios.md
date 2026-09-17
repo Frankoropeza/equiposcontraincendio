@@ -78,7 +78,7 @@ hermanos: [clinicas-y-hospitales, naves-industriales, bodegas, negocios-de-media
 enlacesSoporte:
   - "/blog/riesgo-de-incendio-tabla-1-nom-002/"
   - "/blog/obligaciones-riesgo-alto-incendio/"
-  - "/blog/como-elegir-extintor-clase-fuego/"
+  - "/blog/tipos-de-extintores/"
 normas:
   - { norma: "NOM-002-STPS-2010", alcance: "Clasificación por inventario, extintores, brigada, alarmas y sistemas fijos", aplica: "Todo laboratorio con trabajadores" }
   - { norma: "NOM-005-STPS-1998", alcance: "Manejo, transporte y almacenamiento de sustancias inflamables y combustibles", aplica: "Laboratorios con solventes" }

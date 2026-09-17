@@ -77,7 +77,7 @@ vitrina: [pqs, co2, soportes, senalizacion, mantenimiento, capacitacion, diagnos
 hermanos: [naves-industriales, bodegas, estacionamientos, comercios-de-bajo-riesgo]
 enlacesSoporte:
   - "/blog/trabajos-en-caliente-taller/"
-  - "/blog/como-elegir-extintor-clase-fuego/"
+  - "/blog/tipos-de-extintores/"
   - "/blog/donde-colocar-extintores/"
 normas:
   - { norma: "NOM-027-STPS-2008", alcance: "Soldadura y corte: autorización escrita, extintor ABC a menos de 7 m", aplica: "Talleres con trabajos en caliente" }
@@ -123,7 +123,7 @@ La guía de [trabajos en caliente en taller](/blog/trabajos-en-caliente-taller/)
 
 ## El extintor para tres clases de fuego
 
-En un taller arden trapos y cartón (clase A), gasolina, aceite y solventes (clase B) y el equipo eléctrico (clase C). Por eso el [extintor de polvo químico seco ABC](/productos/extintor-pqs/) es la base. Para líquidos inflamables, la NOM-002 pide que ningún punto quede a más de 15 m de un extintor para clase B en riesgo ordinario. La guía para [elegir el extintor por clase de fuego](/blog/como-elegir-extintor-clase-fuego/) compara los agentes.
+En un taller arden trapos y cartón (clase A), gasolina, aceite y solventes (clase B) y el equipo eléctrico (clase C). Por eso el [extintor de polvo químico seco ABC](/productos/extintor-pqs/) es la base. Para líquidos inflamables, la NOM-002 pide que ningún punto quede a más de 15 m de un extintor para clase B en riesgo ordinario. La guía de [tipos de extintores](/blog/tipos-de-extintores/) compara los agentes.
 
 ## El orden también es equipo
 

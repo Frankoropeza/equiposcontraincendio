@@ -261,7 +261,7 @@ modulos:
     ctaLabel: Cotizar curso
     ctaMsg: Hola, quiero cotizar un curso de uso y manejo de extintores para mi personal.
     ctaSecondaryLabel: Tipos de extintores
-    ctaSecondaryHref: /blog/como-elegir-extintor-clase-fuego/
+    ctaSecondaryHref: /blog/tipos-de-extintores/
     imgMain:
       src: /images/servicios/capacitacion-brigada-extintores.avif
       alt: Capacitación práctica en uso de extintores
