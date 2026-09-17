@@ -8,6 +8,7 @@
 import { getCollection, render } from 'astro:content'
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
+import Section from '@components/Section.astro'
 import SectionMenu from '@components/SectionMenu.astro'
 import SectionHeading from '@components/SectionHeading.astro'
 import QuoteCard from '@components/QuoteCard.astro'
@@ -83,8 +84,7 @@ const relatedZona = Array.from(new Map([
     cta={{ label: `Cotizar en ${label}`, href: waZona, sub: 'Respuesta por WhatsApp', external: true }}
   />
 
-  <section class="section section--surface">
-    <div class="container">
+  <Section surface>
       <div class="guide-grid">
         <article class="prose"><Content /></article>
         <QuoteCard
@@ -97,11 +97,9 @@ const relatedZona = Array.from(new Map([
           ctaLabel="Cotizar por WhatsApp"
         />
       </div>
-    </div>
-  </section>
+  </Section>
 
-  <section class="section">
-    <div class="container">
+  <Section>
       <SectionHeading
         layout="duo"
         eyebrow="Alcance"
@@ -118,8 +116,7 @@ const relatedZona = Array.from(new Map([
           <ul class="chips">{disponibles.map((service) => <li><a class="chip" href={service.href}>{service.label}</a></li>)}</ul>
         </div>
       )}
-    </div>
-  </section>
+  </Section>
 
   <RelatedLinks title="Sigue por aquí" desc="La otra zona, servicios y productos relacionados." links={relatedZona} limit={4} />
 
@@ -127,10 +124,7 @@ const relatedZona = Array.from(new Map([
 </PageLayout>
 
 <style>
-  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
-  .section { padding: var(--sp-8) 0; }
-  .section--surface { background: var(--c-surface); }
-  @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
+  /* .container/.section/.section--surface: utilidades globales de tokens.css (F3.3). */
   .guide-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--sp-8); align-items: start; }
   .guide-grid .prose { max-width: 68ch; }
   @media (min-width: 900px) { .guide-grid { grid-template-columns: minmax(0, 1fr) minmax(18rem, 25rem); } }

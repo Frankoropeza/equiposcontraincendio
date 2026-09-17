@@ -1,0 +1,19 @@
+---
+// Section.astro — envoltura canónica de sección (F3.3, 2026-09-16).
+// <section class="section [section--surface] [class]" id?> <div class="container"> slot </div> </section>
+// Las utilidades .section/.section--surface/.container viven en tokens.css; no se redefinen aquí.
+interface Props {
+  surface?: boolean
+  id?: string
+  class?: string
+  ariaLabelledby?: string
+}
+
+const { surface = false, id, class: className, ariaLabelledby } = Astro.props
+---
+
+<section class:list={['section', surface && 'section--surface', className]} id={id} aria-labelledby={ariaLabelledby}>
+  <div class="container">
+    <slot />
+  </div>
+</section>

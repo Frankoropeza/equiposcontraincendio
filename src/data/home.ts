@@ -421,3 +421,14 @@ export const homeCategoryFeatures: HomeCategoryFeature[] = [
     imgB: { src: "/images/servicios/etiquetado-inspeccion-extintor.avif", alt: "Colocación de la etiqueta y el collarín de servicio en el extintor" },
   },
 ];
+
+export const homeHero = {
+  badge: "Venta e instalación · CDMX y Estado de México",
+  title: "Equipo contra incendio en",
+  accent: "CDMX y Estado de México",
+  subtitle: "Venta de equipos contra incendios, instalación y mantenimiento: extintores, detección, hidrantes y señalización — con respaldo de norma, para empresas que necesitan estar protegidas y en regla.",
+  descRight: [
+    "En CONINC somos tu proveedor de equipos contra incendios desde hace más de 35 años: extintores portátiles, detección y alarmas contra incendios, hidrantes y mangueras contra incendio, señalización y herrajes. Vendemos, instalamos y damos mantenimiento — todo dimensionado al riesgo real de tu inmueble, no a un catálogo genérico.",
+    "Trabajamos conforme a la normatividad mexicana —NOM-002-STPS-2010 y NOM-154-SCFI-2005— con equipo certificado y la documentación lista para tu expediente de Protección Civil. Cotiza por WhatsApp y recibe una recomendación honesta.",
+  ],
+};

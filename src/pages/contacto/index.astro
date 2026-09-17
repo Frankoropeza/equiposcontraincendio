@@ -8,6 +8,7 @@
 // ============================================================================
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
+import Section from '@components/Section.astro'
 import SectionHeading from '@components/SectionHeading.astro'
 import SectionMenu from '@components/SectionMenu.astro'
 import RelatedLinks from '@components/RelatedLinks.astro'
@@ -75,8 +76,7 @@ const ICON = {
 
   <SectionMenu items={menuSecciones} cta={menuCta} />
 
-  <section class="section">
-    <div class="container">
+  <Section>
       <SectionHeading
         layout="duo"
         eyebrow="Canales"
@@ -112,11 +112,9 @@ const ICON = {
           </a>
         ))}
       </div>
-    </div>
-  </section>
+  </Section>
 
-  <section class="section section--surface">
-    <div class="container">
+  <Section surface>
       <SectionHeading
         layout="duo"
         eyebrow="Dónde y cuándo"
@@ -147,8 +145,7 @@ const ICON = {
           <p class="nap__text">Ciudad de México y Estado de México<br /><a href="/cobertura/">Ver cobertura</a></p>
         </div>
       </div>
-    </div>
-  </section>
+  </Section>
 
   <RelatedLinks
     title="Sigue por aquí"
@@ -163,10 +160,7 @@ const ICON = {
 </PageLayout>
 
 <style>
-  .container { max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-px); }
-  .section { padding: var(--sp-8) 0; }
-  .section--surface { background: var(--c-surface); }
-  @media (min-width: 768px) { .section { padding: var(--sp-10) 0; } }
+  /* .container/.section/.section--surface: utilidades globales de tokens.css (F3.3). */
 
   /* Canales — cuatro acciones, en la misma retícula 1→2→4 del sitio. */
   .canales { display: grid; grid-template-columns: 1fr; gap: var(--sp-4); margin-top: var(--sp-6); }

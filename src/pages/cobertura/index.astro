@@ -6,6 +6,7 @@
 // El copy vive en src/data/cobertura.ts; esta página solo compone. Sin TrustBar.
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
+import Section from '@components/Section.astro'
 import SectionMenu from '@components/SectionMenu.astro'
 import SectionHeading from '@components/SectionHeading.astro'
 import CategoryCard from '@components/CategoryCard.astro'
@@ -78,8 +79,7 @@ const coberturaTestimonios = coberturaTestimoniosNombres
 
 
   {/* ─── Tarjetas de zona ─── */}
-  <section class="section section--surface" id="zonas">
-    <div class="container">
+  <Section surface id="zonas">
       <SectionHeading
         layout="duo"
         eyebrow="Zonas que atendemos"
@@ -118,8 +118,7 @@ const coberturaTestimonios = coberturaTestimoniosNombres
           />
         ))}
       </div>
-    </div>
-  </section>
+  </Section>
 
   {/* ─── Módulos de zona (CategoryFeature) — diseño uniforme, copy propio ─── */}
   {zoneFeatures.map(({ id, ctaSecondaryMsg, ...feature }) => (
@@ -178,8 +177,7 @@ const coberturaTestimonios = coberturaTestimoniosNombres
   />
 
   {/* ─── Sobre la cobertura ─── */}
-  <section class="section section--surface">
-    <div class="container">
+  <Section surface>
       <SectionHeading
         layout="duo"
         eyebrow="Sobre la cobertura"
@@ -196,8 +194,7 @@ const coberturaTestimonios = coberturaTestimoniosNombres
         como={coberturaCompany.como}
         cta={{ label: 'Confirmar cobertura', href: waUrl('Hola, quiero confirmar si dan servicio en sitio en mi ubicación.'), external: true }}
       />
-    </div>
-  </section>
+  </Section>
 
   {/* ─── Reseñas de cobertura ─── */}
   <Testimonios items={coberturaTestimonios} {...coberturaTestimoniosHead} />
@@ -213,25 +210,3 @@ const coberturaTestimonios = coberturaTestimoniosNombres
   {/* ─── FAQ + Contacto ─── */}
   <FAQWithContact items={coberturaFaqs} waNumber={CONTACT.whatsapp} {...coberturaFaqHead} />
 </PageLayout>
-
-<style>
-  .container {
-    max-width: var(--container-max);
-    margin-inline: auto;
-    padding-inline: var(--container-px);
-  }
-
-  .section {
-    padding: var(--sp-8) 0;
-  }
-
-  .section--surface {
-    background: var(--c-surface);
-  }
-
-  @media (min-width: 768px) {
-    .section {
-      padding: var(--sp-10) 0;
-    }
-  }
-</style>

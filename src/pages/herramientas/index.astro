@@ -16,6 +16,7 @@
 // ============================================================================
 import PageLayout from '@layouts/PageLayout.astro'
 import Hero from '@components/Hero.astro'
+import Section from '@components/Section.astro'
 import SectionMenu from '@components/SectionMenu.astro'
 import SectionHeading from '@components/SectionHeading.astro'
 import CategoryCard from '@components/CategoryCard.astro'
@@ -98,8 +99,7 @@ const schemaData = {
   <SectionMenu items={menuSecciones} cta={menuCta} />
 
 
-  <section class="section section--surface">
-    <div class="container">
+  <Section surface>
       <SectionHeading
         layout="duo"
         eyebrow="Herramientas"
@@ -127,8 +127,7 @@ const schemaData = {
           />
         ))}
       </div>
-    </div>
-  </section>
+  </Section>
 
   {/* ─── Módulos de detalle por herramienta (CategoryFeature) ─── */}
   {HERRAMIENTAS_FEATURES.map(({ ctaSecondaryMsg, ...feature }) => (
@@ -187,8 +186,7 @@ const schemaData = {
   />
 
   {/* ─── Sobre las herramientas (por qué son públicas / cómo usarlas) ─── */}
-  <section class="section section--surface">
-    <div class="container">
+  <Section surface>
       <SectionHeading
         layout="duo"
         eyebrow="Sobre estas herramientas"
@@ -205,8 +203,7 @@ const schemaData = {
         como={herramientasCompany.como}
         cta={{ label: 'Consultar mi resultado', href: waUrl(herramientasConsultaMsg), external: true }}
       />
-    </div>
-  </section>
+  </Section>
 
   {/* ─── Interlinking a las otras secciones ─── */}
   <RelatedLinks
@@ -219,25 +216,3 @@ const schemaData = {
   {/* ─── FAQ + Contacto ─── */}
   <FAQWithContact items={faqs} waNumber={CONTACT.whatsapp} {...herramientasFaqHead} />
 </PageLayout>
-
-<style>
-  .container {
-    max-width: var(--container-max);
-    margin-inline: auto;
-    padding-inline: var(--container-px);
-  }
-
-  .section {
-    padding: var(--sp-8) 0;
-  }
-
-  .section--surface {
-    background: var(--c-surface);
-  }
-
-  @media (min-width: 768px) {
-    .section {
-      padding: var(--sp-10) 0;
-    }
-  }
-</style>
