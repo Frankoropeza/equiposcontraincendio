@@ -520,9 +520,9 @@ related:
     - label: Acta de simulacro
       href: /plantillas/acta-simulacro-evacuacion/
       desc: El registro de cada ejercicio.
-    - label: Tipos de extintores
-      href: /blog/como-elegir-extintor-clase-fuego/
-      desc: Clases de fuego y agentes.
+    - label: Constancia DC-3
+      href: /blog/constancia-dc-3-que-es/
+      desc: Qué es, quién la emite y qué datos lleva.
     - label: Riesgo de incendio
       href: /herramientas/riesgo-de-incendio/
       desc: Ordinario o alto, en minutos.

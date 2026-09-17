@@ -545,9 +545,9 @@ related:
     - label: Señales de evacuación
       href: /productos/senalizacion-fotoluminiscente/
       desc: Señales fotoluminiscentes por función.
-    - label: Instalación de sistemas
-      href: /servicios/instalacion/
-      desc: Levantamiento e instalación.
+    - label: Significado de las señales
+      href: /blog/senales-proteccion-civil-significado/
+      desc: Colores, formas y tipos según la NOM-003.
     - label: Inspección y dictamen
       href: /servicios/inspeccion/
       desc: Antes de la visita.
