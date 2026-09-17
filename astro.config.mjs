@@ -163,6 +163,10 @@ export default defineConfig({
   trailingSlash: 'always',
   build: {
     format: 'directory',
+    // FASE 3 · F3.1 (2026-09-16): CSS siempre en /_astro/*.css. Antes ~28 KB de
+    // <style> iban dentro de cada HTML (2.36 MB en el dist) sin caché posible;
+    // ahora viajan una vez y quedan inmutables un año (public/_headers).
+    inlineStylesheets: 'never',
   },
 
   integrations: [sitemap(sitemapOptions), mdx()],
@@ -170,6 +174,11 @@ export default defineConfig({
   vite: {
     // cacheDir local: evita colisiones de permisos entre sesiones/worktrees.
     cacheDir: 'node_modules/.vite',
+    // F3.1: scripts procesados como archivo externo cacheable, nunca inline.
+    build: {
+      assetsInlineLimit: 0,
+      cssCodeSplit: false,
+    },
     resolve: {
       // Espejo EXACTO de tsconfig.json compilerOptions.paths (sin el /*).
       alias: {

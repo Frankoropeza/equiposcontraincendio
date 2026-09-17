@@ -71,9 +71,9 @@ const servicios = (await getCollection("servicios", ({ data }) => !data.draft))
   guia={false}
   schemaData={{ faqs: homeFaqs }}
 >
-  <Fragment slot="head">
-    <link rel="preload" as="image" href={SHOWCASE[0].image} type="image/avif" fetchpriority="high" />
-  </Fragment>
+  {/* F3.1 (2026-09-16): se retiró el preload de SHOWCASE[0]. Apuntaba a la
+      variante de 1200 px mientras el <img> elige 640 px por srcset (doble
+      descarga) y esa tarjeta no es el LCP: el LCP es el texto del hero. */}
 
   <Hero
     badge="Venta e instalación · CDMX y Estado de México"
