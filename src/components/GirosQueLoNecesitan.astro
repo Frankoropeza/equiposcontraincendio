@@ -56,18 +56,18 @@ const enFrase = (s: string) => (/^[A-ZÁÉÍÓÚÑ]{2}/.test(s) ? s : s.charAt(0
             imageAlt={f.data.imageAlt}
             badge={RIESGO_LABEL[f.data.riesgoProbable]}
             blurb={f.data.cardDescription}
-            ctaLabel="Ver requisitos"
+            ctaLabel={f.data.ctaLabel}
             index={i}
           />
         ))}
         <CategoryCard
-          label="Ver todo el directorio"
+          label="Todos los giros"
           href="/proteccion-civil/#por-giro"
           image="/images/servicios/auditoria-seguridad-contra-incendio.avif"
           imageAlt="Revisión de seguridad contra incendio en un establecimiento"
           badge="Directorio completo"
           blurb="Requisitos de Protección Civil por tipo de negocio en CDMX y Edomex."
-          ctaLabel="Ver directorio"
+          ctaLabel="Protección civil por giro"
           index={fichas.length}
         />
       </div>

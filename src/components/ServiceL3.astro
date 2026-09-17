@@ -132,11 +132,11 @@ const schemaData = data.categoriaProductos
       titleAccent={modulo.titleAccent}
       description={modulo.description}
       features={modulo.features}
-      ctaLabel={modulo.ctaLabel}
-      ctaHref={waUrl(modulo.ctaMsg)}
-      ctaExternal
-      ctaSecondaryLabel={modulo.ctaSecondaryLabel}
-      ctaSecondaryHref={modulo.ctaSecondaryHref}
+      ctaLabel={modulo.ctaSecondaryLabel}
+      ctaHref={modulo.ctaSecondaryHref}
+      ctaSecondaryLabel="Cotizar por WhatsApp"
+      ctaSecondaryHref={waUrl(modulo.ctaMsg)}
+      ctaSecondaryExternal
       imgMain={modulo.imgMain}
       imgA={modulo.imgA}
       imgB={modulo.imgB}
@@ -184,7 +184,7 @@ const schemaData = data.categoriaProductos
     items={data.faq.items}
     waNumber={CONTACT.whatsapp}
     eyebrow={data.faq.eyebrow}
-    title="Preguntas frecuentes"
+    title="Preguntas"
     titleAccent={data.faq.titleAccent}
     desc={data.faq.desc}
     body={data.faq.body}

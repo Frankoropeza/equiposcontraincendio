@@ -8,7 +8,7 @@ seo:
   serviceName: Mantenimiento de extintores
   serviceType: Mantenimiento y recarga de extintores
   image: /images/servicios/inspeccion-recarga-extintores.avif
-breadcrumb: Mantenimiento y recarga
+breadcrumb: Mantenimiento de extintores
 wa: "Hola, quiero cotizar la recarga y el mantenimiento de mis extintores. Tengo este inventario (tipo, capacidad y cantidad):"
 menuCtaSub: Manda tu inventario
 hero:
@@ -19,18 +19,18 @@ hero:
   descRight:
     - Recargar no es lo mismo que dar mantenimiento. La recarga repone el agente; el mantenimiento abre el extintor, revisa el cilindro por dentro, cambia lo desgastado y comprueba que no tenga fugas. Un servicio que solo rellena y pega una etiqueta te devuelve el extintor igual que como llegó.
     - Aquí está lo que se le hace a cada tipo de extintor, qué debe traer cuando regresa y cuándo conviene recargarlo o reemplazarlo. Si tienes el inventario a la mano, mándalo por WhatsApp y te cotizamos.
-  outlineText: Recarga por tipo
+  outlineText: Servicio por tipo
 vitrina:
-  eyebrow: Recarga por tipo de extintor
+  eyebrow: Mantenimiento por tipo de extintor
   title: Cada agente
   titleAccent: pide su propio servicio
   desc: "El procedimiento cambia con lo que lleva dentro el cilindro: polvo, gas, químico húmedo, agua o agente limpio."
   body:
     - Un PQS se vacía y se presuriza con nitrógeno; un CO₂ se comprueba en báscula porque no tiene manómetro; un clase K se revisa por la grasa que acumula en la boquilla. Por eso el servicio se cotiza por tipo y por capacidad, no «por extintor».
-    - "Elige el tuyo para ver qué incluye su recarga. Las tres últimas fichas cierran el ciclo: la prueba del cilindro, la revisión que te toca cada mes y el reemplazo cuando ya no conviene recargar."
+    - "Elige el tuyo para ver qué incluye su mantenimiento. Las tres últimas fichas cierran el ciclo: la prueba del cilindro, la revisión que te toca cada mes y el reemplazo cuando ya no conviene recargar."
   id: por-tipo
   tarjetas:
-    - title: Recarga de extintores PQS
+    - title: Mantenimiento de extintores PQS
       href: "#recarga-pqs"
       image: /images/servicios/inspeccion-recarga-extintores.avif
       imageAlt: Recarga de extintores de polvo químico seco en taller de servicio
@@ -43,8 +43,8 @@ vitrina:
           value: Sí, con holograma
         - label: Presurizado
           value: Con nitrógeno
-      ctaLabel: Recarga PQS
-    - title: Recarga de extintores de CO₂
+      ctaLabel: Mantenimiento PQS
+    - title: Mantenimiento de extintores de CO₂
       href: "#recarga-co2"
       image: /images/servicios/prueba-electrica-panel-alarma-incendio.avif
       imageAlt: Muro con extintor, estación manual y señalética de emergencia en planta
@@ -57,7 +57,7 @@ vitrina:
           value: No aplica
         - label: Cilindro
           value: Alta presión
-      ctaLabel: Recarga de CO₂
+      ctaLabel: Mantenimiento de CO₂
     - title: Mantenimiento de extintores clase K
       href: "#recarga-clase-k"
       image: /images/servicios/supresion-cocina-comercial.avif
@@ -71,8 +71,8 @@ vitrina:
           value: Boquilla
         - label: Distancia máx.
           value: 10 m
-      ctaLabel: Recarga clase K
-    - title: Recarga de extintores de agua y espuma
+      ctaLabel: Mantenimiento clase K
+    - title: Mantenimiento de extintores de agua
       href: "#recarga-agua-espuma"
       image: /images/servicios/instalacion-equipo-almacen.avif
       imageAlt: Extintor y gabinete instalados en un almacén
@@ -85,8 +85,8 @@ vitrina:
           value: Se reemplazan
         - label: Norma
           value: NOM-103-STPS
-      ctaLabel: Recarga de agua
-    - title: Servicio a extintores de agente limpio
+      ctaLabel: Extintores de agua
+    - title: Mantenimiento de agente limpio
       href: "#recarga-agente-limpio"
       image: /images/servicios/supresion-agente-limpio-data-center.avif
       imageAlt: Cilindros de agente limpio protegiendo un centro de datos
@@ -99,7 +99,7 @@ vitrina:
           value: Halotron I o FE-36
         - label: Residuo
           value: Ninguno
-      ctaLabel: Recarga agente limpio
+      ctaLabel: Agente limpio
     - title: Prueba hidrostática del cilindro
       href: /servicios/prueba-hidrostatica/
       image: /images/servicios/prueba-hidrostatica-extintor.avif
@@ -144,10 +144,10 @@ vitrina:
       ctaLabel: Venta de extintores
 tablaPrincipal:
   id: que-incluye
-  eyebrow: Qué se le hace al extintor
-  title: Recarga, mantenimiento
-  titleAccent: y prueba hidrostática
-  desc: Son tres trabajos distintos, con plazos distintos y evidencia distinta.
+  eyebrow: Qué incluye cada trabajo
+  title: "Mantenimiento y recarga de extintores:"
+  titleAccent: qué incluye cada uno
+  desc: Revisión mensual, recarga, mantenimiento y prueba hidrostática son trabajos distintos, con plazos y evidencia distintos.
   body:
     - La confusión más cara del mercado es pagar una recarga creyendo que se compró un mantenimiento. La tabla muestra qué se hace en cada caso y qué debe quedar como prueba.
     - La revisión mensual la hace tu personal y no la sustituye el proveedor; el mantenimiento a extintores, con su revisión de extintores por dentro, sí se contrata.
@@ -221,8 +221,8 @@ guia:
 tabla2:
   id: al-regresar
   eyebrow: Al terminar el servicio
-  title: Qué debe traer tu extintor
-  titleAccent: cuando regresa
+  title: "Etiqueta de mantenimiento:"
+  titleAccent: qué debe traer tu extintor
   desc: Es lo más fácil de revisar y lo que primero delata un servicio que no se hizo.
   body:
     - La NOM-002-STPS-2010 te pide comprobar que la etiqueta tenga estos datos, y la NOM-154-SCFI-2005 los detalla. Si falta el número de dictamen, nadie verificó al taller que hizo el trabajo.
@@ -250,7 +250,7 @@ tabla2:
 modulos:
   - id: recarga-pqs
     eyebrow: PQS ABC · Presión contenida · Con collarín
-    title: Recarga de extintores PQS,
+    title: Mantenimiento de extintores PQS,
     titleAccent: el servicio más frecuente
     description: "Es el extintor que más se instala y, por eso, el que más servicio pide. El polvo químico seco se compacta con el tiempo y con la humedad, así que el mantenimiento no se limita a rellenar: se despresuriza, se vacía, se revisa el cilindro por dentro, se recarga, se presuriza con nitrógeno y se prueba contra fugas. Es el único que regresa con collarín."
     features:
@@ -264,7 +264,7 @@ modulos:
         desc: El manómetro marca la presión de operación antes de entregarse.
     ctaLabel: Cotizar recarga PQS
     ctaMsg: "Hola, quiero cotizar la recarga y el mantenimiento de extintores PQS. Tengo estas capacidades y cantidades:"
-    ctaSecondaryLabel: Extintores PQS ABC
+    ctaSecondaryLabel: Extintor PQS
     ctaSecondaryHref: /productos/extintor-pqs/
     imgMain:
       src: /images/servicios/inspeccion-recarga-extintores.avif
@@ -291,7 +291,7 @@ modulos:
         desc: Una descarga corta ya vacía parte del gas, y no se ve sin pesarlo.
     ctaLabel: Cotizar recarga de CO₂
     ctaMsg: "Hola, quiero cotizar la recarga de extintores de CO₂. Tengo estas capacidades y cantidades:"
-    ctaSecondaryLabel: Extintores de CO₂
+    ctaSecondaryLabel: Extintor de CO2
     ctaSecondaryHref: /productos/extintor-co2/
     imgMain:
       src: /images/servicios/prueba-electrica-panel-alarma-incendio.avif
@@ -318,7 +318,7 @@ modulos:
         desc: El sistema fijo de supresión de la campana tiene su propio servicio.
     ctaLabel: Cotizar recarga clase K
     ctaMsg: Hola, quiero cotizar el mantenimiento de extintores clase K para una cocina comercial.
-    ctaSecondaryLabel: Extintores clase K
+    ctaSecondaryLabel: Extintor tipo K
     ctaSecondaryHref: /productos/extintor-clase-k/
     imgMain:
       src: /images/servicios/supresion-cocina-comercial.avif
@@ -345,7 +345,7 @@ modulos:
         desc: Se presuriza y se prueba que no pierda presión.
     ctaLabel: Cotizar recarga de agua
     ctaMsg: Hola, quiero cotizar la recarga de extintores de agua o de espuma AFFF.
-    ctaSecondaryLabel: Extintores de agua
+    ctaSecondaryLabel: Extintor de agua
     ctaSecondaryHref: /productos/extintor-agua/
     imgMain:
       src: /images/servicios/instalacion-equipo-almacen.avif
@@ -372,7 +372,7 @@ modulos:
         desc: Aunque se haya usado poco, pierde carga y vuelve a servicio.
     ctaLabel: Cotizar agente limpio
     ctaMsg: Hola, quiero cotizar la recarga de extintores de agente limpio (Halotron I o FE-36).
-    ctaSecondaryLabel: Agente limpio
+    ctaSecondaryLabel: Extintor agente limpio
     ctaSecondaryHref: /productos/extintor-agente-limpio/
     imgMain:
       src: /images/servicios/supresion-agente-limpio-data-center.avif
@@ -419,8 +419,8 @@ decision:
       - El mantenimiento conserva el extintor, pero no corrige una mala elección
 proceso:
   eyebrow: Cómo es el servicio
-  title: Del inventario
-  titleAccent: a la etiqueta nueva
+  title: En qué consiste el mantenimiento
+  titleAccent: del inventario a la etiqueta nueva
   desc: Lo que le pasa a cada extintor entre que lo recogemos y te lo devolvemos.
   body:
     - "El paso que separa un mantenimiento de una recarga rápida es el tercero: abrir el equipo y revisarlo por dentro. Sin eso, nadie sabe en qué estado está el cilindro."
@@ -523,7 +523,7 @@ related:
       desc: Vencimientos y faltantes por equipo.
     - label: Verifica tu extintor
       href: /herramientas/verifica-tu-extintor/
-      desc: Doce puntos para saber si fue real.
+      desc: Revisa si el servicio fue real.
     - label: Bitácora de extintores
       href: /plantillas/bitacora-revision-extintores/
       desc: Formato gratuito para la revisión mensual.
@@ -541,14 +541,16 @@ related:
       desc: Vida útil del cilindro y señales de baja.
 faq:
   eyebrow: Preguntas frecuentes
-  titleAccent: sobre recarga de extintores
-  desc: "Lo que más nos preguntan antes de mandar los extintores a servicio: costo, periodicidad, qué deben traer y cuándo ya no conviene recargarlos."
+  titleAccent: sobre el mantenimiento de extintores
+  desc: "Lo que más nos preguntan antes de mandar los extintores a mantenimiento: qué incluye, cuánto cuesta, cada cuándo se hace y cuándo ya no conviene recargarlos."
   body:
     - Si tu caso no aparece aquí, escríbenos con el tipo, la capacidad y la cantidad de extintores. Con eso te decimos qué servicio les toca.
     - Las respuestas citan la norma cuando aplica; lo que depende del estado de cada equipo lo revisamos al abrirlo.
   items:
     - question: ¿Cuánto cuesta el mantenimiento de un extintor?
       answer: "Depende del agente, la capacidad, la cantidad de equipos y de si hace falta cambiar refacciones o hacer la prueba hidrostática. Recargar un PQS de 6 kg no cuesta lo mismo que un agente limpio de la misma capacidad. Mándanos por WhatsApp el tipo, la capacidad y cuántos tienes, y te cotizamos con precio real. Desconfía de un precio muy por debajo del resto: suele ser una recarga sin apertura ni revisión interna."
+    - question: ¿Qué incluye el mantenimiento de extintores?
+      answer: "Incluye despresurizar el equipo, abrirlo, revisar el cilindro por dentro y por fuera, revisar válvula, manómetro y manguera, cambiar las piezas desgastadas por refacciones certificadas, recargar el agente, presurizar y hacer la prueba de fugas. Al terminar se coloca la etiqueta nueva, el collarín en los PQS con manómetro y se entrega la orden de servicio foliada. Si al cilindro le toca la prueba hidrostática, se hace en el mismo servicio."
     - question: ¿Cuál es la diferencia entre recarga y mantenimiento de extintores?
       answer: "La recarga repone el agente y vuelve a presurizar el equipo. El mantenimiento es el procedimiento completo: se despresuriza, se abre, se revisa el cilindro por dentro y por fuera, se cambian las piezas desgastadas, se recarga, se presuriza y se prueba contra fugas. Un extintor puede recargarse sin haber recibido mantenimiento real, y ahí está el problema de los servicios baratos."
     - question: ¿Cada cuánto se le da mantenimiento a un extintor?
@@ -562,7 +564,7 @@ faq:
     - question: ¿Por qué mi extintor de CO₂ no trae collarín ni manómetro?
       answer: Porque no le corresponden. El CO₂ se guarda licuado a alta presión y su carga se comprueba pesándolo, no con manómetro. Y la NOM-154 pide collarín solo a los extintores de polvo químico seco de presión contenida con manómetro, no a los de gases. En el CO₂, la evidencia del servicio es la etiqueta.
     - question: ¿Cómo sé que el servicio sí se hizo?
-      answer: Revisa que la etiqueta traiga el número de dictamen de cumplimiento de la NOM-154 —si no aparece, no hay dictamen—, que te entreguen orden de servicio foliada, que los PQS con manómetro traigan collarín y que no haya etiquetas apiladas. Nuestra herramienta de 12 puntos te ayuda a revisarlo en unos minutos.
+      answer: Revisa que la etiqueta traiga el número de dictamen de cumplimiento de la NOM-154 —si no aparece, no hay dictamen—, que te entreguen orden de servicio foliada, que los PQS con manómetro traigan collarín y que no haya etiquetas apiladas. Nuestra herramienta de verificación te ayuda a revisarlo en unos minutos.
     - question: ¿Qué garantía tiene el mantenimiento?
       answer: "La NOM-154-SCFI-2005 obliga al taller a garantizar el funcionamiento del extintor durante al menos un año desde el servicio, siempre que el seguro o marchamo siga intacto. Es una garantía que da la norma: aplica aunque no venga escrita en la cotización."
     - question: ¿Se puede recargar cualquier extintor?
