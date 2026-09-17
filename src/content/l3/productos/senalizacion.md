@@ -303,8 +303,8 @@ modulos:
         desc: Rojo para equipo, verde para la salida.
     ctaLabel: Cotizar señales
     ctaMsg: Hola, quiero cotizar señales de ubicación de extintor e hidrante.
-    ctaSecondaryLabel: Venta de extintores
-    ctaSecondaryHref: /productos/extintores/
+    ctaSecondaryLabel: Señalamiento de extintor
+    ctaSecondaryHref: /productos/senalamiento-de-extintor/
     imgMain:
       src: /images/servicios/etiquetado-inspeccion-extintor.avif
       alt: Técnico revisando un extintor bajo sus señales de extintor y manguera
