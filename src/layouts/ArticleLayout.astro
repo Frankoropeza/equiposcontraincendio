@@ -199,11 +199,11 @@ const cta = CTA_BY_FUNNEL[funnel] ?? CTA_BY_FUNNEL.mofu;
         {showToc && (
           <nav class="toc" aria-labelledby="toc-heading">
             <h2 id="toc-heading" class="toc__title">En este artículo</h2>
-            <ol class="toc__list">
+            <ul class="toc__list" role="list">
               {toc.map((h) => (
                 <li><a href={`#${h.slug}`}>{h.text}</a></li>
               ))}
-            </ol>
+            </ul>
           </nav>
         )}
 
@@ -260,9 +260,9 @@ const cta = CTA_BY_FUNNEL[funnel] ?? CTA_BY_FUNNEL.mofu;
   .post__widget--cta { background: var(--color-surface); }
 
   /* Índice del artículo — anclas a los H2 (Astro genera los id). */
-  .toc { margin: 0 0 var(--space-7); padding: var(--space-5); border: 1px solid var(--color-border); border-left: 3px solid var(--color-accent); border-radius: var(--radius-lg); background: var(--color-surface); }
+  .toc { margin: 0 0 var(--space-7); padding: var(--space-5); border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); }
   .toc__title { font-size: var(--text-sm); text-transform: uppercase; letter-spacing: .08em; margin: 0 0 var(--space-3); color: var(--color-text-muted); }
-  .toc__list { margin: 0; padding-left: var(--space-5); display: grid; gap: var(--space-2); }
+  .toc__list { margin: 0; padding: 0; list-style: none; display: grid; gap: var(--space-2); }
   .toc__list a { text-decoration: none; }
   .toc__list a:hover { text-decoration: underline; }
 
