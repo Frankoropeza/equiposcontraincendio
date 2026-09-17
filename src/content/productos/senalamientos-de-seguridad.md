@@ -1,6 +1,8 @@
 ---
 title: "Señalamientos de seguridad para empresas y centros de trabajo"
 description: "Señalamientos de seguridad de prohibición, obligación, precaución, información y equipo contra incendio, con colores y formas de la NOM-026-STPS-2008 y la NOM-003-SSPC-2011."
+cardTitle: "Señalamientos de seguridad"
+cardDescription: "Prohibición, obligación, precaución e información, con colores de la NOM-026."
 category: senalizacion
 image: /images/productos/senalamientos-de-seguridad-salida-emergencia.avif
 price: "Cotizar"

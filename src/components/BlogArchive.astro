@@ -17,7 +17,7 @@ import { cierreGeneral, faltanParaCuatro } from '@data/cierre'
 
 type Post = {
   id: string
-  data: { title: string; description: string; heroImage: string; category: string }
+  data: { title: string; description: string; heroImage: string; category: string; cardTitle?: string; cardDescription?: string }
 }
 
 interface Props {
@@ -77,12 +77,12 @@ const cierreItems = current === total
         <div class="card-grid">
           {posts.map((a, i) => (
             <CategoryCard
-              label={a.data.title}
+              label={a.data.cardTitle ?? a.data.title}
               href={`/blog/${a.id}/`}
               image={a.data.heroImage}
               imageAlt={a.data.title}
               badge={CAT_LABEL[a.data.category] ?? 'Artículo'}
-              blurb={a.data.description}
+              blurb={a.data.cardDescription ?? a.data.description}
               ctaLabel="Leer artículo"
               index={i}
             />

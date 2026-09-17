@@ -1,6 +1,7 @@
 ---
 title: "Inspección y dictamen de equipo contra incendio"
 description: "Revisión, pruebas y reporte del estado del equipo contra incendio de tu inmueble: faltantes, vencimientos, incumplimientos normativos y recomendaciones priorizadas antes de una verificación."
+cardDescription: "Revisión y pruebas del equipo, con reporte de faltantes, vencimientos y prioridades."
 category: inspeccion
 image: /images/servicios/inspeccion-tablero-alarma-gabinete-manguera.avif
 isHub: false

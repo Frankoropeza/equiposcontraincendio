@@ -1,6 +1,7 @@
 ---
 title: "Diagnóstico de riesgo de incendio"
 description: "Levantamiento en sitio para clasificar el grado de riesgo de incendio de tu inmueble conforme a la NOM-002-STPS-2010 y definir con fundamento qué equipo necesitas, cuánto y dónde colocarlo."
+cardDescription: "Clasificamos el riesgo según la NOM-002-STPS y definimos qué equipo necesitas."
 category: inspeccion
 image: /images/servicios/auditoria-seguridad-contra-incendio.avif
 isHub: false

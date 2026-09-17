@@ -1,6 +1,7 @@
 ---
 title: "Prueba hidrostática de extintores"
 description: "Prueba de presión del cilindro conforme a la NOM-154-SCFI-2005: cada 5 años en extintores de agua, CO₂ y PQS, o antes si el equipo sufre un golpe. Con dictamen del resultado y marcado del cilindro."
+cardDescription: "Prueba de presión del cilindro cada 5 años según la NOM-154-SCFI, con dictamen."
 category: mantenimiento
 image: /images/servicios/prueba-hidrostatica-extintor.avif
 isHub: false

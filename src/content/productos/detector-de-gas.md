@@ -1,6 +1,8 @@
 ---
 title: "Detector de gas para cocinas, calderas y cuartos de máquinas"
 description: "Detectores de gas LP y gas natural para cocinas comerciales, calderas y cuartos de máquinas: autónomos, con electroválvula de corte o conectados al panel de alarma."
+cardTitle: "Detector de gas LP y natural"
+cardDescription: "Para cocinas, calderas y cuartos de máquinas; autónomo o con electroválvula."
 category: deteccion-alarmas
 image: /images/servicios/supresion-cocina-comercial.avif
 price: "Cotizar"

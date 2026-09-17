@@ -1,6 +1,8 @@
 ---
 title: "Lámparas de emergencia para empresas y rutas de evacuación"
 description: "Lámparas de emergencia LED con batería de respaldo para rutas de evacuación, escaleras, salidas y áreas donde un corte de luz es un riesgo, conforme a la NOM-025-STPS-2008."
+cardTitle: "Lámparas de emergencia"
+cardDescription: "LED con batería de respaldo para rutas y salidas, conforme a la NOM-025-STPS."
 category: senalizacion
 image: /images/productos/senalizacion-luces-emergencia.avif
 price: "Cotizar"

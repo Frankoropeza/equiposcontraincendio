@@ -1,6 +1,8 @@
 ---
 title: "Extintores de polvo químico seco PQS ABC"
 description: "Extintores PQS ABC para fuegos de sólidos, líquidos inflamables y equipo eléctrico. Del compacto de 1 kg para vehículo a unidades sobre ruedas de 70 kg."
+cardTitle: "Extintores PQS ABC"
+cardDescription: "Polvo químico seco para sólidos, líquidos y equipo eléctrico, de 1 a 70 kg."
 category: extintores
 image: /images/showcase/extintores-catalogo-profesional.avif
 price: "Cotizar"

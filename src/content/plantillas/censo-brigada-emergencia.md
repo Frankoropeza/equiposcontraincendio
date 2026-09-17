@@ -1,6 +1,7 @@
 ---
 title: "Censo de brigada de emergencia (formato descargable)"
 description: "Descarga gratis el censo de brigada: integrantes, brigada asignada, rol, contacto y capacitación con su constancia, en Excel y en PDF para imprimir."
+cardDescription: "Integrantes, brigada, rol, contacto y constancia de cada brigadista, en Excel y PDF."
 label: "Censo de brigada de emergencia"
 image: "/images/servicios/capacitacion-brigada-extintores.avif"
 imageAlt: "Capacitación de brigada en el uso de extintores"

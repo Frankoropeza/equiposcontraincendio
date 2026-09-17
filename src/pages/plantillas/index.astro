@@ -40,6 +40,7 @@ import {
   plantillasFaqs,
   plantillasConsultaMsg,
   plantillasCardCta,
+  plantillasFaqHead,
 } from '@data/plantillas'
 
 const plantillas = (await getCollection('plantillas', ({ data }) => !data.draft)).sort(
@@ -115,12 +116,12 @@ const schemaData = {
       <div class="card-grid">
         {plantillas.map((p, i) => (
           <CategoryCard
-            label={p.data.label}
+            label={p.data.cardTitle ?? p.data.label}
             href={`/plantillas/${p.id}/`}
             image={p.data.image}
             imageAlt={p.data.imageAlt}
             badge={p.data.files.map((f) => f.ext).join(' · ')}
-            blurb={p.data.description}
+            blurb={p.data.cardDescription ?? p.data.description}
             ctaLabel={plantillasCardCta[p.id] ?? 'Descargar formato'}
             index={i}
           />
@@ -229,7 +230,7 @@ const schemaData = {
   />
 
   {/* ─── FAQ + Contacto ─── */}
-  <FAQWithContact items={plantillasFaqs} waNumber={CONTACT.whatsapp} />
+  <FAQWithContact items={plantillasFaqs} waNumber={CONTACT.whatsapp} {...plantillasFaqHead} />
 </PageLayout>
 
 <style>

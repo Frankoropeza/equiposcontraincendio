@@ -1,6 +1,7 @@
 ---
 title: "Mantenimiento y recarga de extintores"
 description: "Mantenimiento preventivo y recarga de extintores conforme a la NOM-154-SCFI-2005, con etiqueta y collarín de servicio. Programa anual para mantener tu equipo vigente y listo para operar."
+cardDescription: "Servicio preventivo y recarga conforme a la NOM-154-SCFI, con etiqueta y collarín."
 category: mantenimiento
 image: /images/servicios/inspeccion-recarga-extintores.avif
 isHub: false

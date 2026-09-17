@@ -27,6 +27,7 @@ import {
   serviciosFaqs,
   serviciosTestimoniosHead,
   serviciosTestimoniosNombres,
+  serviciosFaqHead,
 } from '@data/servicios'
 import ServiceCard from '@components/ServiceCard.astro'
 import { getCollection } from 'astro:content'
@@ -116,7 +117,7 @@ const serviciosTestimonios = serviciosTestimoniosNombres
             hueco. La octava es la salida para quien no sabe cuál pedir. */}
         <ServiceCard
           title="¿No sabes qué servicio necesitas?"
-          description="Cuéntanos el giro y la superficie de tu inmueble y te decimos qué servicio te pide la norma y con qué periodicidad, sin venderte de más."
+          description="Cuéntanos giro y superficie y te decimos qué servicio pide la norma y cada cuándo."
           href={waUrl('Hola, no sé qué servicio necesito. ¿Me ayudan a saber qué me pide la norma para mi inmueble?')}
           image="/images/servicios/inspeccion-gabinete-manguera-contra-incendio.avif"
           imageAlt="Técnico inspeccionando un gabinete de manguera contra incendio"
@@ -218,7 +219,7 @@ const serviciosTestimonios = serviciosTestimoniosNombres
   />
 
   {/* ─── FAQ + Contacto ─── */}
-  <FAQWithContact items={serviciosFaqs} waNumber={CONTACT.whatsapp} />
+  <FAQWithContact items={serviciosFaqs} waNumber={CONTACT.whatsapp} {...serviciosFaqHead} />
 </PageLayout>
 
 <style>

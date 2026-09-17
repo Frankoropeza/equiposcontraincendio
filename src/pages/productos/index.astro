@@ -34,6 +34,7 @@ import {
   productosBadge,
   productosTestimoniosNombres,
   productosTestimoniosHead,
+  productosFaqHead,
 } from '@data/productos';
 import { testimonios } from '@data/testimonios';
 import { getCollection } from 'astro:content';
@@ -167,12 +168,12 @@ const schemaData = {
         <div class="card-grid">
           {productos.map((p, i) => (
             <ProductCard
-              title={p.data.title}
+              title={p.data.cardTitle ?? p.data.title}
               href={`/productos/${p.id}/`}
               image={p.data.image}
               imageAlt={p.data.title}
               badge={productosBadge[p.id] ?? CAT_LABEL[p.data.category] ?? p.data.category}
-              description={p.data.description}
+              description={p.data.cardDescription ?? p.data.description}
               index={i}
               priority={i === 0}
             />
@@ -278,6 +279,7 @@ const schemaData = {
   <FAQWithContact
     items={productosFaqs}
     waNumber={CONTACT.whatsapp}
+    {...productosFaqHead}
   />
 </PageLayout>
 <style>

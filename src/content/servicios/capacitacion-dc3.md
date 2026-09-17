@@ -1,6 +1,7 @@
 ---
 title: "Capacitación de brigada y constancias DC-3"
 description: "Cursos de uso y manejo de extintores y de brigada contra incendio para tu personal, con constancia DC-3 para integrar al expediente ante la STPS y Protección Civil."
+cardDescription: "Uso de extintores y brigada contra incendio, con constancia DC-3 para la STPS."
 category: capacitacion
 image: /images/servicios/capacitacion-brigada-extintores.avif
 isHub: false

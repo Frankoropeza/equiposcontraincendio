@@ -54,8 +54,8 @@ const menuCta = {
 const servicios = (await getCollection("servicios", ({ data }) => !data.draft))
   .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0))
   .map((s) => ({
-    title: s.data.title,
-    description: s.data.description,
+    title: s.data.cardTitle ?? s.data.title,
+    description: s.data.cardDescription ?? s.data.description,
     href: `/servicios/${s.id}/`,
     image: s.data.image,
     imageAlt: s.data.title,
@@ -187,7 +187,7 @@ const servicios = (await getCollection("servicios", ({ data }) => !data.draft))
             servicio pedir — que es el caso más común de este negocio. */}
         <ServiceCard
           title="¿No sabes qué servicio necesitas?"
-          description="Cuéntanos el giro y la superficie de tu inmueble y te decimos qué equipo y qué servicio te pide la norma, sin venderte de más."
+          description="Cuéntanos giro y superficie y te decimos qué equipo y servicio pide la norma."
           href={waUrl("Hola, no sé qué servicio necesito. ¿Me ayudan a saber qué me pide la norma para mi inmueble?")}
           image="/images/servicios/inspeccion-tablero-alarma-gabinete-manguera.avif"
           imageAlt="Técnico revisando el tablero de alarma y el gabinete de un inmueble"

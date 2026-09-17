@@ -1,6 +1,7 @@
 ---
 title: "Acta de simulacro de evacuación (formato descargable)"
 description: "Descarga gratis el acta para documentar un simulacro de evacuación: datos del inmueble, tiempos, puntos observados, acciones correctivas y firmas."
+cardDescription: "Registra tiempos, observaciones, acciones correctivas y firmas del simulacro."
 label: "Acta de simulacro de evacuación"
 image: "/images/casos/entrega-servicio-equipo-contra-incendio.avif"
 imageAlt: "Entrega de servicio de equipo contra incendio en un inmueble"

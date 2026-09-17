@@ -57,7 +57,7 @@ export const cierrePlantillas: FichaCierre[] = [
   {
     badge: '¿Prefieres no llenarlo tú?',
     title: 'Gestión documental',
-    description: 'Ordenamos el expediente completo del equipo y lo mantenemos al día con cada servicio.',
+    description: 'Ordenamos el expediente del equipo y lo mantenemos al día con cada servicio.',
     href: '/servicios/gestion-documental/',
     ctaLabel: 'Gestión documental',
     image: '/images/servicios/etiquetado-inspeccion-extintor.avif',

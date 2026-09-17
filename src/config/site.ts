@@ -639,7 +639,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
     imageAlt: 'Detectores de humo y panel de alarma contra incendio',
     badge: 'NFPA 72 · Detección temprana',
     blurb:
-      'Detectores de humo y calor, paneles direccionables, estaciones manuales y sirenas NFPA.',
+      'Detectores de humo y calor, paneles direccionables, estaciones y sirenas.',
     subcategories: [
       { label: 'Detectores de humo', href: '/productos/detector-humo-fotoelectrico/' },
       { label: 'Detectores de gas', href: '/productos/detector-de-gas/' },

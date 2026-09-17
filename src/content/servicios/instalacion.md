@@ -1,6 +1,7 @@
 ---
 title: "Instalación de sistemas contra incendio"
 description: "Proyecto e instalación de sistemas y equipo contra incendio: detección y alarma, red de hidrantes y mangueras, extintores y señalización, dimensionados al riesgo y la superficie de tu inmueble."
+cardDescription: "Detección y alarma, hidrantes, extintores y señalización dimensionados a tu riesgo."
 category: instalacion
 image: /images/servicios/integracion-sistemas-contra-incendio.avif
 isHub: false

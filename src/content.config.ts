@@ -133,6 +133,10 @@ const productos = defineCollection({
     .object({
       title: z.string().min(10).max(110),
       description: z.string().min(70).max(280),
+      /** Texto de tarjeta (C2, 2026-09-16): el title/description completos se
+       *  cortaban con line-clamp en las retículas de 4. ≤40 y ≤90 caracteres. */
+      cardTitle: z.string().max(40).optional(),
+      cardDescription: z.string().max(90).optional(),
       category: z.enum(PRODUCT_CATEGORIES), // enum cerrado — MESECI.
       image: imagePath, // imagen obligatoria — MESECI.
       price: z.string().optional(), // string libre ("Desde $X", "Cotizar"). NO number forzado.
@@ -187,6 +191,10 @@ const servicios = defineCollection({
     .object({
       title: z.string().min(10).max(110),
       description: z.string().min(70).max(280),
+      /** Texto de tarjeta (C2, 2026-09-16): el title/description completos se
+       *  cortaban con line-clamp en las retículas de 4. ≤40 y ≤90 caracteres. */
+      cardTitle: z.string().max(40).optional(),
+      cardDescription: z.string().max(90).optional(),
       category: z.enum(SERVICE_CATEGORIES),
       image: imagePath,
       // pricing transparente opcional (EVENTECH:64-73). Sin number obligatorio.
@@ -227,6 +235,10 @@ const articulos = defineCollection({
     .object({
       title: z.string().min(10).max(70), // ≤70 para SEO (convención de títulos).
       description: z.string().min(70).max(160),
+      /** Texto de tarjeta (C2, 2026-09-16): el title/description completos se
+       *  cortaban con line-clamp en las retículas de 4. ≤40 y ≤90 caracteres. */
+      cardTitle: z.string().max(40).optional(),
+      cardDescription: z.string().max(90).optional(),
       // Sin default: la categoría es una decisión editorial, no un descarte. El
       // viejo default 'general' existía para una taxonomía de plantilla que ya no
       // está; ahora publicar sin categoría debe fallar en build, no caer en un cajón.
@@ -341,6 +353,10 @@ const plantillas = defineCollection({
     .object({
       title: z.string().min(10).max(110),
       description: z.string().min(70).max(280),
+      /** Texto de tarjeta (C2, 2026-09-16): el title/description completos se
+       *  cortaban con line-clamp en las retículas de 4. ≤40 y ≤90 caracteres. */
+      cardTitle: z.string().max(40).optional(),
+      cardDescription: z.string().max(90).optional(),
       /** Etiqueta corta para el hub y el menú. */
       label: z.string().min(5).max(70),
       /** Imagen de la tarjeta (CategoryCard) — el sitio lista con foto real. */

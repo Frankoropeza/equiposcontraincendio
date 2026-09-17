@@ -1,6 +1,7 @@
 ---
 title: "Gestión documental para Protección Civil y STPS"
 description: "Integramos el expediente de protección contra incendio de tu inmueble: fichas técnicas, constancias de servicio, certificados de norma y programa anual, ordenados y listos para una verificación."
+cardDescription: "Fichas, constancias, certificados y programa anual, listos para la verificación."
 category: documentacion
 image: /images/servicios/etiquetado-inspeccion-extintor.avif
 isHub: false
