@@ -1,6 +1,7 @@
 ---
 // RelatedLinks.astro — Cross-linking interno data-driven por taxonomía (hub-and-spoke SEO). ORIGEN: PROYECTORED/src/components/sections/CategoriasRelacionadas.astro (excluye la categoría actual, distribuye link equity). Patrón canónico B6 del ecosistema.
 // Por defecto lee PRODUCT_CATEGORIES de config/site y excluye `current`. También acepta `links` manuales (otras taxonomías: servicios, sectores, artículos).
+import Icon from '@components/Icon.astro'
 import { PRODUCT_CATEGORIES } from '@config/site'
 
 interface LinkItem {
@@ -55,7 +56,7 @@ const items = title && limitedItems.length > 4
               <span class="rel__card-label">{item.label}</span>
               {item.desc && <span class="rel__card-desc">{item.desc}</span>}
               <span class="rel__card-arrow" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <Icon name="arrow" size={16} fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
               </span>
             </a>
           </li>

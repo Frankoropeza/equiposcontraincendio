@@ -9,6 +9,8 @@
 // IMPORTANTE: este componente NO emite el bloque JSON-LD <script type="application/ld+json">.
 // El BreadcrumbList JSON-LD lo genera seo.ts/el Layout en UN SOLO lugar (anti-patrón B3:
 // breadcrumb duplicado). Aquí sólo microdata visible para no duplicar.
+import Icon from '@components/Icon.astro'
+
 interface BreadcrumbItem {
   label: string
   href?: string   // sin href → es el item actual (página)
@@ -40,7 +42,7 @@ const trail: BreadcrumbItem[] =
           )}
           <meta itemprop="position" content={String(index + 1)} />
           {index < trail.length - 1 && (
-            <svg class="breadcrumb__sep" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+            <Icon name="chevron-right" size={14} class="breadcrumb__sep" fill="none" stroke="currentColor" stroke-width="2" />
           )}
         </li>
       ))}

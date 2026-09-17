@@ -4,6 +4,7 @@
 // Derecha: galería 3 imágenes (1 grande arriba + 2 pequeñas abajo).
 // Reutilizable para cada una de las 8 categorías del showcase.
 import { srcsetFor } from '@lib/img'
+import Icon from '@components/Icon.astro'
 
 interface Brand {
   name: string
@@ -93,9 +94,7 @@ const {
           {features.map(f => (
             <li class="cf__feature">
               <span class="cf__feature-dot" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
+                <Icon name="check" size={16} fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
               </span>
               <strong class="cf__feature-label">{f.label}</strong>
               {f.desc && <span class="cf__feature-desc">{f.desc}</span>}
@@ -126,9 +125,7 @@ const {
           rel={ctaExternal ? 'noopener noreferrer' : undefined}
         >
           {ctaLabel}
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
+          <Icon name="arrow" size={16} fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
         </a>
         {ctaSecondaryLabel && ctaSecondaryHref && (
           <a
@@ -138,9 +135,7 @@ const {
             rel={ctaSecondaryExternal ? 'noopener noreferrer' : undefined}
           >
             {ctaSecondaryLabel}
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
+            <Icon name="arrow" size={16} fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
           </a>
         )}
       </div>

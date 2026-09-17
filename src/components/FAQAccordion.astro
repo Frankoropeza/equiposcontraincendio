@@ -1,4 +1,6 @@
 ---
+import Icon from '@components/Icon.astro'
+
 // FAQAccordion.astro — Acordeón de preguntas frecuentes accesible con <details>/<summary>. ORIGEN: MESECI/src/components/FAQ.astro (acordeón nativo, primer item abierto) + FaqCotizacionIndex de PROYECTORED.
 // Primitiva ÚNICA de FAQ del sitio (Fase 2, F2.4). FAQWithContact la compone con el formulario.
 // El JSON-LD FAQPage NO se emite aquí: lo centraliza seo.ts (una sola fuente, sin duplicados).
@@ -26,7 +28,7 @@ const { items = [], title = 'Preguntas frecuentes', headingId = 'faq-heading', o
         <details class="faq__item" open={openFirst && idx === 0}>
           <summary class="faq__q">
             <span>{item.question}</span>
-            <svg class="faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            <Icon name="chevron-down" size={20} class="faq__chevron" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           </summary>
           <div class="faq__a"><p set:html={item.answer} /></div>
         </details>

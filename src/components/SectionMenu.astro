@@ -32,6 +32,7 @@
 // diseño). Mobile-first: los botones se apilan en móvil y copan el ancho en
 // escritorio (flex:1, alturas iguales).
 // ============================================================================
+import Icon from '@components/Icon.astro'
 export type MenuItem = { label: string; href: string; sub?: string; icon?: string };
 export type MenuCta = { label: string; href: string; sub?: string; external?: boolean };
 
@@ -79,7 +80,7 @@ const {
           >
             <span class="secbtn__top">
               <span class="secbtn__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.1-.3.2-.5 0-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.2.2-.3.2-.5s0-.3-.1-.4l-.8-1.9c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.7.3-.2.2-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.7 4.3 3.8.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.1-.2-.2-.4-.3z"/></svg>
+                <Icon name="wa-alt" size={18} />
               </span>
               <span class="secbtn__label">{cta.label}</span>
             </span>
