@@ -123,7 +123,7 @@ const Tag = as;
     gap: var(--sp-2);
     width: 100%;
     min-height: 48px;
-    padding: .6em 1em;
+    padding: .6em .75em;
     border-radius: var(--radius-md);
     background: var(--c-primary);
     color: #fff;
@@ -132,5 +132,27 @@ const Tag = as;
     font-weight: var(--weight-semibold);
     text-decoration: none;
     transition: background-color var(--transition);
+  }
+  /* Tramo 1280–1439 px (C1, 2026-09-16). Con 4 columnas la tarjeta mide ~254 px
+     y el CTA solo tenía ~154 px útiles: se cortaban anclas con keyword como
+     «Mantenimiento de extintores» y badges como «NFPA 72 · Detección temprana».
+     Medido con scripts/card-probe.mjs: con este ajuste no se corta ninguno. */
+  @media (min-width: 1280px) and (max-width: 1439.98px) {
+    :is(.ccard__body, .scard__body, .pcard__body) {
+      padding: var(--sp-4);
+    }
+
+    :is(.ccard__cta, .scard__cta, .pcard__cta) {
+      gap: var(--sp-1);
+      font-size: .8125rem;
+    }
+
+    :is(.ccard__media, .scard__media, .pcard__media) > :is(.ccard__badge, .scard__badge, .pcard__badge) {
+      top: var(--sp-2);
+      left: var(--sp-2);
+      max-width: calc(100% - var(--sp-4));
+      padding-inline: .5em;
+      letter-spacing: .02em;
+    }
   }
 </style>
