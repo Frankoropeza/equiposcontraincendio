@@ -346,8 +346,8 @@ modulos:
         desc: Sin autos, rejas ni mercancía enfrente.
     ctaLabel: Cotizar toma siamesa
     ctaMsg: Hola, quiero cotizar una toma siamesa para la red contra incendio de mi inmueble.
-    ctaSecondaryLabel: Red de hidrantes
-    ctaSecondaryHref: /blog/red-hidrantes-gabinetes-mangueras/
+    ctaSecondaryLabel: Toma siamesa
+    ctaSecondaryHref: /productos/toma-siamesa/
     imgMain:
       src: /images/servicios/integracion-sistemas-contra-incendio.avif
       alt: Red contra incendio instalada en un inmueble

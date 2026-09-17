@@ -120,21 +120,29 @@ const relatedLinks = Array.from(new Map(
 const cierreVariantes = (variantes.some((item) => item.agente) ? cierreExtintores : cierreGeneral)
   .slice(0, faltanParaCuatro(variantes.length));
 const faqTitleAccent = fichaData.faqAccent;
+// Las fichas que no son extintores no tienen «capacidad» ni «clases de fuego»:
+// el texto de la sección de presentaciones cambia según el tipo (2026-09-16).
+const esExtintor = variantes.some((item) => item.agente);
+const presLabel = esExtintor ? 'Presentaciones y capacidades' : 'Modelos y presentaciones';
+const presAccent = esExtintor ? 'y capacidades' : 'y modelos';
+const presDesc = esExtintor
+  ? 'Compara capacidad, clases de fuego y uso sugerido. Al cotizar, menciona la presentación exacta y la cantidad.'
+  : 'Compara modelos, medidas y alcance. Al cotizar, menciona la presentación exacta y la cantidad.';
 function shortDescription(value?: string) { return !value ? '' : value.length <= 40 ? value : `${value.slice(0, 37).trimEnd()}…`; }
 ---
 
 <PageLayout title={seoTitle ?? title} description={seoDescription ?? description} image={image} canonical={canonical} pageType="product" schemaData={schemaData} breadcrumbs={breadcrumbs}>
   <Hero badge={fichaData.heroBadge} title={fichaData.heroTitle} accent={fichaData.heroAccent} subtitle={description} descRight={fichaData.descRight} ctas={[
-    { text: 'Presentaciones y capacidades', href: '#presentaciones', variant: 'outline' },
+    { text: presLabel, href: '#presentaciones', variant: 'outline' },
     { text: 'Cotizar por WhatsApp', href: waLink, variant: 'primary', whatsapp: true },
   ]} />
   <SectionMenu items={sectionMenuItems()} cta={menuCta} />
 
-  <ProductShowcase title={title} showcaseTitle={fichaData.showcaseTitle} showcaseAccent={fichaData.showcaseAccent} showcaseDesc={fichaData.showcaseDesc} body={heads.vitrina} image={image} claves={fichaData.claves} capacitySummary={capacitySummary} presentationSummary={presentationSummary} publicPrice={publicPrice} waLink={waLink} />
+  <ProductShowcase title={title} showcaseTitle={fichaData.showcaseTitle} showcaseAccent={fichaData.showcaseAccent} showcaseDesc={fichaData.showcaseDesc} body={heads.vitrina} image={image} claves={fichaData.claves} capacitySummary={capacitySummary} presentationSummary={presentationSummary} publicPrice={publicPrice} waLink={waLink} presLabel={presLabel} />
 
   <section class="section section--surface" id="presentaciones">
     <div class="container">
-      <SectionHeading layout="duo" eyebrow="Presentaciones" title="Presentaciones" titleAccent="y capacidades" desc="Compara capacidad, clases de fuego y uso sugerido. Al cotizar, menciona la presentación exacta y la cantidad." body={heads.presentaciones} />
+      <SectionHeading layout="duo" eyebrow="Presentaciones" title="Presentaciones" titleAccent={presAccent} desc={presDesc} body={heads.presentaciones} />
       <div class="card-grid">
         {variantes.map((variante, index) => {
           const id = slugify(variante.nombre);

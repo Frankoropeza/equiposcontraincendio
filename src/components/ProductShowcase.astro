@@ -16,8 +16,9 @@ interface Props {
   presentationSummary?: string;
   publicPrice?: string;
   waLink: string;
+  presLabel?: string;
 }
-const { title, showcaseTitle, showcaseAccent, showcaseDesc, body, image, claves, capacitySummary, presentationSummary, publicPrice, waLink } = Astro.props as Props;
+const { title, showcaseTitle, showcaseAccent, showcaseDesc, body, image, claves, capacitySummary, presentationSummary, publicPrice, waLink, presLabel = 'Presentaciones y capacidades' } = Astro.props as Props;
 ---
 <section class="section showcase">
   <div class="container">
@@ -32,7 +33,7 @@ const { title, showcaseTitle, showcaseAccent, showcaseDesc, body, image, claves,
       </dl>
       <p class="showcase__price">{publicPrice ?? 'Precio bajo cotización'}</p>
       <div class="showcase__actions">
-        <a class="btn btn--outline" href="#presentaciones">Presentaciones y capacidades</a>
+        <a class="btn btn--outline" href="#presentaciones">{presLabel}</a>
         <a class="btn btn--primary" href={waLink} target="_blank" rel="noopener noreferrer">Cotizar por WhatsApp</a>
       </div>
       </div>

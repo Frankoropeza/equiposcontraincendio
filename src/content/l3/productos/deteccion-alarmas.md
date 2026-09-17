@@ -373,8 +373,8 @@ modulos:
         desc: Detectores, bases y sirenas compatibles con el panel.
     ctaLabel: Cotizar panel
     ctaMsg: Hola, quiero cotizar un panel de alarma contra incendio (convencional o direccionable).
-    ctaSecondaryLabel: Inspección y dictamen
-    ctaSecondaryHref: /servicios/inspeccion/
+    ctaSecondaryLabel: Panel de alarma contra incendio
+    ctaSecondaryHref: /productos/panel-alarma-contra-incendio/
     imgMain:
       src: /images/productos/panel-alarma-contra-incendio.avif
       alt: Técnico midiendo con multímetro dentro de un panel de alarma abierto
