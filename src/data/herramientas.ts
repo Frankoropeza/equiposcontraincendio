@@ -315,7 +315,7 @@ export const herramientasRelated = [
   { label: 'Formatos descargables', href: '/plantillas/', desc: 'Documenta el resultado en la bitácora.' },
   { label: 'Qué exige Protección Civil', href: '/proteccion-civil/', desc: 'Qué piden además del cálculo de extintores.' },
   { label: 'Equipos contra incendios', href: '/productos/', desc: 'Compra los extintores que te dio el cálculo.' },
-  { label: 'Servicios contra incendio', href: '/servicios/', desc: 'Instalación y mantenimiento tras el cálculo.' },
+  { label: 'Servicios contra incendio', href: '/servicios/', desc: 'Instalación y mantenimiento del equipo.' },
 ];
 
 /** Encabezado del bloque FAQ + contacto (C3, 2026-09-16): propio de esta L2,

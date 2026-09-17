@@ -42,7 +42,7 @@ export const zoneCard: Record<string, { src: string; alt: string; badge: string;
     src: '/images/servicios/instalacion-equipo-almacen.avif',
     alt: 'Instalación de equipo contra incendio en un almacén del Estado de México',
     badge: 'Zona conurbada',
-    blurb: 'Servicio en sitio en los municipios conurbados, con enfoque en nave, bodega y planta industrial.',
+    blurb: 'En sitio en municipios conurbados, para naves, bodegas y plantas industriales.',
     cta: 'Cobertura en Edomex',
   },
 };
