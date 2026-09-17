@@ -4,6 +4,7 @@
 // No se edita por producto; el contenido sale de src/content/productos/<slug>.md
 // (frontmatter validado con Zod .strict()). Toda la estructura, el JSON-LD
 // Product+Offer, los breadcrumbs y la conversión WhatsApp viven en ProductLayout.
+import { TAXONOMY } from '@config/site';
 import { getCollection, render } from 'astro:content';
 import ProductLayout from '@layouts/ProductLayout.astro';
 
@@ -22,10 +23,15 @@ export async function getStaticPaths() {
           a.data.order - b.data.order,
       )
       .slice(0, 3)
+      // Texto de tarjeta (2026-09-16): título corto y, si la descripción corta
+      // no cabe en dos líneas (~56 car.), la familia del producto; nunca «…».
       .map((p) => ({
-        label: p.data.title,
+        label: p.data.cardTitle ?? p.data.title,
         href: `/productos/${p.id}/`,
-        description: p.data.description,
+        description:
+          p.data.cardDescription && p.data.cardDescription.length <= 56
+            ? p.data.cardDescription
+            : (TAXONOMY.categories.find((c) => c.slug === p.data.category)?.label ?? undefined),
       }));
 
     return { params: { slug: producto.id }, props: { producto, related } };

@@ -128,7 +128,8 @@ const presAccent = esExtintor ? 'y capacidades' : 'y modelos';
 const presDesc = esExtintor
   ? 'Compara capacidad, clases de fuego y uso sugerido. Al cotizar, menciona la presentación exacta y la cantidad.'
   : 'Compara modelos, medidas y alcance. Al cotizar, menciona la presentación exacta y la cantidad.';
-function shortDescription(value?: string) { return !value ? '' : value.length <= 40 ? value : `${value.slice(0, 37).trimEnd()}…`; }
+// Sin recorte con «…» (regla del sitio): las descripciones que llegan ya son cortas.
+function shortDescription(value?: string) { return value ?? ''; }
 ---
 
 <PageLayout title={seoTitle ?? title} description={seoDescription ?? description} image={image} canonical={canonical} pageType="product" schemaData={schemaData} breadcrumbs={breadcrumbs}>
