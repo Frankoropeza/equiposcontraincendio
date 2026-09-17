@@ -68,7 +68,6 @@ const servicios = (await getCollection("servicios", ({ data }) => !data.draft))
 <PageLayout
   keywords={KEYWORDS}
   pageType="home"
-  guia={false}
   schemaData={{ faqs: homeFaqs }}
 >
   {/* F3.1 (2026-09-16): se retiró el preload de SHOWCASE[0]. Apuntaba a la

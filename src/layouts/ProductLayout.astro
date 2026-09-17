@@ -123,7 +123,7 @@ const faqTitleAccent = fichaData.faqAccent;
 function shortDescription(value?: string) { return !value ? '' : value.length <= 40 ? value : `${value.slice(0, 37).trimEnd()}…`; }
 ---
 
-<PageLayout title={seoTitle ?? title} description={seoDescription ?? description} image={image} canonical={canonical} pageType="product" schemaData={schemaData} breadcrumbs={breadcrumbs} guia={false}>
+<PageLayout title={seoTitle ?? title} description={seoDescription ?? description} image={image} canonical={canonical} pageType="product" schemaData={schemaData} breadcrumbs={breadcrumbs}>
   <Hero badge={fichaData.heroBadge} title={fichaData.heroTitle} accent={fichaData.heroAccent} subtitle={description} descRight={fichaData.descRight} ctas={[
     { text: 'Presentaciones y capacidades', href: '#presentaciones', variant: 'outline' },
     { text: 'Cotizar por WhatsApp', href: waLink, variant: 'primary', whatsapp: true },

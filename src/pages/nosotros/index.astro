@@ -30,7 +30,7 @@ const menuCta = {
 }
 ---
 
-<PageLayout title={nosotrosMeta.title} description={nosotrosMeta.description} pageType="page" schemaData={{ faqs: nosotrosFaqs }} breadcrumbs={[{ label: 'Nosotros' }]} guia={false}>
+<PageLayout title={nosotrosMeta.title} description={nosotrosMeta.description} pageType="page" schemaData={{ faqs: nosotrosFaqs }} breadcrumbs={[{ label: 'Nosotros' }]}>
   <Hero badge={nosotrosHero.badge} title={nosotrosHero.title} accent={nosotrosHero.accent} subtitle={nosotrosHero.subtitle} descRight={nosotrosHero.descRight} ctas={[
     { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.contacto), variant: 'primary', whatsapp: true },
     { text: 'Nuestros servicios', href: '/servicios/', variant: 'outline' },

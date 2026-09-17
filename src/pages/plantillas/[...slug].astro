@@ -72,7 +72,6 @@ const relatedPlantilla = Array.from(new Map([
   pageType="page"
   schemaData={{ ...(d.faqs?.length ? { faqs: d.faqs } : {}) }}
   breadcrumbs={[{ label: 'Formatos descargables', href: '/plantillas/' }, { label: d.label }]}
-  guia={false}
 >
   <Hero
     badge={d.files.map((file) => file.ext).join(' · ')}

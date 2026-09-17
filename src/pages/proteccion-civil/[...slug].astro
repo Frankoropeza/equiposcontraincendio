@@ -73,7 +73,6 @@ const relatedTramite = Array.from(new Map([
   pageType="page"
   schemaData={{ ...(d.faqs?.length ? { faqs: d.faqs } : {}) }}
   breadcrumbs={[{ label: 'Protección Civil', href: '/proteccion-civil/' }, { label: d.label }]}
-  guia={false}
 >
   <Hero
     badge={`Protección Civil · ${d.entidad}`}

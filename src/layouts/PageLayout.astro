@@ -46,14 +46,6 @@ export interface Props {
    */
   breadcrumbs?: { label: string; href?: string }[];
   /**
-   * Modo guía del chrome (TopBar/Header anotados + leyenda explicativa).
-   * Default `true` → el sitio-plantilla muestra las guías en todas partes.
-   * Las páginas de detalle de un módulo (p. ej. /modulos/topbar) pasan
-   * `guia={false}`: ahí el módulo ya se documenta a fondo, así que el chrome
-   * se muestra real (sin leyenda). El showcase de guías vive en el índice.
-   */
-  guia?: boolean;
-  /**
    * Alias de conveniencia para activar TechArticle (opt-in).
    * `schemaType="TechArticle"` → equivalente a pasar pageType="techArticle"
    * y un schemaData.techArticle autoderivado (headline=title, fecha=hoy).
@@ -64,7 +56,7 @@ export interface Props {
   schemaType?: 'TechArticle';
 }
 
-const { breadcrumbs = [], guia = false, schemaType, ...baseProps } = Astro.props;
+const { breadcrumbs = [], schemaType, ...baseProps } = Astro.props;
 
 // ── schemaType → auto-derive de techArticle (conservador, no toca pageType) ──
 // El nodo TechArticle convive con cualquier pageType (se emite igual que FAQ
@@ -102,16 +94,11 @@ const schemaData: SchemaData = {
 
 <BaseLayout {...baseProps} schemaData={schemaData}>
   <slot name="head" slot="head" />
-  {/* TopBar: barra utilitaria. `guia` = modo plantilla-guía (anota cada punto). */}
-  {/* En un sitio de cliente (o página de detalle), se pasa guia={false}. */}
-  <TopBar guia={guia} />
-  {/* Header: `guia` = leyenda explicativa bajo el header (igual que el topbar). */}
-  <Header guia={guia} />
+  <TopBar />
+  <Header />
 
-  {/* Barra de migas (entre header y contenido). Visual; el JSON-LD lo emite buildSchema.
-      En modo guía se muestra SIEMPRE (ruta de ejemplo anotada + leyenda), aunque la
-      página no pase `breadcrumbs`; en producción solo si hay ruta real. */}
-  {(guia || breadcrumbs.length > 0) && <Breadcrumbs items={breadcrumbs} guia={guia} />}
+  {/* Barra de migas (entre header y contenido). Visual; el JSON-LD lo emite buildSchema. */}
+  {breadcrumbs.length > 0 && <Breadcrumbs items={breadcrumbs} />}
 
   <main id="main-content">
     <slot />
