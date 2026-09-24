@@ -9,7 +9,7 @@ price: "Cotizar"
 brand: "CONINC"
 order: 8
 seoTitle: "Señalización fotoluminiscente de emergencia"
-seoDescription: "Compara señales fotoluminiscentes para evacuación, salida, extintor, hidrante, punto de reunión y primeros auxilios."
+seoDescription: "Compara señales fotoluminiscentes de evacuación, salida, extintor, hidrante, punto de reunión y primeros auxilios para tu inmueble en CDMX y Edomex."
 faqs:
   - question: "¿Qué señales puedo pedir para mi inmueble?"
     answer: "Puedes pedir señales para rutas, salidas, extintores, hidrantes, puntos de reunión y primeros auxilios. Cada mensaje orienta, identifica un equipo o marca una condición segura durante una emergencia."

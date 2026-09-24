@@ -120,7 +120,8 @@ const jsonLd = buildSchema(pageType, schemaData);
     {/* ── SEO: title, description, canonical, robots ── */}
     <title>{meta.title}</title>
     <meta name="description" content={meta.description} />
-    <link rel="canonical" href={meta.canonical} />
+    {/* Página noindex (404, paginación) sin canonical: señales coherentes para Google y Ahrefs. */}
+    {!String(meta.robots).includes('noindex') && <link rel="canonical" href={meta.canonical} />}
     <meta name="robots" content={meta.robots} />
 
     {/* ── Open Graph (derivado de los campos planos de buildMeta) ── */}
