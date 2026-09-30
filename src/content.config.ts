@@ -108,6 +108,7 @@ export const ARTICLE_CATEGORIES = [
   'capacitacion',    // C10   — brigadas, DC-3, simulacros
   'prevencion',      // C11-C12 — señalización, evacuación, protección por giro
   'costos',          // guía de compra y decisión (sin publicar precios)
+  'drones',          // C13 — drones para bomberos y brigadas: usos, térmica, normas, programa
 ] as const;
 
 // Etapa del embudo del artículo. Decide qué CTA renderiza ArticleLayout:

@@ -900,6 +900,20 @@ export const BLOG_CATEGORIES: readonly BlogCategory[] = [
     ],
     cta: { label: 'Solicitar cotización', href: '/contacto/' },
   },
+  {
+    slug: 'drones',
+    label: 'Drones contra incendios',
+    seoTitle: 'Drones para bomberos y contra incendios',
+    seoDescription:
+      'Cómo usan los drones los bomberos y las brigadas: cámara térmica, inspección de bodegas, normas en México (NOM-107-SCT3, NFPA 2400) y cómo armar un programa.',
+    intro:
+      'Drones con cámara térmica, inspección aérea y protocolos: la capa de información que hoy acompaña al equipo contra incendio.',
+    body: [
+      'Un dron no apaga un incendio, pero cambia lo que se sabe de él en los primeros minutos: dónde está el foco, hacia dónde avanza y por dónde entrar. Aquí explicamos usos reales, el papel de la cámara térmica, las reglas para volar en México y qué necesita una brigada para operar uno con criterio.',
+      'El dron complementa al equipo, no lo sustituye: extintores, detección, red de hidrantes y brigada capacitada siguen siendo la base. Te ayudamos a revisar que esa base esté completa.',
+    ],
+    cta: { label: 'Inspección y dictamen', href: '/servicios/inspeccion/' },
+  },
 ] as const;
 
 // Artículos por página en el blog y en los archivos de categoría. Contrato de
