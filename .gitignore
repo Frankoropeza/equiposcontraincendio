@@ -94,3 +94,11 @@ Thumbs.db
 
 # Salidas que la app de Claude copia a la carpeta conectada (capturas, entregables): no son parte del sitio.
 /Claude outputs/
+
+# --- OrigenLab: pipeline API, secretos y worktrees fuera del repo ---
+.env
+.env.*
+.api/
+scripts/api/
+.worktrees/
+.claude/worktrees/
