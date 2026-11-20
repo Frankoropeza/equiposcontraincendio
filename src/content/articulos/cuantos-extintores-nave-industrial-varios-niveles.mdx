@@ -25,12 +25,11 @@ faqs:
   - question: "¿Las escaleras y los cubos de elevador cuentan para la distribución?"
     answer: "No son un área que se equipe con extintores en sí, pero sí forman parte del recorrido de evacuación, y su señalización y accesibilidad se revisan junto con el resto del recorrido, no de forma aislada."
 ---
-
-Hay un caso que rompe la lógica del cálculo simple de extintores, y aparece con más frecuencia de lo que parece: edificios y naves de varios niveles donde la aritmética por superficie total da un número que, en la práctica, no tiene sentido.
+Hay un caso que rompe la lógica del cálculo simple de extintores y aparece con más frecuencia de lo que parece: edificios y naves de varios niveles donde la aritmética por superficie total da un número que, en la práctica, no tiene sentido.
 
 ## El ejemplo que lo explica mejor que cualquier definición
 
-Imagina un edificio de tres pisos, 90 m² cada uno, en riesgo ordinario: 270 m² en total. Aplicando la fórmula de superficie (270 ÷ 300 = 0.9, redondeado hacia arriba), el mínimo aritmético sería **un solo extintor**. Pero ese extintor, colocado en planta baja, no le sirve de nada a quien está trabajando en el tercer piso durante una emergencia real.
+Imagina un edificio de tres pisos, 90 m² cada uno, en riesgo ordinario: 270 m² en total. Aplicando la fórmula de superficie (270 ÷ 300 = 0.9, redondeado hacia arriba), el mínimo aritmético sería **un solo extintor**. Pero ese extintor, colocado en planta baja, no le sirve de nada a quien está trabajando en el tercer piso durante una emergencia.
 
 | Enfoque | Resultado |
 |---|---|
@@ -39,18 +38,57 @@ Imagina un edificio de tres pisos, 90 m² cada uno, en riesgo ordinario: 270 m²
 
 ## De dónde sale el criterio de «uno por nivel»
 
-La NOM-002-STPS-2010 no contiene un artículo que diga «un extintor por piso». El criterio se deriva de dos exigencias suyas que sí son literales:
+La **NOM-002-STPS-2010** no contiene un numeral que diga "un extintor por piso". El criterio se deriva de dos exigencias suyas que sí son literales:
 
-- **La clasificación puede hacerse por áreas.** El numeral 5.1 obliga a clasificar el riesgo de incendio del centro de trabajo «o por áreas que lo integran, tales como plantas, edificios o niveles». El inmueble no se evalúa forzosamente como un bloque único.
-- **La distancia máxima de recorrido manda.** El numeral 7.17 d) la fija «tomando en cuenta las vueltas y rodeos necesarios». Un extintor en planta baja no cumple el recorrido de nadie que esté en el segundo o el tercer piso: hay que bajar escaleras, tomarlo y volver a subir.
+- **La clasificación puede hacerse por áreas.** El numeral 5.1 obliga a clasificar el riesgo de incendio del centro de trabajo "o por áreas que lo integran, tales como plantas, edificios o niveles". El inmueble no se evalúa forzosamente como un bloque único.
+- **La distancia máxima de recorrido manda.** El inciso 7.17 d) la fija "tomando en cuenta las vueltas y rodeos necesarios". Un extintor en planta baja no cumple el recorrido de nadie que esté en el segundo o el tercer piso: hay que bajar escaleras, tomarlo y volver a subir.
 
-De ahí que el número final sea el **mayor** entre el cálculo por superficie total y un extintor por cada nivel ocupado. En el ejemplo anterior, eso son 3 extintores, no 1 —una diferencia que a veces se descubre demasiado tarde, en medio de una verificación.
+De ahí que el número final sea el **mayor** entre el cálculo por superficie total y un extintor por cada nivel ocupado. En el ejemplo anterior, 3 extintores y no 1 —una diferencia que a veces se descubre en medio de una verificación—.
+
+## El recorrido no se mide en el plano
+
+Esta es la parte que más se cita mal. La norma no regula la separación entre un extintor y otro: regula la distancia que una persona **camina** desde cualquier punto del área hasta el extintor más cercano. Y no es una sola cifra, depende de la clase de fuego:
+
+| Clase de fuego | Riesgo ordinario | Riesgo alto |
+|---|---|---|
+| Clases A, C y D | 23 m | 23 m |
+| Clase B | 15 m | 10 m (hasta 15 m si el extintor es móvil) |
+| Clase K | 10 m | 10 m |
+
+En un inmueble de varios niveles, el recorrido vertical arruina cualquier cuenta hecha sobre planta: subir y bajar una escalera suma metros reales, y en una nave con mezzanine puede implicar rodear racks completos antes de llegar a la escalera. Medir caminando la ruta, y no con regla sobre el plano, es la única forma de saber si cumples. Las reglas de colocación completas —altura máxima de 1.50 metros, visibilidad, señalización— están en [dónde colocar los extintores](/blog/donde-colocar-extintores/).
+
+## Qué cuenta como nivel ocupado
+
+El criterio es funcional, no arquitectónico: cualquier nivel ocupado por personas o por actividad necesita su propio equipo.
+
+- **Pisos de oficina y de producción.** Evidentes, pero conviene no olvidar los que "casi no se usan".
+- **Mezzanines y entrepisos de almacenaje.** Suman superficie construida al cálculo total **y** cuentan como nivel. Es el error más caro de las naves industriales.
+- **Entrepisos técnicos y cuartos de máquinas.** Aunque no haya gente de forma permanente, hay carga combustible e instalaciones.
+- **Sótanos y estacionamientos techados.** Tienen su propio riesgo y, además, un recorrido de evacuación más largo.
+- **Azoteas con equipo.** No siempre se equipan, pero su riesgo se evalúa junto con el resto.
+
+Las escaleras y los cubos de elevador no son áreas que se equipen con extintores en sí, pero forman parte del recorrido de evacuación: su señalización y su accesibilidad se revisan junto con el resto de la ruta, no de forma aislada.
+
+## La nave industrial tiene dos agravantes
+
+Una nave rara vez es solo "superficie". Casi siempre combina una planta grande con inventario de materiales combustibles, y por eso suele empujar al inmueble hacia **riesgo alto**: basta cruzar uno de los umbrales del Apéndice A —3,000 m² de superficie construida, 15,000 kg de sólidos combustibles, 1,400 L de líquidos inflamables, entre otros— para quedar clasificado así, sin promedios. Lo detallamos en [riesgo de incendio en bodegas y naves industriales](/blog/riesgo-de-incendio-bodegas-naves-industriales/).
+
+Eso cambia el divisor del cálculo: el mínimo pasa de uno por cada 300 m² a **uno por cada 200 m²** o fracción (numeral 7.17, incisos b y c). Y hay un segundo agravante: en riesgo alto el numeral 5.10 exige además **sistemas fijos de protección y alarmas de incendio** acordes con la clase de fuego, no solo extintores portátiles. El mínimo portátil sigue siendo obligatorio, pero deja de ser el único requisito: la frontera está en [extintores portátiles vs. sistema fijo](/blog/extintores-portatiles-vs-sistema-fijo-contra-incendio/).
 
 ## Cómo aplicarlo, paso a paso
 
-- Suma la superficie construida de todos los niveles para conocer el mínimo normativo total.
-- Cuenta cuántos niveles están ocupados por personal o actividad, incluyendo mezzanines y entrepisos técnicos.
-- Compara ambos números: si el mínimo por superficie da menos extintores que niveles ocupados, usa el número de niveles como piso mínimo.
-- Distribuye después el equipo dentro de cada nivel según el recorrido, siguiendo las reglas de [dónde colocar los extintores](/blog/donde-colocar-extintores/).
+1. **Suma la superficie construida de todos los niveles** —incluidos mezzanines, sótanos y cuartos de máquinas— para conocer el mínimo normativo total. La superficie rentable del contrato no sirve: suele excluir muros, pasillos y áreas comunes.
+2. **Confirma el grado de riesgo**, de forma integral o por áreas, con el [clasificador de riesgo de incendio](/herramientas/riesgo-de-incendio/). Una nave con oficinas puede tener áreas de riesgo distinto.
+3. **Cuenta los niveles ocupados** por personal o por actividad.
+4. **Toma el mayor** entre el mínimo por superficie y el número de niveles ocupados.
+5. **Suma el equipo de las áreas con riesgo propio**: cocina de comedor con clase K, cuarto eléctrico con CO₂, almacén de inflamables con su agente (inciso 7.17 a).
+6. **Distribuye dentro de cada nivel** por recorrido real, caminando la ruta, y **dibuja la ubicación en el croquis** que exige el numeral 5.2.
+7. **Registra la revisión mensual** de cada equipo con fecha, responsable, anomalías y su seguimiento (numerales 7.2 y 7.3).
 
-Nuestra [calculadora de extintores](/herramientas/cuantos-extintores-necesito/) ya aplica esta regla de forma automática: captura la superficie y el número de niveles, y el resultado nunca baja de un extintor por nivel, aunque el cálculo por superficie diera menos.
+La [calculadora de extintores](/herramientas/cuantos-extintores-necesito/) ya aplica la regla de nivel de forma automática: capturas la superficie y el número de niveles y el resultado nunca baja de un extintor por nivel, aunque el cálculo por superficie diera menos. Si quieres que alguien levante las superficies y el recorrido en sitio, eso es lo que hace el [diagnóstico de riesgo](/servicios/diagnostico-de-riesgo/), y la [instalación de sistemas contra incendio](/servicios/instalacion/) cubre la parte fija cuando el inmueble ya la justifica.
+
+## Fuentes consultadas
+
+- NOM-002-STPS-2010, "Condiciones de seguridad — Prevención y protección contra incendios en los centros de trabajo": numerales 5.1, 5.2, 5.10, 7.2, 7.3 y 7.17 (incisos a, b, c, d y f), y Apéndice A. Texto consultado en el <a href="https://dof.gob.mx/normasOficiales/4228/stps/stps.htm" target="_blank" rel="noopener">Diario Oficial de la Federación</a>.
+
+*Nota:* la regla de "al menos un extintor por nivel ocupado" es una **lectura operativa** de los numerales 5.1 y 7.17 d), no una cita literal de la norma: la NOM-002-STPS-2010 no enuncia esa frase. Lo literal es que la clasificación puede hacerse por niveles y que la distancia de recorrido se mide con vueltas y rodeos. En inmuebles bajo el Reglamento de Construcciones de la Ciudad de México pueden aplicar además requisitos propios según el uso y la altura de la edificación; conviene confirmarlos con el responsable de obra.
