@@ -6,6 +6,17 @@
 // invitación, todas de la misma altura, con la firma alineada al pie.
 //   ≥1100 px: 4 × 3 · 700–1099 px: 3 × 4 · <700 px: carrusel con scroll-snap.
 // Sin estrellas ni schema de reseñas (ver src/data/testimonios.ts).
+//
+// 2026-11-20: el bloque dejó de repetirse en /servicios/, /productos/ y
+// /cobertura/, donde salía re-titulado con otro subconjunto de las MISMAS
+// reseñas — eso es lo que lo hacía ver de plantilla. Ahora vive solo en la home.
+// También se retiraron el avatar con la inicial y la etiqueta «Cliente de
+// CONINC»: son los adornos típicos de las reseñas fabricadas y le quitaban
+// credibilidad a estas, que son reales.
+//
+// PENDIENTE: el dato que de verdad las haría creíbles es el giro y la zona de
+// cada cliente («Restaurante, Naucalpan»). No está en src/data/testimonios.ts y
+// no se puede deducir sin inventar, así que hace falta que Frank lo aporte.
 // ============================================================================
 import SectionHeading from '@components/SectionHeading.astro';
 import type { Testimonio } from '@data/testimonios';
@@ -29,7 +40,6 @@ const {
   ],
 } = Astro.props;
 const hasDuoGrid = (items.length + 1) % 3 !== 0;
-const inicial = (n: string) => n.trim().charAt(0).toUpperCase();
 const waResena = waUrl('Hola, ya les compré equipo contra incendio y quiero dejarles mi reseña.');
 ---
 
@@ -53,11 +63,7 @@ const waResena = waUrl('Hola, ya les compré equipo contra incendio y quiero dej
             </svg>
             <blockquote class="testi__quote"><p>{t.texto}</p></blockquote>
             <figcaption class="testi__who">
-              <span class="testi__avatar" aria-hidden="true">{inicial(t.nombre)}</span>
-              <span class="testi__meta">
-                <span class="testi__name">{t.nombre}</span>
-                <span class="testi__role">Cliente de CONINC</span>
-              </span>
+              <span class="testi__name">{t.nombre}</span>
             </figcaption>
           </figure>
         </li>
@@ -137,29 +143,27 @@ const waResena = waUrl('Hola, ya les compré equipo contra incendio y quiero dej
     line-height: 1.65;
   }
 
-  /* Firma al pie: todas las tarjetas terminan a la misma altura */
+  /* Firma al pie: todas las tarjetas terminan a la misma altura.
+     2026-11-20: se retiraron el avatar con la inicial y la etiqueta «Cliente de
+     CONINC». Las reseñas son reales, pero esos dos elementos son los que usan
+     las reseñas inventadas y le restaban credibilidad a las verdaderas: el
+     avatar no aporta dato alguno y el rol era la misma línea en las once. La
+     procedencia ya la dice el lede de la sección. Queda el nombre, que es el
+     único dato de atribución que tenemos. */
   .testi__who {
     display: flex;
-    align-items: center;
-    gap: var(--sp-3);
+    align-items: baseline;
+    gap: var(--sp-2);
     margin-top: var(--sp-6);
+    padding-top: var(--sp-4);
+    border-top: 1px solid var(--c-border);
   }
-  .testi__avatar {
-    flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-    border-radius: var(--radius-full);
-    display: grid;
-    place-items: center;
-    background: var(--c-surface);
-    color: var(--c-ink);
+  .testi__name {
     font-family: var(--font-heading);
     font-weight: var(--weight-semibold, 600);
-    font-size: 1rem;
+    color: var(--c-ink);
+    line-height: 1.3;
   }
-  .testi__meta { display: flex; flex-direction: column; line-height: 1.3; }
-  .testi__name { font-family: var(--font-heading); font-weight: var(--weight-semibold, 600); color: var(--c-ink); }
-  .testi__role { font-size: var(--text-sm, .875rem); color: var(--c-muted); }
 
   /* Tarjeta de invitación: misma caja, fondo suave, contenido centrado */
   .testi__card--invite {
