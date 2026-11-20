@@ -9,7 +9,7 @@ price: "Cotizar"
 brand: "CONINC"
 order: 12
 seoTitle: "Rociadores contra incendio: tipos, venta e instalación"
-seoDescription: "Rociadores contra incendio para empresas: tipos, colores del bulbo, sistemas húmedo, seco y preacción, cuándo son obligatorios e instalación en CDMX y Edomex."
+seoDescription: "Rociadores contra incendio para empresas: tipos, colores del bulbo, sistemas húmedo, seco y preacción, cuándo son obligatorios e instalación en CDMX."
 faqs:
   - question: "¿Qué es un rociador contra incendio?"
     answer: "Es una boquilla conectada a una red de tubería con agua a presión que se abre sola cuando el calor del incendio rompe su bulbo o funde su elemento térmico. Solo se abren los rociadores que alcanzan su temperatura, no todos a la vez, y descargan agua sobre el fuego mientras empieza."

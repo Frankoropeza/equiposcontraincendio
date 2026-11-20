@@ -8,7 +8,7 @@ seccion:
 categoriaProductos: hidrantes-mangueras
 seo:
   title: Hidrantes, gabinetes y mangueras contra incendio en CDMX
-  description: Gabinetes con manguera, conexiones, tomas siamesas, válvulas y bombeo para la red contra incendio de tu inmueble en CDMX y Edomex, con lo que pide la NTC 2024.
+  description: Gabinetes con manguera, conexiones, tomas siamesas, válvulas y bombeo para la red contra incendio de tu inmueble en CDMX y Edomex, según la NTC 2024.
   serviceName: Hidrantes, gabinetes y mangueras contra incendio
   serviceType: Suministro e instalación de redes hidráulicas contra incendio
   image: /images/showcase/gabinete-manguera-hidrante.avif

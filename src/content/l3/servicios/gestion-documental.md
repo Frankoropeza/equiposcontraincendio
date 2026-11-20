@@ -4,7 +4,7 @@ id: gestion-documental
 path: /servicios/gestion-documental/
 seo:
   title: Gestión documental contra incendio | Protección Civil y STPS
-  description: "Integramos el expediente contra incendio de tu inmueble en CDMX y Edomex: evidencia de servicio, bitácora, programa anual y constancias, listo para verificar."
+  description: "Integramos el expediente contra incendio de tu inmueble en CDMX y Edomex: evidencia de servicio, bitácora, programa anual y constancias verificables."
   serviceName: Gestión documental de protección contra incendio
   serviceType: Integración del expediente de equipo contra incendio
   image: /images/servicios/etiquetado-inspeccion-extintor.avif

@@ -4,7 +4,7 @@ id: instalacion
 path: /servicios/instalacion/
 seo:
   title: "Sistemas contra incendio: instalación en CDMX y Edomex"
-  description: "Instalación contra incendios en CDMX y Edomex: sistemas con extintores, detección y alarma, red hidráulica y señalización, con planos, memoria técnica y fichas."
+  description: "Instalación contra incendios en CDMX y Edomex: extintores, detección y alarma, red hidráulica y señalización, con planos, memoria técnica y fichas."
   serviceName: Instalación de sistemas contra incendio
   serviceType: Proyecto e instalación de sistemas contra incendio
   image: /images/servicios/integracion-sistemas-contra-incendio.avif

@@ -9,7 +9,7 @@ price: "Cotizar"
 brand: "CONINC"
 order: 9
 seoTitle: "Señalamientos de seguridad: tipos, colores y venta"
-seoDescription: "Señalamientos y señalética de seguridad industrial y de protección civil: prohibición, obligación, precaución e información según la NOM-026. Venta en CDMX."
+seoDescription: "Señalamientos y señalética de seguridad industrial y de protección civil: prohibición, obligación, precaución e información según la NOM-026."
 faqs:
   - question: "¿Qué son los señalamientos de seguridad?"
     answer: "Son señales que comunican, con un color, una forma y un símbolo, una prohibición, una obligación, un peligro o una condición segura dentro de un centro de trabajo. En México, su color, forma y significado los fija la NOM-026-STPS-2008; las señales de protección civil siguen la NOM-003-SSPC-2011."
