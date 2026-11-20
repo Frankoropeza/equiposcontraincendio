@@ -79,6 +79,7 @@ export const PRODUCT_CATEGORIES = [
   'hidrantes-mangueras',
   'senalizacion',
   'accesorios',
+  'equipo-bombero',
   'general',
 ] as const;
 

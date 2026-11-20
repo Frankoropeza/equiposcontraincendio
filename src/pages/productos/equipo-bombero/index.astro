@@ -1,0 +1,10 @@
+---
+// Página L3 de EPP para brigada contra incendio: el patrón compartido vive en ServiceL3.
+import ServiceL3 from '@components/ServiceL3.astro';
+import { getEntry } from 'astro:content';
+
+const entry = await getEntry('l3', 'productos/equipo-bombero');
+if (!entry || 'kind' in entry.data && entry.data.kind === 'extintores') throw new Error('Falta la entrada L3: productos/equipo-bombero');
+---
+
+<ServiceL3 data={entry.data} />
