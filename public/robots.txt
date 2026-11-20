@@ -19,7 +19,6 @@ Disallow: /_astro/
 Disallow: /api/
 Disallow: /draft/
 Disallow: /admin/
-Disallow: /404
 Disallow: /gracias
 Crawl-delay: 1
 
@@ -116,11 +115,9 @@ User-agent: CCBot
 Allow: /
 
 # ─── Herramientas SEO propias (PERMITIDAS) ───
-# que impedía auditar y monitorear NUESTRO PROPIO sitio con las herramientas
-# contratadas (Site Audit, enlaces internos, rank tracker). Se permiten con
-# crawl-delay para acotar la carga.
-Crawl-delay: 2
-
+# Se permiten con crawl-delay para acotar la carga. 2026-11-19: se retiró el
+# `Crawl-delay` que había quedado huérfano (sin `User-agent:`) al dar de baja
+# AhrefsBot — colgaba del grupo CCBot e imponía un delay no intencionado.
 User-agent: SemrushBot
 Allow: /
 Crawl-delay: 2

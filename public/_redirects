@@ -3,8 +3,10 @@
 /productos/extintor-clase-k-6l /productos/extintor-clase-k 301
 # 2026-09-17: las páginas de etiqueta (/blog/tag/) se retiraron (103 URLs noindex, 77 con un solo artículo).
 /blog/tag/* /blog/ 301
-# Ahrefs Site Audit 2026-09-11: evita duplicado del dominio www.
-https://www.equiposcontraincendio.com/* https://equiposcontraincendio.com/:splat 301
+# 2026-11-19: aquí había una regla `https://www.…/*` que Cloudflare Pages IGNORA
+# (el archivo _redirects solo acepta rutas como origen, no hostnames). El 301 de
+# www al apex lo hace una Redirect Rule del dashboard de Cloudflare; verificado
+# el 2026-11-19: `curl -I https://www.equiposcontraincendio.com/` → 301 al apex.
 
 # Taxonomía editorial del blog (2026-09-09): las categorías de plantilla
 # desaparecen; sus archivos ya no existen. Al índice del blog, no a un 404.
