@@ -20,7 +20,9 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          # Lee .node-version en vez de fijar la mayor aqui: Astro 7 exige
+          # Node >= 22.23.4 y el dato debe vivir en un solo lugar del repo.
+          node-version-file: '.node-version'
           cache: npm
 
       - run: npm ci
