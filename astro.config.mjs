@@ -147,6 +147,27 @@ const sitemapOptions = {
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// rehypeExternalLinks — 2026-11-19 (auditoría): los enlaces escritos en Markdown
+// salían sin `rel`/`target` (los .astro sí lo llevan). Plugin local en vez de
+// una dependencia nueva: recorre el árbol hast y marca solo los href externos.
+// ─────────────────────────────────────────────────────────────────────────────
+function rehypeExternalLinks() {
+  /** @param {any} node */
+  const walk = (node) => {
+    if (node.type === 'element' && node.tagName === 'a') {
+      const href = node.properties?.href;
+      if (typeof href === 'string' && /^https?:\/\//i.test(href) && !href.includes('equiposcontraincendio.com')) {
+        node.properties.target = '_blank';
+        node.properties.rel = ['noopener', 'noreferrer'];
+      }
+    }
+    for (const child of node.children ?? []) walk(child);
+  };
+  /** @param {any} tree */
+  return (tree) => walk(tree);
+}
+
 // Config canónica del Master System: Astro 6 SSG, salida estática, sitemap +
 // mdx como integraciones base (A3). mdx es OBLIGATORIO porque el blog vive en
 // colección .mdx (content.config.ts → `articulos`). Usa @astrojs/mdx@^6 (peer
@@ -173,6 +194,17 @@ export default defineConfig({
   // de atributo data-astro-cid-*. Misma especificidad (0,1,0); ~140 mil
   // atributos menos en el dist.
   scopedStyleStrategy: 'class',
+
+  // 2026-11-19 (auditoría): sitio multipágina sin SPA. `viewport` precarga el
+  // HTML de los enlaces visibles, que en SSG es el costo real de navegar.
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: 'viewport',
+  },
+
+  markdown: {
+    rehypePlugins: [rehypeExternalLinks],
+  },
 
   integrations: [sitemap(sitemapOptions), mdx()],
 

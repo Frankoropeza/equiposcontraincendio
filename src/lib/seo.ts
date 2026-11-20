@@ -713,8 +713,9 @@ export type ProductData = {
 
 /**
  * Product + Offer honesto.
- * - Si NO hay `price`, se emite Offer "bajo cotización" (UnitPriceSpecification),
- *   patrón de negocio WhatsApp-first sin precio público (origen BOMBERO).
+ * - Si NO hay `price`, el Offer se emite SIN `price` ni `priceSpecification`:
+ *   patrón de negocio WhatsApp-first sin precio público. NUNCA `price: '0'`
+ *   (Google lo interpreta como producto gratis).
  * - aggregateRating/Review SOLO si emitReviews() valida reseñas reales.
  */
 export function productSchema(p: ProductData) {
@@ -731,15 +732,10 @@ export function productSchema(p: ProductData) {
   if (p.price) {
     offer.price = p.price;
     offer.priceValidUntil = `${new Date().getFullYear() + 1}-12-31`;
-  } else {
-    offer.price = '0';
-    offer.priceSpecification = {
-      '@type': 'UnitPriceSpecification',
-      price: '0',
-      priceCurrency: 'MXN',
-      description: 'Precio bajo cotización — contáctanos para tarifa personalizada.',
-    };
   }
+  // Sin precio público NO se emite `price`: un `price: '0'` hace que Google lea
+  // la ficha como producto gratis. El Offer queda con url/priceCurrency/
+  // availability/seller, que es válido para "bajo cotización" (auditoría 2026-11-19).
   return {
     '@type': 'Product',
     '@id': `${url}#product`,
