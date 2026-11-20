@@ -5,7 +5,7 @@ grupo: oficinas-y-servicios
 riesgoProbable: bajo-medio
 prioridad: alta
 orden: 6
-h1: "Requisitos de Protección Civil para"
+h1: "Requisitos de Protección Civil y equipo contra incendio para"
 h1Accent: "oficinas"
 heroBadge: "Directorio por giro · Oficinas y servicios"
 intro:
@@ -16,7 +16,7 @@ ctaLabel: "Oficinas"
 image: "/images/productos/extintor-oficina-gabinete.avif"
 imageAlt: "Extintor en gabinete dentro de un edificio de oficinas"
 seoTitle: "Requisitos de Protección Civil para oficinas | CDMX y Edomex"
-seoDescription: "Qué le toca al propietario y qué al arrendatario, extintores, CO₂ para el site, brigada y simulacros: lo que revisa Protección Civil en oficinas."
+seoDescription: "Qué le toca al propietario y qué al arrendatario, y qué equipo contra incendio pide una oficina: extintores, CO₂ para el site, detección y brigada."
 kwPrincipal: "requisitos de protección civil para oficinas"
 kwSecundarias:
   - "protección civil en oficinas"
@@ -103,6 +103,10 @@ faqs:
     answer: "La norma no fija un número ni un porcentaje. La brigada es obligatoria en riesgo alto y se dimensiona por áreas, turnos y niveles, de modo que siempre haya personal capacitado presente. En riesgo ordinario conviene designar responsables por piso aunque no sea obligatorio."
   - question: "¿Qué cambia si la oficina está en el Estado de México?"
     answer: "El trámite de bajo riesgo es municipal y se renueva cada año, las unidades internas de protección civil son obligatorias en edificios, se exigen al menos dos simulacros al año y las empresas deben contar con sistema de alerta sísmica (Código Administrativo, art. 6.19 Sexies)."
+  - question: "¿Qué equipo contra incendio necesita una oficina?"
+    answer: "Extintores de polvo químico seco ABC en las áreas de trabajo y de bióxido de carbono o agente limpio en el site y los tableros, uno por cada 300 m² en riesgo ordinario y uno por cada 200 m² en riesgo alto; medios de detección, que la NOM-002-STPS-2010 exige también en riesgo ordinario, con detectores de humo en oficinas y archivo; alarma de incendio en riesgo alto; señalización de rutas y luces de emergencia en escaleras y pasillos sin luz natural. Las mangueras, los hidrantes y los rociadores suelen ser del edificio, no de tu piso."
+  - question: "¿Cuánto cuesta un sistema contra incendios para una oficina?"
+    answer: "No publicamos cifras porque no hay una sola. Lo que se cotiza depende de los metros y los niveles a cubrir, del número de extintores y del agente que toca a cada área, de los puntos de detección, de si el inmueble ya tiene tablero de alarma al que conectarse y de la capacitación y los registros que falten. Conviene clasificar el riesgo antes de pedir precios: de esa clasificación depende la mitad de la lista."
 sources:
   - { label: "Reglamento de la Ley de GIRPC (PAOT)", url: "https://paot.org.mx/centro/reglamentos/df/pdf/2024/RGTO_LEY_GEST_INT_RIES_PROT_CIVIL_15_12_2023.pdf" }
   - { label: "Ley de Gestión Integral de Riesgos y Protección Civil de la CDMX", url: "https://docs.mexico.justia.com/estatales/ciudad-de-mexico/leyes/ley-de-gestion-integral-de-riesgos-y-proteccion-civil-de-la-ciudad-de-mexico.pdf" }
@@ -139,6 +143,22 @@ En riesgo alto cambian las reglas: un extintor por cada 200 m² en lugar de 300,
 ## Lo que decide el edificio, no tu empresa
 
 La NTC para el Proyecto Arquitectónico 2024 fija sistemas que atraviesan varios pisos. Para servicios profesionales bastan extintores y alarma hasta **1,200 m² y 300 ocupantes en el nivel de descarga**; en otros tamaños y en **cualquier otro nivel** se exigen rociadores y conexiones de manguera. Por encima de **23 metros** se suma la evacuación por voz. En uso mixto manda la ocupación más restrictiva. Todo esto aplica a obra nueva, remodelación o cambio de uso; en un edificio existente, lo vigente es mantener operable lo instalado.
+
+## Protección contra incendios en el entorno laboral: el equipo contra incendio de una oficina
+
+En una oficina el fuego casi nunca empieza grande: empieza en un multicontacto sobrecargado, en un cargador olvidado o en el archivo, y crece con lo que tiene alrededor —papel, mobiliario y plástico—. Lo que convierte un conato en emergencia es la ocupación: decenas o cientos de personas que evacúan por una escalera, con frecuencia desde un piso alto, donde salir tarda minutos y no segundos. Por eso la protección contra incendios en el entorno laboral se juega en dos cosas: que el fuego se detecte pronto y que la gente pueda salir mientras alguien lo controla.
+
+El equipo contra incendio de una oficina, por capas:
+
+- **Extintores portátiles.** [Polvo químico seco ABC](/productos/extintor-pqs/) en las áreas de trabajo y [bióxido de carbono](/productos/extintor-co2/) o agente limpio en el site y los tableros, uno por cada 300 m² en riesgo ordinario y uno por cada 200 m² en riesgo alto. Catálogo por tipo en [extintores](/productos/extintores/).
+- **Detectores de humo y alarma.** Los medios de detección son obligatorios también en riesgo ordinario (NOM-002-STPS-2010, 5.10) y la alarma de incendio lo es en riesgo alto; en un edificio suele formar parte del sistema común: [detección y alarmas](/productos/deteccion-alarmas/).
+- **Mangueras e hidrantes del inmueble.** Los gabinetes con conexión de manguera casi siempre son del edificio y no de tu piso: tú los usas, el propietario los mantiene y lleva su bitácora: [hidrantes y mangueras](/productos/hidrantes-mangueras/).
+- **Rociadores automáticos.** No los decide tu empresa, los decide el inmueble: entran por superficie, ocupantes y altura conforme a la NTC-PA 2024, en obra nueva, remodelación o cambio de uso.
+- **Señalización y luces de emergencia** en la ruta hasta la escalera, que es la parte del sistema que se usa el día que hay humo.
+
+La frontera práctica es la misma de la tabla de arriba: tu empresa responde por lo que está dentro de su piso —extintores, señalización interna, capacitación y registros— y el propietario o administrador por los sistemas que atraviesan el edificio —alarma, detección e hidrantes—, con el programa de mantenimiento y las bitácoras que debe entregarte.
+
+Sobre el costo de un sistema contra incendios no publicamos cifras: se cotiza por los metros y los niveles a cubrir, el número de extintores y el agente de cada área, los puntos de detección y si ya existe un tablero de alarma al que conectarse. Clasificar el riesgo primero evita cotizar de más: la [herramienta de riesgo de incendio](/herramientas/riesgo-de-incendio/) y el [diagnóstico de riesgo](/servicios/diagnostico-de-riesgo/) resuelven ese paso.
 
 ## El site: donde el extintor equivocado cuesta más que el fuego
 

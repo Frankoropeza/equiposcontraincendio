@@ -15,8 +15,8 @@ faqs:
     answer: "Sí. La Ley Federal del Trabajo, en su artículo 504, obliga al patrón a mantener en el centro de trabajo los medicamentos y el material de curación necesarios para primeros auxilios y a capacitar a personal para prestarlos. En la Ciudad de México, la ley de protección civil también incluye el botiquín en las medidas mínimas de los negocios de bajo riesgo."
   - question: "¿Qué debe contener un botiquín de primeros auxilios en una empresa?"
     answer: "No encontramos una norma mexicana que fije una lista cerrada para el botiquín de un centro de trabajo: el contenido se define según los riesgos del lugar y el número de personas. Como base, gasas estériles, vendas, cinta microporosa, apósitos, guantes desechables, solución antiséptica, tijeras de punta roma, manta térmica, compresas frías instantáneas y una mascarilla para reanimación."
-  - question: "¿Qué es un botiquín tipo A y aplica en mi empresa?"
-    answer: "La clasificación por tipos (A, B, C) no es una norma mexicana para el botiquín de un centro de trabajo común: se usa más en primeros auxilios de campo o en la normativa de otros países. En México no hay una lista cerrada; lo que importa es que el contenido cubra los riesgos reales de tu operación, como explicamos arriba."
+  - question: "¿Cuáles son los 14 elementos que debe contener un botiquín tipo A?"
+    answer: "Circula una lista de 14 elementos atribuida al «botiquín tipo A», pero esa clasificación por tipos (A, B y C) no la fija ninguna norma mexicana para el botiquín de un centro de trabajo: viene de material de divulgación y de normativas de otros países. Por eso no te damos esa lista como si fuera obligatoria aquí. Lo exigible en México es otra cosa: la Ley Federal del Trabajo (art. 504) pide contar con los medicamentos y el material de curación necesarios para primeros auxilios y con personal capacitado para prestarlos, y Protección Civil revisa que el botiquín exista, esté completo y corresponda a los riesgos del inmueble. La lista base que publicamos arriba cubre ese criterio y se ajusta por giro."
   - question: "¿Qué no debe llevar un botiquín de primeros auxilios en el trabajo?"
     answer: "Medicamentos sin indicación médica, material caducado, y objetos o instrumentos que requieran capacitación clínica que la brigada no tiene (como material de sutura). El botiquín es para primeros auxilios y curaciones básicas, no para tratamiento médico."
   - question: "¿Me pueden sancionar por no tener botiquín en mi empresa?"
@@ -87,7 +87,7 @@ ficha:
     - label: Revisión
       value: Mensual, con bitácora
   showcaseTitle: Datos clave
-  showcaseAccent: del botiquín
+  showcaseAccent: del botiquín para una emergencia
   showcaseDesc: Contenido, montaje, personas que cubre y revisión del material.
   faqAccent: sobre el botiquín de primeros auxilios
   guia:
@@ -141,6 +141,20 @@ No hay una lista oficial cerrada para el botiquín de un centro de trabajo: el c
 - Mascarilla para reanimación
 
 En cocinas conviene sumar material para quemaduras; en talleres, laboratorios y botiquines industriales, lavado de ojos y material para golpes o cortes con herramienta.
+
+## ¿Botiquín tipo A de 14 elementos? Qué piden las normativas en México
+
+La búsqueda más común sobre este tema pide los **14 elementos de un botiquín tipo A**. Conviene decirlo claro: la clasificación por tipo A, B o C es de uso común en material de divulgación y en la normativa de otros países, pero **no la fija ninguna norma mexicana** para el botiquín de un centro de trabajo. No existe un «tipo A» mexicano que se cumpla o se incumpla, ni una lista cerrada con un número exacto de elementos.
+
+Lo que sí es exigible:
+
+| Fuente | Qué obliga |
+|---|---|
+| Ley Federal del Trabajo, art. 504 | Contar con los medicamentos y el material de curación necesarios para primeros auxilios, y con personal capacitado para prestarlos |
+| Ley de GIRPC de la CDMX, art. 64 | El botiquín, entre las medidas mínimas de los negocios de bajo riesgo |
+| Programa Interno de Protección Civil | Brigada de primeros auxilios equipada, en los inmuebles obligados |
+
+El criterio práctico no es copiar una lista de internet, sino tener el botiquín **equipado según los riesgos reales de la operación**, con un responsable que controle existencias y caducidades. Un botiquín de hogar, armado para raspones, no sirve de referencia para un taller donde hay cortes con herramienta ni para una cocina con quemaduras: lo que define el contenido del botiquín es el tipo de lesiones que puede haber en tu inmueble y qué tan rápido se llega a atención médica en caso de emergencia.
 
 ## Cuántos y dónde
 

@@ -40,7 +40,7 @@ fichas:
 features:
   - id: extintor-pqs
     eyebrow: PQS ABC · Clases A, B y C · NOM-100-STPS
-    title: Extintores PQS,
+    title: Extintores PQS de polvo químico seco,
     titleAccent: el más versátil
     description: "Es el extintor que más se instala, y con razón: un solo equipo cubre papel, gasolina y un tablero con corriente. El costo está en la limpieza. El polvo es muy fino, se mete en los equipos y hay que limpiar a fondo después de usarlo. Por eso junto a los servidores o bajo la campana de la cocina va otro agente."
     features:
@@ -250,7 +250,7 @@ company:
     body:
       - "Cinco familias de extintores contra incendio, en portátil y sobre ruedas: polvo químico seco ABC, CO₂, clase K para cocina, la familia a base de agua (agua a presión, agua nebulizada y espuma AFFF) y agente limpio. Cada familia tiene su ficha con todas sus capacidades."
       - "Además de venderlos, les damos el servicio que la norma pide mientras estén en uso: mantenimiento anual, recarga y prueba hidrostática. El extintor que compras aquí tiene a quién volver."
-      - Y si tu inmueble necesita más que extintores, surtimos el resto del equipo contra incendio (detección y alarmas, gabinetes e hidrantes, señalización) y damos capacitación a tu brigada, para que la seguridad contra incendios quede con un solo proveedor.
+      - Y si tu inmueble necesita más que extintores, surtimos el resto del equipo contra incendio (detectores de humo, paneles de alarma y sistemas de detección, gabinetes e hidrantes, señalización) y damos capacitación a tu brigada, para que la seguridad contra incendios quede con un solo proveedor.
   como:
     title: Cómo lo elegimos contigo
     pillars:
@@ -282,14 +282,18 @@ related:
   - label: Tipos de extintores
     href: /blog/tipos-de-extintores/
     desc: Clases de fuego y agentes, explicados.
-  - label: Cotizar extintores
-    href: /contacto/
-    desc: Escríbenos con tu giro y superficie.
+  - label: Recarga de extintores
+    href: /servicios/mantenimiento/recarga-de-extintores/
+    desc: Servicio de recarga en CDMX y Edomex.
 faqs:
   - question: ¿Dónde comprar extintores en la CDMX?
-    answer: Aquí mismo. Nos escribes por WhatsApp con tu giro, la superficie y lo que se guarda en el lugar, y te cotizamos los extintores (o extinguidores, como también se les dice) con precio y disponibilidad. Entregamos en la CDMX y en el Estado de México, y si lo necesitas, también instalamos y damos la recarga y el mantenimiento.
-  - question: ¿Cuánto cuesta un extintor?
-    answer: "Depende del agente, la capacidad, la cantidad y de si incluye instalación o servicio. Un PQS de 6 kg no cuesta lo mismo que un agente limpio de la misma capacidad. Por eso no publicamos una lista que no aplique a tu caso: dinos qué necesitas y te cotizamos con precio real."
+    answer: Aquí mismo. Nos escribes por WhatsApp con tu giro, la superficie y lo que se guarda en el lugar, y te cotizamos los extintores (o extinguidores, como también se les dice) con precio y disponibilidad. Entregamos en la CDMX y en el Estado de México, y si lo necesitas, también instalamos y damos el servicio de <a href="/servicios/mantenimiento/recarga-de-extintores/">recarga de extintores</a> y el mantenimiento.
+  - question: ¿Cuánto cuesta un extintor y de qué depende el precio?
+    answer: "Depende del agente y de la capacidad en kilogramos o litros, de que el equipo lleve su contraseña oficial de certificación, de si va con soporte o gabinete y señalamiento, de si entra la instalación y de si el mantenimiento y la recarga se cotizan junto con el equipo o aparte. Un PQS de 6 kg no cuesta lo mismo que un agente limpio de la misma capacidad. Por eso no publicamos lista de precios: dos cotizaciones del mismo extintor no son comparables si una incluye el servicio y la otra no. Dinos tu giro y la superficie y te cotizamos con todo desglosado."
+  - question: ¿Qué extintor es el más recomendado para una casa?
+    answer: 'Para una casa el más práctico es un PQS ABC portátil, de 1 a 4.5 kg, porque cubre con un solo equipo lo que puede arder en casi todos los cuartos: muebles y textiles, líquidos inflamables y un contacto o electrodoméstico con corriente. Si cocinas con freidora o con mucho aceite, en la cocina conviene además un extintor clase K, porque el PQS no enfría la grasa encendida. La casa no está obligada por la NOM-002-STPS-2010, que aplica a centros de trabajo, pero el criterio de elegir por clase de fuego es el mismo; los <a href="/blog/tipos-de-extintores/">tipos de extintores</a> y sus clases están explicados en la guía.'
+  - question: ¿Qué tipos de extintores existen y en qué se diferencian?
+    answer: 'Los que se usan en México son cinco familias: polvo químico seco (PQS ABC), que es el más versátil; CO₂ o dióxido de carbono, que no deja residuo y va junto a tableros y equipo electrónico; clase K de químico húmedo, para aceites y grasas de cocción; la familia a base de agua, que incluye agua a presión, agua nebulizada y espuma AFFF; y agente limpio (Halotron I, FE-36) para equipo sensible. Se diferencian en las clases de fuego que cubren, en si dejan residuo y en si se pueden usar junto a algo con corriente. En la guía de <a href="/blog/tipos-de-extintores/">tipos de extintores</a> está la comparación completa por clase de fuego.'
   - question: ¿Qué incluye la compra de un extintor?
     answer: El equipo nuevo con su ficha técnica para tu expediente. Si lo pides, lo instalamos a la altura correcta con su señalamiento y te indicamos cuándo le toca su mantenimiento anual y su prueba hidrostática.
   - question: ¿Hay un extintor que sirva para todo?

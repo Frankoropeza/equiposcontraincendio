@@ -56,10 +56,14 @@ export const SITE = {
     // 2026-09-11 — Ahrefs (MX): «equipo contra incendio» 350/mes y «equipo contra
     // incendios» 100, contra 70 del plural «equipos contra incendios». Frank eligió
     // el singular para title y H1; el plural se queda en el cuerpo.
-    title: 'Equipo contra incendio | venta de equipo contra incendios', // 57 car. — decisión de Frank 2026-09-11.
+    // 2026-11-20 — SEO on-page (NeuronWriter): el title no traía «extintor», el
+    // término que usa casi todo el que rankea en esta SERP transaccional, ni
+    // «sistema». Se conserva kw1 completa («equipo contra incendio», el singular
+    // que eligió Frank el 2026-09-11) y el verbo de compra.
+    title: 'Venta de equipo contra incendio: extintores y sistemas', // 54 car.
     // 2026-09-15 — description según terms_txt.desc de NEURONwriter (query 4193151777ab1331).
     description:
-      'Equipo contra incendio en CDMX y Edomex: extintores, detectores, mangueras y sistemas certificados, con asesoría, instalación y mantenimiento.',
+      'Equipo contra incendio en CDMX y Edomex: extintores, detectores de humo, mangueras y sistemas contra incendio. Venta, instalación y mantenimiento.',
     image: '/images/og/default.png',
     titleMaxLength: 60,
     descriptionMaxLength: 160,

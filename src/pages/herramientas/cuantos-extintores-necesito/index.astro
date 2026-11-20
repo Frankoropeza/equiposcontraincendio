@@ -40,6 +40,16 @@ const faqs = [
       'El cálculo por superficie es del inmueble completo, pero un extintor sólo sirve si está al alcance: por eso la calculadora nunca devuelve menos de un extintor por nivel ocupado. Tres pisos de 90 m² no se protegen con un solo equipo en la planta baja.',
   },
   {
+    question: '¿Qué distancia debe haber entre un extintor y otro?',
+    answer:
+      'La NOM-002-STPS-2010 no fija una distancia entre extintores, sino la distancia máxima de recorrido desde cualquier punto hasta el extintor más cercano, contando las vueltas del camino real: 23 metros para fuegos clase A, C y D; 15 metros en riesgo ordinario y 10 en riesgo alto para clase B, y 10 metros para clase K en ambos grados de riesgo.',
+  },
+  {
+    question: '¿Qué factores determinan la cantidad de extintores?',
+    answer:
+      'Cuatro: la superficie construida, el grado de riesgo de incendio del centro de trabajo, los niveles ocupados y la distancia máxima de recorrido. A eso se suma el equipo propio de cada área con riesgo específico —cocina, cuarto eléctrico, almacén de inflamables—, que no sustituye al mínimo por superficie.',
+  },
+  {
     question: '¿A qué altura se colocan los extintores?',
     answer:
       'La parte más alta del extintor debe quedar a una altura no mayor de 1.50 metros sobre el nivel del piso, en un lugar visible, señalizado y libre de obstáculos.',
@@ -78,16 +88,16 @@ const AREAS = [
 ---
 
 <PageLayout
-  title="Calculadora: cuántos extintores necesito"
-  description="Calcula cuántos extintores exige la NOM-002-STPS-2010 según superficie, niveles y riesgo de tu inmueble, y qué agente va en cada área."
+  title="¿Cuántos extintores necesito? Calculadora NOM-002"
+  description="¿Cuántos extintores necesito? Calcula el mínimo de la NOM-002-STPS-2010 por superficie, niveles y riesgo de incendio, y qué agente va en cada área."
   pageType="page"
   schemaData={schemaData}
   breadcrumbs={[{ label: 'Herramientas', href: '/herramientas/' }, { label: 'Cuántos extintores necesito' }]}
 >
   <Hero
     badge="Herramienta gratuita · NOM-002-STPS-2010"
-    title="¿Cuántos extintores"
-    accent="necesita tu inmueble?"
+    title="¿Cuántos extintores necesito"
+    accent="en mi inmueble?"
     subtitle="Te damos el mínimo que exige la norma según tu superficie, tus niveles y tu grado de riesgo, y qué agente corresponde a cada área con riesgo propio."
     descRight={[
       'El mínimo por superficie es aritmética normativa: uno por cada 300 m² o fracción en riesgo ordinario, uno por cada 200 m² en riesgo alto. Lo demás depende de qué se puede quemar en cada área.',
@@ -184,8 +194,8 @@ const AREAS = [
               layout="simple"
               align="left"
               eyebrow="El criterio"
-              title="De dónde sale"
-              titleAccent="cada número"
+              title="Cuántos extintores exige la norma"
+              titleAccent="según tu riesgo de incendio"
               desc="Todo lo que calcula esta herramienta está en la NOM-002-STPS-2010."
             />
             <ul class="crit" role="list">
@@ -206,7 +216,7 @@ const AREAS = [
               layout="simple"
               align="left"
               eyebrow="Selección del agente"
-              title="Qué extintor va"
+              title="Qué tipo de extintor va"
               titleAccent="en cada área"
               desc="El agente no sale de la superficie: sale de qué se puede quemar."
             />
@@ -236,6 +246,52 @@ const AREAS = [
             <SectionHeading
               layout="simple"
               align="left"
+              eyebrow="Colocación"
+              title="Ubicación de los extintores:"
+              titleAccent="distancia máxima y altura"
+              desc="El número no sirve si el equipo queda lejos o alto. La NOM-002-STPS-2010 fija las dos medidas."
+            />
+            <p class="panel__p">
+              La norma no regula la distancia entre un extintor y otro, sino la
+              <strong>distancia máxima de recorrido</strong>: lo que caminaría una persona desde
+              cualquier punto del centro de trabajo hasta el extintor más cercano, con las vueltas y
+              los rodeos del camino real, no en línea recta sobre el plano.
+            </p>
+            <div class="tbl-scroll">
+              <div class="tbl-wrap" data-scroll-hint role="region" aria-label="Distancia máxima de recorrido por clase de fuego" tabindex="0">
+              <table class="tbl">
+                <caption class="sr-only">Distancia máxima de recorrido por clase de fuego y grado de riesgo</caption>
+                <thead><tr><th scope="col">Clase de fuego</th><th scope="col">Riesgo ordinario</th><th scope="col">Riesgo alto</th></tr></thead>
+                <tbody>
+                  <tr><td>A, C y D</td><td>23 m</td><td>23 m</td></tr>
+                  <tr><td>B (líquidos inflamables)</td><td>15 m</td><td>10 m (hasta 15 m si el extintor es del tipo móvil)</td></tr>
+                  <tr><td>K (aceites y grasas)</td><td>10 m</td><td>10 m</td></tr>
+                </tbody>
+              </table>
+              </div>
+              <p class="tbl-hint" aria-hidden="true">Desliza para ver toda la tabla</p>
+            </div>
+            <p class="panel__p">
+              La <strong>altura máxima</strong> es de 1.50 m, y hay que medirla desde el nivel del
+              piso hasta la parte más alta del extintor, no hasta el soporte (numeral 7.17 f). Cada equipo tiene
+              que quedar visible, señalizado, de fácil acceso y sin nada enfrente que impida
+              descolgarlo.
+            </p>
+            <p class="panel__note">
+              Esos dos números son los que suelen mover la cantidad hacia arriba: un inmueble con el
+              mínimo por superficie correcto puede necesitar extintores portátiles adicionales sólo
+              para que ningún punto quede fuera del recorrido. El detalle, con los errores de
+              colocación más comunes, está en
+              <a href="/blog/donde-colocar-extintores/">dónde colocar los extintores</a>. La NFPA 10
+              se usa como referencia técnica de selección y ubicación; lo exigible en México es la
+              NOM-002-STPS-2010.
+            </p>
+          </article>
+
+          <article class="panel">
+            <SectionHeading
+              layout="simple"
+              align="left"
               eyebrow="Alcance"
               title="Qué NO resuelve"
               titleAccent="esta calculadora"
@@ -243,7 +299,7 @@ const AREAS = [
             />
             <ul class="crit" role="list">
               <li><strong>No es un plano.</strong> La ubicación final depende del recorrido real hasta el extintor más cercano.</li>
-              <li><strong>No sustituye al sistema fijo</strong> (detección, rociadores, hidrantes) cuando el riesgo lo exige.</li>
+              <li><strong>No sustituye al sistema fijo</strong> (detección, rociadores, hidrantes) cuando la protección contra incendios del inmueble lo exige.</li>
               <li><strong>No clasifica tu riesgo por sí sola:</strong> la Tabla 1 tiene seis criterios y aquí sólo se infiere el de superficie.</li>
               <li><strong>No es un dictamen.</strong> El estudio formal lo elabora y lo firma quien está facultado.</li>
             </ul>
@@ -489,6 +545,7 @@ const AREAS = [
   .panel { padding: var(--sp-6); border: 1px solid var(--c-border); border-radius: var(--radius-lg, 12px); background: var(--c-white); }
   @media (min-width: 768px) { .panel { padding: var(--sp-7); } }
   .panel__note { margin: var(--sp-4) 0 0; font-size: var(--text-sm); color: var(--c-ink-2); }
+  .panel__p { margin: var(--sp-4) 0 0; color: var(--c-ink-2); }
   .panel__note a { color: var(--c-primary); }
 
   /* ── Formulario ──────────────────────────────────────────────────────────── */

@@ -7,8 +7,8 @@ seccion:
   href: /productos/
 categoriaProductos: deteccion-alarmas
 seo:
-  title: Alarmas contra incendio y sistemas de detección en CDMX
-  description: Detectores de humo, temperatura y gas, paneles de alarma, estaciones manuales y sirenas para tu inmueble en CDMX y Edomex, con lo que pide la norma.
+  title: Sistema de alarma contra incendio y detección en CDMX
+  description: "Sistema de alarma contra incendio y detección: detectores de humo, temperatura y gas, paneles, estaciones manuales y sirenas en CDMX y Edomex."
   serviceName: Detección y alarmas contra incendio
   serviceType: Suministro e instalación de sistemas de detección y alarma contra incendio
   image: /images/servicios/instalacion-deteccion-alarma.avif
@@ -17,8 +17,8 @@ wa: "Hola, quiero cotizar detección y alarma contra incendio. Mi inmueble es (g
 menuCtaSub: Giro y superficie
 hero:
   badge: Detección y alarma · CDMX y Estado de México
-  title: Sistemas de detección
-  accent: y alarmas contra incendio
+  title: Sistema de detección
+  accent: y alarma contra incendio
   subtitle: "Detectores de humo, temperatura y gas, paneles de alarma, estaciones manuales, sirenas y estrobos: el dispositivo correcto para cada área de tu inmueble, suministrado, instalado y probado."
   descRight:
     - Un sistema de detección y alarma no se arma con el mismo detector en todas partes. En una oficina conviene el de humo; en una cocina, ese mismo detector se dispara con el vapor y termina desconectado. Cada área lleva el dispositivo de lo que ahí puede pasar.
@@ -27,8 +27,8 @@ hero:
 vitrina:
   id: dispositivos
   eyebrow: Qué incluye un sistema
-  title: Cada dispositivo
-  titleAccent: cumple una función del sistema
+  title: Cada dispositivo del sistema de alarma
+  titleAccent: cumple una función distinta
   desc: "Detectar, decidir y avisar: tres funciones que no se sustituyen entre sí."
   body:
     - Los detectores y las estaciones manuales detectan; el panel supervisa y decide; las sirenas y los estrobos avisan. Si falta una de las tres, el sistema no cumple su función aunque el resto esté bien instalado.
@@ -196,8 +196,8 @@ tablaPrincipal:
   note: La ubicación exacta de cada detector, la separación entre ellos y su distancia a muros y difusores se definen en el proyecto. Un detector junto a una salida de aire acondicionado puede no llegar a ver el humo.
 guia:
   eyebrow: Qué te exige la norma
-  title: Detección y alarma
-  titleAccent: obligatorias según tu inmueble
+  title: Sistema de detección y alarma
+  titleAccent: obligatorio según tu inmueble
   desc: La norma federal aplica a todo centro de trabajo; en CDMX, la NTC de 2024 añade reglas por uso y altura.
   body:
     - La NOM-002-STPS-2010 pide medios de detección y equipo contra incendio, y en riesgo alto, además, sistemas fijos y alarmas de incendio. La NTC para el Proyecto Arquitectónico de la Ciudad de México, vigente desde junio de 2025, define para cada uso cuándo bastan extintores y alarma.
@@ -276,6 +276,37 @@ tabla2:
       - Cada zona nueva pide su circuito
       - Se agregan dispositivos hasta la capacidad del panel
 modulos:
+  - id: componentes-del-sistema
+    eyebrow: Sistema de alarma de incendio · De la detección al aviso
+    title: Componentes principales
+    titleAccent: de una alarma contra incendios
+    description: "Un sistema de alarma contra incendios es una cadena de cinco partes y ninguna sirve sola. La detección —automática, con detectores de humo, de temperatura o de gas, y manual, con las estaciones que permiten a cualquier persona activar la alarma— manda la señal al panel de control, que decide y la convierte en aviso. Los dispositivos de notificación, sirenas y estrobos, alertan a los ocupantes para que evacúen. Una fuente de alimentación de respaldo mantiene el sistema en pie cuando se corta la energía, y la supervisión del cableado hace que el propio panel señale la avería en lugar de quedarse callado."
+    features:
+      - label: Detección automática
+        desc: Detectores de humo, temperatura o gas, uno por tipo de área.
+      - label: Estaciones manuales
+        desc: Para activar la alarma en cuanto una persona ve el fuego.
+      - label: Panel de control
+        desc: Recibe la señal, identifica el origen y dispara el aviso.
+      - label: Notificación
+        desc: Sirenas y estrobos que alertan a los ocupantes para evacuar.
+      - label: Alimentación de respaldo
+        desc: Baterías que sostienen el sistema si se corta la energía.
+      - label: Supervisión de fallas
+        desc: El panel vigila el circuito y señala la avería o el detector retirado.
+    ctaLabel: Cotizar el sistema
+    ctaMsg: Hola, quiero cotizar un sistema de alarma contra incendio completo para mi inmueble (detección, panel, sirenas y respaldo).
+    ctaSecondaryLabel: Panel de alarma
+    ctaSecondaryHref: /productos/panel-alarma-contra-incendio/
+    imgMain:
+      src: /images/productos/dispositivos-deteccion-alarma.avif
+      alt: Detectores, sirena con estrobo y estación manual de un sistema de alarma
+    imgA:
+      src: /images/servicios/instalacion-deteccion-alarma.avif
+      alt: Instalación del panel de alarma contra incendio en un inmueble
+    imgB:
+      src: /images/servicios/inspeccion-sistema-alarma-extintor.avif
+      alt: Revisión de un sistema de alarma contra incendio instalado
   - id: det-humo
     eyebrow: Detectores de humo · Fotoeléctricos
     title: Detectores de humo
@@ -441,8 +472,8 @@ modulos:
 decision:
   id: que-sistema
   eyebrow: Qué sistema te conviene
-  title: Qué suele llevar
-  titleAccent: según tu inmueble
+  title: Qué sistema de alarma
+  titleAccent: suele llevar tu inmueble
   desc: El alcance final sale del levantamiento; esto es el punto de partida más común.
   body:
     - Un detector autónomo protege un espacio pequeño, pero no avisa al resto del edificio ni deja registro en un panel. En cuanto hay varias áreas, niveles o personal trabajando, conviene un sistema con panel.
@@ -596,6 +627,8 @@ faq:
     - Si tu caso no aparece aquí, escríbenos con el giro, la superficie, los niveles y si hay cocina o equipos a gas.
     - Las respuestas citan la norma cuando aplica; lo que depende de tu inmueble lo revisamos contigo.
   items:
+    - question: ¿Cuáles son los componentes principales de una alarma contra incendios?
+      answer: "Cinco: la detección, que puede ser automática (detectores de humo, de temperatura o de gas) o manual (las estaciones que permiten a cualquier persona activar la alarma); el panel de control, que recibe la señal, identifica el origen y decide; los dispositivos de notificación —sirenas y estrobos— que alertan a los ocupantes para que evacúen; la fuente de alimentación de respaldo, que sostiene el sistema si se corta la energía; y la supervisión del circuito, que hace que el panel señale la avería o el dispositivo retirado en lugar de quedarse callado. Un sistema sin una de las cinco deja de ser un sistema."
     - question: ¿Qué exige la NOM-002 sobre detección y alarma?
       answer: La NOM-002-STPS-2010, en su numeral 5.10, pide a los centros de trabajo medios de detección y equipo contra incendio; si el centro es de riesgo alto, además, sistemas fijos de protección y alarmas de incendio. El numeral 7.4 obliga a tener un programa anual de revisión y pruebas de la detección, las alarmas y los sistemas fijos.
     - question: ¿Qué diferencia hay entre un panel convencional y uno direccionable?

@@ -3,8 +3,8 @@ kind: service
 id: capacitacion-dc3
 path: /servicios/capacitacion-dc3/
 seo:
-  title: Capacitación de brigada contra incendio y DC-3 | CDMX
-  description: "Capacitación de brigada contra incendio en CDMX y Edomex: uso de extintores con fuego controlado, combate, evacuación y constancia DC-3 por participante."
+  title: Capacitación de brigada contra incendios y DC-3 | CDMX
+  description: "Capacitación de brigada contra incendios en CDMX y Edomex: extintores con fuego controlado, combate y evacuación, y DC-3 de tu brigada de emergencia."
   serviceName: Capacitación de brigada contra incendio y constancias DC-3
   serviceType: Capacitación en prevención y combate de incendios
   image: /images/servicios/capacitacion-brigada-extintores.avif
@@ -14,7 +14,7 @@ menuCtaSub: Personas y turnos
 hero:
   badge: Capacitación con constancia DC-3 · CDMX y Estado de México
   title: Capacitación de brigada
-  accent: contra incendio
+  accent: contra incendios
   subtitle: Capacitamos a tu personal en uso de extintores con fuego controlado, combate de incendios y evacuación, y gestionamos la constancia DC-3 de cada participante para tu expediente.
   descRight:
     - Tener extintores no sirve si nadie sabe usarlos. Una persona que nunca ha accionado uno no lo hará bien bajo estrés, y eso solo lo cambia la práctica. Por eso cada curso incluye fuego controlado con el agente que hay en tu inmueble.
@@ -23,11 +23,11 @@ hero:
 vitrina:
   id: que-capacitamos
   eyebrow: Qué capacitamos
-  title: Cada brigada
+  title: Cada brigada de emergencia
   titleAccent: tiene su función
-  desc: "La brigada no es un cuerpo de bomberos privado: responde al conato, avisa, evacúa y entrega la escena."
+  desc: "La brigada no es un cuerpo de bomberos privado: existe para salvaguardar la vida en el centro de trabajo, responde al conato, avisa, evacúa y entrega la escena."
   body:
-    - "La Guía de Referencia II de la NOM-002 reconoce cuatro brigadas: combate de incendios, evacuación, primeros auxilios y comunicación. Un mismo brigadista puede cubrir más de una."
+    - "La Guía de Referencia II de la NOM-002 reconoce cuatro brigadas: combate de incendios, evacuación, primeros auxilios y comunicación. Un mismo brigadista puede cubrir más de una, y las brigadas de protección civil que piden los programas internos del inmueble son esas mismas, con el nombre que usa la ley local cuando habla de un siniestro o desastre."
     - "Las primeras fichas son la capacitación y lo que deja. Las últimas: los simulacros que la ponen a prueba, el diagnóstico que dice si la brigada es obligatoria y el formato para registrarla."
   tarjetas:
     - title: Uso y manejo de extintores
@@ -221,10 +221,10 @@ tabla2:
   id: brigadas
   eyebrow: Funciones
   title: Qué hace cada brigada
-  titleAccent: y cuándo actúa
+  titleAccent: en una emergencia y en el simulacro
   desc: "En una emergencia las cuatro trabajan en paralelo: por eso cada una necesita su propia capacitación."
   body:
-    - "Las brigadas pueden ser multifuncionales: en un inmueble pequeño, la misma persona puede combatir el conato y dar la alarma."
+    - "Los integrantes de las brigadas pueden ser multifuncionales: en un inmueble pequeño, la misma persona puede combatir el conato y dar la alarma."
     - Lo que no puede faltar es que cada función tenga a alguien capacitado en cada turno.
   columns:
     - Brigada
@@ -248,7 +248,7 @@ modulos:
     eyebrow: Uso y manejo de extintores · Práctica con fuego
     title: Uso y manejo
     titleAccent: de extintores
-    description: "Es el curso base, para todo el personal y no solo para la brigada. Se enseña a leer la etiqueta y el manómetro, a elegir el extintor por clase de fuego y, sobre todo, a accionarlo: la práctica de fuego controlado se hace en una charola de prácticas, en exterior y con las medidas de seguridad correspondientes. Si tu inmueble no tiene el espacio, lo coordinamos."
+    description: "Es el curso base, para todo el personal y no solo para la brigada. Se enseña a leer la etiqueta y el manómetro, a elegir el extintor según el tipo de fuego y el agente extintor que lleva dentro y, sobre todo, a accionarlo: la práctica de fuego controlado se hace en una charola de prácticas, en exterior y con las medidas de seguridad correspondientes. Si tu inmueble no tiene el espacio, lo coordinamos."
     features:
       - label: Fuego controlado
         desc: En charola de prácticas, en exterior y con medidas de seguridad.
@@ -273,9 +273,9 @@ modulos:
       alt: Lectura de la etiqueta de un extintor
   - id: cap-combate
     eyebrow: Brigada de prevención y combate · NOM-002-STPS
-    title: Brigada de combate
-    titleAccent: de incendios
-    description: "Es la que actúa desde el primer minuto: ataca el conato con extintor o manguera antes de que crezca y verifica que el equipo esté listo. Se capacita en el ataque, en la retirada segura cuando el fuego ya superó al extintor y en el uso de los gabinetes de manguera si el inmueble tiene red hidráulica."
+    title: Brigada contra incendios
+    titleAccent: y combate del conato
+    description: "Es la que actúa desde el primer minuto: ataca el conato con extintor o manguera antes de que crezca y verifica que el equipo contra incendio esté listo. Se capacita en el ataque, en la retirada segura cuando el fuego ya superó al extintor y, si el inmueble tiene red de hidrantes, en abrir la válvula y tender la manguera del gabinete. No opera los sistemas fijos contra incendio ni sustituye a los bomberos: el jefe de brigada decide cuándo se deja de combatir, y el curso indica con qué equipos de protección personal se trabaja según los riesgos de incendio de tu inmueble."
     features:
       - label: Ataque al conato
         desc: Con extintor y, donde hay red, con manguera.
@@ -302,7 +302,7 @@ modulos:
     eyebrow: Brigada de evacuación · Rutas y punto de reunión
     title: Brigada
     titleAccent: de evacuación
-    description: "Cuando suena la alarma, esta brigada conduce a los ocupantes por la ruta señalizada hasta el punto de reunión y pasa lista para saber si falta alguien. Se capacita sobre el plano real del inmueble: rutas, salidas, zonas de riesgo y cómo apoyar a personas con movilidad reducida."
+    description: "Cuando la alarma suena —porque alguien la activó o porque los detectores de humo la dispararon—, esta brigada conduce a los ocupantes por la ruta señalizada hasta el punto de reunión y pasa lista para saber si falta alguien. Se capacita sobre el plano real del inmueble: rutas, salidas de emergencia, señalización, zonas de riesgo y cómo apoyar a personas con movilidad reducida en una situación de emergencia."
     features:
       - label: Rutas del inmueble
         desc: Sobre el plano real, con salidas y alternativas.
@@ -442,11 +442,11 @@ proceso:
       desc: Entregamos la DC-3 correspondiente a cada participante.
 normas:
   eyebrow: Normatividad
-  title: Qué exige la norma
+  title: Qué exigen la norma y Protección Civil
   titleAccent: sobre la capacitación
   desc: La NOM-002 fija qué capacitación, a quién y cada cuándo; la DC-3 es el formato con que se acredita.
   body:
-    - La norma federal es la base; las leyes locales de protección civil pueden sumar requisitos de brigadas y simulacros.
+    - La norma federal es la base y su enfoque es preventivo; las leyes locales de protección civil pueden sumar requisitos de brigadas y simulacros.
     - Todo lo que no aparece aquí (vigencias, número fijo de brigadistas) no es requisito legal.
   columns:
     - Norma

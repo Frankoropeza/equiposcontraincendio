@@ -90,12 +90,12 @@ ficha:
   showcaseDesc: Agente, clase de fuego, capacidades y servicio que pide en cocina.
   faqAccent: sobre extintores tipo K
   guia:
-    title: Cómo elegir tu extintor tipo K
+    title: Cómo elegir y utilizar tu extintor tipo K
     titleAccent: para grasa y aceite de cocina
     desc: Dónde va, qué capacidad elegir, dónde colocarlo y qué mantenimiento pide.
 fichaHeads:
   vitrina:
-    - El extintor tipo K usa químico húmedo (acetato de potasio) que saponifica el aceite de cocción y forma una capa que impide la reignición. Es el único agente clasificado para clase K, la de grasas y aceites vegetales.
+    - El extintor tipo K usa químico húmedo (acetato de potasio) que saponifica el aceite de cocción y forma una capa que ahoga las llamas e impide la reignición. Es el único agente diseñado y clasificado para la clase K, la de grasas y aceites vegetales.
     - Restaurantes, hoteles, comedores industriales y cocinas oscuras lo llevan por norma y por seguro. Te decimos cuántos van según el número de freidoras y planchas.
   presentaciones:
     - Las presentaciones de clase K son de 4, 6 y 9.46 L. El volumen se elige por el tamaño del equipo de cocción a cubrir, no por el tamaño de la cocina.

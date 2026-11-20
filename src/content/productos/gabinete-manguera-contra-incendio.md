@@ -8,8 +8,8 @@ image: /images/productos/extintor-oficina-gabinete.avif
 price: "Cotizar"
 brand: "CONINC"
 order: 7
-seoTitle: "Gabinete contra incendio para hidrante y manguera 1½\""
-seoDescription: "Compara gabinetes de sobreponer, empotrar y combinados para manguera contra incendio de 1½ pulgadas, con válvula, chiflón y, según el modelo, extintor."
+seoTitle: "Gabinete contra incendio de sobreponer o empotrar"
+seoDescription: "Gabinetes contra incendio para hidrante y manguera de 1½ pulgadas de 15 o 30 m: de sobreponer, de empotrar y combinados con extintor, válvula y chiflón."
 faqs:
   - question: "¿Qué es un gabinete contra incendio?"
     answer: "Es la caja metálica que aloja, junto a una toma de la red hidráulica o hidrante, la manguera de 1½ pulgadas, su válvula y el chiflón, y en algunos modelos también un extintor portátil. Su función es que el equipo esté protegido, señalizado y listo para usarse en segundos."
@@ -25,6 +25,10 @@ faqs:
     answer: "El gabinete mantiene accesibles los elementos, pero no reemplaza el cálculo de la red hidráulica. También necesitas considerar la capacitación de la brigada para operar el sistema correctamente."
   - question: "¿A qué altura se instala un gabinete contra incendio?"
     answer: "Se monta de modo que la válvula y el equipo queden accesibles sin escalera y sin obstáculos delante, sobre la ruta de circulación y con su señalamiento visible. La puerta debe poder abrir por completo: un gabinete bloqueado por mercancía cuenta como faltante en una inspección."
+  - question: "¿De qué color va un gabinete contra incendio y con qué acabado?"
+    answer: "En rojo, que es el color con el que la NOM-026-STPS-2008 identifica al equipo contra incendio, y con su señalamiento visible desde la circulación. La pintura importa tanto como el color: en patios, andenes y azoteas el acabado tiene que resistir agua, polvo y corrosión, porque un gabinete metálico oxidado termina con la puerta trabada el día que hace falta abrirla."
+  - question: "¿Cómo se guarda la manguera dentro del gabinete?"
+    answer: "Sobre un soporte interior —cuna, carrete o abatible, según el modelo— que la mantiene ordenada y permite su despliegue sin nudos. Una manguera metida a presión en el fondo del gabinete se desenrolla mal y pierde los segundos que importan. Cuando el ataque lo hacen los bomberos con su propia manguera, el punto de conexión ya no es el gabinete sino la conexión de manguera o la toma siamesa."
   - question: "¿Qué medidas tienen los gabinetes con manguera?"
     answer: "Cambian según el largo y el diámetro de la manguera que van a alojar y según si además llevan extintor. Por eso conviene definir primero el equipo interior y el tipo de muro, y con eso elegir el gabinete que entra sin obra adicional."
   - question: "¿El gabinete incluye la manguera y el chiflón?"
@@ -75,13 +79,13 @@ ficha:
       value: Sobreponer o empotrable
     - label: Complemento
       value: Extintor portátil en modelo combinado
-  showcaseTitle: Datos clave
-  showcaseAccent: del gabinete para hidrante
+  showcaseTitle: Datos clave del gabinete
+  showcaseAccent: para manguera contra incendio de 15 o 30 m
   showcaseDesc: Montaje, medidas, equipo que aloja y revisión del conjunto.
   faqAccent: sobre gabinetes contra incendio
   guia:
     title: Cómo elegir tu gabinete
-    titleAccent: de sobreponer o empotrar
+    titleAccent: de sobreponer, de empotrar o con extintor
     desc: Revisa recorrido, montaje y red hidráulica para pedir el gabinete que funcione en tu inmueble.
 fichaHeads:
   vitrina:
@@ -111,9 +115,10 @@ El gabinete protege y mantiene accesibles los elementos de una **red hidráulica
 
 ### Incluye
 
-- Cuerpo y puerta con acabado a definir según el ambiente.
+- Cuerpo y puerta de gabinete metálico, con pintura en rojo de equipo contra incendio o el acabado que pida el ambiente.
 - Manguera de 1½ pulgadas con la longitud seleccionada.
 - Válvula y chiflón compatibles con el diseño hidráulico.
+- Soporte interior para la manguera, que permite desplegarla sin nudos.
 
 ### Instalación
 

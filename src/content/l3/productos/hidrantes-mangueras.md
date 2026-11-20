@@ -7,8 +7,8 @@ seccion:
   href: /productos/
 categoriaProductos: hidrantes-mangueras
 seo:
-  title: Hidrantes, gabinetes y mangueras contra incendio en CDMX
-  description: Gabinetes con manguera, conexiones, tomas siamesas, válvulas y bombeo para la red contra incendio de tu inmueble en CDMX y Edomex, según la NTC 2024.
+  title: Sistema de hidrantes, gabinetes y mangueras contra incendio
+  description: "Sistema de hidrantes contra incendio: gabinetes con manguera, conexiones, tomas siamesas y bombeo para tu edificio en CDMX y Edomex, con la NTC 2024."
   serviceName: Hidrantes, gabinetes y mangueras contra incendio
   serviceType: Suministro e instalación de redes hidráulicas contra incendio
   image: /images/showcase/gabinete-manguera-hidrante.avif
@@ -17,8 +17,8 @@ wa: "Hola, quiero cotizar hidrantes, gabinetes o mangueras contra incendio. Mi i
 menuCtaSub: Giro y superficie
 hero:
   badge: Red hidráulica · CDMX y Estado de México
-  title: Hidrantes, gabinetes
-  accent: y mangueras contra incendio
+  title: Hidrantes, gabinetes y mangueras
+  accent: contra incendio para tu edificio
   subtitle: "Hidrantes con gabinete y manguera, conexiones de 2½ pulgadas, tomas siamesas, válvulas, mangueras y bombeo: los componentes de la red hidráulica de tu inmueble, suministrados, instalados y probados."
   descRight:
     - El extintor apaga un conato; cuando el fuego lo rebasa, lo que sigue es la red hidráulica. Una red que se ve completa pero no tiene presión al abrir la válvula da una seguridad falsa, por eso cada componente se elige con el cálculo de la red y no por catálogo.
@@ -149,7 +149,7 @@ vitrina:
 tablaPrincipal:
   id: que-integra-la-red
   eyebrow: Qué integra la red
-  title: Qué hace cada componente
+  title: Qué hace cada componente del sistema
   titleAccent: y qué se le revisa
   desc: "Una red hidráulica es una cadena: de la reserva de agua a la boquilla."
   body:
@@ -197,7 +197,7 @@ tablaPrincipal:
 guia:
   eyebrow: Cuándo es obligatoria
   title: Red contra incendios
-  titleAccent: obligatoria según tu inmueble
+  titleAccent: obligatoria según tu edificio
   desc: La NOM-002 la liga al riesgo alto; en CDMX, la NTC de 2024 la liga al uso, el tamaño y la altura.
   body:
     - La NOM-002-STPS-2010 pide sistemas fijos de protección contra incendio a los centros de trabajo de riesgo alto; cuál sistema —red de hidrantes, rociadores u otro— lo define el proyecto. La NTC de la Ciudad de México fija para cada uso desde qué tamaño las conexiones de manguera y los rociadores dejan de ser opcionales.
@@ -276,6 +276,35 @@ tabla2:
       - Según el proyecto de la red
       - NFPA 14 como referencia de la NTC
 modulos:
+  - id: tipos-de-hidrantes
+    eyebrow: Tipos de hidrante · Exterior e interior
+    title: Tipos de hidrantes contra incendio
+    titleAccent: y dónde va cada uno
+    description: "«Hidrante» nombra dos cosas distintas. Afuera, el hidrante de columna de la banqueta o del predio, al que el cuerpo de bomberos conecta su manguera para la extinción; cuando está en la vía pública, lo instala y lo mantiene el organismo operador del agua. Adentro, el punto de ataque del edificio, que en México se resuelve con un gabinete con manguera o con una conexión de manguera —lo que en otros países se llama boca de incendio equipada—. Esa parte interior sale del proyecto hidráulico del inmueble y es la que surtimos, instalamos y probamos."
+    features:
+      - label: De columna húmeda
+        desc: El cuerpo del hidrante queda con agua y cada salida lleva su válvula.
+      - label: De columna seca
+        desc: El cuerpo se drena y la válvula va bajo tierra, fuera del alcance de la helada.
+      - label: De banqueta o de predio
+        desc: Exterior; lo opera el cuerpo de bomberos con su propia manguera.
+      - label: Gabinete interior con manguera
+        desc: El punto de ataque dentro del inmueble, en pasillo o área de trabajo.
+      - label: Conexión en cubo de escalera
+        desc: Lo que pide la NTC 2024 en CDMX en lugar del gabinete para el público.
+    ctaLabel: Cotizar hidrantes
+    ctaMsg: Hola, quiero cotizar hidrantes contra incendio para mi inmueble (gabinete con manguera o conexión de manguera).
+    ctaSecondaryLabel: Toma siamesa
+    ctaSecondaryHref: /productos/toma-siamesa/
+    imgMain:
+      src: /images/showcase/gabinete-manguera-hidrante.avif
+      alt: Hidrante de muro con dos salidas junto a un gabinete con manguera
+    imgA:
+      src: /images/servicios/integracion-sistemas-contra-incendio.avif
+      alt: Tubería roja de la red contra incendio a lo largo de un pasillo
+    imgB:
+      src: /images/servicios/inspeccion-gabinete-manguera-contra-incendio.avif
+      alt: Gabinete con manguera abierto para revisión en un almacén
   - id: gabinetes
     eyebrow: Gabinetes · Manguera de 1½ pulgadas
     title: Gabinetes con manguera
@@ -601,6 +630,8 @@ faq:
   items:
     - question: ¿Qué es un hidrante contra incendio?
       answer: "Es el punto de la red hidráulica donde se conecta una manguera para atacar el fuego con agua a presión. En interiores suele ir dentro de un gabinete con manguera, válvula angular y chiflón; en la fachada, la toma siamesa deja que los bomberos alimenten la red. Todos dependen de la reserva de agua, la bomba y la tubería que los alimentan: sin presión, el hidrante no sirve."
+    - question: ¿Cuáles son los tipos de hidrantes contra incendio?
+      answer: "Conviene separar el exterior del interior. Afuera, el hidrante de columna de banqueta o de predio, al que los bomberos conectan su manguera: de columna húmeda, cuando el cuerpo queda con agua y cada salida lleva su válvula, o de columna seca, cuando el cuerpo se drena y la válvula principal va bajo tierra, fuera del alcance de la helada. Adentro, el punto de ataque del edificio: el gabinete con manguera de 1½ pulgadas o, en obra nueva en la Ciudad de México, la conexión de manguera de 2.5 pulgadas en cubo de escalera. En la normativa de otros países, «columna seca» nombra además la montante sin agua que los bomberos alimentan desde la fachada; en México ese papel lo cumple la toma siamesa con su montante."
     - question: ¿Mi inmueble necesita red de hidrantes?
       answer: Depende del riesgo y, en la Ciudad de México, del uso, el tamaño y la altura. La NOM-002-STPS-2010 pide sistemas fijos a los centros de trabajo de riesgo alto; la NTC para el Proyecto Arquitectónico de 2024 fija por uso desde qué tamaño se exigen conexiones de manguera y rociadores, y los exige en todo inmueble a más de 23 m sobre el acceso de bomberos. Una oficina de riesgo ordinario bajo esos umbrales suele resolverse con extintores.
     - question: ¿Los gabinetes con manguera ya no sirven?

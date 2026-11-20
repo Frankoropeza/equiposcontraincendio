@@ -5,7 +5,7 @@ grupo: salud
 riesgoProbable: bajo
 prioridad: alta
 orden: 10
-h1: "Requisitos de Protección Civil para"
+h1: "Requisitos y trámite de Protección Civil para"
 h1Accent: "consultorios"
 heroBadge: "Directorio por giro · Salud"
 intro:
@@ -15,8 +15,8 @@ cardDescription: "No es COFEPRIS: el mínimo del consultorio y su extintor."
 ctaLabel: "Consultorios"
 image: "/images/servicios/inspeccion-sistema-alarma-extintor.avif"
 imageAlt: "Revisión de extintor y alarma en un consultorio"
-seoTitle: "Protección Civil para consultorio dental y médico"
-seoDescription: "Extintor, botiquín, señalización y capacitación que revisa Protección Civil en un consultorio médico o dental en CDMX y Edomex. Separado de COFEPRIS."
+seoTitle: "Requisitos y trámite de Protección Civil: consultorio dental"
+seoDescription: "Requisitos de Protección Civil en un consultorio médico o dental: extintor, botiquín, señalización, el trámite del municipio y el Programa Interno."
 kwPrincipal: "requisitos de protección civil para consultorio dental"
 kwSecundarias:
   - "requisitos de protección civil para consultorio médico"
@@ -47,7 +47,8 @@ documentos:
   - { entidad: ambas, doc: "Aviso de funcionamiento sanitario y responsable sanitario: trámite distinto, ante COFEPRIS o la autoridad sanitaria estatal", fund: "Normativa sanitaria (fuera del alcance de esta ficha)", tag: RI }
   - { entidad: ambas, doc: "Si tienes personal: bitácora mensual de extintores y constancia de mantenimiento anual", fund: "NOM-002-STPS-2010, 7.2 y 7.18", tag: OL }
   - { entidad: ambas, doc: "Expediente de autoclave o compresor si es recipiente a presión", fund: "NOM-020-STPS-2011", tag: OL }
-  - { entidad: ambas, doc: "Actas de simulacro: los que convoque la autoridad en CDMX y al menos dos al año en Edomex", fund: "NT-SGIRPC-SIM-007-2024; Código Administrativo art. 6.23", tag: OL }
+  - { entidad: cdmx, doc: "Actas de los simulacros convocados por la autoridad", fund: "NT-SGIRPC-SIM-007-2024", tag: OL }
+  - { entidad: edomex, doc: "Actas de simulacro: al menos dos al año", fund: "Código Administrativo del Estado de México, art. 6.23", tag: OL }
 equipo:
   - { item: "Extintor PQS ABC", uso: "Recepción y pasillo, señalizado y a no más de 1.50 m del piso. En riesgo ordinario, uno por cada 300 m² o fracción: aunque el consultorio mida 40 m², lleva uno.", fund: "Ley de GIRPC art. 64; NOM-002-STPS-2010, 7.17", prio: B, tag: OL }
   - { item: "Extintor de CO₂ o agente limpio", uso: "Junto al sillón dental, rayos X, compresor y equipo electrónico: apaga sin dejar polvo sobre el equipo.", fund: "Criterio técnico (clase C sin residuo)", prio: R, tag: BP }
@@ -88,6 +89,8 @@ normas:
 faqs:
   - question: "¿Qué pide Protección Civil para un consultorio dental?"
     answer: "Si es de bajo riesgo, como la mayoría, no necesita Programa Interno, pero sí el mínimo del artículo 64 de la Ley de GIRPC en la CDMX: extintor señalizado, botiquín, señalización de rutas, manejo de basura, personal capacitado y directorio de emergencias, además de exhibir el 911 y la señalización de sismo e incendio. En el Estado de México, el visto bueno de Protección Civil del municipio."
+  - question: "¿Qué permisos se necesitan para abrir un consultorio médico?"
+    answer: "Son tres expedientes distintos. El sanitario: aviso de funcionamiento y responsable sanitario ante la autoridad sanitaria. El de operación: en la CDMX, el aviso de funcionamiento en SIAPEM; en el Estado de México, la licencia de funcionamiento municipal, que parte del uso de suelo autorizado para el inmueble. Y el de protección civil: en la CDMX, el oficio del Cuestionario Clasificatorio que acredita el bajo riesgo más la constancia de capacitación del personal; en el Estado de México, el dictamen o visto bueno de Protección Civil del municipio, renovado cada año. Tener uno no acredita los otros."
   - question: "¿Es lo mismo que el aviso de COFEPRIS?"
     answer: "No. El aviso de funcionamiento sanitario y el responsable sanitario se tramitan ante la autoridad sanitaria. Protección Civil revisa otra cosa: la seguridad del inmueble ante incendio, sismo y evacuación. Son expedientes separados y conviene tener los dos al día."
   - question: "¿Qué extintor va junto al sillón dental o al equipo de rayos X?"
@@ -108,7 +111,7 @@ waMessage: "Hola, tengo un consultorio y quiero revisar lo que pide Protección 
 fusionaDe: "proteccion-civil-consultorios-clinicas"
 ---
 
-## Dos expedientes que no se sustituyen
+## COFEPRIS y Protección Civil: dos expedientes que no se sustituyen
 
 | | Expediente sanitario | Expediente de protección civil |
 |---|---|---|
@@ -118,11 +121,13 @@ fusionaDe: "proteccion-civil-consultorios-clinicas"
 
 Tener uno en regla no dice nada del otro. Esta ficha trata del segundo.
 
-## El mínimo que sí te revisan
+## Los requisitos mínimos que sí te revisan en la verificación
 
 En la Ciudad de México, un consultorio de bajo riesgo no necesita Programa Interno, pero el artículo 64 de la Ley de Gestión Integral de Riesgos y Protección Civil mantiene un piso: **extintores señalizados, botiquín, señalización de rutas de evacuación, manejo de basura, personal capacitado y directorio de emergencias**. La Ley de Establecimientos Mercantiles pide además que el 911 y la señalización de sismo e incendio estén a la vista.
 
 Si hay personal, entra la NOM-002-STPS-2010: un extintor por cada 300 m² o fracción —un consultorio de 40 m² lleva uno—, revisión mensual con registro y mantenimiento al menos anual.
+
+Ese equipamiento mínimo es también el que revisa la ventanilla en el Estado de México: el visto bueno de Protección Civil del municipio se resuelve junto con la licencia de funcionamiento del consultorio, y esa licencia parte del uso de suelo autorizado para el inmueble. Cumplir con los requisitos en materia de protección civil es, en la práctica, tener el equipamiento puesto, señalizado y con su constancia de capacitación a la mano el día de la verificación.
 
 ## El extintor que no daña el equipo
 
@@ -130,6 +135,6 @@ El consultorio concentra equipo eléctrico y electrónico caro: sillón dental, 
 
 Si el autoclave o el compresor son recipientes a presión, la NOM-020-STPS-2011 pide clasificarlos y llevar su expediente; el extintor no lo sustituye.
 
-## Cuando el consultorio crece
+## Cuando el consultorio crece: Programa Interno y trámite ante la autoridad
 
-Una clínica con varios consultorios, sala de espera amplia o más de 250 m² y 100 personas deja de ser bajo riesgo: necesita Programa Interno y póliza de responsabilidad civil. En obra nueva o remodelación, la NTC de la CDMX fija para salud de primer nivel el umbral de 1,200 m² y 5 niveles. Los hospitales y clínicas de segundo y tercer nivel tienen reglas propias —términos de referencia hospitalarios, dictamen de Bomberos y todos los sistemas obligatorios sin importar el tamaño— que se tratan en su propia ficha.
+Una clínica con varios consultorios, sala de espera amplia o más de 250 m² y 100 personas deja de ser bajo riesgo: necesita Programa Interno de Protección Civil y póliza de responsabilidad civil. En obra nueva o remodelación, la NTC de la CDMX fija para salud de primer nivel el umbral de 1,200 m² y 5 niveles. Los hospitales y clínicas de segundo y tercer nivel tienen reglas propias —términos de referencia hospitalarios, dictamen de Bomberos y todos los sistemas obligatorios sin importar el tamaño— que se tratan en su propia ficha.

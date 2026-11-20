@@ -15,8 +15,8 @@ cardDescription: "El expediente de un local y el visto bueno municipal que pide 
 ctaLabel: "Locales comerciales"
 image: "/images/servicios/etiquetado-inspeccion-extintor.avif"
 imageAlt: "Etiqueta de servicio en un extintor revisado para un local comercial"
-seoTitle: "Requisitos de Protección Civil para un local comercial"
-seoDescription: "Extintor, señalización, botiquín, 911 y visto bueno municipal: el expediente de un local comercial para Protección Civil en CDMX y Estado de México."
+seoTitle: "Visto bueno de Protección Civil para un local comercial"
+seoDescription: "Requisitos de Protección Civil de un local comercial: extintor, señalización, botiquín, dictamen o visto bueno municipal e inspecciones. CDMX y Edomex."
 kwPrincipal: "requisitos de protección civil para un local comercial"
 kwSecundarias:
   - "protección civil para negocios"
@@ -48,7 +48,8 @@ documentos:
   - { entidad: edomex, doc: "Dictamen o visto bueno de Protección Civil de bajo riesgo, emitido por el municipio y renovado cada año", fund: "Código Administrativo art. 6.25 Bis", tag: OL }
   - { entidad: edomex, doc: "Para ese visto bueno, varios municipios piden factura y carta responsiva (o recibo de recarga) de los extintores, fotos de fachada, interior y señalización, croquis y constancias de capacitación", fund: "Cédulas de Naucalpan, Coacalco, Cuautitlán y Cuautitlán Izcalli", tag: RI }
   - { entidad: ambas, doc: "Si tienes trabajadores: bitácora mensual de extintores y constancia de mantenimiento anual con etiqueta y collarín", fund: "NOM-002-STPS-2010, 7.2 y 7.18", tag: OL }
-  - { entidad: ambas, doc: "Simulacros: los que convoque la autoridad en CDMX; al menos dos al año en el Estado de México", fund: "NT-SGIRPC-SIM-007-2024; Código Administrativo art. 6.23", tag: OL }
+  - { entidad: cdmx, doc: "Actas de los simulacros convocados por la autoridad", fund: "NT-SGIRPC-SIM-007-2024", tag: OL }
+  - { entidad: edomex, doc: "Actas de simulacro: al menos dos al año", fund: "Código Administrativo del Estado de México, art. 6.23", tag: OL }
 equipo:
   - { item: "Extintor PQS ABC", uso: "Señalizado, con servicio vigente y a no más de 1.50 m del piso. Uno por cada 300 m² en riesgo ordinario; en locales chicos, al menos uno cerca de la salida y otro en bodega si la hay.", fund: "Ley de GIRPC art. 64; NOM-002-STPS-2010, 7.17 y 7.18", prio: B, tag: OL }
   - { item: "Capacidad mínima de 4.5 kg", uso: "Es el mínimo que pide Tlalnepantla en su anexo de protección civil; confirma el de tu municipio.", fund: "Cédula municipal de Tlalnepantla", prio: B, tag: RI }
@@ -98,6 +99,8 @@ faqs:
     answer: "La NOM-002-STPS-2010 pide uno por cada 300 m² en riesgo ordinario y que ningún punto quede a más de 23 metros de recorrido de uno (15 si el riesgo es de líquidos inflamables). En la práctica, un local chico lleva al menos uno cerca de la salida, y otro si tiene bodega o tapanco. La calculadora del sitio hace la cuenta con tus metros."
   - question: "¿Cada cuándo se renueva?"
     answer: "En el Estado de México el visto bueno municipal de bajo riesgo se renueva cada año; en algunos municipios vence el 31 de diciembre. El extintor necesita mantenimiento al menos anual y prueba hidrostática al menos cada cinco años. En la CDMX, la constancia de capacitación del bajo riesgo también se mantiene vigente."
+  - question: "¿Qué requisitos pide Protección Civil para un negocio de comida?"
+    answer: "Un local que prepara alimentos deja de ser un comercio cualquiera: además del extintor ABC, la señalización y el botiquín, se revisa el extintor tipo K para aceites, la instalación de gas LP con su tanque en el exterior y la campana y los ductos de extracción limpios. Si vendes comida preparada, revisa la ficha de [restaurantes](/proteccion-civil/restaurantes/) o la de [cafeterías y cocinas económicas](/proteccion-civil/cafeterias-y-cocinas-economicas/), que llevan ese detalle con su fundamento."
   - question: "¿Me pueden clausurar si no tengo nada de esto?"
     answer: "Las leyes de ambas entidades prevén multas y clausura para quien no cumple las medidas de protección civil que le corresponden, y en la CDMX la Ley de Establecimientos Mercantiles permite suspender actividades cuando el funcionamiento pone en riesgo a las personas. El monto y la medida dependen del caso y los decide la autoridad."
 sources:
@@ -113,13 +116,13 @@ verifiedAt: 2026-09-11
 waMessage: "Hola, tengo un local comercial y quiero cotizar extintor con factura y carta responsiva para Protección Civil."
 ---
 
-## Bajo riesgo no es cero
+## Bajo riesgo no es cero: los requisitos de protección civil que sí aplican
 
 La exención del bajo riesgo es solo del Programa Interno. En la Ciudad de México, el artículo 64 de la Ley de Gestión Integral de Riesgos y Protección Civil mantiene un piso para todos: **extintores señalizados, botiquín, señalización de rutas de evacuación, manejo de basura, personal capacitado y directorio de emergencias**. La Ley de Establecimientos Mercantiles añade lo que debe estar a la vista: el aviso de funcionamiento, el **911** y la señalización de qué hacer en caso de sismo e incendio.
 
 Ese mínimo es lo primero que se ve al entrar, y por eso es lo primero que se revisa. Un inspector no necesita abrir una carpeta para notar un extintor tirado en el piso o una salida con cajas.
 
-## Dos entidades, dos trámites
+## Dos entidades, dos trámites: aviso de funcionamiento y visto bueno de Protección Civil
 
 | | Ciudad de México | Estado de México |
 |---|---|---|
@@ -136,3 +139,13 @@ En el Estado de México no hay ventanilla única: cada municipio publica su prop
 Para Protección Civil no basta con tener el extintor; tiene que estar vigente y demostrarlo. Eso significa etiqueta y collarín del último mantenimiento, manómetro en la zona verde, colocación a no más de 1.50 metros y señal roja encima. Si el servicio del año pasado fue solo una calcomanía, la [herramienta Verifica tu extintor](/herramientas/verifica-tu-extintor/) te dice en doce puntos si fue real.
 
 Cuando compres o recargues, pide que la factura salga a nombre del negocio y con la carta responsiva del proveedor: es el documento que te van a pedir en la ventanilla del municipio.
+
+## Las inspecciones y el Programa Interno de Protección Civil
+
+Las dos entidades regulan lo mismo por caminos distintos: en la CDMX el aviso de funcionamiento no se autoriza, se presenta; en el Estado de México el municipio sí tiene que autorizar la licencia y, con ella, el visto bueno. La protección civil es materia concurrente, así que la autoridad municipal o estatal es la que inspecciona en campo, aunque el marco general venga de la Ley General de Protección Civil.
+
+Las inspecciones no empiezan por los papeles. El inspector de protección civil entra, mira el extintor, la señalización y las salidas de emergencia, y después pide el expediente. Los requisitos más comunes que terminan en observación son siempre los mismos —extintor sin servicio real, señales que no cumplen la NOM-003-SSPC-2011, mercancía en el paso hacia la puerta— y todos se corrigen antes de la visita. El punto de partida es la identificación de riesgos del local: cocina, tablero eléctrico, bodega, tapanco. De ahí salen las medidas preventivas que de verdad importan.
+
+El Programa Interno de Protección Civil no aplica a la mayoría de los locales. En la CDMX se sustituye por el oficio del Cuestionario Clasificatorio que acredita el bajo riesgo y la constancia de capacitación; en el Estado de México, por el dictamen o visto bueno que emite la unidad de protección civil del municipio y que se mantiene con registro vigente año con año. Eso cambia cuando el local crece —más de 250 m² y más de 100 personas— o cuando el giro vende o almacena inflamables: ahí sí hay Programa Interno, con la unidad interna de protección civil que lo opera, y en los supuestos del art. 38 BIS de la CDMX el dictamen del H. Cuerpo de Bomberos. Algunos municipios piden además dictámenes técnicos de gas o de instalación eléctrica.
+
+Cumplir con los requisitos del nivel que te corresponde es lo que evita multas y la clausura, temporal o definitiva, del establecimiento. Para operar un negocio sin sobresaltos, lo práctico es tratar estas medidas de seguridad como mantenimiento y no como un trámite de una sola vez.

@@ -280,8 +280,10 @@ export const productosCategoryFeatures: ProductosCategoryFeature[] = [
   },
   {
     eyebrow: 'Supresión automática · NFPA 13',
-    title: 'Sistemas contra incendios',
-    titleAccent: 'que actúan sin intervención',
+    // 2026-11-20 — SEO on-page: el H2 no nombraba la tubería, que es justo lo
+    // que distingue un sistema fijo de un extintor portátil.
+    title: 'Sistemas contra incendios con tubería,',
+    titleAccent: 'rociadores y supresión',
     description:
       'Los sistemas de extinción automáticos atacan el fuego en segundos, antes de que alguien reaccione. Diseñamos e instalamos sistemas de rociadores, supresión clase K en campana y agente limpio para sites, con cálculo hidráulico del suministro de agua en los rociadores y memoria de diseño para tu expediente.',
     features: [
@@ -477,6 +479,14 @@ export const productosFaqs: { question: string; answer: string }[] = [
     question: '¿Qué material protege contra el fuego?',
     answer:
       'Hay dos tipos de protección. La pasiva está construida en el inmueble y no necesita activarse: muros y puertas con resistencia al fuego certificada, sellos cortafuego y compartimentación; la define el proyecto arquitectónico. La activa detecta, avisa y combate el fuego: extintores, detectores, alarmas, mangueras, hidrantes y rociadores. Este catálogo cubre la protección activa.',
+  },
+  {
+    // TOPIC de importancia 8 que el catálogo no cubría (NeuronWriter, 2026-11-20).
+    // La FAQ «¿Qué material protege contra el fuego?» habla de materiales; esta
+    // responde por SISTEMA, que es como lo pregunta el usuario.
+    question: '¿Cuáles son los tipos de sistemas contra incendios, activos y pasivos?',
+    answer:
+      'El sistema activo actúa cuando hay fuego: detección y alarmas de incendio, extintores portátiles, red de hidrantes con su tubería y <a href="/productos/hidrantes-mangueras/">gabinetes con manguera contra incendio</a>, rociadores automáticos y supresión de cocina clase K. El sistema pasivo no se activa: está construido en el inmueble y su función es contener el fuego y dar tiempo para salir — muros y puertas con resistencia al fuego certificada, materiales resistentes al fuego, sellos cortafuego en pasos de tubería e instalaciones, compartimentación y salidas de emergencia señalizadas conforme a la NOM-003-SSPC-2011. La NOM-002-STPS-2010 exige el activo según el grado de riesgo; el pasivo lo define el proyecto arquitectónico y el Reglamento de Construcciones. Este catálogo cubre la protección activa.',
   },
   {
     question: '¿Los materiales contra incendio cambian según el giro del inmueble?',

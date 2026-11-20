@@ -141,57 +141,14 @@ export const homeFaqs: HomeFaq[] = [
     answer:
       "El mínimo lo marca la NOM-002-STPS-2010 según el grado de riesgo, y a eso se suman los reglamentos locales: el Reglamento de Construcciones de la Ciudad de México y los términos de referencia de Protección Civil pueden pedir requisitos adicionales por uso y superficie. En la práctica se revisan extintores vigentes y bien distribuidos, señalización de rutas conforme a la NOM-003-SSPC-2011, detección cuando aplica, y el expediente documental. El levantamiento en sitio es lo que lo define.",
   },
-  {
-    question: "¿Cuál es la diferencia entre un extintor de PQS y uno de CO₂?",
-    answer:
-      "El de polvo químico seco (PQS) cubre fuegos A, B y C y es el más versátil, pero deja un residuo que puede dañar electrónica. El de CO₂ cubre B y C, no deja residuo y por eso se usa en tableros, laboratorios y cuartos eléctricos; a cambio ofrece menos tiempo de descarga y no conviene en recintos pequeños mal ventilados, porque desplaza el oxígeno.",
-  },
-  {
-    question: "¿El equipo viene con certificados y documentación para auditoría?",
-    answer:
-      "Sí. Entregamos equipo certificado con su ficha técnica, y en los servicios la constancia correspondiente: etiqueta y collarín conforme a la NOM-154-SCFI-2005 en la recarga de extintores, y reporte de lo realizado en instalación e inspección. Es la evidencia que revisa un verificador y la que integra tu expediente ante Protección Civil y la STPS.",
-  },
-  {
-    question: "¿Qué extintor necesito para mi negocio?",
-    answer:
-      "Depende de lo que pueda quemarse. Para la mayoría de oficinas y comercios, un extintor PQS ABC es la opción versátil; las cocinas requieren además un extintor clase K, y los cuartos eléctricos uno de CO₂. Escríbenos y te asesoramos según tu riesgo.",
-  },
-  {
-    question: "¿Cada cuándo se da mantenimiento o recarga a un extintor?",
-    answer:
-      "El servicio de mantenimiento y recarga se realiza conforme a la NOM-154-SCFI-2005 (de forma anual como práctica habitual). Además, en centros de trabajo la NOM-002-STPS-2010 pide una revisión mensual a cargo del personal.",
-  },
-  {
-    question: "¿Cada cuándo se hace la prueba hidrostática de un extintor?",
-    answer:
-      "En México la prueba hidrostática se realiza cada 5 años para extintores de agua, CO₂ y PQS, conforme a la NOM-154-SCFI-2005 (o antes si el cilindro se golpea o pierde su contraseña). Ojo con el dato de “12 años”: ese es de la NFPA 10 de Estados Unidos, no es norma mexicana.",
-  },
-  {
-    question: "¿Solo venden equipo o también instalan?",
-    answer:
-      "Ambas cosas. Vendemos el equipo y también lo instalamos, damos mantenimiento, recargamos extintores y hacemos inspección y dictamen del sistema completo.",
-  },
-  {
-    question: "¿Me entregan la documentación para Protección Civil y STPS?",
-    answer:
-      "Sí. Cada equipo se entrega con su ficha técnica y, en los servicios, con la constancia correspondiente. Si lo necesitas, también gestionamos constancias DC-3 de capacitación — listo para integrar a tu expediente ante Protección Civil y STPS.",
-  },
-  {
-    question: "¿En qué zonas dan servicio?",
-    answer:
-      "Atendemos la Ciudad de México, el Estado de México y la zona metropolitana. Cuéntanos dónde estás y te confirmamos cobertura y tiempos.",
-  },
-  {
-    question: "¿Cómo cotizo?",
-    answer:
-      "Por WhatsApp es lo más rápido: nos dices qué necesitas y te respondemos con opciones, disponibilidad y el proceso de cotización y facturación.",
-  },
 ];
 
 
 export const homeHero = {
   badge: "Venta e instalación · CDMX y Estado de México",
-  title: "Equipo contra incendio en",
+  // 2026-11-20 — SEO on-page: el H1 no decía «venta» ni «extintor», los dos
+  // términos con más peso de la SERP. La señal local se queda en el acento.
+  title: "Venta de equipo contra incendio y extintores en",
   accent: "CDMX y Estado de México",
   subtitle: "Venta de equipos contra incendios, instalación y mantenimiento: extintores, detección, hidrantes y señalización — con respaldo de norma, para empresas que necesitan estar protegidas y en regla.",
   descRight: [

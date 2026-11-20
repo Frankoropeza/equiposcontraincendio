@@ -35,6 +35,8 @@ import {
   extFormatoRows,
   extMarcas,
   extMarcasNota,
+  extPrecioCols,
+  extPrecioRows,
   extSecciones,
 } from '@data/extintores-catalogo';
 
@@ -166,6 +168,17 @@ const schemaData = {
     surface
   />
 
+  {/* ─── De qué depende el precio (sin cifras) ─── */}
+  <DataTable
+    id="precio"
+    {...extSecciones.precio}
+    columns={extPrecioCols}
+    rows={extPrecioRows}
+    note="Los extintores de este catálogo se cotizan nuevos. El mantenimiento, la recarga y la prueba hidrostática se cotizan por equipo, según el agente y la capacidad."
+    ctaLabel={extSecciones.precio.ctaLabel}
+    ctaHref={waUrl(WA_EXTINTORES)}
+  />
+
   {/* ─── Módulos por agente ───
       Todos idénticos: texto en la columna izquierda, galería en la derecha, fondo
       blanco. NO se alterna `flip` ni `surface`. El zig-zag rompía la homologación
@@ -231,13 +244,13 @@ const schemaData = {
   <Section surface>
       <SectionHeading
         layout="duo"
-        eyebrow="Por qué con nosotros"
-        title="Tus extintores y su servicio"
-        titleAccent="con un solo proveedor"
-        desc="Venta y recarga de extintores con un solo proveedor: el equipo correcto y su servicio al día."
+        eyebrow="Un solo proveedor"
+        title="Venta, recarga y mantenimiento de extintores"
+        titleAccent="en CDMX y Edomex"
+        desc="Somos proveedores de extintores y también el taller que después les da servicio, en la misma zona."
         body={[
-          'Vendemos el extintor y le damos el mantenimiento, la recarga y la prueba hidrostática que pide la norma. Así no tienes que buscar a otro proveedor cada año ni armar el expediente con papeles de tres empresas.',
-          'Escríbenos por WhatsApp con tu giro y la superficie, y te decimos qué agente y qué capacidad te tocan.',
+          'Vendemos el extintor y le damos el mantenimiento preventivo, el servicio de recarga y la prueba hidrostática que pide la norma. Así no tienes que buscar a otro proveedor cada año ni armar el expediente con papeles de tres empresas.',
+          'Atendemos la Ciudad de México y el Estado de México, y surtimos el resto de los sistemas contra incendio del inmueble. Escríbenos por WhatsApp con tu giro y la superficie, y te decimos qué agente y qué capacidad te tocan.',
         ]}
       />
       <CompanyAbout
@@ -249,7 +262,7 @@ const schemaData = {
   <GirosQueLoNecesitan nombre="extintores" />
   <RelatedLinks
     title="Servicios y guías relacionados"
-    desc="Lo que suele hacer falta después de elegir el extintor."
+    desc="Productos y servicios que suelen hacer falta después de elegir el extintor."
     links={extintoresRelated}
     limit={8}
   />

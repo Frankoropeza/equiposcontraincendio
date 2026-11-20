@@ -5,7 +5,7 @@ grupo: alimentos-y-bebidas
 riesgoProbable: medio
 prioridad: alta
 orden: 1
-h1: "Requisitos de Protección Civil para"
+h1: "Requisitos de Protección Civil y equipo contra incendio para"
 h1Accent: "restaurantes"
 heroBadge: "Directorio por giro · Alimentos y bebidas"
 intro:
@@ -16,7 +16,7 @@ ctaLabel: "Restaurantes"
 image: "/images/servicios/supresion-cocina-comercial.avif"
 imageAlt: "Cocina comercial con campana de extracción y equipo contra incendio"
 seoTitle: "Requisitos de Protección Civil para restaurantes en CDMX"
-seoDescription: "Documentos, extintor clase K, detectores de gas y señalización que revisa Protección Civil en un restaurante en CDMX y Edomex. Checklist y cotización."
+seoDescription: "Documentos, extintor clase K, supresión en la campana de cocina y señalización: Protección Civil y protección contra incendios en restaurantes de CDMX."
 kwPrincipal: "requisitos de protección civil para un restaurante"
 kwSecundarias:
   - "qué pide protección civil para un restaurante"
@@ -49,7 +49,8 @@ documentos:
   - { entidad: edomex, doc: "Programa Específico de Protección Civil por consultor registrado, si el giro es de mediano o alto riesgo; revalidación anual", fund: "Reglamento del Libro Sexto, arts. 42 y 66", tag: OL }
   - { entidad: ambas, doc: "Dictamen de la instalación de gas LP emitido por unidad de verificación (instalaciones nuevas o modificadas distintas a la doméstica)", fund: "NOM-004-SEDG-2004, 5.5 y 5.6", tag: OL }
   - { entidad: ambas, doc: "Bitácora de revisión mensual de extintores y constancias de mantenimiento anual con etiqueta y collarín", fund: "NOM-002-STPS-2010, 7.2, 7.3 y 7.18", tag: OL }
-  - { entidad: ambas, doc: "Actas de simulacro: los convocados por la autoridad en CDMX (NT-SGIRPC-SIM-007-2024) y al menos dos al año en el Estado de México", fund: "Norma técnica SGIRPC; Código Administrativo art. 6.23", tag: OL }
+  - { entidad: cdmx, doc: "Actas de los simulacros convocados por la autoridad", fund: "NT-SGIRPC-SIM-007-2024", tag: OL }
+  - { entidad: edomex, doc: "Actas de simulacro: al menos dos al año", fund: "Código Administrativo del Estado de México, art. 6.23", tag: OL }
 equipo:
   - { item: "Extintor clase K (químico húmedo)", uso: "Línea de freído, plancha y salamandra. Recorrido máximo de 10 m desde cualquier punto de cocción.", fund: "NOM-002-STPS-2010, Tabla 1; NTC-PA 2024, Tabla 4.4.4.1", prio: B, tag: OL }
   - { item: "Extintor PQS ABC", uso: "Comedor, pasillos, bodega seca y caja. Uno por cada 300 m² en riesgo ordinario, a no más de 1.50 m del piso.", fund: "NOM-002-STPS-2010, 7.17", prio: B, tag: OL }
@@ -58,7 +59,7 @@ equipo:
   - { item: "Medios de detección y alarma", uso: "Detección acorde a cada área; alarma sonora y visual en proyectos nuevos o remodelados.", fund: "NOM-002-STPS-2010, 5.10; NTC-PA 2024", prio: B, tag: OL }
   - { item: "Rociadores y conexión de mangueras", uso: "Por encima de 500 m² o 100 ocupantes, o fuera del nivel de descarga, en obra nueva o remodelación.", fund: "NTC-PA 2024, Tabla 4.4.1.1", prio: E, tag: OL }
   - { item: "Botiquín de primeros auxilios", uso: "Abastecido, visible y fuera de la cocina.", fund: "Ley de GIRPC art. 64; LFT art. 504", prio: B, tag: OL }
-  - { item: "Sistema de supresión en campana", uso: "No es obligación federal ni de la NTC; suelen exigirlo la aseguradora o el contrato de una plaza comercial.", fund: "Buena práctica", prio: R, tag: BP }
+  - { item: "Sistema de supresión de incendios en campana", uso: "Boquillas sobre cada equipo de cocción, activación automática por fusible térmico y corte de gas. No es obligación federal ni de la NTC; suelen exigirlo la aseguradora o el contrato de una plaza comercial.", fund: "Buena práctica", prio: R, tag: BP }
 senalizacion:
   - "Ruta de evacuación y salida de emergencia visibles desde el comedor y la cocina"
   - "Señal roja de ubicación sobre cada extintor, incluido el clase K"
@@ -104,6 +105,10 @@ faqs:
     answer: "Revisión mensual con registro de anomalías, mantenimiento al menos anual con etiqueta y collarín, y prueba hidrostática del cilindro al menos cada cinco años. Cualquier extintor que se haya disparado, aunque sea un segundo, se recarga de inmediato."
   - question: "¿Qué cambia si mi restaurante está en el Estado de México?"
     answer: "El trámite de bajo riesgo es municipal y se renueva cada año, y varios municipios piden la factura o la carta responsiva de los extintores. Además, el Código Administrativo exige al menos dos simulacros al año a todo establecimiento abierto al público. Si vendes alcohol como complemento, la ley estatal te clasifica como de mediano impacto."
+  - question: "¿Qué pide COFEPRIS a un restaurante?"
+    answer: "Es un expediente aparte del de Protección Civil. La autoridad sanitaria revisa el aviso de funcionamiento sanitario y el manejo de alimentos; Protección Civil y la STPS revisan el inmueble, el equipo contra incendio, la señalización y la capacitación. Un restaurante necesita los dos y ninguno sustituye al otro: en esta página solo cubrimos el segundo."
+  - question: "¿Cuánto cuesta instalar un sistema contra incendios en un restaurante?"
+    answer: "No hay una cifra única y no publicamos estimaciones. Lo que se cotiza depende de la superficie y el aforo —que definen si entran rociadores y conexiones de manguera—, del número de equipos de cocción bajo la campana, de la cantidad y capacidad de extintores por área, de si el inmueble ya tiene toma de agua y tablero de alarma, y de si hace falta capacitación y documentación. Por eso conviene el diagnóstico antes de la cotización: comprar lo que nadie te pide cuesta igual que no tener lo que sí."
 sources:
   - { label: "Ley de Establecimientos Mercantiles de la CDMX (PAOT, 2025)", url: "https://paot.org.mx/centro/leyes/df/pdf/2025/LEY_ESTAB_MERCANTILES_19_12_2025_.pdf" }
   - { label: "Ley de Gestión Integral de Riesgos y Protección Civil de la CDMX", url: "https://docs.mexico.justia.com/estatales/ciudad-de-mexico/leyes/ley-de-gestion-integral-de-riesgos-y-proteccion-civil-de-la-ciudad-de-mexico.pdf" }
@@ -132,6 +137,25 @@ Traducido: el extintor rojo de polvo que cuelga junto a la freidora en la mayor�
 | Cuarto de tanques o área de gas | Clase B · gases y líquidos | Polvo químico seco |
 
 La NOM-002-STPS-2010 fija en su Tabla 1 la distancia de recorrido más corta de toda la norma para la clase K: **10 metros**, medidos por donde camina una persona, no en línea recta sobre el plano. Donde dos disposiciones difieren —la NTC usa 22 metros como criterio general—, se aplica la más estricta.
+
+## Sistema de supresión de incendios en la campana de la cocina
+
+Es el equipo que falta con más frecuencia en una cocina comercial y el que peor se entiende. Un sistema de supresión se instala dentro de la campana y el ducto, con **boquillas dirigidas a cada equipo de cocción** —freidora, plancha, parrilla, salamandra— y un detector de fusible térmico en el plenum. Cuando el calor libera el fusible, el sistema **actúa solo**: descarga agente químico húmedo sobre la superficie del aceite, donde forma la capa jabonosa que sofoca y enfría, y en la misma secuencia **cierra el suministro de gas o corta la energía** del equipo.
+
+Por qué el [extintor clase K](/productos/extintor-clase-k/) no lo sustituye: el extintor necesita que alguien esté presente, lo reconozca y lo use bien, y en una línea de freído a plena carga eso se decide en segundos. El sistema fijo cubre el punto exacto donde empieza el fuego, incluido el interior del ducto, al que ningún extintor llega. Son complementarios, no alternativas: el extintor lo pide la norma; el sistema lo pide, en la práctica, quien asume la pérdida.
+
+El matiz honesto no cambia: ni la NOM-002-STPS-2010 ni la NTC-PA 2024 obligan a instalarlo. Quienes lo exigen por contrato son la aseguradora y las plazas comerciales, y es una exigencia razonable, porque la campana concentra grasa, calor y ducto en el mismo metro cuadrado.
+
+## Protección contra incendios en restaurantes: el equipo contra incendio por área
+
+Un restaurante no se protege con un solo aparato, sino con cuatro capas que se revisan juntas:
+
+- **Extintores.** Clase K en la línea de cocción, [polvo químico seco ABC](/productos/extintor-pqs/) en comedor, pasillos y bodega seca, y [bióxido de carbono](/productos/extintor-co2/) en tableros. El catálogo por tipo está en [extintores](/productos/extintores/).
+- **Detección y alarma.** Detector de gas donde hay equipos de combustión, detectores de humo en comedor y bodega, y alarma sonora y visual en obra nueva o remodelación: [detección y alarmas](/productos/deteccion-alarmas/).
+- **Rociadores y conexiones de manguera.** Entran cuando se cruza el umbral de la NTC que explicamos abajo; el equipo de gabinete está en [hidrantes y mangueras](/productos/hidrantes-mangueras/).
+- **Supresión fija en la campana.** El sistema de la cocina descrito arriba, con su corte de gas.
+
+Sobre el costo de un sistema contra incendios no publicamos cifras, porque no hay una sola: se cotiza por la superficie y el aforo —que deciden si entran rociadores y mangueras—, por el número de equipos de cocción bajo la campana, por la cantidad y capacidad de extintores de cada área, por si el inmueble ya tiene toma de agua y tablero de alarma, y por la capacitación y la documentación que falten. De ahí el orden: [diagnóstico de riesgo](/servicios/diagnostico-de-riesgo/) primero, cotización después.
 
 ## El umbral que cambia el presupuesto: 500 m² y 100 ocupantes
 

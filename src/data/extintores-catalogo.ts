@@ -40,11 +40,15 @@ export const extSeo = {
   // 2026-09-11 — Ahrefs MX: la cabeza es «extintores» (8.4k, KD 0) y «extintor»
   // (21k, parent topic «extintores»); «venta de extintores» (250) tiene a
   // «extintores» como parent. Por eso el title arranca con «Extintores».
-  title: 'Extintores contra incendio | venta de extintores en CDMX', // 56 car.
+  // 2026-11-20 — NeuronWriter: el title no tenía «México» ni «recarga», y las
+  // tres intenciones de la página (venta, precio y «cerca de mí») son
+  // transaccionales. El title cubre venta + recarga + geo; el precio se trata
+  // en su propia sección, sin cifras.
+  title: 'Extintores contra incendio: venta y recarga | CDMX, México', // 58 car.
   description:
-    'Venta de extintores contra incendio para empresas y negocios: PQS, CO₂, clase K, agua y agente limpio. Recarga y mantenimiento en CDMX y Edomex.',
+    'Venta de extintores contra incendio: PQS, CO₂, clase K, agua y agente limpio para empresas. Recarga y mantenimiento de extintores en CDMX y Edomex.',
   heroTitle: 'Venta de extintores contra incendio',
-  heroAccent: 'para empresas y negocios',
+  heroAccent: 'para empresas, con recarga y mantenimiento',
   // og:image propia (antes caía en /images/og/default.png). ogShareImage()
   // la resuelve a /images/og/showcase-extintores-catalogo-profesional.jpg.
   image: '/images/showcase/extintores-catalogo-profesional.avif',
@@ -233,8 +237,8 @@ export const extMarcas: Marca[] = [
 export const extSecciones = {
   familias: {
     eyebrow: 'Tipos de extintor',
-    title: 'Extintores por',
-    titleAccent: 'tipo de agente',
+    title: 'Tipos de extintores,',
+    titleAccent: 'por agente y clase de fuego',
     desc: 'Cinco familias que reúnen siete agentes, más lo que hace falta para instalarlos, calcularlos y mantenerlos.',
     body: [
       'Si ya sabes qué agente necesitas, entra directo a su ficha. Si no, el catálogo de abajo se filtra por giro, capacidad y clase de fuego.',
@@ -293,6 +297,17 @@ export const extSecciones = {
       'Antes de pedir una unidad móvil, revisa el recorrido: pasillos libres, rampas y quién la va a desplegar.',
     ],
   },
+  precio: {
+    eyebrow: 'Precio y cotización',
+    title: 'De qué depende el precio',
+    titleAccent: 'de un extintor',
+    desc: 'No publicamos lista de precios: el mismo extintor cuesta distinto según lo que se incluya.',
+    body: [
+      'Estos son los factores que mueven el precio de un extintor y lo que conviene preguntar antes de comparar dos cotizaciones. Sin ellos, dos números del mismo producto no son comparables.',
+      'Para cotizar nos basta tu giro, la superficie del inmueble y lo que se guarda ahí. Con eso te decimos el agente, la capacidad y cuántos equipos pide la norma, y el precio sale con todo incluido.',
+    ],
+    ctaLabel: 'Cotizar por WhatsApp',
+  },
   marcas: {
     eyebrow: 'Marcas',
     title: 'Marcas de extintores',
@@ -350,4 +365,39 @@ export const extCatalogoCierre: FichaCierre[] = [
     image: '/images/servicios/inspeccion-recarga-extintores.avif',
     imageAlt: 'Recarga y mantenimiento de extintores en taller de servicio',
   },
+];
+
+
+// ── De qué depende el precio (sin cifras) ───────────────────────────────────
+// 2026-11-20. La intención «precio de extintores» está transaccional en el
+// SERP y la página no la cubría. No publicamos precios: lo que se publica es
+// de qué depende el precio y qué entra en la cotización. Nada aquí es un dato
+// inventado: son los conceptos que sí cotizamos.
+export const extPrecioCols = ['Factor', 'Qué cambia', 'Qué preguntar al cotizar'] as const;
+export const extPrecioRows: string[][] = [
+  [
+    'Agente y capacidad',
+    'Es lo que más pesa. Un PQS de 6 kg y un agente limpio de capacidad equivalente no se parecen en precio, y dentro del mismo agente el costo sube con los kilogramos o los litros de carga.',
+    'Que la cotización diga el agente y la capacidad exacta, no solo «extintor».',
+  ],
+  [
+    'Certificación del equipo',
+    'Un extintor con su norma de producto cumplida y su contraseña oficial (NOM-106-SCFI-2017) no cuesta lo mismo que uno sin ella, y es el único que te sirve en una inspección.',
+    'Que se entregue la ficha técnica del modelo para tu expediente.',
+  ],
+  [
+    'Soporte y señalamiento',
+    'El equipo solo, o con el soporte de pared o gabinete y su señalamiento fotoluminiscente, que es como la NOM-002-STPS-2010 pide tenerlo colocado.',
+    'Si el precio incluye soporte, señalamiento e instalación a la altura correcta.',
+  ],
+  [
+    'Servicio posterior',
+    'La NOM-154-SCFI-2005 pide mantenimiento al menos anual, recarga después de cualquier uso y prueba hidrostática al menos cada 5 años. Ese servicio puede venir cotizado aparte o junto con el equipo.',
+    'Quién le va a dar el mantenimiento y desde cuándo corre su primera fecha.',
+  ],
+  [
+    'Cantidad y entrega',
+    'Cotizar el parque completo de un inmueble no es lo mismo que cotizar una pieza, y la entrega se programa dentro de CDMX y Edomex.',
+    'Cuántos equipos pide tu superficie y su grado de riesgo antes de pedir el precio.',
+  ],
 ];

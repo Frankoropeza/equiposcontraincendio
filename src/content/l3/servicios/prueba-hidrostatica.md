@@ -4,7 +4,7 @@ id: prueba-hidrostatica
 path: /servicios/prueba-hidrostatica/
 seo:
   title: Prueba hidrostática de extintores en CDMX | NOM-154
-  description: "Prueba hidrostática de extintores en CDMX y Edomex cada 5 años conforme a la NOM-154: cilindro marcado con la fecha, recarga y constancia del resultado."
+  description: "Prueba hidrostática de extintores en CDMX y Edomex cada 5 años según la NOM-154: cilindro marcado, recarga y constancia para tu equipo contra incendio."
   serviceName: Prueba hidrostática de extintores
   serviceType: Prueba hidrostática de cilindros de extintor
   image: /images/servicios/prueba-hidrostatica-extintor.avif
@@ -14,11 +14,11 @@ menuCtaSub: Manda tu inventario
 hero:
   badge: Servicio NOM-154, 5.6 · CDMX y Estado de México
   title: Prueba hidrostática
-  accent: de extintores
+  accent: y recarga de extintores
   subtitle: Probamos el cilindro de tus extintores con agua a presión, como pide la NOM-154-SCFI-2005, y te lo devolvemos marcado con la fecha, recargado y con la constancia del resultado.
   descRight:
     - "El mantenimiento anual comprueba que el extintor funcione. La prueba hidrostática comprueba otra cosa: que el cilindro no vaya a fallar mientras funciona. La corrosión interna y los golpes le quitan resistencia sin que se note por fuera, con el manómetro en verde y la pintura intacta."
-    - Aquí está cada cuándo la exige la norma mexicana, qué cambia según el tipo de cilindro, qué pasa si no aprueba y qué evidencia debe quedar. Si tienes el inventario a la mano, mándalo por WhatsApp y te programamos la prueba por lotes.
+    - Aquí está cada cuándo la exige la norma mexicana, qué cambia según el tipo de cilindro, qué pasa si no aprueba y qué evidencia debe quedar. La prueba se programa junto con el mantenimiento y recarga del mismo equipo, así el extintor sale una sola vez de tu inmueble. Si tienes el inventario a la mano, mándalo por WhatsApp y te programamos la prueba por lotes.
   outlineText: Prueba por tipo
 vitrina:
   id: por-tipo
@@ -226,7 +226,7 @@ tabla2:
   id: nom-vs-nfpa
   eyebrow: NOM-154 o NFPA 10
   title: Por qué en México son 5 años
-  titleAccent: y no 12
+  titleAccent: y no los 12 de la NFPA 10
   desc: La tabla de 5 y 12 años que circula en internet es de una norma estadounidense.
   body:
     - Si tu proveedor programó la prueba a 12 años porque «así lo dice la NFPA», tus extintores pueden llevar años fuera del criterio que sí revisa la autoridad mexicana.
@@ -252,8 +252,8 @@ modulos:
   - id: ph-pqs
     eyebrow: PQS · Baja presión · NOM-154 5.6
     title: Prueba hidrostática
-    titleAccent: de extintores PQS
-    description: "Es la prueba que más hacemos, porque el PQS es el extintor que más se instala. El cilindro trabaja a baja presión y se prueba con la bomba del taller. Lo que distingue un servicio serio viene después: un cilindro mal secado apelmaza el polvo químico seco y arruina la descarga, aunque haya aprobado la prueba."
+    titleAccent: de extintores portátiles de PQS
+    description: "Es la prueba que más hacemos, porque el PQS es el extintor que más se instala. Al ser un cilindro de presión contenida, le corresponde una prueba hidrostática de baja presión con la bomba del taller, y la presión de prueba sale de la marca del propio cilindro y del manual del fabricante. Lo que distingue un servicio serio viene después: un cilindro mal secado apelmaza el polvo químico seco y arruina la descarga, aunque haya aprobado la prueba."
     features:
       - label: Plazo de 5 años
         desc: Al menos cada 5 años, o antes tras un golpe o sin contraseña.
@@ -280,7 +280,7 @@ modulos:
     eyebrow: CO₂ · Alta presión · Tercero permitido
     title: Prueba hidrostática
     titleAccent: de cilindros de CO₂
-    description: "El CO₂ va licuado a alta presión, así que su cilindro no se prueba con la misma bomba que un PQS. La NOM-154 lo reconoce y permite que la prueba de alta presión la haga una empresa distinta al taller que da el servicio. Es legítimo preguntar quién la hace: si tu proveedor la subcontrata, debe poder decirte a quién."
+    description: "En los extintores de dióxido de carbono el agente va licuado a alta presión, así que su cilindro no se prueba con la misma bomba que un PQS. La NOM-154 lo reconoce y permite que la prueba de alta presión la haga una empresa distinta al taller que da el servicio. Es legítimo preguntar quién la hace: si tu proveedor la subcontrata, debe poder decirte a quién."
     features:
       - label: Cilindro de alta presión
         desc: Pide una bomba específica, distinta de la de baja presión.
@@ -307,7 +307,7 @@ modulos:
     eyebrow: Agua y espuma · Baja presión · NOM-154 5.6
     title: Prueba hidrostática
     titleAccent: de extintores de agua
-    description: "Los extintores de agua de presión contenida entran de lleno en el plazo de 5 años. Es también donde más equipos obsoletos aparecen: los de soda ácido, espuma química o agua operados por cartucho interior que no sea de acero inoxidable no se prueban ni se recargan, porque la NOM-154 prohíbe darles mantenimiento. Se desechan y se reemplazan."
+    description: "Los extintores de agua de presión contenida entran de lleno en el plazo de 5 años. Es también donde más extintores obsoletos aparecen: los de soda ácido, espuma química o agua operados por cartucho interior que no sea de acero inoxidable quedan fuera tanto de la prueba como de la recarga de extintores, porque la NOM-154 prohíbe darles mantenimiento. Se desechan y se reemplazan."
     features:
       - label: Incluidos en la norma
         desc: El agua de presión contenida entra en el plazo de 5 años.
@@ -366,6 +366,7 @@ decision:
   body:
     - "Un cilindro que se deforma o gotea no se repara ni se vuelve a presurizar: se retira. Te lo decimos con el sustento de la prueba y te cotizamos el reemplazo."
     - "Si el equipo es obsoleto, ni siquiera se prueba: la norma no permite darle mantenimiento."
+    - Cuando aprueba, la recarga y prueba se cierran en la misma estancia en el taller, y el equipo regresa con la marca permanente de la fecha en el cilindro y la etiqueta de servicio perforada con el mes y el año.
   columns:
     - Resultado
     - Qué se hace
@@ -399,7 +400,7 @@ proceso:
       desc: Corrosión, abolladuras, roscas y contraseña. Si el equipo es obsoleto o tiene daño evidente, se detiene aquí.
     - num: "02"
       title: Descarga y desmontaje
-      desc: Se despresuriza, se recupera el agente cuando procede y se retiran sus accesorios.
+      desc: Se despresuriza, se recupera el agente cuando procede y se retiran válvula, manguera y boquilla del cilindro.
     - num: "03"
       title: Prueba con agua
       desc: El cilindro se presuriza y se observa si presenta deformación permanente o fugas.
@@ -455,14 +456,14 @@ normas:
     - norma: NFPA 10 (ref.)
       alcance: Intervalos de 5 o 12 años según el tipo de extintor; no es obligatoria en México
       aplica: De dónde sale el dato de 12 años
-  note: "La NOM-154 no publica una tabla de presiones de prueba ni criterios numéricos de aceptación: lo único que cuantifica es la capacidad mínima de la bomba del taller. El criterio técnico aplicable es el manual de servicio del fabricante de cada extintor."
+  note: "La NOM-154 no publica una tabla de presiones de prueba ni criterios numéricos de aceptación: lo único que cuantifica es la capacidad mínima de la bomba del taller. El criterio técnico aplicable es el manual de servicio del fabricante de cada extintor. Los procedimientos de mantenimiento de la norma y el equipamiento del taller son lo que revisa la unidad de verificación acreditada en la evaluación de la conformidad."
 empresa:
   eyebrow: Por qué con nosotros
-  title: La prueba, el mantenimiento
-  titleAccent: y la evidencia juntos
+  title: La prueba y el mantenimiento
+  titleAccent: de tu equipo contra incendio, juntos
   desc: Una prueba sin marca ni constancia es, para la autoridad, una prueba que no ocurrió.
   body:
-    - Hacemos la prueba hidrostática dentro del mismo servicio que el mantenimiento anual, así el extintor no sale dos veces de tu inmueble y la evidencia queda en un solo expediente.
+    - Hacemos la prueba hidrostática dentro del mismo servicio de mantenimiento y recarga de extintores, así el equipo no sale dos veces de tu inmueble y la evidencia queda en un solo expediente.
     - Mándanos por WhatsApp tu inventario —tipo, capacidad y año de la última prueba— y te decimos cuáles están vencidos y cuáles pueden esperar.
   que:
     title: Qué incluye el servicio

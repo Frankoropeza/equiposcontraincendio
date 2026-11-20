@@ -102,7 +102,7 @@ faqs:
     answer: "Revisión visual mensual, mantenimiento al menos una vez al año y recarga después de cualquier uso. El cilindro pasa prueba hidrostática al menos cada cinco años según la NOM-154-SCFI-2005 y regresa con su etiqueta y collarín de servicio."
 ficha:
   heroBadge: Agente limpio · Halotron I y FE-36 · Clases B, C y A
-  heroTitle: Extintores de agente limpio,
+  heroTitle: Extintor de agente limpio,
   heroAccent: para equipo sensible
   descRight:
     - "El agente se evapora al salir: no conduce la electricidad y no deja residuo. Protege servidores y equipo delicado sin dañarlos."
@@ -117,8 +117,8 @@ ficha:
       value: Sin NOM específica · clasificación UL del fabricante
     - label: Servicio
       value: NOM-154-SCFI-2005
-  showcaseTitle: Datos clave
-  showcaseAccent: del agente limpio
+  showcaseTitle: "Halotron I y FE-36 (HFC):"
+  showcaseAccent: datos clave y kilogramos
   showcaseDesc: Agentes Halotron I y FE-36, clases cubiertas y servicio del cilindro.
   faqAccent: sobre agente limpio
   guia:
@@ -161,6 +161,18 @@ El agente sale como líquido a presión y se evapora casi al instante al salir d
 
 - **Halotron I:** agente halogenado hidroclorofluorocarbonado (HCFC), no un gas inerte como el Inergen, en presentaciones de 2.5, 5, 11 y 15.5 lb (de 1.1 a 7 kg). El fabricante clasifica las de 2.5 y 5 lb solo para fuegos de clase B y C; las de 11 y 15.5 lb suman la clase A (1-A:10-B:C y 2-A:10-B:C).
 - **FE-36 (HFC-236fa):** un hidrofluorocarbono (HFC), en presentaciones de 9.5 y 13.25 lb (4.3 y 6 kg), clasificadas 1-A:10-B:C y 2-A:10-B:C.
+
+### Tipos de agente limpio más usados
+
+En extintor portátil se usan los agentes halocarbonados, que son los dos de esta ficha: los **HFC**, como el FE-36 (HFC-236fa), y los halogenados tipo **HCFC**, como el Halotron I. Salen como líquido a presión, se evaporan y no dejan residuo, y se piden por carga en kilogramos igual que cualquier otro extintor de mano. Cuando alguien busca un extintor portátil de agente limpio para equipos electrónicos, está buscando uno de estos dos.
+
+La otra familia de agentes limpios son los **gases inertes**, como el Inergen: no se manejan en extintor portátil, sino como sistema fijo que inunda el cuarto completo, así que no forman parte de este catálogo.
+
+Sobre impacto ambiental, los dos agentes de la ficha se comercializan como sustitutos del halón 1211 bajo el Protocolo de Montreal: el FE-36, al ser un HFC, no tiene potencial de agotamiento de ozono, y el Halotron I, al ser un HCFC, lo tiene muy bajo.
+
+### El agente limpio frente a los otros agentes extintores
+
+Los agentes extintores que se usan en México son cinco: polvo químico seco (PQS ABC), CO2, agua y espuma, agente de clase K para aceite de cocina y agente limpio. El agente limpio es el más caro y el más cuidadoso con el equipo protegido, así que se justifica donde el residuo del polvo cuesta más que el extintor; para el resto del inmueble conviene otro agente. Si quieres comparar la extinción de cada uno antes de decidir, está la guía de [tipos de extintores](/blog/tipos-de-extintores/) y el [catálogo de extintores](/productos/extintores/) completo.
 
 ### Dónde conviene y dónde no
 

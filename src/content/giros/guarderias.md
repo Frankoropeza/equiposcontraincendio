@@ -6,17 +6,17 @@ riesgoProbable: medio
 prioridad: alta
 orden: 8
 h1: "Requisitos de Protección Civil para"
-h1Accent: "guarderías"
+h1Accent: "guarderías y estancias infantiles"
 heroBadge: "Directorio por giro · Educación y cuidado"
 intro:
   - "Las guarderías son el único giro con una norma oficial que dice, con números, qué equipo contra incendio deben tener: cuántos extintores, un detector de humo en cada sala, una lámpara de emergencia por nivel y un simulacro cada dos meses. Es la NOM-009-SSPC-2015, antes NOM-009-SEGOB-2015."
-  - "En esta ficha está lo que exigen esa norma, la ley general de cuidado infantil y las reglas de CDMX y del Estado de México, ordenado como checklist para revisar tu centro antes de la visita."
+  - "En esta ficha están las medidas de seguridad que exigen esa norma, la ley general de cuidado infantil y las normativas de CDMX y del Estado de México, ordenadas como checklist para revisar tu centro de atención infantil antes de la visita."
 cardDescription: "La NOM-009: extintores ABC y K, detector por sala y simulacro cada dos meses."
 ctaLabel: "Guarderías"
 image: "/images/productos/dispositivos-deteccion-alarma.avif"
 imageAlt: "Detectores de humo y dispositivos de alarma contra incendio"
 seoTitle: "Requisitos de Protección Civil para guarderías | NOM-009"
-seoDescription: "Extintores ABC y K, detector por aula, lámpara de emergencia, botiquín y simulacros que exige la NOM-009 a guarderías y estancias en CDMX y Edomex."
+seoDescription: "Medidas de seguridad en materia de protección civil para guarderías: extintores ABC y K, detector por aula, botiquín y simulacros. CDMX y Edomex."
 kwPrincipal: "requisitos de protección civil para guarderías"
 kwSecundarias:
   - "nom-009-sspc-2015"
@@ -99,8 +99,8 @@ faqs:
     answer: "La NOM-009 pide al menos uno cada dos meses, avisando por escrito a Protección Civil. La ley de centros de cuidado infantil de la CDMX habla de cada tres meses; conviene cumplir la frecuencia más estricta, la bimestral."
   - question: "¿La NOM-009-SEGOB cambió de nombre?"
     answer: "Sí. Por declaratoria publicada en el Diario Oficial el 8 de noviembre de 2024, las normas de protección civil pasaron de la clave SEGOB a SSPC. La NOM-009-SEGOB-2015 hoy es la NOM-009-SSPC-2015; el contenido no cambió."
-  - question: "¿Qué documentos pide Protección Civil para autorizar una estancia?"
-    answer: "La ley general de cuidado infantil pide, entre otros, el Programa Interno de Protección Civil, una póliza de seguro para los niños y de responsabilidad civil, y las licencias de protección civil y de seguridad y operación. En el Estado de México, la ley estatal pone el Programa Interno como requisito de la autorización."
+  - question: "¿Qué requisitos piden para abrir una guardería?"
+    answer: "La ley general de cuidado infantil pide, entre otros, el Programa Interno de Protección Civil, una póliza de seguro para los niños y de responsabilidad civil, y las licencias de protección civil y de seguridad y operación. A eso se suma lo que exige la NOM-009 en el inmueble: extintores ABC y tipo K, detector de humo por sala, lámpara de emergencia por nivel, botiquín, dos salidas de emergencia, capacitación y adiestramiento anual del personal y la realización de simulacros cada dos meses. En el Estado de México, la ley estatal pone el Programa Interno como requisito de la autorización."
   - question: "¿Es obligatoria la alerta sísmica en una guardería?"
     answer: "En la Ciudad de México, el Reglamento de la Ley de GIRPC pone a cargo del propietario o administrador del inmueble donde opera una guardería el receptor de la señal oficial de alerta sísmica y su mantenimiento (art. 48 BIS)."
 sources:
@@ -114,9 +114,9 @@ verifiedAt: 2026-09-11
 waMessage: "Hola, tengo una guardería y quiero revisar el equipo que pide la NOM-009: extintores, detectores, lámparas y botiquín."
 ---
 
-## La única norma que dice cuánto equipo necesitas
+## NOM-009-SEGOB-2015, hoy SSPC: la normatividad que dice cuánto equipo necesitas
 
-Para casi todos los giros, la cantidad de extintores sale de la superficie y del grado de riesgo de la NOM-002-STPS-2010. Las guarderías tienen además una norma propia, la **NOM-009-SSPC-2015**, que fija el equipo por escala de riesgo y por número de aulas. Eso tiene una ventaja: no hay que interpretar. Si el centro no tiene lo que dice la tabla, la observación es segura.
+Para casi todos los giros, la cantidad de extintores sale de la superficie y del grado de riesgo de la NOM-002-STPS-2010. Las guarderías tienen además una norma propia, la **NOM-009-SSPC-2015** (publicada como NOM-009-SEGOB-2015), que fija el equipo por escala de riesgo y por número de aulas. Eso tiene una ventaja: no hay que interpretar. Si el centro no tiene lo que dice la tabla, la observación es segura.
 
 | Escala de la NOM-009 | Extintores | Además |
 |---|---|---|
@@ -124,7 +124,7 @@ Para casi todos los giros, la cantidad de extintores sale de la superficie y del
 | Riesgo medio | 1 por cada 4 aulas u oficinas + 1 tipo K | 2 unidades móviles ABC de 50 kg en las áreas de mayor riesgo |
 | Riesgo alto (3,000 m² o más) | Al menos 5 ABC o 1 por cada 3 aulas, lo que resulte mayor, + 1 tipo K | Rociadores automáticos supervisados en las zonas que designa la norma |
 
-## Detectores, lámparas y botiquín: tres requisitos que no son opcionales aquí
+## Detectores, lámparas y botiquín: tres medidas de seguridad que aquí no son opcionales
 
 En un restaurante o una oficina pequeña, el detector de humo o la lámpara de emergencia son una recomendación. En una guardería son parte de la norma:
 
@@ -132,11 +132,19 @@ En un restaurante o una oficina pequeña, el detector de humo o la lámpara de e
 - **Lámpara de emergencia automática**, al menos una por nivel, siempre cargada y ubicada en la ruta de evacuación (9.4).
 - **Botiquín de primeros auxilios** abastecido, señalizado y fuera del alcance de los niños (9.5); su contenido mínimo está en el Anexo 2 de la propia norma.
 
-## Evacuar a quien no puede salir solo
+## Simulacros: evacuar a quien no puede salir solo
 
 La diferencia de fondo con cualquier otro giro es quién evacúa. Por eso la norma pide **simulacros al menos cada dos meses** (7.4), **al menos dos salidas** de 90 cm libres, sin candados, con barra antipánico y abriendo en el sentido de la salida (9.7), y señalización continua con «sin salida» en las puertas que no llevan al exterior (9.1). El Programa Interno, conforme al Anexo 1, se revisa y actualiza cada año.
 
-Un detalle que suele pasar desapercibido en la cocina: el gas LP se limita a **máximo dos cilindros de 20 kg**, ubicados en el exterior (9.3).
+En un simulacro de sismo o de incendio, los bebés y los niños que no caminan no salen solos. El procedimiento tiene que decir quién carga a quién, con cuántos adultos por sala y hacia qué puntos de reunión en el exterior, lejos de la calle. Eso es lo que el personal ensaya cada dos meses y lo que una situación de riesgo real pone a prueba.
+
+Un detalle que suele pasar desapercibido en la cocina: el gas LP se limita a **máximo dos cilindros de 20 kg**, ubicados en el exterior (9.3). Conviene revisar esa instalación en busca de fugas, y el estado de las instalaciones eléctricas y del mobiliario de las salas, en la misma rutina diaria de revisión de rutas que ya pide la ley local de CDMX.
+
+## El aviso a la autoridad y la capacitación del personal en materia de protección civil
+
+La NOM-009 es una norma oficial mexicana de medidas de previsión, prevención y mitigación de riesgos, y aplica a los centros de atención infantil en modalidad pública, privada y mixta. No se agota en comprar equipo: son medidas de protección pensadas para la integridad física de los niños, y buena parte se acredita con papeles. El simulacro se avisa **por escrito a Protección Civil** (7.4); el Programa Interno de Protección Civil —el PIPC— se elabora conforme al Anexo 1 y se revisa cada año (cap. 6), y en CDMX lo firma un ROPC con los términos de referencia aplicables (Reglamento de la Ley de GIRPC, art. 48 BIS). A eso se suman las licencias de protección civil y de seguridad y operación que la ley general de cuidado infantil pone como requisito de la autorización (art. 50 fr. VIII y IX). Antes del checklist conviene hacer el análisis de riesgos del inmueble: es lo que define en qué escala de la norma cae el centro.
+
+Del lado del personal, la norma pide **capacitación y adiestramiento anual** de todo el equipo en evacuación, uso de extintores y primeros auxilios, con brigadas integradas por turno y responsables de sala (cap. 7). Si el centro también da preescolar, el personal docente entra en esas brigadas; cuando la escuela es el giro principal, revisa además los [requisitos de protección civil para escuelas](/proteccion-civil/escuelas/), que se rigen por otras normativas.
 
 ## CDMX y Estado de México
 

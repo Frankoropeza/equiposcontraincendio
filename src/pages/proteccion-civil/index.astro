@@ -76,14 +76,14 @@ const schemaData = {
 
 <PageLayout
   title="Trámite y permiso de Protección Civil en CDMX y Edomex"
-  description="Cómo tramitar el permiso de Protección Civil de tu negocio en CDMX y Edomex: Programa Interno, visto bueno y dictamen, con requisitos por giro."
+  description="Cómo tramitar el permiso de Protección Civil de tu negocio en CDMX y Edomex: Programa Interno, visto bueno, dictamen y qué revisa la inspección."
   pageType="category"
   schemaData={schemaData}
   breadcrumbs={[{ label: 'Protección Civil' }]}
 >
   <Hero
     badge="Guía de trámite · con fuente oficial"
-    title="Trámite de Protección Civil"
+    title="Permiso y requisitos de Protección Civil"
     accent={"en\u00a0CDMX\u00a0y\u00a0Edomex"}
     subtitle="Qué exige Protección Civil a tu negocio en la Ciudad de México y el Estado de México, por entidad y por giro, con la fuente oficial de cada requisito."
     descRight={[
@@ -198,6 +198,92 @@ const schemaData = {
     ]}
     steps={pcSteps}
   />
+
+  {/* ─── Negocio que ya opera sin expediente ─── */}
+  <Section surface>
+    <SectionHeading
+      layout="duo"
+      eyebrow="Ya operas sin expediente"
+      title="Cómo ponerse al corriente"
+      titleAccent="con Protección Civil"
+      desc="Si el negocio ya abrió y nunca integró el expediente, el orden sigue siendo el mismo."
+      body={[
+        'No existe un trámite distinto de regularización: se presenta el mismo que si abrieras hoy. Lo que cambia es que, mientras el expediente no exista, cualquier inspección te encuentra sin él.',
+        'Las sanciones, los derechos y los plazos los fija cada autoridad local y se consultan en su portal de trámites y servicios; aquí no publicamos cifras de multas.',
+      ]}
+    />
+    <div class="prose">
+      <p>Por dónde empezar, en este orden:</p>
+      <ol>
+        <li>
+          <strong>Confirma si estás obligado y con qué nivel de riesgo.</strong> En la Ciudad de México se valida en la
+          plataforma de la SGIRPC; en el Estado de México depende de la clasificación del giro.
+          <a href="/herramientas/riesgo-de-incendio/">Clasifica el riesgo de incendio</a> antes de cotizar nada.
+        </li>
+        <li>
+          <strong>Pon el inmueble en condiciones.</strong> Extintores vigentes y accesibles, señalización, rutas y
+          salidas de emergencia libres, punto de reunión y botiquín de primeros auxilios. Es lo primero que se revisa en
+          la visita.
+        </li>
+        <li>
+          <strong>Capacita y documenta.</strong> Constancias del personal, brigada donde corresponda, actas de simulacro
+          y bitácoras de revisión del equipo.
+        </li>
+        <li>
+          <strong>Revisa qué pide tu demarcación</strong> junto con la licencia de funcionamiento: hay trámites locales
+          que suman dictámenes técnicos de las instalaciones —eléctrica o de gas— y el uso de suelo. Eso se confirma en
+          la cédula del municipio o de la alcaldía, no se da por hecho.
+        </li>
+        <li>
+          <strong>Deja el programa para el final</strong> y fírmalo con quien esté registrado para ello. Qué es, qué
+          lleva y quién lo elabora lo explicamos aparte en la guía del
+          <a href="/blog/programa-interno-proteccion-civil/">Programa Interno de Protección Civil</a>.
+        </li>
+      </ol>
+      <p>
+        Un negocio pequeño de bajo riesgo rara vez necesita un programa: necesita el piso mínimo —extintor, botiquín,
+        señalización y capacitación— y el dictamen o visto bueno que pida su autoridad local. Lo que no conviene es
+        pagar un programa antes de corregir el inmueble que ese programa va a describir.
+      </p>
+    </div>
+  </Section>
+
+  {/* ─── Qué se revisa en la visita ─── */}
+  <Section>
+    <SectionHeading
+      layout="duo"
+      eyebrow="La visita"
+      title="Qué revisa Protección Civil"
+      titleAccent="en una inspección"
+      desc="Las inspecciones se centran en el inmueble antes que en la carpeta."
+      body={[
+        'El inspector recorre el local y comprueba lo que se puede ver y probar —equipo contra incendio, rutas, señalización—; después pide los documentos que respaldan lo que vio.',
+        'Qué aplica a tu caso cambia por giro: cada ficha del directorio de arriba lo detalla con su fundamento.',
+      ]}
+    />
+    <div class="prose">
+      <ul>
+        <li>Extintores: el agente que corresponde a cada área, carga vigente, etiqueta y collarín, altura y acceso libre.</li>
+        <li>Señalización de rutas de evacuación, salidas de emergencia, ubicación de extintores y punto de reunión.</li>
+        <li>Rutas y salidas despejadas, sin obstáculos ni cerraduras que impidan salir.</li>
+        <li>Medios de detección y alarma donde la norma los exige.</li>
+        <li>Brigada designada, constancias de capacitación del personal y actas de simulacro.</li>
+        <li>Botiquín de primeros auxilios abastecido y señalizado.</li>
+        <li>Bitácora de revisión mensual y constancias de mantenimiento del equipo contra incendio.</li>
+        <li>Programa Interno, o el dictamen o visto bueno local, cuando el establecimiento está obligado.</li>
+      </ul>
+      <p>
+        El detalle de cada punto está en la guía de
+        <a href="/blog/que-revisa-proteccion-civil/">qué revisa Protección Civil en un negocio</a>.
+      </p>
+      <p>
+        Fuera de la Ciudad de México y el Estado de México el trámite es igual de local: lo lleva la unidad o
+        coordinación municipal de protección civil del ayuntamiento y sus requisitos se publican en el portal de
+        trámites y servicios del municipio. Por eso aquí solo publicamos las dos entidades que atendemos y que podemos
+        verificar.
+      </p>
+    </div>
+  </Section>
 
   {/* ─── Qué hacemos y qué no ─── */}
   <Section surface>

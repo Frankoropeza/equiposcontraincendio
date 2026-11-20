@@ -5,7 +5,7 @@ grupo: educacion-y-cuidado
 riesgoProbable: medio
 prioridad: alta
 orden: 7
-h1: "Requisitos de Protección Civil para"
+h1: "Requisitos y Programa Interno de Protección Civil para"
 h1Accent: "escuelas"
 heroBadge: "Directorio por giro · Educación y cuidado"
 intro:
@@ -15,8 +15,8 @@ cardDescription: "Términos de referencia propios, ROPC reforzado y vigencia de 
 ctaLabel: "Escuelas"
 image: "/images/servicios/prueba-electrica-panel-alarma-incendio.avif"
 imageAlt: "Prueba del panel de alarma contra incendio de un plantel"
-seoTitle: "Requisitos de Protección Civil para escuelas | CDMX y Edomex"
-seoDescription: "Programa Interno con términos de referencia para escuelas, visto bueno, brigadas, simulacros y equipo contra incendio en CDMX y Edomex."
+seoTitle: "Programa Interno de Protección Civil para escuelas | CDMX"
+seoDescription: "Programa Interno de Protección Civil para escuelas: términos de referencia, visto bueno, brigadas, simulacros escolares y equipo contra incendio."
 kwPrincipal: "requisitos de protección civil para escuelas"
 kwSecundarias:
   - "programa interno de protección civil escuelas"
@@ -111,7 +111,7 @@ waMessage: "Hola, tengo una escuela y quiero revisar lo que pide Protección Civ
 fusionaDe: "proteccion-civil-escuelas"
 ---
 
-## Tres diferencias con cualquier otro negocio
+## El Programa Interno de Protección Civil de una escuela: tres diferencias con cualquier otro negocio
 
 1. **Términos de referencia propios.** El Programa Interno de una escuela en la CDMX se integra conforme al **TR-SGIRPC-PIPC-ES-001-3-2024**, no con el índice de un establecimiento mercantil.
 2. **Vigencia más corta.** La Ley de GIRPC fija **2 años** para escuelas públicas y privadas; un comercio de mediano riesgo tiene 5. Es el error de calendario más común del sector.
@@ -135,3 +135,12 @@ Por su personal, la escuela cumple la NOM-002-STPS-2010: clasificar el riesgo, e
 ## Qué pone la escuela y qué pone el ROPC
 
 La escuela aporta el inmueble real y su operación: superficie, niveles, aforo por turno, rutas, equipo existente, capacitación y simulacros. El ROPC integra el programa conforme al término de referencia y firma con su Carta de Corresponsabilidad. Si el inmueble llega con extintores vencidos o rutas bloqueadas, el programa describe un plantel que no existe: por eso conviene cerrar primero la brecha física y después contratar la firma.
+
+## Simulacros y emergencia escolar: prevención, auxilio y quién responde
+
+El Programa Interno no es un documento que se archiva: es el que ordena las actividades de protección civil del ciclo escolar. Siguiendo la estructura con la que se integra en el sector educativo, se trabaja en tres bloques. **Prevención**: identificación de los riesgos del plantel y de su entorno —barda, bardas vecinas, tanque de gas, tablero, obra de al lado—, las medidas para mitigar lo que se pueda corregir y la revisión del equipo contra incendio, la señalización y las rutas. **Auxilio**: la unidad interna de protección civil y sus brigadas, con los adultos que evacúan por aula y los que atienden primeros auxilios. **Recuperación**: qué se revisa antes de volver a ocupar el inmueble después de un sismo, un incendio o cualquier daño estructural, y cómo se protege el patrimonio del plantel.
+
+En la práctica, las actividades que se realizan en una escuela durante el año son estas: revisión del equipo y de las rutas al inicio del ciclo, integración y capacitación de las brigadas, simulacros —uno al año en riesgo ordinario y dos en alto por la NOM-002-STPS-2010, al menos dos al año en el Estado de México, y los que convoque la autoridad—, el repaso del plan con alumnos por nivel y la actualización del programa cuando cambia el inmueble o el aforo.
+
+El reparto de responsabilidad conviene tenerlo claro antes de una emergencia escolar. La escuela es la responsable de su inmueble, de su Programa Interno y de que las brigadas existan y estén capacitadas; es ella la que responde ante la autoridad de protección civil. La autoridad educativa marca el calendario y los lineamientos con los que el plantel participa en los simulacros convocados y coordina la comunicación con las familias. Y protección civil de la alcaldía o del municipio es la que revisa, registra el programa y coordina la respuesta externa. Ninguno de los tres sustituye a los otros dos: si el plantel espera que la autoridad educativa le resuelva el extintor vencido, nadie lo repone.
+

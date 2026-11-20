@@ -250,7 +250,7 @@ tabla2:
 modulos:
   - id: recarga-pqs
     eyebrow: PQS ABC · Presión contenida · Con collarín
-    title: Mantenimiento de extintores PQS,
+    title: Recarga y mantenimiento de extintores PQS,
     titleAccent: el servicio más frecuente
     description: "Es el extintor que más se instala y, por eso, el que más servicio pide. El polvo químico seco se compacta con el tiempo y con la humedad, así que el mantenimiento no se limita a rellenar: se despresuriza, se vacía, se revisa el cilindro por dentro, se recarga, se presuriza con nitrógeno y se prueba contra fugas. Es el único que regresa con collarín."
     features:
@@ -358,7 +358,7 @@ modulos:
       alt: Prueba hidrostática de extintor en taller
   - id: recarga-agente-limpio
     eyebrow: Agente limpio · Halotron I y FE-36 · Equipo sensible
-    title: Servicio a extintores
+    title: Mantenimiento y recarga de extintores
     titleAccent: de agente limpio
     description: "Son los extintores más caros de recargar por el precio del agente, así que el servicio cuida cada gramo: se pesa, se revisa la presión y solo se recarga con el agente que indica la etiqueta. Protegen sites y equipo electrónico, donde nadie los toca en meses, y por eso un agente limpio sin carga suele pasar desapercibido hasta el día en que hace falta."
     features:
@@ -388,16 +388,16 @@ detalleAparte:
   label: Recarga por tipo de extintor
   breadcrumb: Recarga por tipo de extintor
   seo:
-    title: Recarga de extintores por agente en CDMX y Edomex
-    description: "Qué incluye la recarga de extintores de PQS, CO₂, clase K, agua y espuma y agente limpio, y cuándo el cilindro ya no se recarga y toca reemplazarlo."
+    title: Recarga y mantenimiento de extintores en CDMX y Edomex
+    description: "Servicio de recarga y mantenimiento de extintores PQS, CO₂, clase K, agua y agente limpio: qué incluye, qué define el costo y cuándo no conviene recargar."
   hero:
-    badge: Detalle del servicio · agente por agente
-    title: Recarga de extintores
+    badge: Servicio de recarga · agente por agente
+    title: Mantenimiento y recarga de extintores
     accent: agente por agente
-    subtitle: "El procedimiento cambia con lo que lleva dentro el cilindro: polvo, gas, químico húmedo, agua o agente limpio."
+    subtitle: "El procedimiento cambia con el agente extintor que lleva dentro el cilindro —polvo, gas, químico húmedo, agua o agente limpio—, y la NOM-154-SCFI-2005 lo fija para cada uno."
     descRight:
-      - Un PQS se vacía y se presuriza con nitrógeno; un CO₂ se comprueba en báscula porque no tiene manómetro; un clase K se revisa por la grasa que acumula en la boquilla. Por eso el servicio se cotiza por tipo y por capacidad, no «por extintor».
-      - Recargar no es lo mismo que dar mantenimiento. La recarga repone el agente; el mantenimiento abre el extintor, revisa el cilindro por dentro, cambia lo desgastado y comprueba que no tenga fugas.
+      - Un PQS se vacía y se presuriza con nitrógeno; un CO₂ se comprueba en báscula porque no tiene manómetro; un clase K se revisa por la grasa que acumula en la boquilla. Por eso el servicio de recarga se cotiza por tipo de extintor y por capacidad en kilogramos, no «por extintor».
+      - Recargar no es lo mismo que dar mantenimiento. La recarga repone el agente extintor; el mantenimiento abre el extintor, revisa el cilindro por dentro, cambia lo desgastado y comprueba que no tenga fugas. La NOM-154-SCFI-2005 fija ese procedimiento; la NOM-002-STPS-2010 es la que obliga a realizar el mantenimiento al menos una vez al año y a recargar el extintor después de usarlo.
 decision:
   id: recargar-o-reemplazar
   eyebrow: Recargar o reemplazar
@@ -407,6 +407,7 @@ decision:
   body:
     - Lo evaluamos al abrirlo y te lo decimos por escrito. Si el cilindro está sano, recargarlo es lo que conviene; si no pasa la prueba o es un equipo obsoleto, la norma no deja otra opción que reemplazarlo.
     - Cuando toca reemplazo, te cotizamos el extintor nuevo del agente correcto para esa zona.
+    - "Esa decisión es la que mantiene al día tu programa de prevención: un extintor que ya no puede funcionar no cuenta en una verificación, aunque traiga etiqueta nueva."
   ctaLabel: Venta de extintores
   ctaHref: /productos/extintores/
   columns:

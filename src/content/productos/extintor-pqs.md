@@ -8,8 +8,8 @@ image: /images/showcase/extintores-catalogo-profesional.avif
 price: "Cotizar"
 featured: true
 order: 1
-seoTitle: "Extintor PQS ABC de polvo químico seco: venta en CDMX"
-seoDescription: "Extintor de PQS tipo ABC de fosfato monoamónico, de 1 a 70 kilogramos. Venta, instalación y recarga certificada NOM-154 para empresas en CDMX y Edomex."
+seoTitle: "Extintor PQS de polvo químico seco, 1 a 70 kilogramos | CDMX"
+seoDescription: "Extintor de polvo químico seco (PQS) tipo ABC, de 1 a 70 kilogramos. Venta, instalación y recarga certificada NOM-154 para empresas en CDMX y Edomex."
 variantes:
   - nombre: "Extintor PQS ABC de 1 kg"
     badge: "Compacto"
@@ -122,7 +122,7 @@ faqs:
     answer: "El extintor no caduca por fecha, pero sí su servicio: revisión visual mensual, mantenimiento al menos anual conforme a la NOM-002-STPS-2010 y prueba hidrostática del cilindro al menos cada cinco años según la NOM-154-SCFI-2005. Si el manómetro salió del verde o perdió el sello, hay que atenderlo aunque se vea nuevo."
 ficha:
   heroBadge: PQS ABC · Clases A, B y C · NOM-100-STPS
-  heroTitle: Extintor PQS de polvo químico seco,
+  heroTitle: Extintor PQS tipo ABC de polvo químico seco,
   heroAccent: de 1 a 70 kilogramos
   descRight:
     - Con un solo equipo cubres papel y cartón, gasolina o solventes, y equipo eléctrico con corriente. Por eso es el extintor que más se instala en oficinas, comercios, bodegas y vehículos.
@@ -138,19 +138,19 @@ ficha:
     - label: Servicio
       value: NOM-154-SCFI-2005 · con collarín
   showcaseTitle: Datos clave
-  showcaseAccent: del extintor de PQS tipo ABC
+  showcaseAccent: del extintor de polvo químico seco tipo ABC
   showcaseDesc: Agente, clases de fuego, norma de producto y servicio que pide el equipo.
   faqAccent: sobre extintores PQS
   guia:
-    title: Cómo elegir tu
-    titleAccent: extintor PQS
+    title: Cómo elegir tu extintor PQS
+    titleAccent: y su capacidad en kilogramos
     desc: Dónde conviene, qué capacidad elegir, dónde colocarlo y qué mantenimiento pide.
 fichaHeads:
   vitrina:
     - "El extintor PQS ABC usa polvo químico seco a base de fosfato monoamónico: interrumpe la reacción en fuegos de sólidos (clase A), líquidos inflamables (clase B) y equipo eléctrico energizado (clase C), bajo la NOM-100-STPS-1994."
     - Es el equipo de arranque de casi cualquier inmueble en CDMX y Edomex. Dinos giro y superficie y te decimos cuántos y de qué capacidad, con entrega e instalación.
   presentaciones:
-    - Las presentaciones de extintor PQS van del compacto de 1 kg para vehículo a la unidad sobre ruedas de 70 kg. La capacidad define el alcance, el tiempo de descarga y quién puede manejarlo sin entrenamiento previo.
+    - Los extintores portátiles de PQS van del compacto de 1 kg para vehículo al de 9 kg, y las unidades sobre ruedas llegan a 70 kg. La capacidad define el alcance, el tiempo de descarga y quién puede manejarlo sin entrenamiento previo.
     - En la práctica, la mayoría de oficinas y comercios resuelve con 4.5 y 6 kg, y deja los equipos móviles para bodega y patio de maniobras. Te armamos la mezcla en una sola cotización.
   comparativa:
     - "Comparar las ocho presentaciones de PQS de golpe evita el error más común: comprar todo del mismo tamaño. La clasificación UL (2A:10B:C, 4A:60B:C…) dice cuánto fuego apaga realmente cada equipo."

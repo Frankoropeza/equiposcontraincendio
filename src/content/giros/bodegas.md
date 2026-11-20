@@ -5,7 +5,7 @@ grupo: industria-y-logistica
 riesgoProbable: alto
 prioridad: alta
 orden: 17
-h1: "Requisitos de Protección Civil para"
+h1: "Requisitos de Protección Civil y equipo contra incendio para"
 h1Accent: "bodegas y almacenes"
 heroBadge: "Directorio por giro · Industria y logística"
 intro:
@@ -15,8 +15,8 @@ cardDescription: "15 t de sólidos ya son riesgo alto: brigada, alarma y sistema
 ctaLabel: "Bodegas"
 image: "/images/servicios/instalacion-equipo-almacen.avif"
 imageAlt: "Equipo contra incendio instalado en un almacén con racks"
-seoTitle: "Protección Civil para bodegas y almacenes | CDMX y Edomex"
-seoDescription: "Cuándo una bodega es de riesgo alto, qué documentos pide Protección Civil, dictamen de Bomberos, brigada y sistemas contra incendio en CDMX y Edomex."
+seoTitle: "Equipo contra incendio y Protección Civil para bodegas"
+seoDescription: "Cuándo una bodega es de riesgo alto y qué equipo contra incendio pide: extintores, sistema de detección, rociadores y dictamen de Bomberos en CDMX."
 kwPrincipal: "requisitos de protección civil para bodegas"
 kwSecundarias:
   - "protección civil para almacenes"
@@ -54,8 +54,8 @@ equipo:
   - { item: "Extintores PQS ABC", uso: "Uno por cada 200 m² en riesgo alto (300 en ordinario), en pasillos entre racks, a no más de 1.50 m y sin mercancía enfrente.", fund: "NOM-002-STPS-2010, 7.17", prio: B, tag: OL }
   - { item: "Extintores sobre ruedas", uso: "En andenes y naves abiertas, donde la distancia hace insuficiente un portátil.", fund: "Criterio técnico", prio: R, tag: BP }
   - { item: "Extintor de CO₂", uso: "Cargadores de montacargas, tableros y cuarto eléctrico.", fund: "NOM-002-STPS-2010, Tabla 1 (clase C)", prio: B, tag: OL }
-  - { item: "Detección y alarma", uso: "Medios de detección siempre; en riesgo alto, además alarma de incendio. En naves altas, detección por haz o aspiración.", fund: "NOM-002-STPS-2010, 5.10", prio: B, tag: OL }
-  - { item: "Sistemas fijos", uso: "Obligatorios en riesgo alto; la NOM-002 no dice cuál. La red de hidrantes o los rociadores los define el proyecto, el reglamento local o la aseguradora.", fund: "NOM-002-STPS-2010, 5.10", prio: E, tag: OL }
+  - { item: "Sistema de detección y alarma", uso: "Medios de detección siempre; en riesgo alto, además alarma de incendio. Detectores de humo en oficinas y áreas cerradas; en naves altas, detección por haz o aspiración.", fund: "NOM-002-STPS-2010, 5.10", prio: B, tag: OL }
+  - { item: "Sistemas fijos: rociadores automáticos o red de hidrantes", uso: "Obligatorios en riesgo alto; la NOM-002 no dice cuál. El tipo lo define el proyecto, el reglamento local o la aseguradora.", fund: "NOM-002-STPS-2010, 5.10", prio: E, tag: OL }
   - { item: "Equipo de protección para la brigada", uso: "En riesgo alto, conforme a las funciones y riesgos de cada brigadista.", fund: "NOM-002-STPS-2010, 5.9", prio: E, tag: OL }
   - { item: "Arrestador de flama y relevo de presión", uso: "Recipientes fijos con líquidos inflamables.", fund: "NOM-005-STPS-1998", prio: E, tag: OL }
 senalizacion:
@@ -100,6 +100,10 @@ faqs:
     answer: "La NOM-002 exige sistemas fijos de protección contra incendio en riesgo alto, pero no dice cuáles. Los rociadores o la red de hidrantes los definen el proyecto, el reglamento de construcción local y, con frecuencia, la aseguradora."
   - question: "¿Qué cambia en el Estado de México?"
     answer: "El Programa Específico se revalida cada año, se exigen al menos dos simulacros anuales, la alerta sísmica es obligatoria en mediano y alto riesgo, y los proyectos de más de 3,000 m² de construcción pasan por la Evaluación de Impacto Estatal, que incluye protección civil."
+  - question: "¿Cuáles son los tipos de equipo contra incendio para una bodega?"
+    answer: "Cuatro familias. Extintores portátiles y sobre ruedas, con el agente que corresponde a cada clase de fuego. Sistema de detección y alarma, con detectores de humo en oficinas y áreas cerradas y detección por haz o aspiración en naves altas. Red de hidrantes con gabinetes de manguera, para el combate con personal capacitado. Y sistemas de extinción automática, es decir rociadores, que actúan sin que haya nadie presente. La NOM-002-STPS-2010 solo obliga a los sistemas fijos en riesgo alto, sin decir cuál: el tipo lo definen el proyecto, el reglamento local y la aseguradora."
+  - question: "¿Cuánto cuesta instalar un sistema contra incendio en una bodega?"
+    answer: "No publicamos cifras porque el rango es enorme y depende del proyecto. Lo que se cotiza son los metros y la altura de almacenamiento a cubrir, el tipo de mercancía, si hay toma de agua, cisterna y bomba o hay que proyectarlas, el número de puntos de detección, y los extintores y su mantenimiento. Un rociado completo y una red de hidrantes no se parecen en precio ni en obra, así que el orden sensato es diagnóstico y clasificación primero, cotización después."
 sources:
   - { label: "NOM-002-STPS-2010 (STPS)", url: "https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/nom-002.pdf" }
   - { label: "NOM-005-STPS-1998 (ASINOM)", url: "https://asinom.stps.gob.mx/upload/noms/Nom-005.pdf" }
@@ -140,9 +144,24 @@ El error más caro es revisar cada material por separado. La norma ordena **norm
 
 El equipo de protección de la brigada se selecciona según las funciones y riesgos de cada integrante; la categoría de [equipo para bomberos](/productos/equipo-bombero/) permite revisar esa dotación sin confundirla con el equipo fijo de la bodega.
 
-## Sistemas fijos: lo que la norma dice y lo que no
+## Equipo contra incendio para una bodega: qué tipos hay y cuál te toca
 
-La NOM-002 exige «sistemas fijos de protección contra incendio» en riesgo alto, pero **no nombra los rociadores**. Si tu bodega necesita red de hidrantes, rociadores o ambos lo definen el proyecto, el reglamento de construcción local y, muy a menudo, la aseguradora. Por eso conviene empezar por un [diagnóstico de riesgo](/servicios/diagnostico-de-riesgo/) antes de cotizar un sistema: comprar uno que no te piden es tan costoso como no tener el que sí.
+Los equipos y sistemas contra incendio de un almacén se agrupan en cuatro familias, y la clasificación de riesgo decide cuáles dejan de ser opcionales:
+
+- **Extintores.** Portátiles en los pasillos entre racks y sobre ruedas en andenes y naves abiertas, con el agente que corresponde a cada clase de fuego: [polvo químico seco ABC](/productos/extintor-pqs/) para la mercancía y [bióxido de carbono](/productos/extintor-co2/) en cargadores de montacargas y tableros. El catálogo por tipo está en [extintores](/productos/extintores/).
+- **Sistema de detección y alarma.** Detectores de humo en oficinas y áreas cerradas; en nave alta el humo se estratifica y un detector puntual de techo llega tarde, así que se usa detección por haz proyectado o por aspiración, que muestrea el aire y reconoce la presencia de humo antes de que haya llama. En riesgo alto se suma la alarma de incendio: [detección y alarmas](/productos/deteccion-alarmas/).
+- **Red de hidrantes y mangueras.** Gabinetes distribuidos para el combate con personal capacitado, con la toma, la bomba y la reserva de agua que el proyecto determine: [hidrantes y mangueras](/productos/hidrantes-mangueras/).
+- **Rociadores automáticos.** Cada rociador abre solo donde el calor lo libera y descarga sin que haya nadie presente, que es justo el escenario de una bodega de noche o en fin de semana: [rociadores contra incendio](/productos/rociadores-contra-incendio/).
+
+Sobre el costo no publicamos cifras: una red de hidrantes y un sistema de rociadores no se parecen ni en precio ni en obra. Lo que se cotiza son los metros y la altura de almacenamiento, el tipo de mercancía, si ya hay toma de agua, cisterna y bomba o hay que proyectarlas, los puntos de detección y los extintores con su mantenimiento.
+
+## Rociadores automáticos y sistemas de extinción: lo que la norma dice y lo que no
+
+La NOM-002 exige «sistemas fijos de protección contra incendio» en riesgo alto, pero **no nombra los rociadores**. Si tu bodega necesita red de hidrantes, rociadores automáticos o ambos lo definen el proyecto, el reglamento de construcción local y, muy a menudo, la aseguradora.
+
+El diseño de un sistema de rociadores para almacenamiento se hace con la **NFPA 13 como referencia** —en México no es norma obligatoria: es el estándar con el que trabajan proyectistas y aseguradoras—, y lo que manda en el cálculo no es el giro sino la altura de almacenamiento, el tipo de mercancía y el arreglo de los racks. Dos bodegas del mismo tamaño pueden terminar con sistemas distintos por lo que guardan y a qué altura.
+
+Por eso conviene empezar por un [diagnóstico de riesgo](/servicios/diagnostico-de-riesgo/) antes de cotizar un sistema: comprar uno que no te piden es tan costoso como no tener el que sí.
 
 ## El dictamen de Bomberos
 

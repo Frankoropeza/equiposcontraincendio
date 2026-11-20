@@ -22,8 +22,9 @@ import SectionMenu from '@components/SectionMenu.astro';
 import CategoryFeature from '@components/CategoryFeature.astro';
 import DataTable from '@components/DataTable.astro';
 import RelatedLinks from '@components/RelatedLinks.astro';
+import FAQWithContact from '@components/FAQWithContact.astro';
 import { getEntry } from 'astro:content';
-import { waUrl, sectionMenuItems } from '@config/site';
+import { CONTACT, waUrl, sectionMenuItems } from '@config/site';
 
 const entry = await getEntry('l3', 'servicios/mantenimiento');
 if (!entry || ('kind' in entry.data && entry.data.kind === 'extintores'))
@@ -32,7 +33,47 @@ const data = entry.data;
 const detalle = data.detalleAparte;
 if (!detalle) throw new Error('servicios/mantenimiento debe declarar detalleAparte');
 
+// FAQ PROPIA DE ESTA URL (2026-11-20). Son las preguntas que llegan a la
+// página de recarga y que la madre no responde: de qué depende el costo del
+// servicio (sin inventar tarifas) y qué exige cada norma. Viven aquí y no en
+// la entrada L3 porque `detalleAparte` no declara `faq` en el esquema Zod
+// (src/data/l3-schema.ts) y el esquema es `.strict()`. No duplican ninguna
+// pregunta de /servicios/mantenimiento/.
+const faqs = [
+  {
+    question: '¿Cuánto cobran por recargar un extintor?',
+    answer:
+      'No hay una tarifa única. El costo del servicio de recarga depende del agente extintor, de la capacidad en kilogramos o litros, de cuántos equipos son, de las refacciones que haya que cambiar al abrirlo y de si a ese cilindro le toca la prueba hidrostática este año. Recargar un PQS no cuesta lo mismo que recargar un agente limpio de la misma capacidad. Por eso cotizamos por inventario: mándanos por WhatsApp el tipo, la capacidad y la cantidad de extintores y te damos el precio del servicio completo.',
+  },
+  {
+    question: '¿Cuánto cuesta la recarga de un extintor de 6 kg?',
+    answer:
+      'Depende del agente que lleve ese cilindro de 6 kg: el polvo químico seco, la espuma AFFF y el agente limpio tienen costos distintos aunque la capacidad sea la misma. También cambia si el equipo necesita refacciones, si perdió la contraseña o si le toca la prueba hidrostática. Lo que no cambia es qué incluye: apertura, revisión interna del cilindro, recarga, presurizado, prueba de fugas, etiqueta nueva, collarín cuando aplica y orden de servicio foliada. Para darte un número real necesitamos el inventario, no un solo extintor.',
+  },
+  {
+    question: '¿Qué dice la NOM-154 sobre la recarga de extintores en México?',
+    answer:
+      'La NOM-154-SCFI-2005 es la norma mexicana que regula el proceso de recarga y el mantenimiento de extintores. Define el procedimiento por tipo de extintor, el equipamiento mínimo del taller, qué datos lleva la etiqueta de servicio, cuándo va collarín, la contraseña oficial del producto certificado, la garantía mínima de un año y el dictamen de la unidad de verificación acreditada que avala al prestador. También prohíbe dar mantenimiento a los equipos obsoletos y pide la prueba hidrostática del cilindro al menos cada 5 años. Lo que la NOM-154 no fija es cada cuándo recargar: eso sale de la NOM-002-STPS-2010. En México se dice indistintamente extintores o extinguidores; la norma usa «extintor».',
+  },
+  {
+    question: '¿Qué nos dice la NOM-002-STPS sobre los extintores?',
+    answer:
+      'La NOM-002-STPS-2010 es la norma de prevención y protección contra incendios en los centros de trabajo, y es de donde salen los plazos. Su numeral 7.18 pide realizar el mantenimiento preventivo de los extintores al menos una vez al año y recargarlos después de su uso, aunque el disparo haya sido corto. Además obliga a que tu personal los revise cada mes —presión, seguro, manguera, acceso y señalización— y a conservar el registro de esas revisiones. Las dos normativas se complementan: la NOM-002 dice cada cuándo y qué te toca a ti; la NOM-154, cómo debe hacerlo el taller. Cumplir las dos es lo que sostiene el cumplimiento cuando te revisan la seguridad contra incendios.',
+  },
+  {
+    question: '¿La recarga incluye la prueba hidrostática?',
+    answer:
+      'No siempre. La <a href="/servicios/prueba-hidrostatica/">prueba hidrostática</a> le toca al cilindro al cumplir 5 años desde la última, o antes si recibió un golpe, tiene corrosión o perdió la contraseña. Cuando aplica, se hace dentro del mismo servicio y se acredita por separado, porque es un procedimiento distinto y deja su propia marca permanente con la fecha. Si el cilindro no la pasa, ninguna recarga lo corrige: se da de baja y se reemplaza.',
+  },
+  {
+    question: '¿Recargan extintores portátiles y sobre ruedas?',
+    answer:
+      'Sí. Damos servicio a extintores portátiles y a unidades móviles sobre ruedas de polvo químico seco, CO₂, clase K, agua, espuma AFFF y agente limpio, en oficinas, comercios y naves de seguridad industrial de la Ciudad de México y el Estado de México. Cuando el equipo está en un área que no puede quedarse sin protección, el servicio se hace por etapas para garantizar que siempre haya un extintor del agente correcto listo para una emergencia.',
+  },
+];
+
 const schemaData = {
+  faqs,
   service: {
     name: detalle.label,
     description: detalle.seo.description,
@@ -114,5 +155,18 @@ const relatedLinks = [
     desc={data.related.desc}
     links={relatedLinks}
     limit={8}
+  />
+
+  <FAQWithContact
+    items={faqs}
+    waNumber={CONTACT.whatsapp}
+    eyebrow="Preguntas frecuentes · NOM-154 y NOM-002"
+    title="Costo, norma y"
+    titleAccent="recarga de extintores en México"
+    desc="Lo que más nos preguntan sobre el servicio de recarga: de qué depende el precio, qué exige cada norma y qué incluye el mantenimiento de cada equipo."
+    body={[
+      'No publicamos tarifas porque el costo cambia con el agente, la capacidad y el estado del cilindro. Aquí está lo que sí define el precio y lo que siempre incluye el servicio.',
+      'Si tu caso no aparece, mándanos el tipo, la capacidad y la cantidad de extintores por WhatsApp y te cotizamos el servicio del año.',
+    ]}
   />
 </PageLayout>

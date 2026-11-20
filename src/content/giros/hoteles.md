@@ -15,8 +15,8 @@ cardDescription: "Rutas por piso, alarma audible, cocina, caldera y el umbral de
 ctaLabel: "Hoteles"
 image: "/images/servicios/instalacion-deteccion-alarma.avif"
 imageAlt: "Instalación de detección y alarma contra incendio en un pasillo"
-seoTitle: "Protección Civil para hoteles | Documentos y equipo"
-seoDescription: "Programa Interno, rutas por piso, alarma, extintores, caldera y cocina: lo que se revisa en un hotel en CDMX y Edomex, con su fundamento."
+seoTitle: "Protección Civil para hoteles | Guía del sector hotelero"
+seoDescription: "Programa Interno, rutas por piso, alarma, extintores, caldera y cocina en un hotel de CDMX o Edomex, y qué ensaya el personal de seguridad hotelera."
 kwPrincipal: "protección civil para hoteles"
 kwSecundarias:
   - "requisitos de protección civil para hoteles"
@@ -116,7 +116,7 @@ waMessage: "Hola, tengo un hotel y quiero revisar lo que pide Protección Civil:
 fusionaDe: "proteccion-civil-hoteles"
 ---
 
-## Obligación, estándar de cadena y aseguradora
+## Obligación, estándar de cadena y aseguradora: de dónde viene cada medida de seguridad
 
 En hotelería se confunden tres fuentes de exigencia, y separarlas evita comprar sistemas sin fundamento o dejar fuera lo que sí corresponde:
 
@@ -134,12 +134,31 @@ La Tabla 4.4.1.1 de la NTC-PA 2024 establece que en hospedaje bastan extintores 
 
 La misma tabla marca la **detección como opcional** en hospedaje. Por eso no es correcto decir que la norma exige un detector en cada habitación; si tu cadena o tu póliza lo piden, cúmplelo, pero sabiendo de dónde viene la obligación.
 
-## La cocina y el cuarto de máquinas se rigen por sus propias reglas
+## El extintor de la cocina y el del cuarto de máquinas se rigen por sus propias reglas
 
 La cocina del hotel es un restaurante dentro del edificio: fuego de aceites (clase K) que solo se atiende con **químico húmedo**, a no más de 10 metros de recorrido, y [detector de gas](/productos/detector-de-gas/) donde hay equipos de combustión en obra nueva o remodelación. El detalle está en la [ficha de restaurantes](/proteccion-civil/restaurantes/).
 
 El cuarto de máquinas tiene dos obligaciones que no se sustituyen entre sí: el extintor adecuado para equipo eléctrico y, si hay caldera o recipientes a presión, el **expediente de la NOM-020-STPS-2011** con su categoría, pruebas y dispositivos de relevo. La etiqueta de un extintor no acredita nada de la caldera.
 
-## Evacuar a quien no conoce el edificio
+## Evacuar al huésped que no conoce el edificio
 
 La brigada contra incendio solo es obligatoria en riesgo alto (NOM-002, 5.6), y ninguna norma fija un porcentaje de brigadistas. En un hotel, sin embargo, la razón operativa es evidente: de noche el edificio está lleno y la mayoría de sus ocupantes nunca ha visto la escalera de emergencia. Por eso la recomendación práctica es brigada por turno, alarma que se escuche con la puerta cerrada, plano de evacuación en cada habitación y luces de emergencia en pasillos y escaleras.
+
+## Los riesgos propios de un hotel y los protocolos para el huésped y el personal
+
+Antes de comprar equipo conviene saber dónde está el riesgo real. En un hotel se concentra en cinco puntos: la cocina y el servicio de banquetes, el cuarto de máquinas con la caldera, la lavandería —secadoras, pelusa acumulada y productos químicos—, el estacionamiento y las áreas de servicio donde se guarda todo lo que no cabe en otro lado, y las habitaciones, por el hábito de fumar en la cama. A eso se suma lo que agrava cualquier conato: ocupantes dormidos, varios pisos arriba de la salida y que no conocen el edificio.
+
+Los protocolos se escriben para esas dos partes por separado. El del **huésped** es pasivo: plano de evacuación en la puerta, alarma que se oiga con la puerta cerrada y el aire acondicionado encendido, señalización continua de rutas de evacuación hasta la escalera y el aviso de no usar el elevador. El del **personal** es activo: quién confirma la alarma, quién llama al 911, quién recorre los pisos, quién abre el punto de reunión y quién atiende primeros auxilios mientras llegan los servicios de emergencia. En la mayoría de los hoteles ese plan de emergencia lo coordina el jefe de seguridad o el gerente de mantenimiento, y el personal de seguridad hotelera del turno nocturno es el que lo ejecuta: por eso la brigada tiene que existir en los tres turnos, no solo de día.
+
+Sobre tecnología de seguridad, vale separar lo que cambia el resultado de un incendio de lo que no. Lo primero es el sistema de detección y alarma: un panel que indique el área o la habitación en alarma, dispositivos audibles y visibles dentro del cuarto y, arriba de 23 metros, evacuación por voz conforme a la NTC-PA 2024. Las cámaras y el control de accesos resuelven seguridad patrimonial, que es otro problema y se decide por otras razones.
+
+## Cómo regularizar un hotel en materia de protección civil
+
+Un hotel que viene operando sin expediente no se regulariza comprando extintores. El orden que funciona es documental primero, físico después:
+
+1. **Auditoría del estado actual.** Contar niveles, medir la altura sobre el acceso de bomberos, levantar el inventario del equipo de seguridad existente —extintores, detección, alarma, hidrantes, luces de emergencia— y revisar qué vigencias están vencidas.
+2. **Clasificación y trámite que te toca.** En la CDMX, aviso de funcionamiento con aforo, Programa Interno conforme a la Ley de GIRPC y, cuando el inmueble lo requiera, Visto Bueno de Seguridad y Operación. En el Estado de México, licencia municipal, Programa Específico y, en mediano y alto riesgo, alerta sísmica.
+3. **Documentación mínima que se arma en paralelo.** Programa Interno o Específico vigente, póliza de responsabilidad civil, constancias DC-3 del personal, bitácora mensual y constancia anual de mantenimiento de extintores, expediente de la NOM-020-STPS-2011 de la caldera, actas de simulacro y planos de evacuación por piso actualizados.
+4. **Lo físico, con prioridad por riesgo.** Extintor clase K en la línea de cocción, CO₂ en cuarto de máquinas y site, un extintor por piso como mínimo, rutas despejadas y luces de emergencia en pasillos y escaleras. Los sistemas fijos —rociadores, mangueras, evacuación por voz— solo son exigibles cuando hay obra nueva, remodelación o cambio de uso.
+5. **Simulacros y revalidación.** Documentar cada simulacro y agendar la revalidación antes del vencimiento: 5 años en la CDMX para mediano y alto riesgo, cada año en el Estado de México.
+

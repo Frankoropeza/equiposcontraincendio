@@ -17,6 +17,7 @@ import NormsTable from "@components/NormsTable.astro";
 import ProcessSteps from "@components/ProcessSteps.astro";
 import CompanyAbout from "@components/CompanyAbout.astro";
 import Testimonios from "@components/Testimonios.astro";
+import RelatedLinks from "@components/RelatedLinks.astro";
 import FAQWithContact from "@components/FAQWithContact.astro";
 import { KEYWORDS, SECTION_MENU, SECTION_MENU_SUB, SHOWCASE, SERVICE_ANCHOR, WA_MESSAGES, waUrl, CONTACT } from "@config/site";
 import { testimonios } from "@data/testimonios";
@@ -89,11 +90,11 @@ const servicios = (await getCollection("servicios", ({ data }) => !data.draft))
       <SectionHeading
         layout="duo"
         eyebrow="Catálogo"
-        title="Venta de equipos"
-        titleAccent="contra incendios"
+        title="Venta de equipo contra incendio:"
+        titleAccent="extintores, hidrantes y mangueras"
         desc="Ocho familias de equipo que cubren la protección de la mayoría de los inmuebles, con la norma que respalda cada una."
         body={[
-          "Cada inmueble tiene un riesgo distinto, así que el equipo correcto también lo es. Aquí están las familias con las que protegemos oficinas, comercios, cocinas, escuelas e industria.",
+          "Cada inmueble tiene un riesgo distinto, así que el equipo correcto también lo es. Con estas familias equipamos oficinas, comercios, cocinas y escuelas, y también la seguridad industrial de una nave o una planta industrial.",
           "Si no sabes por dónde empezar, escríbenos: revisamos tu caso y te decimos exactamente qué necesitas, sin venderte de más.",
         ]}
       />
@@ -131,7 +132,7 @@ const servicios = (await getCollection("servicios", ({ data }) => !data.draft))
     titleAccent="contra incendios"
     desc="Una recomendación base por nivel de riesgo, conforme a la NOM-002-STPS-2010."
     body={[
-      "El equipo correcto parte de identificar el tipo de riesgo de tu inmueble y lo que puede quemarse. A mayor exposición, como en un inmueble de alto riesgo, mayor densidad de equipo y sistemas más completos.",
+      "El equipo correcto parte de identificar el tipo de riesgo de tu inmueble y lo que puede quemarse. A mayor exposición, como en un inmueble de alto riesgo, hay que subir la densidad de equipo y diseñar un sistema contra incendios más completo.",
       "Esta tabla resume el punto de partida para cada nivel; el diagnóstico afina cantidad, agente y ubicación según tu instalación.",
     ]}
     rows={homeRiskRows}
@@ -140,17 +141,38 @@ const servicios = (await getCollection("servicios", ({ data }) => !data.draft))
     ctaHref={waUrl("Hola, quiero asesoría para saber qué equipo contra incendio necesito según mi riesgo.")}
   />
 
+  {/* ─── Sistemas, detección y equipo de brigada (SEO 2026-11-20) ─── */}
+  {/* La home no mencionaba los sistemas fijos, los detectores de humo, las
+      alarmas ni el equipo de bombero, que el sitio sí vende y sí tienen su
+      página. En vez de duplicar aquí el copy de cada categoría, este bloque
+      lo nombra en prosa y enlaza a la categoría que corresponde. */}
+  <RelatedLinks
+    eyebrow="Protección integral"
+    title="Sistemas contra incendio: detectores de humo y alarmas"
+    desc="La protección integral de un inmueble combina lo que detecta, lo que avisa y lo que extingue."
+    body={[
+      "Un extintor resuelve un conato; un sistema contra incendio protege el inmueble completo. Los sistemas de detección —detectores de humo y de calor— y los sistemas de alarma avisan del incendio en su etapa inicial, la red de hidrantes y mangueras da caudal cuando el fuego crece, y los rociadores actúan solos. Lo diseñamos según el riesgo: una oficina no necesita lo mismo que una planta industrial.",
+      "Y a quien responde también hay que equiparlo: cascos, trajes de bombero, guantes y botas son lo que permite a la brigada acercarse sin exponerse de más.",
+    ]}
+    links={[
+      { label: "Detección y alarmas", href: "/productos/deteccion-alarmas/", desc: "Detectores de humo y de gas, paneles y sirenas." },
+      { label: "Hidrantes y mangueras", href: "/productos/hidrantes-mangueras/", desc: "Gabinetes, mangueras, válvulas y tomas siamesas." },
+      { label: "Rociadores y supresión", href: "/productos/rociadores-contra-incendio/", desc: "Sistemas fijos que actúan sin intervención." },
+      { label: "Equipo de bombero", href: "/productos/equipo-bombero/", desc: "Casco, chaquetón, guantes y botas de brigada." },
+    ]}
+  />
+
   {/* ─── Servicios destacados ─── */}
   <section class="section section--surface">
     <div class="container">
       <SectionHeading
         layout="duo"
         eyebrow="Servicios"
-        title="Venta de equipos contra incendios,"
-        titleAccent="instalación y mantenimiento"
+        title="Venta de equipos contra incendios:"
+        titleAccent="servicio de instalación y mantenimiento"
         desc="Acompañamos tu protección contra incendio durante toda su vida útil."
         body={[
-          "Un equipo contra incendio sirve si está bien elegido, bien instalado y vigente. Por eso ofrecemos el ciclo completo: instalación, mantenimiento, recarga e inspección.",
+          "Un equipo contra incendio sirve si está bien elegido, bien instalado y vigente. Por eso ofrecemos el ciclo completo: instalación, mantenimiento preventivo, recarga e inspección.",
           "Todo con servicio conforme a norma y un reporte claro de lo que se hizo.",
         ]}
       />
@@ -187,12 +209,12 @@ const servicios = (await getCollection("servicios", ({ data }) => !data.draft))
   {/* ─── Respaldo normativo (vende cumplimiento) ─── */}
   <NormsTable
     eyebrow="Respaldo normativo"
-    title="Equipo certificado y documentación"
-    titleAccent="para tu expediente"
+    title="Equipo certificado NOM y NFPA,"
+    titleAccent="documentación para tu expediente"
     desc="No vendemos solo equipo: vendemos que pases la inspección."
     body={[
       "En una inspección, la autoridad no solo verifica que tengas el equipo: revisa que sea equipo contra incendios certificado, vigente y documentado conforme a las Normas Oficiales Mexicanas. Por eso cada entrega llega con su soporte.",
-      "Te ayudamos a mapear qué normas aplican a tu giro y a dejar el expediente en regla.",
+      "Te ayudamos a mapear qué normas aplican a tu giro y a dejar el expediente en regla, con la ficha técnica y la certificación del equipo cuando el fabricante la emite.",
     ]}
     rows={homeNormRows}
     note="Cada entrega incluye ficha técnica y la documentación de servicio para integrar a tu expediente ante Protección Civil y STPS. Las normas NFPA son referencia técnica internacional y, en su caso, requisito de tu aseguradora — no ley federal. Te ayudamos a verificar qué aplica según el giro y tamaño de tu empresa."
@@ -217,7 +239,7 @@ const servicios = (await getCollection("servicios", ({ data }) => !data.draft))
       <SectionHeading
         layout="duo"
         eyebrow="Quiénes somos"
-        title="Protección bien hecha,"
+        title="Una empresa de protección contra incendios,"
         titleAccent="explicada con claridad"
         desc="Equipo correcto, conforme a norma y con asesoría honesta."
         body={[

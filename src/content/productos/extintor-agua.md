@@ -8,7 +8,7 @@ image: /images/productos/extintor-de-agua-almacen-carton-clase-a.avif
 price: "Cotizar"
 order: 4
 seoTitle: "Extintor de agua a presión y de espuma AFFF: venta en CDMX"
-seoDescription: "Venta de extintores de agua, nebulizada y espuma AFFF en capacidades portátiles y sobre ruedas. Compara clases y cotiza para tu operación en CDMX y Edomex."
+seoDescription: "El extintor de agua a presión, el de agua nebulizada y el de espuma AFFF: qué fuego apaga cada uno. Portátiles y sobre ruedas; cotiza en CDMX y Edomex."
 variantes:
   - nombre: "Extintor de agua a presión de 9 L"
     badge: "Clase A"
@@ -78,6 +78,8 @@ variantes:
     clases: [A, B]
     usos: [industria]
 faqs:
+  - question: "¿Qué es un extintor de agua y cuáles son sus características?"
+    answer: "Es el tipo de extintor cuyo agente extintor es agua, con o sin espumante, impulsada por un gas a presión contenida en el mismo cilindro. Sus características son las que explican su uso: enfría el material hasta cortar la combustión, por eso su eficacia está en los sólidos que dejan brasa (papel, cartón, madera y textiles); no deja polvo que limpiar; y en extintor portátil va de 6 a 9.46 L, con unidades sobre ruedas de 50 L. Es el mismo principio con el que trabaja un bombero con la línea de agua, a otra escala. Su límite es claro: el agua a presión y la espuma conducen la corriente, así que no se dirigen a equipo energizado; para eso está la versión nebulizada con agua desionizada."
   - question: "¿Puedo usar un extintor de agua en un tablero eléctrico?"
     answer: "El de agua a presión y el de espuma AFFF, no: conducen la corriente y ponen en riesgo a quien los usa. La excepción es el agua nebulizada desionizada, que el fabricante clasifica también para clase C."
   - question: "¿Qué diferencia hay entre el extintor de agua y el de espuma AFFF?"
@@ -124,8 +126,8 @@ ficha:
   showcaseDesc: Los tres agentes de la familia, las clases que cubre cada uno y su servicio.
   faqAccent: sobre extintores de agua
   guia:
-    title: Cómo elegir tu
-    titleAccent: extintor de agua
+    title: Cómo elegir tu extintor de agua,
+    titleAccent: su aplicación y su mantenimiento
     desc: Cuál de los tres te conviene, qué capacidad elegir y qué mantenimiento piden.
 fichaHeads:
   vitrina:

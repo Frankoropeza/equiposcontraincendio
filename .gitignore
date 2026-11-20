@@ -102,3 +102,6 @@ Thumbs.db
 scripts/api/
 .worktrees/
 .claude/worktrees/
+
+# Dumps de playwright-mcp: artefactos de QA, nunca se versionan
+.playwright-mcp/

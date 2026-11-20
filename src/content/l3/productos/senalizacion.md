@@ -8,7 +8,7 @@ seccion:
 categoriaProductos: senalizacion
 seo:
   title: Señales de protección civil y señalamientos de extintor
-  description: "Señales y señalamientos de protección civil: rutas, salidas, equipo contra incendio, punto de reunión, luces de emergencia y croquis en CDMX y Edomex."
+  description: "Señales de protección civil y señalamientos de emergencia: rutas, salidas, equipo contra incendio, punto de reunión, luces y croquis en CDMX y Edomex."
   serviceName: Señalización de protección civil y emergencia
   serviceType: Suministro e instalación de señalización de protección civil y emergencia
   image: /images/productos/senalizacion-luces-emergencia.avif
@@ -18,7 +18,7 @@ menuCtaSub: Giro y superficie
 hero:
   badge: Señalización · CDMX y Estado de México
   title: Señales de protección civil
-  accent: y de emergencia
+  accent: "y de emergencia: color, forma y símbolo"
   subtitle: "Señales de ruta de evacuación, salida, equipo contra incendio, punto de reunión y primeros auxilios, luces de emergencia y croquis: lo que guía a las personas fuera del inmueble, suministrado e instalado."
   descRight:
     - "En una evacuación la gente no piensa: sigue señales. Con humo, sin luz y con prisa, una señal del color equivocado, demasiado chica para la distancia o tapada por mercancía es como no tener ninguna."
@@ -260,9 +260,40 @@ tabla2:
       - 12,500 cm²
       - 111.8 cm
 modulos:
+  - id: colores-y-familias
+    eyebrow: Colores de seguridad · NOM-026-STPS-2008
+    title: Colores de seguridad y familias
+    titleAccent: de señal según el riesgo
+    description: "La norma oficial mexicana NOM-026-STPS-2008 no deja el color ni la forma a criterio de nadie: define cuatro colores de seguridad y cuatro familias de señal, cada una con su forma geométrica, y el color contrastante que debe llevar el símbolo para que se lea de lejos. Saber qué familia utilizar evita el error más caro de un inmueble señalizado a ojo: una señal de obligación en rojo o una de prohibición en azul se vuelve ruido visual. La NOM-003-SSPC-2011 aplica el mismo criterio a las señales y avisos de protección civil en México."
+    features:
+      - label: Prohibición
+        desc: Rojo, círculo con banda diagonal. Prohibido fumar, no usar en caso de incendio.
+      - label: Obligación
+        desc: Azul, círculo. Uso obligatorio de equipo de protección personal.
+      - label: Precaución
+        desc: Amarillo, triángulo. Riesgo eléctrico, piso resbaloso, superficie caliente.
+      - label: Información
+        desc: Verde, cuadrado o rectángulo. Ruta de evacuación, salida, primeros auxilios.
+      - label: Equipo contra incendio
+        desc: Rojo, cuadrado o rectángulo. Extintor, hidrante y estación de alarma.
+      - label: Color contrastante
+        desc: Blanco sobre rojo, azul y verde; negro sobre amarillo.
+    ctaLabel: Cotizar señales
+    ctaMsg: Hola, quiero cotizar señalización de protección civil conforme a la NOM-026 (prohibición, obligación, precaución e información).
+    ctaSecondaryLabel: Señalización y rutas
+    ctaSecondaryHref: /blog/senalizacion-rutas-evacuacion-nom/
+    imgMain:
+      src: /images/servicios/etiquetado-inspeccion-extintor.avif
+      alt: Señales de equipo contra incendio sobre su equipo en un muro
+    imgA:
+      src: /images/productos/senalizacion-luces-emergencia.avif
+      alt: Señal verde de salida con luz de emergencia en un pasillo
+    imgB:
+      src: /images/servicios/instalacion-equipo-almacen.avif
+      alt: Señal de extintor en un almacén de pasillos largos
   - id: rutas-salidas
     eyebrow: Rutas y salidas · Condición segura
-    title: Señales de ruta
+    title: Señales de ruta de evacuación
     titleAccent: y salida de emergencia
     description: La ruta de evacuación se señaliza con flecha en cada cambio de dirección y a intervalos en que una señal se vea desde la anterior, hasta la salida. Cada puerta que forma parte de la ruta lleva su señal de salida. Las surtimos en material fotoluminiscente para que sigan viéndose cuando se corta la energía.
     features:
@@ -576,6 +607,8 @@ faq:
   items:
     - question: ¿Qué norma regula las señales de protección civil?
       answer: "La NOM-003-SSPC-2011 regula las señales y avisos de protección civil en cualquier inmueble: colores, formas, símbolos y materiales. En los centros de trabajo aplica además la NOM-026-STPS-2008, de colores y señales de seguridad e higiene; la NOM-003 remite a ella en lo que no cubre, así que en una empresa suelen pedirse las dos."
+    - question: ¿Cuáles son las familias de señales de seguridad?
+      answer: "Cuatro, y cada una tiene su color de seguridad y su forma: prohibición, en rojo y círculo con banda diagonal, como «prohibido fumar»; obligación, en azul y círculo, como el uso obligatorio de equipo de protección personal; precaución, en amarillo y triángulo, para riesgo eléctrico, piso resbaloso o superficie caliente; e información de condición segura, en verde y cuadrado o rectángulo, para ruta de evacuación, salida y primeros auxilios. El equipo contra incendio va en rojo, en cuadrado o rectángulo. El símbolo se imprime en el color contrastante —blanco sobre rojo, azul y verde; negro sobre amarillo— para que se distinga a distancia. Lo fija la NOM-026-STPS-2008, y la NOM-003-SSPC-2011 lo aplica a las señales de protección civil."
     - question: ¿Qué significa cada color de señal?
       answer: "Verde: condición segura, como rutas de evacuación, salidas, punto de reunión y primeros auxilios. Rojo: paro, prohibición y equipo contra incendio, como extintores, hidrantes y alarmas. Amarillo: advertencia o precaución. Azul: obligación, como el uso de equipo de protección personal."
     - question: ¿De qué tamaño debe ser una señal?
