@@ -1,10 +1,11 @@
-// astro.config.mjs — config Astro 6 SSG. trailingSlash:'always' + build.format:'directory'
+// astro.config.mjs — config Astro 7 SSG. trailingSlash:'always' + build.format:'directory'
 // MEDIDO en producción (Cloudflare Pages) 2026-08-12 — ver comentario junto a defineConfig.
 // @ts-check
 import { defineConfig } from 'astro/config';
 import { fileURLToPath } from 'node:url';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
+import { unified } from '@astrojs/markdown-remark';
 import { execSync } from 'node:child_process';
 import { existsSync, statSync, readdirSync, readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
@@ -211,10 +212,10 @@ function rehypeExternalLinks() {
   return (tree) => walk(tree);
 }
 
-// Config canónica del Master System: Astro 6 SSG, salida estática, sitemap +
+// Config canónica del Master System: Astro 7 SSG, salida estática, sitemap +
 // mdx como integraciones base (A3). mdx es OBLIGATORIO porque el blog vive en
-// colección .mdx (content.config.ts → `articulos`). Usa @astrojs/mdx@^6 (peer
-// astro@^6.4); @astrojs/mdx@^4 ROMPE con astro@^6. NO agregar adapter: SSG (A1).
+// colección .mdx (content.config.ts → `articulos`). Usa @astrojs/mdx@^8 (peer
+// astro@^7.2.10); el ^6 es para Astro 6 y ROMPE con el 7. NO agregar adapter: SSG (A1).
 // Si el proyecto NO tiene blog .mdx, puedes quitar mdx() y la dep del package.json.
 // ─────────────────────────────────────────────────────────────────────────────
 export default defineConfig({
@@ -248,8 +249,18 @@ export default defineConfig({
     defaultStrategy: 'hover',
   },
 
+  // ASTRO 7 (2026-11-20): `markdown.rehypePlugins` quedó deprecado. El
+  // procesador por defecto pasó a ser Sätteri, que no corre plugins de
+  // rehype, así que los plugins se declaran en el procesador. Se conserva
+  // `unified()` a propósito: cambiar de motor de Markdown altera el HTML de
+  // 58 artículos .mdx y 70+ fichas .md, y eso es un cambio que se mide con
+  // paridad de texto contra el dist anterior — no se cuela dentro del parche
+  // de seguridad que motivó el salto 6→7. mdx() hereda este `processor`
+  // (extendMarkdownConfig por defecto), así que cubre .md y .mdx.
   markdown: {
-    rehypePlugins: [rehypeExternalLinks],
+    processor: unified({
+      rehypePlugins: [rehypeExternalLinks],
+    }),
   },
 
   integrations: [sitemap(sitemapOptions), mdx()],

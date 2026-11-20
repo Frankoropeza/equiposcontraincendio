@@ -1,13 +1,24 @@
 ---
+import type { HTMLAttributes } from 'astro/types';
+
 /**
  * Base de las tarjetas del catálogo. El slot conserva la estructura pública de
  * cada especialización; las reglas globales de este archivo son deliberadas:
  * así los wrappers pueden conservar sus clases públicas sin alterar el HTML
  * generado ni los hooks de ExtintorCatalog.
  */
-interface Props {
+/**
+ * ASTRO 7 (2026-11-20): `Props` ya no admite atributos HTML implícitos, así que
+ * los siete wrappers que pasan `class`, `id`, `style`, `hidden`, `aria-label` o
+ * `data-*` dejaban de compilar. Se heredan de HTMLAttributes<'article'> en vez
+ * de enumerarlos: el `<Tag>` renderiza article o a, y ambos aceptan el mismo
+ * juego de atributos globales que usan las tarjetas.
+ */
+interface Props extends Omit<HTMLAttributes<'article'>, 'class'> {
   variant: 'category' | 'service' | 'product' | 'variant' | 'cierre' | 'extintor';
   as?: 'article' | 'a';
+  href?: string;
+  class?: string;
 }
 const { variant, as = 'article', class: className, ...attrs } = Astro.props;
 const Tag = as;

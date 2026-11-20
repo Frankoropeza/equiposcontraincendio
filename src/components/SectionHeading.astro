@@ -19,7 +19,8 @@ export interface Props {
   /** true → texto claro sobre fondo oscuro. */
   dark?: boolean
   /** Etiqueta semántica del encabezado de bloque. */
-  as?: 'h2' | 'h3'
+  /** 'h1' lo usa /blog/pagina/N/: la página paginada necesita su propio H1. */
+  as?: 'h1' | 'h2' | 'h3'
 }
 const { id, eyebrow, title, titleAccent, desc, layout = 'simple', align = 'center', body = [], dark = false, as = 'h2' } = Astro.props
 const Tag = as
