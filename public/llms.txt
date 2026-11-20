@@ -19,7 +19,7 @@ Idioma: español (es-MX). País: México.
 
 ## Productos (categorías del catálogo)
 - Extintores: PQS ABC, CO2, tipo K (químico húmedo), agua y espuma AFFF, agente limpio; portátiles y sobre ruedas.
-- Detección y alarmas: detectores de humo fotoeléctricos, temperatura y gas, paneles, estaciones manuales y sirenas.
+- Detección y alarmas: detectores de humo fotoeléctricos e iónicos, térmicos de temperatura fija y termovelocimétricos, de gas combustible, de monóxido de carbono, por haz proyectado, por aspiración, lineales por cable termosensible y de flama UV/IR; paneles convencionales y direccionables por lazos, módulos monitor y de control, estaciones manuales, sirenas estroboscópicas y sistemas de voz y evacuación.
 - Hidrantes y mangueras: gabinetes con manguera, mangueras de 1½ y 2½ pulgadas, válvulas angulares, pitones de chorro y niebla, carretes porta manguera, racores y adaptadores de rosca, llaves spanner, hidrantes de columna exteriores, tomas siamesas y reserva de agua contra incendio.
 - Sistemas fijos de supresión: rociadores automáticos, supresión de cocina con agente húmedo listado UL 300, agente limpio HFC-227ea y FK-5-1-12, CO2, niebla de agua, bombas contra incendio y jockey, válvulas de control, diluvio y preacción, y paneles de liberación de agente.
 - Señalización y emergencia: señalamientos de seguridad industriales (NOM-026) y de protección civil (NOM-003-SSPC), señalización fotoluminiscente y lámparas de emergencia.
@@ -40,6 +40,18 @@ Idioma: español (es-MX). País: México.
 - [Inicio](https://equiposcontraincendio.com/): presentación del catálogo y servicios.
 - [Productos](https://equiposcontraincendio.com/productos): catálogo de equipo contra incendio.
 - [Equipo para bombero](https://equiposcontraincendio.com/productos/equipo-bombero/): EPP para la brigada contra incendio, seleccionado por riesgo y con expediente para la STPS.
+- [Panel de alarma direccionable](https://equiposcontraincendio.com/productos/panel-alarma-direccionable/): identifica el punto exacto por lazos, con control de clima, compuertas y elevadores.
+- [Estación manual de alarma](https://equiposcontraincendio.com/productos/estacion-manual-de-alarma/): de simple o doble acción, para la ruta de evacuación y las salidas.
+- [Sirena estroboscópica](https://equiposcontraincendio.com/productos/sirena-estroboscopica/): notificación audible y visible, con estrobos sincronizados.
+- [Detector térmico](https://equiposcontraincendio.com/productos/detector-termico/): de temperatura fija y termovelocimétrico, para cocina, bodega y estacionamiento.
+- [Detector de humo iónico](https://equiposcontraincendio.com/productos/detector-de-humo-ionico/): responde antes ante fuegos de llama viva con partícula fina.
+- [Detector de humo por haz proyectado](https://equiposcontraincendio.com/productos/detector-de-humo-por-haz/): para naves, auditorios y atrios de techo alto.
+- [Detección por aspiración](https://equiposcontraincendio.com/productos/detector-por-aspiracion/): aviso muy temprano para site, archivo y cámara fría.
+- [Detector de monóxido de carbono](https://equiposcontraincendio.com/productos/detector-de-monoxido-de-carbono/): para estacionamiento cerrado y cuarto de calderas; no es un detector de incendio.
+- [Detector lineal por cable termosensible](https://equiposcontraincendio.com/productos/detector-lineal-por-cable-termosensible/): para charolas portacables, bandas y túneles.
+- [Detector de flama UV/IR](https://equiposcontraincendio.com/productos/detector-de-flama-uv-ir/): para gasolinera, planta de proceso y cabina de pintura.
+- [Módulos direccionables](https://equiposcontraincendio.com/productos/modulo-direccionable-monitor-y-control/): monitor, de control, relevador, aislador de lazo y de zona convencional.
+- [Voz y evacuación](https://equiposcontraincendio.com/productos/panel-de-voz-y-evacuacion/): mensajes por zona y micrófono de bomberos para evacuación por fases.
 - [Manguera de 1½ pulgada](https://equiposcontraincendio.com/productos/manguera-contra-incendio-1-5/): la del gabinete, Clase II de NFPA 14, en 15, 22.5 y 30 metros.
 - [Manguera de 2½ pulgadas](https://equiposcontraincendio.com/productos/manguera-contra-incendio-2-5/): la de la toma de cuerpo de bomberos, Clase I de NFPA 14.
 - [Válvula angular](https://equiposcontraincendio.com/productos/valvula-angular-para-hidrante/): de bronce, 1½ y 2½ pulgadas, con tapa y cadena.

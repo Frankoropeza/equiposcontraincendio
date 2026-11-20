@@ -34,118 +34,174 @@ vitrina:
     - Los detectores y las estaciones manuales detectan; el panel supervisa y decide; las sirenas y los estrobos avisan. Si falta una de las tres, el sistema no cumple su función aunque el resto esté bien instalado.
     - "Las seis primeras fichas son los dispositivos que surtimos. Las dos últimas son lo que los vuelve un sistema: la instalación con pruebas y la revisión anual con su bitácora."
   tarjetas:
-    - title: Detectores de humo
+    - title: Detector de humo fotoeléctrico
       href: /productos/detector-humo-fotoelectrico/
-      image: /images/productos/dispositivos-deteccion-alarma.avif
-      imageAlt: Detectores de humo, sirena con estrobo y estación manual sobre banco de trabajo
-      badge: Fotoeléctricos
-      description: Autónomos, interconectados, con monóxido o de dos hilos para panel.
-      specs:
-        - label: Sensor
-          value: Fotoeléctrico
-        - label: Formato
-          value: Autónomo o panel
-        - label: Modelos
-          value: Seis variantes
-      ctaLabel: Detector de humo
-    - title: Detectores de temperatura
-      href: "#det-temperatura"
-      image: /images/servicios/cuarto-bomba-contra-incendio.avif
-      imageAlt: Cuarto de máquinas con equipo de bombeo contra incendio
-      badge: Cocina y taller
-      description: Se activan por calor donde vapor, polvo o humo de escape darían falsas alarmas.
-      specs:
-        - label: Activa por
-          value: Temperatura
-        - label: Para
-          value: Cocina y taller
-        - label: Evita
-          value: Falsas alarmas
-      ctaLabel: Detector de calor
-    - title: Detectores de gas
-      href: /productos/detector-de-gas/
       image: /images/servicios/supresion-cocina-comercial.avif
-      imageAlt: Cocina comercial con campana y equipos de combustión
-      badge: NTC 2024 · 4.4.5.2
-      description: Vigilan fugas de gas LP o natural en cocinas, calderas y cuartos de máquinas.
+      imageAlt: Detector de humo fotoeléctrico montado en el plafón de una oficina
+      badge: Humo denso
+      description: "El de uso general: responde antes ante fuegos lentos que humean mucho."
       specs:
-        - label: Gas
-          value: LP o natural
-        - label: Obligatorio
-          value: Obra nueva CDMX
-        - label: Dónde
-          value: Equipo a gas
+        - label: Detecta
+          value: Humo visible
+        - label: Va en
+          value: Oficina y pasillo
+        - label: Conexión
+          value: Convencional o dir.
+      ctaLabel: Detector de humo
+    - title: Detector de humo iónico
+      href: /productos/detector-de-humo-ionico/
+      image: /images/productos/detector-humo-ionico-base.avif
+      imageAlt: Detector de humo redondo sobre su base de montaje
+      badge: Llama viva
+      description: "Responde antes ante fuegos de llama limpia con partícula muy fina."
+      specs:
+        - label: Detecta
+          value: Partícula fina
+        - label: Ventaja
+          value: Llama viva
+        - label: Ojo
+          value: Retiro al caducar
+      ctaLabel: Detector iónico
+    - title: Detector térmico
+      href: /productos/detector-termico/
+      image: /images/productos/detector-termico-plafon.avif
+      imageAlt: Detector térmico montado en el plafón de una cocina industrial
+      badge: Cocina y bodega
+      description: "Para donde el de humo daría falsas: vapor, polvo y gases de escape."
+      specs:
+        - label: Tipos
+          value: Fija y velocimétrico
+        - label: Para
+          value: Ambiente difícil
+        - label: Ojo
+          value: Más lento
+      ctaLabel: Detector térmico
+    - title: Detector de gas
+      href: /productos/detector-de-gas/
+      image: /images/productos/dispositivos-deteccion-alarma.avif
+      imageAlt: Detector de gas montado en el muro de una cocina
+      badge: Gas LP y natural
+      description: "Vigila la fuga antes de que exista fuego, en cocina y cuarto de tanques."
+      specs:
+        - label: Detecta
+          value: Gas combustible
+        - label: Va en
+          value: Cocina y tanques
+        - label: Acción
+          value: Corta y alarma
       ctaLabel: Detector de gas
-    - title: Panel de control de alarma
-      href: "#panel-alarma"
-      image: /images/productos/panel-alarma-contra-incendio.avif
-      imageAlt: Técnico revisando un panel de alarma contra incendio abierto
-      badge: Cerebro del sistema
-      description: Supervisa cada detector, activa el aviso y dice en qué zona empezó.
+    - title: Detector de monóxido
+      href: /productos/detector-de-monoxido-de-carbono/
+      image: /images/productos/detector-monoxido-estacionamiento.avif
+      imageAlt: Detector de monóxido de carbono en el muro de un estacionamiento
+      badge: Estacionamiento
+      description: "Gas tóxico que no se ve ni se huele; además arranca la ventilación."
       specs:
-        - label: Convencional
-          value: Por zona
-        - label: Direccionable
-          value: Por dispositivo
-        - label: Respaldo
-          value: Baterías
-      ctaLabel: Panel de alarma
-    - title: Estaciones manuales
-      href: "#estaciones-manuales"
-      image: /images/servicios/integracion-sistemas-contra-incendio.avif
-      imageAlt: Pasillo con gabinete de manguera, extintor, detector en plafón y estación manual
-      badge: Aviso manual
-      description: Para que quien vea el fuego active la alarma desde la ruta de salida.
+        - label: Detecta
+          value: CO de combustión
+        - label: No detecta
+          value: Incendios
+        - label: Ojo
+          value: El sensor caduca
+      ctaLabel: Detector de CO
+    - title: Detector por haz proyectado
+      href: /productos/detector-de-humo-por-haz/
+      image: /images/productos/detector-haz-proyectado-nave.avif
+      imageAlt: Detector de humo por haz proyectado en lo alto de una nave
+      badge: Techo alto
+      description: "Vigila una línea completa donde el humo no llega al plafón."
       specs:
-        - label: Ubicación
-          value: Rutas de salida
-        - label: Activa
-          value: Cualquier persona
+        - label: Para
+          value: Nave y atrio
+        - label: Cubre
+          value: Una línea
+        - label: Clave
+          value: Alineación
+      ctaLabel: Detector por haz
+    - title: Detección por aspiración
+      href: /productos/detector-por-aspiracion/
+      image: /images/productos/detector-aspiracion-site.avif
+      imageAlt: Unidad de detección por aspiración con su tubería de muestreo
+      badge: Aviso temprano
+      description: "Succiona aire del área y avisa cuando todavía no hay fuego."
+      specs:
+        - label: Para
+          value: Site y archivo
+        - label: Avisa
+          value: Antes del fuego
+        - label: Consumible
+          value: El filtro
+      ctaLabel: Aspiración
+    - title: Detector lineal por cable
+      href: /productos/detector-lineal-por-cable-termosensible/
+      image: /images/productos/detector-lineal-cable-termosensible.avif
+      imageAlt: Cable detector lineal termosensible sobre una charola portacables
+      badge: Charolas
+      description: "Detecta calor en cualquier punto de su recorrido, metro a metro."
+      specs:
+        - label: Para
+          value: Charola y túnel
+        - label: Tipos
+          value: Digital o analógico
+        - label: Analógico
+          value: Localiza el punto
+      ctaLabel: Cable detector
+    - title: Detector de flama
+      href: /productos/detector-de-flama-uv-ir/
+      image: /images/productos/detector-flama-uv-ir-industrial.avif
+      imageAlt: Detector de flama UV e infrarrojo montado en estructura industrial
+      badge: Industria
+      description: "Ve la radiación del fuego y responde en segundos, no en minutos."
+      specs:
+        - label: Detecta
+          value: Radiación de llama
+        - label: Tecnologías
+          value: UV, IR, triple IR
+        - label: Para
+          value: Área clasificada
+      ctaLabel: Detector de flama
+    - title: Panel direccionable
+      href: /productos/panel-alarma-direccionable/
+      image: /images/productos/panel-alarma-direccionable-gabinete.avif
+      imageAlt: Panel de alarma direccionable abierto mostrando su tarjeta y cableado
+      badge: Por lazos
+      description: "Dice qué dispositivo se activó y dónde, no solo en qué zona."
+      specs:
+        - label: Identifica
+          value: El punto exacto
+        - label: Crece
+          value: Por lazos
+        - label: Controla
+          value: Clima y elevadores
+      ctaLabel: Panel direccionable
+    - title: Estación manual
+      href: /productos/estacion-manual-de-alarma/
+      image: /images/productos/estacion-manual-de-alarma-muro.avif
+      imageAlt: Estación manual de alarma roja montada junto a una salida
+      badge: Ruta de salida
+      description: "Quien ve el fuego avisa al inmueble sin esperar al detector."
+      specs:
         - label: Acción
           value: Simple o doble
+        - label: Va en
+          value: Ruta y salidas
+        - label: Antifalsas
+          value: Tapa o doble
       ctaLabel: Estación manual
-    - title: Sirenas y estrobos
-      href: "#sirenas-estrobos"
-      image: /images/servicios/instalacion-deteccion-alarma.avif
-      imageAlt: Técnico instalando un detector de humo en un pasillo con sirena estroboscópica
+    - title: Sirena estroboscópica
+      href: /productos/sirena-estroboscopica/
+      image: /images/productos/sirena-estroboscopica-pared.avif
+      imageAlt: Sirena estroboscópica roja montada en lo alto de un muro
       badge: Notificación
-      description: Aviso audible y visible en todas las áreas, incluidas las ruidosas.
+      description: "La parte del sistema que de verdad hace salir a la gente."
       specs:
-        - label: Aviso
-          value: Sonoro y visual
-        - label: Cobertura
-          value: Todas las áreas
-        - label: Más de 23 m
-          value: Alarma por voz
-      ctaLabel: Sirenas y estrobos
-    - title: Instalación del sistema
-      href: /servicios/instalacion/
-      image: /images/servicios/prueba-electrica-panel-alarma-incendio.avif
-      imageAlt: Técnico probando un dispositivo de alarma en una nave industrial
-      badge: Proyecto y pruebas
-      description: Detectores, panel y aviso dimensionados a tu inmueble y probados por zona.
-      specs:
-        - label: Incluye
-          value: Proyecto
-        - label: Pruebas
-          value: Zona por zona
-        - label: Entrega
-          value: Planos y memoria
-      ctaLabel: Instalación de sistemas
-    - title: Revisión y pruebas
-      href: /servicios/inspeccion/
-      image: /images/servicios/inspeccion-tablero-alarma-gabinete-manguera.avif
-      imageAlt: Técnico registrando la revisión junto al tablero de alarma y el gabinete
-      badge: Programa anual
-      description: Pruebas anuales del sistema con bitácora, como pide la NOM-002.
-      specs:
-        - label: Norma
-          value: NOM-002, 7.4
-        - label: Programa
-          value: Anual
-        - label: Evidencia
-          value: Bitácora
-      ctaLabel: Inspección y dictamen
+        - label: Señales
+          value: Audible y visible
+        - label: Montaje
+          value: Muro o techo
+        - label: Clave
+          value: Sincronizadas
+      ctaLabel: Sirena y estrobo
 tablaPrincipal:
   id: detector-por-area
   eyebrow: Detector por área
