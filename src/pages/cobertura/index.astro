@@ -16,7 +16,6 @@ import RiskGuide from '@components/RiskGuide.astro'
 import NormsTable from '@components/NormsTable.astro'
 import ProcessSteps from '@components/ProcessSteps.astro'
 import CompanyAbout from '@components/CompanyAbout.astro'
-import Testimonios from '@components/Testimonios.astro'
 import RelatedLinks from '@components/RelatedLinks.astro'
 import {
   zoneCard,
@@ -27,12 +26,9 @@ import {
   coberturaCompany,
   coberturaRelated,
   coberturaFaqs,
-  coberturaTestimoniosHead,
-  coberturaTestimoniosNombres,
   coberturaFaqHead,
 } from '@data/cobertura'
 import { cierreCobertura, cierreGeneral, faltanParaCuatro } from '@data/cierre'
-import { testimonios } from '@data/testimonios'
 import { COVERAGE_STATES, CONTACT, waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
 
 const tipoLabel = (t: string) => (t === 'operativo' ? 'Servicio en sitio' : 'Atención a distancia')
@@ -47,9 +43,6 @@ const menuCta = {
   external: true,
 }
 
-const coberturaTestimonios = coberturaTestimoniosNombres
-  .map((nombre) => testimonios.find((testimonio) => testimonio.nombre === nombre))
-  .filter((testimonio): testimonio is (typeof testimonios)[number] => Boolean(testimonio))
 ---
 
 <PageLayout
@@ -197,7 +190,6 @@ const coberturaTestimonios = coberturaTestimoniosNombres
   </Section>
 
   {/* ─── Reseñas de cobertura ─── */}
-  <Testimonios items={coberturaTestimonios} {...coberturaTestimoniosHead} />
 
   {/* ─── Interlinking a las otras secciones ─── */}
   <RelatedLinks

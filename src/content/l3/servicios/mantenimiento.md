@@ -27,11 +27,11 @@ vitrina:
   desc: "El procedimiento cambia con lo que lleva dentro el cilindro: polvo, gas, químico húmedo, agua o agente limpio."
   body:
     - Un PQS se vacía y se presuriza con nitrógeno; un CO₂ se comprueba en báscula porque no tiene manómetro; un clase K se revisa por la grasa que acumula en la boquilla. Por eso el servicio se cotiza por tipo y por capacidad, no «por extintor».
-    - "Elige el tuyo para ver qué incluye su mantenimiento. Las tres últimas fichas cierran el ciclo: la prueba del cilindro, la revisión que te toca cada mes y el reemplazo cuando ya no conviene recargar."
+    - "Abre el tuyo para ver qué incluye su mantenimiento. Las tres últimas fichas cierran el ciclo: la prueba del cilindro, la revisión que te toca cada mes y el reemplazo cuando ya no conviene recargar."
   id: por-tipo
   tarjetas:
     - title: Mantenimiento de extintores PQS
-      href: "#recarga-pqs"
+      href: "/servicios/mantenimiento/recarga-de-extintores/#recarga-pqs"
       image: /images/servicios/inspeccion-recarga-extintores.avif
       imageAlt: Recarga de extintores de polvo químico seco en taller de servicio
       badge: PQS ABC
@@ -45,7 +45,7 @@ vitrina:
           value: Con nitrógeno
       ctaLabel: Mantenimiento PQS
     - title: Mantenimiento de extintores de CO₂
-      href: "#recarga-co2"
+      href: "/servicios/mantenimiento/recarga-de-extintores/#recarga-co2"
       image: /images/servicios/prueba-electrica-panel-alarma-incendio.avif
       imageAlt: Muro con extintor, estación manual y señalética de emergencia en planta
       badge: CO₂
@@ -59,7 +59,7 @@ vitrina:
           value: Alta presión
       ctaLabel: Mantenimiento de CO₂
     - title: Mantenimiento de extintores clase K
-      href: "#recarga-clase-k"
+      href: "/servicios/mantenimiento/recarga-de-extintores/#recarga-clase-k"
       image: /images/servicios/supresion-cocina-comercial.avif
       imageAlt: Cocina comercial con campana, donde se instala el extintor clase K
       badge: Clase K · Cocinas
@@ -73,7 +73,7 @@ vitrina:
           value: 10 m
       ctaLabel: Mantenimiento clase K
     - title: Mantenimiento de extintores de agua
-      href: "#recarga-agua-espuma"
+      href: "/servicios/mantenimiento/recarga-de-extintores/#recarga-agua-espuma"
       image: /images/servicios/instalacion-equipo-almacen.avif
       imageAlt: Extintor y gabinete instalados en un almacén
       badge: Agua · Espuma AFFF
@@ -87,7 +87,7 @@ vitrina:
           value: NOM-103-STPS
       ctaLabel: Extintores de agua
     - title: Mantenimiento de agente limpio
-      href: "#recarga-agente-limpio"
+      href: "/servicios/mantenimiento/recarga-de-extintores/#recarga-agente-limpio"
       image: /images/servicios/supresion-agente-limpio-data-center.avif
       imageAlt: Cilindros de agente limpio protegiendo un centro de datos
       badge: Agente limpio
@@ -383,6 +383,21 @@ modulos:
     imgB:
       src: /images/servicios/etiquetado-inspeccion-extintor.avif
       alt: Etiqueta de servicio colocada en el extintor
+detalleAparte:
+  path: /servicios/mantenimiento/recarga-de-extintores/
+  label: Recarga por tipo de extintor
+  breadcrumb: Recarga por tipo de extintor
+  seo:
+    title: Recarga de extintores por agente en CDMX y Edomex
+    description: "Qué incluye la recarga de extintores de PQS, CO₂, clase K, agua y espuma y agente limpio, y cuándo el cilindro ya no se recarga y toca reemplazarlo."
+  hero:
+    badge: Detalle del servicio · agente por agente
+    title: Recarga de extintores
+    accent: agente por agente
+    subtitle: "El procedimiento cambia con lo que lleva dentro el cilindro: polvo, gas, químico húmedo, agua o agente limpio."
+    descRight:
+      - Un PQS se vacía y se presuriza con nitrógeno; un CO₂ se comprueba en báscula porque no tiene manómetro; un clase K se revisa por la grasa que acumula en la boquilla. Por eso el servicio se cotiza por tipo y por capacidad, no «por extintor».
+      - Recargar no es lo mismo que dar mantenimiento. La recarga repone el agente; el mantenimiento abre el extintor, revisa el cilindro por dentro, cambia lo desgastado y comprueba que no tenga fugas.
 decision:
   id: recargar-o-reemplazar
   eyebrow: Recargar o reemplazar

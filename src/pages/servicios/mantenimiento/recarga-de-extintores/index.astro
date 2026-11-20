@@ -1,0 +1,118 @@
+---
+// ============================================================================
+// /servicios/mantenimiento/recarga-de-extintores/ — DETALLE por agente.
+// ----------------------------------------------------------------------------
+// POR QUÉ ESTA URL (2026-11-19): /servicios/mantenimiento/ medía 38.984 px en
+// móvil. Los 5 módulos por agente (PQS, CO₂, clase K, agua y espuma, agente
+// limpio) + la tabla «recargar o reemplazar» sumaban 10.297 px de ese total y
+// son DETALLE, no índice: la madre los presentaba ya con su ficha en la
+// vitrina. Decisión de Frank: la madre se queda con las fichas y un párrafo
+// cada una; el detalle vive en su propia URL.
+//
+// CERO CONTENIDO NUEVO: esta página NO tiene datos propios. Lee la MISMA
+// entrada de la colección `l3` que la madre (servicios/mantenimiento) y pinta
+// `modulos` + `decision`, los dos bloques que ServiceL3 deja de pintar cuando
+// la entrada declara `detalleAparte` (ver src/data/l3-schema.ts). Los ids de
+// los módulos no cambiaron: las fichas de la vitrina de la madre enlazan a
+// /servicios/mantenimiento/recarga-de-extintores/#recarga-<agente>.
+// ============================================================================
+import PageLayout from '@layouts/PageLayout.astro';
+import Hero from '@components/Hero.astro';
+import SectionMenu from '@components/SectionMenu.astro';
+import CategoryFeature from '@components/CategoryFeature.astro';
+import DataTable from '@components/DataTable.astro';
+import RelatedLinks from '@components/RelatedLinks.astro';
+import { getEntry } from 'astro:content';
+import { waUrl, sectionMenuItems } from '@config/site';
+
+const entry = await getEntry('l3', 'servicios/mantenimiento');
+if (!entry || ('kind' in entry.data && entry.data.kind === 'extintores'))
+  throw new Error('Falta la entrada L3: servicios/mantenimiento');
+const data = entry.data;
+const detalle = data.detalleAparte;
+if (!detalle) throw new Error('servicios/mantenimiento debe declarar detalleAparte');
+
+const schemaData = {
+  service: {
+    name: detalle.label,
+    description: detalle.seo.description,
+    path: detalle.path,
+    serviceType: data.seo.serviceType,
+    image: data.seo.image,
+    areaServed: ['Ciudad de México', 'Estado de México'],
+  },
+};
+
+// Enlaces: la madre primero y después sus relacionados, hasta cerrar la fila
+// de cuatro. Son los mismos destinos ya declarados en la entrada.
+const relatedLinks = [
+  {
+    label: data.seo.serviceName,
+    href: data.path,
+    desc: 'El servicio completo, con normas y preguntas.',
+  },
+  ...data.related.links.slice(0, 7),
+];
+---
+
+<PageLayout
+  title={detalle.seo.title}
+  description={detalle.seo.description}
+  image={data.seo.image}
+  pageType="service"
+  schemaData={schemaData}
+  breadcrumbs={[
+    { label: 'Servicios', href: '/servicios/' },
+    { label: data.breadcrumb, href: data.path },
+    { label: detalle.breadcrumb },
+  ]}
+>
+  {/* ─── Hero ─── */}
+  <Hero
+    badge={detalle.hero.badge}
+    title={detalle.hero.title}
+    accent={detalle.hero.accent}
+    subtitle={detalle.hero.subtitle}
+    descRight={detalle.hero.descRight}
+    ctas={[
+      { text: 'Cotizar por WhatsApp', href: waUrl(data.wa), variant: 'primary', whatsapp: true },
+      { text: 'Mantenimiento de extintores', href: data.path, variant: 'outline' },
+    ]}
+  />
+
+  {/* ─── Navegación ─── */}
+  <SectionMenu
+    items={sectionMenuItems()}
+    cta={{ label: 'Cotizar por WhatsApp', href: waUrl(data.wa), sub: data.menuCtaSub, external: true }}
+  />
+
+  {/* ─── Un módulo por agente ─── */}
+  {data.modulos.map((modulo) => (
+    <CategoryFeature
+      anchorId={modulo.id}
+      eyebrow={modulo.eyebrow}
+      title={modulo.title}
+      titleAccent={modulo.titleAccent}
+      description={modulo.description}
+      features={modulo.features}
+      ctaLabel={modulo.ctaSecondaryLabel}
+      ctaHref={modulo.ctaSecondaryHref}
+      ctaSecondaryLabel="Cotizar por WhatsApp"
+      ctaSecondaryHref={waUrl(modulo.ctaMsg)}
+      ctaSecondaryExternal
+      imgMain={modulo.imgMain}
+      imgA={modulo.imgA}
+      imgB={modulo.imgB}
+    />
+  ))}
+
+  {/* ─── Recargar o reemplazar ─── */}
+  <DataTable {...data.decision} surface />
+
+  <RelatedLinks
+    title={data.related.title}
+    desc={data.related.desc}
+    links={relatedLinks}
+    limit={8}
+  />
+</PageLayout>

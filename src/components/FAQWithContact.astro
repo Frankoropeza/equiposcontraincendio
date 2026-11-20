@@ -166,13 +166,30 @@ const {
     counter.style.color = n > 420 ? '#d97706' : ''
   })
 
+  // Marca/limpia el estado invalido del campo. El mensaje es UNO solo (#fwc-error,
+  // la live region que ya existia): aria-describedby apunta a ese mismo nodo en vez
+  // de duplicar el texto, para que el lector de pantalla no lo lea dos veces.
+  function markInvalid (el) {
+    if (!el) return
+    el.classList.add('fwc__input--error')
+    el.setAttribute('aria-invalid', 'true')
+    el.setAttribute('aria-describedby', 'fwc-error')
+  }
+
+  function clearInvalid (el) {
+    if (!el) return
+    el.classList.remove('fwc__input--error')
+    el.removeAttribute('aria-invalid')
+    el.removeAttribute('aria-describedby')
+  }
+
   // Limpiar estado de error al corregir
   giroSel && giroSel.addEventListener('change', function () {
-    this.classList.remove('fwc__input--error')
+    clearInvalid(this)
     hideError()
   })
   textarea && textarea.addEventListener('input', function () {
-    this.classList.remove('fwc__input--error')
+    clearInvalid(this)
     hideError()
   })
 
@@ -188,17 +205,27 @@ const {
     const message = textarea.value.trim()
     let valid = true
 
+    let primerInvalido = null
+
     if (!giro) {
-      giroSel.classList.add('fwc__input--error')
+      markInvalid(giroSel)
+      primerInvalido = primerInvalido || giroSel
       valid = false
+    } else {
+      clearInvalid(giroSel)
     }
     if (!message) {
-      textarea.classList.add('fwc__input--error')
+      markInvalid(textarea)
+      primerInvalido = primerInvalido || textarea
       valid = false
+    } else {
+      clearInvalid(textarea)
     }
 
     if (!valid) {
       errBox.hidden = false
+      // El foco se queda en el boton si no se mueve: llevarlo al primer campo fallido.
+      primerInvalido && primerInvalido.focus()
       return
     }
 

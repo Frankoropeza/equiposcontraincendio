@@ -137,9 +137,12 @@ const ICONS: Record<string, string> = {
     margin: 0;
   }
 
+  /* WCAG AA: sobre #c62828 el blanco puro topa en 5.62:1, asi que el alfa del
+  texto no puede bajar de ~.87. .92 da 4.96:1 (4.60:1 contando el ::before que
+  aclara el fondo un 6%); con .72 eran 3.55:1. */
   .cta-banner--red .cta-banner__desc,
   .cta-banner--dark .cta-banner__desc {
-    color: rgba(255,255,255,.72);
+    color: rgba(255,255,255,.92);
   }
 
   .cta-banner--light .cta-banner__desc {
@@ -204,10 +207,11 @@ const ICONS: Record<string, string> = {
     border-color: var(--color-red-dark, #9B0D22);
   }
 
+  /* .95 = 5.20:1 (4.81:1 con el ::before); con .88 se quedaba en 4.33:1. */
   .cta-banner--red .cta-btn--ghost,
   .cta-banner--dark .cta-btn--ghost {
     background: transparent;
-    color: rgba(255,255,255,.88);
+    color: rgba(255,255,255,.95);
     border: 2px solid rgba(255,255,255,.35);
   }
 
@@ -248,9 +252,11 @@ const ICONS: Record<string, string> = {
     margin: 0;
   }
 
+  /* 12px => AA pide 4.5:1. .94 da 5.12:1 (4.74:1 con el ::before); con .5
+  eran 2.38:1, el peor contraste del sitio. */
   .cta-banner--red .cta-banner__badge,
   .cta-banner--dark .cta-banner__badge {
-    color: rgba(255,255,255,.5);
+    color: rgba(255,255,255,.94);
   }
 
   .cta-banner--light .cta-banner__badge {

@@ -123,8 +123,12 @@ const schemaData = data.categoriaProductos
   {/* ─── Tabla secundaria ─── */}
   <DataTable {...data.tabla2} surface />
 
-  {/* ─── Módulos ─── */}
-  {data.modulos.map((modulo) => (
+  {/* ─── Módulos ───
+      Si la entrada declara `detalleAparte`, los módulos y la tabla de decisión
+      NO se pintan aquí: viven en esa URL hija (que lee esta misma entrada) y
+      las fichas de la vitrina enlazan a sus anclas. Decisión de Frank
+      2026-11-19: la madre es índice, el detalle tiene su propia URL. ─── */}
+  {!data.detalleAparte && data.modulos.map((modulo) => (
     <CategoryFeature
       anchorId={modulo.id}
       eyebrow={modulo.eyebrow}
@@ -143,8 +147,8 @@ const schemaData = data.categoriaProductos
     />
   ))}
 
-  {/* ─── Tabla de decisión ─── */}
-  <DataTable {...data.decision} surface />
+  {/* ─── Tabla de decisión (ver nota de `detalleAparte`) ─── */}
+  {!data.detalleAparte && <DataTable {...data.decision} surface />}
 
   {/* ─── Proceso ─── */}
   <ProcessSteps {...data.proceso} />

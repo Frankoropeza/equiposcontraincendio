@@ -16,7 +16,6 @@ import RiskGuide from '@components/RiskGuide.astro'
 import NormsTable from '@components/NormsTable.astro'
 import ProcessSteps from '@components/ProcessSteps.astro'
 import CompanyAbout from '@components/CompanyAbout.astro'
-import Testimonios from '@components/Testimonios.astro'
 import RelatedLinks from '@components/RelatedLinks.astro'
 import {
   serviceFeatures,
@@ -26,13 +25,10 @@ import {
   serviciosCompany,
   serviciosRelated,
   serviciosFaqs,
-  serviciosTestimoniosHead,
-  serviciosTestimoniosNombres,
   serviciosFaqHead,
 } from '@data/servicios'
 import ServiceCard from '@components/ServiceCard.astro'
 import { getCollection } from 'astro:content'
-import { testimonios } from '@data/testimonios'
 import { SERVICES, SERVICE_ANCHOR, CONTACT, waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site'
 
 // Menú de secciones: subtítulos desde SECTION_MENU_SUB (site.ts), no un mapa
@@ -55,9 +51,6 @@ const SERVICE_META = Object.fromEntries(
   serviciosCol.map((s) => [s.id, { image: s.data.image, badge: s.data.badge }]),
 ) as Record<string, { image?: string; badge?: string }>
 
-const serviciosTestimonios = serviciosTestimoniosNombres
-  .map((nombre) => testimonios.find((testimonio) => testimonio.nombre === nombre))
-  .filter((testimonio): testimonio is (typeof testimonios)[number] => Boolean(testimonio))
 ---
 
 <PageLayout
@@ -204,7 +197,6 @@ const serviciosTestimonios = serviciosTestimoniosNombres
   </Section>
 
   {/* ─── Reseñas del servicio ─── */}
-  <Testimonios items={serviciosTestimonios} {...serviciosTestimoniosHead} />
 
   {/* ─── Interlinking a las otras secciones ─── */}
   <RelatedLinks

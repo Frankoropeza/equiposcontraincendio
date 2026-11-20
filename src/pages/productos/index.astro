@@ -2,11 +2,25 @@
 // ============================================================================
 // /productos/ — Catálogo de equipos y materiales contra incendios.
 // ----------------------------------------------------------------------------
-// Estructura: Hero → SectionMenu → familias → módulos CategoryFeature → fichas
-// → RiskGuide → NormsTable → ProcessSteps → Sobre el catálogo → Reseñas →
-// RelatedLinks → FAQ.
+// Estructura: Hero → SectionMenu → familias → módulos CategoryFeature de las
+// familias SIN página propia → índice filtrable de fichas → RiskGuide →
+// NormsTable → ProcessSteps → RelatedLinks → FAQ.
 // REGLA DE COPY: el contenido vive en src/data/productos.ts; esta página solo
 // compone los componentes.
+//
+// ── ADELGAZAMIENTO 2026-11-19 (medido en móvil 390×844) ─────────────────────
+// Esta madre medía 42.230 px (50 pantallas), 33 <section> y 52 imágenes, sin
+// filtro ni buscador. Decisión de Frank: la madre es ÍNDICE; el detalle vive en
+// su URL. Por eso se retiraron de aquí:
+//   · los 5 módulos CategoryFeature cuya familia YA tiene L3 propia
+//     (/productos/extintores/, deteccion-alarmas/, hidrantes-mangueras/,
+//     senalizacion/ y accesorios/). La tarjeta de la vitrina ya enlazaba ahí.
+//     Quedan los 3 módulos de las familias SIN página, porque las anclas
+//     /productos/#<slug> de SHOWCASE apuntan justo a ellos (site.ts).
+//   · la retícula de 14 ProductCard con foto (10.075 px) → ProductDirectory,
+//     el índice de las 17 fichas con filtro por familia y buscador.
+//   · el bloque «Sobre este catálogo» + CompanyAbout: el mismo módulo está en
+//     /nosotros/ y en cada L3 de familia. No enlazaba a ninguna URL propia.
 // ============================================================================
 import PageLayout from '@layouts/PageLayout.astro';
 import Hero from '@components/Hero.astro';
@@ -14,39 +28,31 @@ import SectionMenu from '@components/SectionMenu.astro';
 import SectionHeading from '@components/SectionHeading.astro';
 import CategoryCard from '@components/CategoryCard.astro';
 import CategoryFeature from '@components/CategoryFeature.astro';
-import ProductCard from '@components/ProductCard.astro';
+import ProductDirectory from '@components/ProductDirectory.astro';
 import FAQWithContact from '@components/FAQWithContact.astro';
 import RiskGuide from '@components/RiskGuide.astro';
 import NormsTable from '@components/NormsTable.astro';
 import ProcessSteps from '@components/ProcessSteps.astro';
-import CompanyAbout from '@components/CompanyAbout.astro';
 import RelatedLinks from '@components/RelatedLinks.astro';
-import Testimonios from '@components/Testimonios.astro';
 import {
   productosRiskRows,
   productosNormRows,
   productosSteps,
-  productosCompany,
   productosRelated,
   productosCategoryFeatures,
   productosFaqs,
   productosOrden,
   productosBadge,
-  productosTestimoniosNombres,
-  productosTestimoniosHead,
   productosFaqHead,
 } from '@data/productos';
-import { testimonios } from '@data/testimonios';
 import { getCollection } from 'astro:content';
 import { SHOWCASE, CONTACT, waUrl, WA_MESSAGES, sectionMenuItems } from '@config/site';
-import { cierreGeneral, faltanParaCuatro } from '@data/cierre';
 
 const productos = (await getCollection('productos', ({ data }) => !data.draft)).sort((a, b) => {
   const aOrder = productosOrden.indexOf(a.id);
   const bOrder = productosOrden.indexOf(b.id);
   return (aOrder === -1 ? a.data.order : aOrder) - (bOrder === -1 ? b.data.order : bOrder);
 });
-const cierreProductos = cierreGeneral.slice(0, faltanParaCuatro(productos.length));
 const CAT_LABEL: Record<string, string> = {
   extintores: 'Extintores',
   'deteccion-alarmas': 'Detección',
@@ -55,6 +61,22 @@ const CAT_LABEL: Record<string, string> = {
   accesorios: 'Accesorios',
   general: 'General',
 };
+// Familias del filtro: las etiquetas cortas de CAT_LABEL. ProductDirectory
+// descarta las que no tengan ninguna ficha publicada.
+const familiasFiltro = Object.entries(CAT_LABEL).map(([id, label]) => ({ id, label }));
+const fichasDirectorio = productos.map((p) => ({
+  href: `/productos/${p.id}/`,
+  title: p.data.cardTitle ?? p.data.title,
+  description: p.data.cardDescription ?? p.data.description,
+  family: p.data.category,
+  badge: productosBadge[p.id] ?? CAT_LABEL[p.data.category] ?? p.data.category,
+}));
+// Módulos de las familias que todavía NO tienen página L3. El índice de
+// productosCategoryFeatures es paralelo al de SHOWCASE (contrato de site.ts):
+// una familia sin L3 declara su href como el ancla de su módulo aquí.
+const featuresSinPagina = productosCategoryFeatures
+  .map((feature, i) => ({ feature, slug: SHOWCASE[i]?.slug, href: SHOWCASE[i]?.href ?? '' }))
+  .filter(({ href }) => href.startsWith('/productos/#'));
 const menuSecciones = sectionMenuItems();
 const menuCta = {
   label: 'Cotizar por WhatsApp',
@@ -62,7 +84,6 @@ const menuCta = {
   sub: 'Te decimos cuál conviene',
   external: true,
 };
-const testimoniosProductos = productosTestimoniosNombres.flatMap((nombre) => testimonios.filter((testimonio) => testimonio.nombre === nombre));
 const schemaData = {
   list: {
     name: 'Material contra incendios',
@@ -139,60 +160,30 @@ const schemaData = {
     </div>
   </section>
 
-  {/* ─── Módulos CategoryFeature ─── */}
-  {productosCategoryFeatures.map(({ ctaSecondaryMsg, ...feature }, i) => (
+  {/* ─── Módulos CategoryFeature: solo las familias sin página propia ─── */}
+  {featuresSinPagina.map(({ feature: { ctaSecondaryMsg, ...feature }, slug }) => (
     <CategoryFeature
       {...feature}
-      anchorId={SHOWCASE[i]?.slug}
+      anchorId={slug}
       ctaSecondaryLabel={ctaSecondaryMsg ? 'Cotizar por WhatsApp' : undefined}
       ctaSecondaryHref={ctaSecondaryMsg ? waUrl(ctaSecondaryMsg) : undefined}
       ctaSecondaryExternal
     />
   ))}
-  {/* ─── Fichas ─── */}
-  {productos.length > 0 && (
-    <section class="section">
-      <div class="container">
-        <SectionHeading
-          layout="duo"
-          eyebrow="Fichas técnicas"
-          title="Productos contra incendios"
-          titleAccent="con ficha técnica"
-          desc="Fichas técnicas de los productos de mayor rotación."
-          body={[
-            'Cada ficha incluye especificaciones técnicas, norma aplicable y el agente o uso recomendado. El precio varía según cantidad y si incluye servicio.',
-            'Pide cotización por WhatsApp indicando el producto y la cantidad — te respondemos con precio, disponibilidad y tiempos de entrega.',
-          ]}
-        />
-        <div class="card-grid">
-          {productos.map((p, i) => (
-            <ProductCard
-              title={p.data.cardTitle ?? p.data.title}
-              href={`/productos/${p.id}/`}
-              image={p.data.image}
-              imageAlt={p.data.title}
-              badge={productosBadge[p.id] ?? CAT_LABEL[p.data.category] ?? p.data.category}
-              description={p.data.cardDescription ?? p.data.description}
-              index={i}
-              priority={i === 0}
-            />
-          ))}
-          {cierreProductos.map((ficha, i) => (
-            <ProductCard
-              title={ficha.title}
-              href={ficha.whatsapp ? waUrl(ficha.href) : ficha.href}
-              image={ficha.image}
-              imageAlt={ficha.imageAlt}
-              badge={ficha.badge}
-              description={ficha.description}
-              ctaLabel={ficha.ctaLabel}
-              index={productos.length + i}
-              external={ficha.whatsapp}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
+  {/* ─── Índice de fichas: filtro por familia + buscador ─── */}
+  {fichasDirectorio.length > 0 && (
+    <ProductDirectory
+      items={fichasDirectorio}
+      families={familiasFiltro}
+      eyebrow="Fichas técnicas"
+      title="Productos contra incendios"
+      titleAccent="con ficha técnica"
+      desc="Filtra por familia o busca el equipo por su nombre para abrir su ficha técnica."
+      body={[
+        'Cada ficha incluye especificaciones técnicas, norma aplicable y el agente o uso recomendado. El precio varía según cantidad y si incluye servicio.',
+        'Pide cotización por WhatsApp indicando el producto y la cantidad — te respondemos con precio, disponibilidad y tiempos de entrega.',
+      ]}
+    />
   )}
   {/* ─── Guía de selección ─── */}
   <RiskGuide
@@ -236,34 +227,6 @@ const schemaData = {
       'El proceso es el mismo para una oficina con tres extintores que para una nave con red hidráulica; solo cambia el tamaño de la propuesta.',
     ]}
     steps={productosSteps}
-  />
-
-  {/* ─── Sobre el catálogo ─── */}
-  <section class="section section--surface">
-    <div class="container">
-      <SectionHeading
-        layout="duo"
-        eyebrow="Sobre este catálogo"
-        title="Todas las familias,"
-        titleAccent="un solo proveedor"
-        desc="Equipo certificado, con su documentación y con quien te explique cuál te toca."
-        body={[
-          'Reunimos en un mismo catálogo los materiales y equipos de seguridad contra incendios que un inmueble necesita para estar protegido y en regla, sin coordinar a tres proveedores para un mismo expediente.',
-          'Cotiza por WhatsApp y habla directo con quien resuelve.',
-        ]}
-      />
-      <CompanyAbout
-        que={productosCompany.que}
-        como={productosCompany.como}
-        cta={{ label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.productos), external: true }}
-      />
-    </div>
-  </section>
-
-  {/* ─── Reseñas ─── */}
-  <Testimonios
-    items={testimoniosProductos}
-    {...productosTestimoniosHead}
   />
 
   {/* ─── Enlaces relacionados ─── */}

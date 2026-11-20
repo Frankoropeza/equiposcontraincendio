@@ -17,7 +17,21 @@ export const serviceL3Schema = z.object({
   hero: z.object({ badge: z.string(), title: z.string(), accent: z.string(), subtitle: z.string(), descRight: z.array(z.string()), outlineText: z.string() }).strict(),
   vitrina: headingSchema.extend({ id: z.string(), tarjetas: z.array(tarjetaSchema) }).strict(), tablaPrincipal: tableBlockSchema,
   guia: headingSchema.extend({ columns: z.tuple([z.string(), z.string(), z.string(), z.string()]), rows: z.array(riskRowSchema), note: z.string().optional(), ctaLabel: z.string().optional(), ctaHref: z.string().optional() }).strict(),
-  tabla2: tableBlockSchema, modulos: z.array(moduloSchema), decision: tableBlockSchema, proceso: headingSchema.extend({ steps: z.array(stepSchema) }).strict(),
+  tabla2: tableBlockSchema, modulos: z.array(moduloSchema), decision: tableBlockSchema,
+  /**
+   * URL hija que se queda con el DETALLE de la L3 (2026-11-19). Cuando está
+   * declarada, ServiceL3 NO pinta `modulos` ni `decision`: esos bloques los
+   * renderiza la página hija leyendo esta misma entrada, y la vitrina de la
+   * madre enlaza a sus anclas. Así el contenido sigue viviendo en UN solo
+   * archivo y la madre se queda como índice (medido en /servicios/mantenimiento/:
+   * 39.084 px en móvil, con 10.297 px solo de módulos y tabla de decisión).
+   */
+  detalleAparte: z.object({
+    path: z.string(), label: z.string(), breadcrumb: z.string(),
+    seo: z.object({ title: z.string(), description: z.string() }).strict(),
+    hero: z.object({ badge: z.string(), title: z.string(), accent: z.string(), subtitle: z.string(), descRight: z.array(z.string()) }).strict(),
+  }).strict().optional(),
+  proceso: headingSchema.extend({ steps: z.array(stepSchema) }).strict(),
   normas: headingSchema.extend({ columns: z.tuple([z.string(), z.string(), z.string()]), rows: z.array(normRowSchema), note: z.string().optional() }).strict(),
   empresa: headingSchema.extend({ que: z.object({ title: z.string(), body: z.array(z.string()) }).strict(), como: z.object({ title: z.string(), pillars: z.array(z.object({ title: z.string(), desc: z.string() }).strict()) }).strict() }).strict(),
   related: z.object({ title: z.string(), desc: z.string(), links: z.array(z.object({ label: z.string(), href: z.string(), desc: z.string() }).strict()) }).strict(),

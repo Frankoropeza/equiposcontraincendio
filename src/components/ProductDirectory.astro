@@ -1,0 +1,335 @@
+---
+// ProductDirectory — índice filtrable y buscable de las fichas de producto.
+// ----------------------------------------------------------------------------
+// POR QUÉ (2026-11-19): /productos/ medía 42.230 px en móvil (390×844) y no
+// tenía ni filtro ni buscador: 14 tarjetas con foto grande apiladas, 10.075 px
+// solo de ese bloque. Aquí la ficha se reduce a su fila —familia, título y una
+// línea— y se añaden chips por familia + búsqueda por texto, con el MISMO
+// patrón de GiroDirectory.astro (que no se toca): estado en la querystring,
+// `hidden` sobre las filas, `aria-pressed` en los chips y los filtros nacen
+// ocultos para que sin JS se vea el listado completo.
+//
+// REGLA DE CIFRAS (Frank, 2026-11-18): este bloque NO imprime «Mostrando X de
+// Y» ni cuenta nada. El vacío se avisa con texto, no con un contador.
+import SectionHeading from './SectionHeading.astro';
+
+export type ProductDirectoryItem = {
+  href: string;
+  title: string;
+  description: string;
+  family: string;
+  badge: string;
+};
+
+type Props = {
+  items: ProductDirectoryItem[];
+  families: { id: string; label: string }[];
+  eyebrow: string;
+  title: string;
+  titleAccent: string;
+  desc: string;
+  body: string[];
+};
+
+const { items, families, eyebrow, title, titleAccent, desc, body } = Astro.props as Props;
+const familias = families.filter(({ id }) => items.some((item) => item.family === id));
+---
+
+{/* ─── Índice de fichas: filtro por familia + buscador ─── */}
+<section class="pdir section" id="fichas">
+  <div class="container">
+    <SectionHeading
+      layout="duo"
+      eyebrow={eyebrow}
+      title={title}
+      titleAccent={titleAccent}
+      desc={desc}
+      body={body}
+    />
+
+    <div class="pdir__filters" hidden>
+      <div class="pdir__field">
+        <strong id="pdir-familia">Familia</strong>
+        <div class="pdir__scroll">
+          <div class="pdir__chips" data-scroll-hint role="group" aria-labelledby="pdir-familia">
+            <button type="button" data-familia="" aria-pressed="true">Todas</button>
+            {familias.map(({ id, label }) => (
+              <button type="button" data-familia={id} aria-pressed="false">{label}</button>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div class="pdir__field">
+        <strong><label for="pdir-q">Buscar equipo</label></strong>
+        <input
+          id="pdir-q"
+          class="pdir__input"
+          type="search"
+          autocomplete="off"
+          placeholder="extintor, detector, manguera…"
+        />
+      </div>
+    </div>
+
+    <ul class="pdir__grid">
+      {items.map((item) => (
+        <li
+          data-pdir-item
+          data-fam={item.family}
+          data-text={`${item.title} ${item.description} ${item.badge}`.toLowerCase()}
+        >
+          <a class="pdir__card" href={item.href}>
+            <span class="pdir__badge">{item.badge}</span>
+            <span class="pdir__title">{item.title}</span>
+            <span class="pdir__desc">{item.description}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <p class="pdir__empty" hidden>
+      Ninguna ficha coincide con esa búsqueda. Prueba con otra palabra, quita el
+      filtro de familia o escríbenos por WhatsApp con el equipo que buscas.
+    </p>
+  </div>
+</section>
+
+<script>
+  import { initScrollHints } from '@lib/scroll-hint';
+
+  const root = document.querySelector<HTMLElement>('.pdir');
+
+  if (root) {
+    const filters = root.querySelector<HTMLElement>('.pdir__filters');
+    const input = root.querySelector<HTMLInputElement>('.pdir__input');
+    const empty = root.querySelector<HTMLElement>('.pdir__empty');
+    const items = [...root.querySelectorAll<HTMLElement>('[data-pdir-item]')];
+    const state = { familia: '', q: '' };
+
+    const read = () => {
+      const params = new URLSearchParams(location.search);
+      state.familia = params.get('familia') ?? '';
+      state.q = params.get('q') ?? '';
+      if (input) input.value = state.q;
+    };
+
+    const apply = () => {
+      const needle = state.q.trim().toLowerCase();
+      let visible = 0;
+
+      items.forEach((item) => {
+        const match =
+          (!state.familia || item.dataset.fam === state.familia) &&
+          (!needle || (item.dataset.text ?? '').includes(needle));
+        item.hidden = !match;
+        if (match) visible++;
+      });
+      if (empty) empty.hidden = visible > 0;
+      root.querySelectorAll<HTMLButtonElement>('[data-familia]').forEach((button) => {
+        button.setAttribute(
+          'aria-pressed',
+          (button.dataset.familia ?? '') === state.familia ? 'true' : 'false',
+        );
+      });
+    };
+
+    const refresh = () => {
+      const params = new URLSearchParams(location.search);
+      state.familia ? params.set('familia', state.familia) : params.delete('familia');
+      state.q ? params.set('q', state.q) : params.delete('q');
+      history.replaceState(
+        null,
+        '',
+        `${location.pathname}${params.size ? `?${params}` : ''}#fichas`,
+      );
+      apply();
+    };
+
+    root.addEventListener('click', (event) => {
+      const button = (event.target as HTMLElement).closest<HTMLButtonElement>('[data-familia]');
+      if (!button) return;
+      state.familia = button.dataset.familia ?? '';
+      refresh();
+    });
+    input?.addEventListener('input', () => {
+      state.q = input.value;
+      refresh();
+    });
+    addEventListener('popstate', () => {
+      read();
+      apply();
+    });
+
+    if (filters) filters.hidden = false;
+    read();
+    apply();
+    // Los filtros nacen hidden: hasta aquí no tenían ancho medible.
+    initScrollHints();
+  }
+</script>
+
+<style>
+  /* .container/.section: utilidades globales de tokens.css (F3.3). */
+
+  .pdir__filters {
+    display: grid;
+    gap: var(--sp-4);
+    padding: var(--sp-4);
+    margin-top: var(--sp-6);
+    background: var(--c-white);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+  }
+
+  /* Sin min-width: 0 la fila de chips (flex con overflow-x) empuja el ancho de
+     la página en móvil; mismo motivo documentado en GiroDirectory. */
+  .pdir__field {
+    min-width: 0;
+  }
+
+  .pdir__filters[hidden] {
+    display: none;
+  }
+
+  .pdir__field strong {
+    display: block;
+    margin-bottom: var(--sp-2);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+  }
+
+  .pdir__scroll {
+    position: relative;
+  }
+
+  /* Afordancia de corte: degradado mientras queden chips por ver
+     (data-at lo pone lib/scroll-hint.ts). */
+  .pdir__scroll::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: var(--sp-6);
+    background: linear-gradient(to left, var(--c-white), rgba(255, 255, 255, 0));
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .pdir__scroll:has([data-at='start'])::after,
+  .pdir__scroll:has([data-at='middle'])::after {
+    opacity: 1;
+  }
+
+  .pdir__chips {
+    display: flex;
+    gap: var(--sp-2);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .pdir__chips::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Área táctil ≥44px (Apple HIG / WCAG 2.5.5). */
+  .pdir__chips button {
+    display: inline-flex;
+    align-items: center;
+    flex: none;
+    min-height: 44px;
+    white-space: nowrap;
+    border: 1px solid var(--c-border);
+    padding: 0 var(--sp-4);
+    border-radius: var(--radius-full);
+    background: var(--c-white);
+    color: var(--c-ink);
+    font: inherit;
+    font-size: var(--text-sm);
+    cursor: pointer;
+  }
+
+  .pdir__chips button[aria-pressed='true'] {
+    background: var(--c-primary);
+    color: #fff;
+    border-color: var(--c-primary);
+  }
+
+  /* 16px evita el zoom automático de iOS al enfocar el campo. */
+  .pdir__input {
+    width: 100%;
+    min-height: 44px;
+    padding: 0 var(--sp-3);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    background: var(--c-white);
+    color: var(--c-ink);
+    font: inherit;
+    font-size: 1rem;
+  }
+
+  .pdir__grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
+    margin: var(--sp-4) 0 0;
+    padding: 0;
+  }
+
+  @media (min-width: 640px) {
+    .pdir__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .pdir__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .pdir__grid > li[hidden] {
+    display: none;
+  }
+
+  .pdir__card {
+    display: grid;
+    gap: var(--sp-1);
+    height: 100%;
+    padding: var(--sp-4);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    background: var(--c-white);
+    text-decoration: none;
+  }
+
+  .pdir__badge {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--c-primary);
+  }
+
+  .pdir__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    font-weight: var(--weight-semibold);
+    color: var(--c-ink);
+  }
+
+  .pdir__desc {
+    font-size: var(--text-sm);
+    line-height: var(--leading-snug);
+    color: var(--c-ink-2);
+  }
+
+  .pdir__empty {
+    margin: var(--sp-4) 0 0;
+    color: var(--c-ink-2);
+    font-size: var(--text-sm);
+  }
+
+  .pdir__empty[hidden] {
+    display: none;
+  }
+</style>

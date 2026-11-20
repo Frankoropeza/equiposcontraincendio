@@ -290,6 +290,21 @@ const AREAS = [
   const form = document.getElementById('ext-form') as HTMLFormElement | null
   const out = document.getElementById('ext-res') as HTMLElement | null
 
+  // El mensaje de error es UNO solo: el que ya pinta el panel #ext-res (live
+  // region). aria-describedby apunta a ese mismo parrafo en vez de duplicar el
+  // texto junto al campo, para que el lector no lo anuncie dos veces.
+  const marcarInvalido = (el: HTMLElement | null | undefined, msgId: string) => {
+    if (!el) return
+    el.setAttribute('aria-invalid', 'true')
+    el.setAttribute('aria-describedby', msgId)
+  }
+
+  const limpiarInvalido = (el: HTMLElement | null | undefined) => {
+    if (!el) return
+    el.removeAttribute('aria-invalid')
+    el.removeAttribute('aria-describedby')
+  }
+
   if (form && out) {
     const waBase = form.dataset.wa ?? ''
 
@@ -321,6 +336,12 @@ const AREAS = [
       })
     })
 
+    // Al corregir la superficie se retira el estado invalido sin esperar al submit.
+    form.querySelector<HTMLInputElement>('input[name="superficie"]')?.addEventListener(
+      'input',
+      (ev) => limpiarInvalido(ev.currentTarget as HTMLInputElement),
+    )
+
     let ultimoTexto = ''
 
     form.addEventListener('submit', (e) => {
@@ -328,13 +349,18 @@ const AREAS = [
       const data = new FormData(form)
       const sup = n(data.get('superficie'))
 
+      const supInput = form.querySelector<HTMLInputElement>('input[name="superficie"]')
+
       if (sup <= 0) {
         setPanelClass(out, 'panel panel--res res--warn')
         out.innerHTML =
-          '<p class="res__tag">Falta la superficie</p><p class="res__sub">Captura la superficie construida en metros cuadrados para calcular el mínimo.</p>'
-        form.querySelector<HTMLInputElement>('input[name="superficie"]')?.focus()
+          '<p class="res__tag">Falta la superficie</p><p class="res__sub" id="ext-sup-error">Captura la superficie construida en metros cuadrados para calcular el mínimo.</p>'
+        marcarInvalido(supInput, 'ext-sup-error')
+        supInput?.focus()
         return
       }
+
+      limpiarInvalido(supInput)
 
       const niveles = Math.max(1, Math.round(n(data.get('niveles')) || 1))
       const modo = String(data.get('riesgo') ?? 'ordinario')
@@ -437,6 +463,7 @@ const AREAS = [
     form.addEventListener('reset', () => {
       setPanelClass(out, 'panel panel--res res--empty')
       out.innerHTML = PLACEHOLDER
+      limpiarInvalido(form.querySelector<HTMLInputElement>('input[name="superficie"]'))
       form.querySelectorAll<HTMLInputElement>('input[name^="qty-"]').forEach((q) => {
         q.disabled = true
         q.value = '1'
