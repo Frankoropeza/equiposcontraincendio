@@ -22,7 +22,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const CONFIG = 'src/config/site.ts';
-const TARGETS = [CONFIG, 'src/content'];
+// ── REVISIÓN 2026-11-19 (auditoría) ─────────────────────────────────────────
+// TARGETS cubría solo el SSoT y `src/content`: la mitad del copy vive en
+// `src/data`, `src/components` y `src/pages`, que quedaban fuera del gate (ahí
+// estaban los contadores «Mostrando X de Y» que violaban la regla de cifras).
+const TARGETS = [CONFIG, 'src/content', 'src/data', 'src/components', 'src/pages'];
 
 // ── 1) CENTINELAS ────────────────────────────────────────────────────────────
 // Aplican a TODOS los archivos escaneados. Se evita cualquier patrón que pueda
@@ -42,6 +46,16 @@ const SENTINELS = [
   [/DEMO de la plantilla/i,   'texto DEMO'],
   [/lorem ipsum/i,            'texto lorem ipsum'],
   [/tu-?dominio|midominio|example\.com/i, 'dominio de ejemplo'],
+  // Regla de cifras (decisión de Frank 2026-11-18): cero marcadores y cero
+  // contadores en mosaicos, filtros o listados — delatan plantilla automática.
+  // Sí se permiten el alcance en prosa, los ordinales de pasos y los datos
+  // propios de una ficha (precio, duración, fecha de verificación).
+  [/Mostrando\s+\$\{/,        'contador de filtro («Mostrando X de Y»)'],
+  [/\$\{[^}]*\.length[^}]*\}\s*(empresas|municipios|alcald[ií]as|giros|clientes|proyectos|presentaciones|servicios|productos|art[ií]culos|fichas|p[áa]ginas)/,
+                              'contador de colección en el copy'],
+  [/\b\d+\s+(empresas|cursos|municipios|clientes|proyectos|giros)\s+publicad/i,
+                              'marcador de cifras publicadas'],
+  [/\b\d+\s+a[ñn]os de experiencia/i, 'marcador «X años de experiencia»'],
 ];
 
 function files(t, acc = []) {

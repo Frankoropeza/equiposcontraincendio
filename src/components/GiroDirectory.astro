@@ -69,7 +69,6 @@ const cierre = [
         </div>
       </div>
     </div>
-    <p class="giro-directory__count" aria-live="polite"></p>
     <div class="giro-directory__grid card-grid">
       {items.map((item, index) => (
         <div
@@ -101,7 +100,6 @@ const cierre = [
     const filters = root.querySelector<HTMLElement>('.giro-directory__filters');
     const cards = [...root.querySelectorAll<HTMLElement>('[data-giro-card]')];
     const closing = [...root.querySelectorAll<HTMLElement>('[data-cierre]')];
-    const count = root.querySelector<HTMLElement>('.giro-directory__count');
     const state = { grupo: '', riesgo: '' };
 
     const read = () => {
@@ -134,7 +132,6 @@ const cierre = [
         if (match) visible++;
       });
       close(visible);
-      if (count) count.textContent = `Mostrando ${visible} de ${cards.length} giros`;
       root
         .querySelectorAll<HTMLButtonElement>('[data-grupo], [data-riesgo]')
         .forEach((button) => {
@@ -224,10 +221,5 @@ const cierre = [
     background: var(--c-primary);
     color: #fff;
     border-color: var(--c-primary);
-  }
-  .giro-directory__count {
-    color: var(--c-muted);
-    font-size: var(--text-sm);
-    margin: 0 0 var(--sp-4);
   }
 </style>

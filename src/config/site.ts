@@ -59,7 +59,7 @@ export const SITE = {
     title: 'Equipo contra incendio | venta de equipo contra incendios', // 57 car. — decisión de Frank 2026-09-11.
     // 2026-09-15 — description según terms_txt.desc de NEURONwriter (query 4193151777ab1331).
     description:
-      'Equipo contra incendio en CDMX y Edomex: extintores, detectores, mangueras y sistemas contra incendio certificados, con asesoría, instalación y mantenimiento.',
+      'Equipo contra incendio en CDMX y Edomex: extintores, detectores, mangueras y sistemas certificados, con asesoría, instalación y mantenimiento.',
     image: '/images/og/default.png',
     titleMaxLength: 60,
     descriptionMaxLength: 160,
@@ -185,7 +185,7 @@ export const COMPANY = {
   mapsUrl: 'https://www.google.com/maps/search/?api=1&query=19.439817,-99.185217',
   /** Qué hace la empresa, en una frase (footer, schema description de /nosotros/). */
   summary:
-    'CONINC vende, instala y da mantenimiento a equipo contra incendio para empresas e inmuebles de la Ciudad de México y el Estado de México, con más de 35 años de experiencia en el mercado mexicano.',
+    'CONINC vende, instala y da mantenimiento a equipo contra incendio para empresas e inmuebles de la Ciudad de México y el Estado de México, con más de 35 años en el mercado mexicano.',
   /** Razón social y RFC: PENDIENTES. Mientras sean undefined no se publican. */
   legalName: undefined as string | undefined,
   rfc: undefined as string | undefined,
@@ -905,7 +905,7 @@ export const BLOG_CATEGORIES: readonly BlogCategory[] = [
     label: 'Drones contra incendios',
     seoTitle: 'Drones para bomberos y contra incendios',
     seoDescription:
-      'Cómo usan los drones los bomberos y las brigadas: cámara térmica, inspección de bodegas, normas en México (NOM-107-SCT3, NFPA 2400) y cómo armar un programa.',
+      'Cómo usan los drones los bomberos y las brigadas: cámara térmica, inspección de bodegas, normas en México (NOM-107-SCT3, NFPA 2400) y cómo empezar.',
     intro:
       'Drones con cámara térmica, inspección aérea y protocolos: la capa de información que hoy acompaña al equipo contra incendio.',
     body: [

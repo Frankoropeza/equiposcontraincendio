@@ -17,7 +17,7 @@ import { COMPANY, CONTACT, SERVICES } from '@config/site'
 export const nosotrosMeta = {
   title: 'CONINC: más de 35 años en equipos contra incendios',
   description:
-    'CONINC vende, instala y da mantenimiento a equipos contra incendios en CDMX y Estado de México, con más de 35 años en el mercado mexicano. Conoce la empresa.',
+    'CONINC vende, instala y da mantenimiento a equipos contra incendios en CDMX y Estado de México, con más de 35 años en el mercado. Conoce la empresa.',
 }
 
 export const nosotrosHero = {
@@ -83,7 +83,7 @@ export const serviciosTabla = {
   eyebrow: 'Qué hacemos',
   title: 'Servicios de',
   titleAccent: 'CONINC',
-  desc: `Los ${SERVICES.length} servicios con que acompañamos al equipo desde que se instala hasta cada renovación.`,
+  desc: 'Los servicios con que acompañamos al equipo desde que se instala hasta cada renovación.',
   columns: ['Servicio', 'Qué resuelve'] as const,
   rows: SERVICES.map((s) => [s.label, s.desc]) as string[][],
   ctaLabel: 'Servicios contra incendio',

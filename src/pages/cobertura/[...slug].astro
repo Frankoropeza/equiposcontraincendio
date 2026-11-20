@@ -105,7 +105,7 @@ const relatedZona = Array.from(new Map([
         eyebrow="Alcance"
         title="Alcance en"
         titleAccent={label}
-        desc={areas.length ? `${areas.length} ${data.type === 'ciudad' ? 'alcaldías' : 'municipios'} publicados en esta ficha.` : `Servicio en sitio en ${label}.`}
+        desc={areas.length ? `Servicio en sitio en ${data.type === 'ciudad' ? 'las alcaldías' : 'los municipios'} que listamos abajo; si el tuyo no aparece, escríbenos y confirmamos cobertura.` : `Servicio en sitio en ${label}.`}
       />
       {areas.length > 0 && (
         <ul class="chips chips--areas">{areas.map((area) => <li><span class="chip chip--static">{area}</span></li>)}</ul>

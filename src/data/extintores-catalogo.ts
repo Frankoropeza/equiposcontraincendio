@@ -340,7 +340,7 @@ export const extCatalogoCierre: FichaCierre[] = [
     title: 'Mantenimiento de extintores',
     description: 'Mantenimiento anual, recarga tras cualquier uso y prueba hidrostática del cilindro.',
     href: '/servicios/mantenimiento/',
-    ctaLabel: 'Mantenimiento de extintores',
+    ctaLabel: 'Ver mantenimiento',
     image: '/images/servicios/inspeccion-recarga-extintores.avif',
     imageAlt: 'Recarga y mantenimiento de extintores en taller de servicio',
   },
