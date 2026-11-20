@@ -7,39 +7,39 @@ seccion:
   href: /productos/
 categoriaProductos: equipo-bombero
 seo:
-  title: EPP para brigada contra incendio | NOM-002-STPS
-  description: "EPP para brigada contra incendio: selección por riesgo, funciones y expediente para STPS conforme a NOM-002 5.9 y NOM-017-STPS-2024."
-  serviceName: Equipo de protección personal para brigada contra incendio
+  title: Equipo para bomberos | EPP según el riesgo
+  description: "Equipo para bomberos: EPP para bomberos y equipo de bombero según las funciones, el riesgo y la NOM-017-STPS-2024."
+  serviceName: Equipo para bomberos y EPP para brigadas
   serviceType: Selección de EPP para brigada contra incendio conforme a riesgos y funciones
   image: /images/showcase/equipo-proteccion-bomberos-epp.avif
-breadcrumb: Equipo para bombero
+breadcrumb: Equipo para bomberos
 wa: "Hola, quiero revisar el EPP de mi brigada contra incendio. Mi inmueble y sus riesgos son:"
 menuCtaSub: Riesgos y funciones
 hero:
   badge: EPP para brigada contra incendio · CDMX y Estado de México
-  title: EPP para brigada
-  accent: contra incendio
-  subtitle: "La NOM-002-STPS-2010, numeral 5.9, obliga al patrón a dotar de equipo de protección personal a la brigada conforme a sus funciones y riesgos."
+  title: Equipo para bomberos
+  accent: para tu brigada
+  subtitle: "El equipo para bomberos y el EPP para bomberos se seleccionan conforme a las funciones y riesgos de tu brigada, como exige la NOM-002-STPS-2010, numeral 5.9."
   descRight:
-    - "El punto de partida no es un traje o un casco aislado: es el grado de riesgo, la función de cada integrante y la evidencia que debe quedar en el expediente para la STPS."
+    - "El punto de partida para elegir equipo contra incendio para bomberos no es un traje o un casco aislado: es el grado de riesgo, la función de cada integrante y la evidencia que debe quedar en el expediente para la STPS."
     - "La NOM-017-STPS-2024 pide identificar los riesgos por puesto y área, seleccionar el EPP conforme a ellos, verificar su certificación, capacitar, señalizar y llevar registros."
   outlineText: Cómo definir el EPP
 vitrina:
   id: lo-que-acompana-al-epp
   eyebrow: Lo que acompaña al EPP
-  title: El equipo se define
-  titleAccent: con el riesgo y el expediente
-  desc: Antes de elegir el EPP, revisa la función de la brigada, el riesgo y la evidencia que conservarás.
+  title: Equipo para bomberos
+  titleAccent: según el riesgo y el expediente
+  desc: Antes de elegir equipo para bomberos, revisa la función de la brigada, el riesgo y la evidencia que conservarás.
   body:
     - La obligación de la NOM-002-STPS-2010, numeral 5.9, corresponde al patrón y se ajusta a las funciones y riesgos de los integrantes de la brigada.
     - La NOM-017-STPS-2024 vincula esa selección con la identificación de riesgos, la certificación aplicable, la capacitación, la señalización y los registros.
   tarjetas:
-    - title: Casco para brigada
+    - title: Casco de bombero
       href: /productos/casco-brigada-contra-incendio/
-      image: /images/productos/casco-brigada-contra-incendio.svg
+      image: /images/productos/casco-brigada-contra-incendio.avif
       imageAlt: Casco para brigada contra incendio
       badge: EPP para brigada de empresa
-      description: Protección de cabeza para la brigada, según riesgo, función y expediente de EPP.
+      description: Casco de bombero para proteger la cabeza según el riesgo, función y expediente de EPP.
       specs:
         - label: Material
           value: Fibra de vidrio tipo Thermoglas®
@@ -47,13 +47,13 @@ vitrina:
           value: Formato tradicional
         - label: Acabado
           value: Acabado mate disponible
-      ctaLabel: Ver casco para brigada
-    - title: Guantes para brigada
+      ctaLabel: Ver casco de bombero
+    - title: Guantes para bombero
       href: /productos/guantes-brigada-contra-incendio/
-      image: /images/productos/guantes-brigada-contra-incendio.svg
+      image: /images/productos/guantes-brigada-contra-incendio.avif
       imageAlt: Guantes para brigada contra incendio
       badge: EPP para brigada de empresa
-      description: Protección de manos para brigada, elegida por el riesgo y la función de cada puesto.
+      description: Guantes para bombero elegidos por el riesgo y la función de cada puesto.
       specs:
         - label: Longitud
           value: 33 cm
@@ -61,13 +61,13 @@ vitrina:
           value: Tallas M, L y XL
         - label: Puño
           value: Puño Kevlar®
-      ctaLabel: Ver guantes para brigada
-    - title: Botas para brigada
+      ctaLabel: Ver guantes para bombero
+    - title: Botas para bombero
       href: /productos/botas-brigada-contra-incendio/
-      image: /images/productos/botas-brigada-contra-incendio.svg
+      image: /images/productos/botas-brigada-contra-incendio.avif
       imageAlt: Botas para brigada contra incendio
       badge: EPP para brigada contra incendio
-      description: Elige entre protección térmica o dieléctrica según el riesgo dominante.
+      description: Botas para bombero con protección térmica o dieléctrica según el riesgo dominante.
       specs:
         - label: Material
           value: Caucho
@@ -75,13 +75,13 @@ vitrina:
           value: 13 pulg
         - label: Componentes
           value: Entresuela, cambrión y puntera de acero
-      ctaLabel: Ver botas para brigada
-    - title: Capucha o monja
+      ctaLabel: Ver botas para bombero
+    - title: Capucha para bombero
       href: /productos/capucha-proteccion-brigada/
-      image: /images/productos/capucha-proteccion-brigada.svg
+      image: /images/productos/capucha-proteccion-brigada.avif
       imageAlt: Capucha de protección para brigada contra incendio
       badge: EPP para brigada contra incendio
-      description: Protección de cabeza y cuello bajo el casco para la brigada contra incendio.
+      description: Capucha para bombero que protege cabeza y cuello bajo el casco.
       specs:
         - label: Material
           value: Nomex
@@ -89,10 +89,10 @@ vitrina:
           value: Doble capa
         - label: Longitud
           value: 21 pulg
-      ctaLabel: Ver capucha o monja
+      ctaLabel: Ver capucha para bombero
     - title: Traje aluminizado
       href: /productos/traje-aproximacion-aluminizado/
-      image: /images/productos/traje-aproximacion-aluminizado.svg
+      image: /images/productos/traje-aproximacion-aluminizado.avif
       imageAlt: Traje aluminizado para brigada industrial
       badge: EPP para brigada industrial
       description: EPP aluminizado para exposición a calor radiante en procesos industriales.
@@ -104,12 +104,12 @@ vitrina:
         - label: Barreras
           value: Sin barreras
       ctaLabel: Ver traje aluminizado
-    - title: Conjunto estructural
+    - title: Trajes para bomberos
       href: /productos/conjunto-estructural-chaqueton-pantalon/
-      image: /images/productos/conjunto-estructural-chaqueton-pantalon.svg
+      image: /images/productos/conjunto-estructural-chaqueton-pantalon.avif
       imageAlt: Conjunto estructural de chaquetón y pantalón para brigada
       badge: EPP estructural para brigada
-      description: Chaquetón y pantalón de tres barreras para la brigada de tu empresa.
+      description: Trajes para bomberos con chaquetón y pantalón de tres barreras para tu brigada.
       specs:
         - label: Material
           value: Nomex IIIA
@@ -117,13 +117,13 @@ vitrina:
           value: TPP 38-41
         - label: Cinta
           value: Cinta microperforada 3 pulg
-      ctaLabel: Ver conjunto estructural
-    - title: Equipo ERA para brigada
+      ctaLabel: Ver trajes para bomberos
+    - title: Equipo de respiración autónoma
       href: /productos/equipo-respiracion-autonoma-era/
-      image: /images/productos/equipo-respiracion-autonoma-era.svg
+      image: /images/productos/equipo-respiracion-autonoma-era.avif
       imageAlt: Equipo de respiración autónoma para brigada
       badge: EPP respiratorio para brigada
-      description: ERA o SCBA con opciones de PASS, cilindro y configuración para tu brigada.
+      description: Equipo de respiración autónoma ERA o SCBA con PASS y cilindro para tu brigada.
       specs:
         - label: Circuito
           value: Circuito abierto

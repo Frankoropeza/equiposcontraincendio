@@ -1,18 +1,18 @@
 ---
-title: "Equipo de respiración autónoma (ERA) para brigada"
+title: "Equipo de respiración autónoma para brigada"
 description: "Equipo de respiración autónoma ERA o SCBA para brigadas de empresa, comparado por PASS, presión positiva, cilindro, aprobación NIOSH y expediente de selección."
-cardTitle: "Equipo ERA para brigada"
+cardTitle: "Equipo de respiración autónoma"
 cardDescription: "ERA o SCBA con opciones de PASS, cilindro y configuración para tu brigada."
 category: equipo-bombero
-image: /images/productos/equipo-respiracion-autonoma-era.svg
+image: /images/productos/equipo-respiracion-autonoma-era.avif
 price: "Cotizar"
 order: 26
-seoTitle: "Equipo ERA para brigada: PASS, NIOSH y cotización"
-seoDescription: "Equipo de respiración autónoma ERA para brigada: compara PASS, presión positiva, NIOSH, cilindros y avisos de configuración antes de cotizar."
+seoTitle: "Equipo de respiración autónoma | ERA y SCBA"
+seoDescription: "Equipo de respiración autónoma: compara ERA, SCBA, PASS, presión positiva, NIOSH y cilindros antes de cotizar."
 relatedProducts: ["traje-aproximacion-aluminizado", "conjunto-estructural-chaqueton-pantalon"]
 relatedServices: ["diagnostico-de-riesgo", "capacitacion-dc3", "inspeccion"]
 faqs:
-  - question: "¿Qué es un equipo de respiración autónoma ERA?"
+  - question: "¿Qué equipo de respiración autónoma necesita mi brigada?"
     answer: "Es el equipo también llamado SCBA que suministra aire al usuario mediante un circuito autónomo. Para una empresa se selecciona para la brigada conforme al riesgo respiratorio identificado, no como una compra genérica para cuerpos de bomberos municipales."
   - question: "¿Qué pide la Guía III de la NOM-002 para un ERA?"
     answer: "La Guía de referencia III de la NOM-002 es enunciativa, no obligatoria. Indica duración mínima de 30 minutos, alarma de fin de uso y preferentemente presión positiva. Es el piso que conviene conocer para comparar una configuración de brigada."
@@ -70,7 +70,7 @@ variantes:
 ficha:
   heroBadge: EPP respiratorio para brigada
   heroTitle: "Equipo de respiración autónoma"
-  heroAccent: "configurado para el riesgo"
+  heroAccent: "ERA y SCBA según el riesgo"
   descRight:
     - "El equipo de respiración autónoma, ERA o SCBA, se selecciona para la brigada de una empresa según el riesgo respiratorio, la tarea y el expediente que se requiere sostener. PASS o sin PASS es una decisión central cuando se compran pocos equipos."
     - "La Guía de referencia III de la NOM-002 es enunciativa, no obligatoria, e indica duración mínima de 30 minutos, alarma de fin de uso y preferentemente presión positiva. Cada confirmación debe corresponder a la misma configuración cotizada."
@@ -116,9 +116,9 @@ fichaHeads:
     - "Ningún fabricante publica en español y para México una sola ficha que confirme a la vez PASS, presión positiva, certificación NFPA y CBRN para la misma configuración. Por eso se confirma y documenta al cotizar."
 ---
 
-El **equipo de respiración autónoma (ERA)**, también llamado SCBA, se configura para la brigada contra incendio de una empresa. La Guía de referencia III de la NOM-002 es enunciativa, no obligatoria, y plantea un piso de duración mínima de 30 minutos, alarma de fin de uso y preferentemente presión positiva.
+El **equipo de respiración autónoma (ERA)**, también llamado SCBA, se configura para la brigada contra incendio de una empresa. Un ERA para bomberos se define por el riesgo respiratorio y la tarea. La Guía de referencia III de la NOM-002 es enunciativa, no obligatoria, y plantea un piso de duración mínima de 30 minutos, alarma de fin de uso y preferentemente presión positiva.
 
-### PASS: la decisión de compra que cambia el alcance
+### Equipo de respiración autónoma: PASS y alcance
 
 El PASS es la alarma de hombre inmóvil certificada junto con el ERA. La plataforma con PASS integrado da alarma total tras 30 segundos sin movimiento y monitorea cilindro y batería. Otra plataforma se compra sin PASS y permite adaptarlo después; para una empresa que inicia con pocos equipos, esa diferencia debe quedar definida desde la cotización.
 

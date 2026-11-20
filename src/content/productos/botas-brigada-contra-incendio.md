@@ -1,18 +1,18 @@
 ---
-title: "Botas para brigada contra incendio: selección según el riesgo"
-description: "Botas para brigada contra incendio seleccionadas según el riesgo dominante de calor, agua o electricidad, con evidencia del fabricante para integrar el expediente de EPP."
-cardTitle: "Botas para brigada"
-cardDescription: "Elige entre protección térmica o dieléctrica según el riesgo dominante."
+title: "Botas para bombero según el riesgo de tu brigada"
+description: "Botas para bombero seleccionadas según el riesgo dominante de calor, agua o electricidad, con evidencia del fabricante para integrar tu expediente de EPP."
+cardTitle: "Botas para bombero"
+cardDescription: "Elige protección térmica o dieléctrica según el riesgo dominante."
 category: equipo-bombero
-image: /images/productos/botas-brigada-contra-incendio.svg
+image: /images/productos/botas-brigada-contra-incendio.avif
 price: "Cotizar"
 order: 22
-seoTitle: "Botas para brigada: calor, agua o electricidad"
-seoDescription: "Botas para brigada contra incendio: elige protección térmica o dieléctrica según el riesgo. La Guía III de NOM-002 es enunciativa, no obligatoria."
+seoTitle: "Botas para bombero | Calor, agua o electricidad"
+seoDescription: "Botas para bombero: elige protección térmica o dieléctrica según el riesgo. La Guía III de NOM-002 es enunciativa, no obligatoria."
 relatedProducts: ["capucha-proteccion-brigada"]
 relatedServices: ["diagnostico-de-riesgo", "gestion-documental"]
 faqs:
-  - question: "¿Qué botas debe usar la brigada contra incendio?"
+  - question: "¿Qué botas para bombero necesita mi brigada?"
     answer: "La NOM-002-STPS-2010, numeral 5.9, obliga al patrón a dotar EPP según las funciones y riesgos de la brigada. Antes de elegir una bota, identifica si domina el calor, el agua, el riesgo eléctrico u otra condición de la operación; no conviene resolverlos como si fueran el mismo riesgo."
   - question: "¿La Guía III de la NOM-002 obliga a usar una bota con cuatro propiedades?"
     answer: "No. La Guía de referencia III de la NOM-002 es enunciativa, no obligatoria. Describe una bota de hule con protección térmica, dieléctrica, casquillo y antipunzonante como orientación para revisar el EPP; no convierte esa combinación en una obligación de producto."
@@ -63,7 +63,7 @@ variantes:
     resumen: "Bota dieléctrica industrial para riesgo eléctrico; no sustituye al calzado estructural."
 ficha:
   heroBadge: EPP para brigada contra incendio
-  heroTitle: "Botas para brigada"
+  heroTitle: "Botas para bombero"
   heroAccent: "según el riesgo dominante"
   descRight:
     - "La Guía de referencia III de la NOM-002 describe una bota de hule con protección térmica, dieléctrica, casquillo y antipunzonante, pero esa guía es enunciativa, no obligatoria."
@@ -110,9 +110,9 @@ fichaHeads:
     - "Si compartes las funciones de la brigada y los riesgos de las áreas, se puede definir qué información debe solicitarse antes de cotizar. La marca, el modelo y la disponibilidad se confirman al cotizar."
 ---
 
-La bota de la brigada no se elige por una lista genérica. La NOM-002-STPS-2010, numeral 5.9, obliga al patrón a dotar EPP conforme a las funciones y los riesgos de cada integrante. Consulta también la [capucha o monja para brigada](/productos/capucha-proteccion-brigada/).
+Las **botas para bombero** no se eligen por una lista genérica. Las botas de bombero o una bota estructural responden a riesgos distintos. La NOM-002-STPS-2010, numeral 5.9, obliga al patrón a dotar EPP conforme a las funciones y los riesgos de cada integrante. Consulta también la [capucha para bombero](/productos/capucha-proteccion-brigada/).
 
-### El punto que cambia la decisión
+### Botas para bombero: el punto que cambia la decisión
 
 La Guía de referencia III de la NOM-002, que es enunciativa y no obligatoria, describe una bota de hule con protección térmica, dieléctrica, casquillo y antipunzonante. No se encontró un modelo del mercado mexicano que acredite juntas esas cuatro propiedades.
 

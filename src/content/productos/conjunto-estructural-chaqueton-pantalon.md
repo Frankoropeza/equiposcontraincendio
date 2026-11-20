@@ -1,18 +1,18 @@
 ---
-title: "Conjunto estructural de chaquetón y pantalón para brigada"
-description: "Conjunto estructural de chaquetón y pantalón para brigada contra incendio, seleccionado por sus tres barreras, tareas de rescate y expediente de EPP de la empresa."
-cardTitle: "Conjunto estructural"
-cardDescription: "Chaquetón y pantalón de tres barreras para la brigada de tu empresa."
+title: "Trajes para bomberos: chaquetón y pantalón estructural"
+description: "Trajes para bomberos con chaquetón y pantalón estructural, seleccionados por sus tres barreras, tareas de rescate y expediente de EPP de tu empresa."
+cardTitle: "Trajes para bomberos"
+cardDescription: "Chaquetón y pantalón estructural de tres barreras para tu brigada."
 category: equipo-bombero
-image: /images/productos/conjunto-estructural-chaqueton-pantalon.svg
+image: /images/productos/conjunto-estructural-chaqueton-pantalon.avif
 price: "Cotizar"
 order: 25
-seoTitle: "Conjunto estructural para brigada: chaquetón y pantalón"
-seoDescription: "Conjunto estructural de chaquetón y pantalón para brigada: revisa tres barreras, trazabilidad y selección de EPP según el riesgo de tu empresa."
+seoTitle: "Trajes para bomberos | Chaquetón y pantalón"
+seoDescription: "Trajes para bomberos: revisa chaquetón y pantalón estructural, tres barreras, trazabilidad y selección de EPP según el riesgo."
 relatedProducts: ["traje-aproximacion-aluminizado", "equipo-respiracion-autonoma-era"]
 relatedServices: ["diagnostico-de-riesgo", "capacitacion-dc3", "inspeccion"]
 faqs:
-  - question: "¿Qué es un conjunto estructural para brigada?"
+  - question: "¿Qué trajes para bomberos necesita mi brigada?"
     answer: "Es el ensamble de chaquetón y pantalón que se selecciona para la brigada contra incendio de una empresa conforme a sus funciones y riesgos. No se debe elegir como si fuera una compra genérica para un cuerpo de bomberos municipal."
   - question: "¿Cuáles son las tres barreras del conjunto estructural?"
     answer: "La Guía de referencia III de la NOM-002, que es enunciativa y no obligatoria, describe textil exterior autoextinguible que no se funda, barrera de humedad y barrera térmica. Esas tres capas explican el concepto que debe revisarse en la ficha de cada ensamble."
@@ -63,8 +63,8 @@ variantes:
     resumen: "Para brigada con tareas de rescate y accesorios definidos por su función."
 ficha:
   heroBadge: EPP estructural para brigada
-  heroTitle: "Conjunto de chaquetón y pantalón"
-  heroAccent: "según función y riesgo"
+  heroTitle: "Trajes para bomberos"
+  heroAccent: "con chaquetón y pantalón estructural"
   descRight:
     - "El conjunto estructural para la brigada de una empresa se revisa como ensamble de chaquetón y pantalón, no como una compra pensada para un cuerpo municipal. La selección parte de las funciones, el riesgo identificado y el expediente de EPP."
     - "La Guía de referencia III de la NOM-002, enunciativa y no obligatoria, describe el concepto de tres barreras: textil exterior autoextinguible que no se funda, barrera de humedad y barrera térmica."
@@ -110,9 +110,9 @@ fichaHeads:
     - "La NFPA es referencia técnica, no ley en México. La NFPA 1851 fijaba en el pasado un retiro máximo de 10 años; se consolidó en NFPA 1850 y no se verificó su texto final."
 ---
 
-El **conjunto estructural de chaquetón y pantalón** se selecciona para la brigada contra incendio de una empresa conforme a sus riesgos y tareas. La Guía de referencia III de la NOM-002 es enunciativa, no obligatoria, pero describe el criterio útil de exterior autoextinguible que no se funda, barrera de humedad y barrera térmica.
+Los **trajes para bomberos**, incluidos los modelos de **traje estructural de bombero** con **chaquetón y pantalón de bombero**, se seleccionan para tu brigada conforme a sus riesgos y tareas. La Guía de referencia III de la NOM-002 es enunciativa, no obligatoria, pero describe el criterio útil de exterior autoextinguible que no se funda, barrera de humedad y barrera térmica.
 
-### Expediente y reemplazo
+### Trajes para bomberos: expediente y reemplazo
 
 Una opción con trazabilidad permite registrar fecha de mantenimiento y de caducidad. La NFPA 1851 fijaba en el pasado el retiro del ensamble a más tardar 10 años desde fabricación, sin sustituir el retiro anticipado por condición; se consolidó en NFPA 1850 y no se verificó su texto final. En México aplica el numeral 7.1 e) de la NOM-017-STPS-2024 para el reemplazo por daño, desgaste, quemaduras no reparables, vida útil o eventos indicados.
 

@@ -1,18 +1,18 @@
 ---
-title: "Capucha o monja para brigada contra incendio con barrera de partículas"
-description: "Capucha o monja para brigada contra incendio que cubre cabeza y cuello bajo el casco, con opciones térmicas y configuraciones con capa bloqueadora de partículas."
-cardTitle: "Capucha o monja"
-cardDescription: "Protección de cabeza y cuello bajo el casco para la brigada contra incendio."
+title: "Capucha para bombero con barrera de partículas"
+description: "Capucha para bombero que cubre cabeza y cuello bajo el casco, con opciones térmicas y configuraciones con capa bloqueadora de partículas."
+cardTitle: "Capucha para bombero"
+cardDescription: "Protección de cabeza y cuello bajo el casco para tu brigada contra incendio."
 category: equipo-bombero
-image: /images/productos/capucha-proteccion-brigada.svg
+image: /images/productos/capucha-proteccion-brigada.avif
 price: "Cotizar"
 order: 23
-seoTitle: "Capucha para brigada con barrera de partículas"
-seoDescription: "Capucha o monja para brigada contra incendio: compara capas térmicas y bloqueadoras de partículas. NFPA es referencia técnica, no ley en México."
+seoTitle: "Capucha para bombero | Barrera de partículas"
+seoDescription: "Capucha para bombero: compara capas térmicas y bloqueadoras de partículas. NFPA es referencia técnica, no ley en México."
 relatedProducts: ["botas-brigada-contra-incendio"]
 relatedServices: ["diagnostico-de-riesgo", "gestion-documental"]
 faqs:
-  - question: "¿Qué es una capucha o monja para brigada contra incendio?"
+  - question: "¿Qué capucha para bombero necesita mi brigada?"
     answer: "Es la prenda que va bajo el casco y cubre cabeza y cuello. En México también se le conoce como monja. La Guía de referencia III de la NOM-002, que es enunciativa y no obligatoria, la menciona junto con guantes y tirantes como parte de la orientación para revisar el EPP de la brigada."
   - question: "¿La capucha estructural debe llevar capa bloqueadora de partículas?"
     answer: "Desde la NFPA 1970, la capucha estructural debe llevar una capa bloqueadora de partículas; antes era opcional. NFPA es una referencia técnica, no ley en México. El cambio distingue una capucha nueva de una anterior y permite comparar si la configuración publicada incorpora esa capa."
@@ -71,7 +71,7 @@ variantes:
     resumen: "Capucha con barrera térmica para respuesta puntual donde domina el calor."
 ficha:
   heroBadge: EPP para brigada contra incendio
-  heroTitle: "Capucha o monja para brigada"
+  heroTitle: "Capucha para bombero"
   heroAccent: "con protección bajo el casco"
   descRight:
     - "La capucha o monja cubre cabeza y cuello bajo el casco. La Guía de referencia III de la NOM-002 la menciona junto con guantes y tirantes, pero esa guía es enunciativa, no obligatoria."
@@ -118,9 +118,9 @@ fichaHeads:
     - "También explicamos cómo comparar largos, capas, materiales y gramaje sin sustituir el análisis del riesgo. La marca, el modelo y la disponibilidad se confirman al cotizar."
 ---
 
-La capucha o «monja» va bajo el casco y cubre cabeza y cuello. La NOM-002-STPS-2010, numeral 5.9, obliga al patrón a dotar EPP según las funciones y riesgos de la brigada. Consulta también las [botas para brigada contra incendio](/productos/botas-brigada-contra-incendio/).
+La **capucha para bombero**, también llamada monja de bombero, va bajo el casco y cubre cabeza y cuello. Una capucha Nomex se revisa por sus capas y condiciones de uso. La NOM-002-STPS-2010, numeral 5.9, obliga al patrón a dotar EPP según las funciones y riesgos de la brigada. Consulta también las [botas para bombero](/productos/botas-brigada-contra-incendio/).
 
-### El criterio que distingue una capucha nueva
+### Capucha para bombero: el criterio que la distingue
 
 Desde la NFPA 1970, la capucha estructural debe llevar una capa bloqueadora de partículas; antes era opcional. NFPA es referencia técnica, no ley en México. La capa reduce la exposición a partículas de la combustión en cuello y mandíbula y por eso es relevante si la brigada tiene exposición repetida al humo.
 

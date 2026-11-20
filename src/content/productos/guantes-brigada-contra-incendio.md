@@ -1,18 +1,18 @@
 ---
-title: "Guantes para brigada contra incendio de empresa"
-description: "Guantes para integrantes de brigada contra incendio, seleccionados por riesgo térmico, mecánico, químico o eléctrico y documentados conforme a la NOM-017-STPS-2024."
-cardTitle: "Guantes para brigada"
-cardDescription: "Protección de manos para brigada, elegida por el riesgo y la función de cada puesto."
+title: "Guantes para bombero para brigada contra incendio"
+description: "Guantes para bombero seleccionados por riesgo térmico, mecánico, químico o eléctrico y documentados conforme a la NOM-017-STPS-2024."
+cardTitle: "Guantes para bombero"
+cardDescription: "Protección de manos para tu brigada, elegida por riesgo y función de cada puesto."
 category: equipo-bombero
-image: /images/productos/guantes-brigada-contra-incendio.svg
+image: /images/productos/guantes-brigada-contra-incendio.avif
 price: "Cotizar"
 order: 21
-seoTitle: "Guantes para brigada contra incendio de empresa"
-seoDescription: "Guantes para brigada contra incendio: opciones estructurales, de rescate y de corte según riesgo y selección de EPP."
+seoTitle: "Guantes para bombero | Protección estructural"
+seoDescription: "Guantes para bombero: opciones estructurales, de rescate y de corte según riesgo y selección de EPP."
 relatedProducts: ["casco-brigada-contra-incendio"]
 relatedServices: ["diagnostico-de-riesgo", "capacitacion-dc3"]
 faqs:
-  - question: "¿Qué guantes necesita una brigada contra incendio?"
+  - question: "¿Qué guantes para bombero necesita mi brigada?"
     answer: "Se seleccionan según los riesgos identificados por puesto y área, y la función que realizará cada integrante. La Guía de referencia III de la NOM-002 es enunciativa, no obligatoria; describe guantes contra calor, flama, químicos corrosivos y descarga eléctrica."
   - question: "¿Existe una NOM mexicana para guantes de brigada?"
     answer: "No hay NOM de producto para guantes de brigada contra incendio. La NOM-017-STPS-2024 pide identificar riesgos, seleccionar el EPP, verificar certificación, capacitar, señalizar y registrar. Su numeral 5.4 permite usar información del fabricante cuando no hay NOM, NMX o Estándares Técnicos aplicables."
@@ -61,8 +61,8 @@ variantes:
     resumen: "Puño de para-aramida de 2 capas para traslape reforzado; el fabricante lo presenta como refuerzo adicional."
 ficha:
   heroBadge: "EPP para brigada de empresa"
-  heroTitle: "Guantes para"
-  heroAccent: "brigada contra incendio"
+  heroTitle: "Guantes para bombero"
+  heroAccent: "para brigada contra incendio"
   descRight:
     - "Los guantes de la brigada se asignan según la tarea y el riesgo al que estará expuesto cada puesto: calor, flama, corte, químicos corrosivos o descarga eléctrica. No existe una NOM de producto específica para ellos."
     - "La NOM-017-STPS-2024 ordena identificar el riesgo, seleccionar el EPP, verificar su certificación, capacitar, señalizar y registrar. Cuando no haya NOM, su numeral 5.4 permite respaldar la elección con NMX, Estándares Técnicos o información del fabricante."
@@ -108,9 +108,9 @@ fichaHeads:
     - "Si compartes las funciones de tu brigada y las áreas de riesgo, se puede revisar qué protección debe documentarse antes de cotizar. Así el guante queda vinculado al puesto y no a una descripción comercial aislada."
 ---
 
-Los **guantes para brigada contra incendio** se eligen por riesgo y tarea, no solo por material. La brigada de una empresa puede requerir protección distinta para calor, corte, metal, vidrio, rescate vehicular o riesgo eléctrico.
+Los **guantes para bombero** se eligen por riesgo y tarea, no solo por material. Los guantes de bombero o guantes estructurales para tu brigada pueden requerir protección distinta para calor, corte, metal, vidrio, rescate vehicular o riesgo eléctrico.
 
-### Criterio de selección
+### Guantes para bombero: criterio de selección
 
 - La NOM-002-STPS-2010, numeral 5.9, obliga al patrón a dotar EPP a la brigada según sus funciones y riesgos.
 - No hay NOM de producto para guantes. La NOM-017-STPS-2024, numeral 5.4, permite respaldar la selección con información del fabricante cuando no hay NOM, NMX o Estándares Técnicos.

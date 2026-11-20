@@ -1,18 +1,18 @@
 ---
-title: "Casco para brigada contra incendio de empresa"
-description: "Casco para integrantes de brigada contra incendio, seleccionado según el riesgo y las funciones del puesto, con requisitos de la NOM-115-STPS-2009 cuando corresponda."
-cardTitle: "Casco para brigada"
-cardDescription: "Protección de cabeza para la brigada, según riesgo, función y expediente de EPP."
+title: "Casco de bombero para brigada contra incendio"
+description: "Casco de bombero seleccionado para tu brigada según el riesgo y las funciones del puesto, con requisitos de la NOM-115-STPS-2009 cuando corresponda."
+cardTitle: "Casco de bombero"
+cardDescription: "Protección de cabeza para tu brigada según riesgo, función y expediente de EPP."
 category: equipo-bombero
-image: /images/productos/casco-brigada-contra-incendio.svg
+image: /images/productos/casco-brigada-contra-incendio.avif
 price: "Cotizar"
 order: 20
-seoTitle: "Casco para brigada contra incendio | NOM-115"
-seoDescription: "Casco para brigada contra incendio de empresa: revisa opciones estructurales, forestales e industriales y la NOM-115-STPS-2009."
+seoTitle: "Casco de bombero | Opciones estructurales"
+seoDescription: "Casco de bombero para brigada: revisa opciones estructurales, forestales e industriales y la NOM-115-STPS-2009."
 relatedProducts: ["guantes-brigada-contra-incendio"]
 relatedServices: ["diagnostico-de-riesgo", "capacitacion-dc3"]
 faqs:
-  - question: "¿Qué casco necesita una brigada contra incendio?"
+  - question: "¿Qué casco de bombero necesita mi brigada?"
     answer: "Depende del riesgo identificado, de la función asignada y del área donde interviene cada integrante. La NOM-002-STPS-2010, numeral 5.9, obliga al patrón a dotar EPP a la brigada según sus funciones y riesgos. No se debe elegir como si fuera equipo para un cuerpo municipal."
   - question: "¿Qué dice la NOM-002 sobre el casco de brigada?"
     answer: "La Guía de referencia III de la NOM-002 es enunciativa, no obligatoria. Para casco describe protección dieléctrica y resistencia a impacto, calor y flama, con suspensión, tafilete, protección de cuello y orejas y pantalla facial. La selección final parte del riesgo real del puesto."
@@ -67,8 +67,8 @@ variantes:
     resumen: "Casco industrial dieléctrico clase E para riesgo eléctrico; no es un casco estructural ni para fuego confinado."
 ficha:
   heroBadge: "EPP para brigada de empresa"
-  heroTitle: "Casco para"
-  heroAccent: "brigada contra incendio"
+  heroTitle: "Casco de bombero"
+  heroAccent: "para brigada contra incendio"
   descRight:
     - "El casco se selecciona para la brigada contra incendio de tu empresa a partir del riesgo y de la función que realizará cada integrante. La NOM-002-STPS-2010, numeral 5.9, obliga al patrón a dotar ese EPP."
     - "En cascos, la NOM-115-STPS-2009 es el referente mexicano de producto. Para los demás elementos de EPP, la NOM-017-STPS-2024 orienta la selección, verificación, capacitación, señalización y registro."
@@ -114,9 +114,9 @@ fichaHeads:
     - "Si compartes las funciones de tu brigada y las áreas de riesgo, se puede revisar qué información falta antes de cotizar. La definición final debe conservar el vínculo entre riesgo, EPP, capacitación y registro."
 ---
 
-El **casco para brigada contra incendio** protege la cabeza de quienes atienden una emergencia dentro de tu empresa. No se elige por apariencia: debe corresponder al riesgo y a la función asignada a cada integrante de la brigada.
+El **casco de bombero** protege la cabeza de quienes atienden una emergencia dentro de tu empresa. Al comparar **cascos para bomberos**, no elijas por apariencia: cada casco estructural debe corresponder al riesgo y a la función asignada a cada integrante de la brigada.
 
-### Selección y cumplimiento
+### Casco de bombero: selección y cumplimiento
 
 - La NOM-002-STPS-2010, numeral 5.9, obliga al patrón a dotar EPP a los integrantes de la brigada contra incendio según sus funciones y riesgos.
 - La NOM-115-STPS-2009 aplica a cascos de protección fabricados, comercializados, distribuidos e importados en México.

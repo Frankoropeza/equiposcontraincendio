@@ -1,14 +1,14 @@
 ---
-title: "Traje de aproximación aluminizado para brigadas industriales"
-description: "Traje de aproximación aluminizado para brigadas industriales expuestas a calor radiante, seleccionado por distancia, conjunto completo y condiciones de vapor o humedad."
+title: "Traje aluminizado para calor radiante industrial"
+description: "Traje aluminizado para brigadas industriales expuestas a calor radiante, seleccionado por distancia, conjunto completo y condiciones de vapor o humedad."
 cardTitle: "Traje aluminizado"
 cardDescription: "EPP aluminizado para exposición a calor radiante en procesos industriales."
 category: equipo-bombero
-image: /images/productos/traje-aproximacion-aluminizado.svg
+image: /images/productos/traje-aproximacion-aluminizado.avif
 price: "Cotizar"
 order: 24
-seoTitle: "Traje aluminizado para brigada: selección y cotización"
-seoDescription: "Traje aluminizado para brigada industrial: compara capas, conjunto completo y exposición a calor radiante antes de cotizar según el riesgo."
+seoTitle: "Traje aluminizado | Selección y cotización"
+seoDescription: "Traje aluminizado para brigada industrial: compara capas, conjunto completo y exposición a calor radiante antes de cotizar."
 relatedProducts: ["conjunto-estructural-chaqueton-pantalon", "equipo-respiracion-autonoma-era"]
 relatedServices: ["diagnostico-de-riesgo", "capacitacion-dc3", "inspeccion"]
 faqs:
@@ -69,7 +69,7 @@ variantes:
     resumen: "Para exposición radiante sostenida en colada, horno de arco o cemento."
 ficha:
   heroBadge: EPP para brigada industrial
-  heroTitle: "Protección aluminizada"
+  heroTitle: "Traje aluminizado"
   heroAccent: "según distancia y exposición"
   descRight:
     - "El traje de aproximación aluminizado se elige para la brigada de una empresa frente a calor radiante. La distancia a la fuente, el vapor, la humedad y la tarea determinan si procede una prenda monocapa, doble capa o un conjunto de triple capa."
@@ -116,9 +116,9 @@ fichaHeads:
     - "La NFPA 1970, edición 2025, se usa como referencia técnica para proximidad; no es ley en México. No existe una NOM mexicana de producto para el traje de aproximación aluminizado."
 ---
 
-El **traje de aproximación aluminizado** es EPP para la brigada contra incendio de una empresa ante calor radiante. No se compra como equipo para un cuerpo municipal ni por una promesa genérica de autonomía: se selecciona por la tarea, la distancia y las condiciones de exposición.
+El **traje aluminizado** o traje de aproximación es EPP para la brigada contra incendio de una empresa ante calor radiante. Si buscas un traje de acercamiento al fuego, confírmalo por la tarea, la distancia y las condiciones de exposición, no por una promesa genérica de autonomía.
 
-### Límite que debe quedar por escrito
+### Traje aluminizado: límite que debe quedar por escrito
 
 «Salvo que se especifique de otro modo, las prendas aluminizadas NO están diseñadas para entrar dentro del fuego.» El aluminio refleja entre 93 y 97 % del calor radiante, pero entre 3 y 7 % siempre se transfiere. Si la distancia baja de 10 a 5 metros, esa energía se multiplica por cuatro; a 1 metro probablemente no ofrecerá protección ni durante 15 minutos.
 
