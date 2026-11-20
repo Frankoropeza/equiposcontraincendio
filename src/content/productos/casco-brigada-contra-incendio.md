@@ -56,7 +56,7 @@ variantes:
   - nombre: "Casco contemporáneo de dos materiales"
     badge: "Mismo formato"
     desc: "Línea de formato contemporáneo disponible en termoplástico o fibra de vidrio ligera. Permite decidir el material sin cambiar el formato del casco, para revisar la alternativa que corresponda al riesgo y a la función de la brigada."
-    specs: "Formato contemporáneo · Termoplástico o fibra de vidrio ligera · Material por confirmar"
+    specs: "Formato contemporáneo · Termoplástico o fibra de vidrio ligera · Eliges el material"
     waText: "Hola, quiero cotizar un casco contemporáneo y comparar termoplástico con fibra de vidrio"
     resumen: "Mismo formato contemporáneo disponible en termoplástico o fibra de vidrio ligera para comparar materiales."
   - nombre: "Casco forestal para vegetación"

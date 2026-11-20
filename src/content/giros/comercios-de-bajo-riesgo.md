@@ -47,7 +47,8 @@ documentos:
   - { entidad: edomex, doc: "Dictamen o visto bueno de Protección Civil de bajo riesgo, del municipio, renovado cada año", fund: "Código Administrativo art. 6.25 Bis", tag: OL }
   - { entidad: edomex, doc: "Para el visto bueno suelen pedir factura o carta responsiva del extintor, fotos de fachada, interior y señales, croquis y constancia de capacitación", fund: "Cédulas de Naucalpan, Coacalco, Cuautitlán y Cuautitlán Izcalli", tag: RI }
   - { entidad: ambas, doc: "Con trabajadores: bitácora mensual de extintores y constancia de mantenimiento anual con etiqueta y collarín", fund: "NOM-002-STPS-2010, 7.2 y 7.18", tag: OL }
-  - { entidad: ambas, doc: "Simulacros: los convocados por la autoridad en CDMX, con escrito bajo protesta; al menos dos al año en Edomex", fund: "NT-SGIRPC-SIM-007-2024; Código Administrativo art. 6.23", tag: OL }
+  - { entidad: cdmx, doc: "Actas de los simulacros convocados por la autoridad, con escrito bajo protesta", fund: "NT-SGIRPC-SIM-007-2024", tag: OL }
+  - { entidad: edomex, doc: "Actas de simulacro: al menos dos al año", fund: "Código Administrativo del Estado de México, art. 6.23", tag: OL }
 equipo:
   - { item: "Extintor señalizado", uso: "Aunque el local mida 40 m²: la NOM-002 pide uno por cada 300 m² o fracción. A la vista, a no más de 1.50 m y con servicio vigente.", fund: "Ley de GIRPC art. 64; NOM-002-STPS-2010, 7.17", prio: B, tag: OL }
   - { item: "Agente correcto para tu riesgo", uso: "PQS ABC en general; clase K si cocinas con aceite; CO₂ si el riesgo principal es equipo eléctrico.", fund: "NOM-002-STPS-2010, Tabla 1", prio: B, tag: OL }

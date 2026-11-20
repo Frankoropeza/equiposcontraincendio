@@ -15,19 +15,19 @@
 import { COMPANY, CONTACT, SERVICES } from '@config/site'
 
 export const nosotrosMeta = {
-  title: 'CONINC: más de 35 años en equipos contra incendios',
+  title: 'CONINC | equipo contra incendio en CDMX',
   description:
-    'CONINC vende, instala y da mantenimiento a equipos contra incendios en CDMX y Estado de México, con más de 35 años en el mercado. Conoce la empresa.',
+    'CONINC vende, instala y da mantenimiento a equipos contra incendios en CDMX y Estado de México. Conoce la empresa.',
 }
 
 export const nosotrosHero = {
-  badge: 'Quiénes somos · Más de 35 años',
+  badge: 'Quiénes somos',
   title: 'CONINC: más de 35 años en',
   accent: 'equipos contra incendios',
   subtitle:
     'Somos una empresa con sede en la Ciudad de México dedicada a la venta, instalación y mantenimiento de equipo contra incendio. Hoy atendemos toda la Ciudad de México y el Estado de México desde nuestras oficinas en Miguel Hidalgo.',
   descRight: [
-    'CONINC viene de «contra incendios». Es el nombre de una empresa que lleva más de 35 años en el mercado mexicano vendiendo extintores, detección y alarma, hidrantes, señalización y equipo de protección, y dando el servicio que los mantiene vigentes.',
+    'CONINC viene de «contra incendios». Es el nombre de una empresa que vende extintores, detección y alarma, hidrantes, señalización y equipo de protección, y da el servicio que los mantiene vigentes.',
     'Esa trayectoria se traduce en algo concreto para quien nos contrata: sabemos qué pide la norma para cada giro, qué revisa un inspector y qué documentación tiene que quedar en el expediente. Lo aplicamos antes de cotizar, no después.',
   ],
 }
@@ -42,7 +42,7 @@ export const fichaEmpresa = {
   rows: [
     ['Nombre comercial', COMPANY.name],
     ['Origen del nombre', COMPANY.nameOrigin],
-    ['Trayectoria', `${COMPANY.experience.long}.`],
+    ['Trayectoria', 'Experiencia en el mercado mexicano.'],
     ['Actividad', 'Venta, instalación, mantenimiento, recarga e inspección de equipo contra incendio; capacitación de brigadas y gestión documental.'],
     ['Oficinas', COMPANY.office],
     ['Teléfono y WhatsApp', `${CONTACT.phone} (misma línea para llamada y WhatsApp)`],
@@ -56,12 +56,12 @@ export const fichaEmpresa = {
 // ── Trayectoria (prose) ──────────────────────────────────────────────────────
 export const trayectoria = {
   eyebrow: 'Trayectoria',
-  title: 'Más de 35 años en el',
+  title: 'Experiencia en el',
   titleAccent: 'mercado mexicano',
   paragraphs: [
-    'Durante más de 35 años, CONINC ha vendido equipo contra incendio a empresas e inmuebles en México. En ese tiempo han cambiado las normas, los agentes extintores y la forma en que la autoridad verifica, pero el trabajo de fondo sigue siendo el mismo: que el equipo correcto esté en el lugar correcto, funcionando y con su documentación en regla.',
+    'CONINC ha vendido equipo contra incendio a empresas e inmuebles en México. Han cambiado las normas, los agentes extintores y la forma en que la autoridad verifica, pero el trabajo de fondo sigue siendo el mismo: que el equipo correcto esté en el lugar correcto, funcionando y con su documentación en regla.',
     'Esa experiencia es la que nos permite hacer una recomendación con criterio. Un extintor de PQS no sirve igual en una cocina que en un site de cómputo; una bodega de riesgo alto no se equipa como un piso de oficinas. Antes de cotizar entendemos qué se puede quemar en tu inmueble, qué exige la NOM-002-STPS-2010 para tu grado de riesgo y qué te van a pedir en la visita de Protección Civil.',
-    'Hoy concentramos el servicio en toda la Ciudad de México y el Estado de México. Es la zona donde podemos entregar, instalar y dar mantenimiento en sitio con el nivel de atención que un cliente espera de una empresa con esta trayectoria.',
+    'Hoy concentramos el servicio en toda la Ciudad de México y el Estado de México. Es la zona donde podemos entregar, instalar y dar mantenimiento en sitio.',
   ],
   quote: {
     eyebrow: 'Atención directa',
@@ -75,6 +75,18 @@ export const trayectoria = {
     itemsLabel: 'Qué recibes',
     ctaLabel: 'Cotizar por WhatsApp',
   },
+}
+
+export const atencionEnSitio = {
+  eyebrow: 'En tu inmueble',
+  title: 'Del levantamiento a la',
+  titleAccent: 'visita de revisión',
+  desc: 'Qué se revisa en sitio y cómo se atienden los siguientes pasos.',
+  items: [
+    { title: 'Levantamiento en sitio', text: 'Recorremos el inmueble o revisamos tu inventario: qué equipo hay, dónde está y cuándo vence cada pieza. Con el plano se propone la ubicación del equipo.' },
+    { title: 'Antes de la revisión', text: 'CONINC prepara el equipo y su expediente para la revisión. El dictamen lo emite la autoridad o la unidad facultada.' },
+    { title: 'Atención por WhatsApp', text: `Por WhatsApp hablas con quien resuelve, en horario de atención: ${CONTACT.hours.weekdays} y ${CONTACT.hours.saturday.charAt(0).toLowerCase()}${CONTACT.hours.saturday.slice(1)}.` },
+  ],
 }
 
 // ── Servicios (DataTable: Servicio | Qué resuelve | Página) ───────────────────
@@ -119,11 +131,7 @@ export const loQueNoHacemos = {
 export const nosotrosFaqs = [
   {
     question: '¿Qué es CONINC?',
-    answer: `CONINC es una empresa de equipos contra incendios con sede en la Ciudad de México y más de 35 años en el mercado mexicano. El nombre viene de «contra incendios». Vende, instala y da mantenimiento a extintores, detección y alarma, hidrantes, señalización y equipo de protección para empresas e inmuebles.`,
-  },
-  {
-    question: '¿Cuánto tiempo tiene CONINC en el mercado?',
-    answer: 'Más de 35 años vendiendo equipo contra incendio en el mercado mexicano.',
+    answer: 'CONINC es una empresa de equipos contra incendios con sede en la Ciudad de México. El nombre viene de «contra incendios». Vende, instala y da mantenimiento a extintores, detección y alarma, hidrantes, señalización y equipo de protección para empresas e inmuebles.',
   },
   {
     question: '¿Dónde están las oficinas de CONINC?',

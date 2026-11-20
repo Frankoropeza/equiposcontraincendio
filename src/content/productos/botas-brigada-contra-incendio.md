@@ -58,7 +58,7 @@ variantes:
   - nombre: "Bota para extinción estructural con tallaje europeo"
     badge: "Tallas 38 a 48"
     desc: "Bota descrita para extinción estructural y rescate, disponible en tallas europeas 38 a 48. Es una opción cuando la compra se define por ese tallaje. No tiene más especificación publicada: antes de elegirla, solicita información del fabricante según el riesgo identificado."
-    specs: "Extinción estructural y rescate · Tallas europeas 38 a 48 · Especificación por confirmar"
+    specs: "Extinción estructural y rescate · Tallas europeas 38 a 48 · Ficha técnica al cotizar"
     waText: "Hola, quiero cotizar botas para extinción estructural en tallas europeas"
     resumen: "Alternativa para extinción estructural y rescate con tallaje europeo de 38 a 48."
   - nombre: "Bota dieléctrica industrial con casquillo no metálico"

@@ -15,7 +15,7 @@ import GirosQueLoNecesitan from '@components/GirosQueLoNecesitan.astro';
 import RelatedLinks from '@components/RelatedLinks.astro';
 import FAQWithContact from '@components/FAQWithContact.astro';
 import { FICHA_DEFAULT, HEADS_DEFAULT } from '@data/fichas';
-import { EXT_FORMATO_LABEL } from '@data/extintores-catalogo';
+import { EXT_AGENTE_INFO, EXT_AGENTE_LABEL, EXT_FORMATO_LABEL } from '@data/extintores-catalogo';
 import { cierreExtintores, cierreGeneral, faltanParaCuatro } from '@data/cierre';
 import { CONTACT, waUrl, telUrl, TAXONOMY, sectionMenuItems } from '@config/site';
 import { slugify } from '@lib/slug';
@@ -113,11 +113,26 @@ const portableCount = variantes.filter((item) => item.formato === 'portatil').le
 const mobileCount = variantes.filter((item) => item.formato === 'movil').length;
 const presentationSummary = [portableCount ? `${portableCount} portátil${portableCount === 1 ? '' : 'es'}` : '', mobileCount ? `${mobileCount} sobre ruedas` : ''].filter(Boolean).join(' y ');
 const comparable = variantes.filter((item) => item.capacidad);
-const tableRows = comparable.map((item) => [
-  item.nombre, item.capacidad ?? '',
-  item.formato ? (EXT_FORMATO_LABEL[item.formato as keyof typeof EXT_FORMATO_LABEL] ?? item.formato) : 'Según presentación',
-  item.clases?.join(', ') ?? 'Según fabricante', item.clasificacion ?? 'Según fabricante',
+const optionalTableColumns = [
+  {
+    label: 'Formato',
+    values: comparable.map((item) => item.formato ? (EXT_FORMATO_LABEL[item.formato as keyof typeof EXT_FORMATO_LABEL] ?? item.formato) : ''),
+  },
+  { label: 'Clases de fuego', values: comparable.map((item) => item.clases?.join(', ') ?? '') },
+  { label: 'Clasificación', values: comparable.map((item) => item.clasificacion ?? '') },
+].filter((column) => column.values.some(Boolean));
+const tableColumns = ['Presentación', 'Capacidad', ...optionalTableColumns.map((column) => column.label)];
+const tableRows = comparable.map((item, index) => [
+  item.nombre,
+  item.capacidad ?? '',
+  ...optionalTableColumns.map((column) => column.values[index] || '—'),
 ]);
+const agentSections = Array.from(new Set(
+  variantes
+    .map((item) => item.agente)
+    .filter((agente): agente is string => typeof agente === 'string')
+    .filter((agente): agente is keyof typeof EXT_AGENTE_INFO => agente in EXT_AGENTE_INFO),
+)).map((agente) => ({ agente, info: EXT_AGENTE_INFO[agente] }));
 const relatedCandidates = [
   // Desc corta: la card de RelatedLinks recorta a ~40 caracteres. En las
   // hermanas de extintores se usa su badge (clases de fuego), que sí cabe.
@@ -168,6 +183,19 @@ function shortDescription(value?: string) { return value ?? ''; }
   <section class="section section--surface" id="presentaciones">
     <div class="container">
       <SectionHeading layout="duo" eyebrow="Presentaciones" title="Presentaciones" titleAccent={presAccent} desc={presDesc} body={heads.presentaciones} />
+      {agentSections.map(({ agente, info }) => (
+        <article class="agent-info">
+          <h3>Sobre el agente {EXT_AGENTE_LABEL[agente]}</h3>
+          <p><strong>Limitación:</strong> {info.limitacion}</p>
+          <div>
+            <strong>Ventajas</strong>
+            <ul>
+              {info.ventajas.map((ventaja) => <li>{ventaja}</li>)}
+            </ul>
+          </div>
+          <p><strong>Mantenimiento:</strong> {info.mantenimiento}</p>
+        </article>
+      ))}
       <div class="card-grid">
         {variantes.map((variante, index) => {
           const id = slugify(variante.nombre);
@@ -179,7 +207,7 @@ function shortDescription(value?: string) { return value ?? ''; }
     </div>
   </section>
 
-  {comparable.length >= 2 && <DataTable id="comparativa" eyebrow="Comparativa" title="Todas las presentaciones" titleAccent="frente a frente" desc="Capacidad, formato y clases de fuego de cada presentación." body={heads.comparativa} columns={['Presentación', 'Capacidad', 'Formato', 'Clases de fuego', 'Clasificación']} rows={tableRows} />}
+  {comparable.length >= 2 && <DataTable id="comparativa" eyebrow="Comparativa" title="Todas las presentaciones" titleAccent="frente a frente" desc="Capacidad, formato y clases de fuego de cada presentación." body={heads.comparativa} columns={tableColumns} rows={tableRows} />}
 
   <section class="section section--surface">
     <div class="container">
@@ -202,5 +230,10 @@ function shortDescription(value?: string) { return value ?? ''; }
   /* 2026-09-11: la prosa ocupa el 100% de su columna; el límite de 68ch dejaba
      un hueco de ~320 px entre el texto y la QuoteCard en desktop. */
   .guide-grid .prose { max-width: none; }
+  .agent-info { margin: var(--sp-6) 0; padding: var(--sp-5); border: 1px solid var(--c-border); border-radius: var(--radius-lg); background: var(--c-white); color: var(--c-ink-2); }
+  .agent-info h3, .agent-info p { margin: 0; }
+  .agent-info h3 { color: var(--c-ink); font-family: var(--font-heading); font-size: var(--text-lg); }
+  .agent-info > * + * { margin-top: var(--sp-3); }
+  .agent-info ul { margin: var(--sp-2) 0 0; padding-left: 1.25rem; }
   @media (min-width: 900px) { .guide-grid { grid-template-columns: minmax(0, 1fr) minmax(18rem, 25rem); } }
 </style>

@@ -45,7 +45,8 @@ documentos:
   - { entidad: edomex, doc: "Dictamen o visto bueno de Protección Civil de bajo riesgo del municipio, anual; suelen pedir factura o carta responsiva del extintor, fotos y croquis", fund: "Código Administrativo art. 6.25 Bis; cédulas municipales", tag: RI }
   - { entidad: ambas, doc: "Dictamen de la instalación de gas LP por unidad de verificación, si la instalación es nueva o se modificó (las comerciales no son domésticas)", fund: "NOM-004-SEDG-2004, 5.5 y 5.6", tag: OL }
   - { entidad: ambas, doc: "Con trabajadores: bitácora mensual de extintores y constancia de mantenimiento anual", fund: "NOM-002-STPS-2010, 7.2 y 7.18", tag: OL }
-  - { entidad: ambas, doc: "Simulacros: los convocados por la autoridad en CDMX; al menos dos al año en Edomex", fund: "NT-SGIRPC-SIM-007-2024; Código Administrativo art. 6.23", tag: OL }
+  - { entidad: cdmx, doc: "Actas de los simulacros convocados por la autoridad", fund: "NT-SGIRPC-SIM-007-2024", tag: OL }
+  - { entidad: edomex, doc: "Actas de simulacro: al menos dos al año", fund: "Código Administrativo del Estado de México, art. 6.23", tag: OL }
 equipo:
   - { item: "Extintor PQS ABC", uso: "En el área de clientes y cerca de la salida, a la vista y a no más de 1.50 m. Tlalnepantla pide un mínimo de 4.5 kg; confirma el de tu municipio.", fund: "Ley de GIRPC art. 64; NOM-002-STPS-2010, 7.17", prio: B, tag: OL }
   - { item: "Extintor clase K", uso: "Si hay freidora o plancha con aceite: a no más de 10 m de recorrido de la línea de cocción.", fund: "NOM-002-STPS-2010, Tabla 1", prio: B, tag: OL }

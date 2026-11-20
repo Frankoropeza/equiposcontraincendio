@@ -6,8 +6,6 @@ import { waUrl } from '@config/site';
 import { srcsetFor } from '@lib/img';
 import Card from './Card.astro';
 import {
-  EXT_ACCESORIOS,
-  EXT_AGENTE_INFO,
   EXT_AGENTE_LABEL,
   EXT_CLASE_LABEL,
   EXT_FORMATO_LABEL,
@@ -40,10 +38,6 @@ interface Props {
 }
 
 const { item, index = 0, showFicha = true } = Astro.props as Props;
-const info = EXT_AGENTE_INFO[item.agente as keyof typeof EXT_AGENTE_INFO];
-const accesorios = item.formato
-  ? EXT_ACCESORIOS[item.formato as keyof typeof EXT_ACCESORIOS]
-  : [];
 ---
 
 <Card variant="extintor"
@@ -122,30 +116,6 @@ const accesorios = item.formato
       </div>
     ) : null}
 
-    {info && (
-      <p class="ecard__limit">
-        <strong>Limitación:</strong> {info.limitacion}
-      </p>
-    )}
-
-    {info && (
-      <details class="ecard__more">
-        <summary>Ventajas, mantenimiento y accesorios</summary>
-        <div class="ecard__block">
-          <strong>Ventajas</strong>
-          <ul class="ecard__checks">
-            {info.ventajas.map((ventaja) => <li>{ventaja}</li>)}
-          </ul>
-        </div>
-        <p><strong>Mantenimiento:</strong> {info.mantenimiento}</p>
-        {accesorios.length > 0 && (
-          <div class="ecard__links">
-            {accesorios.map((link) => <a href={link.href}>{link.label}</a>)}
-          </div>
-        )}
-      </details>
-    )}
-
     <div class="ecard__actions">
       <a
         class="btn btn--primary"
@@ -179,8 +149,7 @@ const accesorios = item.formato
 
   .ecard__agent,
   .ecard__labels,
-  .ecard__use-tags,
-  .ecard__links {
+  .ecard__use-tags {
     display: flex;
     flex-wrap: wrap;
     align-items: center;

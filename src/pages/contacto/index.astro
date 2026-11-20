@@ -19,15 +19,15 @@ import { SITE, COMPANY, CONTACT, waUrl, telUrl, WA_MESSAGES, sectionMenuItems } 
 const canales = [
   {
     k: 'wa', titulo: 'WhatsApp', dato: CONTACT.phone, sub: 'Respuesta en horario de atención',
-    href: waUrl(WA_MESSAGES.contacto), external: true, cta: 'Abrir chat',
+    href: waUrl(WA_MESSAGES.contacto), external: true, cta: 'Recibir orientación',
   },
   {
     k: 'tel', titulo: 'Teléfono', dato: CONTACT.phone, sub: 'Lun–Vie 9–18 · Sáb 9–14',
-    href: telUrl(), external: false, cta: 'Llamar ahora',
+    href: telUrl(), external: false, cta: 'Hablar con CONINC',
   },
   {
     k: 'mail', titulo: 'Correo', dato: CONTACT.email, sub: 'Para propuestas y documentos',
-    href: undefined, external: false, cta: 'Enviar correo',
+    href: undefined, external: false, cta: 'Solicitar propuesta',
   },
   {
     k: 'pin', titulo: 'Visítanos', dato: CONTACT.street, sub: CONTACT.city,
@@ -71,10 +71,10 @@ const ICON = {
     badge="CONINC · CDMX y Estado de México"
     title="Ponte en"
     accent="contacto"
-    subtitle="Elige el canal que te resulte más cómodo: WhatsApp, teléfono, correo o una visita a nuestro domicilio."
+    subtitle="WhatsApp y teléfono son la misma línea; también puedes escribir por correo o coordinar una visita."
     descRight={[
-      'Atendemos por WhatsApp, teléfono y correo en horario hábil; también puedes visitarnos con cita previa. Cada canal te conecta directo con nosotros, sin formularios ni pasos de más.',
-      'Cuéntanos qué necesitas —una cotización, una duda técnica o agendar una visita— y te orientamos con gusto. Damos servicio en toda la Ciudad de México y el Estado de México.',
+      'Atendemos por WhatsApp, teléfono y correo de lunes a viernes de 9:00 a 18:00 y sábado de 9:00 a 14:00; también puedes visitarnos con cita previa.',
+      'Para que la primera respuesta sirva, manda tu giro, la superficie y qué equipo o servicio buscas. Damos servicio en toda la Ciudad de México y el Estado de México.',
     ]}
     ctas={[
       { text: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.contacto), variant: 'primary', whatsapp: true },
@@ -90,10 +90,10 @@ const ICON = {
         eyebrow="Canales"
         title="Cuatro formas de"
         titleAccent="ponerte en contacto"
-        desc="WhatsApp, teléfono, correo y visita. Cada uno con su acción directa, sin formularios de por medio."
+        desc="WhatsApp y teléfono usan la misma línea; correo y visita completan las opciones de contacto."
         body={[
-          'Elige el canal que te resulte más cómodo: un mensaje rápido, una llamada, un correo o una visita. Las cuatro opciones te conectan directo con nosotros.',
-          'Para cotizar, lo más ágil es WhatsApp: cuéntanos tu giro, lo que necesitas y tu ubicación, y te respondemos con opciones, disponibilidad y tiempos.',
+          'La misma línea atiende llamadas y WhatsApp. Para propuestas y documentos, usa el correo; para visitar las oficinas, agenda antes por mensaje.',
+          'En tu primer mensaje incluye giro, superficie y el equipo o servicio que buscas; con eso revisamos qué información falta para atender tu caso.',
         ]}
       />
 
@@ -199,4 +199,3 @@ const ICON = {
   .nap__link { font-size: var(--text-sm); font-weight: var(--weight-semibold); color: var(--c-primary); text-decoration: none; }
   .nap__link:hover { text-decoration: underline; }
 </style>
-
