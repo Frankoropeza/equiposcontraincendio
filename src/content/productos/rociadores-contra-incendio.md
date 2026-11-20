@@ -3,7 +3,7 @@ title: "Rociadores contra incendio: sistemas automáticos para empresas"
 description: "Rociadores automáticos contra incendio para naves, bodegas, oficinas, hoteles y plazas: tipos de rociador, sistemas de tubería húmeda, seca y preacción, instalación y cuándo son obligatorios."
 cardTitle: "Rociadores contra incendio"
 cardDescription: "Tubería húmeda, seca y preacción para naves, bodegas, oficinas y hoteles."
-category: hidrantes-mangueras
+category: supresion-fija
 image: /images/showcase/sistema-rociadores-industrial.avif
 price: "Cotizar"
 brand: "CONINC"

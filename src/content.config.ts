@@ -80,6 +80,15 @@ export const PRODUCT_CATEGORIES = [
   'senalizacion',
   'accesorios',
   'equipo-bombero',
+  // Añadidas en la expansión de catálogo 2026-11-20 (plan:
+  // PROJECTS/04-SEO/ECI-Plan-Expansion-Catalogo-y-Contenido-2026-11-20.md).
+  // `supresion-fija` recoge los sistemas que descargan solos sobre el riesgo
+  // —cocina UL 300, agente limpio, CO2, niebla— y se queda con `rociadores`,
+  // que estaba clasificado en `hidrantes-mangueras` aunque no es una toma de
+  // manguera. `rescate-primeros-auxilios` recoge el equipo de atención, y se
+  // queda con `botiquin-primeros-auxilios`, que estaba en `senalizacion`.
+  'supresion-fija',
+  'rescate-primeros-auxilios',
   'general',
 ] as const;
 

@@ -3,7 +3,7 @@ title: "Botiquín de primeros auxilios para empresas y centros de trabajo"
 description: "Botiquines de primeros auxilios de pared y portátiles para oficinas, comercios, naves y brigadas: qué debe contener, dónde se coloca y qué piden la LFT y Protección Civil."
 cardTitle: "Botiquín de primeros auxilios"
 cardDescription: "De pared y portátil, con el contenido que piden la LFT y Protección Civil."
-category: senalizacion
+category: rescate-primeros-auxilios
 image: /images/productos/botiquin-primeros-auxilios-empresa.avif
 price: "Cotizar"
 brand: "CONINC"
