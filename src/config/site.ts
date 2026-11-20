@@ -352,6 +352,7 @@ export const NAV: readonly NavItem[] = [
           { label: 'Hidrantes y mangueras',     href: '/productos/hidrantes-mangueras/',               desc: 'Gabinetes con manguera contra incendio' },
           { label: 'Señalización y emergencia', href: '/productos/senalizacion/',                       desc: 'Señalización fotoluminiscente de evacuación' },
           { label: 'Accesorios y refacciones',  href: '/productos/accesorios/',                          desc: 'Soportes, gabinetes y accesorios para extintor' },
+          { label: 'Equipo para bombero',       href: '/productos/equipo-bombero/',                      desc: 'EPP de brigada por riesgo, con expediente para STPS' },
         ],
       },
       {
@@ -543,6 +544,7 @@ export const FOOTER_NAV: readonly NavGroup[] = [
       { label: 'Detección y alarmas',       href: '/productos/deteccion-alarmas/' },
       { label: 'Hidrantes y mangueras',     href: '/productos/hidrantes-mangueras/' },
       { label: 'Señalización y emergencia', href: '/productos/senalizacion/' },
+      { label: 'Equipo para bombero',       href: '/productos/equipo-bombero/' },
     ],
   },
   {
@@ -715,7 +717,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
   {
     slug: 'equipo-proteccion-personal',
     label: 'Equipo de protección personal',
-    href: '/productos/#equipo-proteccion-personal',
+    href: '/productos/equipo-bombero/',
     image: '/images/showcase/equipo-proteccion-bomberos-epp.avif',
     imageAlt: 'Casco, guantes y equipo de protección personal contra incendio',
     // 2026-11-20: decía «conforme a la NOM-115-STPS» para cascos, guantes Y
@@ -726,9 +728,9 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
     blurb:
       'Cascos, guantes y trajes de aproximación para la brigada que pide la NOM-002.',
     subcategories: [
-      { label: 'Cascos y caretas', href: '/productos/#equipo-proteccion-personal' },
-      { label: 'Guantes térmicos', href: '/productos/#equipo-proteccion-personal' },
-      { label: 'Trajes de aproximación', href: '/productos/#equipo-proteccion-personal' },
+      { label: 'Cascos y caretas', href: '/productos/equipo-bombero/' },
+      { label: 'Guantes térmicos', href: '/productos/equipo-bombero/' },
+      { label: 'Trajes de aproximación', href: '/productos/equipo-bombero/' },
     ],
     ctaLabel: 'Equipo de protección',
   },

@@ -52,6 +52,7 @@ export const productosOrden = [
   'rociadores-contra-incendio',
   'botiquin-primeros-auxilios',
   'soportes-accesorios-extintor',
+  'equipo-bombero',
 ];
 
 // ── Etiquetas de fichas ─────────────────────────────────────────────────────
@@ -71,6 +72,7 @@ export const productosBadge: Record<string, string> = {
   'rociadores-contra-incendio': 'Sistemas fijos',
   'botiquin-primeros-auxilios': 'Primeros auxilios',
   'soportes-accesorios-extintor': 'Accesorios',
+  'equipo-bombero': 'Bombero',
 };
 
 // ── Reseñas del catálogo ────────────────────────────────────────────────────

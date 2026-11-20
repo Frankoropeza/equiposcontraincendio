@@ -31,19 +31,24 @@ const fichas = data.categoriaProductos
       (a, b) => a.data.order - b.data.order,
     )
   : [];
+// Un ItemList vacío no representa contenido navegable y empeora el schema.
 const schemaData = data.categoriaProductos
   ? {
-      list: {
-        name: data.seo.serviceName,
-        description: data.seo.description,
-        path: data.path,
-        items: fichas.map((p) => ({
-          name: p.data.title,
-          path: `/productos/${p.id}/`,
-          image: p.data.image,
-          description: p.data.description,
-        })),
-      },
+      ...(fichas.length > 0
+        ? {
+            list: {
+              name: data.seo.serviceName,
+              description: data.seo.description,
+              path: data.path,
+              items: fichas.map((p) => ({
+                name: p.data.title,
+                path: `/productos/${p.id}/`,
+                image: p.data.image,
+                description: p.data.description,
+              })),
+            },
+          }
+        : {}),
       faqs: data.faq.items,
     }
   : {

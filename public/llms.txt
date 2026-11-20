@@ -37,6 +37,7 @@ Idioma: español (es-MX). País: México.
 ## Páginas clave
 - [Inicio](https://equiposcontraincendio.com/): presentación del catálogo y servicios.
 - [Productos](https://equiposcontraincendio.com/productos): catálogo de equipo contra incendio.
+- [Equipo para bombero](https://equiposcontraincendio.com/productos/equipo-bombero/): EPP para la brigada contra incendio, seleccionado por riesgo y con expediente para la STPS.
 - [Extintor PQS ABC](https://equiposcontraincendio.com/productos/extintor-pqs/): ficha de producto.
 - [Extintor de CO2](https://equiposcontraincendio.com/productos/extintor-co2/): ficha de producto.
 - [Detección y alarmas](https://equiposcontraincendio.com/productos/deteccion-alarmas/): detectores de humo, temperatura y gas, paneles, estaciones y sirenas.
