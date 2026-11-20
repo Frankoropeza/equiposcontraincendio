@@ -8,10 +8,16 @@ const PRODUCT_DIR = path.join(ROOT, 'src', 'content', 'productos');
 
 // Una excepción solo es válida cuando coincide con el conteo medido y apunta al
 // expediente que explica las fuentes revisadas y por qué se agotó el eje real.
+//
+// 2026-11-19 (auditoría): el puntero anterior era
+// `docs/expedientes-variantes.md#excepción-extintor-clase-k`, un archivo que
+// NUNCA existió en el repo — `/docs/` está en .gitignore por la regla de
+// mantener la documentación fuera del repo, y este script no valida que el
+// destino exista. El expediente vive donde debe, en el vault:
 const DOCUMENTED_EXCEPTIONS = {
   'extintor-clase-k.md': {
     verifiedCount: 3,
-    documentation: 'docs/expedientes-variantes.md#excepción-extintor-clase-k',
+    documentation: 'PROJECTS/04-SEO/ECI-Expediente-Variantes-ExtintorClaseK-2026-11-19.md',
   },
 };
 

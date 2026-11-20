@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 import { execSync } from 'node:child_process';
-import { existsSync, statSync } from 'node:fs';
+import { existsSync, statSync, readdirSync, readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 
 // ─── Sitemap lastmod dinámico (patrón EVENTECH · SOP SEO 2026-07-10) ────────
@@ -43,23 +43,66 @@ function sourceDate(relPath) {
   return date;
 }
 
+// Índice de las fichas del blog por categoría: /blog/categoria/<slug>/ no tiene
+// archivo fuente propio, así que su lastmod honesto es la fecha del artículo más
+// reciente de esa categoría (el slug de la URL es el valor de `category:` del
+// frontmatter). Se calcula una vez y se cachea. Añadido el 2026-11-19: antes
+// estas 8 URLs salían en el sitemap sin lastmod.
+/** @type {Map<string, Date | null>} */
+const _catCache = new Map();
+
+/** @param {string} slug */
+function lastmodForCategory(slug) {
+  if (_catCache.has(slug)) return _catCache.get(slug);
+  /** @type {Date | null} */
+  let newest = null;
+  const dir = join(ROOT, 'src/content/articulos');
+  try {
+    for (const name of readdirSync(dir)) {
+      if (!/\.mdx?$/.test(name)) continue;
+      const head = readFileSync(join(dir, name), 'utf8').slice(0, 2000);
+      if (!new RegExp(`^category:\\s*["']?${slug}["']?\\s*$`, 'm').test(head)) continue;
+      const d = sourceDate(`src/content/articulos/${name}`);
+      if (d && (!newest || d > newest)) newest = d;
+    }
+  } catch {}
+  _catCache.set(slug, newest);
+  return newest;
+}
+
 /** @param {string} url */
 function lastmodForUrl(url) {
   const path = new URL(url).pathname.replace(/\/+$/, '');
   const rel = path === '' ? 'index' : path.replace(/^\//, '');
   const seg = rel.split('/');
   const last = seg[seg.length - 1] ?? rel;
+
+  // /blog/categoria/<slug>/ → artículo más reciente de la categoría.
+  if (seg[0] === 'blog' && seg[1] === 'categoria' && seg[2] && seg.length === 3) {
+    const d = lastmodForCategory(seg[2]);
+    if (d) return d;
+  }
+
   const candidates = [`src/pages/${rel}/index.astro`, `src/pages/${rel}.astro`];
-  // Alias ruta→colección: /blog/* vive en `articulos`, /cobertura/* en `zonas`.
-  /** @type {Record<string, string>} */
-  const colAlias = { blog: 'articulos', cobertura: 'zonas' };
-  const col = colAlias[seg[0] ?? ''] ?? seg[0];
-  if (col && seg.length > 1) {
+  // Alias ruta→colección(es): /blog/* vive en `articulos`, /cobertura/* en
+  // `zonas`, y /proteccion-civil/* se reparte entre `giros` (los 23 giros) y
+  // `tramites` (cdmx, edomex) — de ahí que el alias admita varias colecciones.
+  /** @type {Record<string, string[]>} */
+  const colAlias = {
+    blog: ['articulos'],
+    cobertura: ['zonas'],
+    'proteccion-civil': ['giros', 'tramites'],
+  };
+  const cols = colAlias[seg[0] ?? ''] ?? [seg[0] ?? ''];
+  if (seg.length > 1) {
     const sub = seg.slice(1).join('/');
-    for (const ext of ['md', 'mdx']) {
-      candidates.push(`src/content/${col}/${sub}.${ext}`);
-      candidates.push(`src/content/${col}/${sub}/index.${ext}`);
-      candidates.push(`src/content/${col}/${last}.${ext}`);
+    for (const col of cols) {
+      if (!col) continue;
+      for (const ext of ['md', 'mdx']) {
+        candidates.push(`src/content/${col}/${sub}.${ext}`);
+        candidates.push(`src/content/${col}/${sub}/index.${ext}`);
+        candidates.push(`src/content/${col}/${last}.${ext}`);
+      }
     }
   }
   for (const c of candidates) {
