@@ -32,6 +32,10 @@ faqs:
     answer: "La NOM-017-STPS-2024, numeral 7.1 e), indica desechar y reemplazar el EPP con fallas, daño, desgaste o quemaduras no reparables, al cumplir la vida útil indicada por el fabricante o después de impactos, descargas eléctricas o contacto con material incandescente."
   - question: "¿Qué marca de capucha se puede cotizar?"
     answer: "Conseguimos equipo de las marcas reconocidas del mercado mexicano. La marca, el modelo y la disponibilidad se confirman al cotizar. Solicita la configuración de capas y la información del fabricante que corresponda al riesgo de la brigada."
+  - question: "¿Cuánto cuesta una monja para bombero?"
+    answer: "No conviene fijar un precio sin definir la configuración. Cambian las capas, el largo, la apertura facial, la costura y si integra barrera de partículas; la cotización se define según el riesgo y el inmueble."
+  - question: "¿Qué vestimenta usa un bombero?"
+    answer: "Según la tarea, la dotación puede integrar casco, capucha, guantes, botas, conjunto estructural y equipo de respiración autónoma. La NOM-002-STPS-2010 obliga a dotar EPP por función y riesgo; su Guía de referencia III es enunciativa, no obligatoria."
 variantes:
   - nombre: "Monja de 21 pulgadas de doble capa"
     badge: "Traslape largo"
@@ -118,14 +122,18 @@ fichaHeads:
     - "También explicamos cómo comparar largos, capas, materiales y gramaje sin sustituir el análisis del riesgo. La marca, el modelo y la disponibilidad se confirman al cotizar."
 ---
 
-La **capucha para bombero**, también llamada monja de bombero, va bajo el casco y cubre cabeza y cuello. Una capucha Nomex se revisa por sus capas y condiciones de uso. La NOM-002-STPS-2010, numeral 5.9, obliga al patrón a dotar EPP según las funciones y riesgos de la brigada. Consulta también las [botas para bombero](/productos/botas-brigada-contra-incendio/).
+La **capucha para bombero** protege cabeza y cuello bajo el casco. La NOM-002-STPS-2010, numeral 5.9, obliga a dotar EPP según las funciones y riesgos de la brigada; la Guía de referencia III solo orienta la revisión, porque es enunciativa y no obligatoria.
 
-### Capucha para bombero: el criterio que la distingue
+## Capucha o monja: el mismo equipo con dos nombres
 
-Desde la NFPA 1970, la capucha estructural debe llevar una capa bloqueadora de partículas; antes era opcional. NFPA es referencia técnica, no ley en México. La capa reduce la exposición a partículas de la combustión en cuello y mandíbula y por eso es relevante si la brigada tiene exposición repetida al humo.
+En México, la capucha para bombero también se llama monja. Ambas palabras se refieren a la prenda que sella el espacio entre casco y chaquetón. Desde NFPA 1970, la capucha estructural debe incorporar capa bloqueadora de partículas; antes era opcional. NFPA es una referencia técnica, no ley en México, pero esa capa ayuda a reducir la exposición a partículas de combustión en cuello y mandíbula cuando existe humo repetido.
 
-### Qué comparar antes de cotizar
+La capucha se integra al [equipo para bombero](/productos/equipo-bombero/) con [casco de bombero](/productos/casco-brigada-contra-incendio/), [guantes para bombero](/productos/guantes-brigada-contra-incendio/) y [botas para bombero](/productos/botas-brigada-contra-incendio/). Revisa su traslape con el [traje estructural de bombero](/productos/conjunto-estructural-chaqueton-pantalon/) y la compatibilidad de la apertura facial con el [equipo de respiración autónoma](/productos/equipo-respiracion-autonoma-era/); el [traje aluminizado](/productos/traje-aproximacion-aluminizado/) cubre otro tipo de exposición.
 
-- Tipo y número de capas, largo, apertura facial, costura y materiales publicados.
-- Capa bloqueadora de partículas o barrera térmica, según la exposición identificada.
-- Marcado, ficha técnica, grado de protección y condiciones de no uso del fabricante.
+## Qué determina el precio de una capucha para bombero
+
+El costo depende del número y tipo de capas, el largo, la apertura facial, el material de la costura y la configuración con barrera térmica o bloqueadora de partículas. También cambia si se cotiza una pieza suelta o parte de una dotación; se cotiza según lo que pida el inmueble.
+
+## Capuchas para brigada en CDMX y Estado de México
+
+La capucha se elige junto con el casco y el chaquetón que tu brigada ya usa, y con la exposición al humo que tenga. Atendemos [Ciudad de México](/cobertura/cdmx/) y [Estado de México](/cobertura/edomex/). Pide marcado, ficha técnica, grado de protección y condiciones de no uso para integrar el expediente conforme a la NOM-017-STPS-2024.

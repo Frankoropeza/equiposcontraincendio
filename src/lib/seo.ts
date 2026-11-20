@@ -708,6 +708,12 @@ export type ProductData = {
   material?: string;
   price?: string;        // 'desde' en MXN, solo dígitos. Omítelo si es "bajo cotización".
   availability?: 'InStock' | 'OutOfStock' | 'PreOrder';
+  /** Pares visibles de la ficha técnica; no se inventan especificaciones. */
+  additionalProperty?: { name: string; value: string }[];
+  /** Presentaciones publicadas del mismo producto, sin precio ni Offer propio. */
+  hasVariant?: { name: string; description: string }[];
+  /** Productos relacionados declarados en la colección; solo se publica su URL. */
+  isRelatedTo?: { url: string }[];
   reviews?: Review[];    // ← solo reseñas REALES verificables (ver emitReviews)
 };
 
@@ -734,8 +740,10 @@ export function productSchema(p: ProductData) {
     offer.priceValidUntil = `${new Date().getFullYear() + 1}-12-31`;
   }
   // Sin precio público NO se emite `price`: un `price: '0'` hace que Google lea
-  // la ficha como producto gratis. El Offer queda con url/priceCurrency/
-  // availability/seller, que es válido para "bajo cotización" (auditoría 2026-11-19).
+  // la ficha como producto gratis. Esto impide el rich result de Product y Search
+  // Console marcará la advertencia de precio faltante; es una decisión consciente
+  // porque el negocio cotiza por WhatsApp y no publica precios. El Offer queda con
+  // url/priceCurrency/availability/seller (auditoría 2026-11-19).
   return {
     '@type': 'Product',
     '@id': `${url}#product`,
@@ -745,8 +753,43 @@ export function productSchema(p: ProductData) {
     ...(p.sku ? { sku: p.sku } : {}),
     ...(p.category ? { category: p.category } : {}),
     ...(p.material ? { material: p.material } : {}),
-    brand: { '@type': 'Brand', name: p.brand ?? SITE.name },
-    manufacturer: { '@id': ORG_ID },
+    ...(p.additionalProperty?.length
+      ? {
+          additionalProperty: p.additionalProperty.map(({ name, value }) => ({
+            '@type': 'PropertyValue',
+            name,
+            value,
+          })),
+        }
+      : {}),
+    ...(p.hasVariant?.length
+      ? {
+          hasVariant: p.hasVariant.map(({ name, description }) => ({
+            '@type': 'Product',
+            name,
+            description,
+          })),
+        }
+      : {}),
+    ...(p.isRelatedTo?.length
+      ? {
+          // Las referencias no obligan a cargar otra entrada de colección: la URL
+          // basta para expresar la relación sin inventar ni duplicar su nombre.
+          isRelatedTo: p.isRelatedTo.map(({ url: relatedUrl }) => ({
+            '@type': 'Product',
+            url: absUrl(relatedUrl),
+          })),
+        }
+      : {}),
+    // 2026-11-20: antes se emitía SIEMPRE `brand: CONINC` y
+    // `manufacturer: <organización>`. Las dos cosas eran falsas: CONINC
+    // distribuye e instala, no fabrica, y el propio sitio dice que «la marca,
+    // el modelo y la disponibilidad se confirman al cotizar». Declararse
+    // fabricante de equipo ajeno en el dato estructurado es el mismo tipo de
+    // afirmación no sostenible que la atribución de la NOM-115 (ver 0d85c4b).
+    // Ahora `brand` solo se emite si la ficha declara una marca REAL del
+    // fabricante —distinta del nombre del sitio— y `manufacturer` desaparece.
+    ...(p.brand && p.brand !== SITE.name ? { brand: { '@type': 'Brand', name: p.brand } } : {}),
     url,
     offers: offer,
     ...emitReviews(p.reviews),

@@ -1,0 +1,536 @@
+- generic [active] [ref=f3e1]:
+  - link "Saltar al contenido principal" [ref=f3e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - complementary "Información de contacto" [ref=f3e3]:
+    - generic [ref=f3e4]:
+      - paragraph [ref=f3e5]:
+        - generic [ref=f3e7]: Equipos contra incendios con más de 35 años en el mercado mexicano
+      - generic [ref=f3e8]:
+        - generic [ref=f3e9]: Lun–Vie 9–18 · Sáb 9–14
+        - link "Llamar al 55 3934 0581" [ref=f3e13] [cursor=pointer]:
+          - /url: tel:+525539340581
+          - generic [ref=f3e16]: 55 3934 0581
+        - link "Contactar por WhatsApp" [ref=f3e17] [cursor=pointer]:
+          - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n%20de%20equipo%20contra%20incendio.
+          - generic [ref=f3e20]: WhatsApp
+  - banner [ref=f3e21]:
+    - generic [ref=f3e22]:
+      - link "CONINC Contra incendios , ir al inicio" [ref=f3e23] [cursor=pointer]:
+        - /url: /
+        - generic [aria-hidden] [ref=f3e24]: C
+        - generic [ref=f3e25]:
+          - generic [ref=f3e26]: CONINC
+          - generic [ref=f3e27]: Contra incendios
+        - generic [ref=f3e28]: ", ir al inicio"
+      - navigation "Navegación principal" [ref=f3e29]:
+        - list [ref=f3e30]:
+          - listitem [ref=f3e31]:
+            - button "Productos" [ref=f3e32] [cursor=pointer]
+          - listitem [ref=f3e36]:
+            - button "Servicios" [ref=f3e37] [cursor=pointer]
+          - listitem [ref=f3e41]:
+            - button "Cobertura" [ref=f3e42] [cursor=pointer]
+          - listitem [ref=f3e46]:
+            - button "Recursos" [ref=f3e47] [cursor=pointer]
+          - listitem [ref=f3e51]:
+            - link "Nosotros" [ref=f3e52] [cursor=pointer]:
+              - /url: /nosotros/
+          - listitem [ref=f3e53]:
+            - link "Contacto" [ref=f3e54] [cursor=pointer]:
+              - /url: /contacto/
+      - link "Solicitar cotización por WhatsApp" [ref=f3e55] [cursor=pointer]:
+        - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n%20de%20equipo%20contra%20incendio.
+        - generic [ref=f3e58]: Cotizar
+  - navigation "Migas de pan" [ref=f3e60]:
+    - list [ref=f3e61]:
+      - listitem [ref=f3e62]:
+        - link "Inicio" [ref=f3e63] [cursor=pointer]:
+          - /url: /
+      - listitem [ref=f3e67]:
+        - link "Productos" [ref=f3e68] [cursor=pointer]:
+          - /url: /productos/
+      - listitem [ref=f3e72]:
+        - link "Equipo para bombero" [ref=f3e73] [cursor=pointer]:
+          - /url: /productos/equipo-bombero/
+      - listitem [ref=f3e77]:
+        - generic [ref=f3e78]: Guantes para bombero para brigada contra incendio
+  - main [ref=f3e79]:
+    - region "Encabezado principal" [ref=f3e80]:
+      - generic [ref=f3e81]:
+        - generic [ref=f3e82]:
+          - generic [ref=f3e83]: EPP para brigada de empresa
+          - heading "Guantes para bombero para brigada contra incendio" [level=1] [ref=f3e85]
+          - paragraph [ref=f3e86]: Guantes para bombero seleccionados por riesgo térmico, mecánico, químico o eléctrico y documentados conforme a la NOM-017-STPS-2024.
+          - generic [ref=f3e87]:
+            - link "Cotizar por WhatsApp" [ref=f3e88] [cursor=pointer]:
+              - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20cotizar%3A%20Guantes%20para%20bombero%20para%20brigada%20contra%20incendio.%20%C2%BFPrecio%20y%20disponibilidad%3F
+            - link "Modelos y presentaciones" [ref=f3e91] [cursor=pointer]:
+              - /url: "#presentaciones"
+        - generic [ref=f3e92]:
+          - paragraph [ref=f3e93]: "Los guantes de la brigada se asignan según la tarea y el riesgo al que estará expuesto cada puesto: calor, flama, corte, químicos corrosivos o descarga eléctrica. No existe una NOM de producto específica para ellos."
+          - paragraph [ref=f3e94]: La NOM-017-STPS-2024 ordena identificar el riesgo, seleccionar el EPP, verificar su certificación, capacitar, señalizar y registrar. Cuando no haya NOM, su numeral 5.4 permite respaldar la elección con NMX, Estándares Técnicos o información del fabricante.
+    - navigation "Secciones del sitio" [ref=f3e95]:
+      - list [ref=f3e97]:
+        - listitem [ref=f3e98]:
+          - link "Productos Equipos contra incendios" [ref=f3e99] [cursor=pointer]:
+            - /url: /productos/
+            - generic [ref=f3e100]: Productos
+            - generic [ref=f3e102]: Equipos contra incendios
+        - listitem [ref=f3e103]:
+          - link "Servicios Instalación y mantenimiento" [ref=f3e104] [cursor=pointer]:
+            - /url: /servicios/
+            - generic [ref=f3e105]: Servicios
+            - generic [ref=f3e107]: Instalación y mantenimiento
+        - listitem [ref=f3e108]:
+          - link "Cobertura Zonas que atendemos" [ref=f3e109] [cursor=pointer]:
+            - /url: /cobertura/
+            - generic [ref=f3e110]: Cobertura
+            - generic [ref=f3e112]: Zonas que atendemos
+        - listitem [ref=f3e113]:
+          - link "Herramientas Calculadoras y formatos" [ref=f3e114] [cursor=pointer]:
+            - /url: /herramientas/
+            - generic [ref=f3e115]: Herramientas
+            - generic [ref=f3e117]: Calculadoras y formatos
+        - listitem [ref=f3e118]:
+          - link "Protección Civil Qué exige por entidad" [ref=f3e119] [cursor=pointer]:
+            - /url: /proteccion-civil/
+            - generic [ref=f3e120]: Protección Civil
+            - generic [ref=f3e122]: Qué exige por entidad
+        - listitem [ref=f3e123]:
+          - link "Blog Guías y normatividad" [ref=f3e124] [cursor=pointer]:
+            - /url: /blog/
+            - generic [ref=f3e125]: Blog
+            - generic [ref=f3e127]: Guías y normatividad
+        - listitem [ref=f3e128]:
+          - link "Cotizar por WhatsApp Te decimos cuál conviene" [ref=f3e129] [cursor=pointer]:
+            - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20cotizar%3A%20Guantes%20para%20bombero%20para%20brigada%20contra%20incendio.%20%C2%BFPrecio%20y%20disponibilidad%3F
+            - generic [ref=f3e130]: Cotizar por WhatsApp
+            - generic [ref=f3e135]: Te decimos cuál conviene
+    - generic [ref=f3e137]:
+      - generic [ref=f3e138]:
+        - generic [ref=f3e139]:
+          - paragraph [ref=f3e140]: Ficha técnica
+          - heading "Guantes por tarea de la brigada" [level=2] [ref=f3e142]
+          - paragraph [ref=f3e143]: Configuraciones para contrastar con la tarea, el área de riesgo y las condiciones de no uso.
+        - generic [ref=f3e144]:
+          - paragraph [ref=f3e145]: Los guantes son EPP para la brigada contra incendio de tu empresa. La NOM-002-STPS-2010, numeral 5.9, obliga al patrón a dotar equipo según funciones y riesgos; no se deben comprar como si todas las tareas fueran iguales.
+          - paragraph [ref=f3e146]: La Guía de referencia III de la NOM-002 es enunciativa, no obligatoria. Describe guantes contra calor, flama, químicos corrosivos y descarga eléctrica; esa lista orienta la revisión, pero la selección sale de la evaluación del puesto y el área.
+      - generic [ref=f3e147]:
+        - img "Guantes para bombero para brigada contra incendio" [ref=f3e149]
+        - generic [ref=f3e150]:
+          - generic [ref=f3e151]:
+            - generic [ref=f3e152]:
+              - term [ref=f3e153]: Selección
+              - definition [ref=f3e154]: Riesgos por puesto y área
+            - generic [ref=f3e155]:
+              - term [ref=f3e156]: Guía NOM-002
+              - definition [ref=f3e157]: Enunciativa, no obligatoria
+            - generic [ref=f3e158]:
+              - term [ref=f3e159]: Información técnica
+              - definition [ref=f3e160]: Fabricante cuando no exista NOM, NMX o Estándar Técnico
+            - generic [ref=f3e161]:
+              - term [ref=f3e162]: Reemplazo
+              - definition [ref=f3e163]: Daño, desgaste, vida útil o evento que indique NOM-017
+          - paragraph [ref=f3e164]: Precio bajo cotización
+          - generic [ref=f3e165]:
+            - link "Modelos y presentaciones" [ref=f3e166] [cursor=pointer]:
+              - /url: "#presentaciones"
+            - link "Cotizar por WhatsApp" [ref=f3e167] [cursor=pointer]:
+              - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20cotizar%3A%20Guantes%20para%20bombero%20para%20brigada%20contra%20incendio.%20%C2%BFPrecio%20y%20disponibilidad%3F
+    - generic [ref=f3e169]:
+      - generic [ref=f3e170]:
+        - generic [ref=f3e171]:
+          - paragraph [ref=f3e172]: Presentaciones
+          - heading "Presentaciones y modelos" [level=2] [ref=f3e174]
+          - paragraph [ref=f3e175]: Compara modelos, medidas y alcance. Al cotizar, menciona la presentación exacta y la cantidad.
+        - generic [ref=f3e176]:
+          - paragraph [ref=f3e177]: Las opciones incluyen guante estructural de carnaza, Nomex® y Kevlar® sin carnaza, guante de rescate y extricación, para-aramida con tejido de acero y puño interior reforzado. Ninguna configuración se presenta como universal.
+          - paragraph [ref=f3e178]: "Cada ficha aporta datos distintos: materiales, tallas publicadas, protecciones o normas que declara el fabricante. Esa información sirve para documentar la selección cuando no hay una NOM de producto para guantes."
+      - generic [ref=f3e179]:
+        - article [ref=f3e180]:
+          - generic [ref=f3e181]:
+            - generic [ref=f3e182]: Configuración común
+            - heading "Guante estructural de carnaza con puño largo" [level=3] [ref=f3e183]
+            - paragraph [ref=f3e184]: Configuración de carnaza con puño largo de Kevlar® y forro térmico; la ficha declara numeración NFPA anterior.
+            - list "Especificaciones de Guante estructural de carnaza con puño largo" [ref=f3e185]:
+              - listitem [ref=f3e186]: 33 cm
+              - listitem [ref=f3e187]: Tallas M, L y XL
+              - listitem [ref=f3e188]: Puño Kevlar®
+              - listitem [ref=f3e189]: Forro Nomex®/Kevlar®
+              - listitem [ref=f3e190]: 5 puntadas
+            - link "Cotizar" [ref=f3e191] [cursor=pointer]:
+              - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20cotizar%20guantes%20estructurales%20de%20carnaza%20para%20la%20brigada%20de%20mi%20empresa
+        - article [ref=f3e192]:
+          - generic [ref=f3e193]:
+            - generic [ref=f3e194]: Sin carnaza
+            - heading "Guante de Nomex y Kevlar sin carnaza" [level=3] [ref=f3e195]
+            - paragraph [ref=f3e196]: Guante de Nomex® y Kevlar® sin carnaza; la ficha cita NFPA anterior y EN 659, con tallas no publicadas.
+            - list "Especificaciones de Guante de Nomex y Kevlar sin carnaza" [ref=f3e197]:
+              - listitem [ref=f3e198]: Nomex® y Kevlar®
+              - listitem [ref=f3e199]: Resistente a la llama
+              - listitem [ref=f3e200]: Aproximadamente 470 g
+              - listitem [ref=f3e201]: Tallas no publicadas
+            - link "Cotizar" [ref=f3e202] [cursor=pointer]:
+              - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20cotizar%20guantes%20de%20Nomex%20y%20Kevlar%20para%20la%20brigada%20de%20mi%20empresa
+        - article [ref=f3e203]:
+          - generic [ref=f3e204]:
+            - generic [ref=f3e205]: Rescate vehicular
+            - heading "Guante de rescate y extricación" [level=3] [ref=f3e206]
+            - paragraph [ref=f3e207]: Guante para rescate vehicular ante filos, lámina y vidrio, con palma Cala-Tech y protección antiimpacto.
+            - list "Especificaciones de Guante de rescate y extricación" [ref=f3e208]:
+              - listitem [ref=f3e209]: ANSI corte nivel 5
+              - listitem [ref=f3e210]: EN 388 CE4544
+              - listitem [ref=f3e211]: Repelencia a aceite grado 6
+              - listitem [ref=f3e212]: Tallas M, L y XL
+            - link "Cotizar" [ref=f3e213] [cursor=pointer]:
+              - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20cotizar%20guantes%20de%20rescate%20y%20extricaci%C3%B3n%20para%20mi%20brigada
+        - article [ref=f3e214]:
+          - generic [ref=f3e215]:
+            - generic [ref=f3e216]: Corte y metal
+            - heading "Guante de para-aramida con tejido de acero" [level=3] [ref=f3e217]
+            - paragraph [ref=f3e218]: Guante para corte, metal, vidrio y tareas eléctricas; no es una opción para fuego confinado.
+            - list "Especificaciones de Guante de para-aramida con tejido de acero" [ref=f3e219]:
+              - listitem [ref=f3e220]: Kevlar con tejido de acero
+              - listitem [ref=f3e221]: Tallas 7 a 10
+              - listitem [ref=f3e222]: Resistente al corte
+              - listitem [ref=f3e223]: No conduce electricidad
+            - link "Cotizar" [ref=f3e224] [cursor=pointer]:
+              - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20cotizar%20guantes%20de%20para-aramida%20con%20tejido%20de%20acero%20para%20mi%20brigada
+        - article [ref=f3e225]:
+          - generic [ref=f3e226]:
+            - generic [ref=f3e227]: Traslape reforzado
+            - heading "Guante con puño interior reforzado" [level=3] [ref=f3e228]
+            - paragraph [ref=f3e229]: Puño de para-aramida de 2 capas para traslape reforzado; el fabricante lo presenta como refuerzo adicional.
+            - list "Especificaciones de Guante con puño interior reforzado" [ref=f3e230]:
+              - listitem [ref=f3e231]: Puño de para-aramida de 2 capas
+              - listitem [ref=f3e232]: Parche de piel en muñeca
+              - listitem [ref=f3e233]: Hilo Kevlar®
+            - link "Cotizar" [ref=f3e234] [cursor=pointer]:
+              - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20cotizar%20guantes%20con%20pu%C3%B1o%20interior%20reforzado%20para%20la%20brigada%20de%20mi%20empresa
+        - article [ref=f3e235]:
+          - img "Inventario de equipo contra incendio en bodega" [ref=f3e236]
+          - generic [ref=f3e237]:
+            - generic [ref=f3e238]: Cotización a la medida
+            - heading "¿No ves lo que buscas?" [level=3] [ref=f3e239]
+            - paragraph [ref=f3e240]: Dinos qué equipo necesitas y para qué área. Si se consigue, te lo cotizamos.
+            - link "Cotizar por WhatsApp" [ref=f3e241] [cursor=pointer]:
+              - /url: https://wa.me/525539340581?text=Hola%2C%20busco%20un%20equipo%20contra%20incendio%20que%20no%20vi%20en%20el%20sitio.%20%C2%BFMe%20ayudan%20a%20cotizarlo%3F
+        - article [ref=f3e242]:
+          - img "Instalación de red contra incendio en un inmueble" [ref=f3e243]
+          - generic [ref=f3e244]:
+            - generic [ref=f3e245]: Proyecto a la medida
+            - heading "Instalación de sistemas" [level=3] [ref=f3e246]
+            - paragraph [ref=f3e247]: Instalamos el equipo con planos, memoria técnica y pruebas de funcionamiento.
+            - link "Instalación" [ref=f3e248] [cursor=pointer]:
+              - /url: /servicios/instalacion/
+        - article [ref=f3e249]:
+          - img "Levantamiento de riesgo de incendio en una planta" [ref=f3e250]
+          - generic [ref=f3e251]:
+            - generic [ref=f3e252]: Antes de comprar
+            - heading "Diagnóstico de riesgo" [level=3] [ref=f3e253]
+            - paragraph [ref=f3e254]: Clasificamos tu inmueble con la NOM-002 para que compres lo que te toca.
+            - link "Diagnóstico de riesgo" [ref=f3e255] [cursor=pointer]:
+              - /url: /servicios/diagnostico-de-riesgo/
+    - generic [ref=f3e257]:
+      - generic [ref=f3e258]:
+        - generic [ref=f3e259]:
+          - paragraph [ref=f3e260]: Guía de compra
+          - heading "Cómo elegir guantes por riesgo y función" [level=2] [ref=f3e262]
+          - paragraph [ref=f3e263]: Relaciona cada tarea con el riesgo identificado antes de seleccionar el modelo y solicitar cotización.
+        - generic [ref=f3e264]:
+          - paragraph [ref=f3e265]: Identifica los riesgos por puesto y área y vincula los guantes con las tareas reales de tu brigada. Conserva marcado, ficha técnica, grado de protección y condiciones de no uso que proporcione el fabricante cuando aplique.
+          - paragraph [ref=f3e266]: La NOM-017-STPS-2024 pide verificar la certificación, capacitar, señalizar y registrar. Si no existe NOM del equipo, el numeral 5.4 contempla NMX o Estándares Técnicos y, a falta de ambos, información del fabricante.
+      - generic [ref=f3e267]:
+        - article [ref=f3e268]:
+          - paragraph [ref=f3e269]:
+            - text: Los
+            - strong [ref=f3e270]: guantes para bombero
+            - text: se eligen por riesgo y tarea, no solo por material. Los guantes de bombero o guantes estructurales para tu brigada pueden requerir protección distinta para calor, corte, metal, vidrio, rescate vehicular o riesgo eléctrico.
+          - 'heading "Guantes para bombero: criterio de selección" [level=3] [ref=f3e271]'
+          - list [ref=f3e272]:
+            - listitem [ref=f3e273]: La NOM-002-STPS-2010, numeral 5.9, obliga al patrón a dotar EPP a la brigada según sus funciones y riesgos.
+            - listitem [ref=f3e274]: No hay NOM de producto para guantes. La NOM-017-STPS-2024, numeral 5.4, permite respaldar la selección con información del fabricante cuando no hay NOM, NMX o Estándares Técnicos.
+            - listitem [ref=f3e275]: La Guía de referencia III de la NOM-002 es enunciativa, no obligatoria; menciona protección contra calor, flama, químicos corrosivos y descarga eléctrica.
+          - heading "Para cotizar" [level=3] [ref=f3e276]
+          - paragraph [ref=f3e277]: Comparte las tareas que realizará la brigada y los riesgos identificados por área. Con esa información se revisa qué guante corresponde, cuáles son sus condiciones de no uso y qué datos deben quedar en el expediente de EPP.
+        - complementary [ref=f3e278]:
+          - paragraph [ref=f3e279]: Cotiza por WhatsApp
+          - heading "Guantes para bombero para brigada contra incendio" [level=3] [ref=f3e280]
+          - paragraph [ref=f3e281]: Precio bajo cotización
+          - paragraph [ref=f3e282]: "Para cotizar, envíanos:"
+          - list [ref=f3e283]:
+            - listitem [ref=f3e284]: Giro del negocio
+            - listitem [ref=f3e285]: Superficie aproximada
+            - listitem [ref=f3e286]: Presentación y cantidad
+          - link "Cotizar por WhatsApp" [ref=f3e287] [cursor=pointer]:
+            - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20cotizar%3A%20Guantes%20para%20bombero%20para%20brigada%20contra%20incendio.%20%C2%BFPrecio%20y%20disponibilidad%3F
+          - link "Llamar" [ref=f3e288] [cursor=pointer]:
+            - /url: tel:+525539340581
+    - region "Productos y servicios relacionados" [ref=f3e289]:
+      - generic [ref=f3e290]:
+        - generic [ref=f3e291]:
+          - generic [ref=f3e292]:
+            - paragraph [ref=f3e293]: Relacionados
+            - heading "Productos y servicios relacionados" [level=2] [ref=f3e295]
+            - paragraph [ref=f3e296]: Otras presentaciones de la familia y el servicio que pide el equipo.
+          - generic [ref=f3e297]:
+            - paragraph [ref=f3e298]: Los guantes complementan el casco y los demás elementos de EPP que correspondan a la brigada. El diagnóstico de riesgo permite relacionar cada pieza con la función, el área y el expediente del inmueble.
+            - paragraph [ref=f3e299]: La capacitación debe acompañar la entrega del EPP. La NOM-017-STPS-2024 contempla capacitación, señalización y registro, además de definir cuándo se debe desechar y reemplazar equipo que ya no es apto.
+        - list [ref=f3e300]:
+          - listitem [ref=f3e301]:
+            - link "Casco de bombero Equipo para bombero" [ref=f3e302] [cursor=pointer]:
+              - /url: /productos/casco-brigada-contra-incendio/
+              - generic [ref=f3e303]: Casco de bombero
+              - generic [ref=f3e304]: Equipo para bombero
+          - listitem [ref=f3e308]:
+            - link "Botas para bombero Equipo para bombero" [ref=f3e309] [cursor=pointer]:
+              - /url: /productos/botas-brigada-contra-incendio/
+              - generic [ref=f3e310]: Botas para bombero
+              - generic [ref=f3e311]: Equipo para bombero
+          - listitem [ref=f3e315]:
+            - link "Capucha para bombero Equipo para bombero" [ref=f3e316] [cursor=pointer]:
+              - /url: /productos/capucha-proteccion-brigada/
+              - generic [ref=f3e317]: Capucha para bombero
+              - generic [ref=f3e318]: Equipo para bombero
+          - listitem [ref=f3e322]:
+            - link "Equipos contra incendios Catálogo de equipo contra incendio." [ref=f3e323] [cursor=pointer]:
+              - /url: /productos/
+              - generic [ref=f3e324]: Equipos contra incendios
+              - generic [ref=f3e325]: Catálogo de equipo contra incendio.
+    - generic [ref=f3e330]:
+      - generic [ref=f3e331]:
+        - generic [ref=f3e332]:
+          - paragraph [ref=f3e333]: Preguntas frecuentes
+          - heading "Preguntas frecuentes sobre guantes para brigada" [level=2] [ref=f3e335]
+          - paragraph [ref=f3e336]: Respuestas breves para elegir, instalar y mantener este equipo.
+        - generic [ref=f3e337]:
+          - paragraph [ref=f3e338]: Aquí explicamos por qué no existe una NOM de producto para guantes de brigada, cómo usar la información del fabricante y qué distingue al guante estructural, de rescate o de corte. También delimitamos usos que no corresponden a fuego confinado.
+          - paragraph [ref=f3e339]: Si compartes las funciones de tu brigada y las áreas de riesgo, se puede revisar qué protección debe documentarse antes de cotizar. Así el guante queda vinculado al puesto y no a una descripción comercial aislada.
+      - generic [ref=f3e340]:
+        - generic [ref=f3e344]:
+          - group [ref=f3e345]:
+            - generic "¿Qué guantes para bombero necesita mi brigada?" [ref=f3e346] [cursor=pointer]
+            - paragraph [ref=f3e351]: Se seleccionan según los riesgos identificados por puesto y área, y la función que realizará cada integrante. La Guía de referencia III de la NOM-002 es enunciativa, no obligatoria; describe guantes contra calor, flama, químicos corrosivos y descarga eléctrica.
+          - group [ref=f3e352]:
+            - generic "¿Existe una NOM mexicana para guantes de brigada?" [ref=f3e353] [cursor=pointer]
+          - group [ref=f3e357]:
+            - generic "¿Un guante contra corte sirve para fuego confinado?" [ref=f3e358] [cursor=pointer]
+          - group [ref=f3e362]:
+            - generic "¿Para qué sirve un guante de rescate y extricación?" [ref=f3e363] [cursor=pointer]
+          - group [ref=f3e367]:
+            - generic "¿Qué significa que una ficha cite NFPA anterior?" [ref=f3e368] [cursor=pointer]
+          - group [ref=f3e372]:
+            - generic "¿El puño interior reforzado es obligatorio por NFPA?" [ref=f3e373] [cursor=pointer]
+          - group [ref=f3e377]:
+            - generic "¿Cuándo se deben reemplazar los guantes de brigada?" [ref=f3e378] [cursor=pointer]
+          - group [ref=f3e382]:
+            - generic "¿Cómo se confirma el modelo disponible?" [ref=f3e383] [cursor=pointer]
+        - complementary [ref=f3e387]:
+          - generic [ref=f3e388]:
+            - generic [ref=f3e393]:
+              - heading "¿Tu duda no está aquí?" [level=3] [ref=f3e394]
+              - paragraph [ref=f3e395]: Escríbenos por WhatsApp y te respondemos directo.
+            - generic [ref=f3e396]:
+              - generic [ref=f3e397]:
+                - generic [ref=f3e398]: Nombre — opcional
+                - textbox "Nombre — opcional" [ref=f3e399]:
+                  - /placeholder: Tu nombre
+              - generic [ref=f3e400]:
+                - generic [ref=f3e401]: Tipo de negocio *
+                - combobox "Tipo de negocio" [ref=f3e403] [cursor=pointer]:
+                  - option "Selecciona tu giro…" [disabled] [selected]
+                  - option "Oficina o consultorio"
+                  - option "Restaurante o cocina"
+                  - option "Comercio o tienda"
+                  - option "Bodega o nave industrial"
+                  - option "Hotel u hospedaje"
+                  - option "Escuela o institución"
+                  - option "Inmueble residencial"
+                  - option "Otro tipo de inmueble"
+              - generic [ref=f3e404]:
+                - generic [ref=f3e405]: Tu pregunta o necesidad *
+                - textbox "Tu pregunta o necesidad" [ref=f3e406]:
+                  - /placeholder: "Ej: Tengo una cocina industrial y quiero saber qué extintores necesito y cada cuánto les doy mantenimiento."
+                - generic [ref=f3e407]: 0 / 500
+              - button "Enviar por WhatsApp" [ref=f3e408] [cursor=pointer]
+              - paragraph [ref=f3e411]: Al pulsar el botón se abre WhatsApp con tu mensaje. No guardamos ningún dato.
+            - link "Prefiero llamar directamente" [ref=f3e415] [cursor=pointer]:
+              - /url: tel:+525539340581
+  - contentinfo "Pie de página" [ref=f3e416]:
+    - region "Solicitar cotización" [ref=f3e417]:
+      - generic [ref=f3e418]:
+        - generic [ref=f3e419]:
+          - paragraph [ref=f3e420]: Cotización sin compromiso
+          - heading "Cuéntanos tu proyecto y te decimos qué equipo necesitas." [level=2] [ref=f3e421]
+          - paragraph [ref=f3e422]: "Escríbenos por WhatsApp o llámanos: Lun–Vie 9:00–18:00 · Sáb 9:00–14:00."
+        - generic [ref=f3e423]:
+          - link "Cotizar por WhatsApp" [ref=f3e424] [cursor=pointer]:
+            - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n%20de%20equipo%20contra%20incendio.
+          - link "Llamar al 55 3934 0581" [ref=f3e427] [cursor=pointer]:
+            - /url: tel:+525539340581
+    - generic [ref=f3e430]:
+      - generic [ref=f3e431]:
+        - region "CONINC" [ref=f3e432]:
+          - link "CONINC Contra incendios , ir al inicio" [ref=f3e433] [cursor=pointer]:
+            - /url: /
+            - generic [aria-hidden] [ref=f3e434]: C
+            - generic [ref=f3e435]:
+              - generic [ref=f3e436]: CONINC
+              - generic [ref=f3e437]: Contra incendios
+            - generic [ref=f3e438]: ", ir al inicio"
+          - paragraph [ref=f3e439]: CONINC vende, instala y da mantenimiento a equipo contra incendio para empresas e inmuebles de la Ciudad de México y el Estado de México, con más de 35 años en el mercado mexicano.
+          - generic "Información de la empresa" [ref=f3e440]:
+            - generic [ref=f3e441]: Más de 35 años
+            - generic [ref=f3e442]: CDMX y Estado de México
+        - region "Teléfono y WhatsApp" [ref=f3e443]:
+          - heading "Teléfono y WhatsApp" [level=2] [ref=f3e444]
+          - link "55 3934 0581" [ref=f3e445] [cursor=pointer]:
+            - /url: tel:+525539340581
+          - generic [ref=f3e446]:
+            - link "WhatsApp" [ref=f3e447] [cursor=pointer]:
+              - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n%20de%20equipo%20contra%20incendio.
+            - link "Llamar" [ref=f3e448] [cursor=pointer]:
+              - /url: tel:+525539340581
+          - link "equipocontraincendios737@gmail.com" [ref=f3e449] [cursor=pointer]:
+            - /url: mailto:equipocontraincendios737@gmail.com
+        - region "Oficinas" [ref=f3e453]:
+          - heading "Oficinas" [level=2] [ref=f3e454]
+          - generic [ref=f3e455]: Lago Alberto 319, Piso 6, Col. Granada, Miguel HidalgoCiudad de México, 11520
+          - link "Cómo llegar" [ref=f3e456] [cursor=pointer]:
+            - /url: https://www.google.com/maps/search/?api=1&query=19.439817,-99.185217
+        - region "Horario" [ref=f3e459]:
+          - heading "Horario" [level=2] [ref=f3e460]
+          - generic "Horario de atención" [ref=f3e461]:
+            - generic [ref=f3e462]:
+              - generic [ref=f3e463]: Lun–Vie
+              - strong [ref=f3e464]: 9:00–18:00
+            - generic [ref=f3e465]:
+              - generic [ref=f3e466]: Sábado
+              - strong [ref=f3e467]: 9:00–14:00
+            - generic [ref=f3e468]:
+              - generic [ref=f3e469]: Domingo
+              - strong [ref=f3e470]: Cerrado
+          - paragraph [ref=f3e471]: "Cobertura: Toda la Ciudad de México y el Estado de México."
+      - generic "Navegación del pie de página" [ref=f3e472]:
+        - group [ref=f3e473]:
+          - generic "Productos" [ref=f3e474]
+          - list [ref=f3e477]:
+            - listitem [ref=f3e478]:
+              - link "Catálogo completo" [ref=f3e479] [cursor=pointer]:
+                - /url: /productos/
+            - listitem [ref=f3e480]:
+              - link "Extintores portátiles" [ref=f3e481] [cursor=pointer]:
+                - /url: /productos/extintores/
+            - listitem [ref=f3e482]:
+              - link "Extintor PQS" [ref=f3e483] [cursor=pointer]:
+                - /url: /productos/extintor-pqs/
+            - listitem [ref=f3e484]:
+              - link "Extintor CO₂" [ref=f3e485] [cursor=pointer]:
+                - /url: /productos/extintor-co2/
+            - listitem [ref=f3e486]:
+              - link "Extintor clase K" [ref=f3e487] [cursor=pointer]:
+                - /url: /productos/extintor-clase-k/
+            - listitem [ref=f3e488]:
+              - link "Detección y alarmas" [ref=f3e489] [cursor=pointer]:
+                - /url: /productos/deteccion-alarmas/
+            - listitem [ref=f3e490]:
+              - link "Hidrantes y mangueras" [ref=f3e491] [cursor=pointer]:
+                - /url: /productos/hidrantes-mangueras/
+            - listitem [ref=f3e492]:
+              - link "Señalización y emergencia" [ref=f3e493] [cursor=pointer]:
+                - /url: /productos/senalizacion/
+            - listitem [ref=f3e494]:
+              - link "Equipo para bombero" [ref=f3e495] [cursor=pointer]:
+                - /url: /productos/equipo-bombero/
+        - group [ref=f3e496]:
+          - generic "Servicios" [ref=f3e497]
+          - list [ref=f3e500]:
+            - listitem [ref=f3e501]:
+              - link "Todos los servicios" [ref=f3e502] [cursor=pointer]:
+                - /url: /servicios/
+            - listitem [ref=f3e503]:
+              - link "Instalación de sistemas" [ref=f3e504] [cursor=pointer]:
+                - /url: /servicios/instalacion/
+            - listitem [ref=f3e505]:
+              - link "Mantenimiento y recarga" [ref=f3e506] [cursor=pointer]:
+                - /url: /servicios/mantenimiento/
+            - listitem [ref=f3e507]:
+              - link "Prueba hidrostática" [ref=f3e508] [cursor=pointer]:
+                - /url: /servicios/prueba-hidrostatica/
+            - listitem [ref=f3e509]:
+              - link "Inspección y dictamen" [ref=f3e510] [cursor=pointer]:
+                - /url: /servicios/inspeccion/
+            - listitem [ref=f3e511]:
+              - link "Diagnóstico de riesgo" [ref=f3e512] [cursor=pointer]:
+                - /url: /servicios/diagnostico-de-riesgo/
+            - listitem [ref=f3e513]:
+              - link "Capacitación y DC-3" [ref=f3e514] [cursor=pointer]:
+                - /url: /servicios/capacitacion-dc3/
+            - listitem [ref=f3e515]:
+              - link "Gestión documental" [ref=f3e516] [cursor=pointer]:
+                - /url: /servicios/gestion-documental/
+        - group [ref=f3e517]:
+          - generic "Recursos" [ref=f3e518]
+          - list [ref=f3e521]:
+            - listitem [ref=f3e522]:
+              - link "Herramientas" [ref=f3e523] [cursor=pointer]:
+                - /url: /herramientas/
+            - listitem [ref=f3e524]:
+              - link "Cuántos extintores necesito" [ref=f3e525] [cursor=pointer]:
+                - /url: /herramientas/cuantos-extintores-necesito/
+            - listitem [ref=f3e526]:
+              - link "Riesgo de incendio" [ref=f3e527] [cursor=pointer]:
+                - /url: /herramientas/riesgo-de-incendio/
+            - listitem [ref=f3e528]:
+              - link "Verifica tu extintor" [ref=f3e529] [cursor=pointer]:
+                - /url: /herramientas/verifica-tu-extintor/
+            - listitem [ref=f3e530]:
+              - link "Formatos descargables" [ref=f3e531] [cursor=pointer]:
+                - /url: /plantillas/
+            - listitem [ref=f3e532]:
+              - link "Protección Civil" [ref=f3e533] [cursor=pointer]:
+                - /url: /proteccion-civil/
+            - listitem [ref=f3e534]:
+              - link "Blog" [ref=f3e535] [cursor=pointer]:
+                - /url: /blog/
+        - group [ref=f3e536]:
+          - generic "Empresa" [ref=f3e537]
+          - list [ref=f3e540]:
+            - listitem [ref=f3e541]:
+              - link "Nosotros" [ref=f3e542] [cursor=pointer]:
+                - /url: /nosotros/
+            - listitem [ref=f3e543]:
+              - link "Cobertura" [ref=f3e544] [cursor=pointer]:
+                - /url: /cobertura/
+            - listitem [ref=f3e545]:
+              - link "Servicio en CDMX" [ref=f3e546] [cursor=pointer]:
+                - /url: /cobertura/cdmx/
+            - listitem [ref=f3e547]:
+              - link "Servicio en Edomex" [ref=f3e548] [cursor=pointer]:
+                - /url: /cobertura/edomex/
+            - listitem [ref=f3e549]:
+              - link "Contacto" [ref=f3e550] [cursor=pointer]:
+                - /url: /contacto/
+            - listitem [ref=f3e551]:
+              - link "Cotizar por WhatsApp" [ref=f3e552] [cursor=pointer]:
+                - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n%20de%20equipo%20contra%20incendio.
+    - generic [ref=f3e554]:
+      - generic [ref=f3e555]:
+        - paragraph [ref=f3e556]: © 2026 CONINC. Todos los derechos reservados.
+        - generic [ref=f3e557]: Equipos contra incendios con más de 35 años en el mercado mexicano
+      - navigation "Legal" [ref=f3e558]:
+        - link "Aviso de privacidad" [ref=f3e559] [cursor=pointer]:
+          - /url: /privacidad/
+        - generic [aria-hidden] [ref=f3e560]: ·
+        - link "Términos y condiciones" [ref=f3e561] [cursor=pointer]:
+          - /url: /terminos/
+        - generic [aria-hidden] [ref=f3e562]: ·
+        - link "Política de cookies" [ref=f3e563] [cursor=pointer]:
+          - /url: /cookies/
+        - generic [aria-hidden] [ref=f3e564]: ·
+        - link "Mapa del sitio" [ref=f3e565] [cursor=pointer]:
+          - /url: /sitemap-index.xml
+      - button "Volver arriba" [ref=f3e566] [cursor=pointer]: Arriba
+  - link "Contactar por WhatsApp" [ref=f3e569] [cursor=pointer]:
+    - /url: https://wa.me/525539340581?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20equipo%20contra%20incendio.
+    - generic [ref=f3e572]: ¿Necesitas ayuda?

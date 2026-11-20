@@ -548,7 +548,7 @@ faq:
     - question: ¿Quién emite la constancia DC-3?
       answer: La emite y firma el agente capacitador que imparte el curso, conforme al formato oficial de la STPS. Nosotros coordinamos el curso y la gestión de las constancias de tus participantes, y te confirmamos por escrito quién imparte y bajo qué registro antes de agendar.
     - question: ¿La capacitación incluye práctica con fuego real?
-      answer: Sí. La práctica con fuego controlado es la parte que de verdad cambia la conducta. Se hace en una charola de prácticas, en exterior y con las medidas de seguridad correspondientes. Si tu inmueble no tiene el espacio adecuado, lo coordinamos.
+      answer: Sí. La práctica con fuego controlado es la parte que de verdad cambia la conducta. Cuando corresponde a la brigada de combate, se realiza con el <a href="/productos/casco-brigada-contra-incendio/">casco de bombero</a> y los <a href="/productos/guantes-brigada-contra-incendio/">guantes para bombero</a> que forman parte de su dotación. Se hace en una charola de prácticas, en exterior y con las medidas de seguridad correspondientes. Si tu inmueble no tiene el espacio adecuado, lo coordinamos.
     - question: ¿Cada cuánto hay que capacitar?
       answer: "La NOM-002 pide un programa de capacitación anual teórico-práctico. Además conviene reforzarla cuando hay rotación en la brigada o cambios en el inmueble o el proceso: una brigada con la mitad de sus integrantes dados de baja solo existe en el papel."
     - question: ¿Cuántos simulacros hay que hacer al año?

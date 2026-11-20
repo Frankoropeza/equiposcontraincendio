@@ -8,7 +8,7 @@ image: /images/productos/equipo-respiracion-autonoma-era.avif
 price: "Cotizar"
 order: 26
 seoTitle: "Equipo de respiración autónoma | ERA y SCBA"
-seoDescription: "Equipo de respiración autónoma: compara ERA, SCBA, PASS, presión positiva, NIOSH y cilindros antes de cotizar."
+seoDescription: "Equipo de respiración autónoma en CDMX y Estado de México: compara ERA, SCBA, PASS, cilindro y autonomía antes de cotizar para cada inmueble."
 relatedProducts: ["traje-aproximacion-aluminizado", "conjunto-estructural-chaqueton-pantalon"]
 relatedServices: ["diagnostico-de-riesgo", "capacitacion-dc3", "inspeccion"]
 faqs:
@@ -30,6 +30,14 @@ faqs:
     answer: "Su ficha identifica EN 137:2006 tipo 2 y publica peso, dimensiones y presiones, pero no publica capacidad de cilindro, autonomía en minutos, PASS ni confirmación de presión positiva. Esos datos no se deben rellenar al cotizar."
   - question: "¿Existe una sola ficha en español para México con todas las confirmaciones?"
     answer: "No. Ningún fabricante publica en español y para México una sola ficha que confirme a la vez PASS, presión positiva, certificación NFPA y nivel CBRN para la misma configuración. Por eso la configuración se arma al cotizar y se integra al expediente."
+  - question: "¿Cuánto tiempo dura un equipo de respiración autónoma?"
+    answer: "Hay cilindros publicados de 30, 45 y 60 minutos, pero la autonomía nominal debe confirmarse para la configuración exacta y no sustituye el plan de trabajo, la capacitación ni el control de aire. El material del cilindro también varía entre aluminio, carbono, compuesto y acero."
+  - question: "¿Qué es un equipo de respiración autónomo?"
+    answer: "Es un equipo también llamado ERA, SCBA o autocontenido que suministra aire al usuario desde un circuito propio. Se selecciona para una brigada según el riesgo respiratorio identificado y la tarea, no como una compra genérica."
+  - question: "¿Cómo se usa un equipo de respiración autónomo?"
+    answer: "Su uso exige capacitación, inspección y procedimiento para la configuración específica. Antes de intervenir, confirma máscara, arnés, cilindro, presión, alarma y condiciones de uso; la NOM-017-STPS-2024 pide capacitar, señalizar y registrar el EPP."
+  - question: "¿Cuánto cuesta un equipo de respiración autónoma?"
+    answer: "El costo depende de cilindro, autonomía, material, máscara, PASS, presión positiva y accesorios. También cambia si se cotiza capacitación o una configuración para pocas personas; se define según el riesgo y el inmueble."
 variantes:
   - nombre: "Equipo ERA con PASS integrado"
     badge: "Con PASS"
@@ -116,12 +124,22 @@ fichaHeads:
     - "Ningún fabricante publica en español y para México una sola ficha que confirme a la vez PASS, presión positiva, certificación NFPA y CBRN para la misma configuración. Por eso se confirma y documenta al cotizar."
 ---
 
-El **equipo de respiración autónoma (ERA)**, también llamado SCBA, se configura para la brigada contra incendio de una empresa. Un ERA para bomberos se define por el riesgo respiratorio y la tarea. La Guía de referencia III de la NOM-002 es enunciativa, no obligatoria, y plantea un piso de duración mínima de 30 minutos, alarma de fin de uso y preferentemente presión positiva.
+El **equipo de respiración autónoma** (ERA), también llamado SCBA o equipo autocontenido, se configura para la brigada de una empresa según el riesgo respiratorio y la tarea. La Guía de referencia III de la NOM-002 es enunciativa, no obligatoria, y plantea un piso de 30 minutos, alarma de fin de uso y preferentemente presión positiva.
 
-### Equipo de respiración autónoma: PASS y alcance
+## Partes de un equipo de respiración autónoma
 
-El PASS es la alarma de hombre inmóvil certificada junto con el ERA. La plataforma con PASS integrado da alarma total tras 30 segundos sin movimiento y monitorea cilindro y batería. Otra plataforma se compra sin PASS y permite adaptarlo después; para una empresa que inicia con pocos equipos, esa diferencia debe quedar definida desde la cotización.
+El ERA integra máscara o pieza facial, arnés, regulador, cilindro, manómetro y alarma; según la configuración puede incorporar PASS, comunicación o línea de aire auxiliar. No mezcles datos entre líneas: el PASS es la alarma de hombre inmóvil certificada junto con el equipo, mientras una plataforma sin PASS puede admitirlo después. La aprobación NIOSH conforme a 42 CFR 84 antecede a la certificación NFPA; la NFPA es referencia técnica, no ley en México.
 
-### Avisos que no se deben ocultar
+## Autonomía por cilindro: 30, 45 o 60 minutos
 
-Un modelo de 30 minutos con alarma de fin de servicio está marcado como descontinuado por su fabricante y se presenta solo como referencia del piso de la Guía III. Otra configuración cita una edición NFPA de 1997 y advierte que no cumple la NFPA actual. Ninguna ficha en español para México confirma a la vez PASS, presión positiva, NFPA y CBRN para la misma configuración: se arma al cotizar.
+Hay configuraciones publicadas de 30, 45 y 60 minutos con cilindros de aluminio, carbono, compuesto o acero. La autonomía debe confirmarse para el mismo ERA, cilindro y presión cotizados. Un modelo de 30 minutos con alarma de fin de servicio está marcado como descontinuado por su fabricante; otra configuración cita NFPA de 1997 y advierte que no cumple la norma NFPA actual. Ambos avisos se conservan al comparar.
+
+El ERA se integra al [equipo para bombero](/productos/equipo-bombero/) con [casco de bombero](/productos/casco-brigada-contra-incendio/), [capucha para bombero](/productos/capucha-proteccion-brigada/) y [traje estructural de bombero](/productos/conjunto-estructural-chaqueton-pantalon/). Para calor radiante se revisa junto con un [traje aluminizado](/productos/traje-aproximacion-aluminizado/) que tenga alojamiento compatible; [guantes para bombero](/productos/guantes-brigada-contra-incendio/) y [botas para bombero](/productos/botas-brigada-contra-incendio/) se eligen por su propia exposición.
+
+## Qué determina el precio de un equipo de respiración autónoma
+
+El costo cambia por material y autonomía del cilindro, máscara y tallas, PASS, presión positiva, comunicación, alarma y línea de aire auxiliar. También varía por capacitación e inspección para la configuración seleccionada; se cotiza según lo que pida el inmueble.
+
+## ERA y SCBA para CDMX y Estado de México
+
+La configuración se decide por el riesgo respiratorio del área y por quién va a cargar el equipo. Atendemos [Ciudad de México](/cobertura/cdmx/) y [Estado de México](/cobertura/edomex/). La NOM-017-STPS-2024 pide seleccionar, verificar, capacitar, señalizar y registrar el EPP; no hay una sola ficha en español para México que confirme todas las variables en la misma configuración.

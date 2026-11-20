@@ -205,7 +205,7 @@ export const TAXONOMY = {
     { slug: 'hidrantes-mangueras', label: 'Hidrantes y mangueras',     badge: undefined, href: '/productos/hidrantes-mangueras/' },
     { slug: 'senalizacion',        label: 'Señalización y emergencia', badge: undefined, href: '/productos/senalizacion/' },
     { slug: 'accesorios',          label: 'Accesorios y refacciones',  badge: undefined, href: '/productos/accesorios/' },
-    { slug: 'equipo-bombero',      label: 'Equipo para bombero',       badge: undefined, href: '/productos/equipo-bombero/' },
+    { slug: 'equipo-bombero',      label: 'Equipo para bomberos',      badge: undefined, href: '/productos/equipo-bombero/' },
   ],
   // Los `id` DEBEN coincidir con los nombres de archivo de src/content/servicios/
   // (lo vigila tests/taxonomy-collections.test.mjs). Orden = orden del dropdown.

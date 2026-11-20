@@ -30,6 +30,12 @@ faqs:
     answer: "La NOM-017-STPS-2024, numeral 7.1 e), indica desechar y reemplazar el EPP con fallas, daño, desgaste o quemaduras no reparables, al cumplir la vida útil indicada por el fabricante o después de impactos, descargas eléctricas o contacto con material incandescente."
   - question: "¿Qué marca de botas se puede cotizar?"
     answer: "Conseguimos equipo de las marcas reconocidas del mercado mexicano. La marca, el modelo y la disponibilidad se confirman al cotizar. Compara la especificación publicada y su relación con el riesgo de la brigada, no solo el nombre comercial."
+  - question: "¿Qué vestimenta usa un bombero?"
+    answer: "La dotación puede integrar casco, capucha, guantes, botas, conjunto estructural y, cuando el riesgo lo requiere, equipo de respiración autónoma. Cada pieza se selecciona por función y riesgo; la Guía de referencia III de la NOM-002 es enunciativa, no obligatoria."
+  - question: "¿Qué es el PVC en botas?"
+    answer: "PVC es policloruro de vinilo, un material que puede usarse en calzado industrial. Su presencia no acredita por sí misma protección térmica, dieléctrica, casquillo ni resistencia a perforación: revisa la ficha de la bota exacta."
+  - question: "¿Qué diferencia hay entre botas AG y FG?"
+    answer: "AG y FG no son una clasificación de la NOM-002 ni una NOM de producto para botas de bombero. Las siglas deben confirmarse en la ficha del fabricante de cada modelo; no conviene inferir una protección por el nombre comercial."
 variantes:
   - nombre: "Bota de caucho de 13 pulgadas de calzar rápido"
     badge: "Calor y agua"
@@ -110,16 +116,18 @@ fichaHeads:
     - "Si compartes las funciones de la brigada y los riesgos de las áreas, se puede definir qué información debe solicitarse antes de cotizar. La marca, el modelo y la disponibilidad se confirman al cotizar."
 ---
 
-Las **botas para bombero** no se eligen por una lista genérica. Las botas de bombero o una bota estructural responden a riesgos distintos. La NOM-002-STPS-2010, numeral 5.9, obliga al patrón a dotar EPP conforme a las funciones y los riesgos de cada integrante. Consulta también la [capucha para bombero](/productos/capucha-proteccion-brigada/).
+Las **botas para bombero** no se eligen por una lista genérica. La NOM-002-STPS-2010, numeral 5.9, obliga a dotar EPP conforme a las funciones y riesgos de cada integrante; calor, agua y electricidad no se resuelven con una sola afirmación de protección.
 
-### Botas para bombero: el punto que cambia la decisión
+## ¿Qué vestimenta usa un bombero y qué papel tienen las botas?
 
-La Guía de referencia III de la NOM-002, que es enunciativa y no obligatoria, describe una bota de hule con protección térmica, dieléctrica, casquillo y antipunzonante. No se encontró un modelo del mercado mexicano que acredite juntas esas cuatro propiedades.
+La dotación puede incluir casco, capucha, guantes, botas, conjunto estructural y ERA, pero la Guía de referencia III de la NOM-002 es enunciativa, no obligatoria. Describe una bota de hule con protección térmica, dieléctrica, casquillo y antipunzonante; no se encontró un modelo del mercado mexicano que acredite juntas esas cuatro propiedades. Para calor y agua, la bota de caucho verificada incorpora acero y no es dieléctrica; para riesgo eléctrico, la bota con casquillo no metálico no acredita protección térmica de bombero.
 
-Para calor y agua, la bota de caucho verificada ofrece protección térmica, casquillo y cambrión de acero; por ello no es dieléctrica. Para riesgo eléctrico, la alternativa es una bota dieléctrica con casquillo no metálico, que no acredita protección térmica de bombero. No es un incumplimiento: es una decisión de riesgo que debes documentar.
+Compara las botas dentro del [equipo para bombero](/productos/equipo-bombero/) con [casco de bombero](/productos/casco-brigada-contra-incendio/), [capucha para bombero](/productos/capucha-proteccion-brigada/) y [guantes para bombero](/productos/guantes-brigada-contra-incendio/). Cuando corresponde entrada estructural, revisa también el [traje estructural de bombero](/productos/conjunto-estructural-chaqueton-pantalon/) y el [equipo de respiración autónoma](/productos/equipo-respiracion-autonoma-era/), sin equipararlos con un [traje aluminizado](/productos/traje-aproximacion-aluminizado/).
 
-### Qué revisar antes de cotizar
+## Qué determina el precio de unas botas para bombero
 
-- Riesgo dominante y función de cada integrante de la brigada.
-- Materiales, componentes, grado de protección y condiciones de no uso de la ficha del fabricante.
-- Vía de acreditación y evidencia para el expediente conforme a la NOM-017-STPS-2024.
+El costo cambia con el material —caucho, cuero o PVC—, el aislamiento térmico, la barrera de humedad, los componentes de acero o el casquillo no metálico, el tallaje y la configuración estructural o dieléctrica. Se cotiza según lo que pida el inmueble.
+
+## Botas para brigada en CDMX y Estado de México
+
+Antes de pedir una bota, identifica el riesgo dominante por puesto y área. Damos servicio en [Ciudad de México](/cobertura/cdmx/) y [Estado de México](/cobertura/edomex/). Conserva marcado, ficha técnica, grado de protección y condiciones de no uso conforme a la NOM-017-STPS-2024.

@@ -1,0 +1,827 @@
+- generic [active] [ref=e1]:
+  - link "Saltar al contenido principal" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - complementary "Información de contacto" [ref=e3]:
+    - generic [ref=e4]:
+      - paragraph [ref=e5]:
+        - generic [ref=e7]: Equipos contra incendios con más de 35 años en el mercado mexicano
+      - generic [ref=e8]:
+        - generic [ref=e9]: Lun–Vie 9–18 · Sáb 9–14
+        - link "Llamar al 55 3934 0581" [ref=e13] [cursor=pointer]:
+          - /url: tel:+525539340581
+          - generic [ref=e16]: 55 3934 0581
+        - link "Contactar por WhatsApp" [ref=e17] [cursor=pointer]:
+          - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n%20de%20equipo%20contra%20incendio.
+          - generic [ref=e20]: WhatsApp
+  - banner [ref=e21]:
+    - generic [ref=e22]:
+      - link "CONINC Contra incendios , ir al inicio" [ref=e23] [cursor=pointer]:
+        - /url: /
+        - generic [aria-hidden] [ref=e24]: C
+        - generic [ref=e25]:
+          - generic [ref=e26]: CONINC
+          - generic [ref=e27]: Contra incendios
+        - generic [ref=e28]: ", ir al inicio"
+      - navigation "Navegación principal" [ref=e29]:
+        - list [ref=e30]:
+          - listitem [ref=e31]:
+            - button "Productos" [ref=e32] [cursor=pointer]
+          - listitem [ref=e36]:
+            - button "Servicios" [ref=e37] [cursor=pointer]
+          - listitem [ref=e41]:
+            - button "Cobertura" [ref=e42] [cursor=pointer]
+          - listitem [ref=e46]:
+            - button "Recursos" [ref=e47] [cursor=pointer]
+          - listitem [ref=e51]:
+            - link "Nosotros" [ref=e52] [cursor=pointer]:
+              - /url: /nosotros/
+          - listitem [ref=e53]:
+            - link "Contacto" [ref=e54] [cursor=pointer]:
+              - /url: /contacto/
+      - link "Solicitar cotización por WhatsApp" [ref=e55] [cursor=pointer]:
+        - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n%20de%20equipo%20contra%20incendio.
+        - generic [ref=e58]: Cotizar
+  - navigation "Migas de pan" [ref=e60]:
+    - list [ref=e61]:
+      - listitem [ref=e62]:
+        - link "Inicio" [ref=e63] [cursor=pointer]:
+          - /url: /
+      - listitem [ref=e67]:
+        - link "Productos" [ref=e68] [cursor=pointer]:
+          - /url: /productos/
+      - listitem [ref=e72]:
+        - generic [ref=e73]: Equipo para bomberos
+  - main [ref=e74]:
+    - region "Encabezado principal" [ref=e75]:
+      - generic [ref=e76]:
+        - generic [ref=e77]:
+          - generic [ref=e78]: EPP para brigada contra incendio · CDMX y Estado de México
+          - heading "Equipo para bomberos para tu brigada" [level=1] [ref=e80]
+          - paragraph [ref=e81]: El equipo para bomberos y el EPP para bomberos se seleccionan conforme a las funciones y riesgos de tu brigada, como exige la NOM-002-STPS-2010, numeral 5.9.
+          - generic [ref=e82]:
+            - link "Cotizar por WhatsApp" [ref=e83] [cursor=pointer]:
+              - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20revisar%20el%20EPP%20de%20mi%20brigada%20contra%20incendio.%20Mi%20inmueble%20y%20sus%20riesgos%20son%3A
+            - link "Cómo definir el EPP" [ref=e86] [cursor=pointer]:
+              - /url: "#lo-que-acompana-al-epp"
+        - generic [ref=e87]:
+          - paragraph [ref=e88]: "El punto de partida para elegir equipo contra incendio para bomberos no es un traje o un casco aislado: es el grado de riesgo, la función de cada integrante y la evidencia que debe quedar en el expediente para la STPS."
+          - paragraph [ref=e89]: La NOM-017-STPS-2024 pide identificar los riesgos por puesto y área, seleccionar el EPP conforme a ellos, verificar su certificación, capacitar, señalizar y llevar registros.
+    - navigation "Secciones del sitio" [ref=e90]:
+      - list [ref=e92]:
+        - listitem [ref=e93]:
+          - link "Productos Equipos contra incendios" [ref=e94] [cursor=pointer]:
+            - /url: /productos/
+            - generic [ref=e95]: Productos
+            - generic [ref=e97]: Equipos contra incendios
+        - listitem [ref=e98]:
+          - link "Servicios Instalación y mantenimiento" [ref=e99] [cursor=pointer]:
+            - /url: /servicios/
+            - generic [ref=e100]: Servicios
+            - generic [ref=e102]: Instalación y mantenimiento
+        - listitem [ref=e103]:
+          - link "Cobertura Zonas que atendemos" [ref=e104] [cursor=pointer]:
+            - /url: /cobertura/
+            - generic [ref=e105]: Cobertura
+            - generic [ref=e107]: Zonas que atendemos
+        - listitem [ref=e108]:
+          - link "Herramientas Calculadoras y formatos" [ref=e109] [cursor=pointer]:
+            - /url: /herramientas/
+            - generic [ref=e110]: Herramientas
+            - generic [ref=e112]: Calculadoras y formatos
+        - listitem [ref=e113]:
+          - link "Protección Civil Qué exige por entidad" [ref=e114] [cursor=pointer]:
+            - /url: /proteccion-civil/
+            - generic [ref=e115]: Protección Civil
+            - generic [ref=e117]: Qué exige por entidad
+        - listitem [ref=e118]:
+          - link "Blog Guías y normatividad" [ref=e119] [cursor=pointer]:
+            - /url: /blog/
+            - generic [ref=e120]: Blog
+            - generic [ref=e122]: Guías y normatividad
+        - listitem [ref=e123]:
+          - link "Cotizar por WhatsApp Riesgos y funciones" [ref=e124] [cursor=pointer]:
+            - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20revisar%20el%20EPP%20de%20mi%20brigada%20contra%20incendio.%20Mi%20inmueble%20y%20sus%20riesgos%20son%3A
+            - generic [ref=e125]: Cotizar por WhatsApp
+            - generic [ref=e130]: Riesgos y funciones
+    - generic [ref=e132]:
+      - generic [ref=e133]:
+        - generic [ref=e134]:
+          - paragraph [ref=e135]: Lo que acompaña al EPP
+          - heading "Equipo para bomberos según el riesgo y el expediente" [level=2] [ref=e137]
+          - paragraph [ref=e138]: Antes de elegir equipo para bomberos, revisa la función de la brigada, el riesgo y la evidencia que conservarás.
+        - generic [ref=e139]:
+          - paragraph [ref=e140]: La obligación de la NOM-002-STPS-2010, numeral 5.9, corresponde al patrón y se ajusta a las funciones y riesgos de los integrantes de la brigada.
+          - paragraph [ref=e141]: La NOM-017-STPS-2024 vincula esa selección con la identificación de riesgos, la certificación aplicable, la capacitación, la señalización y los registros.
+      - generic [ref=e142]:
+        - article "Casco de bombero" [ref=e143]:
+          - link [aria-hidden] [ref=e144] [cursor=pointer]:
+            - /url: /productos/casco-brigada-contra-incendio/
+            - generic [ref=e145]: EPP para brigada de empresa
+          - generic [ref=e149]:
+            - heading [level=3] [ref=e150]:
+              - link "Casco de bombero" [ref=e151] [cursor=pointer]:
+                - /url: /productos/casco-brigada-contra-incendio/
+            - paragraph [ref=e152]: Casco de bombero para proteger la cabeza según el riesgo, función y expediente de EPP.
+            - generic [ref=e153]:
+              - generic [ref=e154]:
+                - term [ref=e155]: Material
+                - definition [ref=e156]: Fibra de vidrio tipo Thermoglas®
+              - generic [ref=e157]:
+                - term [ref=e158]: Formato
+                - definition [ref=e159]: Formato tradicional
+              - generic [ref=e160]:
+                - term [ref=e161]: Acabado
+                - definition [ref=e162]: Acabado mate disponible
+            - link "Ver casco de bombero" [ref=e163] [cursor=pointer]:
+              - /url: /productos/casco-brigada-contra-incendio/
+        - article "Guantes para bombero" [ref=e167]:
+          - link [aria-hidden] [ref=e168] [cursor=pointer]:
+            - /url: /productos/guantes-brigada-contra-incendio/
+            - generic [ref=e169]: EPP para brigada de empresa
+          - generic [ref=e173]:
+            - heading [level=3] [ref=e174]:
+              - link "Guantes para bombero" [ref=e175] [cursor=pointer]:
+                - /url: /productos/guantes-brigada-contra-incendio/
+            - paragraph [ref=e176]: Guantes para bombero elegidos por el riesgo y la función de cada puesto.
+            - generic [ref=e177]:
+              - generic [ref=e178]:
+                - term [ref=e179]: Longitud
+                - definition [ref=e180]: 33 cm
+              - generic [ref=e181]:
+                - term [ref=e182]: Tallas
+                - definition [ref=e183]: Tallas M, L y XL
+              - generic [ref=e184]:
+                - term [ref=e185]: Puño
+                - definition [ref=e186]: Puño Kevlar®
+            - link "Ver guantes para bombero" [ref=e187] [cursor=pointer]:
+              - /url: /productos/guantes-brigada-contra-incendio/
+        - article "Botas para bombero" [ref=e191]:
+          - link [aria-hidden] [ref=e192] [cursor=pointer]:
+            - /url: /productos/botas-brigada-contra-incendio/
+            - generic [ref=e193]: EPP para brigada contra incendio
+          - generic [ref=e197]:
+            - heading [level=3] [ref=e198]:
+              - link "Botas para bombero" [ref=e199] [cursor=pointer]:
+                - /url: /productos/botas-brigada-contra-incendio/
+            - paragraph [ref=e200]: Botas para bombero con protección térmica o dieléctrica según el riesgo dominante.
+            - generic [ref=e201]:
+              - generic [ref=e202]:
+                - term [ref=e203]: Material
+                - definition [ref=e204]: Caucho
+              - generic [ref=e205]:
+                - term [ref=e206]: Altura
+                - definition [ref=e207]: 13 pulg
+              - generic [ref=e208]:
+                - term [ref=e209]: Componentes
+                - definition [ref=e210]: Entresuela, cambrión y puntera de acero
+            - link "Ver botas para bombero" [ref=e211] [cursor=pointer]:
+              - /url: /productos/botas-brigada-contra-incendio/
+        - article "Capucha para bombero" [ref=e215]:
+          - link [aria-hidden] [ref=e216] [cursor=pointer]:
+            - /url: /productos/capucha-proteccion-brigada/
+            - generic [ref=e217]: EPP para brigada contra incendio
+          - generic [ref=e221]:
+            - heading [level=3] [ref=e222]:
+              - link "Capucha para bombero" [ref=e223] [cursor=pointer]:
+                - /url: /productos/capucha-proteccion-brigada/
+            - paragraph [ref=e224]: Capucha para bombero que protege cabeza y cuello bajo el casco.
+            - generic [ref=e225]:
+              - generic [ref=e226]:
+                - term [ref=e227]: Material
+                - definition [ref=e228]: Nomex
+              - generic [ref=e229]:
+                - term [ref=e230]: Construcción
+                - definition [ref=e231]: Doble capa
+              - generic [ref=e232]:
+                - term [ref=e233]: Longitud
+                - definition [ref=e234]: 21 pulg
+            - link "Ver capucha para bombero" [ref=e235] [cursor=pointer]:
+              - /url: /productos/capucha-proteccion-brigada/
+        - article "Traje aluminizado" [ref=e239]:
+          - link [aria-hidden] [ref=e240] [cursor=pointer]:
+            - /url: /productos/traje-aproximacion-aluminizado/
+            - generic [ref=e241]: EPP para brigada industrial
+          - generic [ref=e245]:
+            - heading [level=3] [ref=e246]:
+              - link "Traje aluminizado" [ref=e247] [cursor=pointer]:
+                - /url: /productos/traje-aproximacion-aluminizado/
+            - paragraph [ref=e248]: EPP aluminizado para exposición a calor radiante en procesos industriales.
+            - generic [ref=e249]:
+              - generic [ref=e250]:
+                - term [ref=e251]: Material
+                - definition [ref=e252]: Fibra de vidrio aluminizada
+              - generic [ref=e253]:
+                - term [ref=e254]: Peso
+                - definition [ref=e255]: 545 g/m²
+              - generic [ref=e256]:
+                - term [ref=e257]: Barreras
+                - definition [ref=e258]: Sin barreras
+            - link "Ver traje aluminizado" [ref=e259] [cursor=pointer]:
+              - /url: /productos/traje-aproximacion-aluminizado/
+        - article "Trajes para bomberos" [ref=e263]:
+          - link [aria-hidden] [ref=e264] [cursor=pointer]:
+            - /url: /productos/conjunto-estructural-chaqueton-pantalon/
+            - generic [ref=e265]: EPP estructural para brigada
+          - generic [ref=e269]:
+            - heading [level=3] [ref=e270]:
+              - link "Trajes para bomberos" [ref=e271] [cursor=pointer]:
+                - /url: /productos/conjunto-estructural-chaqueton-pantalon/
+            - paragraph [ref=e272]: Trajes para bomberos con chaquetón y pantalón de tres barreras para tu brigada.
+            - generic [ref=e273]:
+              - generic [ref=e274]:
+                - term [ref=e275]: Material
+                - definition [ref=e276]: Nomex IIIA
+              - generic [ref=e277]:
+                - term [ref=e278]: TPP
+                - definition [ref=e279]: TPP 38-41
+              - generic [ref=e280]:
+                - term [ref=e281]: Cinta
+                - definition [ref=e282]: Cinta microperforada 3 pulg
+            - link "Ver trajes para bomberos" [ref=e283] [cursor=pointer]:
+              - /url: /productos/conjunto-estructural-chaqueton-pantalon/
+        - article "Equipo de respiración autónoma" [ref=e287]:
+          - link [aria-hidden] [ref=e288] [cursor=pointer]:
+            - /url: /productos/equipo-respiracion-autonoma-era/
+            - generic [ref=e289]: EPP respiratorio para brigada
+          - generic [ref=e293]:
+            - heading [level=3] [ref=e294]:
+              - link "Equipo de respiración autónoma" [ref=e295] [cursor=pointer]:
+                - /url: /productos/equipo-respiracion-autonoma-era/
+            - paragraph [ref=e296]: Equipo de respiración autónoma ERA o SCBA con PASS y cilindro para tu brigada.
+            - generic [ref=e297]:
+              - generic [ref=e298]:
+                - term [ref=e299]: Circuito
+                - definition [ref=e300]: Circuito abierto
+              - generic [ref=e301]:
+                - term [ref=e302]: Operación
+                - definition [ref=e303]: Presión-demanda
+              - generic [ref=e304]:
+                - term [ref=e305]: PASS
+                - definition [ref=e306]: PASS a 30 s
+            - link "Ver equipo ERA" [ref=e307] [cursor=pointer]:
+              - /url: /productos/equipo-respiracion-autonoma-era/
+        - article "Diagnóstico de riesgo" [ref=e311]:
+          - link [aria-hidden] [ref=e312] [cursor=pointer]:
+            - /url: /servicios/diagnostico-de-riesgo/
+            - generic [ref=e313]: Punto de partida
+          - generic [ref=e317]:
+            - heading [level=3] [ref=e318]:
+              - link "Diagnóstico de riesgo" [ref=e319] [cursor=pointer]:
+                - /url: /servicios/diagnostico-de-riesgo/
+            - paragraph [ref=e320]: Identifica los riesgos que determinan el EPP para las funciones de la brigada.
+            - generic [ref=e321]:
+              - generic [ref=e322]:
+                - term [ref=e323]: Define
+                - definition [ref=e324]: Grado de riesgo
+              - generic [ref=e325]:
+                - term [ref=e326]: Relaciona
+                - definition [ref=e327]: Funciones y EPP
+              - generic [ref=e328]:
+                - term [ref=e329]: Sustenta
+                - definition [ref=e330]: Selección
+            - link "Revisar mi riesgo" [ref=e331] [cursor=pointer]:
+              - /url: /servicios/diagnostico-de-riesgo/
+    - generic [ref=e336]:
+      - generic [ref=e337]:
+        - generic [ref=e338]:
+          - paragraph [ref=e339]: NOM-002-STPS-2010, numeral 5.9
+          - heading "El EPP parte de las funciones y riesgos" [level=2] [ref=e341]
+          - paragraph [ref=e342]: La obligación es dotar a los integrantes de la brigada con el EPP que corresponde a sus funciones y riesgos.
+        - generic [ref=e343]:
+          - paragraph [ref=e344]: "La NOM-002-STPS-2010 no convierte una lista genérica de productos en una selección válida: el punto de partida es la función que realizará cada integrante y el riesgo que enfrentará."
+          - paragraph [ref=e345]: La NOM-017-STPS-2024 pide identificar riesgos por puesto y área para seleccionar el EPP, verificar su certificación, capacitar, señalizar y llevar registros.
+      - table [ref=e347]:
+        - rowgroup [ref=e348]:
+          - row [ref=e349]:
+            - columnheader "Qué definir" [ref=e350]
+            - columnheader "A partir de" [ref=e351]
+            - columnheader "Evidencia" [ref=e352]
+            - columnheader "Fundamento" [ref=e353]
+        - rowgroup [ref=e354]:
+          - row [ref=e355]:
+            - cell [ref=e356]:
+              - strong [ref=e357]: EPP de cada integrante
+            - cell "Funciones y riesgos de la brigada" [ref=e358]
+            - cell "Selección documentada" [ref=e359]
+            - cell "NOM-002-STPS-2010, 5.9" [ref=e360]
+          - row [ref=e361]:
+            - cell [ref=e362]:
+              - strong [ref=e363]: Riesgos por puesto y área
+            - cell "Identificación de riesgos" [ref=e364]
+            - cell "Expediente de evaluación" [ref=e365]
+            - cell "NOM-017-STPS-2024" [ref=e366]
+          - row [ref=e367]:
+            - cell [ref=e368]:
+              - strong [ref=e369]: Vía de cumplimiento
+            - cell "NOM, NMX o Estándar Técnico; a falta de ellos, fabricante" [ref=e370]
+            - cell "Certificado o información del fabricante" [ref=e371]
+            - cell "NOM-017-STPS-2024, 5.4" [ref=e372]
+          - row [ref=e373]:
+            - cell [ref=e374]:
+              - strong [ref=e375]: Reemplazo del EPP
+            - cell "Fallas, daño, desgaste o quemaduras no reparables" [ref=e376]
+            - cell "Registro de retiro y reemplazo" [ref=e377]
+            - cell "NOM-017-STPS-2024, 7.1 e)" [ref=e378]
+    - generic [ref=e380]:
+      - generic [ref=e381]:
+        - generic [ref=e382]:
+          - paragraph [ref=e383]: Selección y evidencia
+          - heading "Qué revisar antes de integrar el EPP" [level=2] [ref=e385]
+          - paragraph [ref=e386]: La NOM-017-STPS-2024 fija la ruta para seleccionar y respaldar el EPP conforme a los riesgos.
+        - generic [ref=e387]:
+          - paragraph [ref=e388]: Si existe NOM del equipo, la vía de cumplimiento es el certificado de un organismo acreditado. Si no existe NOM, se recurre a NMX o Estándares Técnicos.
+          - paragraph [ref=e389]: "Cuando no existen ninguno de esos referentes, la NOM-017-STPS-2024 pide información del fabricante: marcado, ficha técnica, grado de protección y condiciones de no uso."
+      - region "Equipo recomendado por nivel de riesgo" [ref=e391]:
+        - table [ref=e392]:
+          - rowgroup [ref=e393]:
+            - row [ref=e394]:
+              - columnheader "Revisión" [ref=e395]
+              - columnheader "Qué debes resolver" [ref=e396]
+              - columnheader "Evidencia" [ref=e397]
+              - columnheader "Norma" [ref=e398]
+          - rowgroup [ref=e399]:
+            - row [ref=e400]:
+              - cell [ref=e401]:
+                - strong [ref=e402]: Riesgos
+              - cell "Identificación por puesto y área" [ref=e403]
+              - cell "Seleccionar EPP conforme a esos riesgos" [ref=e404]
+              - cell "NOM-017-STPS-2024" [ref=e405]
+            - row [ref=e406]:
+              - cell [ref=e407]:
+                - strong [ref=e408]: Certificación
+              - cell "NOM del equipo" [ref=e409]
+              - cell "Certificado de organismo acreditado" [ref=e410]
+              - cell "NOM-017-STPS-2024, 5.4" [ref=e411]
+            - row [ref=e412]:
+              - cell [ref=e413]:
+                - strong [ref=e414]: Sin NOM del equipo
+              - cell "NMX o Estándares Técnicos; a falta de ambos, fabricante" [ref=e415]
+              - cell "Marcado, ficha técnica, grado de protección y condiciones de no uso" [ref=e416]
+              - cell "NOM-017-STPS-2024, 5.4" [ref=e417]
+            - row [ref=e418]:
+              - cell [ref=e419]:
+                - strong [ref=e420]: Retiro
+              - cell "Fallas, daño, desgaste o quemaduras no reparables" [ref=e421]
+              - cell "Desechar y reemplazar según la vida útil indicada por el fabricante y tras los eventos previstos" [ref=e422]
+              - cell "NOM-017-STPS-2024, 7.1 e)" [ref=e423]
+      - generic [ref=e424]:
+        - paragraph [ref=e425]: No existe NOM mexicana de producto para traje estructural, casco de bombero, guantes, botas ni equipo de respiración autónoma. La NOM-115-STPS-2009 cubre solamente cascos de protección.
+        - link "Diagnóstico de riesgo" [ref=e426] [cursor=pointer]:
+          - /url: /servicios/diagnostico-de-riesgo/
+    - generic [ref=e430]:
+      - generic [ref=e431]:
+        - generic [ref=e432]:
+          - paragraph [ref=e433]: Límites que importan
+          - heading "El nivel de protección no sustituye la evaluación del riesgo" [level=2] [ref=e435]
+          - paragraph [ref=e436]: Cada elemento debe corresponder a la función, al grado de protección y a sus condiciones de no uso.
+        - generic [ref=e437]:
+          - paragraph [ref=e438]: La Guía de referencia III de la NOM-002-STPS-2010 es enunciativa, no obligatoria. Describe componentes que pueden orientar la revisión del EPP de una brigada.
+          - paragraph [ref=e439]: El traje de aproximación o aluminizado protege del calor radiante; no está diseñado para entrar a la flama.
+      - table [ref=e441]:
+        - rowgroup [ref=e442]:
+          - row [ref=e443]:
+            - columnheader "Referencia" [ref=e444]
+            - columnheader "Qué describe" [ref=e445]
+            - columnheader "Límite" [ref=e446]
+        - rowgroup [ref=e447]:
+          - row [ref=e448]:
+            - cell [ref=e449]:
+              - strong [ref=e450]: Guía de referencia III de NOM-002
+            - cell "Chaquetón, pantalón, casco, botas, guantes, monja, tirantes, equipo de respiración autónoma y apoyo" [ref=e451]
+            - cell "Es enunciativa, no obligatoria" [ref=e452]
+          - row [ref=e453]:
+            - cell [ref=e454]:
+              - strong [ref=e455]: Traje de aproximación o aluminizado
+            - cell "Protección ante calor radiante" [ref=e456]
+            - cell "No está diseñado para entrar a la flama" [ref=e457]
+          - row [ref=e458]:
+            - cell [ref=e459]:
+              - strong [ref=e460]: NFPA 1970, ed. 2025
+            - cell "Referencia técnica que consolidó NFPA 1971, 1975, 1981 y 1982" [ref=e461]
+            - cell "NFPA no es ley en México" [ref=e462]
+          - row [ref=e463]:
+            - cell [ref=e464]:
+              - strong [ref=e465]: EN 469:2020
+            - cell "Niveles X de calor y llama, Y de agua y Z de vapor" [ref=e466]
+            - cell "Referencia europea" [ref=e467]
+    - generic [ref=e469]:
+      - generic [ref=e470]:
+        - generic [ref=e471]:
+          - paragraph [ref=e472]: Decisión de compra
+          - heading "Antes de pedir EPP ordena la información del riesgo" [level=2] [ref=e474]
+          - paragraph [ref=e475]: El expediente debe conectar la función de la brigada, el riesgo identificado y la evidencia del equipo seleccionado.
+        - generic [ref=e476]:
+          - paragraph [ref=e477]: "No se puede asumir el mismo EPP para todas las funciones: la NOM-002-STPS-2010, numeral 5.9, lo vincula con las funciones y los riesgos de cada integrante."
+          - paragraph [ref=e478]: Para la STPS, la NOM-017-STPS-2024 exige que la selección se acompañe de certificación conforme a la vía aplicable, capacitación, señalización y registros.
+      - table [ref=e480]:
+        - rowgroup [ref=e481]:
+          - row [ref=e482]:
+            - columnheader "Si necesitas definir" [ref=e483]
+            - columnheader "Empieza por" [ref=e484]
+            - columnheader "Después integra" [ref=e485]
+        - rowgroup [ref=e486]:
+          - row [ref=e487]:
+            - cell [ref=e488]:
+              - strong [ref=e489]: Riesgo y funciones
+            - cell "Diagnóstico por puesto y área" [ref=e490]
+            - cell "Selección de EPP" [ref=e491]
+          - row [ref=e492]:
+            - cell [ref=e493]:
+              - strong [ref=e494]: Evidencia de cumplimiento
+            - cell "Certificado o información del fabricante" [ref=e495]
+            - cell "Expediente y registros" [ref=e496]
+          - row [ref=e497]:
+            - cell [ref=e498]:
+              - strong [ref=e499]: Uso del EPP
+            - cell "Capacitación" [ref=e500]
+            - cell "Señalización y registros" [ref=e501]
+      - link "Gestión documental" [ref=e503] [cursor=pointer]:
+        - /url: /servicios/gestion-documental/
+        - text: Gestión documental
+        - generic [aria-hidden] [ref=e504]: →
+    - generic [ref=e506]:
+      - generic [ref=e507]:
+        - generic [ref=e508]:
+          - paragraph [ref=e509]: Ruta de selección
+          - heading "Del riesgo identificado al expediente de la brigada" [level=2] [ref=e511]
+          - paragraph [ref=e512]: La secuencia conserva el vínculo entre riesgo, función, evidencia, capacitación y reemplazo.
+        - generic [ref=e513]:
+          - paragraph [ref=e514]: La NOM-017-STPS-2024 ubica la identificación de riesgos antes de la selección del EPP.
+          - paragraph [ref=e515]: La NOM-002-STPS-2010, numeral 5.9, aplica esa selección a los integrantes de la brigada contra incendio.
+      - list "Proceso de trabajo" [ref=e516]:
+        - listitem [ref=e517]:
+          - generic [ref=e518]:
+            - heading "Identifica riesgos" [level=3] [ref=e519]
+            - paragraph [ref=e520]: Por puesto y área, como pide la NOM-017-STPS-2024.
+        - listitem [ref=e521]:
+          - generic [ref=e522]:
+            - heading "Define funciones" [level=3] [ref=e523]
+            - paragraph [ref=e524]: Relaciona cada función de la brigada con sus riesgos.
+        - listitem [ref=e525]:
+          - generic [ref=e526]:
+            - heading "Selecciona EPP" [level=3] [ref=e527]
+            - paragraph [ref=e528]: Conforme a los riesgos y funciones identificados.
+        - listitem [ref=e529]:
+          - generic [ref=e530]:
+            - heading "Verifica la vía" [level=3] [ref=e531]
+            - paragraph [ref=e532]: NOM, NMX, Estándar Técnico o información del fabricante.
+        - listitem [ref=e533]:
+          - generic [ref=e534]:
+            - heading "Conserva evidencia" [level=3] [ref=e535]
+            - paragraph [ref=e536]: Certificado o documentación aplicable del fabricante.
+        - listitem [ref=e537]:
+          - generic [ref=e538]:
+            - heading "Capacita" [level=3] [ref=e539]
+            - paragraph [ref=e540]: Integra la capacitación requerida para el uso del EPP.
+        - listitem [ref=e541]:
+          - generic [ref=e542]:
+            - heading "Señaliza y registra" [level=3] [ref=e543]
+            - paragraph [ref=e544]: Conserva la señalización y los registros requeridos.
+        - listitem [ref=e545]:
+          - generic [ref=e546]:
+            - heading "Reemplaza" [level=3] [ref=e547]
+            - paragraph [ref=e548]: Retira el EPP en los supuestos de la NOM-017-STPS-2024.
+    - generic [ref=e550]:
+      - generic [ref=e551]:
+        - generic [ref=e552]:
+          - paragraph [ref=e553]: Marco aplicable
+          - heading "Normas y referencias para el EPP de la brigada" [level=2] [ref=e555]
+          - paragraph [ref=e556]: La obligación mexicana parte de NOM-002 y NOM-017; las referencias técnicas no sustituyen la ley mexicana.
+        - generic [ref=e557]:
+          - paragraph [ref=e558]: La NOM-002-STPS-2010, numeral 5.9, obliga al patrón a dotar de EPP a los integrantes de la brigada conforme a sus funciones y riesgos.
+          - paragraph [ref=e559]: La NOM-017-STPS-2024 sustituyó a la NOM-017-STPS-2008, que está derogada. Para el EPP sin NOM de producto, su numeral 5.4 indica cómo respaldar la selección.
+      - region "Normas y estándares aplicables" [ref=e561]:
+        - table [ref=e562]:
+          - rowgroup [ref=e563]:
+            - row [ref=e564]:
+              - columnheader "Norma o referencia" [ref=e565]
+              - columnheader "Qué establece" [ref=e566]
+              - columnheader "Alcance" [ref=e567]
+          - rowgroup [ref=e568]:
+            - row [ref=e569]:
+              - cell [ref=e570]:
+                - strong [ref=e571]: NOM-002-STPS-2010, 5.9
+              - cell "Dotar EPP a la brigada conforme a funciones y riesgos" [ref=e572]
+              - cell "Obligación del patrón" [ref=e573]
+            - row [ref=e574]:
+              - cell [ref=e575]:
+                - strong [ref=e576]: NOM-017-STPS-2024, 5.4
+              - cell "Vía de cumplimiento y evidencia cuando no hay NOM del equipo" [ref=e577]
+              - cell "Selección y verificación del EPP" [ref=e578]
+            - row [ref=e579]:
+              - cell [ref=e580]:
+                - strong [ref=e581]: NOM-017-STPS-2024, 7.1 e)
+              - cell "Desechar y reemplazar el EPP en los supuestos previstos" [ref=e582]
+              - cell "Retiro y reposición" [ref=e583]
+            - row [ref=e584]:
+              - cell [ref=e585]:
+                - strong [ref=e586]: NOM-115-STPS-2009
+              - cell "Cascos de protección" [ref=e587]
+              - cell "Solo cascos" [ref=e588]
+            - row [ref=e589]:
+              - cell [ref=e590]:
+                - strong [ref=e591]: NFPA 1970, ed. 2025; NFPA 1850
+              - cell "Referencias técnicas; NFPA 1970 exige capa bloqueadora de partículas en capucha estructural y NFPA 1851 establecía retiro del ensamble estructural a más tardar 10 años desde fabricación" [ref=e592]
+              - cell "No son ley en México" [ref=e593]
+            - row [ref=e594]:
+              - cell [ref=e595]:
+                - strong [ref=e596]: EN 469:2020
+              - cell "Niveles X1/X2, Y1/Y2 y Z1/Z2" [ref=e597]
+              - cell "Referencia europea" [ref=e598]
+      - paragraph [ref=e599]: La Guía de referencia III de la NOM-002-STPS-2010 no es obligatoria. La NFPA no es ley en México; se cita solo como referencia técnica.
+    - generic [ref=e601]:
+      - generic [ref=e602]:
+        - generic [ref=e603]:
+          - paragraph [ref=e604]: Para tu expediente
+          - heading "Riesgo, selección y evidencia conectados" [level=2] [ref=e606]
+          - paragraph [ref=e607]: Documenta por qué cada elemento corresponde a la función y el riesgo de la brigada.
+        - generic [ref=e608]:
+          - paragraph [ref=e609]: El expediente útil conserva la identificación de riesgos, la selección de EPP, la evidencia de la vía de cumplimiento, la capacitación, la señalización y los registros.
+          - paragraph [ref=e610]: Si hay fallas, daño, desgaste o quemaduras no reparables, la NOM-017-STPS-2024, numeral 7.1 e), ordena desechar y reemplazar el EPP.
+      - generic [ref=e611]:
+        - generic [ref=e612]:
+          - generic [ref=e613]:
+            - heading "Qué debe quedar documentado" [level=3] [ref=e614]
+            - paragraph [ref=e615]: Riesgos por puesto y área, y las funciones de cada integrante de la brigada.
+            - paragraph [ref=e616]: "Selección de EPP y la evidencia aplicable: certificado, NMX, Estándar Técnico o información del fabricante."
+            - paragraph [ref=e617]: Capacitación, señalización, registros y retiro o reemplazo cuando corresponda.
+          - generic [ref=e618]:
+            - heading "Cómo decidirlo" [level=3] [ref=e619]
+            - list [ref=e620]:
+              - listitem [ref=e621]:
+                - generic [ref=e622]:
+                  - paragraph [ref=e623]: Parte del riesgo
+                  - paragraph [ref=e624]: Identifica riesgos por puesto y área antes de seleccionar EPP.
+              - listitem [ref=e625]:
+                - generic [ref=e626]:
+                  - paragraph [ref=e627]: Revisa la evidencia
+                  - paragraph [ref=e628]: Aplica la vía de cumplimiento del numeral 5.4 de NOM-017.
+              - listitem [ref=e629]:
+                - generic [ref=e630]:
+                  - paragraph [ref=e631]: Conserva registros
+                  - paragraph [ref=e632]: Documenta capacitación, señalización, selección y reemplazo.
+        - link "Cotizar por WhatsApp" [ref=e633] [cursor=pointer]:
+          - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20revisar%20el%20EPP%20de%20mi%20brigada%20contra%20incendio.%20Mi%20inmueble%20y%20sus%20riesgos%20son%3A
+    - region "Servicios y guías relacionados" [ref=e636]:
+      - generic [ref=e637]:
+        - generic [ref=e638]:
+          - heading "Servicios y guías relacionados" [level=2] [ref=e639]
+          - paragraph [ref=e640]: Los recursos que acompañan la selección del EPP de tu brigada.
+        - list [ref=e641]:
+          - listitem [ref=e642]:
+            - link "Diagnóstico de riesgo Identificación del grado de riesgo de incendio." [ref=e643] [cursor=pointer]:
+              - /url: /servicios/diagnostico-de-riesgo/
+              - generic [ref=e644]: Diagnóstico de riesgo
+              - generic [ref=e645]: Identificación del grado de riesgo de incendio.
+          - listitem [ref=e649]:
+            - link "Capacitación DC-3 Capacitación para brigada contra incendio." [ref=e650] [cursor=pointer]:
+              - /url: /servicios/capacitacion-dc3/
+              - generic [ref=e651]: Capacitación DC-3
+              - generic [ref=e652]: Capacitación para brigada contra incendio.
+          - listitem [ref=e656]:
+            - link "Gestión documental Expediente para Protección Civil y STPS." [ref=e657] [cursor=pointer]:
+              - /url: /servicios/gestion-documental/
+              - generic [ref=e658]: Gestión documental
+              - generic [ref=e659]: Expediente para Protección Civil y STPS.
+          - listitem [ref=e663]:
+            - link "Naves industriales Contexto de riesgo para inmuebles industriales." [ref=e664] [cursor=pointer]:
+              - /url: /proteccion-civil/naves-industriales/
+              - generic [ref=e665]: Naves industriales
+              - generic [ref=e666]: Contexto de riesgo para inmuebles industriales.
+    - generic [ref=e671]:
+      - generic [ref=e672]:
+        - generic [ref=e673]:
+          - paragraph [ref=e674]: Preguntas frecuentes
+          - heading "Preguntas sobre EPP para brigada contra incendio" [level=2] [ref=e676]
+          - paragraph [ref=e677]: Respuestas sobre la obligación del patrón, la selección y la evidencia del EPP.
+        - generic [ref=e678]:
+          - paragraph [ref=e679]: La selección depende de las funciones y riesgos de la brigada, no de una lista genérica de productos.
+          - paragraph [ref=e680]: Las referencias técnicas no sustituyen las obligaciones mexicanas de NOM-002-STPS-2010 y NOM-017-STPS-2024.
+      - generic [ref=e681]:
+        - generic [ref=e685]:
+          - group [ref=e686]:
+            - generic "¿Qué obliga la NOM-002-STPS-2010 sobre el EPP de la brigada?" [ref=e687] [cursor=pointer]
+            - paragraph [ref=e692]: El numeral 5.9 obliga al patrón a dotar de equipo de protección personal a los integrantes de la brigada contra incendio, de acuerdo con sus funciones y riesgos.
+          - group [ref=e693]:
+            - generic "¿Existe una NOM mexicana de producto para traje estructural, casco, guantes, botas o respiración autónoma?" [ref=e694] [cursor=pointer]
+          - group [ref=e698]:
+            - generic "¿Cómo se acredita el EPP cuando no existe NOM del equipo?" [ref=e699] [cursor=pointer]
+          - group [ref=e703]:
+            - generic "¿La Guía de referencia III de la NOM-002-STPS-2010 es obligatoria?" [ref=e704] [cursor=pointer]
+          - group [ref=e708]:
+            - generic "¿Cuándo se debe reemplazar el EPP?" [ref=e709] [cursor=pointer]
+          - group [ref=e713]:
+            - generic "¿NFPA es ley en México?" [ref=e714] [cursor=pointer]
+          - group [ref=e718]:
+            - generic "¿Qué referencia técnica existe para la capucha estructural?" [ref=e719] [cursor=pointer]
+          - group [ref=e723]:
+            - generic "¿El traje de aproximación o aluminizado permite entrar a la flama?" [ref=e724] [cursor=pointer]
+        - complementary [ref=e728]:
+          - generic [ref=e729]:
+            - generic [ref=e734]:
+              - heading "¿Tu duda no está aquí?" [level=3] [ref=e735]
+              - paragraph [ref=e736]: Escríbenos por WhatsApp y te respondemos directo.
+            - generic [ref=e737]:
+              - generic [ref=e738]:
+                - generic [ref=e739]: Nombre — opcional
+                - textbox "Nombre — opcional" [ref=e740]:
+                  - /placeholder: Tu nombre
+              - generic [ref=e741]:
+                - generic [ref=e742]: Tipo de negocio *
+                - combobox "Tipo de negocio" [ref=e744] [cursor=pointer]:
+                  - option "Selecciona tu giro…" [disabled] [selected]
+                  - option "Oficina o consultorio"
+                  - option "Restaurante o cocina"
+                  - option "Comercio o tienda"
+                  - option "Bodega o nave industrial"
+                  - option "Hotel u hospedaje"
+                  - option "Escuela o institución"
+                  - option "Inmueble residencial"
+                  - option "Otro tipo de inmueble"
+              - generic [ref=e745]:
+                - generic [ref=e746]: Tu pregunta o necesidad *
+                - textbox "Tu pregunta o necesidad" [ref=e747]:
+                  - /placeholder: "Ej: Tengo una cocina industrial y quiero saber qué extintores necesito y cada cuánto les doy mantenimiento."
+                - generic [ref=e748]: 0 / 500
+              - button "Enviar por WhatsApp" [ref=e749] [cursor=pointer]
+              - paragraph [ref=e752]: Al pulsar el botón se abre WhatsApp con tu mensaje. No guardamos ningún dato.
+            - link "Prefiero llamar directamente" [ref=e756] [cursor=pointer]:
+              - /url: tel:+525539340581
+  - contentinfo "Pie de página" [ref=e757]:
+    - region "Solicitar cotización" [ref=e758]:
+      - generic [ref=e759]:
+        - generic [ref=e760]:
+          - paragraph [ref=e761]: Cotización sin compromiso
+          - heading "Cuéntanos tu proyecto y te decimos qué equipo necesitas." [level=2] [ref=e762]
+          - paragraph [ref=e763]: "Escríbenos por WhatsApp o llámanos: Lun–Vie 9:00–18:00 · Sáb 9:00–14:00."
+        - generic [ref=e764]:
+          - link "Cotizar por WhatsApp" [ref=e765] [cursor=pointer]:
+            - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n%20de%20equipo%20contra%20incendio.
+          - link "Llamar al 55 3934 0581" [ref=e768] [cursor=pointer]:
+            - /url: tel:+525539340581
+    - generic [ref=e771]:
+      - generic [ref=e772]:
+        - region "CONINC" [ref=e773]:
+          - link "CONINC Contra incendios , ir al inicio" [ref=e774] [cursor=pointer]:
+            - /url: /
+            - generic [aria-hidden] [ref=e775]: C
+            - generic [ref=e776]:
+              - generic [ref=e777]: CONINC
+              - generic [ref=e778]: Contra incendios
+            - generic [ref=e779]: ", ir al inicio"
+          - paragraph [ref=e780]: CONINC vende, instala y da mantenimiento a equipo contra incendio para empresas e inmuebles de la Ciudad de México y el Estado de México, con más de 35 años en el mercado mexicano.
+          - generic "Información de la empresa" [ref=e781]:
+            - generic [ref=e782]: Más de 35 años
+            - generic [ref=e783]: CDMX y Estado de México
+        - region "Teléfono y WhatsApp" [ref=e784]:
+          - heading "Teléfono y WhatsApp" [level=2] [ref=e785]
+          - link "55 3934 0581" [ref=e786] [cursor=pointer]:
+            - /url: tel:+525539340581
+          - generic [ref=e787]:
+            - link "WhatsApp" [ref=e788] [cursor=pointer]:
+              - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n%20de%20equipo%20contra%20incendio.
+            - link "Llamar" [ref=e789] [cursor=pointer]:
+              - /url: tel:+525539340581
+          - link "equipocontraincendios737@gmail.com" [ref=e790] [cursor=pointer]:
+            - /url: mailto:equipocontraincendios737@gmail.com
+        - region "Oficinas" [ref=e794]:
+          - heading "Oficinas" [level=2] [ref=e795]
+          - generic [ref=e796]: Lago Alberto 319, Piso 6, Col. Granada, Miguel HidalgoCiudad de México, 11520
+          - link "Cómo llegar" [ref=e797] [cursor=pointer]:
+            - /url: https://www.google.com/maps/search/?api=1&query=19.439817,-99.185217
+        - region "Horario" [ref=e800]:
+          - heading "Horario" [level=2] [ref=e801]
+          - generic "Horario de atención" [ref=e802]:
+            - generic [ref=e803]:
+              - generic [ref=e804]: Lun–Vie
+              - strong [ref=e805]: 9:00–18:00
+            - generic [ref=e806]:
+              - generic [ref=e807]: Sábado
+              - strong [ref=e808]: 9:00–14:00
+            - generic [ref=e809]:
+              - generic [ref=e810]: Domingo
+              - strong [ref=e811]: Cerrado
+          - paragraph [ref=e812]: "Cobertura: Toda la Ciudad de México y el Estado de México."
+      - generic "Navegación del pie de página" [ref=e813]:
+        - group [ref=e814]:
+          - generic "Productos" [ref=e815]
+          - list [ref=e818]:
+            - listitem [ref=e819]:
+              - link "Catálogo completo" [ref=e820] [cursor=pointer]:
+                - /url: /productos/
+            - listitem [ref=e821]:
+              - link "Extintores portátiles" [ref=e822] [cursor=pointer]:
+                - /url: /productos/extintores/
+            - listitem [ref=e823]:
+              - link "Extintor PQS" [ref=e824] [cursor=pointer]:
+                - /url: /productos/extintor-pqs/
+            - listitem [ref=e825]:
+              - link "Extintor CO₂" [ref=e826] [cursor=pointer]:
+                - /url: /productos/extintor-co2/
+            - listitem [ref=e827]:
+              - link "Extintor clase K" [ref=e828] [cursor=pointer]:
+                - /url: /productos/extintor-clase-k/
+            - listitem [ref=e829]:
+              - link "Detección y alarmas" [ref=e830] [cursor=pointer]:
+                - /url: /productos/deteccion-alarmas/
+            - listitem [ref=e831]:
+              - link "Hidrantes y mangueras" [ref=e832] [cursor=pointer]:
+                - /url: /productos/hidrantes-mangueras/
+            - listitem [ref=e833]:
+              - link "Señalización y emergencia" [ref=e834] [cursor=pointer]:
+                - /url: /productos/senalizacion/
+            - listitem [ref=e835]:
+              - link "Equipo para bombero" [ref=e836] [cursor=pointer]:
+                - /url: /productos/equipo-bombero/
+        - group [ref=e837]:
+          - generic "Servicios" [ref=e838]
+          - list [ref=e841]:
+            - listitem [ref=e842]:
+              - link "Todos los servicios" [ref=e843] [cursor=pointer]:
+                - /url: /servicios/
+            - listitem [ref=e844]:
+              - link "Instalación de sistemas" [ref=e845] [cursor=pointer]:
+                - /url: /servicios/instalacion/
+            - listitem [ref=e846]:
+              - link "Mantenimiento y recarga" [ref=e847] [cursor=pointer]:
+                - /url: /servicios/mantenimiento/
+            - listitem [ref=e848]:
+              - link "Prueba hidrostática" [ref=e849] [cursor=pointer]:
+                - /url: /servicios/prueba-hidrostatica/
+            - listitem [ref=e850]:
+              - link "Inspección y dictamen" [ref=e851] [cursor=pointer]:
+                - /url: /servicios/inspeccion/
+            - listitem [ref=e852]:
+              - link "Diagnóstico de riesgo" [ref=e853] [cursor=pointer]:
+                - /url: /servicios/diagnostico-de-riesgo/
+            - listitem [ref=e854]:
+              - link "Capacitación y DC-3" [ref=e855] [cursor=pointer]:
+                - /url: /servicios/capacitacion-dc3/
+            - listitem [ref=e856]:
+              - link "Gestión documental" [ref=e857] [cursor=pointer]:
+                - /url: /servicios/gestion-documental/
+        - group [ref=e858]:
+          - generic "Recursos" [ref=e859]
+          - list [ref=e862]:
+            - listitem [ref=e863]:
+              - link "Herramientas" [ref=e864] [cursor=pointer]:
+                - /url: /herramientas/
+            - listitem [ref=e865]:
+              - link "Cuántos extintores necesito" [ref=e866] [cursor=pointer]:
+                - /url: /herramientas/cuantos-extintores-necesito/
+            - listitem [ref=e867]:
+              - link "Riesgo de incendio" [ref=e868] [cursor=pointer]:
+                - /url: /herramientas/riesgo-de-incendio/
+            - listitem [ref=e869]:
+              - link "Verifica tu extintor" [ref=e870] [cursor=pointer]:
+                - /url: /herramientas/verifica-tu-extintor/
+            - listitem [ref=e871]:
+              - link "Formatos descargables" [ref=e872] [cursor=pointer]:
+                - /url: /plantillas/
+            - listitem [ref=e873]:
+              - link "Protección Civil" [ref=e874] [cursor=pointer]:
+                - /url: /proteccion-civil/
+            - listitem [ref=e875]:
+              - link "Blog" [ref=e876] [cursor=pointer]:
+                - /url: /blog/
+        - group [ref=e877]:
+          - generic "Empresa" [ref=e878]
+          - list [ref=e881]:
+            - listitem [ref=e882]:
+              - link "Nosotros" [ref=e883] [cursor=pointer]:
+                - /url: /nosotros/
+            - listitem [ref=e884]:
+              - link "Cobertura" [ref=e885] [cursor=pointer]:
+                - /url: /cobertura/
+            - listitem [ref=e886]:
+              - link "Servicio en CDMX" [ref=e887] [cursor=pointer]:
+                - /url: /cobertura/cdmx/
+            - listitem [ref=e888]:
+              - link "Servicio en Edomex" [ref=e889] [cursor=pointer]:
+                - /url: /cobertura/edomex/
+            - listitem [ref=e890]:
+              - link "Contacto" [ref=e891] [cursor=pointer]:
+                - /url: /contacto/
+            - listitem [ref=e892]:
+              - link "Cotizar por WhatsApp" [ref=e893] [cursor=pointer]:
+                - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n%20de%20equipo%20contra%20incendio.
+    - generic [ref=e895]:
+      - generic [ref=e896]:
+        - paragraph [ref=e897]: © 2026 CONINC. Todos los derechos reservados.
+        - generic [ref=e898]: Equipos contra incendios con más de 35 años en el mercado mexicano
+      - navigation "Legal" [ref=e899]:
+        - link "Aviso de privacidad" [ref=e900] [cursor=pointer]:
+          - /url: /privacidad/
+        - generic [aria-hidden] [ref=e901]: ·
+        - link "Términos y condiciones" [ref=e902] [cursor=pointer]:
+          - /url: /terminos/
+        - generic [aria-hidden] [ref=e903]: ·
+        - link "Política de cookies" [ref=e904] [cursor=pointer]:
+          - /url: /cookies/
+        - generic [aria-hidden] [ref=e905]: ·
+        - link "Mapa del sitio" [ref=e906] [cursor=pointer]:
+          - /url: /sitemap-index.xml
+      - button "Volver arriba" [ref=e907] [cursor=pointer]: Arriba
+  - link "Contactar por WhatsApp" [ref=e910] [cursor=pointer]:
+    - /url: https://wa.me/525539340581?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20equipo%20contra%20incendio.
+    - generic [ref=e913]: ¿Necesitas ayuda?

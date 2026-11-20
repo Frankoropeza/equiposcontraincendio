@@ -550,7 +550,7 @@ faq:
     - Las respuestas citan la norma cuando aplica; lo que falta en tu expediente lo vemos en el inventario.
   items:
     - question: ¿Qué documentos suele pedir una verificación?
-      answer: "El núcleo se repite: evidencia del mantenimiento del equipo (etiquetas y collarines conforme a la NOM-154-SCFI-2005), el programa anual de revisión que pide la NOM-002-STPS-2010, la bitácora de revisiones mensuales, las constancias de capacitación del personal, las actas de simulacro y las fichas técnicas del equipo instalado."
+      answer: 'El núcleo se repite: evidencia del mantenimiento del equipo (etiquetas y collarines conforme a la NOM-154-SCFI-2005), el programa anual de revisión que pide la NOM-002-STPS-2010, la bitácora de revisiones mensuales, las constancias de capacitación del personal, las actas de simulacro y las fichas técnicas del equipo instalado. Si el expediente incluye EPP de la brigada, conviene identificar también el modelo y la ficha de piezas como la <a href="/productos/capucha-proteccion-brigada/">capucha para bombero</a>.'
     - question: ¿Esto sustituye el Programa Interno de Protección Civil?
       answer: No. El Programa Interno es un documento formal con requisitos propios —análisis de riesgos, brigadas, simulacros, directorio de emergencia— y en la Ciudad de México se integra con la carta de corresponsabilidad de un Tercero Acreditado. Lo que hacemos es la parte documental del equipo contra incendio, que es un insumo del programa.
     - question: ¿Sirve si mi equipo lo instaló otro proveedor?

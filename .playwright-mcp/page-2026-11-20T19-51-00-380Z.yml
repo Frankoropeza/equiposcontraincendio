@@ -1,0 +1,544 @@
+- generic [active] [ref=f6e1]:
+  - link "Saltar al contenido principal" [ref=f6e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - complementary "Información de contacto" [ref=f6e3]:
+    - generic [ref=f6e4]:
+      - paragraph [ref=f6e5]:
+        - generic [ref=f6e7]: Equipos contra incendios con más de 35 años en el mercado mexicano
+      - generic [ref=f6e8]:
+        - generic [ref=f6e9]: Lun–Vie 9–18 · Sáb 9–14
+        - link "Llamar al 55 3934 0581" [ref=f6e13] [cursor=pointer]:
+          - /url: tel:+525539340581
+          - generic [ref=f6e16]: 55 3934 0581
+        - link "Contactar por WhatsApp" [ref=f6e17] [cursor=pointer]:
+          - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n%20de%20equipo%20contra%20incendio.
+          - generic [ref=f6e20]: WhatsApp
+  - banner [ref=f6e21]:
+    - generic [ref=f6e22]:
+      - link "CONINC Contra incendios , ir al inicio" [ref=f6e23] [cursor=pointer]:
+        - /url: /
+        - generic [aria-hidden] [ref=f6e24]: C
+        - generic [ref=f6e25]:
+          - generic [ref=f6e26]: CONINC
+          - generic [ref=f6e27]: Contra incendios
+        - generic [ref=f6e28]: ", ir al inicio"
+      - navigation "Navegación principal" [ref=f6e29]:
+        - list [ref=f6e30]:
+          - listitem [ref=f6e31]:
+            - button "Productos" [ref=f6e32] [cursor=pointer]
+          - listitem [ref=f6e36]:
+            - button "Servicios" [ref=f6e37] [cursor=pointer]
+          - listitem [ref=f6e41]:
+            - button "Cobertura" [ref=f6e42] [cursor=pointer]
+          - listitem [ref=f6e46]:
+            - button "Recursos" [ref=f6e47] [cursor=pointer]
+          - listitem [ref=f6e51]:
+            - link "Nosotros" [ref=f6e52] [cursor=pointer]:
+              - /url: /nosotros/
+          - listitem [ref=f6e53]:
+            - link "Contacto" [ref=f6e54] [cursor=pointer]:
+              - /url: /contacto/
+      - link "Solicitar cotización por WhatsApp" [ref=f6e55] [cursor=pointer]:
+        - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n%20de%20equipo%20contra%20incendio.
+        - generic [ref=f6e58]: Cotizar
+  - navigation "Migas de pan" [ref=f6e60]:
+    - list [ref=f6e61]:
+      - listitem [ref=f6e62]:
+        - link "Inicio" [ref=f6e63] [cursor=pointer]:
+          - /url: /
+      - listitem [ref=f6e67]:
+        - link "Productos" [ref=f6e68] [cursor=pointer]:
+          - /url: /productos/
+      - listitem [ref=f6e72]:
+        - link "Equipo para bombero" [ref=f6e73] [cursor=pointer]:
+          - /url: /productos/equipo-bombero/
+      - listitem [ref=f6e77]:
+        - generic [ref=f6e78]: Traje aluminizado para calor radiante industrial
+  - main [ref=f6e79]:
+    - region "Encabezado principal" [ref=f6e80]:
+      - generic [ref=f6e81]:
+        - generic [ref=f6e82]:
+          - generic [ref=f6e83]: EPP para brigada industrial
+          - heading "Traje aluminizado según distancia y exposición" [level=1] [ref=f6e85]
+          - paragraph [ref=f6e86]: Traje aluminizado para brigadas industriales expuestas a calor radiante, seleccionado por distancia, conjunto completo y condiciones de vapor o humedad.
+          - generic [ref=f6e87]:
+            - link "Cotizar por WhatsApp" [ref=f6e88] [cursor=pointer]:
+              - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20cotizar%3A%20Traje%20aluminizado%20para%20calor%20radiante%20industrial.%20%C2%BFPrecio%20y%20disponibilidad%3F
+            - link "Modelos y presentaciones" [ref=f6e91] [cursor=pointer]:
+              - /url: "#presentaciones"
+        - generic [ref=f6e92]:
+          - paragraph [ref=f6e93]: El traje de aproximación aluminizado se elige para la brigada de una empresa frente a calor radiante. La distancia a la fuente, el vapor, la humedad y la tarea determinan si procede una prenda monocapa, doble capa o un conjunto de triple capa.
+          - paragraph [ref=f6e94]: «Salvo que se especifique de otro modo, las prendas aluminizadas NO están diseñadas para entrar dentro del fuego.» La protección de cuerpo completo depende de usar todos los elementos del conjunto, no de una sola prenda.
+    - navigation "Secciones del sitio" [ref=f6e95]:
+      - list [ref=f6e97]:
+        - listitem [ref=f6e98]:
+          - link "Productos Equipos contra incendios" [ref=f6e99] [cursor=pointer]:
+            - /url: /productos/
+            - generic [ref=f6e100]: Productos
+            - generic [ref=f6e102]: Equipos contra incendios
+        - listitem [ref=f6e103]:
+          - link "Servicios Instalación y mantenimiento" [ref=f6e104] [cursor=pointer]:
+            - /url: /servicios/
+            - generic [ref=f6e105]: Servicios
+            - generic [ref=f6e107]: Instalación y mantenimiento
+        - listitem [ref=f6e108]:
+          - link "Cobertura Zonas que atendemos" [ref=f6e109] [cursor=pointer]:
+            - /url: /cobertura/
+            - generic [ref=f6e110]: Cobertura
+            - generic [ref=f6e112]: Zonas que atendemos
+        - listitem [ref=f6e113]:
+          - link "Herramientas Calculadoras y formatos" [ref=f6e114] [cursor=pointer]:
+            - /url: /herramientas/
+            - generic [ref=f6e115]: Herramientas
+            - generic [ref=f6e117]: Calculadoras y formatos
+        - listitem [ref=f6e118]:
+          - link "Protección Civil Qué exige por entidad" [ref=f6e119] [cursor=pointer]:
+            - /url: /proteccion-civil/
+            - generic [ref=f6e120]: Protección Civil
+            - generic [ref=f6e122]: Qué exige por entidad
+        - listitem [ref=f6e123]:
+          - link "Blog Guías y normatividad" [ref=f6e124] [cursor=pointer]:
+            - /url: /blog/
+            - generic [ref=f6e125]: Blog
+            - generic [ref=f6e127]: Guías y normatividad
+        - listitem [ref=f6e128]:
+          - link "Cotizar por WhatsApp Te decimos cuál conviene" [ref=f6e129] [cursor=pointer]:
+            - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20cotizar%3A%20Traje%20aluminizado%20para%20calor%20radiante%20industrial.%20%C2%BFPrecio%20y%20disponibilidad%3F
+            - generic [ref=f6e130]: Cotizar por WhatsApp
+            - generic [ref=f6e135]: Te decimos cuál conviene
+    - generic [ref=f6e137]:
+      - generic [ref=f6e138]:
+        - generic [ref=f6e139]:
+          - paragraph [ref=f6e140]: Ficha técnica
+          - heading "Configuraciones aluminizadas para la tarea de tu brigada" [level=2] [ref=f6e142]
+          - paragraph [ref=f6e143]: Capas, cobertura y elementos del conjunto según la exposición identificada.
+        - generic [ref=f6e144]:
+          - paragraph [ref=f6e145]: El aluminio refleja entre 93 y 97 % del calor radiante; entre 3 y 7 % siempre se transfiere. Por eso una prenda aluminizada se selecciona por la energía de la exposición, no por una promesa aislada de minutos.
+          - paragraph [ref=f6e146]: Si un proveedor ofrece «X minutos de protección» sin indicar a qué distancia, el dato no significa nada. Al pasar de 10 a 5 metros, la energía transferida se multiplica por cuatro; a 1 metro probablemente no ofrecerá protección ni durante 15 minutos.
+      - generic [ref=f6e147]:
+        - img "Traje aluminizado para calor radiante industrial" [ref=f6e149]
+        - generic [ref=f6e150]:
+          - generic [ref=f6e151]:
+            - generic [ref=f6e152]:
+              - term [ref=f6e153]: Riesgo principal
+              - definition [ref=f6e154]: Calor radiante a distancia definida
+            - generic [ref=f6e155]:
+              - term [ref=f6e156]: Límite de uso
+              - definition [ref=f6e157]: No se diseña para entrar dentro del fuego salvo especificación
+            - generic [ref=f6e158]:
+              - term [ref=f6e159]: Cobertura integral
+              - definition [ref=f6e160]: Requiere todos los elementos del conjunto
+            - generic [ref=f6e161]:
+              - term [ref=f6e162]: Expediente STPS
+              - definition [ref=f6e163]: Ficha, marcado y condiciones de no uso del fabricante
+          - paragraph [ref=f6e164]: Precio bajo cotización
+          - generic [ref=f6e165]:
+            - link "Modelos y presentaciones" [ref=f6e166] [cursor=pointer]:
+              - /url: "#presentaciones"
+            - link "Cotizar por WhatsApp" [ref=f6e167] [cursor=pointer]:
+              - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20cotizar%3A%20Traje%20aluminizado%20para%20calor%20radiante%20industrial.%20%C2%BFPrecio%20y%20disponibilidad%3F
+    - generic [ref=f6e169]:
+      - generic [ref=f6e170]:
+        - generic [ref=f6e171]:
+          - paragraph [ref=f6e172]: Presentaciones
+          - heading "Presentaciones y modelos" [level=2] [ref=f6e174]
+          - paragraph [ref=f6e175]: Compara modelos, medidas y alcance. Al cotizar, menciona la presentación exacta y la cantidad.
+        - generic [ref=f6e176]:
+          - paragraph [ref=f6e177]: Hay piezas monocapa para maniobra breve, chaquetas con barrera antihumedad y alojamiento para ERA, pantalones, capuchas y conjuntos completos. La capucha con visor dorado permite mirar directo a la fuente radiante.
+          - paragraph [ref=f6e178]: Para exposición radiante sostenida hay configuraciones de triple capa con exterior aluminizado, neopreno y relleno de fibra de vidrio. La selección no se sustituye con una prenda suelta cuando la tarea exige cobertura integral.
+      - generic [ref=f6e179]:
+        - article [ref=f6e180]:
+          - generic [ref=f6e181]:
+            - generic [ref=f6e182]: Maniobra breve
+            - heading "Chaqueta larga monocapa aluminizada" [level=3] [ref=f6e183]
+            - paragraph [ref=f6e184]: Para vigilancia o maniobra breve a distancia de horno o caldera, sin vapor.
+            - list "Especificaciones de Chaqueta larga monocapa aluminizada" [ref=f6e185]:
+              - listitem [ref=f6e186]: Fibra de vidrio aluminizada
+              - listitem [ref=f6e187]: 545 g/m²
+              - listitem [ref=f6e188]: Sin barreras
+              - listitem [ref=f6e189]: Clase 4, 108 s
+              - listitem [ref=f6e190]: SM a 3X
+            - link "Cotizar" [ref=f6e191] [cursor=pointer]:
+              - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20cotizar%20una%20chaqueta%20aluminizada%20monocapa%20para%20mi%20brigada
+        - article [ref=f6e192]:
+          - generic [ref=f6e193]:
+            - generic [ref=f6e194]: Con ERA
+            - heading "Chaqueta con cuello y alojamiento para ERA" [level=3] [ref=f6e195]
+            - paragraph [ref=f6e196]: Para brigada con ERA que trabaja donde hay humedad o vapor.
+            - list "Especificaciones de Chaqueta con cuello y alojamiento para ERA" [ref=f6e197]:
+              - listitem [ref=f6e198]: Exterior 100 % aluminio
+              - listitem [ref=f6e199]: Neopreno interno
+              - listitem [ref=f6e200]: Hasta 95 % reflejado
+              - listitem [ref=f6e201]: Clase 4
+              - listitem [ref=f6e202]: SM a 3X
+            - link "Cotizar" [ref=f6e203] [cursor=pointer]:
+              - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20cotizar%20una%20chaqueta%20aluminizada%20con%20alojamiento%20para%20ERA
+        - article [ref=f6e204]:
+          - generic [ref=f6e205]:
+            - generic [ref=f6e206]: Cobertura inferior
+            - heading "Pantalón aluminizado con tirantes" [level=3] [ref=f6e207]
+            - paragraph [ref=f6e208]: Pieza para completar cobertura inferior dentro de un conjunto aluminizado.
+            - list "Especificaciones de Pantalón aluminizado con tirantes" [ref=f6e209]:
+              - listitem [ref=f6e210]: Laminado de doble capa
+              - listitem [ref=f6e211]: Tirantes
+              - listitem [ref=f6e212]: Compra por separado
+              - listitem [ref=f6e213]: Tallas SM a 3X
+            - link "Cotizar" [ref=f6e214] [cursor=pointer]:
+              - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20cotizar%20pantal%C3%B3n%20aluminizado%20con%20tirantes%20para%20brigada
+        - article [ref=f6e215]:
+          - generic [ref=f6e216]:
+            - generic [ref=f6e217]: Cabeza y cuello
+            - heading "Capucha aluminizada con visor dorado" [level=3] [ref=f6e218]
+            - paragraph [ref=f6e219]: Capucha para cabeza y cuello con visor dorado ante fuente radiante.
+            - list "Especificaciones de Capucha aluminizada con visor dorado" [ref=f6e220]:
+              - listitem [ref=f6e221]: Cubre cabeza y cuello
+              - listitem [ref=f6e222]: Visor dorado
+              - listitem [ref=f6e223]: Con o sin alojamiento para ERA
+            - link "Cotizar" [ref=f6e224] [cursor=pointer]:
+              - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20cotizar%20una%20capucha%20aluminizada%20con%20visor%20dorado
+        - article [ref=f6e225]:
+          - generic [ref=f6e226]:
+            - generic [ref=f6e227]: Protección integral
+            - heading "Conjunto aluminizado completo" [level=3] [ref=f6e228]
+            - paragraph [ref=f6e229]: La opción para protección integral cuando se usan todos los elementos del conjunto.
+            - list "Especificaciones de Conjunto aluminizado completo" [ref=f6e230]:
+              - listitem [ref=f6e231]: Chaqueta y pantalón o mono
+              - listitem [ref=f6e232]: Capucha
+              - listitem [ref=f6e233]: Guantes MD a XL
+              - listitem [ref=f6e234]: Botas y funda
+            - link "Cotizar" [ref=f6e235] [cursor=pointer]:
+              - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20cotizar%20un%20conjunto%20aluminizado%20completo%20para%20brigada
+        - article [ref=f6e236]:
+          - generic [ref=f6e237]:
+            - generic [ref=f6e238]: Exposición sostenida
+            - heading "Traje aluminizado de triple capa" [level=3] [ref=f6e239]
+            - paragraph [ref=f6e240]: Para exposición radiante sostenida en colada, horno de arco o cemento.
+            - list "Especificaciones de Traje aluminizado de triple capa" [ref=f6e241]:
+              - listitem [ref=f6e242]: Tres capas
+              - listitem [ref=f6e243]: Resultado radiante >600 s
+              - listitem [ref=f6e244]: Clase 3 convección y contacto
+              - listitem [ref=f6e245]: Manoplas
+            - link "Cotizar" [ref=f6e246] [cursor=pointer]:
+              - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20cotizar%20traje%20aluminizado%20de%20triple%20capa%20para%20exposici%C3%B3n%20sostenida
+        - article [ref=f6e247]:
+          - img "Inventario de equipo contra incendio en bodega" [ref=f6e248]
+          - generic [ref=f6e249]:
+            - generic [ref=f6e250]: Cotización a la medida
+            - heading "¿No ves lo que buscas?" [level=3] [ref=f6e251]
+            - paragraph [ref=f6e252]: Dinos qué equipo necesitas y para qué área. Si se consigue, te lo cotizamos.
+            - link "Cotizar por WhatsApp" [ref=f6e253] [cursor=pointer]:
+              - /url: https://wa.me/525539340581?text=Hola%2C%20busco%20un%20equipo%20contra%20incendio%20que%20no%20vi%20en%20el%20sitio.%20%C2%BFMe%20ayudan%20a%20cotizarlo%3F
+        - article [ref=f6e254]:
+          - img "Instalación de red contra incendio en un inmueble" [ref=f6e255]
+          - generic [ref=f6e256]:
+            - generic [ref=f6e257]: Proyecto a la medida
+            - heading "Instalación de sistemas" [level=3] [ref=f6e258]
+            - paragraph [ref=f6e259]: Instalamos el equipo con planos, memoria técnica y pruebas de funcionamiento.
+            - link "Instalación" [ref=f6e260] [cursor=pointer]:
+              - /url: /servicios/instalacion/
+    - generic [ref=f6e262]:
+      - generic [ref=f6e263]:
+        - generic [ref=f6e264]:
+          - paragraph [ref=f6e265]: Guía de compra
+          - heading "Cómo elegir protección aluminizada sin comprar por minutos sin distancia" [level=2] [ref=f6e267]
+          - paragraph [ref=f6e268]: Define distancia, fuente de calor, vapor, tarea y cobertura requerida antes de cotizar.
+        - generic [ref=f6e269]:
+          - paragraph [ref=f6e270]: La NOM-002-STPS-2010, numeral 5.9, obliga al patrón a dotar EPP a la brigada conforme a sus funciones y riesgos. Primero identifica la actividad y la distancia; después define las capas y elementos del conjunto.
+          - paragraph [ref=f6e271]: La NOM-017-STPS-2024 pide identificar riesgos, seleccionar EPP, verificar certificación, capacitar, señalizar y registrar. Si no hay NOM de producto, su numeral 5.4 permite acreditar el equipo con la información del fabricante en los términos aplicables.
+      - generic [ref=f6e272]:
+        - article [ref=f6e273]:
+          - paragraph [ref=f6e274]:
+            - text: El
+            - strong [ref=f6e275]: traje aluminizado
+            - text: o traje de aproximación es EPP para la brigada contra incendio de una empresa ante calor radiante. Si buscas un traje de acercamiento al fuego, confírmalo por la tarea, la distancia y las condiciones de exposición, no por una promesa genérica de autonomía.
+          - 'heading "Traje aluminizado: límite que debe quedar por escrito" [level=3] [ref=f6e276]'
+          - paragraph [ref=f6e277]: «Salvo que se especifique de otro modo, las prendas aluminizadas NO están diseñadas para entrar dentro del fuego.» El aluminio refleja entre 93 y 97 % del calor radiante, pero entre 3 y 7 % siempre se transfiere. Si la distancia baja de 10 a 5 metros, esa energía se multiplica por cuatro; a 1 metro probablemente no ofrecerá protección ni durante 15 minutos.
+          - heading "Cómo se integra el conjunto" [level=3] [ref=f6e278]
+          - paragraph [ref=f6e279]:
+            - text: "La protección de todo el cuerpo solo existe cuando se llevan todos los elementos: chaqueta y pantalón o mono, capucha, guantes, botas y funda. La"
+            - link "NOM-002-STPS-2010" [ref=f6e280] [cursor=pointer]:
+              - /url: /servicios/diagnostico-de-riesgo/
+            - text: obliga al patrón a dotar EPP a la brigada según funciones y riesgos; la NFPA 1970, edición 2025, es una referencia técnica, no ley en México.
+        - complementary [ref=f6e281]:
+          - paragraph [ref=f6e282]: Cotiza por WhatsApp
+          - heading "Traje aluminizado para calor radiante industrial" [level=3] [ref=f6e283]
+          - paragraph [ref=f6e284]: Precio bajo cotización
+          - paragraph [ref=f6e285]: "Para cotizar, envíanos:"
+          - list [ref=f6e286]:
+            - listitem [ref=f6e287]: Giro del negocio
+            - listitem [ref=f6e288]: Superficie aproximada
+            - listitem [ref=f6e289]: Presentación y cantidad
+          - link "Cotizar por WhatsApp" [ref=f6e290] [cursor=pointer]:
+            - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20cotizar%3A%20Traje%20aluminizado%20para%20calor%20radiante%20industrial.%20%C2%BFPrecio%20y%20disponibilidad%3F
+          - link "Llamar" [ref=f6e291] [cursor=pointer]:
+            - /url: tel:+525539340581
+    - region "Productos y servicios relacionados" [ref=f6e292]:
+      - generic [ref=f6e293]:
+        - generic [ref=f6e294]:
+          - generic [ref=f6e295]:
+            - paragraph [ref=f6e296]: Relacionados
+            - heading "Productos y servicios relacionados" [level=2] [ref=f6e298]
+            - paragraph [ref=f6e299]: Otras presentaciones de la familia y el servicio que pide el equipo.
+          - generic [ref=f6e300]:
+            - paragraph [ref=f6e301]: Cuando la tarea incorpora riesgo respiratorio, se revisa también el equipo de respiración autónoma. Un conjunto estructural responde a otro escenario de riesgo y no sustituye una selección para aproximación radiante.
+            - paragraph [ref=f6e302]: El diagnóstico de riesgo, la capacitación DC-3 y la inspección ayudan a integrar selección, uso y registro del EPP de brigada dentro del expediente del centro de trabajo.
+        - list [ref=f6e303]:
+          - listitem [ref=f6e304]:
+            - link "Casco de bombero Equipo para bombero" [ref=f6e305] [cursor=pointer]:
+              - /url: /productos/casco-brigada-contra-incendio/
+              - generic [ref=f6e306]: Casco de bombero
+              - generic [ref=f6e307]: Equipo para bombero
+          - listitem [ref=f6e311]:
+            - link "Guantes para bombero Equipo para bombero" [ref=f6e312] [cursor=pointer]:
+              - /url: /productos/guantes-brigada-contra-incendio/
+              - generic [ref=f6e313]: Guantes para bombero
+              - generic [ref=f6e314]: Equipo para bombero
+          - listitem [ref=f6e318]:
+            - link "Botas para bombero Equipo para bombero" [ref=f6e319] [cursor=pointer]:
+              - /url: /productos/botas-brigada-contra-incendio/
+              - generic [ref=f6e320]: Botas para bombero
+              - generic [ref=f6e321]: Equipo para bombero
+          - listitem [ref=f6e325]:
+            - link "Equipos contra incendios Catálogo de equipo contra incendio." [ref=f6e326] [cursor=pointer]:
+              - /url: /productos/
+              - generic [ref=f6e327]: Equipos contra incendios
+              - generic [ref=f6e328]: Catálogo de equipo contra incendio.
+    - generic [ref=f6e333]:
+      - generic [ref=f6e334]:
+        - generic [ref=f6e335]:
+          - paragraph [ref=f6e336]: Preguntas frecuentes
+          - heading "Preguntas frecuentes sobre el traje aluminizado" [level=2] [ref=f6e338]
+          - paragraph [ref=f6e339]: Respuestas breves para elegir, instalar y mantener este equipo.
+        - generic [ref=f6e340]:
+          - paragraph [ref=f6e341]: Aquí explicamos por qué distancia y conjunto completo importan más que una cifra aislada de minutos. También se distinguen las capas y los límites de uso que declara el fabricante.
+          - paragraph [ref=f6e342]: La NFPA 1970, edición 2025, se usa como referencia técnica para proximidad; no es ley en México. No existe una NOM mexicana de producto para el traje de aproximación aluminizado.
+      - generic [ref=f6e343]:
+        - generic [ref=f6e347]:
+          - group [ref=f6e348]:
+            - generic "¿El traje aluminizado sirve para entrar dentro del fuego?" [ref=f6e349] [cursor=pointer]
+            - paragraph [ref=f6e354]: "No debe asumirse. El fabricante advierte: «Salvo que se especifique de otro modo, las prendas aluminizadas NO están diseñadas para entrar dentro del fuego.» Su función se define frente a la exposición radiante, la distancia y el conjunto seleccionado para la tarea."
+          - group [ref=f6e355]:
+            - generic "¿Por qué no basta que un proveedor diga minutos de protección?" [ref=f6e356] [cursor=pointer]
+          - group [ref=f6e360]:
+            - generic "¿El aluminio protege de todo el cuerpo por sí solo?" [ref=f6e361] [cursor=pointer]
+          - group [ref=f6e365]:
+            - generic "¿Cuándo conviene una prenda monocapa?" [ref=f6e366] [cursor=pointer]
+          - group [ref=f6e370]:
+            - generic "¿Para qué sirve el alojamiento para ERA en la chaqueta?" [ref=f6e371] [cursor=pointer]
+          - group [ref=f6e375]:
+            - generic "¿Qué norma aplica al traje de aproximación aluminizado?" [ref=f6e376] [cursor=pointer]
+          - group [ref=f6e380]:
+            - generic "¿Cómo se acredita un traje sin NOM de producto?" [ref=f6e381] [cursor=pointer]
+          - group [ref=f6e385]:
+            - generic "¿Qué debe revisar la empresa antes de comprar?" [ref=f6e386] [cursor=pointer]
+          - group [ref=f6e390]:
+            - generic "¿Cuándo se reemplaza el EPP aluminizado?" [ref=f6e391] [cursor=pointer]
+        - complementary [ref=f6e395]:
+          - generic [ref=f6e396]:
+            - generic [ref=f6e401]:
+              - heading "¿Tu duda no está aquí?" [level=3] [ref=f6e402]
+              - paragraph [ref=f6e403]: Escríbenos por WhatsApp y te respondemos directo.
+            - generic [ref=f6e404]:
+              - generic [ref=f6e405]:
+                - generic [ref=f6e406]: Nombre — opcional
+                - textbox "Nombre — opcional" [ref=f6e407]:
+                  - /placeholder: Tu nombre
+              - generic [ref=f6e408]:
+                - generic [ref=f6e409]: Tipo de negocio *
+                - combobox "Tipo de negocio" [ref=f6e411] [cursor=pointer]:
+                  - option "Selecciona tu giro…" [disabled] [selected]
+                  - option "Oficina o consultorio"
+                  - option "Restaurante o cocina"
+                  - option "Comercio o tienda"
+                  - option "Bodega o nave industrial"
+                  - option "Hotel u hospedaje"
+                  - option "Escuela o institución"
+                  - option "Inmueble residencial"
+                  - option "Otro tipo de inmueble"
+              - generic [ref=f6e412]:
+                - generic [ref=f6e413]: Tu pregunta o necesidad *
+                - textbox "Tu pregunta o necesidad" [ref=f6e414]:
+                  - /placeholder: "Ej: Tengo una cocina industrial y quiero saber qué extintores necesito y cada cuánto les doy mantenimiento."
+                - generic [ref=f6e415]: 0 / 500
+              - button "Enviar por WhatsApp" [ref=f6e416] [cursor=pointer]
+              - paragraph [ref=f6e419]: Al pulsar el botón se abre WhatsApp con tu mensaje. No guardamos ningún dato.
+            - link "Prefiero llamar directamente" [ref=f6e423] [cursor=pointer]:
+              - /url: tel:+525539340581
+  - contentinfo "Pie de página" [ref=f6e424]:
+    - region "Solicitar cotización" [ref=f6e425]:
+      - generic [ref=f6e426]:
+        - generic [ref=f6e427]:
+          - paragraph [ref=f6e428]: Cotización sin compromiso
+          - heading "Cuéntanos tu proyecto y te decimos qué equipo necesitas." [level=2] [ref=f6e429]
+          - paragraph [ref=f6e430]: "Escríbenos por WhatsApp o llámanos: Lun–Vie 9:00–18:00 · Sáb 9:00–14:00."
+        - generic [ref=f6e431]:
+          - link "Cotizar por WhatsApp" [ref=f6e432] [cursor=pointer]:
+            - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n%20de%20equipo%20contra%20incendio.
+          - link "Llamar al 55 3934 0581" [ref=f6e435] [cursor=pointer]:
+            - /url: tel:+525539340581
+    - generic [ref=f6e438]:
+      - generic [ref=f6e439]:
+        - region "CONINC" [ref=f6e440]:
+          - link "CONINC Contra incendios , ir al inicio" [ref=f6e441] [cursor=pointer]:
+            - /url: /
+            - generic [aria-hidden] [ref=f6e442]: C
+            - generic [ref=f6e443]:
+              - generic [ref=f6e444]: CONINC
+              - generic [ref=f6e445]: Contra incendios
+            - generic [ref=f6e446]: ", ir al inicio"
+          - paragraph [ref=f6e447]: CONINC vende, instala y da mantenimiento a equipo contra incendio para empresas e inmuebles de la Ciudad de México y el Estado de México, con más de 35 años en el mercado mexicano.
+          - generic "Información de la empresa" [ref=f6e448]:
+            - generic [ref=f6e449]: Más de 35 años
+            - generic [ref=f6e450]: CDMX y Estado de México
+        - region "Teléfono y WhatsApp" [ref=f6e451]:
+          - heading "Teléfono y WhatsApp" [level=2] [ref=f6e452]
+          - link "55 3934 0581" [ref=f6e453] [cursor=pointer]:
+            - /url: tel:+525539340581
+          - generic [ref=f6e454]:
+            - link "WhatsApp" [ref=f6e455] [cursor=pointer]:
+              - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n%20de%20equipo%20contra%20incendio.
+            - link "Llamar" [ref=f6e456] [cursor=pointer]:
+              - /url: tel:+525539340581
+          - link "equipocontraincendios737@gmail.com" [ref=f6e457] [cursor=pointer]:
+            - /url: mailto:equipocontraincendios737@gmail.com
+        - region "Oficinas" [ref=f6e461]:
+          - heading "Oficinas" [level=2] [ref=f6e462]
+          - generic [ref=f6e463]: Lago Alberto 319, Piso 6, Col. Granada, Miguel HidalgoCiudad de México, 11520
+          - link "Cómo llegar" [ref=f6e464] [cursor=pointer]:
+            - /url: https://www.google.com/maps/search/?api=1&query=19.439817,-99.185217
+        - region "Horario" [ref=f6e467]:
+          - heading "Horario" [level=2] [ref=f6e468]
+          - generic "Horario de atención" [ref=f6e469]:
+            - generic [ref=f6e470]:
+              - generic [ref=f6e471]: Lun–Vie
+              - strong [ref=f6e472]: 9:00–18:00
+            - generic [ref=f6e473]:
+              - generic [ref=f6e474]: Sábado
+              - strong [ref=f6e475]: 9:00–14:00
+            - generic [ref=f6e476]:
+              - generic [ref=f6e477]: Domingo
+              - strong [ref=f6e478]: Cerrado
+          - paragraph [ref=f6e479]: "Cobertura: Toda la Ciudad de México y el Estado de México."
+      - generic "Navegación del pie de página" [ref=f6e480]:
+        - group [ref=f6e481]:
+          - generic "Productos" [ref=f6e482]
+          - list [ref=f6e485]:
+            - listitem [ref=f6e486]:
+              - link "Catálogo completo" [ref=f6e487] [cursor=pointer]:
+                - /url: /productos/
+            - listitem [ref=f6e488]:
+              - link "Extintores portátiles" [ref=f6e489] [cursor=pointer]:
+                - /url: /productos/extintores/
+            - listitem [ref=f6e490]:
+              - link "Extintor PQS" [ref=f6e491] [cursor=pointer]:
+                - /url: /productos/extintor-pqs/
+            - listitem [ref=f6e492]:
+              - link "Extintor CO₂" [ref=f6e493] [cursor=pointer]:
+                - /url: /productos/extintor-co2/
+            - listitem [ref=f6e494]:
+              - link "Extintor clase K" [ref=f6e495] [cursor=pointer]:
+                - /url: /productos/extintor-clase-k/
+            - listitem [ref=f6e496]:
+              - link "Detección y alarmas" [ref=f6e497] [cursor=pointer]:
+                - /url: /productos/deteccion-alarmas/
+            - listitem [ref=f6e498]:
+              - link "Hidrantes y mangueras" [ref=f6e499] [cursor=pointer]:
+                - /url: /productos/hidrantes-mangueras/
+            - listitem [ref=f6e500]:
+              - link "Señalización y emergencia" [ref=f6e501] [cursor=pointer]:
+                - /url: /productos/senalizacion/
+            - listitem [ref=f6e502]:
+              - link "Equipo para bombero" [ref=f6e503] [cursor=pointer]:
+                - /url: /productos/equipo-bombero/
+        - group [ref=f6e504]:
+          - generic "Servicios" [ref=f6e505]
+          - list [ref=f6e508]:
+            - listitem [ref=f6e509]:
+              - link "Todos los servicios" [ref=f6e510] [cursor=pointer]:
+                - /url: /servicios/
+            - listitem [ref=f6e511]:
+              - link "Instalación de sistemas" [ref=f6e512] [cursor=pointer]:
+                - /url: /servicios/instalacion/
+            - listitem [ref=f6e513]:
+              - link "Mantenimiento y recarga" [ref=f6e514] [cursor=pointer]:
+                - /url: /servicios/mantenimiento/
+            - listitem [ref=f6e515]:
+              - link "Prueba hidrostática" [ref=f6e516] [cursor=pointer]:
+                - /url: /servicios/prueba-hidrostatica/
+            - listitem [ref=f6e517]:
+              - link "Inspección y dictamen" [ref=f6e518] [cursor=pointer]:
+                - /url: /servicios/inspeccion/
+            - listitem [ref=f6e519]:
+              - link "Diagnóstico de riesgo" [ref=f6e520] [cursor=pointer]:
+                - /url: /servicios/diagnostico-de-riesgo/
+            - listitem [ref=f6e521]:
+              - link "Capacitación y DC-3" [ref=f6e522] [cursor=pointer]:
+                - /url: /servicios/capacitacion-dc3/
+            - listitem [ref=f6e523]:
+              - link "Gestión documental" [ref=f6e524] [cursor=pointer]:
+                - /url: /servicios/gestion-documental/
+        - group [ref=f6e525]:
+          - generic "Recursos" [ref=f6e526]
+          - list [ref=f6e529]:
+            - listitem [ref=f6e530]:
+              - link "Herramientas" [ref=f6e531] [cursor=pointer]:
+                - /url: /herramientas/
+            - listitem [ref=f6e532]:
+              - link "Cuántos extintores necesito" [ref=f6e533] [cursor=pointer]:
+                - /url: /herramientas/cuantos-extintores-necesito/
+            - listitem [ref=f6e534]:
+              - link "Riesgo de incendio" [ref=f6e535] [cursor=pointer]:
+                - /url: /herramientas/riesgo-de-incendio/
+            - listitem [ref=f6e536]:
+              - link "Verifica tu extintor" [ref=f6e537] [cursor=pointer]:
+                - /url: /herramientas/verifica-tu-extintor/
+            - listitem [ref=f6e538]:
+              - link "Formatos descargables" [ref=f6e539] [cursor=pointer]:
+                - /url: /plantillas/
+            - listitem [ref=f6e540]:
+              - link "Protección Civil" [ref=f6e541] [cursor=pointer]:
+                - /url: /proteccion-civil/
+            - listitem [ref=f6e542]:
+              - link "Blog" [ref=f6e543] [cursor=pointer]:
+                - /url: /blog/
+        - group [ref=f6e544]:
+          - generic "Empresa" [ref=f6e545]
+          - list [ref=f6e548]:
+            - listitem [ref=f6e549]:
+              - link "Nosotros" [ref=f6e550] [cursor=pointer]:
+                - /url: /nosotros/
+            - listitem [ref=f6e551]:
+              - link "Cobertura" [ref=f6e552] [cursor=pointer]:
+                - /url: /cobertura/
+            - listitem [ref=f6e553]:
+              - link "Servicio en CDMX" [ref=f6e554] [cursor=pointer]:
+                - /url: /cobertura/cdmx/
+            - listitem [ref=f6e555]:
+              - link "Servicio en Edomex" [ref=f6e556] [cursor=pointer]:
+                - /url: /cobertura/edomex/
+            - listitem [ref=f6e557]:
+              - link "Contacto" [ref=f6e558] [cursor=pointer]:
+                - /url: /contacto/
+            - listitem [ref=f6e559]:
+              - link "Cotizar por WhatsApp" [ref=f6e560] [cursor=pointer]:
+                - /url: https://wa.me/525539340581?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n%20de%20equipo%20contra%20incendio.
+    - generic [ref=f6e562]:
+      - generic [ref=f6e563]:
+        - paragraph [ref=f6e564]: © 2026 CONINC. Todos los derechos reservados.
+        - generic [ref=f6e565]: Equipos contra incendios con más de 35 años en el mercado mexicano
+      - navigation "Legal" [ref=f6e566]:
+        - link "Aviso de privacidad" [ref=f6e567] [cursor=pointer]:
+          - /url: /privacidad/
+        - generic [aria-hidden] [ref=f6e568]: ·
+        - link "Términos y condiciones" [ref=f6e569] [cursor=pointer]:
+          - /url: /terminos/
+        - generic [aria-hidden] [ref=f6e570]: ·
+        - link "Política de cookies" [ref=f6e571] [cursor=pointer]:
+          - /url: /cookies/
+        - generic [aria-hidden] [ref=f6e572]: ·
+        - link "Mapa del sitio" [ref=f6e573] [cursor=pointer]:
+          - /url: /sitemap-index.xml
+      - button "Volver arriba" [ref=f6e574] [cursor=pointer]: Arriba
+  - link "Contactar por WhatsApp" [ref=f6e577] [cursor=pointer]:
+    - /url: https://wa.me/525539340581?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20equipo%20contra%20incendio.
+    - generic [ref=f6e580]: ¿Necesitas ayuda?

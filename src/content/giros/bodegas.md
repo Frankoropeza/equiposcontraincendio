@@ -138,6 +138,8 @@ El error más caro es revisar cada material por separado. La norma ordena **norm
 | Simulacros | 1 al año | **2 al año** |
 | Acreditación | No | **Sí** (acta de PC, dictamen de UV o autogestión) |
 
+El equipo de protección de la brigada se selecciona según las funciones y riesgos de cada integrante; la categoría de [equipo para bomberos](/productos/equipo-bombero/) permite revisar esa dotación sin confundirla con el equipo fijo de la bodega.
+
 ## Sistemas fijos: lo que la norma dice y lo que no
 
 La NOM-002 exige «sistemas fijos de protección contra incendio» en riesgo alto, pero **no nombra los rociadores**. Si tu bodega necesita red de hidrantes, rociadores o ambos lo definen el proyecto, el reglamento de construcción local y, muy a menudo, la aseguradora. Por eso conviene empezar por un [diagnóstico de riesgo](/servicios/diagnostico-de-riesgo/) antes de cotizar un sistema: comprar uno que no te piden es tan costoso como no tener el que sí.

@@ -30,6 +30,12 @@ faqs:
     answer: "La empresa debe identificar el riesgo por puesto y área, definir la distancia y la exposición a calor, vapor o salpicadura, y seleccionar el conjunto necesario. La NOM-002-STPS-2010, numeral 5.9, obliga al patrón a dotar EPP a la brigada según sus funciones y riesgos."
   - question: "¿Cuándo se reemplaza el EPP aluminizado?"
     answer: "Conforme al numeral 7.1 e) de la NOM-017-STPS-2024, se desecha y reemplaza si tiene fallas, daño, desgaste o quemaduras no reparables, al cumplir la vida útil indicada por el fabricante, o después de impactos, descargas eléctricas o contacto con material incandescente."
+  - question: "¿De qué materiales están hechos los trajes de bomberos?"
+    answer: "Depende del tipo de traje. Un conjunto estructural se revisa por exterior, barrera de humedad y barrera térmica; un traje aluminizado puede combinar exterior aluminizado, neopreno y relleno de fibra de vidrio. No son equivalentes ni tienen el mismo límite de uso."
+  - question: "¿Cuánto pesa un traje estructural de bombero?"
+    answer: "El peso depende del ensamble, tallaje y accesorios. No debe trasladarse el peso de un conjunto estructural a un traje de aproximación ni usarlo como criterio único: revisa la ficha de la configuración que se cotiza."
+  - question: "¿Qué tipo de ropa usan los bomberos?"
+    answer: "Según el escenario, pueden usar conjunto estructural, equipo forestal o traje de aproximación aluminizado. La selección depende de calor, flama, radiación, distancia y tarea; un traje aluminizado no se presenta como equipo para entrar dentro del fuego."
 variantes:
   - nombre: "Chaqueta larga monocapa aluminizada"
     badge: "Maniobra breve"
@@ -90,7 +96,7 @@ ficha:
   faqAccent: "sobre el traje aluminizado"
   guia:
     title: "Cómo elegir protección aluminizada"
-    titleAccent: "sin comprar por minutos sin distancia"
+    titleAccent: "según distancia y exposición"
     desc: "Define distancia, fuente de calor, vapor, tarea y cobertura requerida antes de cotizar."
 fichaHeads:
   vitrina:
@@ -116,12 +122,18 @@ fichaHeads:
     - "La NFPA 1970, edición 2025, se usa como referencia técnica para proximidad; no es ley en México. No existe una NOM mexicana de producto para el traje de aproximación aluminizado."
 ---
 
-El **traje aluminizado** o traje de aproximación es EPP para la brigada contra incendio de una empresa ante calor radiante. Si buscas un traje de acercamiento al fuego, confírmalo por la tarea, la distancia y las condiciones de exposición, no por una promesa genérica de autonomía.
+El **traje aluminizado**, también llamado **traje de aproximación**, protege a una brigada industrial ante calor radiante. Se usa en contextos como horno, colada y siderurgia, además de ciertas tareas de brigada; se define por fuente de calor, distancia, vapor, humedad y cobertura requerida, no por una promesa genérica de tiempo.
 
-### Traje aluminizado: límite que debe quedar por escrito
+## ¿De qué materiales están hechos los trajes de bomberos?
 
-«Salvo que se especifique de otro modo, las prendas aluminizadas NO están diseñadas para entrar dentro del fuego.» El aluminio refleja entre 93 y 97 % del calor radiante, pero entre 3 y 7 % siempre se transfiere. Si la distancia baja de 10 a 5 metros, esa energía se multiplica por cuatro; a 1 metro probablemente no ofrecerá protección ni durante 15 minutos.
+Un traje de aproximación puede combinar exterior aluminizado, barrera antihumedad de neopreno y relleno de fibra de vidrio. Un [traje estructural de bombero](/productos/conjunto-estructural-chaqueton-pantalon/) responde a otro escenario con exterior, barrera de humedad y barrera térmica. «Salvo que se especifique de otro modo, las prendas aluminizadas NO están diseñadas para entrar dentro del fuego»: la distancia cambia la energía que llega al equipo y no debe omitirse.
 
-### Cómo se integra el conjunto
+El traje se revisa dentro del [equipo para bombero](/productos/equipo-bombero/) con [capucha para bombero](/productos/capucha-proteccion-brigada/), [guantes para bombero](/productos/guantes-brigada-contra-incendio/) y [botas para bombero](/productos/botas-brigada-contra-incendio/). Cuando la exposición incorpora riesgo respiratorio, se evalúa el [equipo de respiración autónoma](/productos/equipo-respiracion-autonoma-era/) para la misma configuración, sin asumir que una prenda suelta ofrece cobertura integral.
 
-La protección de todo el cuerpo solo existe cuando se llevan todos los elementos: chaqueta y pantalón o mono, capucha, guantes, botas y funda. La [NOM-002-STPS-2010](/servicios/diagnostico-de-riesgo/) obliga al patrón a dotar EPP a la brigada según funciones y riesgos; la NFPA 1970, edición 2025, es una referencia técnica, no ley en México.
+## Qué determina el precio de un traje aluminizado
+
+El costo cambia por las capas, la prenda suelta o el conjunto completo, la cobertura de chaqueta y pantalón o mono, la capucha con visor y las manoplas. También influye si se requiere alojamiento para ERA y la configuración para vapor o humedad; se cotiza según lo que pida el inmueble.
+
+## Traje de aproximación en CDMX y Estado de México
+
+La selección parte de la operación real que tengas: horno, colada, caldera o proceso siderúrgico. Damos servicio en [Ciudad de México](/cobertura/cdmx/) y [Estado de México](/cobertura/edomex/). La NOM-002-STPS-2010, numeral 5.9, obliga a dotar EPP por función y riesgo; la NFPA 1970 edición 2025 es referencia técnica, no ley en México.

@@ -34,11 +34,17 @@ export async function getStaticPaths() {
             : (TAXONOMY.categories.find((c) => c.slug === p.data.category)?.label ?? undefined),
       }));
 
-    return { params: { slug: producto.id }, props: { producto, related } };
+    // `relatedProducts` es la relación editorial explícita. Para JSON-LD basta
+    // la ruta: así no se reconsulta la colección ni se fabrica el nombre ajeno.
+    const relatedProducts = (producto.data.relatedProducts ?? []).map(
+      (reference) => `/productos/${reference.id}/`,
+    );
+
+    return { params: { slug: producto.id }, props: { producto, related, relatedProducts } };
   });
 }
 
-const { producto, related } = Astro.props;
+const { producto, related, relatedProducts } = Astro.props;
 const { Content } = await render(producto);
 const d = producto.data;
 
@@ -58,6 +64,7 @@ const faqs = d.faqs;
   price={d.price}
   faqs={faqs}
   related={related}
+  relatedProducts={relatedProducts}
   variantes={d.variantes ?? []}
   ficha={d.ficha}
   fichaHeads={d.fichaHeads}

@@ -8,7 +8,7 @@ image: /images/productos/casco-brigada-contra-incendio.avif
 price: "Cotizar"
 order: 20
 seoTitle: "Casco de bombero | Opciones estructurales"
-seoDescription: "Casco de bombero para brigada: revisa opciones estructurales, forestales e industriales y la NOM-115-STPS-2009."
+seoDescription: "Casco de bombero para brigada en CDMX y Estado de México: compara opciones estructurales, forestales e industriales y cotiza según tu inmueble."
 relatedProducts: ["guantes-brigada-contra-incendio"]
 relatedServices: ["diagnostico-de-riesgo", "capacitacion-dc3"]
 faqs:
@@ -28,6 +28,12 @@ faqs:
     answer: "La NOM-017-STPS-2024, numeral 7.1 e), indica desechar y reemplazar el EPP con fallas, daño, desgaste o quemaduras no reparables, al cumplir la vida útil indicada por el fabricante o después de impactos, descargas eléctricas o contacto con material incandescente."
   - question: "¿Las normas NFPA son obligatorias en México?"
     answer: "No. Las NFPA son referencias técnicas, no ley en México. Para EPP de brigada se debe identificar el riesgo, seleccionar el equipo, verificar su certificación, capacitar, señalizar y registrar conforme a la NOM-017-STPS-2024."
+  - question: "¿Qué tipo de casco se utiliza para los bomberos?"
+    answer: "Depende de la tarea: un casco para bombero estructural se revisa para la exposición que declara su fabricante; uno forestal corresponde a vegetación y uno industrial dieléctrico no es para fuego confinado. La selección debe partir del riesgo y la función de la brigada."
+  - question: "¿Cómo se llama el casco que usan los bomberos?"
+    answer: "Puede llamarse casco de bombero, casco para bombero estructural o casco de brigada, según la tarea a la que se destina. El nombre no confirma su alcance: revisa su ficha, marcado y condiciones de no uso."
+  - question: "¿Cuánto dura un casco de bombero?"
+    answer: "La vida útil la define el fabricante y el estado del equipo. La NOM-017-STPS-2024 indica reemplazar el EPP con daño, desgaste, quemaduras no reparables o después de los eventos que señala; no conviene usar una fecha genérica para todos los cascos."
 variantes:
   - nombre: "Cascarón de fibra de vidrio tradicional"
     badge: "Formato tradicional"
@@ -114,14 +120,18 @@ fichaHeads:
     - "Si compartes las funciones de tu brigada y las áreas de riesgo, se puede revisar qué información falta antes de cotizar. La definición final debe conservar el vínculo entre riesgo, EPP, capacitación y registro."
 ---
 
-El **casco de bombero** protege la cabeza de quienes atienden una emergencia dentro de tu empresa. Al comparar **cascos para bomberos**, no elijas por apariencia: cada casco estructural debe corresponder al riesgo y a la función asignada a cada integrante de la brigada.
+El **casco de bombero** para una brigada de empresa no es un accesorio ni un casco de disfraz: se selecciona para la función y el riesgo documentado. La NOM-002-STPS-2010, numeral 5.9, obliga al patrón a dotar EPP según funciones y riesgos; para cascos de protección, la NOM-115-STPS-2009 es el referente mexicano de producto.
 
-### Casco de bombero: selección y cumplimiento
+## ¿Qué tipo de casco se utiliza para los bomberos?
 
-- La NOM-002-STPS-2010, numeral 5.9, obliga al patrón a dotar EPP a los integrantes de la brigada contra incendio según sus funciones y riesgos.
-- La NOM-115-STPS-2009 aplica a cascos de protección fabricados, comercializados, distribuidos e importados en México.
-- La Guía de referencia III de la NOM-002 es enunciativa, no obligatoria; describe casco dieléctrico y resistente a impacto, calor y flama, con suspensión, tafilete, protección de cuello y orejas y pantalla facial.
+Un **casco para bombero estructural** se compara contra la exposición de esa tarea. El forestal corresponde a vegetación, mientras que un casco industrial dieléctrico de ala ancha no es estructural ni para entrar a fuego confinado. La Guía de referencia III de la NOM-002 es enunciativa, no obligatoria; sirve para revisar suspensión, tafilete, protección de cuello y orejas y pantalla facial, sin sustituir la evaluación del riesgo.
 
-### Para cotizar
+Para integrar la dotación, revisa el [equipo para bombero](/productos/equipo-bombero/) con [capucha para bombero](/productos/capucha-proteccion-brigada/) bajo el casco, [guantes para bombero](/productos/guantes-brigada-contra-incendio/) para la tarea y [equipo de respiración autónoma](/productos/equipo-respiracion-autonoma-era/) cuando existe riesgo respiratorio. También conviene distinguirlo del [traje estructural de bombero](/productos/conjunto-estructural-chaqueton-pantalon/) y del [traje aluminizado](/productos/traje-aproximacion-aluminizado/), que responden a exposiciones distintas.
 
-Comparte las funciones de la brigada y las áreas donde intervendrá. Revisamos si corresponde un casco estructural, forestal o industrial dieléctrico, y si se requiere protector de cuello y orejas tipo bavolet como accesorio.
+## Qué determina el precio de un casco de bombero
+
+El costo cambia por el material del cascarón —fibra de vidrio o termoplástico—, el formato estructural, forestal o industrial, la suspensión y el protector de cuello y orejas. También cambian la configuración con pantalla facial, el alumbrado integrado y la necesidad de accesorios; se cotiza según lo que pida el inmueble.
+
+## Casco de brigada para CDMX y Estado de México
+
+Un cuarto de máquinas, un sótano o un tablero energizado cambian el casco que le toca a cada integrante. Damos servicio en toda la [Ciudad de México](/cobertura/cdmx/) y el [Estado de México](/cobertura/edomex/), y en ambos casos la selección arranca igual: qué área cubre la brigada y qué función tiene cada persona. Comparte esos datos y confirmamos la configuración y la información que debe quedar en el expediente.

@@ -8,7 +8,7 @@ seccion:
 categoriaProductos: equipo-bombero
 seo:
   title: Equipo para bomberos | EPP según el riesgo
-  description: "Equipo para bomberos: EPP para bomberos y equipo de bombero según las funciones, el riesgo y la NOM-017-STPS-2024."
+  description: "Equipo para bomberos en CDMX y Estado de México: casco, traje, guantes, botas, capucha y ERA para tu brigada. Cotiza según el riesgo de tu inmueble."
   serviceName: Equipo para bomberos y EPP para brigadas
   serviceType: Selección de EPP para brigada contra incendio conforme a riesgos y funciones
   image: /images/showcase/equipo-proteccion-bomberos-epp.avif
@@ -34,12 +34,12 @@ vitrina:
     - La obligación de la NOM-002-STPS-2010, numeral 5.9, corresponde al patrón y se ajusta a las funciones y riesgos de los integrantes de la brigada.
     - La NOM-017-STPS-2024 vincula esa selección con la identificación de riesgos, la certificación aplicable, la capacitación, la señalización y los registros.
   tarjetas:
-    - title: Casco de bombero
+    - title: Protección de cabeza
       href: /productos/casco-brigada-contra-incendio/
       image: /images/productos/casco-brigada-contra-incendio.avif
-      imageAlt: Casco para brigada contra incendio
+      imageAlt: Protección de cabeza para brigada contra incendio
       badge: EPP para brigada de empresa
-      description: Casco de bombero para proteger la cabeza según el riesgo, función y expediente de EPP.
+      description: Protección de cabeza según el riesgo, la función y el expediente de EPP.
       specs:
         - label: Material
           value: Fibra de vidrio tipo Thermoglas®
@@ -47,13 +47,13 @@ vitrina:
           value: Formato tradicional
         - label: Acabado
           value: Acabado mate disponible
-      ctaLabel: Ver casco de bombero
-    - title: Guantes para bombero
+      ctaLabel: Casco de bombero
+    - title: Protección de manos
       href: /productos/guantes-brigada-contra-incendio/
       image: /images/productos/guantes-brigada-contra-incendio.avif
-      imageAlt: Guantes para brigada contra incendio
+      imageAlt: Protección de manos para brigada contra incendio
       badge: EPP para brigada de empresa
-      description: Guantes para bombero elegidos por el riesgo y la función de cada puesto.
+      description: Protección de manos elegida por el riesgo y la función de cada puesto.
       specs:
         - label: Longitud
           value: 33 cm
@@ -61,13 +61,13 @@ vitrina:
           value: Tallas M, L y XL
         - label: Puño
           value: Puño Kevlar®
-      ctaLabel: Ver guantes para bombero
-    - title: Botas para bombero
+      ctaLabel: Guantes para bombero
+    - title: Protección de pies
       href: /productos/botas-brigada-contra-incendio/
       image: /images/productos/botas-brigada-contra-incendio.avif
-      imageAlt: Botas para brigada contra incendio
+      imageAlt: Protección de pies para brigada contra incendio
       badge: EPP para brigada contra incendio
-      description: Botas para bombero con protección térmica o dieléctrica según el riesgo dominante.
+      description: Protección de pies térmica o dieléctrica según el riesgo dominante.
       specs:
         - label: Material
           value: Caucho
@@ -75,13 +75,13 @@ vitrina:
           value: 13 pulg
         - label: Componentes
           value: Entresuela, cambrión y puntera de acero
-      ctaLabel: Ver botas para bombero
-    - title: Capucha para bombero
+      ctaLabel: Botas para bombero
+    - title: Protección de cuello y cara
       href: /productos/capucha-proteccion-brigada/
       image: /images/productos/capucha-proteccion-brigada.avif
-      imageAlt: Capucha de protección para brigada contra incendio
+      imageAlt: Protección de cuello y cara para brigada contra incendio
       badge: EPP para brigada contra incendio
-      description: Capucha para bombero que protege cabeza y cuello bajo el casco.
+      description: Protección de cabeza y cuello que se usa bajo el casco.
       specs:
         - label: Material
           value: Nomex
@@ -89,11 +89,11 @@ vitrina:
           value: Doble capa
         - label: Longitud
           value: 21 pulg
-      ctaLabel: Ver capucha para bombero
-    - title: Traje aluminizado
+      ctaLabel: Capucha para bombero
+    - title: Protección frente a calor radiante
       href: /productos/traje-aproximacion-aluminizado/
       image: /images/productos/traje-aproximacion-aluminizado.avif
-      imageAlt: Traje aluminizado para brigada industrial
+      imageAlt: Protección frente a calor radiante para brigada industrial
       badge: EPP para brigada industrial
       description: EPP aluminizado para exposición a calor radiante en procesos industriales.
       specs:
@@ -103,13 +103,13 @@ vitrina:
           value: 545 g/m²
         - label: Barreras
           value: Sin barreras
-      ctaLabel: Ver traje aluminizado
-    - title: Trajes para bomberos
+      ctaLabel: Traje aluminizado
+    - title: Conjunto de chaquetón y pantalón
       href: /productos/conjunto-estructural-chaqueton-pantalon/
       image: /images/productos/conjunto-estructural-chaqueton-pantalon.avif
       imageAlt: Conjunto estructural de chaquetón y pantalón para brigada
       badge: EPP estructural para brigada
-      description: Trajes para bomberos con chaquetón y pantalón de tres barreras para tu brigada.
+      description: Conjunto estructural de chaquetón y pantalón con tres barreras para tu brigada.
       specs:
         - label: Material
           value: Nomex IIIA
@@ -117,13 +117,13 @@ vitrina:
           value: TPP 38-41
         - label: Cinta
           value: Cinta microperforada 3 pulg
-      ctaLabel: Ver trajes para bomberos
-    - title: Equipo de respiración autónoma
+      ctaLabel: Trajes para bomberos
+    - title: Protección respiratoria
       href: /productos/equipo-respiracion-autonoma-era/
       image: /images/productos/equipo-respiracion-autonoma-era.avif
-      imageAlt: Equipo de respiración autónoma para brigada
+      imageAlt: Protección respiratoria para brigada contra incendio
       badge: EPP respiratorio para brigada
-      description: Equipo de respiración autónoma ERA o SCBA con PASS y cilindro para tu brigada.
+      description: Protección respiratoria de circuito abierto con PASS y cilindro para tu brigada.
       specs:
         - label: Circuito
           value: Circuito abierto
@@ -131,7 +131,7 @@ vitrina:
           value: Presión-demanda
         - label: PASS
           value: PASS a 30 s
-      ctaLabel: Ver equipo ERA
+      ctaLabel: Equipo de respiración autónoma
     - title: Diagnóstico de riesgo
       href: /servicios/diagnostico-de-riesgo/
       image: /images/servicios/auditoria-seguridad-contra-incendio.avif
@@ -179,8 +179,8 @@ tablaPrincipal:
       - NOM-017-STPS-2024, 7.1 e)
 guia:
   eyebrow: Selección y evidencia
-  title: Qué revisar
-  titleAccent: antes de integrar el EPP
+  title: Cómo completar el equipo de bombero
+  titleAccent: según el riesgo
   desc: La NOM-017-STPS-2024 fija la ruta para seleccionar y respaldar el EPP conforme a los riesgos.
   body:
     - Si existe NOM del equipo, la vía de cumplimiento es el certificado de un organismo acreditado. Si no existe NOM, se recurre a NMX o Estándares Técnicos.
@@ -207,13 +207,13 @@ guia:
       ejemplos: Fallas, daño, desgaste o quemaduras no reparables
       minimo: Desechar y reemplazar según la vida útil indicada por el fabricante y tras los eventos previstos
       complementos: NOM-017-STPS-2024, 7.1 e)
-  note: No existe NOM mexicana de producto para traje estructural, casco de bombero, guantes, botas ni equipo de respiración autónoma. La NOM-115-STPS-2009 cubre solamente cascos de protección.
+  note: No existe NOM mexicana de producto para traje estructural, cascos de protección, guantes, botas ni ERA. La NOM-115-STPS-2009 cubre solamente cascos de protección.
   ctaLabel: Diagnóstico de riesgo
   ctaHref: /servicios/diagnostico-de-riesgo/
 tabla2:
   id: limites-de-uso
   eyebrow: Límites que importan
-  title: El nivel de protección
+  title: El EPP para bomberos
   titleAccent: no sustituye la evaluación del riesgo
   desc: Cada elemento debe corresponder a la función, al grado de protección y a sus condiciones de no uso.
   body:
@@ -225,7 +225,7 @@ tabla2:
     - Límite
   rows:
     - - Guía de referencia III de NOM-002
-      - Chaquetón, pantalón, casco, botas, guantes, monja, tirantes, equipo de respiración autónoma y apoyo
+      - Chaquetón, pantalón, casco, botas, guantes, monja, tirantes, ERA y apoyo
       - Es enunciativa, no obligatoria
     - - Traje de aproximación o aluminizado
       - Protección ante calor radiante
@@ -238,30 +238,37 @@ tabla2:
       - Referencia europea
 modulos: []
 decision:
-  id: siguiente-paso
+  id: precio-equipo-bombero
   eyebrow: Decisión de compra
-  title: Antes de pedir EPP
-  titleAccent: ordena la información del riesgo
-  desc: El expediente debe conectar la función de la brigada, el riesgo identificado y la evidencia del equipo seleccionado.
+  title: Qué determina el precio
+  titleAccent: del equipo de bombero
+  desc: El precio cambia según la configuración que exige el riesgo y las funciones de tu brigada.
   body:
-    - "No se puede asumir el mismo EPP para todas las funciones: la NOM-002-STPS-2010, numeral 5.9, lo vincula con las funciones y los riesgos de cada integrante."
-    - Para la STPS, la NOM-017-STPS-2024 exige que la selección se acompañe de certificación conforme a la vía aplicable, capacitación, señalización y registros.
+    - En CDMX y Estado de México, una cotización útil parte del riesgo identificado, las funciones de la brigada y la evidencia que debe conservarse.
+    - "Se cotiza según lo que pida el inmueble: selección, evidencia aplicable y necesidades de uso de la brigada."
   columns:
-    - Si necesitas definir
-    - Empieza por
-    - Después integra
+    - Factor
+    - Qué cambia
+    - Qué debes definir
   rows:
-    - - Riesgo y funciones
-      - Diagnóstico por puesto y área
-      - Selección de EPP
-    - - Evidencia de cumplimiento
-      - Certificado o información del fabricante
-      - Expediente y registros
-    - - Uso del EPP
-      - Capacitación
-      - Señalización y registros
-  ctaLabel: Gestión documental
-  ctaHref: /servicios/gestion-documental/
+    - - Construcción de la prenda
+      - Número de capas y tipo de tela
+      - Protección requerida por el riesgo identificado
+    - - Talla y ajuste
+      - Tallaje de rack o a medida
+      - Medidas y funciones de quien usará el EPP
+    - - Protección respiratoria
+      - Autonomía y material del cilindro del ERA
+      - Condiciones de uso y riesgo respiratorio
+    - - Protección de cabeza
+      - Casco con alumbrado o pantalla
+      - Accesorios que requiere cada función
+    - - Alcance de la compra
+      - Pieza suelta o equipo completo de bombero
+      - Elementos que necesita la brigada
+    - - Implementación
+      - Inclusión de capacitación
+      - Uso, selección y registros que requiere el inmueble
 proceso:
   eyebrow: Ruta de selección
   title: Del riesgo identificado
@@ -333,7 +340,7 @@ empresa:
   titleAccent: y evidencia conectados
   desc: Documenta por qué cada elemento corresponde a la función y el riesgo de la brigada.
   body:
-    - El expediente útil conserva la identificación de riesgos, la selección de EPP, la evidencia de la vía de cumplimiento, la capacitación, la señalización y los registros.
+    - Para un inmueble en CDMX o Estado de México, el expediente útil conserva la identificación de riesgos, la selección de EPP, la evidencia de la vía de cumplimiento, la capacitación, la señalización y los registros.
     - Si hay fallas, daño, desgaste o quemaduras no reparables, la NOM-017-STPS-2024, numeral 7.1 e), ordena desechar y reemplazar el EPP.
   que:
     title: Qué debe quedar documentado
@@ -352,8 +359,14 @@ empresa:
         desc: Documenta capacitación, señalización, selección y reemplazo.
 related:
   title: Servicios y guías relacionados
-  desc: Los recursos que acompañan la selección del EPP de tu brigada.
+  desc: Los recursos que acompañan la selección del EPP de tu brigada y la cobertura para tu inmueble en CDMX o Estado de México.
   links:
+    - label: Cobertura para inmuebles en CDMX
+      href: /cobertura/cdmx/
+      desc: Atención para inmuebles en Ciudad de México.
+    - label: Cobertura para inmuebles en Estado de México
+      href: /cobertura/edomex/
+      desc: Atención para inmuebles en Edomex.
     - label: Diagnóstico de riesgo
       href: /servicios/diagnostico-de-riesgo/
       desc: Identificación del grado de riesgo de incendio.
@@ -376,12 +389,12 @@ faq:
   items:
     - question: ¿Qué obliga la NOM-002-STPS-2010 sobre el EPP de la brigada?
       answer: "El numeral 5.9 obliga al patrón a dotar de equipo de protección personal a los integrantes de la brigada contra incendio, de acuerdo con sus funciones y riesgos."
-    - question: ¿Existe una NOM mexicana de producto para traje estructural, casco, guantes, botas o respiración autónoma?
-      answer: "No existe NOM mexicana de producto para traje estructural, casco de bombero, guantes, botas ni equipo de respiración autónoma. La NOM-115-STPS-2009 cubre solamente cascos de protección."
+    - question: ¿Existe una NOM mexicana de producto para traje estructural, casco, guantes, botas o ERA?
+      answer: "No existe NOM mexicana de producto para traje estructural, cascos de protección, guantes, botas ni ERA. La NOM-115-STPS-2009 cubre solamente cascos de protección."
     - question: ¿Cómo se acredita el EPP cuando no existe NOM del equipo?
       answer: "El numeral 5.4 de la NOM-017-STPS-2024 indica que, si no hay NOM, se recurre a NMX o Estándares Técnicos; a falta de ambos, a información del fabricante: marcado, ficha técnica, grado de protección y condiciones de no uso."
     - question: ¿La Guía de referencia III de la NOM-002-STPS-2010 es obligatoria?
-      answer: "No. Es enunciativa, no obligatoria. Describe chaquetón y pantalón, casco, botas, guantes, monja, tirantes, equipo de respiración autónoma y equipo de apoyo como hacha pico, cuerdas y linterna."
+      answer: "No. Es enunciativa, no obligatoria. Describe chaquetón y pantalón, casco, botas, guantes, monja, tirantes, ERA y equipo de apoyo como hacha pico, cuerdas y linterna."
     - question: ¿Cuándo se debe reemplazar el EPP?
       answer: "El numeral 7.1 e) de la NOM-017-STPS-2024 obliga a desechar y reemplazar el EPP con fallas, daño, desgaste o quemaduras no reparables, al cumplir la vida útil indicada por el fabricante o tras impactos, descargas eléctricas o contacto con material incandescente."
     - question: ¿NFPA es ley en México?
@@ -390,4 +403,14 @@ faq:
       answer: "Desde NFPA 1970 la capucha estructural debe llevar una capa bloqueadora de partículas. Es una referencia técnica; NFPA no es ley en México."
     - question: ¿El traje de aproximación o aluminizado permite entrar a la flama?
       answer: "No. Protege del calor radiante y no está diseñado para entrar a la flama."
+    - question: ¿Qué accesorios lleva un bombero?
+      answer: "La Guía de referencia III de la NOM-002-STPS-2010 menciona, de forma enunciativa, equipo de apoyo como hacha pico, cuerdas y linterna. La guía no es obligatoria y el equipo se define por las funciones y riesgos de la brigada."
+    - question: ¿Cuáles son los equipos contra incendios?
+      answer: "Para una brigada, el equipo contra incendios puede incluir EPP y equipo de apoyo. La selección no parte de una lista genérica: el numeral 5.9 de la NOM-002-STPS-2010 la relaciona con las funciones y riesgos de cada integrante."
+    - question: ¿Qué dice la NOM-002-STPS sobre el equipo de la brigada?
+      answer: "El numeral 5.9 de la NOM-002-STPS-2010 obliga al patrón a dotar de equipo de protección personal a los integrantes de la brigada contra incendio, de acuerdo con sus funciones y riesgos."
+    - question: ¿Cuáles son las partes del EPP de bomberos?
+      answer: "La Guía de referencia III de la NOM-002-STPS-2010 enumera de forma orientativa chaquetón y pantalón, casco, botas, guantes, monja, tirantes, ERA y apoyo. No es una lista obligatoria: el EPP se selecciona según el riesgo y la función."
+    - question: ¿Qué tipo de equipo de protección personal debe usar un brigadista?
+      answer: "El que corresponda a sus funciones y riesgos. La NOM-002-STPS-2010, numeral 5.9, establece esa obligación; la NOM-017-STPS-2024 rige la identificación de riesgos, selección, evidencia, capacitación, señalización y registros."
 ---

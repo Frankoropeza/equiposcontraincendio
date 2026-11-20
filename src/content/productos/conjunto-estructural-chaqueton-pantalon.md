@@ -30,6 +30,14 @@ faqs:
     answer: "Una línea para brigadas usa tela estándar de 93 % meta-aramida, 5 % para-aramida y 2 % antiestático, de 6.0 oz. Las líneas de cuerpo de bomberos suben de especificación, por ejemplo con barreras de humedad de gama superior. La selección parte del riesgo, no de la etiqueta municipal."
   - question: "¿Se puede configurar el conjunto para rescate?"
     answer: "Sí, según la variante: puede considerar cierres, puños, refuerzos, bolsillos, tirantes, paneles de aire muerto, dispositivo de arrastre y rescate articulado, rodillas con canales de calor, arnés integrado clase II y cinturón de escape. Esa fuente no publica materiales de las tres capas."
+  - question: "¿Cómo se llama el traje que usan los bomberos?"
+    answer: "Para entrada estructural suele llamarse traje estructural de bombero o conjunto de chaquetón y pantalón. El nombre no basta: hay que confirmar sus capas, tallaje, accesorios y condiciones de uso frente al riesgo de la brigada."
+  - question: "¿Qué tipo de traje usan los bomberos?"
+    answer: "Puede ser estructural, forestal o de aproximación aluminizado según la tarea. Un conjunto estructural no se sustituye por un traje aluminizado: este último se selecciona para calor radiante a distancia y no se presenta para entrar dentro del fuego."
+  - question: "¿De qué materiales están hechos los trajes de bomberos?"
+    answer: "La Guía de referencia III de la NOM-002, enunciativa y no obligatoria, describe exterior autoextinguible que no se funda, barrera de humedad y barrera térmica. Revisa los materiales que el fabricante publica para cada conjunto, porque no todas las fuentes los informan."
+  - question: "¿Cuánto pesa un traje estructural de bombero?"
+    answer: "El peso depende de las tres capas, el tallaje y los accesorios. Una variante publicada reporta aproximadamente 4.5 kg, pero esa cifra no representa todos los conjuntos; confirma el peso de la configuración que se cotiza."
 variantes:
   - nombre: "Conjunto de brigada industrial con trazabilidad"
     badge: "Con expediente"
@@ -110,12 +118,18 @@ fichaHeads:
     - "La NFPA es referencia técnica, no ley en México. La NFPA 1851 fijaba en el pasado un retiro máximo de 10 años; se consolidó en NFPA 1850 y no se verificó su texto final."
 ---
 
-Los **trajes para bomberos**, incluidos los modelos de **traje estructural de bombero** con **chaquetón y pantalón de bombero**, se seleccionan para tu brigada conforme a sus riesgos y tareas. La Guía de referencia III de la NOM-002 es enunciativa, no obligatoria, pero describe el criterio útil de exterior autoextinguible que no se funda, barrera de humedad y barrera térmica.
+Los **trajes para bomberos** con chaquetón y pantalón se seleccionan para la brigada de una empresa conforme a sus riesgos y tareas. La Guía de referencia III de la NOM-002 es enunciativa, no obligatoria, pero describe el criterio útil de exterior autoextinguible que no se funda, barrera de humedad y barrera térmica.
 
-### Trajes para bomberos: expediente y reemplazo
+## ¿Qué tipo de traje usan los bomberos?
 
-Una opción con trazabilidad permite registrar fecha de mantenimiento y de caducidad. La NFPA 1851 fijaba en el pasado el retiro del ensamble a más tardar 10 años desde fabricación, sin sustituir el retiro anticipado por condición; se consolidó en NFPA 1850 y no se verificó su texto final. En México aplica el numeral 7.1 e) de la NOM-017-STPS-2024 para el reemplazo por daño, desgaste, quemaduras no reparables, vida útil o eventos indicados.
+El **traje estructural de bombero** se compara con el forestal y con el de aproximación según la tarea, no por su apariencia. El estructural integra chaquetón y pantalón para la exposición que declara cada fabricante; el [traje aluminizado](/productos/traje-aproximacion-aluminizado/) atiende calor radiante a distancia y no sustituye el ensamble estructural. Una opción con trazabilidad permite registrar mantenimiento y caducidad. La NFPA 1851 fijaba en el pasado un retiro máximo de 10 años; se consolidó en NFPA 1850 y no se verificó su texto final.
 
-### Selección para brigada interna
+El conjunto forma parte del [equipo para bombero](/productos/equipo-bombero/) con [casco de bombero](/productos/casco-brigada-contra-incendio/), [capucha para bombero](/productos/capucha-proteccion-brigada/), [guantes para bombero](/productos/guantes-brigada-contra-incendio/) y [botas para bombero](/productos/botas-brigada-contra-incendio/). Cuando hay riesgo respiratorio, el [equipo de respiración autónoma](/productos/equipo-respiracion-autonoma-era/) se selecciona y documenta por separado.
 
-No existe una NOM mexicana de producto para este conjunto. La [NOM-017-STPS-2024](/servicios/diagnostico-de-riesgo/) pide identificar riesgos, seleccionar EPP, verificar certificación, capacitar, señalizar y registrar. La NFPA es referencia técnica, no ley en México.
+## Qué determina el precio de un traje estructural de bombero
+
+El costo depende de las tres capas y sus materiales, del tallaje de rack o a medida, de accesorios de rescate y de si se cotiza chaquetón y pantalón como piezas o como dotación completa. La trazabilidad de mantenimiento y el arnés integrado también cambian la configuración; se cotiza según lo que pida el inmueble.
+
+## Conjunto estructural para CDMX y Estado de México
+
+Todo empieza por el análisis de puestos, áreas y tareas de tu brigada. Damos servicio en [Ciudad de México](/cobertura/cdmx/) y [Estado de México](/cobertura/edomex/). En México no hay NOM de producto para este conjunto; la NOM-017-STPS-2024 pide seleccionar, verificar, capacitar, señalizar y registrar el EPP. La NFPA es referencia técnica, no ley en México.

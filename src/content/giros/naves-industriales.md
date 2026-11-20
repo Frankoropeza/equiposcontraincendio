@@ -129,6 +129,8 @@ La [ficha de bodegas](/proteccion-civil/bodegas/) explica cómo la carga combust
 
 La [herramienta de riesgo de incendio](/herramientas/riesgo-de-incendio/) hace la suma de fracciones con tu inventario.
 
+La dotación de la brigada se define por las funciones y riesgos de cada integrante; las [botas para bombero](/productos/botas-brigada-contra-incendio/) se revisan como parte de ese conjunto, no como una compra aislada.
+
 ## La vigencia que más se olvida
 
 En la Ciudad de México, la vigencia del Programa Interno depende del tipo de inmueble. Para un establecimiento mercantil son 5 años; para un **inmueble industrial, 2**. Muchas plantas siguen calendarizando la renovación como si fueran comercio. El dictamen de Bomberos y la póliza de responsabilidad civil llevan su propio calendario, anual.

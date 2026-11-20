@@ -551,7 +551,7 @@ faq:
     - question: ¿Puedo clasificar yo mismo el riesgo?
       answer: Puedes orientarte con los criterios públicos de la Tabla 1, y para eso está nuestra herramienta. Pero la NOM-002-STPS-2010 pide que la clasificación quede documentada en el centro de trabajo, con el detalle que exige la norma.
     - question: ¿Qué cambia si mi inmueble es de riesgo alto?
-      answer: El mínimo de extintores pasa de uno por cada 300 m² a uno por cada 200 m², y la brigada contra incendio se vuelve obligatoria. La distancia de recorrido y la altura del extintor, en cambio, son las mismas.
+      answer: El mínimo de extintores pasa de uno por cada 300 m² a uno por cada 200 m², y la brigada contra incendio se vuelve obligatoria. La dotación de <a href="/productos/equipo-bombero/">equipo para bomberos</a> se selecciona después conforme a las funciones y riesgos de cada brigadista. La distancia de recorrido y la altura del extintor, en cambio, son las mismas.
     - question: ¿El diagnóstico incluye la propuesta de equipo?
       answer: "Sí. No entregamos solo una clasificación: entregamos qué equipo corresponde, en qué cantidad y en qué ubicación, con la norma que sustenta cada decisión. Puedes cotizarlo con nosotros o con quien prefieras."
     - question: ¿Cada cuánto hay que rehacerlo?

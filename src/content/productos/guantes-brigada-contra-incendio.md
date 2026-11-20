@@ -8,7 +8,7 @@ image: /images/productos/guantes-brigada-contra-incendio.avif
 price: "Cotizar"
 order: 21
 seoTitle: "Guantes para bombero | Protección estructural"
-seoDescription: "Guantes para bombero: opciones estructurales, de rescate y de corte según riesgo y selección de EPP."
+seoDescription: "Guantes para bombero en CDMX y Estado de México: compara material, puño, longitud y tallas para cotizar según el riesgo específico de tu inmueble."
 relatedProducts: ["casco-brigada-contra-incendio"]
 relatedServices: ["diagnostico-de-riesgo", "capacitacion-dc3"]
 faqs:
@@ -28,6 +28,12 @@ faqs:
     answer: "La NOM-017-STPS-2024, numeral 7.1 e), indica desechar y reemplazar el EPP con fallas, daño, desgaste o quemaduras no reparables, al cumplir la vida útil indicada por el fabricante o después de impactos, descargas eléctricas o contacto con material incandescente."
   - question: "¿Cómo se confirma el modelo disponible?"
     answer: "Conseguimos equipo de las marcas reconocidas del mercado mexicano. La marca, el modelo y la disponibilidad se confirman al cotizar. Antes se revisan las tareas de la brigada y las condiciones de no uso que indique el fabricante."
+  - question: "¿Cómo se llaman los guantes que usan los bomberos?"
+    answer: "Se les puede llamar guantes para bombero o guantes estructurales cuando corresponden a esa tarea. También hay guantes de rescate y extricación o de protección contra corte, que no son intercambiables ni sirven todos para fuego confinado."
+  - question: "¿Cuáles son los diferentes tipos de guantes de protección?"
+    answer: "Para esta brigada se revisan guantes estructurales frente a calor y flama, de rescate ante filos, lámina y vidrio, y de para-aramida con acero para corte, metal o tareas eléctricas. La tarea y sus condiciones de no uso deciden cuál corresponde."
+  - question: "¿Qué significan los 4 números en los guantes de seguridad?"
+    answer: "En la ficha EN 388 CE4544, las cuatro cifras 4, 5, 4 y 4 corresponden, en ese orden, a resistencia a abrasión, corte por cuchilla, desgarre y perforación. Esa marcación describe ese guante de rescate; no acredita por sí sola protección para fuego confinado."
 variantes:
   - nombre: "Guante estructural de carnaza con puño largo"
     badge: "Configuración común"
@@ -108,14 +114,18 @@ fichaHeads:
     - "Si compartes las funciones de tu brigada y las áreas de riesgo, se puede revisar qué protección debe documentarse antes de cotizar. Así el guante queda vinculado al puesto y no a una descripción comercial aislada."
 ---
 
-Los **guantes para bombero** se eligen por riesgo y tarea, no solo por material. Los guantes de bombero o guantes estructurales para tu brigada pueden requerir protección distinta para calor, corte, metal, vidrio, rescate vehicular o riesgo eléctrico.
+Los **guantes para bombero** se eligen por riesgo y tarea, no solo por material. La NOM-002-STPS-2010, numeral 5.9, exige dotar EPP según las funciones y riesgos de la brigada. No hay NOM de producto para estos guantes: la NOM-017-STPS-2024 permite respaldar la selección con información del fabricante cuando no hay NOM, NMX o Estándares Técnicos aplicables.
 
-### Guantes para bombero: criterio de selección
+## ¿Cuáles son los diferentes tipos de guantes de protección?
 
-- La NOM-002-STPS-2010, numeral 5.9, obliga al patrón a dotar EPP a la brigada según sus funciones y riesgos.
-- No hay NOM de producto para guantes. La NOM-017-STPS-2024, numeral 5.4, permite respaldar la selección con información del fabricante cuando no hay NOM, NMX o Estándares Técnicos.
-- La Guía de referencia III de la NOM-002 es enunciativa, no obligatoria; menciona protección contra calor, flama, químicos corrosivos y descarga eléctrica.
+Un guante estructural atiende una exposición distinta del de rescate y extricación ante filos, lámina y vidrio, o del de para-aramida con tejido de acero para corte, metal y tareas eléctricas. La ficha EN 388 CE4544 del guante de rescate muestra resistencia a abrasión, corte, desgarre y perforación en ese orden; no lo vuelve apto para fuego confinado. Haz visibles material, tipo de puño, longitud y tallas al comparar cada configuración.
 
-### Para cotizar
+Los guantes forman parte del [equipo para bombero](/productos/equipo-bombero/) con [casco de bombero](/productos/casco-brigada-contra-incendio/), [botas para bombero](/productos/botas-brigada-contra-incendio/) y [traje estructural de bombero](/productos/conjunto-estructural-chaqueton-pantalon/). Si el riesgo incluye humo o espacio confinado, también se define el [equipo de respiración autónoma](/productos/equipo-respiracion-autonoma-era/); para exposición radiante, el [traje aluminizado](/productos/traje-aproximacion-aluminizado/) tiene otro límite de uso.
 
-Comparte las tareas que realizará la brigada y los riesgos identificados por área. Con esa información se revisa qué guante corresponde, cuáles son sus condiciones de no uso y qué datos deben quedar en el expediente de EPP.
+## Qué determina el precio de unos guantes para bombero
+
+El costo depende de la combinación de materiales, el forro térmico, la palma, el tipo y largo del puño, la talla y si se trata de una pieza estructural, de rescate o de corte. Un refuerzo de traslape también cambia la configuración; se cotiza según lo que pida el inmueble.
+
+## Guantes de brigada en CDMX y Estado de México
+
+El guante se elige por la tarea real —metal, vidrio, calor, electricidad o rescate—, no por el catálogo. Atendemos [Ciudad de México](/cobertura/cdmx/) y [Estado de México](/cobertura/edomex/). Comparte esos riesgos para pedir la ficha, el grado de protección y las condiciones de no uso que deben quedar en el expediente.

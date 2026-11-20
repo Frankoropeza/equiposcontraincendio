@@ -40,6 +40,7 @@ export interface Props {
   certifications?: string[];
   faqs?: { question: string; answer: string }[];
   related?: { label: string; href: string; description?: string }[];
+  relatedProducts?: string[];
   variantes?: Variante[];
   ficha?: FichaData;
   fichaHeads?: Partial<FichaHeads>;
@@ -80,7 +81,30 @@ const breadcrumbs = [
 ];
 const productImages = [image, ...((Astro.props.gallery ?? []).map((item) => item.src))].filter(Boolean) as string[];
 const schemaData = {
-  product: { name: title, description, path: `/productos/${slug}/`, images: productImages, sku: slug, category, ...(publicPrice ? { price: publicPrice } : {}) },
+  product: {
+    name: title,
+    description,
+    path: `/productos/${slug}/`,
+    images: productImages,
+    sku: slug,
+    // El schema debe expresar la categoría que lee una persona, no su slug técnico.
+    category: cat?.label ?? category,
+    ...(ficha?.claves?.length
+      ? {
+          additionalProperty: ficha.claves.map(({ label, value }) => ({
+            name: label,
+            value,
+          })),
+        }
+      : {}),
+    ...(variantes.length
+      ? { hasVariant: variantes.map(({ nombre, desc }) => ({ name: nombre, description: desc })) }
+      : {}),
+    ...(Astro.props.relatedProducts?.length
+      ? { isRelatedTo: Astro.props.relatedProducts.map((url) => ({ url })) }
+      : {}),
+    ...(publicPrice ? { price: publicPrice } : {}),
+  },
   ...(faqs.length ? { faqs } : {}),
 };
 const capacityValues = variantes.filter((item) => item.capacidad).map((item) => item.capacidad as string);
