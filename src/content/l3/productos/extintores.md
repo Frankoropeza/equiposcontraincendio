@@ -309,7 +309,7 @@ faqs:
   - question: ¿Es obligatorio llevar extintor en el auto?
     answer: Depende de la entidad. En el Estado de México, el Reglamento de Tránsito pide portar un extinguidor en buenas condiciones (art. 17, fracción V) y el artículo 35 lo exige a los vehículos de uso comercial y público. En otras entidades revisa el reglamento local vigente. Para un auto, lo habitual es un PQS ABC de 1 a 2 kg.
   - question: ¿Qué marcas de extintores manejan?
-    answer: La marca y el modelo se confirman al cotizar, según disponibilidad. En esta página listamos marcas reconocidas del mercado mexicano como referencia; que aparezcan no significa que las distribuyamos. Si tu corporativo o tu aseguradora piden una marca específica, dinos cuál.
+    answer: Conseguimos equipo de las marcas reconocidas del mercado mexicano. La marca, el modelo y la disponibilidad se confirman al cotizar, según lo que pida tu inmueble. En esta página listamos marcas del mercado como referencia; cada una pertenece a su titular. Si tu corporativo o tu aseguradora piden una marca específica, dinos cuál.
   - question: ¿Venden extintores para metales (clase D)?
     answer: "No están en este catálogo, porque el agente depende del metal: magnesio, sodio o titanio piden polvos distintos. Si tu proceso trabaja con alguno, revisamos el caso y lo cotizamos como equipo especializado."
 tarjetas:
