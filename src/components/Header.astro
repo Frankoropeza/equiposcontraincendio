@@ -703,17 +703,24 @@ const isExact = (item: (typeof NAV)[number]) =>
 .hdr-overlay.is-visible {
   display: block;
 }
+/* El panel mide lo que mide su contenido (hasta el alto disponible): con
+bottom:0 el .mob-scroll crecía por flex y dejaba un hueco blanco de ~200px
+entre el último enlace y los botones del pie. El overlay cubre el resto. */
 .hdr-mobile-nav {
   position: fixed;
   top: var(--stack-height);
   right: 0;
-  bottom: 0;
+  bottom: auto;
   left: 0;
+  max-height: calc(100vh - var(--stack-height));
+  max-height: calc(100dvh - var(--stack-height));
   z-index: 490;
   display: flex;
   flex-direction: column;
   border-top: 1px solid var(--c-border);
+  border-bottom: 1px solid var(--c-border);
   background: var(--c-white);
+  box-shadow: 0 18px 40px rgba(12, 12, 12, .18);
   opacity: 0;
   pointer-events: none;
 }
@@ -725,7 +732,8 @@ const isExact = (item: (typeof NAV)[number]) =>
   pointer-events: auto;
 }
 .mob-scroll {
-  flex: 1 1 auto;
+  flex: 0 1 auto;
+  min-height: 0;
   overflow-y: auto;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
@@ -864,9 +872,9 @@ const isExact = (item: (typeof NAV)[number]) =>
 .mob-foot {
   display: grid;
   flex: 0 0 auto;
-  gap: 0.55rem;
-  padding: 0.8rem var(--container-px)
-    calc(0.8rem + env(safe-area-inset-bottom, 0px));
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--container-px)
+    calc(var(--sp-4) + env(safe-area-inset-bottom, 0px));
   border-top: 1px solid var(--c-border);
   background: var(--c-white);
 }
@@ -1042,8 +1050,10 @@ const isExact = (item: (typeof NAV)[number]) =>
     const syncOverlay = () => {
       const anyOpen = desktopItems.some((entry) => entry.panel.classList.contains('is-open'))
 
-      overlay?.classList.toggle('is-visible', anyOpen)
-      overlay?.setAttribute('aria-hidden', anyOpen ? 'false' : 'true')
+      const mobileOpen = mobileNav?.getAttribute('aria-hidden') === 'false'
+
+      overlay?.classList.toggle('is-visible', anyOpen || mobileOpen)
+      overlay?.setAttribute('aria-hidden', anyOpen || mobileOpen ? 'false' : 'true')
     }
 
     const closeAll = () => {
@@ -1103,7 +1113,10 @@ const isExact = (item: (typeof NAV)[number]) =>
       })
     })
 
-    overlay?.addEventListener('click', closeAll)
+    overlay?.addEventListener('click', () => {
+      closeAll()
+      if (mobileNav?.getAttribute('aria-hidden') === 'false') setMenu(false)
+    })
     document.addEventListener('keydown', (event) => {
       if (event.key !== 'Escape') return
 
@@ -1145,6 +1158,9 @@ const isExact = (item: (typeof NAV)[number]) =>
       burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false')
       burger.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú')
       document.body.classList.toggle('menu-open', isOpen)
+      // El panel ya no llega hasta abajo (mide lo que mide su contenido): el
+      // overlay atenúa el resto de la página para que se lea como una capa.
+      syncOverlay()
       if (isOpen) mobileNav.querySelector<HTMLElement>('a, button')?.focus()
       else burger.focus()
     }

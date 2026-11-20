@@ -210,7 +210,8 @@ const AREAS = [
               titleAccent="en cada área"
               desc="El agente no sale de la superficie: sale de qué se puede quemar."
             />
-            <div class="tbl-wrap">
+            <div class="tbl-scroll">
+              <div class="tbl-wrap" data-scroll-hint role="region" aria-label="Agente extintor por tipo de área" tabindex="0">
               <table class="tbl">
                 <caption class="sr-only">Agente extintor recomendado por tipo de área</caption>
                 <thead><tr><th scope="col">Área</th><th scope="col">Clase de fuego</th><th scope="col">Agente indicado</th></tr></thead>
@@ -222,6 +223,8 @@ const AREAS = [
                   <tr><td>Taller con metales combustibles</td><td>D</td><td>Agente específico para clase D</td></tr>
                 </tbody>
               </table>
+              </div>
+              <p class="tbl-hint" aria-hidden="true">Desliza para ver toda la tabla</p>
             </div>
             <p class="panel__note">
               Para el detalle de cada clase de fuego, lee la guía de
@@ -275,6 +278,8 @@ const AREAS = [
 </PageLayout>
 
 <script>
+  import '@lib/scroll-hint';
+
   // F3.5: el scope de estilos es una clase astro-XXXX (scopedStyleStrategy
   // 'class'); reescribir className la borraba. Se conserva al cambiar el estado.
   const setPanelClass = (el: HTMLElement, cls: string) => {
@@ -482,18 +487,52 @@ const AREAS = [
 
   .opts { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-2); }
   @media (max-width: 420px) { .opts { grid-template-columns: 1fr; } }
-  .opt { display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-2); padding: var(--sp-3); border: 1px solid var(--c-border); border-radius: var(--radius-md, 8px); font-size: var(--text-sm); cursor: pointer; text-align: center; }
-  .opt input { accent-color: var(--c-primary); width: 1.05rem; height: 1.05rem; }
+  .opt { display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-2); min-height: 44px; padding: var(--sp-2) var(--sp-3); border: 1px solid var(--c-border); border-radius: var(--radius-md, 8px); font-size: var(--text-sm); cursor: pointer; text-align: center; }
   .opt:has(input:checked) { border-color: var(--c-primary); color: var(--c-primary); font-weight: var(--weight-semibold); }
+  .opt:has(input:focus-visible) { outline: 2px solid var(--c-primary); outline-offset: 2px; }
+
+  /* ── Radios y checkboxes del sistema ──────────────────────────────────────
+  Los controles nativos salían con el tamaño y la tipografía por defecto del
+  navegador (17/18px, font-size 13.33px) junto a inputs ya estilados: se
+  reemplaza su apariencia por la de los tokens y el área táctil la da la
+  etiqueta contenedora (≥44px). */
+  .opt input[type="radio"],
+  .area__check input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    flex: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin: 0;
+    border: 2px solid var(--c-border);
+    background: var(--c-white) center / .75rem .75rem no-repeat;
+    font: inherit;
+    cursor: pointer;
+  }
+  .opt input[type="radio"] { border-radius: 50%; }
+  .area__check input[type="checkbox"] { border-radius: 5px; }
+  .opt input[type="radio"]:checked,
+  .area__check input[type="checkbox"]:checked {
+    border-color: var(--c-primary);
+    background-color: var(--c-primary);
+  }
+  .opt input[type="radio"]:checked { box-shadow: inset 0 0 0 3px var(--c-white); }
+  .area__check input[type="checkbox"]:checked {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 8.5l3.5 3.5L13 4.5'/%3E%3C/svg%3E");
+  }
+  .opt input[type="radio"]:hover,
+  .area__check input[type="checkbox"]:hover { border-color: var(--c-primary); }
+  .opt input[type="radio"]:focus-visible,
+  .area__check input[type="checkbox"]:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 2px; }
 
   .areas { list-style: none; margin: 0; padding: 0; display: grid; }
   .area { display: grid; grid-template-columns: 1fr 4.75rem; align-items: center; gap: var(--sp-3); padding: var(--sp-3) 0; border-bottom: 1px solid var(--c-border); }
   .area:last-child { border-bottom: 0; }
-  .area__check { display: grid; grid-template-columns: auto 1fr; gap: var(--sp-3); align-items: start; cursor: pointer; }
-  .area__check input { margin-top: .15rem; width: 1.15rem; height: 1.15rem; accent-color: var(--c-primary); }
+  .area__check { display: grid; grid-template-columns: auto 1fr; gap: var(--sp-3); align-items: center; min-height: 44px; cursor: pointer; }
   .area__txt { font-size: var(--text-sm); color: var(--c-ink); line-height: 1.35; }
   .area__hint { display: block; font-size: var(--text-xs); color: var(--c-muted); }
-  .area__qty input { width: 100%; font-size: 1rem; padding: var(--sp-2); text-align: center; border: 1px solid var(--c-border); border-radius: var(--radius-md, 8px); }
+  .area__qty input { width: 100%; min-height: 44px; font-size: 1rem; padding: var(--sp-2); text-align: center; border: 1px solid var(--c-border); border-radius: var(--radius-md, 8px); }
+  .area__qty input:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 1px; }
   .area__qty input:disabled { opacity: .45; }
 
   .form__actions { display: flex; flex-wrap: wrap; gap: var(--sp-3); }
@@ -523,6 +562,8 @@ const AREAS = [
   .panel--res :global(.res__flag) { margin: 0 0 var(--sp-4); padding: var(--sp-3); border-radius: var(--radius-md, 8px); background: var(--c-surface); font-size: var(--text-xs); color: var(--c-ink-2); }
   .panel--res :global(.res__flag a) { color: var(--c-primary); }
   .panel--res :global(.res__cta) { display: flex; flex-wrap: wrap; gap: var(--sp-3); padding-top: var(--sp-4); border-top: 1px solid var(--c-border); }
+  /* Área táctil ≥44px también en los botones del resultado (medían 43px). */
+  .panel--res :global(.res__cta .btn) { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; }
   /* El .btn del resultado se inyecta por JS: la regla tiene que ir COMPLETA
      dentro de :global(), o Astro le añade el atributo de scope y no aplica. */
   @media (max-width: 640px) { .panel--res :global(.res__cta .btn) { width: 100%; } }
@@ -532,7 +573,17 @@ const AREAS = [
   .crit li { padding-left: var(--sp-4); border-left: 2px solid var(--c-primary); }
   .crit strong { color: var(--c-ink); }
 
-  .tbl-wrap { overflow-x: auto; margin-top: var(--sp-5); }
+  .tbl-scroll { position: relative; margin-top: var(--sp-5); }
+  .tbl-scroll::after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: var(--sp-6); background: linear-gradient(to left, rgba(12, 12, 12, .16), rgba(12, 12, 12, 0)); opacity: 0; pointer-events: none; }
+  .tbl-scroll:has([data-at='start'])::after,
+  .tbl-scroll:has([data-at='middle'])::after { opacity: 1; }
+  .tbl-hint { display: none; margin: var(--sp-2) 0 0; color: var(--c-muted); font-size: var(--text-xs); }
+  .tbl-wrap { overflow-x: auto; }
+  @media (max-width: 768px) {
+    .tbl { display: table; overflow-x: visible; }
+    .tbl-scroll:has([data-at='start']) .tbl-hint,
+    .tbl-scroll:has([data-at='middle']) .tbl-hint { display: block; }
+  }
   .tbl { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
   .tbl th, .tbl td { border: 1px solid var(--c-border); padding: var(--sp-3); text-align: left; }
   .tbl th { background: var(--c-surface); font-weight: var(--weight-semibold); color: var(--c-ink); }

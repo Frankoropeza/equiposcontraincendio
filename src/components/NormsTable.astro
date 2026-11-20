@@ -49,7 +49,8 @@ const {
       body={body}
     />
 
-    <div class="tbl-wrap" role="region" aria-label="Normas y estándares aplicables" tabindex="0">
+    <div class="tbl-scroll">
+      <div class="tbl-wrap" data-scroll-hint role="region" aria-label="Normas y estándares aplicables" tabindex="0">
       <table class="tbl">
         <thead>
           <tr>
@@ -67,15 +68,69 @@ const {
             </tr>
           ))}
         </tbody>
-      </table>
+        </table>
+      </div>
+      <p class="tbl-hint" aria-hidden="true">Desliza para ver toda la tabla</p>
     </div>
 
     {note && <p class="norms__note">{note}</p>}
   </div>
 </section>
 
+<script>
+  import '@lib/scroll-hint';
+</script>
+
 <style>
   /* .container/.section/.section--surface: utilidades globales de tokens.css (F3.3). */
+
+  /* ── Afordancia de scroll horizontal ────────────────────────────────────────
+  El contenedor marca su posición con data-at (lib/scroll-hint.ts). Mientras
+  quede tabla por ver se pinta un degradado en el borde derecho y, en pantallas
+  chicas, una nota de deslizamiento. Al llegar al final ambos desaparecen. */
+  .tbl-scroll {
+    position: relative;
+  }
+
+  .tbl-scroll::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: var(--sp-6);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    background: linear-gradient(to left, rgba(12, 12, 12, .16), rgba(12, 12, 12, 0));
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .tbl-scroll:has([data-at='start'])::after,
+  .tbl-scroll:has([data-at='middle'])::after {
+    opacity: 1;
+  }
+
+  .tbl-hint {
+    display: none;
+    margin: var(--sp-2) 0 0;
+    color: var(--c-muted);
+    font-size: var(--text-xs);
+  }
+
+  @media (max-width: 768px) {
+    /* mobile.css pone table{display:block;overflow-x:auto} como guarda global:
+    aquí el scroller debe seguir siendo .tbl-wrap (es el que mide la afordancia). */
+    .tbl {
+      display: table;
+      overflow-x: visible;
+    }
+
+    .tbl-scroll:has([data-at='start']) .tbl-hint,
+    .tbl-scroll:has([data-at='middle']) .tbl-hint {
+      display: block;
+    }
+  }
+
 
   .norms {
     padding: var(--section-py) 0;

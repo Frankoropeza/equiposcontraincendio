@@ -14,10 +14,36 @@ const { message = ('default' in WA_MESSAGES ? 'default' : Object.keys(WA_MESSAGE
 const href = waUrl(WA_MESSAGES[message])
 ---
 
-<a href={href} class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" title={label}>
+<a href={href} class="wa-float" data-wa-float target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp" title={label}>
   <Icon name="wa" size={26} />
   <span class="wa-float__label">{label}</span>
 </a>
+
+<script>
+  // El pill completo solo se muestra en la primera pantalla; al scrollear se
+  // colapsa a círculo para dejar de tapar el contenido (auditoría del sitio en
+  // vivo: tapaba un H3 en /productos/ y una línea de texto en la home).
+  const fab = document.querySelector('[data-wa-float]')
+  if (fab) {
+    const sync = () => fab.classList.toggle('wa-float--compact', window.scrollY > 120)
+    sync()
+    addEventListener('scroll', sync, { passive: true })
+  }
+</script>
+
+<style is:global>
+  /* Reserva de espacio al final del contenido: el FAB es position:fixed, así que
+     sin este hueco se monta sobre el último bloque de <main>. */
+  #main-content {
+    padding-bottom: var(--sp-10, 4rem);
+  }
+
+  @media (max-width: 640px) {
+    #main-content {
+      padding-bottom: var(--sp-8, 3rem);
+    }
+  }
+</style>
 
 <style>
   .wa-float {
@@ -38,6 +64,19 @@ const href = waUrl(WA_MESSAGES[message])
     text-decoration: none;
     /* respeta el notch / barra inferior iOS */
     margin-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  /* Colapsado a círculo (lo activa el script tras el primer scroll). */
+  .wa-float--compact {
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    gap: 0;
+    justify-content: center;
+  }
+
+  .wa-float--compact .wa-float__label {
+    display: none;
   }
 
   .wa-float:hover {

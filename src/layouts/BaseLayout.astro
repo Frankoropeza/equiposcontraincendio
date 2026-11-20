@@ -184,22 +184,12 @@ const jsonLd = buildSchema(pageType, schemaData);
       <script type="application/ld+json" is:inline set:html={JSON.stringify(node)} />
     ))}
 
-    {/* ── TruConversion (heatmaps/funnels/grabaciones) — cuenta 63920, alta 2026-09-11 ── */}
-    {/* Se difiere por Lighthouse 2026-09-15: 90 KB, 68 KB sin usar y bloquea bfcache. */}
-    <script is:inline type="text/javascript">
-      var _tip = _tip || [];
-      (function () {
-        var load = function () {
-          if (document.getElementById('ti-js')) return;
-          var js = document.createElement('script');
-          js.id = 'ti-js'; js.async = true;
-          js.src = document.location.protocol + '//app.truconversion.com/ti-js/63920/ac0b5.js';
-          document.getElementsByTagName('script')[0].parentNode.insertBefore(js, document.getElementsByTagName('script')[0]);
-        };
-        ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(function (event) { window.addEventListener(event, load, { once: true, passive: true }); });
-        window.addEventListener('load', function () { window.setTimeout(load, 6000); }, { once: true });
-      }());
-    </script>
+    {/* 2026-11-19: se retiró el snippet de TruConversion (cuenta 63920, alta
+       2026-09-11). La auditoría del sitio en vivo lo encontró MUERTO: imprimía
+       «Data collection has been stopped due to account inactivity» en la consola
+       en cada carga. Eran ~90 KB (68 sin usar) de JS de terceros que no
+       recolectaba nada. Si algún día se reactiva la cuenta, vuelve a insertarse
+       aquí con la misma carga diferida por interacción + load+6s. */}
   </head>
 
   <body>

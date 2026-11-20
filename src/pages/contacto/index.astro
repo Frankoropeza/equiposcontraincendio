@@ -53,12 +53,20 @@ const ICON = {
 }
 ---
 
+<!--
+  footerContact={false}: el pie NO repite aquí la banda «Cuéntanos tu proyecto»
+  ni las celdas de Teléfono/Oficinas/Horario, porque esta página ya las tiene en
+  «Cuatro formas de ponerte en contacto» y «Domicilio y horario». Antes el mismo
+  teléfono aparecía cuatro veces en la página (auditoría del 2026-11-19).
+-->
 <PageLayout
   title="Contacto CONINC | equipo contra incendio en CDMX"
   description="Contacta a CONINC por WhatsApp, teléfono o correo. Oficinas en Miguel Hidalgo, CDMX, y servicio en toda la CDMX y el Estado de México."
   pageType="page"
   breadcrumbs={[{ label: 'Contacto' }]}
+  footerContact={false}
 >
+
   <Hero
     badge="CONINC · CDMX y Estado de México"
     title="Ponte en"
@@ -142,7 +150,7 @@ const ICON = {
         </div>
         <div class="nap__block">
           <h3 class="nap__title">Cobertura</h3>
-          <p class="nap__text">Ciudad de México y Estado de México<br /><a href="/cobertura/">Ver cobertura</a></p>
+          <p class="nap__text">Ciudad de México y Estado de México<br /><a class="nap__link" href="/cobertura/">Ver cobertura</a></p>
         </div>
       </div>
   </Section>
@@ -185,4 +193,10 @@ const ICON = {
   @media (min-width: 1280px) { .nap { grid-template-columns: repeat(4, 1fr); } }
   .nap__title { font-family: var(--font-heading); font-size: var(--text-base); font-weight: var(--weight-bold); color: var(--c-ink); margin: 0 0 var(--sp-2); }
   .nap__text { font-size: var(--text-base); line-height: var(--leading-relaxed); color: var(--c-ink-2); margin: 0; }
+  /* AUDITORÍA 2026-11-19: este enlace salía con el estilo por defecto del
+     navegador (azul, subrayado, 16 px) junto a los demás enlaces del sitio, que
+     son primarios, 14 px y sin subrayado. Misma receta que .canal__cta. */
+  .nap__link { font-size: var(--text-sm); font-weight: var(--weight-semibold); color: var(--c-primary); text-decoration: none; }
+  .nap__link:hover { text-decoration: underline; }
 </style>
+

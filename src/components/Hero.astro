@@ -23,6 +23,11 @@ interface Props {
 }
 const { badge, title, accent, accentNowrap = false, subtitle, descRight = [], ctas = [], ariaLabel = 'Encabezado principal' } = Astro.props
 
+// ORDEN CANÓNICO DE CTAs: el primario SIEMPRE primero, el fantasma después.
+// Se normaliza aquí (no en cada página) porque el orden venía invertido en unas
+// y no en otras; así ninguna plantilla puede volver a desalinearlo.
+const heroCtas = [...ctas].sort((a, b) => Number(a.variant === 'outline') - Number(b.variant === 'outline'))
+
 ---
 
 <section class="hero" aria-label={ariaLabel}>
@@ -31,9 +36,9 @@ const { badge, title, accent, accentNowrap = false, subtitle, descRight = [], ct
       {badge && <span class="hero__badge"><span class="hero__badge-dot" aria-hidden="true"></span>{badge}</span>}
       <h1 class="hero__title">{title}{accent && <span class:list={["hero__accent", { "hero__accent--nowrap": accentNowrap }]}> {accent}</span>}</h1>
       {subtitle && <p class="hero__subtitle">{subtitle}</p>}
-      {ctas.length > 0 && (
+      {heroCtas.length > 0 && (
         <div class="hero__ctas">
-          {ctas.map((cta) => (
+          {heroCtas.map((cta) => (
             <a
               href={cta.href}
               class:list={['hero__btn', cta.variant === 'outline' ? 'hero__btn--outline' : 'hero__btn--primary']}

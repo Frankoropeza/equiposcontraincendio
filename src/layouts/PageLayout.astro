@@ -54,9 +54,15 @@ export interface Props {
    * sin importar helpers en cada página. NO afecta el grafo base.
    */
   schemaType?: 'TechArticle';
+  /**
+   * Apaga la banda de cotización y las celdas de contacto del pie. Solo lo usa
+   * /contacto/, que ya trae su propio bloque: con ambos, el mismo teléfono
+   * aparecía cuatro veces en la página (auditoría del 2026-11-19).
+   */
+  footerContact?: boolean;
 }
 
-const { breadcrumbs = [], schemaType, ...baseProps } = Astro.props;
+const { breadcrumbs = [], schemaType, footerContact = true, ...baseProps } = Astro.props;
 
 // ── schemaType → auto-derive de techArticle (conservador, no toca pageType) ──
 // El nodo TechArticle convive con cualquier pageType (se emite igual que FAQ
@@ -104,6 +110,6 @@ const schemaData: SchemaData = {
     <slot />
   </main>
 
-  <Footer />
+  <Footer cta={footerContact} contactCells={footerContact} />
   <WhatsAppFloat />
 </BaseLayout>

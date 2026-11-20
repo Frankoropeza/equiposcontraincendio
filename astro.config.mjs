@@ -238,11 +238,14 @@ export default defineConfig({
   // atributos menos en el dist.
   scopedStyleStrategy: 'class',
 
-  // 2026-11-19 (auditoría): sitio multipágina sin SPA. `viewport` precarga el
-  // HTML de los enlaces visibles, que en SSG es el costo real de navegar.
+  // 2026-11-19 (auditoría): sitio multipágina sin SPA, así que precargar el HTML
+  // del siguiente clic ayuda. PERO `viewport` fue un error medido el mismo día:
+  // con rejillas de 8+ tarjetas bajaba 8 HTML completos en la home —172 KB en el
+  // cable, 1.16 MB descomprimidos, el 37 % del peso inicial— para una navegación
+  // que quizá no ocurre. `hover` precarga solo lo que el visitante señala.
   prefetch: {
     prefetchAll: true,
-    defaultStrategy: 'viewport',
+    defaultStrategy: 'hover',
   },
 
   markdown: {

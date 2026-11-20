@@ -18,11 +18,9 @@ import ProcessSteps from "@components/ProcessSteps.astro";
 import CompanyAbout from "@components/CompanyAbout.astro";
 import Testimonios from "@components/Testimonios.astro";
 import FAQWithContact from "@components/FAQWithContact.astro";
-import CategoryFeature from "@components/CategoryFeature.astro";
 import { KEYWORDS, SECTION_MENU, SECTION_MENU_SUB, SHOWCASE, SERVICE_ANCHOR, WA_MESSAGES, waUrl, CONTACT } from "@config/site";
 import { testimonios } from "@data/testimonios";
 import {
-  homeCategoryFeatures,
   homeCompany,
   homeFaqs,
   homeHero,
@@ -118,18 +116,12 @@ const servicios = (await getCollection("servicios", ({ data }) => !data.draft))
     </div>
   </section>
 
-  {homeCategoryFeatures.map(({ ctaSecondaryMsg, ...feature }, i) => (
-    <CategoryFeature
-      {...feature}
-      anchorId={SHOWCASE[i]?.slug}
-      ctaSecondaryLabel={ctaSecondaryMsg ? "Cotizar por WhatsApp" : undefined}
-      ctaSecondaryHref={ctaSecondaryMsg ? waUrl(ctaSecondaryMsg) : undefined}
-      ctaSecondaryExternal
-    />
-  ))}
-
-
-
+  {/* AUDITORÍA 2026-11-19: aquí se repetían las ocho familias del SHOWCASE como
+      secciones H2 (homeCategoryFeatures), justo debajo de la rejilla de tarjetas
+      que ya las lista. Contenido duplicado dentro de la misma página. Se
+      eliminaron: el detalle de cada familia (features, marcas, imágenes) vive en
+      /productos/ (productosCategoryFeatures) y en su página L3, así que no se
+      perdió copy. La rejilla de tarjetas es ahora la única entrada al catálogo. */}
 
 
   {/* ─── Guía de selección por nivel de riesgo (NOM-002) ─── */}

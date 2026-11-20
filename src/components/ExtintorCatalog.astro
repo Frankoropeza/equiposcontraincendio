@@ -89,7 +89,8 @@ const groups: FilterGroup[] = [
         {groups.map((group) => (
           <div class="catalog__group" data-filter-group={group.key}>
             <strong>{group.label}</strong>
-            <div class="catalog__chips">
+            <div class="catalog__scroll">
+            <div class="catalog__chips" data-scroll-hint>
               <button type="button" data-value="" aria-pressed="true">Todos</button>
               {group.options.map((option) => (
                 <button
@@ -102,6 +103,7 @@ const groups: FilterGroup[] = [
                   {option.label}
                 </button>
               ))}
+            </div>
             </div>
           </div>
         ))}
@@ -132,6 +134,8 @@ const groups: FilterGroup[] = [
 </section>
 
 <script>
+  import '@lib/scroll-hint';
+
   type FilterKey = 'agente' | 'formato' | 'uso' | 'clase';
   const root = document.querySelector<HTMLElement>('.catalog');
 
@@ -285,6 +289,28 @@ const groups: FilterGroup[] = [
     text-transform: uppercase;
   }
 
+  /* Afordancia de corte a la derecha mientras queden chips por ver. */
+  .catalog__scroll {
+    position: relative;
+  }
+
+  .catalog__scroll::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: var(--sp-6);
+    background: linear-gradient(to left, var(--c-white), rgba(255, 255, 255, 0));
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .catalog__scroll:has([data-at='start'])::after,
+  .catalog__scroll:has([data-at='middle'])::after {
+    opacity: 1;
+  }
+
   .catalog__chips {
     display: flex;
     gap: var(--sp-2);
@@ -298,9 +324,13 @@ const groups: FilterGroup[] = [
     display: none;
   }
 
+  /* Área táctil ≥44px (Apple HIG / WCAG 2.5.5). */
   .catalog__chips button {
+    display: inline-flex;
+    align-items: center;
     flex: none;
-    padding: .5em .85em;
+    min-height: 44px;
+    padding: 0 var(--sp-4);
     border: 1px solid var(--c-border);
     border-radius: var(--radius-full);
     background: var(--c-white);
