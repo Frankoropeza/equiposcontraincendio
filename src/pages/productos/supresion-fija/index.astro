@@ -1,0 +1,10 @@
+---
+// Página L3 de sistemas fijos de supresión: el patrón compartido vive en ServiceL3.
+import ServiceL3 from '@components/ServiceL3.astro';
+import { getEntry } from 'astro:content';
+
+const entry = await getEntry('l3', 'productos/supresion-fija');
+if (!entry || 'kind' in entry.data && entry.data.kind === 'extintores') throw new Error('Falta la entrada L3: productos/supresion-fija');
+---
+
+<ServiceL3 data={entry.data} />

@@ -43,6 +43,7 @@ const L3 = [
   { page: 'src/pages/productos/senalizacion/index.astro', content: 'src/content/l3/productos/senalizacion.md' },
   { page: 'src/pages/productos/accesorios/index.astro', content: 'src/content/l3/productos/accesorios.md' },
   { page: 'src/pages/productos/equipo-bombero/index.astro', content: 'src/content/l3/productos/equipo-bombero.md' },
+  { page: 'src/pages/productos/supresion-fija/index.astro', content: 'src/content/l3/productos/supresion-fija.md' },
   { page: 'src/pages/servicios/mantenimiento/index.astro', content: 'src/content/l3/servicios/mantenimiento.md' },
   { page: 'src/pages/servicios/prueba-hidrostatica/index.astro', content: 'src/content/l3/servicios/prueba-hidrostatica.md' },
   { page: 'src/pages/servicios/inspeccion/index.astro', content: 'src/content/l3/servicios/inspeccion.md' },

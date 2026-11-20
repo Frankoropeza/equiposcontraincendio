@@ -210,6 +210,7 @@ export const TAXONOMY = {
     { slug: 'senalizacion',        label: 'Señalización y emergencia', badge: undefined, href: '/productos/senalizacion/' },
     { slug: 'accesorios',          label: 'Accesorios y refacciones',  badge: undefined, href: '/productos/accesorios/' },
     { slug: 'equipo-bombero',      label: 'Equipo para bomberos',      badge: undefined, href: '/productos/equipo-bombero/' },
+    { slug: 'supresion-fija',      label: 'Sistemas fijos',            badge: undefined, href: '/productos/supresion-fija/' },
   ],
   // Los `id` DEBEN coincidir con los nombres de archivo de src/content/servicios/
   // (lo vigila tests/taxonomy-collections.test.mjs). Orden = orden del dropdown.
@@ -357,6 +358,7 @@ export const NAV: readonly NavItem[] = [
           { label: 'Señalización y emergencia', href: '/productos/senalizacion/',                       desc: 'Señalización fotoluminiscente de evacuación' },
           { label: 'Accesorios y refacciones',  href: '/productos/accesorios/',                          desc: 'Soportes, gabinetes y accesorios para extintor' },
           { label: 'Equipo para bombero',       href: '/productos/equipo-bombero/',                      desc: 'EPP de brigada por riesgo, con expediente para STPS' },
+          { label: 'Sistemas fijos',            href: '/productos/supresion-fija/',                      desc: 'Rociadores, cocina UL 300, agente limpio y CO2' },
         ],
       },
       {
@@ -541,6 +543,7 @@ export const FOOTER_NAV: readonly NavGroup[] = [
     href: '/productos/',
     links: [
       { label: 'Catálogo completo',         href: '/productos/' },
+      { label: 'Sistemas fijos',            href: '/productos/supresion-fija/' },
       { label: 'Extintores portátiles',     href: '/productos/extintores/' },
       { label: 'Extintor PQS',              href: '/productos/extintor-pqs/' },
       { label: 'Extintor CO₂',              href: '/productos/extintor-co2/' },
@@ -689,7 +692,7 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
   {
     slug: 'sistemas-supresion',
     label: 'Sistemas contra incendio',
-    href: '/productos/#sistemas-supresion',
+    href: '/productos/supresion-fija/',
     image: '/images/showcase/sistema-rociadores-industrial.avif',
     imageAlt: 'Sistemas fijos contra incendio: rociadores y supresión de cocina',
     badge: 'Rociadores · Agente limpio',
@@ -697,8 +700,8 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
       'Rociadores automáticos, supresión de cocina clase K y agente limpio para tu site.',
     subcategories: [
       { label: 'Rociadores automáticos', href: '/productos/rociadores-contra-incendio/' },
-      { label: 'Supresión de cocina K', href: '/productos/#sistemas-supresion' },
-      { label: 'Agente limpio', href: '/productos/#sistemas-supresion' },
+      { label: 'Supresión de cocina K', href: '/productos/sistema-supresion-cocina-ul300/' },
+      { label: 'Agente limpio', href: '/productos/sistema-agente-limpio-fm-200/' },
     ],
     ctaLabel: 'Sistemas de supresión',
   },

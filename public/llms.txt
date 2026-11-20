@@ -20,8 +20,10 @@ Idioma: español (es-MX). País: México.
 ## Productos (categorías del catálogo)
 - Extintores: PQS ABC, CO2, tipo K (químico húmedo), agua y espuma AFFF, agente limpio; portátiles y sobre ruedas.
 - Detección y alarmas: detectores de humo fotoeléctricos, temperatura y gas, paneles, estaciones manuales y sirenas.
-- Hidrantes y mangueras: gabinetes con manguera, red de hidrantes y rociadores contra incendio (venta e instalación).
-- Señalización y emergencia: señalamientos de seguridad industriales (NOM-026) y de protección civil (NOM-003-SSPC), señalización fotoluminiscente, lámparas de emergencia y botiquines de primeros auxilios.
+- Hidrantes y mangueras: gabinetes con manguera, red de hidrantes, tomas siamesas y válvulas (venta e instalación).
+- Sistemas fijos de supresión: rociadores automáticos, supresión de cocina con agente húmedo listado UL 300, agente limpio HFC-227ea y FK-5-1-12, CO2, niebla de agua, bombas contra incendio y jockey, válvulas de control, diluvio y preacción, y paneles de liberación de agente.
+- Señalización y emergencia: señalamientos de seguridad industriales (NOM-026) y de protección civil (NOM-003-SSPC), señalización fotoluminiscente y lámparas de emergencia.
+- Rescate y primeros auxilios: botiquines de primeros auxilios para centros de trabajo.
 - Accesorios y refacciones: soportes, bases vehiculares, gabinetes para extintor y refacciones.
 
 ## Servicios
@@ -38,6 +40,16 @@ Idioma: español (es-MX). País: México.
 - [Inicio](https://equiposcontraincendio.com/): presentación del catálogo y servicios.
 - [Productos](https://equiposcontraincendio.com/productos): catálogo de equipo contra incendio.
 - [Equipo para bombero](https://equiposcontraincendio.com/productos/equipo-bombero/): EPP para la brigada contra incendio, seleccionado por riesgo y con expediente para la STPS.
+- [Sistemas fijos de supresión](https://equiposcontraincendio.com/productos/supresion-fija/): rociadores, cocina UL 300, agente limpio, CO2, niebla de agua, bombas y válvulas.
+- [Supresión para cocina UL 300](https://equiposcontraincendio.com/productos/sistema-supresion-cocina-ul300/): sistema de campana con agente húmedo, corte de gas y protección del ducto.
+- [Agente limpio HFC-227ea](https://equiposcontraincendio.com/productos/sistema-agente-limpio-fm-200/): inundación total para site y cuarto eléctrico, conocido en el mercado como FM-200.
+- [Agente limpio FK-5-1-12](https://equiposcontraincendio.com/productos/sistema-agente-limpio-fk-5-1-12/): el agente del antiguo Novec 1230, hoy de varios fabricantes con listado.
+- [Sistema de CO2](https://equiposcontraincendio.com/productos/sistema-de-supresion-por-co2/): inundación total y aplicación local para cuartos y máquinas sin ocupación.
+- [Niebla de agua](https://equiposcontraincendio.com/productos/sistema-de-niebla-de-agua/): apaga con una fracción del agua; cuarto de máquinas y recinto patrimonial.
+- [Bomba contra incendio](https://equiposcontraincendio.com/productos/bomba-contra-incendio-nfpa-20/): carcasa partida, turbina vertical o succión final, eléctrica o diésel.
+- [Bomba jockey](https://equiposcontraincendio.com/productos/bomba-jockey-presurizadora/): mantiene presurizada la red para que la bomba principal no arranque por fugas.
+- [Válvulas de control y diluvio](https://equiposcontraincendio.com/productos/valvulas-de-control-y-diluvio/): compuerta OS&Y, mariposa supervisada, retención, alarma, diluvio y preacción.
+- [Panel de liberación de agente](https://equiposcontraincendio.com/productos/panel-de-liberacion-de-agente/): detección cruzada, retardo, aborto y paro de clima del recinto.
 - [Extintor PQS ABC](https://equiposcontraincendio.com/productos/extintor-pqs/): ficha de producto.
 - [Extintor de CO2](https://equiposcontraincendio.com/productos/extintor-co2/): ficha de producto.
 - [Detección y alarmas](https://equiposcontraincendio.com/productos/deteccion-alarmas/): detectores de humo, temperatura y gas, paneles, estaciones y sirenas.

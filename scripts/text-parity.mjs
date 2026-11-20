@@ -46,6 +46,12 @@ function pages(root) {
 /** Texto visible de un HTML, en frases normalizadas. */
 function phrases(file) {
   let html = fs.readFileSync(file, 'utf8');
+  // Solo el contenido de <main>. El encabezado y el pie son un bloque continuo
+  // sin punto final, así que agregar UN enlace al menú marcaba el bloque entero
+  // como frase perdida en las 161 páginas: 500 falsos positivos que vuelven
+  // inservible el gate. Lo que se audita es el contenido de la página.
+  const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i);
+  if (main) html = main[1];
   html = html
     .replace(/<!--[\s\S]*?-->/g, ' ')
     .replace(/<(script|style|svg|noscript)\b[\s\S]*?<\/\1>/gi, ' ')
