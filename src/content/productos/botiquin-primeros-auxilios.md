@@ -56,6 +56,16 @@ variantes:
     desc: "El botiquín junto con su señal verde de primeros auxilios, para que quede identificado desde el pasillo y se encuentre en una emergencia aunque quien lo busque no conozca el lugar."
     specs: "Botiquín + señal de primeros auxilios · Condición segura · NOM-003-SSPC-2011"
     waText: "Hola, quiero cotizar botiquín con su señal de primeros auxilios"
+  - nombre: "Botiquín de pared de lámina con cerradura"
+    badge: "Lámina"
+    desc: "Gabinete de lámina con pintura electrostática y cerradura, para áreas de producción, bodegas y talleres donde el botiquín aguanta golpes y uso continuo. La cerradura evita que el material se vacíe fuera de una emergencia."
+    specs: "Lámina con pintura electrostática · Cerradura · Montaje en muro · Áreas industriales"
+    waText: "Hola, quiero cotizar botiquines de pared de lámina con cerradura"
+  - nombre: "Botiquín de pared de plástico de alto impacto"
+    badge: "Plástico"
+    desc: "Gabinete de plástico de alto impacto con entrepaños interiores y cerradura con llave, para oficinas, consultorios y comercios. Pesa menos que el de lámina y no se corroe en áreas húmedas o de limpieza frecuente."
+    specs: "Plástico de alto impacto · Entrepaños interiores · Cerradura con llave · Montaje en muro"
+    waText: "Hola, quiero cotizar botiquines de pared de plástico de alto impacto"
 relatedServices:
   - capacitacion-dc3
   - gestion-documental

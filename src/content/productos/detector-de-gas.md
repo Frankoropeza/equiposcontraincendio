@@ -51,6 +51,16 @@ variantes:
     desc: "Detector que reporta al panel de alarma contra incendio del inmueble, para que la fuga se vea en la central y active el aviso que corresponda. Se valida junto con el panel y su programación."
     specs: "Salida al panel · Integración con detección y alarma · Cuartos de máquinas y calderas"
     waText: "Hola, quiero cotizar detectores de gas conectados a mi panel de alarma"
+  - nombre: "Detector de monóxido de carbono (CO)"
+    badge: "Monóxido"
+    desc: "Para calderas, calentadores, cuartos de máquinas y estacionamientos cerrados, donde el riesgo no es la fuga de combustible sino el monóxido que deja una combustión incompleta. Los equipos comerciales miden en partes por millón."
+    specs: "Monóxido de carbono · Medición en ppm · Alarma sonora y visual · Calderas y estacionamientos"
+    waText: "Hola, quiero cotizar detectores de monóxido de carbono para mi inmueble"
+  - nombre: "Detector combinado de CO y gas combustible"
+    badge: "Dos gases"
+    desc: "Un solo equipo vigila monóxido de carbono y gas combustible, propano o metano, desde un mismo punto de montaje. Conviene donde hay aparato de gas y combustión en la misma área y no se quiere duplicar equipos."
+    specs: "CO y gas combustible · Propano y metano · Alarma sonora y visual · Un punto de montaje"
+    waText: "Hola, quiero cotizar detectores combinados de CO y gas combustible"
 relatedServices:
   - instalacion
   - inspeccion

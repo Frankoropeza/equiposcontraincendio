@@ -8,7 +8,7 @@ image: /images/productos/panel-alarma-contra-incendio.avif
 price: "Cotizar"
 order: 14
 seoTitle: "Panel de alarma contra incendio: tipos y venta"
-seoDescription: "Panel de alarma contra incendio convencional o direccionable, con baterías de respaldo. Te ayudamos a definir el sistema según las áreas y niveles del inmueble."
+seoDescription: "Panel de alarma contra incendio convencional o direccionable, con baterías de respaldo. Definimos el sistema según las áreas y niveles del inmueble."
 relatedProducts: ["detector-humo-fotoelectrico", "detector-de-gas"]
 relatedServices: ["instalacion", "inspeccion"]
 faqs:
@@ -43,6 +43,21 @@ variantes:
     desc: "Panel que identifica el dispositivo activado o en falla mediante direcciones individuales sobre un lazo. Conviene en varios niveles, naves grandes o muchas áreas y permite agregar dispositivos hasta la capacidad del panel."
     specs: "Identificación por dispositivo · Lazo de dispositivos · Alarma y falla puntual · Baterías de respaldo"
     waText: "Hola, quiero cotizar un panel de alarma contra incendio direccionable"
+  - nombre: "Panel de alarma convencional de 2 zonas"
+    badge: "Un local"
+    desc: "Configuración mínima del tipo convencional: dos circuitos de iniciación para separar el inmueble en dos zonas. Alcanza en un local o una oficina donde basta distinguir dos áreas y conectar las sirenas y estrobos del aviso."
+    specs: "2 zonas de iniciación · Circuitos de notificación · Baterías de respaldo · Gabinete propio"
+    waText: "Hola, quiero cotizar un panel de alarma contra incendio de 2 zonas"
+  - nombre: "Panel de alarma convencional de 4 a 8 zonas"
+    badge: "Varias áreas"
+    desc: "Presentaciones de cuatro a ocho circuitos de iniciación, con sus circuitos de notificación para sirenas y estrobos. Permiten distinguir más áreas sin pasar a un sistema direccionable; cada zona nueva necesita su propio circuito."
+    specs: "4 a 8 zonas de iniciación · Circuitos de notificación · Baterías de respaldo · Sin direccionamiento"
+    waText: "Hola, quiero cotizar un panel de alarma convencional de 4 a 8 zonas"
+  - nombre: "Panel direccionable con evacuación por voz"
+    badge: "Mensaje de voz"
+    desc: "Panel direccionable que integra en el mismo gabinete la detección y el sistema de comunicación de emergencia con mensajes de voz. En CDMX la NTC 2024 pide evacuación por voz arriba de 23 metros sobre el acceso de bomberos."
+    specs: "Direccionable por dispositivo · Evacuación por voz integrada · Baterías de respaldo · NTC 2024"
+    waText: "Hola, quiero cotizar un panel direccionable con evacuación por voz"
 ficha:
   heroBadge: Supervisión, aviso y respaldo
   heroTitle: "Panel de alarma"
