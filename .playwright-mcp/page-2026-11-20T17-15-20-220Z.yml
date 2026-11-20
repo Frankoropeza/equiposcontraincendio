@@ -1,0 +1,2197 @@
+- generic [active] [ref=f5e1]:
+  - link "Saltar al contenido" [ref=f5e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=f5e4]:
+    - generic [ref=f5e5]: Equipo para Bomberos
+    - link "Llamar al +52 55 6034 8981" [ref=f5e7] [cursor=pointer]:
+      - /url: tel:+525560348981
+      - generic [ref=f5e8]: +52 55 6034 8981
+    - generic [ref=f5e9]:
+      - generic [ref=f5e10]: Envíos a toda la República
+      - generic [ref=f5e11]:
+        - link "Facebook" [ref=f5e12] [cursor=pointer]:
+          - /url: https://facebook.com/bombero.mx
+        - link "Instagram" [ref=f5e13] [cursor=pointer]:
+          - /url: https://instagram.com/bombero.mx
+  - banner [ref=f5e14]:
+    - generic [ref=f5e15]:
+      - link "BOMBERO.MX — Ir al inicio" [ref=f5e16] [cursor=pointer]:
+        - /url: /
+        - img "BOMBERO.MX - Venta de Equipo para Bomberos en México" [ref=f5e17]
+      - navigation "Navegación principal" [ref=f5e19]:
+        - list [ref=f5e20]:
+          - listitem [ref=f5e21]:
+            - link "Inicio" [ref=f5e22] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f5e23]:
+            - link "Productos" [ref=f5e24] [cursor=pointer]:
+              - /url: /productos/
+          - listitem [ref=f5e26]:
+            - link "Directorio" [ref=f5e27] [cursor=pointer]:
+              - /url: /directorio/
+          - listitem [ref=f5e28]:
+            - link "Blog" [ref=f5e29] [cursor=pointer]:
+              - /url: /blog/
+          - listitem [ref=f5e30]:
+            - link "Nosotros" [ref=f5e31] [cursor=pointer]:
+              - /url: /nosotros/
+          - listitem [ref=f5e32]:
+            - link "Contacto" [ref=f5e33] [cursor=pointer]:
+              - /url: /contacto/
+      - link "Catálogo de equipo para bomberos" [ref=f5e35] [cursor=pointer]:
+        - /url: /productos/
+        - text: Catálogo
+  - main [ref=f5e36]:
+    - generic [ref=f5e38]:
+      - generic [ref=f5e39]:
+        - generic [ref=f5e40]: Distribuidores Especializados NFPA · México
+        - heading "Equipo para Bomberos en México" [level=1] [ref=f5e41]: Equipo para Bomberosen México
+        - paragraph [ref=f5e42]: En 15 años hemos equipado más de 500 estaciones en toda la República. Asesoría técnica, certificados de laboratorio y envío a los 32 estados incluidos en cada pedido.
+        - generic [ref=f5e43]:
+          - link "Catálogo de equipo para bomberos" [ref=f5e44] [cursor=pointer]:
+            - /url: /productos/
+          - link "Equipo de protección para bomberos" [ref=f5e45] [cursor=pointer]:
+            - /url: /productos/
+      - generic [ref=f5e46]:
+        - generic [ref=f5e47]:
+          - heading "Distribuidores certificados NFPA desde 2010" [level=2] [ref=f5e48]
+          - paragraph [ref=f5e49]:
+            - text: Hemos equipado más de 500
+            - strong [ref=f5e50]: estaciones de bomberos
+            - text: en los 32 estados, desde cuerpos municipales con presupuesto ajustado hasta brigadas industriales de PEMEX y CFE. Catálogo directo de
+            - strong [ref=f5e51]: MSA, Honeywell, Globe y Bullard
+            - text: ": los fabricantes que certifican con"
+            - strong [ref=f5e52]: NFPA 1970 (cap. 5–9 y 15–19) y NFPA 1950
+            - text: . Cada pedido incluye ficha técnica y certificado de laboratorio del producto.
+        - generic [ref=f5e53]:
+          - heading "Por qué los jefes de cuerpo nos contactan antes de abrir una licitación" [level=2] [ref=f5e54]
+          - paragraph [ref=f5e55]:
+            - text: Comprar EPP certificado involucra jefes de cuerpo, protección civil municipal y, en muchos casos, un proceso de adquisición pública. Asesoramos desde la especificación técnica hasta la documentación que necesita el área de compras. Si el proveedor anterior entregó equipo sin
+            - strong [ref=f5e56]: NFPA 1970
+            - text: versión vigente, lo detectamos antes de que llegue a campo. Por eso nos buscan estaciones en Pachuca, Guadalajara, Monterrey, Puebla y CDMX.
+    - region "Acceso rápido" [ref=f5e57]:
+      - list [ref=f5e59]:
+        - listitem [ref=f5e60]:
+          - link "monjas NFPA" [ref=f5e61] [cursor=pointer]:
+            - /url: /productos/capuchas-para-bomberos/
+        - listitem [ref=f5e63]:
+          - link "catálogo para brigadas forestales" [ref=f5e64] [cursor=pointer]:
+            - /url: /productos/forestales/
+        - listitem [ref=f5e66]:
+          - link "SCBA de presión positiva" [ref=f5e67] [cursor=pointer]:
+            - /url: /productos/scba/
+        - listitem [ref=f5e69]:
+          - link "goggles de seguridad" [ref=f5e70] [cursor=pointer]:
+            - /url: /productos/gafas-para-bomberos/
+        - listitem [ref=f5e72]:
+          - link "botas para bomberos" [ref=f5e73] [cursor=pointer]:
+            - /url: /productos/botas-para-bomberos/
+        - listitem [ref=f5e75]:
+          - link "protección CBRN" [ref=f5e76] [cursor=pointer]:
+            - /url: /productos/hazmat/
+        - listitem [ref=f5e78]:
+          - link "equipo contra incendios" [ref=f5e79] [cursor=pointer]:
+            - /url: /productos/equipo-contra-incendios/
+        - listitem [ref=f5e81]:
+          - link "Guía de compra Criterios para elegir EPP" [ref=f5e82] [cursor=pointer]:
+            - /url: /cotizar/
+            - generic [ref=f5e83]: Guía de compra
+            - generic [ref=f5e84]: Criterios para elegir EPP
+    - generic [ref=f5e86]:
+      - paragraph [ref=f5e87]: ¿A qué sector perteneces?
+      - generic [ref=f5e88]:
+        - link [ref=f5e89] [cursor=pointer]:
+          - /url: /cotizar/?sector=municipal
+          - generic [ref=f5e90]:
+            - heading "Cuerpos Municipales" [level=3] [ref=f5e91]
+            - paragraph [ref=f5e92]: Trajes, SCBA, cascos y EPP completo. Asesoría en licitaciones y fondos FORTASEG.
+        - link [ref=f5e93] [cursor=pointer]:
+          - /url: /cotizar/?sector=industrial
+          - generic [ref=f5e94]:
+            - heading "Brigadas Industriales" [level=3] [ref=f5e95]
+            - paragraph [ref=f5e96]: EPP certificado NOM-017/NFPA para PEMEX, CFE, refinerías y plantas petroquímicas.
+        - link [ref=f5e97] [cursor=pointer]:
+          - /url: /cotizar/?sector=arff
+          - generic [ref=f5e98]:
+            - heading "ARFF — Aeroportuario" [level=3] [ref=f5e99]
+            - paragraph [ref=f5e100]: Trajes aluminizados, cascos ARFF y equipo certificado NFPA 1970/FAA para aeropuertos.
+        - link [ref=f5e101] [cursor=pointer]:
+          - /url: /cotizar/?sector=proteccion-civil
+          - generic [ref=f5e102]:
+            - heading "Protección Civil" [level=3] [ref=f5e103]
+            - paragraph [ref=f5e104]: Equipo de rescate técnico, HAZMAT y EPP para dependencias de PC municipales y estatales.
+    - generic [ref=f5e106]:
+      - generic [ref=f5e107]:
+        - generic [ref=f5e108]:
+          - generic [ref=f5e109]: Catálogo de Productos
+          - heading "Equipo de Protección Personal para Bomberos" [level=2] [ref=f5e110]
+          - paragraph [ref=f5e111]: 16 categorías de equipo certificado NFPA. Todo lo que tu estación necesita en un solo proveedor.
+        - generic [ref=f5e112]:
+          - paragraph [ref=f5e113]:
+            - text: Nuestro catálogo incluye las mejores marcas de
+            - strong [ref=f5e114]: equipo de protección personal para bomberos
+            - text: en México. Cada producto de nuestro catálogo cumple con las certificaciones
+            - strong [ref=f5e115]: NFPA 1970, NFPA 1950
+            - text: y normativas internacionales, garantizando la máxima seguridad para el personal de primera respuesta.
+          - paragraph [ref=f5e116]:
+            - text: Trabajamos con estaciones de bomberos, protección civil y brigadas industriales en los
+            - strong [ref=f5e117]: 32 estados de la República Mexicana
+            - text: . Fichas técnicas y certificados de laboratorio disponibles para cada producto.
+      - generic [ref=f5e118]:
+        - article [ref=f5e119]:
+          - link [aria-hidden] [ref=f5e120] [cursor=pointer]:
+            - /url: /productos/trajes-para-bomberos/
+            - generic:
+              - generic: 5 productos
+              - generic: NFPA
+          - generic [ref=f5e122]:
+            - heading [level=3] [ref=f5e123]:
+              - link "Trajes de Bombero" [ref=f5e124] [cursor=pointer]:
+                - /url: /productos/trajes-para-bomberos/
+            - paragraph [ref=f5e125]: Trajes estructurales, forestales, ARFF y HAZMAT. Nomex®, PBI Gold® y Gore-Tex®. Certificación NFPA 1970 / 1950.
+            - navigation "Modelos de Trajes de Bombero" [ref=f5e126]:
+              - paragraph [ref=f5e127]: Modelos disponibles
+              - list [ref=f5e128]:
+                - listitem [ref=f5e129]:
+                  - link "Traje Estructural NFPA 1970" [ref=f5e130] [cursor=pointer]:
+                    - /url: /productos/trajes-para-bomberos/traje-estructural-nfpa-1971/
+                - listitem [ref=f5e134]:
+                  - link "Traje Forestal NFPA 1950" [ref=f5e135] [cursor=pointer]:
+                    - /url: /productos/trajes-para-bomberos/traje-forestal-nfpa-1977/
+                - listitem [ref=f5e139]:
+                  - link "Traje ARFF Aeroportuario" [ref=f5e140] [cursor=pointer]:
+                    - /url: /productos/trajes-para-bomberos/traje-arff-aeroportuario/
+                - listitem [ref=f5e144]:
+                  - link "Traje de Aproximación" [ref=f5e145] [cursor=pointer]:
+                    - /url: /productos/trajes-para-bomberos/traje-aproximacion/
+                - listitem [ref=f5e149]:
+                  - link "Traje HAZMAT Nivel A / B" [ref=f5e150] [cursor=pointer]:
+                    - /url: /productos/trajes-para-bomberos/traje-hazmat/
+            - link "Traje de bombero certificado NFPA" [ref=f5e154] [cursor=pointer]:
+              - /url: /productos/trajes-para-bomberos/
+        - article [ref=f5e155]:
+          - link [aria-hidden] [ref=f5e156] [cursor=pointer]:
+            - /url: /productos/cascos-para-bomberos/
+            - generic:
+              - generic: 6 productos
+              - generic: NFPA
+          - generic [ref=f5e158]:
+            - heading [level=3] [ref=f5e159]:
+              - link "Cascos para Bomberos" [ref=f5e160] [cursor=pointer]:
+                - /url: /productos/cascos-para-bomberos/
+            - paragraph [ref=f5e161]: Cascos estructurales, forestales, ARFF y rescate técnico. Bullard, Cairns, MSA. NFPA 1970 / 1950 / 1951.
+            - navigation "Modelos de Cascos para Bomberos" [ref=f5e162]:
+              - paragraph [ref=f5e163]: Modelos disponibles
+              - list [ref=f5e164]:
+                - listitem [ref=f5e165]:
+                  - link "Casco Estructural NFPA 1970" [ref=f5e166] [cursor=pointer]:
+                    - /url: /productos/cascos-para-bomberos/casco-estructural-nfpa-1971/
+                - listitem [ref=f5e170]:
+                  - link "Casco Forestal NFPA 1950" [ref=f5e171] [cursor=pointer]:
+                    - /url: /productos/cascos-para-bomberos/casco-forestal-nfpa-1977/
+                - listitem [ref=f5e175]:
+                  - link "Casco de Rescate NFPA 1951" [ref=f5e176] [cursor=pointer]:
+                    - /url: /productos/cascos-para-bomberos/casco-rescate-tecnico-nfpa-1951/
+                - listitem [ref=f5e180]:
+                  - link "Casco HAZMAT Químico" [ref=f5e181] [cursor=pointer]:
+                    - /url: /productos/cascos-para-bomberos/casco-hazmat-quimico/
+            - link "Casco de bombero certificado NFPA" [ref=f5e185] [cursor=pointer]:
+              - /url: /productos/cascos-para-bomberos/
+        - article [ref=f5e186]:
+          - link [aria-hidden] [ref=f5e187] [cursor=pointer]:
+            - /url: /productos/scba/
+            - generic:
+              - generic: 3 productos
+              - generic: NFPA
+          - generic [ref=f5e189]:
+            - heading [level=3] [ref=f5e190]:
+              - link "SCBA — Respiración Autónoma" [ref=f5e191] [cursor=pointer]:
+                - /url: /productos/scba/
+            - paragraph [ref=f5e192]: Aparatos NFPA 1970. Cilindros 30 y 45 min, máscaras panorámicas y sistema de alarma PASS. MSA y Honeywell.
+            - navigation "Modelos de SCBA — Respiración Autónoma" [ref=f5e193]:
+              - paragraph [ref=f5e194]: Modelos disponibles
+              - list [ref=f5e195]:
+                - listitem [ref=f5e196]:
+                  - link "SCBA 30 min NFPA 1970" [ref=f5e197] [cursor=pointer]:
+                    - /url: /productos/scba/
+                - listitem [ref=f5e201]:
+                  - link "SCBA 45 min NFPA 1970" [ref=f5e202] [cursor=pointer]:
+                    - /url: /productos/scba/
+                - listitem [ref=f5e206]:
+                  - link "Máscara Panorámica + Cilindro" [ref=f5e207] [cursor=pointer]:
+                    - /url: /productos/scba/
+            - link "Equipo de respiración autónoma SCBA" [ref=f5e211] [cursor=pointer]:
+              - /url: /productos/scba/
+        - article [ref=f5e212]:
+          - link [aria-hidden] [ref=f5e213] [cursor=pointer]:
+            - /url: /productos/guantes-para-bomberos/
+            - generic:
+              - generic: 4 productos
+              - generic: NFPA
+          - generic [ref=f5e215]:
+            - heading [level=3] [ref=f5e216]:
+              - link "Guantes para Bomberos" [ref=f5e217] [cursor=pointer]:
+                - /url: /productos/guantes-para-bomberos/
+            - paragraph [ref=f5e218]: Guantes estructurales Kevlar®, forestales Nomex®, rescate anticorte y HAZMAT resistentes a químicos. NFPA 1970.
+            - navigation "Modelos de Guantes para Bomberos" [ref=f5e219]:
+              - paragraph [ref=f5e220]: Modelos disponibles
+              - list [ref=f5e221]:
+                - listitem [ref=f5e222]:
+                  - link "Guantes Estructurales NFPA 1970" [ref=f5e223] [cursor=pointer]:
+                    - /url: /productos/guantes-para-bomberos/estructurales/
+                - listitem [ref=f5e227]:
+                  - link "Guantes de Rescate / Extricación" [ref=f5e228] [cursor=pointer]:
+                    - /url: /productos/guantes-para-bomberos/rescate/
+                - listitem [ref=f5e232]:
+                  - link "Guantes HAZMAT" [ref=f5e233] [cursor=pointer]:
+                    - /url: /productos/guantes-para-bomberos/hazmat/
+                - listitem [ref=f5e237]:
+                  - link "Guantes Forestales" [ref=f5e238] [cursor=pointer]:
+                    - /url: /productos/guantes-para-bomberos/forestales/
+            - link "Guantes de bombero profesionales" [ref=f5e242] [cursor=pointer]:
+              - /url: /productos/guantes-para-bomberos/
+        - article [ref=f5e243]:
+          - link [aria-hidden] [ref=f5e244] [cursor=pointer]:
+            - /url: /productos/botas-para-bomberos/
+            - generic:
+              - generic: 3 productos
+              - generic: NFPA
+          - generic [ref=f5e246]:
+            - heading [level=3] [ref=f5e247]:
+              - link "Botas para Bomberos" [ref=f5e248] [cursor=pointer]:
+                - /url: /productos/botas-para-bomberos/
+            - paragraph [ref=f5e249]: Botas de cuero NFPA 1970, caucho HAZMAT y forestal con suela Vibram®. Puntera composite, impermeables, resistentes al calor.
+            - navigation "Modelos de Botas para Bomberos" [ref=f5e250]:
+              - paragraph [ref=f5e251]: Modelos disponibles
+              - list [ref=f5e252]:
+                - listitem [ref=f5e253]:
+                  - link "Bota Estructural — Cuero" [ref=f5e254] [cursor=pointer]:
+                    - /url: /productos/botas-para-bomberos/estructural/
+                - listitem [ref=f5e258]:
+                  - link "Bota de Caucho HAZMAT" [ref=f5e259] [cursor=pointer]:
+                    - /url: /productos/botas-para-bomberos/caucho/
+                - listitem [ref=f5e263]:
+                  - link "Bota Forestal NFPA 1950" [ref=f5e264] [cursor=pointer]:
+                    - /url: /productos/botas-para-bomberos/forestal/
+            - link "Botas para bombero por tipo de servicio" [ref=f5e268] [cursor=pointer]:
+              - /url: /productos/botas-para-bomberos/
+        - article [ref=f5e269]:
+          - link [aria-hidden] [ref=f5e270] [cursor=pointer]:
+            - /url: /productos/forestales/
+            - generic:
+              - generic: 5 productos
+              - generic: NFPA
+          - generic [ref=f5e272]:
+            - heading [level=3] [ref=f5e273]:
+              - link "Equipo Forestal" [ref=f5e274] [cursor=pointer]:
+                - /url: /productos/forestales/
+            - paragraph [ref=f5e275]: Equipo certificado NFPA 1950 y CONAFOR para brigadas contra incendios forestales. Fustas, mochilas y protección completa.
+            - navigation "Modelos de Equipo Forestal" [ref=f5e276]:
+              - paragraph [ref=f5e277]: Modelos disponibles
+              - list [ref=f5e278]:
+                - listitem [ref=f5e279]:
+                  - link "Traje Forestal NFPA 1950" [ref=f5e280] [cursor=pointer]:
+                    - /url: /productos/trajes-para-bomberos/traje-forestal-nfpa-1977/
+                - listitem [ref=f5e284]:
+                  - link "Casco Forestal NFPA 1950" [ref=f5e285] [cursor=pointer]:
+                    - /url: /productos/cascos-para-bomberos/casco-forestal-nfpa-1977/
+                - listitem [ref=f5e289]:
+                  - link "Guantes Forestales Nomex®" [ref=f5e290] [cursor=pointer]:
+                    - /url: /productos/guantes-para-bomberos/forestales/
+                - listitem [ref=f5e294]:
+                  - link "Bota Forestal Vibram®" [ref=f5e295] [cursor=pointer]:
+                    - /url: /productos/botas-para-bomberos/forestal/
+            - link "Equipo forestal para brigadas contra incendio" [ref=f5e299] [cursor=pointer]:
+              - /url: /productos/forestales/
+        - article [ref=f5e300]:
+          - link [aria-hidden] [ref=f5e301] [cursor=pointer]:
+            - /url: /productos/herramientas-rescate/
+            - generic:
+              - generic: 4 productos
+              - generic: NFPA
+          - generic [ref=f5e303]:
+            - heading [level=3] [ref=f5e304]:
+              - link "Herramientas de Rescate" [ref=f5e305] [cursor=pointer]:
+                - /url: /productos/herramientas-rescate/
+            - paragraph [ref=f5e306]: Herramientas hidráulicas Jaws of Life®, cizallas USAR y sets completos certificados NFPA 1936. Holmatro y Genesis.
+            - navigation "Modelos de Herramientas de Rescate" [ref=f5e307]:
+              - paragraph [ref=f5e308]: Modelos disponibles
+              - list [ref=f5e309]:
+                - listitem [ref=f5e310]:
+                  - link "Cizalla Hidráulica de Rescate" [ref=f5e311] [cursor=pointer]:
+                    - /url: /productos/herramientas-rescate/
+                - listitem [ref=f5e315]:
+                  - link "Expansor / Separador USAR" [ref=f5e316] [cursor=pointer]:
+                    - /url: /productos/herramientas-rescate/
+                - listitem [ref=f5e320]:
+                  - link "Combo Cizalla + Expansor" [ref=f5e321] [cursor=pointer]:
+                    - /url: /productos/herramientas-rescate/
+                - listitem [ref=f5e325]:
+                  - link "Herramientas Manuales Rescate" [ref=f5e326] [cursor=pointer]:
+                    - /url: /productos/herramientas-rescate/
+            - link "Herramientas hidráulicas de rescate" [ref=f5e330] [cursor=pointer]:
+              - /url: /productos/herramientas-rescate/
+        - article [ref=f5e331]:
+          - link [aria-hidden] [ref=f5e332] [cursor=pointer]:
+            - /url: /productos/tecnologia/
+            - generic:
+              - generic: 3 productos
+              - generic: NFPA
+          - generic [ref=f5e334]:
+            - heading [level=3] [ref=f5e335]:
+              - link "Tecnología y Detección" [ref=f5e336] [cursor=pointer]:
+                - /url: /productos/tecnologia/
+            - paragraph [ref=f5e337]: Cámaras termográficas TIC, detectores multigas y drones de reconocimiento para operaciones tácticas de alta exigencia.
+            - navigation "Modelos de Tecnología y Detección" [ref=f5e338]:
+              - paragraph [ref=f5e339]: Modelos disponibles
+              - list [ref=f5e340]:
+                - listitem [ref=f5e341]:
+                  - link "Cámara Termográfica TIC" [ref=f5e342] [cursor=pointer]:
+                    - /url: /productos/tecnologia/
+                - listitem [ref=f5e346]:
+                  - link "Detector de Gas Multigas" [ref=f5e347] [cursor=pointer]:
+                    - /url: /productos/tecnologia/
+                - listitem [ref=f5e351]:
+                  - link "Dron de Reconocimiento" [ref=f5e352] [cursor=pointer]:
+                    - /url: /productos/tecnologia/
+            - link "Tecnología de detección para bomberos" [ref=f5e356] [cursor=pointer]:
+              - /url: /productos/tecnologia/
+        - article [ref=f5e357]:
+          - link [aria-hidden] [ref=f5e358] [cursor=pointer]:
+            - /url: /productos/capuchas-para-bomberos/
+            - generic:
+              - generic: 3 productos
+              - generic: NFPA
+          - generic [ref=f5e360]:
+            - heading [level=3] [ref=f5e361]:
+              - link "Capuchas y Monjas" [ref=f5e362] [cursor=pointer]:
+                - /url: /productos/capuchas-para-bomberos/
+            - paragraph [ref=f5e363]: Capuchas Nomex®, PBI Gold® y con protección particulada certificadas NFPA 1970. Protección 360° del cuello y zona facial.
+            - navigation "Modelos de Capuchas y Monjas" [ref=f5e364]:
+              - paragraph [ref=f5e365]: Modelos disponibles
+              - list [ref=f5e366]:
+                - listitem [ref=f5e367]:
+                  - link "Capucha Nomex®" [ref=f5e368] [cursor=pointer]:
+                    - /url: /productos/capuchas-para-bomberos/nomex/
+                - listitem [ref=f5e372]:
+                  - link "Capucha PBI Gold®" [ref=f5e373] [cursor=pointer]:
+                    - /url: /productos/capuchas-para-bomberos/pbi/
+                - listitem [ref=f5e377]:
+                  - link "Capucha con Protección Particulada" [ref=f5e378] [cursor=pointer]:
+                    - /url: /productos/capuchas-para-bomberos/particulada/
+            - link "Capuchas para bombero NFPA" [ref=f5e382] [cursor=pointer]:
+              - /url: /productos/capuchas-para-bomberos/
+        - article [ref=f5e383]:
+          - link [aria-hidden] [ref=f5e384] [cursor=pointer]:
+            - /url: /productos/gafas-para-bomberos/
+            - generic:
+              - generic: 2 productos
+              - generic: NFPA
+          - generic [ref=f5e386]:
+            - heading [level=3] [ref=f5e387]:
+              - link "Gafas y Protección Visual" [ref=f5e388] [cursor=pointer]:
+                - /url: /productos/gafas-para-bomberos/
+            - paragraph [ref=f5e389]: Goggles antipolvo, antiesquirlas y antiimpacto compatibles con SCBA y cascos NFPA. Policarbonato ANSI Z87.1.
+            - navigation "Modelos de Gafas y Protección Visual" [ref=f5e390]:
+              - paragraph [ref=f5e391]: Modelos disponibles
+              - list [ref=f5e392]:
+                - listitem [ref=f5e393]:
+                  - link "Goggle de Bombero Premium" [ref=f5e394] [cursor=pointer]:
+                    - /url: /productos/gafas-para-bomberos/goggle/
+                - listitem [ref=f5e398]:
+                  - link "Gafas de Seguridad Antiimpacto" [ref=f5e399] [cursor=pointer]:
+                    - /url: /productos/gafas-para-bomberos/seguridad/
+            - link "Goggles y gafas de seguridad para bombero" [ref=f5e403] [cursor=pointer]:
+              - /url: /productos/gafas-para-bomberos/
+        - article [ref=f5e404]:
+          - link [aria-hidden] [ref=f5e405] [cursor=pointer]:
+            - /url: /productos/extintores/
+            - generic:
+              - generic: 4 productos
+              - generic: NFPA
+          - generic [ref=f5e407]:
+            - heading [level=3] [ref=f5e408]:
+              - link "Extintores" [ref=f5e409] [cursor=pointer]:
+                - /url: /productos/extintores/
+            - paragraph [ref=f5e410]: "Extintores certificados NOM-100 en todas las clases: PQS, CO₂, espuma AFFF y halotron. Para industria y uso doméstico."
+            - navigation "Modelos de Extintores" [ref=f5e411]:
+              - paragraph [ref=f5e412]: Modelos disponibles
+              - list [ref=f5e413]:
+                - listitem [ref=f5e414]:
+                  - link "Extintor PQS — Polvo Químico Seco" [ref=f5e415] [cursor=pointer]:
+                    - /url: /productos/extintores/
+                - listitem [ref=f5e419]:
+                  - link "Extintor CO₂ — Dióxido de Carbono" [ref=f5e420] [cursor=pointer]:
+                    - /url: /productos/extintores/
+                - listitem [ref=f5e424]:
+                  - link "Extintor Espuma AFFF" [ref=f5e425] [cursor=pointer]:
+                    - /url: /productos/extintores/
+                - listitem [ref=f5e429]:
+                  - link "Extintor Halotron — Limpio" [ref=f5e430] [cursor=pointer]:
+                    - /url: /productos/extintores/
+            - link "Extintores certificados NOM-100" [ref=f5e434] [cursor=pointer]:
+              - /url: /productos/extintores/
+        - article [ref=f5e435]:
+          - link [aria-hidden] [ref=f5e436] [cursor=pointer]:
+            - /url: /productos/hazmat/
+            - generic:
+              - generic: 3 productos
+              - generic: NFPA
+          - generic [ref=f5e438]:
+            - heading [level=3] [ref=f5e439]:
+              - link "HAZMAT y CBRN" [ref=f5e440] [cursor=pointer]:
+                - /url: /productos/hazmat/
+            - paragraph [ref=f5e441]: Trajes Nivel A y B encapsulados, kits de descontaminación y protección CBRN para respuesta a emergencias químicas.
+            - navigation "Modelos de HAZMAT y CBRN" [ref=f5e442]:
+              - paragraph [ref=f5e443]: Modelos disponibles
+              - list [ref=f5e444]:
+                - listitem [ref=f5e445]:
+                  - link "Traje HAZMAT Nivel A Encapsulado" [ref=f5e446] [cursor=pointer]:
+                    - /url: /productos/trajes-para-bomberos/traje-hazmat/nivel-a/
+                - listitem [ref=f5e450]:
+                  - link "Traje HAZMAT Nivel B" [ref=f5e451] [cursor=pointer]:
+                    - /url: /productos/trajes-para-bomberos/traje-hazmat/nivel-b/
+                - listitem [ref=f5e455]:
+                  - link "Kit Descontaminación Rápida" [ref=f5e456] [cursor=pointer]:
+                    - /url: /productos/hazmat/
+            - link "Equipo HAZMAT y protección CBRN" [ref=f5e460] [cursor=pointer]:
+              - /url: /productos/hazmat/
+        - article [ref=f5e461]:
+          - link [aria-hidden] [ref=f5e462] [cursor=pointer]:
+            - /url: /productos/equipo-contra-incendios/
+            - generic:
+              - generic: 4 productos
+              - generic: NFPA
+          - generic [ref=f5e464]:
+            - heading [level=3] [ref=f5e465]:
+              - link "Equipo Contra Incendios" [ref=f5e466] [cursor=pointer]:
+                - /url: /productos/equipo-contra-incendios/
+            - paragraph [ref=f5e467]: Mangueras, lanzas de ataque, gabinetes y accesorios para sistemas fijos y autobomba. Certificados NOM y NFPA.
+            - navigation "Modelos de Equipo Contra Incendios" [ref=f5e468]:
+              - paragraph [ref=f5e469]: Modelos disponibles
+              - list [ref=f5e470]:
+                - listitem [ref=f5e471]:
+                  - link "Manguera contra Incendio NFPA" [ref=f5e472] [cursor=pointer]:
+                    - /url: /productos/equipo-contra-incendios/
+                - listitem [ref=f5e476]:
+                  - link "Lanza de Ataque Ajustable" [ref=f5e477] [cursor=pointer]:
+                    - /url: /productos/equipo-contra-incendios/
+                - listitem [ref=f5e481]:
+                  - link "Gabinete contra Incendio NOM" [ref=f5e482] [cursor=pointer]:
+                    - /url: /productos/equipo-contra-incendios/
+                - listitem [ref=f5e486]:
+                  - link "Hidrante y Accesorios" [ref=f5e487] [cursor=pointer]:
+                    - /url: /productos/equipo-contra-incendios/
+            - link "Mangueras, gabinetes y equipo contra incendio" [ref=f5e491] [cursor=pointer]:
+              - /url: /productos/equipo-contra-incendios/
+        - article [ref=f5e492]:
+          - link [aria-hidden] [ref=f5e493] [cursor=pointer]:
+            - /url: /productos/rescate-vertical/
+            - generic:
+              - generic: 4 productos
+              - generic: NFPA
+          - generic [ref=f5e495]:
+            - heading [level=3] [ref=f5e496]:
+              - link "Rescate Vertical y Arneses" [ref=f5e497] [cursor=pointer]:
+                - /url: /productos/rescate-vertical/
+            - paragraph [ref=f5e498]: Arneses técnicos, sistemas de descenso/ascenso y equipo de rescate en altura certificados NFPA 1983. Petzl, CMC y Yates.
+            - navigation "Modelos de Rescate Vertical y Arneses" [ref=f5e499]:
+              - paragraph [ref=f5e500]: Modelos disponibles
+              - list [ref=f5e501]:
+                - listitem [ref=f5e502]:
+                  - link "Arnés de Rescate Técnico NFPA 1983" [ref=f5e503] [cursor=pointer]:
+                    - /url: /productos/rescate-vertical/
+                - listitem [ref=f5e507]:
+                  - link "Sistema Descenso Controlado" [ref=f5e508] [cursor=pointer]:
+                    - /url: /productos/rescate-vertical/
+                - listitem [ref=f5e512]:
+                  - link "Polipasto y Sistemas de Izaje" [ref=f5e513] [cursor=pointer]:
+                    - /url: /productos/rescate-vertical/
+                - listitem [ref=f5e517]:
+                  - link "Cuerdas y Accesorios de Rescate" [ref=f5e518] [cursor=pointer]:
+                    - /url: /productos/rescate-vertical/
+            - link "Equipo de rescate en altura NFPA 1983" [ref=f5e522] [cursor=pointer]:
+              - /url: /productos/rescate-vertical/
+        - article [ref=f5e523]:
+          - link [aria-hidden] [ref=f5e524] [cursor=pointer]:
+            - /url: /productos/rescate-acuatico/
+            - generic:
+              - generic: 4 productos
+              - generic: NFPA
+          - generic [ref=f5e526]:
+            - heading [level=3] [ref=f5e527]:
+              - link "Rescate Acuático" [ref=f5e528] [cursor=pointer]:
+                - /url: /productos/rescate-acuatico/
+            - paragraph [ref=f5e529]: Trajes de inmersión, chalecos salvavidas, tablas de rescate y equipos swift water para brigadas de rescate en agua.
+            - navigation "Modelos de Rescate Acuático" [ref=f5e530]:
+              - paragraph [ref=f5e531]: Modelos disponibles
+              - list [ref=f5e532]:
+                - listitem [ref=f5e533]:
+                  - link "Traje de Inmersión / Neopreno" [ref=f5e534] [cursor=pointer]:
+                    - /url: /productos/rescate-acuatico/
+                - listitem [ref=f5e538]:
+                  - link "Chaleco Salvavidas NFPA Rescate" [ref=f5e539] [cursor=pointer]:
+                    - /url: /productos/rescate-acuatico/
+                - listitem [ref=f5e543]:
+                  - link "Tabla y Equipo Swift Water" [ref=f5e544] [cursor=pointer]:
+                    - /url: /productos/rescate-acuatico/
+                - listitem [ref=f5e548]:
+                  - link "Lancha y Motor de Rescate" [ref=f5e549] [cursor=pointer]:
+                    - /url: /productos/rescate-acuatico/
+            - link "Chalecos y trajes para rescate acuático" [ref=f5e553] [cursor=pointer]:
+              - /url: /productos/rescate-acuatico/
+        - article [ref=f5e554]:
+          - link [aria-hidden] [ref=f5e555] [cursor=pointer]:
+            - /url: /productos/equipo-medico/
+            - generic:
+              - generic: 3 productos
+              - generic: NFPA
+          - generic [ref=f5e557]:
+            - heading [level=3] [ref=f5e558]:
+              - link "Equipo Médico / EMS" [ref=f5e559] [cursor=pointer]:
+                - /url: /productos/equipo-medico/
+            - paragraph [ref=f5e560]: Camillas de rescate, desfibriladores DEA, kits de trauma y bolsas de oxígeno para primera respuesta y atención prehospitalaria.
+            - navigation "Modelos de Equipo Médico / EMS" [ref=f5e561]:
+              - paragraph [ref=f5e562]: Modelos disponibles
+              - list [ref=f5e563]:
+                - listitem [ref=f5e564]:
+                  - link "Camilla de Rescate Plegable" [ref=f5e565] [cursor=pointer]:
+                    - /url: /productos/equipo-medico/
+                - listitem [ref=f5e569]:
+                  - link "Desfibrilador DEA Semiautomático" [ref=f5e570] [cursor=pointer]:
+                    - /url: /productos/equipo-medico/
+                - listitem [ref=f5e574]:
+                  - link "Kit de Trauma / Bolsa de Emergencia" [ref=f5e575] [cursor=pointer]:
+                    - /url: /productos/equipo-medico/
+            - link "Camillas, DEA y kits de trauma" [ref=f5e579] [cursor=pointer]:
+              - /url: /productos/equipo-medico/
+      - link "Catálogo completo de equipo para bomberos" [ref=f5e581] [cursor=pointer]:
+        - /url: /productos/
+    - generic [ref=f5e584]:
+      - generic [ref=f5e585]:
+        - paragraph [ref=f5e586]: Categoría Principal · Protección Estructural
+        - 'heading "Trajes de Bombero Certificados NFPA: La Primera Línea de Defensa" [level=2] [ref=f5e587]':
+          - text: "Trajes de Bombero Certificados NFPA:"
+          - generic [ref=f5e588]: La Primera Línea de Defensa
+        - paragraph [ref=f5e589]: El traje de bombero es el componente de EPP que determina si el elemento puede entrar al fuego o no. Las 5 configuraciones que cubre la normativa NFPA — desde el traje estructural urbano hasta el traje encapsulado Nivel A para HAZMAT — con certificado de laboratorio acreditado por número de lote.
+        - paragraph [ref=f5e590]: "Los materiales no son una decisión comercial: los dicta la norma. Nomex® y PBI Gold® en la capa externa, Crosstech® o Gore-Tex® como barrera de humedad, y Caldura® o Aralite® en el forro térmico. La certificación NFPA 1970 valida el sistema completo, no las telas de forma aislada."
+        - list "Tipos de traje disponibles" [ref=f5e591]:
+          - listitem [ref=f5e592]:
+            - link "Traje Estructural NFPA 1970 — Operación urbana e industrial" [ref=f5e593] [cursor=pointer]:
+              - /url: /productos/trajes-para-bomberos/traje-estructural-nfpa-1971/
+          - listitem [ref=f5e594]:
+            - link "Traje Forestal NFPA 1950 — Brigadas y CONAFOR" [ref=f5e595] [cursor=pointer]:
+              - /url: /productos/trajes-para-bomberos/traje-forestal-nfpa-1977/
+          - listitem [ref=f5e596]:
+            - link "Traje ARFF Aeroportuario — Rescate en pista ICAO" [ref=f5e597] [cursor=pointer]:
+              - /url: /productos/trajes-para-bomberos/traje-arff-aeroportuario/
+          - listitem [ref=f5e598]:
+            - link "Traje de Aproximación — Calor radiante extremo" [ref=f5e599] [cursor=pointer]:
+              - /url: /productos/trajes-para-bomberos/traje-aproximacion/
+          - listitem [ref=f5e600]:
+            - link "Traje HAZMAT Nivel A / B — Materiales peligrosos y CBRN" [ref=f5e601] [cursor=pointer]:
+              - /url: /productos/trajes-para-bomberos/traje-hazmat/
+        - generic [ref=f5e602]:
+          - link "Uniformes y trajes para bombero" [ref=f5e603] [cursor=pointer]:
+            - /url: /productos/trajes-para-bomberos/
+          - link "Consultar opciones de equipo certificado" [ref=f5e604] [cursor=pointer]:
+            - /url: /productos/
+      - generic [ref=f5e605]:
+        - img "Bunker gear NFPA 1970 — traje estructural de bombero en estación junto a unidad" [ref=f5e607]
+        - generic [ref=f5e608]:
+          - img "Bunker gear — vista frontal y trasera del traje estructural NFPA 1970" [ref=f5e610]
+          - img "Detalle de tejido certificado NFPA 1970 — capas Nomex® y Gore-Tex®" [ref=f5e612]
+    - generic [ref=f5e615]:
+      - generic [ref=f5e616]:
+        - paragraph [ref=f5e617]: Categoría · Protección de Cabeza y Cuello
+        - 'heading "Cascos para Bomberos Certificados NFPA: Bullard, Cairns y MSA en México" [level=2] [ref=f5e618]':
+          - text: "Cascos para Bomberos Certificados NFPA:"
+          - generic [ref=f5e619]: Bullard, Cairns y MSA en México
+        - paragraph [ref=f5e620]: El casco es el componente de EPP con mayor variación entre operaciones. Un casco estructural NFPA 1970 no es intercambiable con uno forestal NFPA 1950 ni con uno de rescate técnico NFPA 1951 — cada norma define parámetros de impacto, penetración y retención distintos según el escenario de riesgo.
+        - paragraph [ref=f5e621]: Bullard, Cairns y MSA Safety — las tres marcas que dominan el mercado de cascos certificados NFPA en Norte y Latinoamérica. Cada modelo incluye ficha técnica con la edición de norma vigente, compatibilidad con SCBA y capucha, y certificado de laboratorio acreditado por número de lote.
+        - list "Tipos de casco disponibles" [ref=f5e622]:
+          - listitem [ref=f5e623]:
+            - link "Casco Estructural NFPA 1970 — Operación urbana e industrial" [ref=f5e624] [cursor=pointer]:
+              - /url: /productos/cascos-para-bomberos/casco-estructural-nfpa-1971/
+          - listitem [ref=f5e625]:
+            - link "Casco Forestal NFPA 1950 — Brigadas CONAFOR y wildland" [ref=f5e626] [cursor=pointer]:
+              - /url: /productos/cascos-para-bomberos/casco-forestal-nfpa-1977/
+          - listitem [ref=f5e627]:
+            - link "Casco de Rescate Técnico NFPA 1951 — USAR y extricación" [ref=f5e628] [cursor=pointer]:
+              - /url: /productos/cascos-para-bomberos/casco-rescate-tecnico-nfpa-1951/
+          - listitem [ref=f5e629]:
+            - link "Casco HAZMAT Químico — Materiales peligrosos y CBRN" [ref=f5e630] [cursor=pointer]:
+              - /url: /productos/cascos-para-bomberos/casco-hazmat-quimico/
+        - generic [ref=f5e631]:
+          - link "Cascos para bombero por tipo de servicio" [ref=f5e632] [cursor=pointer]:
+            - /url: /productos/cascos-para-bomberos/
+          - link "Consultar opciones de equipo certificado" [ref=f5e633] [cursor=pointer]:
+            - /url: /productos/
+      - generic [ref=f5e634]:
+        - img "Casco de bombero certificado NFPA — editorial junto a unidad contra incendios" [ref=f5e636]
+        - generic [ref=f5e637]:
+          - img "Casco estructural NFPA 1970 — perfil dramático en estudio" [ref=f5e639]
+          - img "Detalle de material termoplástico certificado NFPA en casco de bombero" [ref=f5e641]
+    - generic [ref=f5e644]:
+      - generic [ref=f5e645]:
+        - paragraph [ref=f5e646]: Categoría · Respiración Autónoma
+        - 'heading "SCBA Certificado NFPA 1970: MSA y Honeywell en México" [level=2] [ref=f5e647]':
+          - text: "SCBA Certificado NFPA 1970:"
+          - generic [ref=f5e648]: MSA y Honeywell en México
+        - paragraph [ref=f5e649]: El SCBA es el equipo que define el tiempo operativo del bombero dentro de una atmósfera IDLH. La diferencia entre un cilindro de 30 y uno de 45 minutos no es solo duración — implica peso, perfil de espalda, compatibilidad con el traje y tipo de operación para el que está diseñado.
+        - paragraph [ref=f5e650]: MSA Safety y Honeywell First Responder Products — dos de los tres fabricantes con mayor presencia en cuerpos de bomberos latinoamericanos. Cada equipo incluye máscara panorámica, alarma PASS integrada y certificado NFPA 1970 con edición de norma vigente. Compatible con los cascos y capuchas del catálogo.
+        - list "Tipos de SCBA disponibles" [ref=f5e651]:
+          - listitem [ref=f5e652]:
+            - link "SCBA 30 minutos NFPA 1970 — Operaciones de menor duración" [ref=f5e653] [cursor=pointer]:
+              - /url: /productos/scba/
+          - listitem [ref=f5e654]:
+            - link "SCBA 45 minutos NFPA 1970 — Operaciones de larga duración" [ref=f5e655] [cursor=pointer]:
+              - /url: /productos/scba/
+          - listitem [ref=f5e656]:
+            - link "Máscara Panorámica + Cilindro — Kit completo NFPA 1970" [ref=f5e657] [cursor=pointer]:
+              - /url: /productos/scba/
+        - generic [ref=f5e658]:
+          - link "SCBA para bomberos de 30 y 45 minutos" [ref=f5e659] [cursor=pointer]:
+            - /url: /productos/scba/
+          - link "Consultar opciones de equipo certificado" [ref=f5e660] [cursor=pointer]:
+            - /url: /productos/
+      - generic [ref=f5e661]:
+        - img "Bomberos en guardia nocturna con equipo SCBA NFPA 1970 completo" [ref=f5e663]
+        - generic [ref=f5e664]:
+          - img "Aparato SCBA de respiración autónoma certificado NFPA 1970" [ref=f5e666]
+          - img "Máscara panorámica SCBA para bombero — sello y visor certificado" [ref=f5e668]
+    - generic [ref=f5e671]:
+      - generic [ref=f5e672]:
+        - paragraph [ref=f5e673]: Categoría · Protección de Manos
+        - 'heading "Guantes para Bomberos Certificados NFPA: Kevlar®, Nomex® y Resistencia Química" [level=2] [ref=f5e674]':
+          - text: "Guantes para Bomberos Certificados NFPA:"
+          - generic [ref=f5e675]: Kevlar®, Nomex® y Resistencia Química
+        - paragraph [ref=f5e676]: "El guante de bombero no es un accesorio — es la interfaz directa entre el elemento y el agente de riesgo. La norma NFPA 1970 define parámetros de resistencia al calor, llama, corte y transmisión de calor que varían según el tipo de operación: estructural, forestal, rescate o HAZMAT."
+        - paragraph [ref=f5e677]: Kevlar® para resistencia anticorte en rescate vehicular, Nomex® para operaciones forestales, cuero de vaqueta curtido para el guante estructural. Cada par incluye certificado de laboratorio acreditado y ficha técnica con el parámetro TPP medido — no solo la marca del material.
+        - list "Tipos de guante disponibles" [ref=f5e678]:
+          - listitem [ref=f5e679]:
+            - link "Guantes Estructurales NFPA 1970 — Operación urbana e industrial" [ref=f5e680] [cursor=pointer]:
+              - /url: /productos/guantes-para-bomberos/estructurales/
+          - listitem [ref=f5e681]:
+            - link "Guantes de Rescate / Extricación — Anticorte EN 388" [ref=f5e682] [cursor=pointer]:
+              - /url: /productos/guantes-para-bomberos/rescate/
+          - listitem [ref=f5e683]:
+            - link "Guantes HAZMAT — Resistentes a químicos y CBRN" [ref=f5e684] [cursor=pointer]:
+              - /url: /productos/guantes-para-bomberos/hazmat/
+          - listitem [ref=f5e685]:
+            - link "Guantes Forestales Nomex® — Brigadas CONAFOR y wildland" [ref=f5e686] [cursor=pointer]:
+              - /url: /productos/guantes-para-bomberos/forestales/
+        - generic [ref=f5e687]:
+          - link "Guantes para bombero por tipo de servicio" [ref=f5e688] [cursor=pointer]:
+            - /url: /productos/guantes-para-bomberos/
+          - link "Consultar opciones de equipo certificado" [ref=f5e689] [cursor=pointer]:
+            - /url: /productos/
+      - generic [ref=f5e690]:
+        - img "Guantes de bombero NFPA 1970 en operación de combate de incendio con manguera" [ref=f5e692]
+        - generic [ref=f5e693]:
+          - img "Par de guantes estructurales cuero y Kevlar® certificados NFPA 1970" [ref=f5e695]
+          - img "Detalle de palma de cuero vaqueta en guante estructural de bombero" [ref=f5e697]
+    - generic [ref=f5e700]:
+      - generic [ref=f5e701]:
+        - paragraph [ref=f5e702]: Categoría · Protección de Pies y Tobillo
+        - 'heading "Botas para Bomberos Certificadas NFPA: Cuero, Caucho y Suela Vibram®" [level=2] [ref=f5e703]':
+          - text: "Botas para Bomberos Certificadas NFPA:"
+          - generic [ref=f5e704]: Cuero, Caucho y Suela Vibram®
+        - paragraph [ref=f5e705]: La bota de bombero es el único componente de EPP que soporta simultáneamente carga térmica desde abajo (piso caliente), penetración por objetos punzantes y riesgo de torsión de tobillo en terrenos irregulares. Cada tipo de operación exige un diseño distinto.
+        - paragraph [ref=f5e706]: Bota estructural de cuero NFPA 1970 con puntera composite y membrana impermeable para combate urbano e industrial. Bota de caucho para operaciones HAZMAT donde el cuero no es compatible con agentes químicos. Bota forestal NFPA 1950 con suela Vibram® y soporte de tobillo para terreno de monte. Cada modelo llega con ficha técnica y certificado de laboratorio.
+        - list "Tipos de bota disponibles" [ref=f5e707]:
+          - listitem [ref=f5e708]:
+            - link "Bota Estructural — Cuero NFPA 1970, puntera composite" [ref=f5e709] [cursor=pointer]:
+              - /url: /productos/botas-para-bomberos/estructural/
+          - listitem [ref=f5e710]:
+            - link "Bota de Caucho HAZMAT — Resistente a agentes químicos" [ref=f5e711] [cursor=pointer]:
+              - /url: /productos/botas-para-bomberos/caucho/
+          - listitem [ref=f5e712]:
+            - link "Bota Forestal NFPA 1950 — Suela Vibram®, soporte de tobillo" [ref=f5e713] [cursor=pointer]:
+              - /url: /productos/botas-para-bomberos/forestal/
+        - generic [ref=f5e714]:
+          - link "Botas de bombero certificadas NFPA" [ref=f5e715] [cursor=pointer]:
+            - /url: /productos/botas-para-bomberos/
+          - link "Consultar opciones de equipo certificado" [ref=f5e716] [cursor=pointer]:
+            - /url: /productos/
+      - generic [ref=f5e717]:
+        - img "Botas de bombero NFPA junto a unidad en estación — caucho resistente" [ref=f5e719]
+        - generic [ref=f5e720]:
+          - img "Par de botas de caucho HAZMAT para bombero — vista de estudio" [ref=f5e722]
+          - img "Detalle de suela Vibram® en bota forestal NFPA 1950 para bombero" [ref=f5e724]
+    - generic [ref=f5e727]:
+      - generic [ref=f5e728]:
+        - paragraph [ref=f5e729]: Categoría · Incendios Forestales y CONAFOR
+        - 'heading "Equipo Forestal Certificado NFPA 1950: Protección Completa para Brigadas" [level=2] [ref=f5e730]':
+          - text: "Equipo Forestal Certificado NFPA 1950:"
+          - generic [ref=f5e731]: Protección Completa para Brigadas
+        - paragraph [ref=f5e732]: "El incendio forestal no tiene la misma dinámica que el incendio estructural. Las temperaturas son menores pero la exposición es prolongada, el terreno es irregular y la movilidad del elemento es crítica. El EPP forestal resuelve esa combinación: ligero, transpirable y certificado NFPA 1950."
+        - paragraph [ref=f5e733]: "El sistema completo de EPP forestal certificado: traje Nomex® NFPA 1950, casco con protección facial, guantes resistentes al calor y bota de cuero con suela Vibram® de alto agarre. Todo compatible con los requerimientos de brigadas CONAFOR y los estándares de protección civil estatal para incendios forestales en México."
+        - list "Equipo forestal disponible" [ref=f5e734]:
+          - listitem [ref=f5e735]:
+            - link "Traje Forestal NFPA 1950 — Nomex® ligero y transpirable" [ref=f5e736] [cursor=pointer]:
+              - /url: /productos/trajes-para-bomberos/traje-forestal-nfpa-1977/
+          - listitem [ref=f5e737]:
+            - link "Casco Forestal NFPA 1950 — Con protección facial integrada" [ref=f5e738] [cursor=pointer]:
+              - /url: /productos/cascos-para-bomberos/casco-forestal-nfpa-1977/
+          - listitem [ref=f5e739]:
+            - link "Guantes Forestales Nomex® — Flexibles y resistentes al calor" [ref=f5e740] [cursor=pointer]:
+              - /url: /productos/guantes-para-bomberos/forestales/
+          - listitem [ref=f5e741]:
+            - link "Bota Forestal Vibram® — Cuero y suela de alto agarre" [ref=f5e742] [cursor=pointer]:
+              - /url: /productos/botas-para-bomberos/forestal/
+        - generic [ref=f5e743]:
+          - link "Equipo para combate de incendios forestales" [ref=f5e744] [cursor=pointer]:
+            - /url: /productos/forestales/
+          - link "Consultar opciones de equipo certificado" [ref=f5e745] [cursor=pointer]:
+            - /url: /productos/
+      - generic [ref=f5e746]:
+        - img "Unidad forestal de bomberos — vehículo equipado para incendios forestales" [ref=f5e748]
+        - generic [ref=f5e749]:
+          - img "Traje forestal NFPA 1950 en operación de incendio forestal" [ref=f5e751]
+          - img "Casco forestal profesional certificado NFPA 1950 para brigadas" [ref=f5e753]
+    - generic [ref=f5e756]:
+      - generic [ref=f5e757]:
+        - paragraph [ref=f5e758]: Categoría · Rescate Vehicular y USAR
+        - 'heading "Herramientas Hidráulicas de Rescate: Holmatro y Genesis, Certificadas NFPA 1936" [level=2] [ref=f5e759]':
+          - text: "Herramientas Hidráulicas de Rescate:"
+          - generic [ref=f5e760]: Holmatro y Genesis, Certificadas NFPA 1936
+        - paragraph [ref=f5e761]: "En un rescate vehicular, la herramienta determina el tiempo de acceso al paciente. Una cizalla con fuerza de corte insuficiente para el acero de alta resistencia de los vehículos modernos no es un problema técnico — es un problema clínico: cada minuto adicional dentro del vehículo reduce las probabilidades de supervivencia del paciente atrapado."
+        - paragraph [ref=f5e762]: Holmatro y Genesis diseñan herramientas específicamente para la generación actual de carrocerías con acero Boron y aluminio de alta resistencia. Cizallas con fuerza de corte de hasta 1,500 kN, expansores con apertura de 750 mm y sistemas de alimentación monobomba o de dos circuitos independientes. Cada equipo cumple NFPA 1936 y viene con manual de mantenimiento en español, kit de sellos y soporte técnico directo de fabricante en México.
+        - list "Herramientas de rescate disponibles" [ref=f5e763]:
+          - listitem [ref=f5e764]:
+            - link "Cizalla Hidráulica de Rescate — Corte en acero Boron y aluminio" [ref=f5e765] [cursor=pointer]:
+              - /url: /productos/herramientas-rescate/
+          - listitem [ref=f5e766]:
+            - link "Expansor / Separador USAR — Apertura hasta 750 mm" [ref=f5e767] [cursor=pointer]:
+              - /url: /productos/herramientas-rescate/
+          - listitem [ref=f5e768]:
+            - link "Combo Cizalla + Expansor — Sistema integrado monobomba" [ref=f5e769] [cursor=pointer]:
+              - /url: /productos/herramientas-rescate/
+          - listitem [ref=f5e770]:
+            - link "Herramientas Manuales de Rescate — Complemento USAR certificado" [ref=f5e771] [cursor=pointer]:
+              - /url: /productos/herramientas-rescate/
+        - generic [ref=f5e772]:
+          - link "Quijadas de la vida y equipo USAR" [ref=f5e773] [cursor=pointer]:
+            - /url: /productos/herramientas-rescate/
+          - link "Consultar opciones de equipo certificado" [ref=f5e774] [cursor=pointer]:
+            - /url: /productos/
+      - generic [ref=f5e775]:
+        - img "Equipo de rescate vehicular con herramientas hidráulicas Jaws of Life — operación USAR" [ref=f5e777]
+        - generic [ref=f5e778]:
+          - img "Herramienta hidráulica de rescate certificada NFPA 1936 — cizalla de extrication" [ref=f5e780]
+          - img "Equipo de corte hidráulico para rescate vehicular y USAR" [ref=f5e782]
+    - generic [ref=f5e785]:
+      - generic [ref=f5e786]:
+        - paragraph [ref=f5e787]: Categoría · Tecnología Táctica y Detección
+        - 'heading "Tecnología para Operaciones de Alta Exigencia: TIC, Multigas y Drones de Reconocimiento" [level=2] [ref=f5e788]':
+          - text: "Tecnología para Operaciones de Alta Exigencia:"
+          - generic [ref=f5e789]: TIC, Multigas y Drones de Reconocimiento
+        - paragraph [ref=f5e790]: "La cámara termográfica TIC no es un accesorio — es el instrumento que le permite al bombero orientarse en cero visibilidad, localizar víctimas a través del humo y detectar puntos de reignición ocultos antes de dar por controlado un incendio. Su ausencia en operación no es una limitación técnica: es un riesgo operativo documentado."
+        - paragraph [ref=f5e791]: Cámaras TIC con resolución de 320×240 px o superior, detectores multigas de 4 a 6 canales simultáneos (LEL, O₂, CO, H₂S y opciones CBRN) y drones de reconocimiento con cámara térmica integrada para evaluación de perímetro sin exposición del personal. Cada equipo incluye soporte técnico y garantía de fábrica en México.
+        - list "Tecnología disponible" [ref=f5e792]:
+          - listitem [ref=f5e793]:
+            - link "Cámara Termográfica TIC — Visión en cero visibilidad y localización de víctimas" [ref=f5e794] [cursor=pointer]:
+              - /url: /productos/tecnologia/
+          - listitem [ref=f5e795]:
+            - link "Detector Multigas — LEL, O₂, CO, H₂S y canales CBRN opcionales" [ref=f5e796] [cursor=pointer]:
+              - /url: /productos/tecnologia/
+          - listitem [ref=f5e797]:
+            - link "Dron de Reconocimiento — Evaluación de perímetro con cámara térmica integrada" [ref=f5e798] [cursor=pointer]:
+              - /url: /productos/tecnologia/
+        - generic [ref=f5e799]:
+          - link "Cámaras termográficas y detectores multigas" [ref=f5e800] [cursor=pointer]:
+            - /url: /productos/tecnologia/
+          - link "Consultar opciones de equipo certificado" [ref=f5e801] [cursor=pointer]:
+            - /url: /productos/
+      - generic [ref=f5e802]:
+        - img "Tecnología táctica para bomberos — cámara TIC, detector multigas y dron de reconocimiento" [ref=f5e804]
+        - generic [ref=f5e805]:
+          - img "Detector multigas para operaciones HAZMAT — LEL, O₂, CO y H₂S simultáneos" [ref=f5e807]
+          - img "Dron de reconocimiento para emergencias — evaluación de perímetro sin exposición" [ref=f5e809]
+    - generic [ref=f5e812]:
+      - generic [ref=f5e813]:
+        - paragraph [ref=f5e814]: Categoría · Protección de Cuello y Zona Facial
+        - 'heading "Capuchas para Bomberos Certificadas NFPA 1970: Nomex®, PBI Gold® y Protección Particulada" [level=2] [ref=f5e815]':
+          - text: "Capuchas para Bomberos Certificadas NFPA 1970:"
+          - generic [ref=f5e816]: Nomex®, PBI Gold® y Protección Particulada
+        - paragraph [ref=f5e817]: La capucha es el componente que cierra el sistema EPP entre el cuello del traje y el borde inferior del casco. Una brecha en ese sello no es un detalle de confort — es una vía de entrada directa del calor convectivo hacia la vía aérea y las orejas. La NFPA 1970 la certifica como componente independiente por esa razón.
+        - paragraph [ref=f5e818]: Nomex® para operación estructural estándar, PBI Gold® para escenarios de mayor exposición térmica donde se requiere el mismo material del traje, y capucha con membrana particulada para entornos con alto contenido de fibras y partículas cancerígenas — un riesgo documentado en el combate de incendios estructurales modernos. Cada modelo verifica compatibilidad de sello con la máscara SCBA antes de despacho.
+        - list "Tipos de capucha disponibles" [ref=f5e819]:
+          - listitem [ref=f5e820]:
+            - link "Capucha Nomex® — Operación estructural, sello perimetral SCBA" [ref=f5e821] [cursor=pointer]:
+              - /url: /productos/capuchas-para-bomberos/nomex/
+          - listitem [ref=f5e822]:
+            - link "Capucha PBI Gold® — Mayor exposición térmica, mismo material del traje" [ref=f5e823] [cursor=pointer]:
+              - /url: /productos/capuchas-para-bomberos/pbi/
+          - listitem [ref=f5e824]:
+            - link "Capucha Particulada — Barrera contra fibras y partículas cancerígenas" [ref=f5e825] [cursor=pointer]:
+              - /url: /productos/capuchas-para-bomberos/particulada/
+        - generic [ref=f5e826]:
+          - link "Monjas y capuchas ignífugas para bombero" [ref=f5e827] [cursor=pointer]:
+            - /url: /productos/capuchas-para-bomberos/
+          - link "Consultar opciones de equipo certificado" [ref=f5e828] [cursor=pointer]:
+            - /url: /productos/
+      - generic [ref=f5e829]:
+        - img "Comparativa de modelos de capucha para bombero — Nomex®, PBI Gold® y particulada" [ref=f5e831]
+        - generic [ref=f5e832]:
+          - img "Capucha PBI Gold® certificada NFPA 1970 — vista frontal de estudio" [ref=f5e834]
+          - img "Capucha con protección particulada y Kevlar® para bombero — vista frontal" [ref=f5e836]
+    - generic [ref=f5e839]:
+      - generic [ref=f5e840]:
+        - paragraph [ref=f5e841]: Categoría · Protección Visual y Ocular
+        - 'heading "Gafas y Goggles para Bomberos: Policarbonato ANSI Z87.1, Compatibles con SCBA" [level=2] [ref=f5e842]':
+          - text: "Gafas y Goggles para Bomberos:"
+          - generic [ref=f5e843]: Policarbonato ANSI Z87.1, Compatibles con SCBA
+        - paragraph [ref=f5e844]: "La protección visual del bombero opera en dos escenarios distintos: el goggle sellado para combate interior, donde el humo, las esquirlas y los líquidos presentes en el incendio estructural comprometen los ojos; y la gafa antiimpacto para operaciones de rescate y extricación, donde los fragmentos de vidrio y metal representan el riesgo principal."
+        - paragraph [ref=f5e845]: Lentes de policarbonato certificados ANSI Z87.1 en versiones transparente, ahumado y espejo. Diseño de perfil bajo compatible con el borde inferior del visor del casco NFPA y con el sello perimetral de la máscara SCBA — una condición que los goggles de uso general no cumplen y que invalida el sello del aparato respiratorio si no se verifica antes de la operación.
+        - list "Gafas disponibles" [ref=f5e846]:
+          - listitem [ref=f5e847]:
+            - link "Goggle de Bombero Premium — Sellado, antipolvo y antiesquirlas ANSI Z87.1" [ref=f5e848] [cursor=pointer]:
+              - /url: /productos/gafas-para-bomberos/goggle/
+          - listitem [ref=f5e849]:
+            - link "Gafas de Seguridad Antiimpacto — Rescate, extricación y trabajo técnico" [ref=f5e850] [cursor=pointer]:
+              - /url: /productos/gafas-para-bomberos/seguridad/
+        - generic [ref=f5e851]:
+          - link "Protección visual para bombero" [ref=f5e852] [cursor=pointer]:
+            - /url: /productos/gafas-para-bomberos/
+          - link "Consultar opciones de equipo certificado" [ref=f5e853] [cursor=pointer]:
+            - /url: /productos/
+      - generic [ref=f5e854]:
+        - img "Goggle de bombero en combate interior estructural — protección visual ANSI Z87.1" [ref=f5e856]
+        - generic [ref=f5e857]:
+          - img "Goggle premium lente espejo para bombero — policarbonato certificado ANSI Z87.1" [ref=f5e859]
+          - img "Macro de lente espejo con reflejo de incendio — goggle estructural de bombero" [ref=f5e861]
+    - generic [ref=f5e864]:
+      - generic [ref=f5e865]:
+        - paragraph [ref=f5e866]: Categoría · Agentes Extintores Certificados
+        - 'heading "Extintores Certificados NOM-100: PQS, CO₂, AFFF y Halotron para Cada Clase de Fuego" [level=2] [ref=f5e867]':
+          - text: "Extintores Certificados NOM-100:"
+          - generic [ref=f5e868]: PQS, CO₂, AFFF y Halotron para Cada Clase de Fuego
+        - paragraph [ref=f5e869]: Seleccionar un extintor por precio o tamaño sin considerar la clase de fuego y el agente extintor es el error más frecuente — y el más costoso — en la adquisición de equipo contra incendios. Un extintor PQS aplicado sobre un incendio eléctrico puede propagar el fuego en lugar de controlarlo. La NOM-100-SCFI es el estándar que define el agente, la capacidad y la presión de trabajo adecuados para cada escenario.
+        - paragraph [ref=f5e870]: "Extintores certificados NOM-100 en todas las clases: Polvo Químico Seco multipropósito para Clase A-B-C, CO₂ para equipos eléctricos y salas de servidores, espuma AFFF para Clase B en instalaciones con líquidos inflamables, y Halotron de agente limpio donde el daño residual del agente extintor es inaceptable. Cada unidad incluye garantía, tarjeta de inspección y capacitación de uso básico sin costo."
+        - list "Tipos de extintor disponibles" [ref=f5e871]:
+          - listitem [ref=f5e872]:
+            - link "Extintor PQS — Polvo Químico Seco, Clase A-B-C multipropósito" [ref=f5e873] [cursor=pointer]:
+              - /url: /productos/extintores/
+          - listitem [ref=f5e874]:
+            - link "Extintor CO₂ — Clase B-C, sin residuo, para equipos eléctricos" [ref=f5e875] [cursor=pointer]:
+              - /url: /productos/extintores/
+          - listitem [ref=f5e876]:
+            - link "Extintor Espuma AFFF — Clase B, líquidos inflamables e hidrocarburos" [ref=f5e877] [cursor=pointer]:
+              - /url: /productos/extintores/
+          - listitem [ref=f5e878]:
+            - link "Extintor Halotron — Agente limpio, cero daño residual en equipos" [ref=f5e879] [cursor=pointer]:
+              - /url: /productos/extintores/
+        - generic [ref=f5e880]:
+          - link "Extintores PQS, CO₂ y espuma AFFF" [ref=f5e881] [cursor=pointer]:
+            - /url: /productos/extintores/
+          - link "Consultar opciones de equipo certificado" [ref=f5e882] [cursor=pointer]:
+            - /url: /productos/
+      - generic [ref=f5e883]:
+        - img "Extintores certificados NOM-100 — PQS, CO₂, AFFF y Halotron para cada clase de fuego" [ref=f5e885]
+        - generic [ref=f5e886]:
+          - img "Extintores certificados NOM-100 — vista de producto en línea completa" [ref=f5e888]
+          - img "Extintor de Polvo Químico Seco certificado NOM-100 — uso en industria" [ref=f5e890]
+    - generic [ref=f5e893]:
+      - generic [ref=f5e894]:
+        - paragraph [ref=f5e895]: Categoría · Materiales Peligrosos y CBRN
+        - 'heading "Equipo HAZMAT y CBRN: Trajes Nivel A y B, Descontaminación" [level=2] [ref=f5e896]':
+          - text: "Equipo HAZMAT y CBRN:"
+          - generic [ref=f5e897]: Trajes Nivel A y B, Descontaminación
+        - paragraph [ref=f5e898]: Una respuesta HAZMAT sin equipo de nivel adecuado no es una respuesta — es una exposición con consecuencias legales, médicas y operativas para el cuerpo. El Nivel A encapsulado protege contra gases, vapores y líquidos; el Nivel B proporciona protección respiratoria completa con menor protección de piel. La diferencia no es de grado — es de escenario de exposición.
+        - paragraph [ref=f5e899]: Trajes encapsulados NFPA 1991 Nivel A para agentes CBRN, trajes Nivel B para vapores y aerosoles con menor presión de vapor, y kits de descontaminación rápida para el corredor de decon en el perímetro del incidente. Cada equipo se entrega con protocolo de donning y doffing, lista de compatibilidad química y fecha de vencimiento de fábrica verificada.
+        - list "Equipo HAZMAT disponible" [ref=f5e900]:
+          - listitem [ref=f5e901]:
+            - link "Traje HAZMAT Nivel A Encapsulado — Protección total NFPA 1991 / CBRN" [ref=f5e902] [cursor=pointer]:
+              - /url: /productos/trajes-para-bomberos/traje-hazmat/
+          - listitem [ref=f5e903]:
+            - link "Traje HAZMAT Nivel B — Protección respiratoria + barrera de salpicaduras" [ref=f5e904] [cursor=pointer]:
+              - /url: /productos/hazmat/
+          - listitem [ref=f5e905]:
+            - link "Kit Descontaminación Rápida — Corredor de decon en perímetro de incidente" [ref=f5e906] [cursor=pointer]:
+              - /url: /productos/hazmat/
+        - generic [ref=f5e907]:
+          - link "Equipo para materiales peligrosos" [ref=f5e908] [cursor=pointer]:
+            - /url: /productos/hazmat/
+          - link "Consultar opciones de equipo certificado" [ref=f5e909] [cursor=pointer]:
+            - /url: /productos/
+      - generic [ref=f5e910]:
+        - img "Unidad HAZMAT de respuesta a emergencias con materiales peligrosos — CBRN" [ref=f5e912]
+        - generic [ref=f5e913]:
+          - img "Equipo HAZMAT completo para respuesta a materiales peligrosos" [ref=f5e915]
+          - img "Corredor de descontaminación HAZMAT — decon rápida en perímetro de incidente" [ref=f5e917]
+    - generic [ref=f5e920]:
+      - generic [ref=f5e921]:
+        - paragraph [ref=f5e922]: Categoría · Sistemas y Accesorios Contra Incendios
+        - 'heading "Equipo Contra Incendios Certificado: Mangueras, Lanzas y Sistemas Fijos NOM / NFPA" [level=2] [ref=f5e923]':
+          - text: "Equipo Contra Incendios Certificado:"
+          - generic [ref=f5e924]: Mangueras, Lanzas y Sistemas Fijos NOM / NFPA
+        - paragraph [ref=f5e925]: El equipo contra incendios que falla en operación no es un problema de presupuesto — es un problema de especificación. Una manguera sin la presión de trabajo adecuada para el caudal del autobomba, una lanza sin patrón de descarga regulable o un gabinete sin la presión residual requerida por NOM-002-STPS comprometen toda la cadena de supresión.
+        - paragraph [ref=f5e926]: Mangueras contra incendio en diámetros 1½", 2½" y 3" certificadas NFPA 1961, lanzas de ataque ajustables con patrón recto/niebla y caudal regulable, gabinetes contra incendio NOM-002-STPS con equipo completo, e hidrantes y accesorios de conexión para sistemas fijos y vehículos autobomba. Redactamos especificaciones técnicas por partida para procesos de licitación sin costo.
+        - list "Equipo contra incendios disponible" [ref=f5e927]:
+          - listitem [ref=f5e928]:
+            - link "Manguera contra Incendio NFPA 1961 — 1½\", 2½\" y 3\" presión certificada" [ref=f5e929] [cursor=pointer]:
+              - /url: /productos/equipo-contra-incendios/
+          - listitem [ref=f5e930]:
+            - link "Lanza de Ataque Ajustable — Patrón recto/niebla, caudal regulable" [ref=f5e931] [cursor=pointer]:
+              - /url: /productos/equipo-contra-incendios/
+          - listitem [ref=f5e932]:
+            - link "Gabinete contra Incendio NOM-002-STPS — Equipo completo certificado" [ref=f5e933] [cursor=pointer]:
+              - /url: /productos/equipo-contra-incendios/
+          - listitem [ref=f5e934]:
+            - link "Hidrante y Accesorios — Conexiones para sistemas fijos y autobomba" [ref=f5e935] [cursor=pointer]:
+              - /url: /productos/equipo-contra-incendios/
+        - generic [ref=f5e936]:
+          - link "Equipo contra incendio NOM y NFPA" [ref=f5e937] [cursor=pointer]:
+            - /url: /productos/equipo-contra-incendios/
+          - link "Consultar opciones de equipo certificado" [ref=f5e938] [cursor=pointer]:
+            - /url: /productos/
+      - generic [ref=f5e939]:
+        - img "Panel de bombeo de autobomba — conexiones de manguera y sistema contra incendios" [ref=f5e941]
+        - generic [ref=f5e942]:
+          - img "Manguera contra incendio certificada NFPA 1961 en operación bajo presión" [ref=f5e944]
+          - img "Sistema de espuma AFFF para incendios de líquidos inflamables — instalación fija" [ref=f5e946]
+    - generic [ref=f5e949]:
+      - generic [ref=f5e950]:
+        - paragraph [ref=f5e951]: Categoría · Rescate en Altura y Espacios Confinados
+        - 'heading "Rescate Vertical y Arneses NFPA 1983: Petzl, CMC y Yates — Sistemas Certificados" [level=2] [ref=f5e952]':
+          - text: "Rescate Vertical y Arneses NFPA 1983:"
+          - generic [ref=f5e953]: Petzl, CMC y Yates — Sistemas Certificados
+        - paragraph [ref=f5e954]: "El rescate en altura combina dos riesgos simultáneos: la caída del rescatista y la caída del paciente durante el descenso. La norma NFPA 1983 clasifica el equipo en General Use y Light Use según la carga de trabajo — una distinción que no es opcional cuando el rescate implica paciente más rescatista en la misma línea."
+        - paragraph [ref=f5e955]: Arneses de rescate técnico certificados NFPA 1983 General Use, sistemas de descenso controlado con dispositivo de freno autoasegurante, polipastos de rescate de 3:1 y 6:1 para izaje con carga reducida, y cuerdas de rescate técnico con carga de rotura mínima de 40 kN. Marcas Petzl, CMC Rescue y Yates Gear — los estándares de referencia en rescate técnico en Norte y Latinoamérica.
+        - list "Equipo de rescate vertical disponible" [ref=f5e956]:
+          - listitem [ref=f5e957]:
+            - link "Arnés de Rescate Técnico NFPA 1983 — General Use, paciente + rescatista" [ref=f5e958] [cursor=pointer]:
+              - /url: /productos/rescate-vertical/
+          - listitem [ref=f5e959]:
+            - link "Sistema Descenso Controlado — Dispositivo autoasegurante certificado" [ref=f5e960] [cursor=pointer]:
+              - /url: /productos/rescate-vertical/
+          - listitem [ref=f5e961]:
+            - link "Polipasto y Sistemas de Izaje — 3:1 y 6:1, carga reducida verificada" [ref=f5e962] [cursor=pointer]:
+              - /url: /productos/rescate-vertical/
+          - listitem [ref=f5e963]:
+            - link "Cuerdas y Accesorios — Rotura mínima 40 kN, diámetros 10,5 y 12 mm" [ref=f5e964] [cursor=pointer]:
+              - /url: /productos/rescate-vertical/
+        - generic [ref=f5e965]:
+          - link "Arneses y equipo de rescate vertical" [ref=f5e966] [cursor=pointer]:
+            - /url: /productos/rescate-vertical/
+          - link "Consultar opciones de equipo certificado" [ref=f5e967] [cursor=pointer]:
+            - /url: /productos/
+      - generic [ref=f5e968]:
+        - img "Equipo de rescate vertical certificado NFPA 1983 — arneses, cuerdas y sistemas de descenso" [ref=f5e970]
+        - generic [ref=f5e971]:
+          - img "Rescate en montaña — bomberos con equipo vertical NFPA 1983 en operación" [ref=f5e973]
+          - img "Set completo de rescate técnico — arnés, polipasto y accesorios certificados" [ref=f5e975]
+    - generic [ref=f5e978]:
+      - generic [ref=f5e979]:
+        - paragraph [ref=f5e980]: Categoría · Rescate en Agua y Swift Water
+        - 'heading "Rescate Acuático y Swift Water: Trajes de Inmersión, Chalecos y Embarcaciones" [level=2] [ref=f5e981]':
+          - text: "Rescate Acuático y Swift Water:"
+          - generic [ref=f5e982]: Trajes de Inmersión, Chalecos y Embarcaciones
+        - paragraph [ref=f5e983]: "El rescate acuático expone al elemento a hipotermia, aguas con corriente y contaminación biológica — simultáneamente. El traje de inmersión no es opcional: la pérdida de calor en agua a 20°C compromete la capacidad motora del rescatista en menos de 30 minutos. El equipo correcto define si el rescatista puede completar la operación o se convierte en segunda víctima."
+        - paragraph [ref=f5e984]: Trajes de inmersión de neopreno 3 mm y 5 mm para operaciones en agua fría, chalecos salvavidas de rescate certificados NFPA con diseño que permite natación activa sin restricción de hombros, tablas y equipos swift water para corrientes rápidas, y lanchas de rescate con motor de 4 tiempos. Todo el equipo acuático viene con tabla de selección por temperatura del agua y tipo de operación.
+        - list "Equipo de rescate acuático disponible" [ref=f5e985]:
+          - listitem [ref=f5e986]:
+            - link "Traje de Inmersión / Neopreno — 3 mm y 5 mm, protección térmica verificada" [ref=f5e987] [cursor=pointer]:
+              - /url: /productos/rescate-acuatico/
+          - listitem [ref=f5e988]:
+            - link "Chaleco Salvavidas NFPA Rescate — Natación activa sin restricción" [ref=f5e989] [cursor=pointer]:
+              - /url: /productos/rescate-acuatico/
+          - listitem [ref=f5e990]:
+            - link "Tabla y Equipo Swift Water — Corrientes rápidas y aguas de inundación" [ref=f5e991] [cursor=pointer]:
+              - /url: /productos/rescate-acuatico/
+          - listitem [ref=f5e992]:
+            - link "Lancha y Motor de Rescate — 4 tiempos, configuración rescate rápido" [ref=f5e993] [cursor=pointer]:
+              - /url: /productos/rescate-acuatico/
+        - generic [ref=f5e994]:
+          - link "Equipo de rescate acuático" [ref=f5e995] [cursor=pointer]:
+            - /url: /productos/rescate-acuatico/
+          - link "Consultar opciones de equipo certificado" [ref=f5e996] [cursor=pointer]:
+            - /url: /productos/
+      - generic [ref=f5e997]:
+        - img "Rescate acuático — equipo de bomberos con traje de inmersión y chaleco en operación" [ref=f5e999]
+        - generic [ref=f5e1000]:
+          - img "Lancha de rescate para bomberos — operación en agua con motor 4 tiempos" [ref=f5e1002]
+          - img "Traje de inmersión de neopreno para rescate acuático — protección térmica" [ref=f5e1004]
+    - generic [ref=f5e1007]:
+      - generic [ref=f5e1008]:
+        - paragraph [ref=f5e1009]: Categoría · Primera Respuesta y Atención Prehospitalaria
+        - 'heading "Equipo Médico EMS para Bomberos: Camillas, DEA y Kits de Trauma Prehospitalario" [level=2] [ref=f5e1010]':
+          - text: "Equipo Médico EMS para Bomberos:"
+          - generic [ref=f5e1011]: Camillas, DEA y Kits de Trauma Prehospitalario
+        - paragraph [ref=f5e1012]: En México, el 70% de los cuerpos de bomberos son primera respuesta médica antes de que llegue la ambulancia. Ese dato convierte al equipo médico en equipo operativo — no en complemento. Un DEA disponible en los primeros 3 minutos de un paro cardiorrespiratorio puede triplicar las probabilidades de supervivencia del paciente.
+        - paragraph [ref=f5e1013]: Camillas de rescate plegables con capacidad de 180 kg para extricación en espacios reducidos, desfibriladores DEA semiautomáticos con instrucciones de voz en español y batería de 5 años en espera, y bolsas de trauma prehospitalario con contenido completo según protocolos PHTLS. Todo el equipo EMS que ofrecemos cumple con los requerimientos de la NOM-237-SSA1 para unidades de atención prehospitalaria.
+        - list "Equipo médico disponible" [ref=f5e1014]:
+          - listitem [ref=f5e1015]:
+            - link "Camilla de Rescate Plegable — 180 kg, extricación en espacios reducidos" [ref=f5e1016] [cursor=pointer]:
+              - /url: /productos/equipo-medico/
+          - listitem [ref=f5e1017]:
+            - link "Desfibrilador DEA Semiautomático — Voz en español, batería 5 años en espera" [ref=f5e1018] [cursor=pointer]:
+              - /url: /productos/equipo-medico/
+          - listitem [ref=f5e1019]:
+            - link "Kit de Trauma / Bolsa Prehospitalaria — Protocolo PHTLS completo" [ref=f5e1020] [cursor=pointer]:
+              - /url: /productos/equipo-medico/
+        - generic [ref=f5e1021]:
+          - link "Equipo médico de primera respuesta" [ref=f5e1022] [cursor=pointer]:
+            - /url: /productos/equipo-medico/
+          - link "Consultar opciones de equipo certificado" [ref=f5e1023] [cursor=pointer]:
+            - /url: /productos/
+      - generic [ref=f5e1024]:
+        - img "Equipo médico EMS para bomberos — camilla, DEA y bolsa de trauma prehospitalaria" [ref=f5e1026]
+        - generic [ref=f5e1027]:
+          - img "Equipo médico EMS — línea de productos para primera respuesta prehospitalaria" [ref=f5e1029]
+          - img "Camilla de rescate plegable para bomberos — extricación y traslado prehospitalario" [ref=f5e1031]
+    - generic [ref=f5e1033]:
+      - generic [ref=f5e1034]:
+        - generic [ref=f5e1035]:
+          - generic [ref=f5e1036]: Por qué confiar en BOMBERO.MX
+          - heading "Respaldo técnico y trazabilidad certificada" [level=2] [ref=f5e1037]
+          - paragraph [ref=f5e1038]: Distribuidores especializados directos, con conocimiento técnico de la NFPA y cobertura nacional. No solo entregamos el equipo — respondemos por él.
+        - generic [ref=f5e1039]:
+          - paragraph [ref=f5e1040]:
+            - text: Elegir un proveedor de EPP impacta directamente en la seguridad del personal de primera respuesta. En
+            - strong [ref=f5e1041]: BOMBERO.MX
+            - text: combinamos la distribución directa de MSA, Honeywell, Globe y Bullard con conocimiento técnico real del mercado mexicano — sabemos qué norma aplica a cada operación y qué versión es la vigente.
+          - paragraph [ref=f5e1042]:
+            - text: Operamos desde Ciudad de México con capacidad de envío a los
+            - strong [ref=f5e1043]: 32 estados de la República
+            - text: . Nuestro inventario permanente reduce tiempos de entrega, y cada asesor conoce la normativa NFPA de forma técnica — no solo comercial. Eso marca la diferencia cuando hay una licitación de por medio o cuando el equipo anterior no cumplía lo que decía cumplir.
+      - generic [ref=f5e1044]:
+        - article [ref=f5e1045]:
+          - link [aria-hidden] [ref=f5e1046] [cursor=pointer]:
+            - /url: /nosotros/
+            - generic:
+              - generic: 500+ estaciones
+              - generic: NFPA
+          - generic [ref=f5e1048]:
+            - heading [level=3] [ref=f5e1049]:
+              - link "Experiencia Comprobada" [ref=f5e1050] [cursor=pointer]:
+                - /url: /nosotros/
+            - paragraph [ref=f5e1051]: Más de 500 estaciones de bomberos equipadas en México. Proveedor de confianza para Protección Civil estatal, brigadas de PEMEX, CFE y empresas del sector industrial. Casos de éxito documentados y referencias verificables.
+            - link "Nuestra trayectoria en equipo para bomberos" [ref=f5e1052] [cursor=pointer]:
+              - /url: /nosotros/
+        - article [ref=f5e1053]:
+          - link [aria-hidden] [ref=f5e1054] [cursor=pointer]:
+            - /url: /productos/
+            - generic:
+              - generic: 7 marcas autorizadas
+              - generic: NFPA
+          - generic [ref=f5e1056]:
+            - heading [level=3] [ref=f5e1057]:
+              - link "Marcas Líderes Mundiales" [ref=f5e1058] [cursor=pointer]:
+                - /url: /productos/
+            - paragraph [ref=f5e1059]: Distribuidores especializados de MSA, Honeywell, Globe, Bullard, Cairns, Lion y Holmatro. Equipos fabricados bajo los más altos estándares internacionales. Autenticidad garantizada con números de serie verificables.
+            - link "Equipo de protección para bomberos" [ref=f5e1060] [cursor=pointer]:
+              - /url: /productos/
+        - article [ref=f5e1061]:
+          - link [aria-hidden] [ref=f5e1062] [cursor=pointer]:
+            - /url: /contacto/
+            - generic:
+              - generic: Especialistas NFPA
+              - generic: NFPA
+          - generic [ref=f5e1064]:
+            - heading [level=3] [ref=f5e1065]:
+              - link "Asesoría Técnica Gratuita" [ref=f5e1066] [cursor=pointer]:
+                - /url: /contacto/
+            - paragraph [ref=f5e1067]: Especialistas certificados en normativa NFPA y equipamiento contra incendios. Elaboramos especificaciones técnicas, comparativos y recomendaciones personalizadas según el tipo de riesgo. Apoyo en procesos de licitación pública.
+            - link "Solicitar asesoría" [ref=f5e1068] [cursor=pointer]:
+              - /url: /contacto/
+        - article [ref=f5e1069]:
+          - link [aria-hidden] [ref=f5e1070] [cursor=pointer]:
+            - /url: /cotizar/
+            - generic:
+              - generic: Entrega inmediata
+              - generic: NFPA
+          - generic [ref=f5e1072]:
+            - heading [level=3] [ref=f5e1073]:
+              - link "Stock Permanente" [ref=f5e1074] [cursor=pointer]:
+                - /url: /cotizar/
+            - paragraph [ref=f5e1075]: "Inventario activo de los productos más demandados: trajes estructurales, cascos, guantes, botas y SCBA en tallas estándar. Disponibilidad inmediata sin tiempos de espera. Equipos especializados bajo pedido con tiempos garantizados."
+            - link "Consultar disponibilidad" [ref=f5e1076] [cursor=pointer]:
+              - /url: /cotizar/
+        - article [ref=f5e1077]:
+          - link [aria-hidden] [ref=f5e1078] [cursor=pointer]:
+            - /url: /contacto/
+            - generic:
+              - generic: 32 estados
+              - generic: NFPA
+          - generic [ref=f5e1080]:
+            - heading [level=3] [ref=f5e1081]:
+              - link "Logística Nacional" [ref=f5e1082] [cursor=pointer]:
+                - /url: /contacto/
+            - paragraph [ref=f5e1083]: Red de distribución optimizada para equipo contra incendios. Entregas coordinadas directamente en estaciones, dependencias gubernamentales e instalaciones industriales. Embalaje especializado y seguro de envío incluido.
+            - link "Cobertura de entrega nacional" [ref=f5e1084] [cursor=pointer]:
+              - /url: /contacto/
+        - article [ref=f5e1085]:
+          - link [aria-hidden] [ref=f5e1086] [cursor=pointer]:
+            - /url: /cotizar/
+            - generic:
+              - generic: Atención personalizada
+              - generic: NFPA
+          - generic [ref=f5e1088]:
+            - heading [level=3] [ref=f5e1089]:
+              - link "Ejecutivo de Cuenta Asignado" [ref=f5e1090] [cursor=pointer]:
+                - /url: /cotizar/
+            - paragraph [ref=f5e1091]: Un solo contacto para todas tus necesidades. Seguimiento personalizado desde la cotización hasta la entrega. Recordatorios de mantenimiento, renovación de equipos y acceso prioritario a nuevos productos y promociones.
+            - link "Cotizar equipamiento para tu estación" [ref=f5e1092] [cursor=pointer]:
+              - /url: /cotizar/
+        - article [ref=f5e1093]:
+          - link [aria-hidden] [ref=f5e1094] [cursor=pointer]:
+            - /url: /productos/
+            - generic:
+              - generic: 500+ productos
+              - generic: NFPA
+          - generic [ref=f5e1096]:
+            - heading [level=3] [ref=f5e1097]:
+              - link "Catálogo Completo" [ref=f5e1098] [cursor=pointer]:
+                - /url: /productos/
+            - paragraph [ref=f5e1099]: 16 categorías de equipo certificado NFPA. Trajes, cascos, guantes, botas, SCBA, herramientas de rescate, extintores, HAZMAT y más. Fichas técnicas y certificados de laboratorio disponibles para cada producto.
+            - link "Equipo de protección para bomberos" [ref=f5e1100] [cursor=pointer]:
+              - /url: /productos/
+        - article [ref=f5e1101]:
+          - link [aria-hidden] [ref=f5e1102] [cursor=pointer]:
+            - /url: /contacto/
+            - generic:
+              - generic: Hasta 10 años
+              - generic: NFPA
+          - generic [ref=f5e1104]:
+            - heading [level=3] [ref=f5e1105]:
+              - link "Garantía Total" [ref=f5e1106] [cursor=pointer]:
+                - /url: /contacto/
+            - paragraph [ref=f5e1107]: Respaldo directo de fábrica en cada producto. Garantía extendida de hasta 10 años en trajes estructurales. Servicio técnico autorizado, refacciones originales y soporte post-venta permanente. Tu inversión protegida.
+            - link "Garantía y soporte postventa" [ref=f5e1108] [cursor=pointer]:
+              - /url: /contacto/
+    - generic [ref=f5e1110]:
+      - generic [ref=f5e1111]:
+        - generic [ref=f5e1112]:
+          - generic [ref=f5e1113]: Empresas y aliados
+          - heading "Empresas de equipo contra incendio con las que trabajamos" [level=2] [ref=f5e1114]
+          - paragraph [ref=f5e1115]: Integradores de sistemas contra incendio, empresas de seguridad industrial y proveedores de servicios que equipan a sus clientes y brigadas con producto de BOMBERO.MX.
+        - paragraph [ref=f5e1117]:
+          - text: Además de estas empresas, atendemos a
+          - strong [ref=f5e1118]: H. Cuerpos de Bomberos
+          - text: ", unidades de"
+          - strong [ref=f5e1119]: Protección Civil
+          - text: "y"
+          - strong [ref=f5e1120]: brigadas industriales
+          - text: en toda la República.
+      - paragraph [ref=f5e1121]: "Todas las empresas de esta lista pertenecen al mismo grupo empresarial que BOMBERO.MX. Las publicamos porque la relación de suministro es real, y lo decimos porque no son clientes independientes: llamarlas así sería presentar como opinión ajena lo que es casa propia."
+      - generic [ref=f5e1122]:
+        - heading "Protección contra incendio" [level=3] [ref=f5e1123]
+        - list [ref=f5e1124]:
+          - listitem [ref=f5e1125]:
+            - img "Gabinete contra incendio abierto con manguera, válvula de latón y extintor" [ref=f5e1126]
+            - generic [ref=f5e1127]:
+              - paragraph [ref=f5e1128]:
+                - link "Equipos Contra Incendio" [ref=f5e1129] [cursor=pointer]:
+                  - /url: https://equiposcontraincendio.com/
+              - paragraph [ref=f5e1130]: "Equipa inmuebles en CDMX y Edomex: venta, instalación y mantenimiento de extintores, detección y sistemas."
+              - link "Venta de equipo contra incendio" [ref=f5e1131] [cursor=pointer]:
+                - /url: https://equiposcontraincendio.com/productos/
+          - listitem [ref=f5e1132]:
+            - img "Traje estructural de bombero colgado en un locker con casco y botas" [ref=f5e1133]
+            - generic [ref=f5e1134]:
+              - paragraph [ref=f5e1135]:
+                - link "Trajes Bomberos" [ref=f5e1136] [cursor=pointer]:
+                  - /url: https://trajesbomberos.com/
+              - paragraph [ref=f5e1137]: Fichas por modelo y por pieza de trajes estructurales, forestales, de brigadista y aluminizados.
+              - link "Traje de bombero profesional" [ref=f5e1138] [cursor=pointer]:
+                - /url: https://trajesbomberos.com/
+          - listitem [ref=f5e1139]:
+            - img "Manguera, pitón, hacha, casco y botas de bombero ordenados en el piso" [ref=f5e1140]
+            - generic [ref=f5e1141]:
+              - paragraph [ref=f5e1142]:
+                - link "FIREFIGHTERS" [ref=f5e1143] [cursor=pointer]:
+                  - /url: https://firefighters.mx/
+              - paragraph [ref=f5e1144]: Equipo contra incendio y EPP para cuerpos de bomberos y brigadas industriales.
+              - link "Equipo contra incendio para bomberos" [ref=f5e1145] [cursor=pointer]:
+                - /url: https://firefighters.mx/
+          - listitem [ref=f5e1146]:
+            - img "Boquillas contra incendio de latón y aluminio sobre una mesa de acero" [ref=f5e1147]
+            - generic [ref=f5e1148]:
+              - paragraph [ref=f5e1149]:
+                - link "Gama de México" [ref=f5e1150] [cursor=pointer]:
+                  - /url: https://gamademexico.com/
+              - paragraph [ref=f5e1151]: Boquillas, válvulas y conexiones con certificación UL/FM para redes de hidrantes.
+              - link "Boquillas contra incendios" [ref=f5e1152] [cursor=pointer]:
+                - /url: https://gamademexico.com/boquillas-contra-incendios
+          - listitem [ref=f5e1153]:
+            - img "Estación de extintores dentro de una nave industrial" [ref=f5e1154]
+            - generic [ref=f5e1155]:
+              - paragraph [ref=f5e1156]:
+                - link "LGA Contra Incendios" [ref=f5e1157] [cursor=pointer]:
+                  - /url: https://lgacontraincendios.com/
+              - paragraph [ref=f5e1158]: Ingeniería, instalación y servicio de sistemas contra incendio en Querétaro.
+              - link "Sistemas contra incendios en Querétaro" [ref=f5e1159] [cursor=pointer]:
+                - /url: https://lgacontraincendios.com/sistemas-contra-incendios-queretaro/
+          - listitem [ref=f5e1160]:
+            - img "Rociadores automáticos en tubería roja bajo el techo de una nave" [ref=f5e1161]
+            - generic [ref=f5e1162]:
+              - paragraph [ref=f5e1163]:
+                - link "MESECI" [ref=f5e1164] [cursor=pointer]:
+                  - /url: https://meseci.com.mx/
+              - paragraph [ref=f5e1165]: Diseño e instalación de rociadores, hidrantes y extintores con un solo responsable.
+              - link "Sistemas de rociadores contra incendios" [ref=f5e1166] [cursor=pointer]:
+                - /url: https://meseci.com.mx/sistemas-de-rociadores-contra-incendios
+          - listitem [ref=f5e1167]:
+            - img "Extintores montados en el muro de un almacén corporativo" [ref=f5e1168]
+            - generic [ref=f5e1169]:
+              - paragraph [ref=f5e1170]:
+                - link "Proyecto Red" [ref=f5e1171] [cursor=pointer]:
+                  - /url: https://proyectored.com.mx/
+              - paragraph [ref=f5e1172]: Extintores y sistemas de detección para empresas, con venta por volumen.
+              - link "Extintores para empresas" [ref=f5e1173] [cursor=pointer]:
+                - /url: https://proyectored.com.mx/extintores/
+          - listitem [ref=f5e1174]:
+            - img "Técnico recarga un extintor PQS en un taller de servicio" [ref=f5e1175]
+            - generic [ref=f5e1176]:
+              - paragraph [ref=f5e1177]:
+                - link "Mantenimiento de Extintores" [ref=f5e1178] [cursor=pointer]:
+                  - /url: https://mantenimientodeextintores.mx/
+              - paragraph [ref=f5e1179]: Recarga, mantenimiento anual y prueba hidrostática de extintores.
+              - link "Recarga de extintores" [ref=f5e1180] [cursor=pointer]:
+                - /url: https://mantenimientodeextintores.mx/recarga-de-extintores
+          - listitem [ref=f5e1181]:
+            - img "Monitor contra incendios fijo en una terminal de almacenamiento" [ref=f5e1182]
+            - generic [ref=f5e1183]:
+              - paragraph [ref=f5e1184]:
+                - link "Monitores Contra Incendios" [ref=f5e1185] [cursor=pointer]:
+                  - /url: https://monitorescontraincendios.com/
+              - paragraph [ref=f5e1186]: Monitores fijos y automáticos para terminales, plantas y aeropuertos.
+              - link "Monitores contra incendios fijos" [ref=f5e1187] [cursor=pointer]:
+                - /url: https://monitorescontraincendios.com/monitores-fijos/
+          - listitem [ref=f5e1188]:
+            - img "Detector de humo y estación manual de alarma en una oficina" [ref=f5e1189]
+            - generic [ref=f5e1190]:
+              - paragraph [ref=f5e1191]:
+                - link "TuBombero" [ref=f5e1192] [cursor=pointer]:
+                  - /url: https://tubombero.com/
+              - paragraph [ref=f5e1193]: Alarmas, detectores de humo, hidrantes y señalización para empresas.
+              - link "Equipo y sistemas de protección contra incendios" [ref=f5e1194] [cursor=pointer]:
+                - /url: https://tubombero.com/
+      - generic [ref=f5e1195]:
+        - heading "Seguridad industrial y patrimonial" [level=3] [ref=f5e1196]
+        - list [ref=f5e1197]:
+          - listitem [ref=f5e1198]:
+            - 'img "Equipo de protección personal industrial: casco, lentes, guantes y arnés" [ref=f5e1199]'
+            - generic [ref=f5e1200]:
+              - paragraph [ref=f5e1201]:
+                - link "Equipo de Seguridad Industrial" [ref=f5e1202] [cursor=pointer]:
+                  - /url: https://equipo-de-seguridad-industrial.com/
+              - paragraph [ref=f5e1203]: EPP certificado, prevención de caídas y señalización para planta.
+              - link "Equipo de seguridad industrial certificado" [ref=f5e1204] [cursor=pointer]:
+                - /url: https://equipo-de-seguridad-industrial.com/
+          - listitem [ref=f5e1205]:
+            - generic [ref=f5e1206]:
+              - paragraph [ref=f5e1207]:
+                - link "Seguridad Privada" [ref=f5e1208] [cursor=pointer]:
+                  - /url: https://seguridad-privada.com.mx/
+              - paragraph [ref=f5e1209]: Servicios de seguridad integral para empresas.
+          - listitem [ref=f5e1210]:
+            - generic [ref=f5e1211]:
+              - paragraph [ref=f5e1212]:
+                - link "Seguridad Privada Condominios" [ref=f5e1213] [cursor=pointer]:
+                  - /url: https://seguridadprivadacondominios.com/
+              - paragraph [ref=f5e1214]: Seguridad residencial y corporativa.
+    - generic [ref=f5e1216]:
+      - generic [ref=f5e1217]:
+        - generic [ref=f5e1218]:
+          - generic [ref=f5e1219]: Conoce BOMBERO.MX
+          - heading "Cómo trabajamos — del pedido a la entrega" [level=2] [ref=f5e1220]
+          - paragraph [ref=f5e1221]: Más de 15 años equipando cuerpos de bomberos, protección civil y brigadas industriales en los 32 estados. Cada proceso incluye asesoría técnica, trazabilidad de origen y certificado de laboratorio.
+        - generic [ref=f5e1222]:
+          - paragraph [ref=f5e1223]:
+            - strong [ref=f5e1224]: BOMBERO.MX
+            - text: "nació con una sola misión: proteger a quienes protegen a los demás. En 15 años hemos construido relaciones directas con los fabricantes líderes del mundo —MSA, Honeywell, Globe, Bullard— para garantizar que el producto que te entregamos es exactamente el que dijimos que ibas a recibir."
+          - paragraph [ref=f5e1225]:
+            - text: Trabajamos con
+            - strong [ref=f5e1226]: H. Cuerpos de Bomberos
+            - text: ", unidades de"
+            - strong [ref=f5e1227]: Protección Civil
+            - text: ","
+            - strong [ref=f5e1228]: brigadas industriales
+            - text: y empresas que necesitan equipamiento certificado para su personal de primera respuesta. Nuestros procesos están diseñados para responder a los tiempos y exigencias documentales de la administración pública.
+      - generic [ref=f5e1229]:
+        - generic [ref=f5e1230]:
+          - article [ref=f5e1231]:
+            - heading "Distribución nacional con certificado de laboratorio por pedido" [level=3] [ref=f5e1232]
+            - paragraph [ref=f5e1233]:
+              - text: Desde
+              - strong [ref=f5e1234]: Ciudad de México
+              - text: distribuimos a los
+              - strong [ref=f5e1235]: 32 estados de la República
+              - text: ", con paquetería certificada, seguro de envío incluido y tiempos de entrega comprometidos desde la confirmación del pedido. EPP estándar llega en 24–48 hrs a la ZMCM y en 3–5 días al resto del país."
+            - paragraph [ref=f5e1236]: "Nuestro catálogo cubre las 16 categorías que necesita una estación profesional: trajes estructurales, cascos, SCBA, guantes, botas, equipo forestal, herramientas de rescate, tecnología de detección y protección HAZMAT — todo con certificado de laboratorio acreditado por número de lote."
+          - article [ref=f5e1237]:
+            - 'heading "Certificaciones internacionales: NFPA, UL, EN y NOM" [level=3] [ref=f5e1238]'
+            - paragraph [ref=f5e1239]:
+              - text: "Todo el equipo que distribuimos cumple con las normas que el mercado mexicano exige o supera:"
+              - strong [ref=f5e1240]: NFPA
+              - text: (National Fire Protection Association),
+              - strong [ref=f5e1241]: UL
+              - text: (Underwriters Laboratories),
+              - strong [ref=f5e1242]: EN
+              - text: (European Standards) y
+              - strong [ref=f5e1243]: NOM
+              - text: (Norma Oficial Mexicana).
+            - paragraph [ref=f5e1244]:
+              - text: Somos distribuidores especializados directos de
+              - strong [ref=f5e1245]: MSA
+              - text: ","
+              - strong [ref=f5e1246]: Honeywell
+              - text: ","
+              - strong [ref=f5e1247]: Globe
+              - text: ","
+              - strong [ref=f5e1248]: Bullard
+              - text: ","
+              - strong [ref=f5e1249]: Cairns
+              - text: ","
+              - strong [ref=f5e1250]: Lion
+              - text: "y"
+              - strong [ref=f5e1251]: Holmatro
+              - text: . Cada producto incluye documentación completa, número de serie verificable y garantía de fábrica — no revendemos producto de origen no verificable.
+          - article [ref=f5e1252]:
+            - heading "Asesoría, especificación y capacitación — sin costo extra" [level=3] [ref=f5e1253]
+            - paragraph [ref=f5e1254]: "Nuestro proceso no termina en la entrega. Antes de cotizar identificamos el riesgo predominante de tu operación y la norma aplicable. Si hay una licitación, redactamos las especificaciones técnicas correctas. Y cuando llega el equipo, lo presentamos al personal. Todo esto está incluido:"
+            - list [ref=f5e1255]:
+              - listitem [ref=f5e1256]:
+                - strong [ref=f5e1257]: Asesoría técnica gratuita
+                - text: para seleccionar el equipo adecuado
+              - listitem [ref=f5e1258]:
+                - strong [ref=f5e1259]: Especificaciones técnicas
+                - text: para licitaciones públicas
+              - listitem [ref=f5e1260]:
+                - strong [ref=f5e1261]: Capacitación
+                - text: en uso y mantenimiento de equipos
+              - listitem [ref=f5e1262]:
+                - strong [ref=f5e1263]: Servicio post-venta
+                - text: y soporte técnico permanente
+              - listitem [ref=f5e1264]:
+                - strong [ref=f5e1265]: Envíos a los 32 estados
+                - text: con tiempos de entrega garantizados
+              - listitem [ref=f5e1266]:
+                - strong [ref=f5e1267]: Facturación
+                - text: para gobierno, empresas y particulares
+        - complementary [ref=f5e1268]:
+          - generic [ref=f5e1269]:
+            - heading "Cobertura Nacional" [level=4] [ref=f5e1270]
+            - paragraph [ref=f5e1271]: Envíos a los 32 estados de la República Mexicana
+            - generic [ref=f5e1272]:
+              - link "CDMX" [ref=f5e1273] [cursor=pointer]:
+                - /url: /directorio/ciudad-de-mexico/
+              - link "Monterrey" [ref=f5e1274] [cursor=pointer]:
+                - /url: /directorio/nuevo-leon/
+              - link "Guadalajara" [ref=f5e1275] [cursor=pointer]:
+                - /url: /directorio/jalisco/
+              - link "Puebla" [ref=f5e1276] [cursor=pointer]:
+                - /url: /directorio/puebla/
+              - link "Tijuana" [ref=f5e1277] [cursor=pointer]:
+                - /url: /directorio/baja-california/
+              - link "León" [ref=f5e1278] [cursor=pointer]:
+                - /url: /directorio/guanajuato/
+              - link "Cancún" [ref=f5e1279] [cursor=pointer]:
+                - /url: /directorio/quintana-roo/
+              - link "Mérida" [ref=f5e1280] [cursor=pointer]:
+                - /url: /directorio/yucatan/
+              - link "Querétaro" [ref=f5e1281] [cursor=pointer]:
+                - /url: /directorio/queretaro/
+              - link "+23 estados" [ref=f5e1282] [cursor=pointer]:
+                - /url: /directorio/
+          - generic [ref=f5e1283]:
+            - heading "Sectores que Atendemos" [level=4] [ref=f5e1284]
+            - list [ref=f5e1285]:
+              - listitem [ref=f5e1286]: H. Cuerpos de Bomberos
+              - listitem [ref=f5e1287]: Protección Civil
+              - listitem [ref=f5e1288]: Brigadas Industriales
+              - listitem [ref=f5e1289]: PEMEX y CFE
+              - listitem [ref=f5e1290]: Aeropuertos (ARFF)
+              - listitem [ref=f5e1291]: Hospitales y Hoteles
+          - generic [ref=f5e1292]:
+            - heading "Ubicación" [level=4] [ref=f5e1293]
+            - generic [ref=f5e1294]:
+              - strong [ref=f5e1295]: BOMBERO.MX
+              - text: Av. Tamaulipas 150, Piso 13 Col. Condesa, Cuauhtémoc 06140 Ciudad de México, CDMX
+            - paragraph [ref=f5e1296]: "Lunes a Viernes: 9:00 - 18:00 hrs"
+          - generic [ref=f5e1297]:
+            - heading "¿Necesitas Cotizar?" [level=4] [ref=f5e1298]
+            - paragraph [ref=f5e1299]: Consulta el catálogo y las especificaciones disponibles para tu estación o empresa
+            - link "Consultar catálogo técnico de BOMBERO.MX" [ref=f5e1300] [cursor=pointer]:
+              - /url: /productos/
+    - generic [ref=f5e1302]:
+      - generic [ref=f5e1304]:
+        - generic [ref=f5e1305]: Preguntas frecuentes
+        - heading "Lo que más nos preguntan — y las respuestas reales" [level=2] [ref=f5e1306]
+        - paragraph [ref=f5e1307]: Preguntas técnicas, de normativa y de proceso para estructurar una partida de equipo de protección.
+      - generic [ref=f5e1309]:
+        - generic [ref=f5e1310]:
+          - group [ref=f5e1311]:
+            - generic "01 ¿Qué determina el costo de equipar a un bombero con EPP certificado NFPA? −" [ref=f5e1312] [cursor=pointer]:
+              - generic [ref=f5e1313]: "01"
+              - generic [ref=f5e1314]: ¿Qué determina el costo de equipar a un bombero con EPP certificado NFPA?
+              - text: −
+            - paragraph [ref=f5e1316]: La partida debe definir la norma y su edición —NFPA 1970 consolidada o la referencia histórica NFPA 1971—, la capa exterior (Nomex® IIIA o PBI Gold®), la barrera de humedad y el forro térmico. Cambia con el perfil operativo, tallas, cantidad de bomberos por turno y relación de SCBA. En cilindros, debe indicar acero, compuesto o fibra de carbono y su prueba hidrostática. Incluye certificado de laboratorio acreditado por lote, vida útil de 10 años y los requerimientos de mantenimiento y limpieza avanzada durante el ciclo de vida.
+          - group [ref=f5e1317]:
+            - generic "02 ¿La norma NFPA es obligatoria en México para equipo de bomberos? +" [ref=f5e1318] [cursor=pointer]:
+              - generic [ref=f5e1319]: "02"
+              - generic [ref=f5e1320]: ¿La norma NFPA es obligatoria en México para equipo de bomberos?
+              - text: +
+          - group [ref=f5e1321]:
+            - generic "03 ¿Cuánto dura el equipo de bombero y cuándo hay que renovarlo? +" [ref=f5e1322] [cursor=pointer]:
+              - generic [ref=f5e1323]: "03"
+              - generic [ref=f5e1324]: ¿Cuánto dura el equipo de bombero y cuándo hay que renovarlo?
+              - text: +
+          - group [ref=f5e1325]:
+            - generic "04 ¿Tienen experiencia con licitaciones públicas y fondos gubernamentales? +" [ref=f5e1326] [cursor=pointer]:
+              - generic [ref=f5e1327]: "04"
+              - generic [ref=f5e1328]: ¿Tienen experiencia con licitaciones públicas y fondos gubernamentales?
+              - text: +
+          - group [ref=f5e1329]:
+            - generic "05 ¿Qué diferencia hay entre un distribuidor especializado y un proveedor genérico? +" [ref=f5e1330] [cursor=pointer]:
+              - generic [ref=f5e1331]: "05"
+              - generic [ref=f5e1332]: ¿Qué diferencia hay entre un distribuidor especializado y un proveedor genérico?
+              - text: +
+          - group [ref=f5e1333]:
+            - generic "06 ¿Cuánto tiempo tarda el equipo en llegar a cualquier estado de México? +" [ref=f5e1334] [cursor=pointer]:
+              - generic [ref=f5e1335]: "06"
+              - generic [ref=f5e1336]: ¿Cuánto tiempo tarda el equipo en llegar a cualquier estado de México?
+              - text: +
+          - group [ref=f5e1337]:
+            - generic "07 ¿Pueden capacitar al personal con el equipo adquirido? +" [ref=f5e1338] [cursor=pointer]:
+              - generic [ref=f5e1339]: "07"
+              - generic [ref=f5e1340]: ¿Pueden capacitar al personal con el equipo adquirido?
+              - text: +
+          - group [ref=f5e1341]:
+            - generic "08 ¿Brindan asesoría técnica gratuita antes de comprar? +" [ref=f5e1342] [cursor=pointer]:
+              - generic [ref=f5e1343]: "08"
+              - generic [ref=f5e1344]: ¿Brindan asesoría técnica gratuita antes de comprar?
+              - text: +
+          - group [ref=f5e1345]:
+            - generic "09 ¿A qué otros sectores además de bomberos atienden? +" [ref=f5e1346] [cursor=pointer]:
+              - generic [ref=f5e1347]: "09"
+              - generic [ref=f5e1348]: ¿A qué otros sectores además de bomberos atienden?
+              - text: +
+        - complementary "¿Tienes otra pregunta?" [ref=f5e1349]:
+          - heading "¿Tienes otra pregunta?" [level=3] [ref=f5e1350]
+          - paragraph [ref=f5e1351]:
+            - text: Envíanos tus datos y se abrirá WhatsApp con tu solicitud ya escrita. En una emergencia marca
+            - link "911" [ref=f5e1352] [cursor=pointer]:
+              - /url: tel:911
+            - text: .
+          - generic [ref=f5e1353]:
+            - generic [ref=f5e1354]:
+              - generic [ref=f5e1355]:
+                - generic [ref=f5e1356]:
+                  - generic [ref=f5e1357]: Nombre *
+                  - textbox "Nombre" [ref=f5e1358]
+                - generic [ref=f5e1359]:
+                  - generic [ref=f5e1360]: Empresa o institución (opcional)
+                  - textbox "Empresa o institución (opcional)" [ref=f5e1361]
+              - generic [ref=f5e1362]:
+                - generic [ref=f5e1363]:
+                  - generic [ref=f5e1364]: Estado *
+                  - combobox "Estado" [ref=f5e1365]:
+                    - option "Selecciona tu estado" [selected]
+                    - option "Aguascalientes"
+                    - option "Baja California"
+                    - option "Baja California Sur"
+                    - option "Campeche"
+                    - option "Chiapas"
+                    - option "Chihuahua"
+                    - option "Ciudad de México"
+                    - option "Coahuila de Zaragoza"
+                    - option "Colima"
+                    - option "Durango"
+                    - option "Estado de México"
+                    - option "Guanajuato"
+                    - option "Guerrero"
+                    - option "Hidalgo"
+                    - option "Jalisco"
+                    - option "Michoacán"
+                    - option "Morelos"
+                    - option "Nayarit"
+                    - option "Nuevo León"
+                    - option "Oaxaca"
+                    - option "Puebla"
+                    - option "Querétaro"
+                    - option "Quintana Roo"
+                    - option "San Luis Potosí"
+                    - option "Sinaloa"
+                    - option "Sonora"
+                    - option "Tabasco"
+                    - option "Tamaulipas"
+                    - option "Tlaxcala"
+                    - option "Veracruz"
+                    - option "Yucatán"
+                    - option "Zacatecas"
+                - generic [ref=f5e1366]:
+                  - generic [ref=f5e1367]: Tipo de cliente *
+                  - combobox "Tipo de cliente" [ref=f5e1368]:
+                    - option "Selecciona una opción" [selected]
+                    - option "Cuerpo de bomberos"
+                    - option "Protección civil"
+                    - option "Industria"
+                    - option "Otro"
+              - generic [ref=f5e1369]:
+                - generic [ref=f5e1370]: Producto de interés *
+                - combobox "Producto de interés" [ref=f5e1371]:
+                  - option "Selecciona un producto" [selected]
+                  - option "Trajes de Bombero"
+                  - option "Cascos para Bombero"
+                  - option "Guantes para Bombero"
+                  - option "Botas para Bombero"
+                  - option "Capuchas y Monjas"
+                  - option "Gafas y Protección Visual"
+                  - option "SCBA — Respiración"
+                  - option "Equipo Forestal"
+                  - option "HAZMAT y CBRN"
+                  - option "Rescate Vertical"
+                  - option "Rescate Acuático"
+                  - option "Herramientas de Rescate"
+                  - option "Tecnología y Detección"
+                  - option "Extintores"
+                  - option "Equipo Contra Incendios"
+                  - option "Equipo Médico / EMS"
+              - generic [ref=f5e1372]:
+                - generic [ref=f5e1373]: Tu pregunta o mensaje (opcional)
+                - textbox "Tu pregunta o mensaje (opcional)" [ref=f5e1374]:
+                  - /placeholder: Tallas, norma requerida, fecha objetivo, licitación…
+              - button "Enviar por WhatsApp" [ref=f5e1375] [cursor=pointer]
+              - paragraph [ref=f5e1376]: "* Campo obligatorio."
+            - paragraph [ref=f5e1377]:
+              - text: ¿Prefieres escribir directo?
+              - link "Abrir WhatsApp (+52 55 6034 8981)" [ref=f5e1378] [cursor=pointer]:
+                - /url: https://wa.me/525560348981?text=Hola%2C%20quiero%20cotizar%20equipo%20para%20bomberos
+    - generic [ref=f5e1380]:
+      - generic [ref=f5e1381]:
+        - generic [ref=f5e1382]:
+          - generic [ref=f5e1383]: Directorio Nacional
+          - heading "Estaciones de Bomberos en México" [level=2] [ref=f5e1384]
+          - paragraph [ref=f5e1385]: Encuentra la estación de bomberos más cercana a ti. Directorio completo con información de contacto, teléfonos de emergencia y ubicación de todas las estaciones en los 32 estados.
+        - generic [ref=f5e1386]:
+          - paragraph [ref=f5e1387]:
+            - text: En
+            - strong [ref=f5e1388]: BOMBERO.MX
+            - text: hemos desarrollado el
+            - strong [ref=f5e1389]: directorio más completo de estaciones de bomberos en México
+            - text: . Nuestra base de datos incluye información actualizada de los
+            - strong [ref=f5e1390]: H. Cuerpos de Bomberos
+            - text: "en las 32 entidades federativas: números de emergencia, direcciones físicas, horarios de atención y datos de contacto directo. Ya sea que te encuentres en"
+            - strong [ref=f5e1391]: Ciudad de México, Monterrey, Guadalajara, Tijuana, Puebla, León
+            - text: o cualquier municipio del país, aquí encontrarás la estación de bomberos más cercana a tu ubicación.
+          - paragraph [ref=f5e1392]:
+            - text: Este directorio es un
+            - strong [ref=f5e1393]: servicio gratuito para la comunidad
+            - text: que busca facilitar el acceso a los servicios de emergencia y reconocer la labor heroica de los bomberos mexicanos. Además de los
+            - strong [ref=f5e1394]: teléfonos de emergencia locales
+            - text: ", incluimos información sobre servicios especializados: rescate vehicular, atención a incendios estructurales, materiales peligrosos (HAZMAT), rescate en alturas y servicios pre-hospitalarios."
+            - strong [ref=f5e1395]: Conoce a tu cuerpo de bomberos local
+            - text: y mantén sus datos de contacto siempre a la mano.
+      - generic [ref=f5e1396]:
+        - link "AGS Aguascalientes" [ref=f5e1397] [cursor=pointer]:
+          - /url: /directorio/aguascalientes/
+          - generic [ref=f5e1398]: AGS
+          - generic [ref=f5e1399]: Aguascalientes
+        - link "BC Baja California" [ref=f5e1400] [cursor=pointer]:
+          - /url: /directorio/baja-california/
+          - generic [ref=f5e1401]: BC
+          - generic [ref=f5e1402]: Baja California
+        - link "BCS Baja California Sur" [ref=f5e1403] [cursor=pointer]:
+          - /url: /directorio/baja-california-sur/
+          - generic [ref=f5e1404]: BCS
+          - generic [ref=f5e1405]: Baja California Sur
+        - link "CAM Campeche" [ref=f5e1406] [cursor=pointer]:
+          - /url: /directorio/campeche/
+          - generic [ref=f5e1407]: CAM
+          - generic [ref=f5e1408]: Campeche
+        - link "CHIS Chiapas" [ref=f5e1409] [cursor=pointer]:
+          - /url: /directorio/chiapas/
+          - generic [ref=f5e1410]: CHIS
+          - generic [ref=f5e1411]: Chiapas
+        - link "CHIH Chihuahua" [ref=f5e1412] [cursor=pointer]:
+          - /url: /directorio/chihuahua/
+          - generic [ref=f5e1413]: CHIH
+          - generic [ref=f5e1414]: Chihuahua
+        - link "CDMX Ciudad de México" [ref=f5e1415] [cursor=pointer]:
+          - /url: /directorio/ciudad-de-mexico/
+          - generic [ref=f5e1416]: CDMX
+          - generic [ref=f5e1417]: Ciudad de México
+        - link "COAH Coahuila" [ref=f5e1418] [cursor=pointer]:
+          - /url: /directorio/coahuila/
+          - generic [ref=f5e1419]: COAH
+          - generic [ref=f5e1420]: Coahuila
+        - link "COL Colima" [ref=f5e1421] [cursor=pointer]:
+          - /url: /directorio/colima/
+          - generic [ref=f5e1422]: COL
+          - generic [ref=f5e1423]: Colima
+        - link "DGO Durango" [ref=f5e1424] [cursor=pointer]:
+          - /url: /directorio/durango/
+          - generic [ref=f5e1425]: DGO
+          - generic [ref=f5e1426]: Durango
+        - link "EDOMEX Estado de México" [ref=f5e1427] [cursor=pointer]:
+          - /url: /directorio/estado-de-mexico/
+          - generic [ref=f5e1428]: EDOMEX
+          - generic [ref=f5e1429]: Estado de México
+        - link "GTO Guanajuato" [ref=f5e1430] [cursor=pointer]:
+          - /url: /directorio/guanajuato/
+          - generic [ref=f5e1431]: GTO
+          - generic [ref=f5e1432]: Guanajuato
+        - link "GRO Guerrero" [ref=f5e1433] [cursor=pointer]:
+          - /url: /directorio/guerrero/
+          - generic [ref=f5e1434]: GRO
+          - generic [ref=f5e1435]: Guerrero
+        - link "HGO Hidalgo" [ref=f5e1436] [cursor=pointer]:
+          - /url: /directorio/hidalgo/
+          - generic [ref=f5e1437]: HGO
+          - generic [ref=f5e1438]: Hidalgo
+        - link "JAL Jalisco" [ref=f5e1439] [cursor=pointer]:
+          - /url: /directorio/jalisco/
+          - generic [ref=f5e1440]: JAL
+          - generic [ref=f5e1441]: Jalisco
+        - link "MICH Michoacán" [ref=f5e1442] [cursor=pointer]:
+          - /url: /directorio/michoacan/
+          - generic [ref=f5e1443]: MICH
+          - generic [ref=f5e1444]: Michoacán
+        - link "MOR Morelos" [ref=f5e1445] [cursor=pointer]:
+          - /url: /directorio/morelos/
+          - generic [ref=f5e1446]: MOR
+          - generic [ref=f5e1447]: Morelos
+        - link "NAY Nayarit" [ref=f5e1448] [cursor=pointer]:
+          - /url: /directorio/nayarit/
+          - generic [ref=f5e1449]: NAY
+          - generic [ref=f5e1450]: Nayarit
+        - link "NL Nuevo León" [ref=f5e1451] [cursor=pointer]:
+          - /url: /directorio/nuevo-leon/
+          - generic [ref=f5e1452]: NL
+          - generic [ref=f5e1453]: Nuevo León
+        - link "OAX Oaxaca" [ref=f5e1454] [cursor=pointer]:
+          - /url: /directorio/oaxaca/
+          - generic [ref=f5e1455]: OAX
+          - generic [ref=f5e1456]: Oaxaca
+        - link "PUE Puebla" [ref=f5e1457] [cursor=pointer]:
+          - /url: /directorio/puebla/
+          - generic [ref=f5e1458]: PUE
+          - generic [ref=f5e1459]: Puebla
+        - link "QRO Querétaro" [ref=f5e1460] [cursor=pointer]:
+          - /url: /directorio/queretaro/
+          - generic [ref=f5e1461]: QRO
+          - generic [ref=f5e1462]: Querétaro
+        - link "QROO Quintana Roo" [ref=f5e1463] [cursor=pointer]:
+          - /url: /directorio/quintana-roo/
+          - generic [ref=f5e1464]: QROO
+          - generic [ref=f5e1465]: Quintana Roo
+        - link "SLP San Luis Potosí" [ref=f5e1466] [cursor=pointer]:
+          - /url: /directorio/san-luis-potosi/
+          - generic [ref=f5e1467]: SLP
+          - generic [ref=f5e1468]: San Luis Potosí
+        - link "SIN Sinaloa" [ref=f5e1469] [cursor=pointer]:
+          - /url: /directorio/sinaloa/
+          - generic [ref=f5e1470]: SIN
+          - generic [ref=f5e1471]: Sinaloa
+        - link "SON Sonora" [ref=f5e1472] [cursor=pointer]:
+          - /url: /directorio/sonora/
+          - generic [ref=f5e1473]: SON
+          - generic [ref=f5e1474]: Sonora
+        - link "TAB Tabasco" [ref=f5e1475] [cursor=pointer]:
+          - /url: /directorio/tabasco/
+          - generic [ref=f5e1476]: TAB
+          - generic [ref=f5e1477]: Tabasco
+        - link "TAMPS Tamaulipas" [ref=f5e1478] [cursor=pointer]:
+          - /url: /directorio/tamaulipas/
+          - generic [ref=f5e1479]: TAMPS
+          - generic [ref=f5e1480]: Tamaulipas
+        - link "TLAX Tlaxcala" [ref=f5e1481] [cursor=pointer]:
+          - /url: /directorio/tlaxcala/
+          - generic [ref=f5e1482]: TLAX
+          - generic [ref=f5e1483]: Tlaxcala
+        - link "VER Veracruz" [ref=f5e1484] [cursor=pointer]:
+          - /url: /directorio/veracruz/
+          - generic [ref=f5e1485]: VER
+          - generic [ref=f5e1486]: Veracruz
+        - link "YUC Yucatán" [ref=f5e1487] [cursor=pointer]:
+          - /url: /directorio/yucatan/
+          - generic [ref=f5e1488]: YUC
+          - generic [ref=f5e1489]: Yucatán
+        - link "ZAC Zacatecas" [ref=f5e1490] [cursor=pointer]:
+          - /url: /directorio/zacatecas/
+          - generic [ref=f5e1491]: ZAC
+          - generic [ref=f5e1492]: Zacatecas
+      - generic [ref=f5e1493]:
+        - generic [ref=f5e1494]:
+          - generic [ref=f5e1495]:
+            - generic [ref=f5e1496]: "32"
+            - generic [ref=f5e1497]: Estados
+          - generic [ref=f5e1498]:
+            - generic [ref=f5e1499]: 602+
+            - generic [ref=f5e1500]: Estaciones
+          - generic [ref=f5e1501]:
+            - generic [ref=f5e1502]: 24/7
+            - generic [ref=f5e1503]: Emergencias
+        - link "Directorio nacional de estaciones de bomberos" [ref=f5e1504] [cursor=pointer]:
+          - /url: /directorio/
+    - generic [ref=f5e1507]:
+      - generic [ref=f5e1508]:
+        - heading "Explora Nuestro Catálogo Completo" [level=2] [ref=f5e1509]
+        - paragraph [ref=f5e1510]:
+          - text: Más de
+          - strong [ref=f5e1511]: 500 productos
+          - text: certificados NFPA listos para envío inmediato a toda la República
+      - link "Equipo de protección para bomberos" [ref=f5e1513] [cursor=pointer]:
+        - /url: /productos/
+  - region "Continúa explorando BOMBERO.MX" [ref=f5e1514]:
+    - generic [ref=f5e1515]:
+      - generic [ref=f5e1516]:
+        - generic [ref=f5e1517]: Sigue navegando
+        - paragraph [ref=f5e1518]: Continúa explorando BOMBERO.MX
+        - paragraph [ref=f5e1519]: Cuatro rutas para encontrar lo que tu operación necesita.
+      - generic [ref=f5e1520]:
+        - article [ref=f5e1521]:
+          - generic [ref=f5e1522]: 01 · Guías técnicas
+          - heading "Aprende antes de comprar" [level=3] [ref=f5e1523]
+          - paragraph [ref=f5e1524]: Artículos redactados por especialistas para que tu próxima decisión esté respaldada por normativa.
+          - list [ref=f5e1525]:
+            - listitem [ref=f5e1526]:
+              - link "NFPA 1970 — Guía completa del estándar estructural" [ref=f5e1527] [cursor=pointer]:
+                - /url: /blog/nfpa-1971-guia-completa/
+            - listitem [ref=f5e1529]:
+              - link "Mantenimiento SCBA — Protocolo completo" [ref=f5e1530] [cursor=pointer]:
+                - /url: /blog/mantenimiento-scba/
+            - listitem [ref=f5e1532]:
+              - link "Cámara térmica TIC — NFPA 1801" [ref=f5e1533] [cursor=pointer]:
+                - /url: /blog/camara-termica-tic-bomberos-nfpa-1801/
+            - listitem [ref=f5e1535]:
+              - link "Extricación vehicular — Jaws of Life México" [ref=f5e1536] [cursor=pointer]:
+                - /url: /blog/extricacion-vehicular-jaws-of-life-mexico/
+            - listitem [ref=f5e1538]:
+              - link "Brigadas industriales — EPP esencial" [ref=f5e1539] [cursor=pointer]:
+                - /url: /blog/brigadas-industriales-epp/
+          - link "Blog de equipo y normativa para bomberos" [ref=f5e1541] [cursor=pointer]:
+            - /url: /blog/
+        - article [ref=f5e1542]:
+          - generic [ref=f5e1543]: 02 · Directorio nacional
+          - heading "Bomberos en tu estado" [level=3] [ref=f5e1544]
+          - paragraph [ref=f5e1545]: Listado de estaciones, números de emergencia y contactos de bomberos en las 32 entidades.
+          - list [ref=f5e1546]:
+            - listitem [ref=f5e1547]:
+              - link "cuerpos de bomberos en Ciudad de México" [ref=f5e1548] [cursor=pointer]:
+                - /url: /directorio/ciudad-de-mexico/
+            - listitem [ref=f5e1550]:
+              - link "bomberos de Jalisco" [ref=f5e1551] [cursor=pointer]:
+                - /url: /directorio/jalisco/
+            - listitem [ref=f5e1553]:
+              - link "estaciones de bomberos de Nuevo León" [ref=f5e1554] [cursor=pointer]:
+                - /url: /directorio/nuevo-leon/
+            - listitem [ref=f5e1556]:
+              - link "directorio de bomberos de Estado de México" [ref=f5e1557] [cursor=pointer]:
+                - /url: /directorio/estado-de-mexico/
+            - listitem [ref=f5e1559]:
+              - link "estaciones de bomberos de Querétaro" [ref=f5e1560] [cursor=pointer]:
+                - /url: /directorio/queretaro/
+          - link "directorio de estaciones de bomberos" [ref=f5e1562] [cursor=pointer]:
+            - /url: /directorio/
+        - article [ref=f5e1563]:
+          - generic [ref=f5e1564]: 03 · Equipo por operación
+          - heading "Lo que usa cada brigada" [level=3] [ref=f5e1565]
+          - paragraph [ref=f5e1566]: Cuerpos de bomberos municipales, brigadas industriales, refinerías, aeropuertos y protección civil.
+          - list [ref=f5e1567]:
+            - listitem [ref=f5e1568]:
+              - link "Catálogo de extintores" [ref=f5e1569] [cursor=pointer]:
+                - /url: /productos/extintores/
+            - listitem [ref=f5e1571]:
+              - link "Catálogo HAZMAT" [ref=f5e1572] [cursor=pointer]:
+                - /url: /productos/hazmat/
+            - listitem [ref=f5e1574]:
+              - link "Equipo forestal" [ref=f5e1575] [cursor=pointer]:
+                - /url: /productos/forestales/
+            - listitem [ref=f5e1577]:
+              - link "Equipo de extricación" [ref=f5e1578] [cursor=pointer]:
+                - /url: /productos/herramientas-rescate/
+            - listitem [ref=f5e1580]:
+              - link "Equipos de detección" [ref=f5e1581] [cursor=pointer]:
+                - /url: /productos/tecnologia/
+            - listitem [ref=f5e1583]:
+              - link "Equipamiento de ataque inicial" [ref=f5e1584] [cursor=pointer]:
+                - /url: /productos/equipo-contra-incendios/
+          - link "opciones de equipo certificado" [ref=f5e1586] [cursor=pointer]:
+            - /url: /productos/
+        - article [ref=f5e1587]:
+          - generic [ref=f5e1588]: 04 · Recursos
+          - heading "Explora BOMBERO.MX" [level=3] [ref=f5e1589]
+          - paragraph [ref=f5e1590]: Catálogo, información institucional y políticas del sitio.
+          - list [ref=f5e1591]:
+            - listitem [ref=f5e1592]:
+              - link "Equipo de protección personal para bomberos" [ref=f5e1593] [cursor=pointer]:
+                - /url: /productos/
+            - listitem [ref=f5e1595]:
+              - link "Contacto y cotización de equipo para bomberos" [ref=f5e1596] [cursor=pointer]:
+                - /url: /contacto/
+            - listitem [ref=f5e1598]:
+              - link "Distribuidor de equipo para bomberos en México" [ref=f5e1599] [cursor=pointer]:
+                - /url: /nosotros/
+            - listitem [ref=f5e1601]:
+              - link "Política de devoluciones y garantía" [ref=f5e1602] [cursor=pointer]:
+                - /url: /devoluciones/
+            - listitem [ref=f5e1604]:
+              - link "Términos y privacidad" [ref=f5e1605] [cursor=pointer]:
+                - /url: /terminos/
+          - link "catálogo NFPA para bomberos" [ref=f5e1607] [cursor=pointer]:
+            - /url: /productos/
+  - contentinfo [ref=f5e1608]:
+    - generic [ref=f5e1610]:
+      - paragraph [ref=f5e1611]:
+        - strong [ref=f5e1612]: ¿Equipando una estación, brigada o licitación?
+        - generic [ref=f5e1613]: Cotización con ficha técnica y certificados en 24 h hábiles.
+      - generic [ref=f5e1614]:
+        - link "Solicitar cotización" [ref=f5e1615] [cursor=pointer]:
+          - /url: /cotizar/
+        - link "WhatsApp" [ref=f5e1616] [cursor=pointer]:
+          - /url: https://wa.me/525560348981?text=Hola%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20equipo%20para%20bomberos.
+        - link "Llamar al +52 55 6034 8981" [ref=f5e1617] [cursor=pointer]:
+          - /url: tel:+525560348981
+          - text: +52 55 6034 8981
+    - generic [ref=f5e1618]:
+      - generic [ref=f5e1619]:
+        - generic [ref=f5e1620]:
+          - link "BOMBERO.MX — inicio" [ref=f5e1621] [cursor=pointer]:
+            - /url: /
+            - text: BOMBERO.MX
+          - paragraph [ref=f5e1622]: "Distribuidor especializado de equipo para bomberos en México: trajes, cascos, SCBA y herramientas de rescate con certificación NFPA, para cuerpos municipales, brigadas industriales y protección civil."
+          - generic [ref=f5e1623]:
+            - generic [ref=f5e1624]:
+              - term [ref=f5e1625]: Años en el sector
+              - definition [ref=f5e1626]: "16"
+            - generic [ref=f5e1627]:
+              - term [ref=f5e1628]: Estaciones en el directorio
+              - definition [ref=f5e1629]: "555"
+            - generic [ref=f5e1630]:
+              - term [ref=f5e1631]: Estados con envío
+              - definition [ref=f5e1632]: "32"
+          - list [ref=f5e1633]:
+            - listitem [ref=f5e1634]:
+              - generic [ref=f5e1635]: Oficina
+              - generic [ref=f5e1636]: Av. Tamaulipas 150, Piso 13, Col. Condesa, Cuauhtémoc, 06140 Ciudad de México, CDMX
+            - listitem [ref=f5e1637]:
+              - generic [ref=f5e1638]: Horario
+              - generic [ref=f5e1639]: "Lunes a Viernes: 9:00 AM - 6:00 PM"
+            - listitem [ref=f5e1640]:
+              - generic [ref=f5e1641]: Teléfono
+              - link "+52 55 6034 8981" [ref=f5e1642] [cursor=pointer]:
+                - /url: tel:+525560348981
+        - navigation "Catálogo y guías" [ref=f5e1643]:
+          - generic [ref=f5e1644]:
+            - paragraph [ref=f5e1645]: Trajes de bombero
+            - list [ref=f5e1646]:
+              - listitem [ref=f5e1647]:
+                - link "Traje estructural NFPA 1970" [ref=f5e1648] [cursor=pointer]:
+                  - /url: /productos/trajes-para-bomberos/traje-estructural-nfpa-1971/
+              - listitem [ref=f5e1649]:
+                - link "Traje forestal NFPA 1950" [ref=f5e1650] [cursor=pointer]:
+                  - /url: /productos/trajes-para-bomberos/traje-forestal-nfpa-1977/
+              - listitem [ref=f5e1651]:
+                - link "Traje ARFF aeroportuario" [ref=f5e1652] [cursor=pointer]:
+                  - /url: /productos/trajes-para-bomberos/traje-arff-aeroportuario/
+              - listitem [ref=f5e1653]:
+                - link "Traje de aproximación aluminizado" [ref=f5e1654] [cursor=pointer]:
+                  - /url: /productos/trajes-para-bomberos/traje-aproximacion/
+              - listitem [ref=f5e1655]:
+                - link "Traje de rescate técnico" [ref=f5e1656] [cursor=pointer]:
+                  - /url: /productos/trajes-para-bomberos/traje-rescate-tecnico-nfpa-1951/
+              - listitem [ref=f5e1657]:
+                - link "Traje HAZMAT encapsulado" [ref=f5e1658] [cursor=pointer]:
+                  - /url: /productos/trajes-para-bomberos/traje-hazmat/
+              - listitem [ref=f5e1659]:
+                - link "Uniformes y trajes para bombero" [ref=f5e1660] [cursor=pointer]:
+                  - /url: /productos/trajes-para-bomberos/
+                  - text: Uniformes y trajes para bombero →
+          - generic [ref=f5e1661]:
+            - paragraph [ref=f5e1662]: Protección personal
+            - list [ref=f5e1663]:
+              - listitem [ref=f5e1664]:
+                - link "Cascos para bombero" [ref=f5e1665] [cursor=pointer]:
+                  - /url: /productos/cascos-para-bomberos/
+              - listitem [ref=f5e1666]:
+                - link "Casco estructural NFPA" [ref=f5e1667] [cursor=pointer]:
+                  - /url: /productos/cascos-para-bomberos/casco-estructural-nfpa-1971/
+              - listitem [ref=f5e1668]:
+                - link "Guantes para bombero" [ref=f5e1669] [cursor=pointer]:
+                  - /url: /productos/guantes-para-bomberos/
+              - listitem [ref=f5e1670]:
+                - link "Guantes estructurales" [ref=f5e1671] [cursor=pointer]:
+                  - /url: /productos/guantes-para-bomberos/estructurales/
+              - listitem [ref=f5e1672]:
+                - link "Guantes de rescate" [ref=f5e1673] [cursor=pointer]:
+                  - /url: /productos/guantes-para-bomberos/rescate/
+              - listitem [ref=f5e1674]:
+                - link "Botas para bombero" [ref=f5e1675] [cursor=pointer]:
+                  - /url: /productos/botas-para-bomberos/
+              - listitem [ref=f5e1676]:
+                - link "Botas estructurales" [ref=f5e1677] [cursor=pointer]:
+                  - /url: /productos/botas-para-bomberos/estructural/
+              - listitem [ref=f5e1678]:
+                - link "Capuchas y monjas NFPA" [ref=f5e1679] [cursor=pointer]:
+                  - /url: /productos/capuchas-para-bomberos/
+              - listitem [ref=f5e1680]:
+                - link "Gafas y protección visual" [ref=f5e1681] [cursor=pointer]:
+                  - /url: /productos/gafas-para-bomberos/
+              - listitem [ref=f5e1682]:
+                - link "Catálogo de equipo para bomberos" [ref=f5e1683] [cursor=pointer]:
+                  - /url: /productos/
+                  - text: Catálogo de equipo para bomberos →
+          - generic [ref=f5e1684]:
+            - paragraph [ref=f5e1685]: Equipo especializado
+            - list [ref=f5e1686]:
+              - listitem [ref=f5e1687]:
+                - link "SCBA — respiración autónoma" [ref=f5e1688] [cursor=pointer]:
+                  - /url: /productos/scba/
+              - listitem [ref=f5e1689]:
+                - link "Equipo forestal" [ref=f5e1690] [cursor=pointer]:
+                  - /url: /productos/forestales/
+              - listitem [ref=f5e1691]:
+                - link "HAZMAT y CBRN" [ref=f5e1692] [cursor=pointer]:
+                  - /url: /productos/hazmat/
+              - listitem [ref=f5e1693]:
+                - link "Rescate vertical y arneses" [ref=f5e1694] [cursor=pointer]:
+                  - /url: /productos/rescate-vertical/
+              - listitem [ref=f5e1695]:
+                - link "Rescate acuático" [ref=f5e1696] [cursor=pointer]:
+                  - /url: /productos/rescate-acuatico/
+              - listitem [ref=f5e1697]:
+                - link "Herramientas de rescate" [ref=f5e1698] [cursor=pointer]:
+                  - /url: /productos/herramientas-rescate/
+              - listitem [ref=f5e1699]:
+                - link "Cámaras térmicas y detección" [ref=f5e1700] [cursor=pointer]:
+                  - /url: /productos/tecnologia/
+              - listitem [ref=f5e1701]:
+                - link "Equipo contra incendios" [ref=f5e1702] [cursor=pointer]:
+                  - /url: /productos/equipo-contra-incendios/
+              - listitem [ref=f5e1703]:
+                - link "Extintores certificados" [ref=f5e1704] [cursor=pointer]:
+                  - /url: /productos/extintores/
+              - listitem [ref=f5e1705]:
+                - link "Equipo médico / EMS" [ref=f5e1706] [cursor=pointer]:
+                  - /url: /productos/equipo-medico/
+          - generic [ref=f5e1707]:
+            - paragraph [ref=f5e1708]: Guías y normativa
+            - list [ref=f5e1709]:
+              - listitem [ref=f5e1710]:
+                - link "Normas NFPA, NOM y EN" [ref=f5e1711] [cursor=pointer]:
+                  - /url: /blog/categoria/normativas/
+              - listitem [ref=f5e1712]:
+                - link "Selección de equipo" [ref=f5e1713] [cursor=pointer]:
+                  - /url: /blog/categoria/equipo/
+              - listitem [ref=f5e1714]:
+                - link "Mantenimiento e inspección" [ref=f5e1715] [cursor=pointer]:
+                  - /url: /blog/categoria/mantenimiento/
+              - listitem [ref=f5e1716]:
+                - link "Técnicas de rescate" [ref=f5e1717] [cursor=pointer]:
+                  - /url: /blog/categoria/tecnicas/
+              - listitem [ref=f5e1718]:
+                - link "Brigadas industriales" [ref=f5e1719] [cursor=pointer]:
+                  - /url: /blog/categoria/industrial/
+              - listitem [ref=f5e1720]:
+                - link "Incendios forestales" [ref=f5e1721] [cursor=pointer]:
+                  - /url: /blog/categoria/forestales/
+              - listitem [ref=f5e1722]:
+                - link "Cómo ser bombero" [ref=f5e1723] [cursor=pointer]:
+                  - /url: /blog/categoria/formacion/
+              - listitem [ref=f5e1724]:
+                - link "Guía NFPA 1970" [ref=f5e1725] [cursor=pointer]:
+                  - /url: /blog/nfpa-1971-guia-completa/
+              - listitem [ref=f5e1726]:
+                - link "Los 258 artículos del blog" [ref=f5e1727] [cursor=pointer]:
+                  - /url: /blog/
+                  - text: Los 258 artículos del blog →
+      - navigation "Directorio de estaciones de bomberos" [ref=f5e1728]:
+        - generic [ref=f5e1729]:
+          - paragraph [ref=f5e1730]: Directorio de bomberos
+          - list [ref=f5e1731]:
+            - listitem [ref=f5e1732]:
+              - link "Directorio nacional de estaciones" [ref=f5e1733] [cursor=pointer]:
+                - /url: /directorio/
+            - listitem [ref=f5e1734]:
+              - link "Número de bomberos (911 y directos)" [ref=f5e1735] [cursor=pointer]:
+                - /url: /numeros-de-emergencia/
+            - listitem [ref=f5e1736]:
+              - link "Estaciones de bomberos en México" [ref=f5e1737] [cursor=pointer]:
+                - /url: /estaciones-de-bomberos/
+            - listitem [ref=f5e1738]:
+              - 'link "Bomberos en México: guía" [ref=f5e1739] [cursor=pointer]':
+                - /url: /bomberos/
+            - listitem [ref=f5e1740]:
+              - link "Censo de estaciones (datos abiertos)" [ref=f5e1741] [cursor=pointer]:
+                - /url: /datos/estaciones-de-bomberos-en-mexico/
+          - paragraph [ref=f5e1742]:
+            - text: "Emergencia en curso: marca"
+            - link "911" [ref=f5e1743] [cursor=pointer]:
+              - /url: tel:911
+        - generic [ref=f5e1744]:
+          - paragraph [ref=f5e1745]: Estaciones de bomberos por estado
+          - list [ref=f5e1746]:
+            - listitem [ref=f5e1747]:
+              - link "Aguascalientes" [ref=f5e1748] [cursor=pointer]:
+                - /url: /directorio/aguascalientes/
+            - listitem [ref=f5e1749]:
+              - link "Baja California" [ref=f5e1750] [cursor=pointer]:
+                - /url: /directorio/baja-california/
+            - listitem [ref=f5e1751]:
+              - link "Baja California Sur" [ref=f5e1752] [cursor=pointer]:
+                - /url: /directorio/baja-california-sur/
+            - listitem [ref=f5e1753]:
+              - link "Campeche" [ref=f5e1754] [cursor=pointer]:
+                - /url: /directorio/campeche/
+            - listitem [ref=f5e1755]:
+              - link "Chiapas" [ref=f5e1756] [cursor=pointer]:
+                - /url: /directorio/chiapas/
+            - listitem [ref=f5e1757]:
+              - link "Chihuahua" [ref=f5e1758] [cursor=pointer]:
+                - /url: /directorio/chihuahua/
+            - listitem [ref=f5e1759]:
+              - link "Ciudad de México" [ref=f5e1760] [cursor=pointer]:
+                - /url: /directorio/ciudad-de-mexico/
+            - listitem [ref=f5e1761]:
+              - link "Coahuila" [ref=f5e1762] [cursor=pointer]:
+                - /url: /directorio/coahuila/
+            - listitem [ref=f5e1763]:
+              - link "Colima" [ref=f5e1764] [cursor=pointer]:
+                - /url: /directorio/colima/
+            - listitem [ref=f5e1765]:
+              - link "Durango" [ref=f5e1766] [cursor=pointer]:
+                - /url: /directorio/durango/
+            - listitem [ref=f5e1767]:
+              - link "Estado de México" [ref=f5e1768] [cursor=pointer]:
+                - /url: /directorio/estado-de-mexico/
+            - listitem [ref=f5e1769]:
+              - link "Guanajuato" [ref=f5e1770] [cursor=pointer]:
+                - /url: /directorio/guanajuato/
+            - listitem [ref=f5e1771]:
+              - link "Guerrero" [ref=f5e1772] [cursor=pointer]:
+                - /url: /directorio/guerrero/
+            - listitem [ref=f5e1773]:
+              - link "Hidalgo" [ref=f5e1774] [cursor=pointer]:
+                - /url: /directorio/hidalgo/
+            - listitem [ref=f5e1775]:
+              - link "Jalisco" [ref=f5e1776] [cursor=pointer]:
+                - /url: /directorio/jalisco/
+            - listitem [ref=f5e1777]:
+              - link "Michoacán" [ref=f5e1778] [cursor=pointer]:
+                - /url: /directorio/michoacan/
+            - listitem [ref=f5e1779]:
+              - link "Morelos" [ref=f5e1780] [cursor=pointer]:
+                - /url: /directorio/morelos/
+            - listitem [ref=f5e1781]:
+              - link "Nayarit" [ref=f5e1782] [cursor=pointer]:
+                - /url: /directorio/nayarit/
+            - listitem [ref=f5e1783]:
+              - link "Nuevo León" [ref=f5e1784] [cursor=pointer]:
+                - /url: /directorio/nuevo-leon/
+            - listitem [ref=f5e1785]:
+              - link "Oaxaca" [ref=f5e1786] [cursor=pointer]:
+                - /url: /directorio/oaxaca/
+            - listitem [ref=f5e1787]:
+              - link "Puebla" [ref=f5e1788] [cursor=pointer]:
+                - /url: /directorio/puebla/
+            - listitem [ref=f5e1789]:
+              - link "Querétaro" [ref=f5e1790] [cursor=pointer]:
+                - /url: /directorio/queretaro/
+            - listitem [ref=f5e1791]:
+              - link "Quintana Roo" [ref=f5e1792] [cursor=pointer]:
+                - /url: /directorio/quintana-roo/
+            - listitem [ref=f5e1793]:
+              - link "San Luis Potosí" [ref=f5e1794] [cursor=pointer]:
+                - /url: /directorio/san-luis-potosi/
+            - listitem [ref=f5e1795]:
+              - link "Sinaloa" [ref=f5e1796] [cursor=pointer]:
+                - /url: /directorio/sinaloa/
+            - listitem [ref=f5e1797]:
+              - link "Sonora" [ref=f5e1798] [cursor=pointer]:
+                - /url: /directorio/sonora/
+            - listitem [ref=f5e1799]:
+              - link "Tabasco" [ref=f5e1800] [cursor=pointer]:
+                - /url: /directorio/tabasco/
+            - listitem [ref=f5e1801]:
+              - link "Tamaulipas" [ref=f5e1802] [cursor=pointer]:
+                - /url: /directorio/tamaulipas/
+            - listitem [ref=f5e1803]:
+              - link "Tlaxcala" [ref=f5e1804] [cursor=pointer]:
+                - /url: /directorio/tlaxcala/
+            - listitem [ref=f5e1805]:
+              - link "Veracruz" [ref=f5e1806] [cursor=pointer]:
+                - /url: /directorio/veracruz/
+            - listitem [ref=f5e1807]:
+              - link "Yucatán" [ref=f5e1808] [cursor=pointer]:
+                - /url: /directorio/yucatan/
+            - listitem [ref=f5e1809]:
+              - link "Zacatecas" [ref=f5e1810] [cursor=pointer]:
+                - /url: /directorio/zacatecas/
+      - generic [ref=f5e1811]:
+        - generic [ref=f5e1812]:
+          - generic [ref=f5e1813]: Marcas
+          - list [ref=f5e1814]:
+            - listitem [ref=f5e1815]:
+              - link "Globe" [ref=f5e1816] [cursor=pointer]:
+                - /url: /productos/trajes-para-bomberos/globe-g-xtreme/
+            - listitem [ref=f5e1817]:
+              - link "Lion" [ref=f5e1818] [cursor=pointer]:
+                - /url: /productos/trajes-para-bomberos/lion-v-force/
+            - listitem [ref=f5e1819]:
+              - link "Fire-Dex" [ref=f5e1820] [cursor=pointer]:
+                - /url: /productos/trajes-para-bomberos/fire-dex-tecgen71/
+            - listitem [ref=f5e1821]:
+              - link "Innotex" [ref=f5e1822] [cursor=pointer]:
+                - /url: /productos/trajes-para-bomberos/innotex-energy/
+            - listitem [ref=f5e1823]:
+              - generic [ref=f5e1824]: MSA
+            - listitem [ref=f5e1825]:
+              - generic [ref=f5e1826]: Honeywell
+            - listitem [ref=f5e1827]:
+              - generic [ref=f5e1828]: Bullard
+            - listitem [ref=f5e1829]:
+              - generic [ref=f5e1830]: Cairns
+        - generic [ref=f5e1831]:
+          - generic [ref=f5e1832]: Normas
+          - list [ref=f5e1833]:
+            - listitem [ref=f5e1834]:
+              - link "NFPA" [ref=f5e1835] [cursor=pointer]:
+                - /url: /blog/categoria/normativas/
+            - listitem [ref=f5e1836]:
+              - generic [ref=f5e1837]: UL
+            - listitem [ref=f5e1838]:
+              - generic [ref=f5e1839]: NOM
+            - listitem [ref=f5e1840]:
+              - generic [ref=f5e1841]: EN
+        - navigation "Empresa" [ref=f5e1842]:
+          - list [ref=f5e1844]:
+            - listitem [ref=f5e1845]:
+              - link "Nosotros" [ref=f5e1846] [cursor=pointer]:
+                - /url: /nosotros/
+            - listitem [ref=f5e1847]:
+              - link "Servicios y capacitación" [ref=f5e1848] [cursor=pointer]:
+                - /url: /servicios/
+            - listitem [ref=f5e1849]:
+              - link "Cotizar equipo" [ref=f5e1850] [cursor=pointer]:
+                - /url: /cotizar/
+            - listitem [ref=f5e1851]:
+              - link "Contacto" [ref=f5e1852] [cursor=pointer]:
+                - /url: /contacto/
+      - generic [ref=f5e1853]:
+        - paragraph [ref=f5e1854]: © 2026 BOMBERO.MX. Todos los derechos reservados.
+        - list [ref=f5e1855]:
+          - listitem [ref=f5e1856]:
+            - link "Aviso de privacidad" [ref=f5e1857] [cursor=pointer]:
+              - /url: /privacidad/
+          - listitem [ref=f5e1858]:
+            - link "Términos y condiciones" [ref=f5e1859] [cursor=pointer]:
+              - /url: /terminos/
+          - listitem [ref=f5e1860]:
+            - link "Devoluciones y garantías" [ref=f5e1861] [cursor=pointer]:
+              - /url: /devoluciones/
+        - list "Redes sociales" [ref=f5e1862]:
+          - listitem [ref=f5e1863]:
+            - link "Facebook" [ref=f5e1864] [cursor=pointer]:
+              - /url: https://facebook.com/bombero.mx
+          - listitem [ref=f5e1865]:
+            - link "Instagram" [ref=f5e1866] [cursor=pointer]:
+              - /url: https://instagram.com/bombero.mx
+  - link "Contactar por WhatsApp" [ref=f5e1867] [cursor=pointer]:
+    - /url: https://wa.me/525560348981?text=Hola%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20equipo%20para%20bomberos
+    - generic [ref=f5e1868]: WhatsApp

@@ -1,0 +1,2281 @@
+- generic [active] [ref=e1]:
+  - link "Saltar al contenido principal" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e4]:
+    - paragraph [ref=e5]: LORICA · Más de 35 años equipando bomberos en los 32 estados
+    - generic [ref=e6]:
+      - generic [ref=e7]: Lun–Vie 9:00–18:00
+      - link "+52 56 6480 4962" [ref=e8] [cursor=pointer]:
+        - /url: tel:+525664804962
+      - link "Cotizar trajes por WhatsApp" [ref=e9] [cursor=pointer]:
+        - /url: https://wa.me/525664804962?text=Hola%2C%20quiero%20cotizar%20trajes%20o%20equipo%20para%20bomberos.
+  - banner [ref=e10]:
+    - generic [ref=e11]:
+      - 'link "LORICA, trajes para bomberos: inicio" [ref=e12] [cursor=pointer]':
+        - /url: /
+        - generic [ref=e14]:
+          - img "LORICA" [ref=e15]
+          - generic [ref=e16]: Trajes para bomberos
+      - text: + + + + +
+      - link "Cotizar trajes" [ref=e17] [cursor=pointer]:
+        - /url: https://wa.me/525664804962?text=Hola%2C%20quiero%20cotizar%20trajes%20o%20equipo%20para%20bomberos.
+      - button "Abrir menú" [ref=e18] [cursor=pointer]
+  - main [ref=e21]:
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - paragraph [ref=e25]: Trajes y equipo de protección para bomberos
+        - heading "Traje de bombero y trajes para bomberos profesionales" [level=1] [ref=e26]
+        - paragraph [ref=e27]: "Trajes estructurales, de brigadista, forestales, de aproximación, de entrada y de extricación: el traje contra incendio que corresponde a cada riesgo. Sumamos el casco, las botas, los guantes, la monja, los tirantes y el ERA que completan el conjunto. Ficha técnica y factura en cada cotización; envío a los 32 estados."
+      - generic [ref=e29]:
+        - paragraph [ref=e30]: "En LORICA somos especialistas en una sola línea desde hace más de 35 años: ropa de protección para combate de incendios. Equipamos brigadas industriales obligadas por la NOM-002-STPS-2010, cuerpos de bomberos municipales que compran por licitación y unidades de protección civil en los 32 estados de la República."
+        - paragraph [ref=e31]: "Cotizamos con ficha técnica desde el primer mensaje: composite declarado capa por capa, norma vigente y condiciones de entrega por escrito. La referencia actual es la NFPA 1970, que sustituyó a la NFPA 1971. Y si tu operación necesita otra familia de traje, te lo decimos antes de venderte."
+    - navigation "Secciones principales" [ref=e32]:
+      - list [ref=e34]:
+        - listitem [ref=e35]:
+          - link "Trajes para bomberos" [ref=e36] [cursor=pointer]:
+            - /url: /trajes/
+        - listitem [ref=e37]:
+          - link "Cascos para bomberos" [ref=e38] [cursor=pointer]:
+            - /url: /cascos/
+        - listitem [ref=e39]:
+          - link "Equipo de respiración autónoma" [ref=e40] [cursor=pointer]:
+            - /url: /equipo-de-respiracion-autonoma/
+        - listitem [ref=e41]:
+          - link "Botas para bomberos" [ref=e42] [cursor=pointer]:
+            - /url: /botas/
+        - listitem [ref=e43]:
+          - link "Guantes para bomberos" [ref=e44] [cursor=pointer]:
+            - /url: /guantes/
+        - listitem [ref=e45]:
+          - link "Kits de equipo para bomberos" [ref=e46] [cursor=pointer]:
+            - /url: /kits/
+        - listitem [ref=e47]:
+          - link "Marcas de equipo para bomberos" [ref=e48] [cursor=pointer]:
+            - /url: /marcas/
+        - listitem [ref=e49]:
+          - link "Guías técnicas para bomberos" [ref=e50] [cursor=pointer]:
+            - /url: /blog/
+    - generic [ref=e52]:
+      - generic [ref=e53]:
+        - generic [ref=e54]:
+          - paragraph [ref=e55]: Categorías de equipo para bomberos
+          - 'heading "Equipo para bomberos: trajes, cascos, botas, guantes y más" [level=2] [ref=e56]'
+        - generic [ref=e57]:
+          - paragraph [ref=e58]:
+            - text: Reunimos en un solo proveedor el equipo para bomberos completo. Empieza por los
+            - link "trajes para bomberos" [ref=e59] [cursor=pointer]:
+              - /url: /trajes/
+            - text: por familia de riesgo y sigue con el
+            - link "equipo de protección" [ref=e60] [cursor=pointer]:
+              - /url: /equipo-de-proteccion/
+            - text: ":"
+            - link "cascos" [ref=e61] [cursor=pointer]:
+              - /url: /cascos/
+            - text: ","
+            - link "equipo de respiración autónoma" [ref=e62] [cursor=pointer]:
+              - /url: /equipo-de-respiracion-autonoma/
+            - text: ","
+            - link "botas" [ref=e63] [cursor=pointer]:
+              - /url: /botas/
+            - text: ","
+            - link "guantes" [ref=e64] [cursor=pointer]:
+              - /url: /guantes/
+            - text: y monjas. La unidad se completa con
+            - link "herramientas, mangueras y equipo de rescate" [ref=e65] [cursor=pointer]:
+              - /url: /rescate-y-herramientas/
+            - text: .
+          - paragraph [ref=e66]: Elige la categoría y entra a sus tipos y modelos con ficha técnica. Cotizamos por pieza o conjunto completo, con factura CFDI 4.0, sin compra mínima y con envío a los 32 estados.
+      - list "Tarjetas del catálogo" [ref=e67]:
+        - listitem [ref=e68]:
+          - link [aria-hidden] [ref=e69] [cursor=pointer]:
+            - /url: /trajes/
+            - generic [ref=e71]: "01"
+          - generic [ref=e72]:
+            - heading [level=3] [ref=e73]:
+              - link "Trajes para bomberos" [ref=e74] [cursor=pointer]:
+                - /url: /trajes/
+            - paragraph [ref=e75]: "Chaquetón y pantalonera por familia de riesgo: estructural, brigadista, forestal, aproximación, entrada y extricación."
+            - list "Subcategorías de Trajes para bomberos" [ref=e76]:
+              - listitem [ref=e77]:
+                - link "Traje estructural, Trajes para bomberos" [ref=e78] [cursor=pointer]:
+                  - /url: /trajes/estructural/
+                  - generic [ref=e79]: Traje estructural
+              - listitem [ref=e80]:
+                - link "Traje de brigadista, Trajes para bomberos" [ref=e81] [cursor=pointer]:
+                  - /url: /trajes/brigadista/
+                  - generic [ref=e82]: Traje de brigadista
+              - listitem [ref=e83]:
+                - link "Traje forestal, Trajes para bomberos" [ref=e84] [cursor=pointer]:
+                  - /url: /trajes/forestal/
+                  - generic [ref=e85]: Traje forestal
+              - listitem [ref=e86]:
+                - link "Traje aluminizado, Trajes para bomberos" [ref=e87] [cursor=pointer]:
+                  - /url: /trajes/aproximacion/
+                  - generic [ref=e88]: Traje aluminizado
+            - link "Tipos de trajes para bomberos" [ref=e89] [cursor=pointer]:
+              - /url: /trajes/
+        - listitem [ref=e90]:
+          - link [aria-hidden] [ref=e91] [cursor=pointer]:
+            - /url: /cascos/
+            - generic [ref=e93]: "02"
+          - generic [ref=e94]:
+            - heading [level=3] [ref=e95]:
+              - link "Cascos para bomberos" [ref=e96] [cursor=pointer]:
+                - /url: /cascos/
+            - paragraph [ref=e97]: Cascos estructurales, forestales y de rescate, con compatibilidad verificada con la máscara del ERA en uso.
+            - list "Subcategorías de Cascos para bomberos" [ref=e98]:
+              - listitem [ref=e99]:
+                - link "Casco estructural tradicional, Cascos para bomberos" [ref=e100] [cursor=pointer]:
+                  - /url: /cascos/casco-estructural-tradicional/
+                  - generic [ref=e101]: Casco estructural tradicional
+              - listitem [ref=e102]:
+                - link "Casco estructural europeo, Cascos para bomberos" [ref=e103] [cursor=pointer]:
+                  - /url: /cascos/casco-estructural-europeo/
+                  - generic [ref=e104]: Casco estructural europeo
+              - listitem [ref=e105]:
+                - link "Casco forestal, Cascos para bomberos" [ref=e106] [cursor=pointer]:
+                  - /url: /cascos/casco-forestal/
+                  - generic [ref=e107]: Casco forestal
+              - listitem [ref=e108]:
+                - link "Casco de rescate técnico, Cascos para bomberos" [ref=e109] [cursor=pointer]:
+                  - /url: /cascos/casco-rescate-tecnico/
+                  - generic [ref=e110]: Casco de rescate técnico
+            - link "Cascos estructurales y forestales" [ref=e111] [cursor=pointer]:
+              - /url: /cascos/
+        - listitem [ref=e112]:
+          - link [aria-hidden] [ref=e113] [cursor=pointer]:
+            - /url: /equipo-de-respiracion-autonoma/
+            - generic [ref=e115]: "03"
+          - generic [ref=e116]:
+            - heading [level=3] [ref=e117]:
+              - link "Equipo de respiración autónoma" [ref=e118] [cursor=pointer]:
+                - /url: /equipo-de-respiracion-autonoma/
+            - paragraph [ref=e119]: "ERA para ataque interior, industria y escape: arnés, máscara, regulador y cilindro con su certificación."
+            - list "Subcategorías de Equipo de respiración autónoma" [ref=e120]:
+              - listitem [ref=e121]:
+                - link "ERA de combate, Equipo de respiración autónoma" [ref=e122] [cursor=pointer]:
+                  - /url: /equipo-de-respiracion-autonoma/era-de-combate/
+                  - generic [ref=e123]: ERA de combate
+              - listitem [ref=e124]:
+                - link "ERA industrial, Equipo de respiración autónoma" [ref=e125] [cursor=pointer]:
+                  - /url: /equipo-de-respiracion-autonoma/era-industrial/
+                  - generic [ref=e126]: ERA industrial
+              - listitem [ref=e127]:
+                - link "ERA de escape, Equipo de respiración autónoma" [ref=e128] [cursor=pointer]:
+                  - /url: /equipo-de-respiracion-autonoma/era-de-escape/
+                  - generic [ref=e129]: ERA de escape
+              - listitem [ref=e130]:
+                - link "Cilindros de fibra de carbono, Equipo de respiración autónoma" [ref=e131] [cursor=pointer]:
+                  - /url: /equipo-de-respiracion-autonoma/cilindros-de-fibra-de-carbono/
+                  - generic [ref=e132]: Cilindros de fibra de carbono
+            - link "Equipos de respiración autónoma (ERA)" [ref=e133] [cursor=pointer]:
+              - /url: /equipo-de-respiracion-autonoma/
+        - listitem [ref=e134]:
+          - link [aria-hidden] [ref=e135] [cursor=pointer]:
+            - /url: /botas/
+            - generic [ref=e137]: "04"
+          - generic [ref=e138]:
+            - heading [level=3] [ref=e139]:
+              - link "Botas para bomberos" [ref=e140] [cursor=pointer]:
+                - /url: /botas/
+            - paragraph [ref=e141]: Botas de hule o piel para incendio estructural y bota forestal, elegidas según la familia de traje.
+            - list "Subcategorías de Botas para bomberos" [ref=e142]:
+              - listitem [ref=e143]:
+                - link "Bota de hule estructural, Botas para bomberos" [ref=e144] [cursor=pointer]:
+                  - /url: /botas/bota-de-hule-estructural/
+                  - generic [ref=e145]: Bota de hule estructural
+              - listitem [ref=e146]:
+                - link "Bota de piel estructural, Botas para bomberos" [ref=e147] [cursor=pointer]:
+                  - /url: /botas/bota-de-piel-estructural/
+                  - generic [ref=e148]: Bota de piel estructural
+              - listitem [ref=e149]:
+                - link "Bota forestal, Botas para bomberos" [ref=e150] [cursor=pointer]:
+                  - /url: /botas/bota-forestal/
+                  - generic [ref=e151]: Bota forestal
+              - listitem [ref=e152]:
+                - link "Bota de brigada industrial, Botas para bomberos" [ref=e153] [cursor=pointer]:
+                  - /url: /botas/bota-de-brigada-industrial/
+                  - generic [ref=e154]: Bota de brigada industrial
+            - link "Botas para bomberos estructurales" [ref=e155] [cursor=pointer]:
+              - /url: /botas/
+        - listitem [ref=e156]:
+          - link [aria-hidden] [ref=e157] [cursor=pointer]:
+            - /url: /guantes/
+            - generic [ref=e159]: "05"
+          - generic [ref=e160]:
+            - heading [level=3] [ref=e161]:
+              - link "Guantes para bomberos" [ref=e162] [cursor=pointer]:
+                - /url: /guantes/
+            - paragraph [ref=e163]: "Un guante por operación: estructural, extricación, forestal y brigada. No se sustituyen entre sí."
+            - list "Subcategorías de Guantes para bomberos" [ref=e164]:
+              - listitem [ref=e165]:
+                - link "Guante estructural, Guantes para bomberos" [ref=e166] [cursor=pointer]:
+                  - /url: /guantes/guante-estructural/
+                  - generic [ref=e167]: Guante estructural
+              - listitem [ref=e168]:
+                - link "Guante de extricación, Guantes para bomberos" [ref=e169] [cursor=pointer]:
+                  - /url: /guantes/guante-rescate-extricacion/
+                  - generic [ref=e170]: Guante de extricación
+              - listitem [ref=e171]:
+                - link "Guante forestal, Guantes para bomberos" [ref=e172] [cursor=pointer]:
+                  - /url: /guantes/guante-forestal/
+                  - generic [ref=e173]: Guante forestal
+              - listitem [ref=e174]:
+                - link "Guante para brigadista, Guantes para bomberos" [ref=e175] [cursor=pointer]:
+                  - /url: /guantes/guante-brigadista/
+                  - generic [ref=e176]: Guante para brigadista
+            - link "Guantes para bomberos por operación" [ref=e177] [cursor=pointer]:
+              - /url: /guantes/
+        - listitem [ref=e178]:
+          - link [aria-hidden] [ref=e179] [cursor=pointer]:
+            - /url: /capuchas/
+            - generic [ref=e181]: "06"
+          - generic [ref=e182]:
+            - heading [level=3] [ref=e183]:
+              - link "Monjas y escafandras" [ref=e184] [cursor=pointer]:
+                - /url: /capuchas/
+            - paragraph [ref=e185]: "Protección de cabeza y cuello bajo el casco: Nomex tradicional, barrera de partículas y capucha aluminizada."
+            - list "Subcategorías de Monjas y escafandras" [ref=e186]:
+              - listitem [ref=e187]:
+                - link "Monja antipartículas, Monjas y escafandras" [ref=e188] [cursor=pointer]:
+                  - /url: /trajes/estructural/monja/
+                  - generic [ref=e189]: Monja antipartículas
+              - listitem [ref=e190]:
+                - link "Monja de brigada, Monjas y escafandras" [ref=e191] [cursor=pointer]:
+                  - /url: /trajes/brigadista/monja/
+                  - generic [ref=e192]: Monja de brigada
+              - listitem [ref=e193]:
+                - link "Escafandra Nomex, Monjas y escafandras" [ref=e194] [cursor=pointer]:
+                  - /url: /capuchas/skold-fpen/
+                  - generic [ref=e195]: Escafandra Nomex
+              - listitem [ref=e196]:
+                - link "Capucha aluminizada, Monjas y escafandras" [ref=e197] [cursor=pointer]:
+                  - /url: /trajes/aproximacion/capucha/
+                  - generic [ref=e198]: Capucha aluminizada
+            - link "Monjas y escafandras para bombero" [ref=e199] [cursor=pointer]:
+              - /url: /capuchas/
+        - listitem [ref=e200]:
+          - link [aria-hidden] [ref=e201] [cursor=pointer]:
+            - /url: /kits/
+            - generic [ref=e203]: "07"
+          - generic [ref=e204]:
+            - heading [level=3] [ref=e205]:
+              - link "Kits para bomberos" [ref=e206] [cursor=pointer]:
+                - /url: /kits/
+            - paragraph [ref=e207]: "Conjuntos completos y compatibles entre sí: traje, casco, monja, guantes y botas en una sola cotización."
+            - list "Subcategorías de Kits para bomberos" [ref=e208]:
+              - listitem [ref=e209]:
+                - link "Kit estructural, Kits para bomberos" [ref=e210] [cursor=pointer]:
+                  - /url: /kits/kit-estructural/
+                  - generic [ref=e211]: Kit estructural
+              - listitem [ref=e212]:
+                - link "Kit brigadista, Kits para bomberos" [ref=e213] [cursor=pointer]:
+                  - /url: /kits/kit-brigadista/
+                  - generic [ref=e214]: Kit brigadista
+              - listitem [ref=e215]:
+                - link "Kit forestal, Kits para bomberos" [ref=e216] [cursor=pointer]:
+                  - /url: /kits/kit-forestal/
+                  - generic [ref=e217]: Kit forestal
+              - listitem [ref=e218]:
+                - link "Kit de rescate vertical, Kits para bomberos" [ref=e219] [cursor=pointer]:
+                  - /url: /rescate/kit-de-rescate-vertical/
+                  - generic [ref=e220]: Kit de rescate vertical
+            - link "Kits completos para bombero" [ref=e221] [cursor=pointer]:
+              - /url: /kits/
+        - listitem [ref=e222]:
+          - link [aria-hidden] [ref=e223] [cursor=pointer]:
+            - /url: /trajes/hazmat/
+            - generic [ref=e225]: "08"
+          - generic [ref=e226]:
+            - heading [level=3] [ref=e227]:
+              - link "Trajes Hazmat" [ref=e228] [cursor=pointer]:
+                - /url: /trajes/hazmat/
+            - paragraph [ref=e229]: "Protección química por nivel de riesgo: encapsulados nivel A, trajes nivel B y C, guantes y botas químicas."
+            - list "Subcategorías de Trajes Hazmat" [ref=e230]:
+              - listitem [ref=e231]:
+                - link "Traje encapsulado nivel A, Trajes Hazmat" [ref=e232] [cursor=pointer]:
+                  - /url: /trajes/hazmat/traje-encapsulado-nivel-a/
+                  - generic [ref=e233]: Traje encapsulado nivel A
+              - listitem [ref=e234]:
+                - link "Traje químico nivel B, Trajes Hazmat" [ref=e235] [cursor=pointer]:
+                  - /url: /trajes/hazmat/traje-nivel-b/
+                  - generic [ref=e236]: Traje químico nivel B
+              - listitem [ref=e237]:
+                - link "Traje químico nivel C, Trajes Hazmat" [ref=e238] [cursor=pointer]:
+                  - /url: /trajes/hazmat/traje-nivel-c/
+                  - generic [ref=e239]: Traje químico nivel C
+              - listitem [ref=e240]:
+                - link "Overol desechable, Trajes Hazmat" [ref=e241] [cursor=pointer]:
+                  - /url: /trajes/hazmat/overol-quimico-desechable/
+                  - generic [ref=e242]: Overol desechable
+            - link "Trajes Hazmat de protección química" [ref=e243] [cursor=pointer]:
+              - /url: /trajes/hazmat/
+        - listitem [ref=e244]:
+          - link [aria-hidden] [ref=e245] [cursor=pointer]:
+            - /url: /rescate/
+            - generic [ref=e247]: "09"
+          - generic [ref=e248]:
+            - heading [level=3] [ref=e249]:
+              - link "Equipo de rescate" [ref=e250] [cursor=pointer]:
+                - /url: /rescate/
+            - paragraph [ref=e251]: "Rescate vehicular y vertical: herramienta hidráulica de extricación, cuerdas, arneses y conectores."
+            - list "Subcategorías de Equipo de rescate" [ref=e252]:
+              - listitem [ref=e253]:
+                - link "Quijadas de la vida (hidráulica), Equipo de rescate" [ref=e254] [cursor=pointer]:
+                  - /url: /rescate/herramienta-hidraulica-de-rescate/
+                  - generic [ref=e255]: Quijadas de la vida (hidráulica)
+              - listitem [ref=e256]:
+                - link "Arnés de rescate, Equipo de rescate" [ref=e257] [cursor=pointer]:
+                  - /url: /rescate/arnes-de-rescate/
+                  - generic [ref=e258]: Arnés de rescate
+              - listitem [ref=e259]:
+                - link "Cuerda de rescate, Equipo de rescate" [ref=e260] [cursor=pointer]:
+                  - /url: /rescate/cuerda-de-rescate/
+                  - generic [ref=e261]: Cuerda de rescate
+              - listitem [ref=e262]:
+                - link "Mosquetones de rescate, Equipo de rescate" [ref=e263] [cursor=pointer]:
+                  - /url: /rescate/mosquetones-de-rescate/
+                  - generic [ref=e264]: Mosquetones de rescate
+            - link "Equipo de rescate para bomberos" [ref=e265] [cursor=pointer]:
+              - /url: /rescate/
+        - listitem [ref=e266]:
+          - link [aria-hidden] [ref=e267] [cursor=pointer]:
+            - /url: /herramientas/
+            - generic [ref=e269]: "10"
+          - generic [ref=e270]:
+            - heading [level=3] [ref=e271]:
+              - link "Herramientas para bomberos" [ref=e272] [cursor=pointer]:
+                - /url: /herramientas/
+            - paragraph [ref=e273]: Herramienta de entrada forzada y de combate forestal, seleccionada por maniobra y material.
+            - list "Subcategorías de Herramientas para bomberos" [ref=e274]:
+              - listitem [ref=e275]:
+                - link "Hacha de bombero, Herramientas para bomberos" [ref=e276] [cursor=pointer]:
+                  - /url: /herramientas/hacha-de-bombero/
+                  - generic [ref=e277]: Hacha de bombero
+              - listitem [ref=e278]:
+                - link "Barra Halligan, Herramientas para bomberos" [ref=e279] [cursor=pointer]:
+                  - /url: /herramientas/barra-halligan/
+                  - generic [ref=e280]: Barra Halligan
+              - listitem [ref=e281]:
+                - link "Herramienta Pulaski, Herramientas para bomberos" [ref=e282] [cursor=pointer]:
+                  - /url: /herramientas/pulaski/
+                  - generic [ref=e283]: Herramienta Pulaski
+              - listitem [ref=e284]:
+                - link "Bomba de mochila forestal, Herramientas para bomberos" [ref=e285] [cursor=pointer]:
+                  - /url: /herramientas/bomba-de-mochila-forestal/
+                  - generic [ref=e286]: Bomba de mochila forestal
+            - link "Herramientas de entrada forzada y forestales" [ref=e287] [cursor=pointer]:
+              - /url: /herramientas/
+        - listitem [ref=e288]:
+          - link [aria-hidden] [ref=e289] [cursor=pointer]:
+            - /url: /mangueras-y-accesorios/
+            - generic [ref=e291]: "11"
+          - generic [ref=e292]:
+            - heading [level=3] [ref=e293]:
+              - link "Mangueras y accesorios" [ref=e294] [cursor=pointer]:
+                - /url: /mangueras-y-accesorios/
+            - paragraph [ref=e295]: Manguera de ataque, pitones, llaves para hidrante y conexiones compatibles con el equipo en servicio.
+            - list "Subcategorías de Mangueras y accesorios" [ref=e296]:
+              - listitem [ref=e297]:
+                - link "Manguera de ataque, Mangueras y accesorios" [ref=e298] [cursor=pointer]:
+                  - /url: /mangueras-y-accesorios/manguera-de-ataque/
+                  - generic [ref=e299]: Manguera de ataque
+              - listitem [ref=e300]:
+                - link "Chiflón o pitón, Mangueras y accesorios" [ref=e301] [cursor=pointer]:
+                  - /url: /mangueras-y-accesorios/piton-boquilla/
+                  - generic [ref=e302]: Chiflón o pitón
+              - listitem [ref=e303]:
+                - link "Llave para hidrante, Mangueras y accesorios" [ref=e304] [cursor=pointer]:
+                  - /url: /mangueras-y-accesorios/llave-para-hidrante/
+                  - generic [ref=e305]: Llave para hidrante
+              - listitem [ref=e306]:
+                - link "Conexiones y adaptadores, Mangueras y accesorios" [ref=e307] [cursor=pointer]:
+                  - /url: /mangueras-y-accesorios/conexiones-y-adaptadores/
+                  - generic [ref=e308]: Conexiones y adaptadores
+            - link "Mangueras contra incendio y conexiones" [ref=e309] [cursor=pointer]:
+              - /url: /mangueras-y-accesorios/
+        - listitem [ref=e310]:
+          - link [aria-hidden] [ref=e311] [cursor=pointer]:
+            - /url: /accesorios/
+            - generic [ref=e313]: "12"
+          - generic [ref=e314]:
+            - heading [level=3] [ref=e315]:
+              - link "Accesorios para bomberos" [ref=e316] [cursor=pointer]:
+                - /url: /accesorios/
+            - paragraph [ref=e317]: Iluminación, protección ocular, alarma PASS, cámara térmica y transporte del equipo.
+            - list "Subcategorías de Accesorios para bomberos" [ref=e318]:
+              - listitem [ref=e319]:
+                - link "Cámara térmica, Accesorios para bomberos" [ref=e320] [cursor=pointer]:
+                  - /url: /accesorios/camara-termica/
+                  - generic [ref=e321]: Cámara térmica
+              - listitem [ref=e322]:
+                - link "Linterna de bombero, Accesorios para bomberos" [ref=e323] [cursor=pointer]:
+                  - /url: /accesorios/linterna-de-bombero/
+                  - generic [ref=e324]: Linterna de bombero
+              - listitem [ref=e325]:
+                - link "Lámpara de casco, Accesorios para bomberos" [ref=e326] [cursor=pointer]:
+                  - /url: /accesorios/lampara-de-casco/
+                  - generic [ref=e327]: Lámpara de casco
+              - listitem [ref=e328]:
+                - link "Goggles para bombero, Accesorios para bomberos" [ref=e329] [cursor=pointer]:
+                  - /url: /accesorios/goggles/
+                  - generic [ref=e330]: Goggles para bombero
+            - link "Accesorios para bomberos" [ref=e331] [cursor=pointer]:
+              - /url: /accesorios/
+    - generic [ref=e333]:
+      - article [ref=e334]:
+        - generic [ref=e335]:
+          - paragraph [ref=e336]:
+            - generic [ref=e337]: "01"
+            - text: Trajes para bomberos
+          - heading "Trajes para bomberos elegidos para el riesgo real que enfrenta tu equipo" [level=2] [ref=e338]
+          - paragraph [ref=e339]:
+            - text: Quien ha estado dentro de un incendio sabe que el
+            - strong [ref=e340]: traje de bombero
+            - text: "no es un uniforme: es la última barrera entre tu gente y el calor, la flama y el humo. Por eso no te vendemos «un traje» cualquiera. Primero entendemos qué hace tu equipo: ataque interior, brigada industrial, línea de fuego o rescate. Después te recomendamos la familia correcta, aunque eso signifique cotizar menos."
+          - paragraph [ref=e341]:
+            - text: Trabajamos todas las familias de
+            - link "trajes para bomberos" [ref=e342] [cursor=pointer]:
+              - /url: /trajes/
+            - text: . Los
+            - link "trajes estructurales" [ref=e343] [cursor=pointer]:
+              - /url: /trajes/estructural/
+            - text: son para incendio en edificaciones, los
+            - link "de brigadista" [ref=e344] [cursor=pointer]:
+              - /url: /trajes/brigadista/
+            - text: para la industria y los
+            - link "trajes forestales" [ref=e345] [cursor=pointer]:
+              - /url: /trajes/forestal/
+            - text: para jornadas largas en campo. Frente a calor radiante están los
+            - link "aluminizados de aproximación" [ref=e346] [cursor=pointer]:
+              - /url: /trajes/aproximacion/
+            - text: y, para ingresar a la flama, los
+            - link "trajes de entrada" [ref=e347] [cursor=pointer]:
+              - /url: /trajes/entrada/
+            - text: . Completan la línea los
+            - link "de extricación" [ref=e348] [cursor=pointer]:
+              - /url: /trajes/extricacion/
+            - text: para rescate y los
+            - link "Hazmat" [ref=e349] [cursor=pointer]:
+              - /url: /trajes/hazmat/
+            - text: para materiales peligrosos.
+          - paragraph [ref=e350]: "Cada cotización llega con la ficha técnica completa: composite capa por capa, norma de referencia y modelos de Romak Fire, Sköld y Lakeland para que compares con el mismo criterio. Citamos la NFPA 1970, que sustituyó a la NFPA 1971. Así sabes exactamente qué va a recibir tu gente antes de firmar la orden de compra."
+          - list [ref=e351]:
+            - listitem [ref=e352]:
+              - generic [ref=e355]:
+                - strong [ref=e356]: Te orientamos primero
+                - generic [ref=e357]: Si tu operación necesita otra familia de traje, te lo decimos antes de cotizar.
+            - listitem [ref=e358]:
+              - generic [ref=e361]:
+                - strong [ref=e362]: Conjunto que cierra
+                - generic [ref=e363]: Chaquetón, pantalonera, monja y casco se revisan juntos, sin huecos.
+            - listitem [ref=e364]:
+              - generic [ref=e367]:
+                - strong [ref=e368]: Ficha por partida
+                - generic [ref=e369]: Composite, norma y fabricante por escrito en cada renglón de la cotización.
+            - listitem [ref=e370]:
+              - generic [ref=e373]:
+                - strong [ref=e374]: Compra a tu medida
+                - generic [ref=e375]: Por pieza o traje completo, con factura CFDI 4.0 y documentos para licitación.
+          - generic [ref=e376]:
+            - link "Trajes para bomberos por familia" [ref=e377] [cursor=pointer]:
+              - /url: /trajes/
+            - link "Cotizar trajes para bomberos" [ref=e378] [cursor=pointer]:
+              - /url: https://wa.me/525664804962?text=Hola%2C%20quiero%20cotizar%20trajes%20para%20bomberos.
+          - paragraph [ref=e379]: Cotización formal con ficha técnica en día hábil, sin compra mínima y con envío a los 32 estados.
+        - generic [ref=e380]:
+          - figure "Ataque interior con traje estructural y ERA" [ref=e381]:
+            - img "Bomberos con traje estructural y equipo de respiración autónoma durante el ataque interior a un incendio" [ref=e382]
+          - figure "Composite de tres capas" [ref=e384]:
+            - 'img "Composite de tres capas del traje para bombero: capa exterior, barrera de humedad y barrera térmica" [ref=e385]'
+          - figure "Equipo listo para la salida" [ref=e387]:
+            - img "Trajes para bomberos en percha dentro de la estación, con cascos y botas listos para la salida" [ref=e388]
+      - article [ref=e390]:
+        - generic [ref=e391]:
+          - paragraph [ref=e392]:
+            - generic [ref=e393]: "02"
+            - text: Cascos para bomberos
+          - heading "Cascos para bomberos que protegen sin pelearse con la máscara ni con la visión" [level=2] [ref=e394]
+          - paragraph [ref=e395]:
+            - text: Un
+            - strong [ref=e396]: casco de bombero
+            - text: "se nota cuando falla: el visor que empuja la máscara del ERA, la suspensión que se afloja al agacharse, el ala que estorba en un pasillo estrecho. Por eso no lo elegimos por color ni por foto. Te preguntamos cómo trabaja tu equipo y te recomendamos el casco que va a sentirse bien en la cabeza durante todo el servicio."
+          - paragraph [ref=e397]:
+            - text: Tenemos
+            - link "cascos para bomberos" [ref=e398] [cursor=pointer]:
+              - /url: /cascos/
+            - text: para cada operación. Los
+            - link "estructurales tradicionales" [ref=e399] [cursor=pointer]:
+              - /url: /cascos/casco-estructural-tradicional/
+            - text: son para ataque interior y los
+            - link "estructurales europeos" [ref=e400] [cursor=pointer]:
+              - /url: /cascos/casco-estructural-europeo/
+            - text: tipo jet integran el visor. Los
+            - link "cascos forestales" [ref=e401] [cursor=pointer]:
+              - /url: /cascos/casco-forestal/
+            - text: son ligeros para línea de fuego y los
+            - link "de rescate técnico" [ref=e402] [cursor=pointer]:
+              - /url: /cascos/casco-rescate-tecnico/
+            - text: sirven en maniobras vehiculares y en altura. Cuando la respuesta se limita a conatos, está el casco
+            - link "para brigada industrial" [ref=e403] [cursor=pointer]:
+              - /url: /cascos/casco-brigada-industrial/
+            - text: .
+          - paragraph [ref=e404]: "Antes de cerrar la compra revisamos que casco, monja, máscara y cuello del chaquetón trabajen juntos. Cada cotización indica la norma de referencia del tipo: NFPA 1970, EN 443:2008 para el europeo, NFPA 1950 para el forestal o NFPA 2500 para rescate. Incluye modelos Bullard y Sköld con su ficha, para que tu equipo reciba un casco que ajusta desde el primer día."
+          - list [ref=e405]:
+            - listitem [ref=e406]:
+              - generic [ref=e409]:
+                - strong [ref=e410]: El casco de tu operación
+                - generic [ref=e411]: "Estructural, europeo, forestal o de rescate: te decimos cuál corresponde a tu operación."
+            - listitem [ref=e412]:
+              - generic [ref=e415]:
+                - strong [ref=e416]: Ajuste comprobado
+                - generic [ref=e417]: Casco, máscara del ERA, monja y cuello del chaquetón se prueban como conjunto.
+            - listitem [ref=e418]:
+              - generic [ref=e421]:
+                - strong [ref=e422]: Norma por escrito
+                - generic [ref=e423]: Cada casco llega con su referencia declarada y ficha del fabricante.
+            - listitem [ref=e424]:
+              - generic [ref=e427]:
+                - strong [ref=e428]: Configuración a tu medida
+                - generic [ref=e429]: Visor, goggles, cubrenuca y color definidos por partida, sin compra mínima.
+          - generic [ref=e430]:
+            - link "Cascos para bomberos por tipo" [ref=e431] [cursor=pointer]:
+              - /url: /cascos/
+            - link "Cotizar cascos para bomberos" [ref=e432] [cursor=pointer]:
+              - /url: https://wa.me/525664804962?text=Hola%2C%20quiero%20cotizar%20cascos%20para%20bomberos.
+          - paragraph [ref=e433]: Te enviamos la cotización con la ficha de cada casco en día hábil; compras desde una pieza y enviamos a todo el país.
+        - generic [ref=e434]:
+          - figure "Casco, visor y máscara de ERA en ataque" [ref=e435]:
+            - img "Bombero con casco estructural, visor abatido y máscara del equipo de respiración autónoma durante un incendio" [ref=e436]
+          - figure "Casco estructural europeo" [ref=e438]:
+            - img "Casco estructural europeo tipo jet para bombero con visor integrado" [ref=e439]
+          - figure "Casco forestal" [ref=e441]:
+            - img "Casco forestal para bombero con ala completa y goggles" [ref=e442]
+      - article [ref=e444]:
+        - generic [ref=e445]:
+          - paragraph [ref=e446]:
+            - generic [ref=e447]: "03"
+            - text: Equipo de respiración autónoma
+          - heading "Equipo de respiración autónoma para trabajar en el humo con aire y confianza" [level=2] [ref=e448]
+          - paragraph [ref=e449]:
+            - text: Dentro del humo, el
+            - strong [ref=e450]: equipo de respiración autónoma
+            - text: "es lo único que separa a tu bombero de una atmósfera que no se puede respirar. Ahí no hay margen para improvisar: una máscara que no sella con la monja, un regulador incompatible o un cilindro con poca autonomía convierten una maniobra controlada en una salida de emergencia. Por eso lo especificamos contigo, pieza por pieza."
+          - paragraph [ref=e451]:
+            - text: Cotizamos
+            - link "equipos de respiración autónoma (ERA)" [ref=e452] [cursor=pointer]:
+              - /url: /equipo-de-respiracion-autonoma/
+            - text: "para cada uso:"
+            - link "ERA de combate" [ref=e453] [cursor=pointer]:
+              - /url: /equipo-de-respiracion-autonoma/era-de-combate/
+            - text: para ataque interior,
+            - link "ERA industrial" [ref=e454] [cursor=pointer]:
+              - /url: /equipo-de-respiracion-autonoma/era-industrial/
+            - text: para brigadas de planta y
+            - link "ERA de escape" [ref=e455] [cursor=pointer]:
+              - /url: /equipo-de-respiracion-autonoma/era-de-escape/
+            - text: para evacuación. También surtimos
+            - link "cilindros de fibra de carbono" [ref=e456] [cursor=pointer]:
+              - /url: /equipo-de-respiracion-autonoma/cilindros-de-fibra-de-carbono/
+            - text: ", que dan autonomía con menos peso, y"
+            - link "máscaras y reguladores" [ref=e457] [cursor=pointer]:
+              - /url: /equipo-de-respiracion-autonoma/mascaras-y-reguladores-era/
+            - text: para completar los equipos que ya tienes.
+          - paragraph [ref=e458]: "Revisamos que máscara, regulador, arnés y cilindro funcionen como un solo conjunto y que la máscara selle con el casco y la monja de tu equipo. La cotización indica la referencia declarada: NFPA 1970 para combate y NIOSH 42 CFR Parte 84 para uso industrial. Incluye opciones como el Sköld Phantöm de 60 minutos y el MSA G1 Industrial."
+          - list [ref=e459]:
+            - listitem [ref=e460]:
+              - generic [ref=e463]:
+                - strong [ref=e464]: ERA según la atmósfera
+                - generic [ref=e465]: "Combate, industria o escape: te decimos qué ERA pide tu operación."
+            - listitem [ref=e466]:
+              - generic [ref=e469]:
+                - strong [ref=e470]: Sello comprobado
+                - generic [ref=e471]: La máscara se revisa con el casco, la monja y el cuello de tu equipo.
+            - listitem [ref=e472]:
+              - generic [ref=e475]:
+                - strong [ref=e476]: Conjunto documentado
+                - generic [ref=e477]: Máscara, regulador, arnés y cilindro con su referencia declarada por escrito.
+            - listitem [ref=e478]:
+              - generic [ref=e481]:
+                - strong [ref=e482]: Autonomía a tu medida
+                - generic [ref=e483]: Cilindro según duración y tarea; equipo completo o solo las piezas que faltan.
+          - generic [ref=e484]:
+            - link "Equipos de respiración autónoma por uso" [ref=e485] [cursor=pointer]:
+              - /url: /equipo-de-respiracion-autonoma/
+            - link "Cotizar equipo de respiración autónoma" [ref=e486] [cursor=pointer]:
+              - /url: https://wa.me/525664804962?text=Hola%2C%20quiero%20cotizar%20equipo%20de%20respiraci%C3%B3n%20aut%C3%B3noma.
+          - paragraph [ref=e487]: La ficha de cada componente del ERA va en la cotización, que recibes en día hábil y sin compra mínima.
+        - generic [ref=e488]:
+          - figure "ERA en avance por humo" [ref=e489]:
+            - img "Bombero con equipo de respiración autónoma y cilindro de fibra de carbono avanzando por un pasillo con humo" [ref=e490]
+          - figure "ERA de combate" [ref=e492]:
+            - img "Equipo de respiración autónoma de combate con arnés, cilindro y máscara" [ref=e493]
+          - figure "Máscara y regulador" [ref=e495]:
+            - img "Máscara de cara completa y regulador para equipo de respiración autónoma" [ref=e496]
+      - article [ref=e498]:
+        - generic [ref=e499]:
+          - paragraph [ref=e500]:
+            - generic [ref=e501]: "04"
+            - text: Botas para bomberos
+          - heading "Botas para bomberos que aguantan agua, calor y escombro turno tras turno" [level=2] [ref=e502]
+          - paragraph [ref=e503]:
+            - text: Las
+            - strong [ref=e504]: botas para bomberos
+            - text: "son lo que más castiga un turno largo: agua, escombro, vidrio, calor que sube del piso y horas de pie. Una bota mal elegida se paga en ampollas, resbalones y una unión floja con la pantalonera, justo donde el traje tiene que cerrar. Por eso definimos la talla y el tipo de bota con cada usuario, no con una tabla genérica."
+          - paragraph [ref=e505]:
+            - text: Te ayudamos a elegir entre cuatro tipos de
+            - link "botas para bombero" [ref=e506] [cursor=pointer]:
+              - /url: /botas/
+            - text: . Las
+            - link "de hule estructurales" [ref=e507] [cursor=pointer]:
+              - /url: /botas/bota-de-hule-estructural/
+            - text: son la opción clásica para incendio en edificaciones y las
+            - link "de piel estructurales" [ref=e508] [cursor=pointer]:
+              - /url: /botas/bota-de-piel-estructural/
+            - text: cierran con un ajuste más firme. Las
+            - link "botas forestales" [ref=e509] [cursor=pointer]:
+              - /url: /botas/bota-forestal/
+            - text: están hechas para caminar y trabajar en línea de fuego, y las
+            - link "de brigada industrial" [ref=e510] [cursor=pointer]:
+              - /url: /botas/bota-de-brigada-industrial/
+            - text: ", para la respuesta que define tu procedimiento interno."
+          - paragraph [ref=e511]: "Revisamos puntera, entresuela, suela y altura de caña, y te pedimos probarlas con calcetín y pantalonera antes de pedir el lote. La referencia depende del tipo: NFPA 1970 para estructural, NFPA 1950 para forestal y NOM-113-STPS-2009 para brigada industrial. Trabajamos modelos como Romak Fire Workman Fire, Croydon Filtrex y Sköld Workman."
+          - list [ref=e512]:
+            - listitem [ref=e513]:
+              - generic [ref=e516]:
+                - strong [ref=e517]: Bota según el terreno
+                - generic [ref=e518]: "Hule, piel, forestal o brigada: te decimos cuál aguanta tu terreno."
+            - listitem [ref=e519]:
+              - generic [ref=e522]:
+                - strong [ref=e523]: Talla que sí queda
+                - generic [ref=e524]: Se prueba con calcetín y pantalonera, pie por pie y usuario por usuario.
+            - listitem [ref=e525]:
+              - generic [ref=e528]:
+                - strong [ref=e529]: Referencia declarada
+                - generic [ref=e530]: Cada modelo llega con su referencia declarada y ficha del fabricante.
+            - listitem [ref=e531]:
+              - generic [ref=e534]:
+                - strong [ref=e535]: Por par o por partida
+                - generic [ref=e536]: Por par o por partida completa, con factura CFDI 4.0.
+          - generic [ref=e537]:
+            - link "Botas para bomberos por tipo" [ref=e538] [cursor=pointer]:
+              - /url: /botas/
+            - link "Cotizar botas para bomberos" [ref=e539] [cursor=pointer]:
+              - /url: https://wa.me/525664804962?text=Hola%2C%20quiero%20cotizar%20botas%20para%20bomberos.
+          - paragraph [ref=e540]: Cotizamos desde un par y enviamos a cualquiera de los 32 estados.
+        - generic [ref=e541]:
+          - figure "Botas estructurales en escena" [ref=e542]:
+            - img "Botas estructurales de hule para bombero pisando agua y escombro durante un incendio nocturno" [ref=e543]
+          - figure "Bota de hule estructural" [ref=e545]:
+            - img "Botas de hule estructurales para bombero con puntera reforzada" [ref=e546]
+          - figure "Bota de piel estructural" [ref=e548]:
+            - img "Botas de piel estructurales para bombero con cierre y suela antiderrapante" [ref=e549]
+      - article [ref=e551]:
+        - generic [ref=e552]:
+          - paragraph [ref=e553]:
+            - generic [ref=e554]: "05"
+            - text: Guantes para bomberos
+          - heading "Guantes para bomberos que protegen las manos sin quitarles el tacto" [level=2] [ref=e555]
+          - paragraph [ref=e556]:
+            - text: Unos
+            - strong [ref=e557]: guantes para bomberos
+            - text: "mal elegidos terminan en la bolsa del chaquetón justo cuando más se necesitan: para abrir un acople, sujetar la herramienta o asegurar a una víctima. Calor, vidrio, metal cortado y vegetación exigen construcciones distintas. Por eso te ayudamos a elegir el guante de cada operación en lugar de un solo modelo que no convence a nadie."
+          - paragraph [ref=e558]:
+            - text: Trabajamos
+            - link "guantes para bombero" [ref=e559] [cursor=pointer]:
+              - /url: /guantes/
+            - text: por tipo de riesgo. Los
+            - link "guantes estructurales" [ref=e560] [cursor=pointer]:
+              - /url: /guantes/guante-estructural/
+            - text: son para combate interior y los
+            - link "de rescate y extricación" [ref=e561] [cursor=pointer]:
+              - /url: /guantes/guante-rescate-extricacion/
+            - text: dan destreza frente al riesgo mecánico. Los
+            - link "guantes forestales" [ref=e562] [cursor=pointer]:
+              - /url: /guantes/guante-forestal/
+            - text: acompañan la herramienta manual en línea de fuego y los
+            - link "de brigadista" [ref=e563] [cursor=pointer]:
+              - /url: /guantes/guante-brigadista/
+            - text: ", la respuesta inicial en industria. Cada uno cubre algo distinto y no se sustituyen entre sí."
+          - paragraph [ref=e564]: Antes de cotizar definimos la talla por usuario y revisamos palma, costuras, puño y solape con la manga del chaquetón, para que no quede piel expuesta al levantar los brazos. La referencia es NFPA 1970 para estructural y NFPA 1950 para rescate y forestal, con modelos como Romak Fire Firemax VI, Sköld FPGS y Veridian Fire Pro II.
+          - list [ref=e565]:
+            - listitem [ref=e566]:
+              - generic [ref=e569]:
+                - strong [ref=e570]: Un guante por riesgo
+                - generic [ref=e571]: Te decimos qué guante pide cada operación, sin venderte uno para todo.
+            - listitem [ref=e572]:
+              - generic [ref=e575]:
+                - strong [ref=e576]: Puño que cierra
+                - generic [ref=e577]: El solape con la manga se revisa para no dejar piel expuesta.
+            - listitem [ref=e578]:
+              - generic [ref=e581]:
+                - strong [ref=e582]: Ficha por modelo
+                - generic [ref=e583]: Cada modelo llega con su referencia declarada y ficha técnica.
+            - listitem [ref=e584]:
+              - generic [ref=e587]:
+                - strong [ref=e588]: Tallas por usuario
+                - generic [ref=e589]: Cada par se cotiza con la medida de quien lo va a usar.
+          - generic [ref=e590]:
+            - link "Guantes para bomberos por tipo" [ref=e591] [cursor=pointer]:
+              - /url: /guantes/
+            - link "Cotizar guantes para bomberos" [ref=e592] [cursor=pointer]:
+              - /url: https://wa.me/525664804962?text=Hola%2C%20quiero%20cotizar%20guantes%20para%20bomberos.
+          - paragraph [ref=e593]: Puedes pedir un solo par; la cotización con ficha técnica llega en día hábil.
+        - generic [ref=e594]:
+          - figure "Guantes estructurales en el pitón" [ref=e595]:
+            - img "Bombero con guantes estructurales de piel controlando el pitón de una línea de ataque" [ref=e596]
+          - figure "Guante estructural" [ref=e598]:
+            - img "Guantes estructurales para bombero de piel con puño de protección" [ref=e599]
+          - figure "Guante de extricación" [ref=e601]:
+            - img "Guantes de rescate y extricación para bombero con refuerzos en nudillos" [ref=e602]
+      - article [ref=e604]:
+        - generic [ref=e605]:
+          - paragraph [ref=e606]:
+            - generic [ref=e607]: "06"
+            - text: Monjas y escafandras
+          - heading "Monjas y escafandras para bombero que cierran el hueco que el casco no cubre" [level=2] [ref=e608]
+          - paragraph [ref=e609]:
+            - text: "Orejas, cuello y mandíbula: es la zona que queda expuesta entre el casco, la máscara del ERA y el cuello del chaquetón, y la que protege la"
+            - strong [ref=e610]: monja para bombero
+            - text: . Es una pieza pequeña con un trabajo enorme. Si la apertura facial no coincide con la máscara puede comprometer el sello justo cuando más se necesita, así que la elegimos pensando en el equipo que ya usas.
+          - paragraph [ref=e611]:
+            - text: Cotizamos
+            - link "monjas y escafandras para bombero" [ref=e612] [cursor=pointer]:
+              - /url: /capuchas/
+            - text: "de uso profesional: la"
+            - link "capucha over-face Romak Fire" [ref=e613] [cursor=pointer]:
+              - /url: /capuchas/romak-cap1005/
+            - text: ", la"
+            - link "escafandra Nomex Sköld" [ref=e614] [cursor=pointer]:
+              - /url: /capuchas/skold-fpen/
+            - text: ", la"
+            - link "monja Majestic PAC II" [ref=e615] [cursor=pointer]:
+              - /url: /capuchas/majestic-pac-ii/
+            - text: ", de doble capa en cabeza y pechera. También surtimos las monjas propias de cada familia de traje, como la"
+            - link "monja antipartículas" [ref=e616] [cursor=pointer]:
+              - /url: /trajes/estructural/monja/
+            - text: y la
+            - link "monja de brigada" [ref=e617] [cursor=pointer]:
+              - /url: /trajes/brigadista/monja/
+            - text: .
+          - paragraph [ref=e618]: Te recomendamos probarla con máscara, casco y chaquetón puestos, y cuidar que el elástico recupere su forma después del lavado que indica el fabricante. La Majestic PAC II está listada por UL bajo NFPA 1971 edición 2018; en cada cotización recibes por escrito la norma declarada de cada modelo, su apertura, color y número de capas.
+          - list [ref=e619]:
+            - listitem [ref=e620]:
+              - generic [ref=e623]:
+                - strong [ref=e624]: Monja según tu máscara
+                - generic [ref=e625]: Te decimos qué monja corresponde a tu traje y a tu máscara.
+            - listitem [ref=e626]:
+              - generic [ref=e629]:
+                - strong [ref=e630]: Sello protegido
+                - generic [ref=e631]: La apertura facial se revisa con la máscara del ERA que ya usas.
+            - listitem [ref=e632]:
+              - generic [ref=e635]:
+                - strong [ref=e636]: Capas y norma
+                - generic [ref=e637]: Cada modelo llega con su referencia declarada, capas y cuidados.
+            - listitem [ref=e638]:
+              - generic [ref=e641]:
+                - strong [ref=e642]: Por pieza o con el traje
+                - generic [ref=e643]: Por pieza o junto con el traje, sin compra mínima.
+          - generic [ref=e644]:
+            - link "Monjas y escafandras por tipo" [ref=e645] [cursor=pointer]:
+              - /url: /capuchas/
+            - link "Cotizar monjas para bombero" [ref=e646] [cursor=pointer]:
+              - /url: https://wa.me/525664804962?text=Hola%2C%20quiero%20cotizar%20monjas%20para%20bombero.
+          - paragraph [ref=e647]: "Una monja o toda la dotación: cotización con ficha en día hábil y envío a todo el país."
+        - generic [ref=e648]:
+          - figure "Monja, máscara y casco en conjunto" [ref=e649]:
+            - img "Monja de Nomex, máscara de ERA y casco estructural preparados sobre una banca de la estación de bomberos" [ref=e650]
+          - figure "Monja Majestic PAC II" [ref=e652]:
+            - img "Monja para bombero Majestic PAC II de Nomex con doble capa" [ref=e653]
+          - figure "Capucha Romak Fire" [ref=e655]:
+            - img "Capuchas para bombero Romak Fire en versión blanca y negra" [ref=e656]
+      - article [ref=e658]:
+        - generic [ref=e659]:
+          - paragraph [ref=e660]:
+            - generic [ref=e661]: "07"
+            - text: Kits para bomberos
+          - 'heading "Kits para bomberos: el equipo completo y compatible en una sola cotización" [level=2] [ref=e662]'
+          - paragraph [ref=e663]:
+            - text: "Equipar a una corporación o a una brigada pieza por pieza suele terminar igual: tallas que no cuadran, cascos que no ajustan con la monja y guantes que no cierran con la manga. Un"
+            - strong [ref=e664]: kit para bomberos
+            - text: evita ese problema desde el inicio. Definimos traje, casco, monja, guantes y botas juntos, por usuario y por riesgo, para que el equipo de bombero completo llegue listo para trabajar.
+          - paragraph [ref=e665]:
+            - text: Armamos
+            - link "kits de equipo para bombero" [ref=e666] [cursor=pointer]:
+              - /url: /kits/
+            - text: según la operación. Los
+            - link "kits estructurales" [ref=e667] [cursor=pointer]:
+              - /url: /kits/kit-estructural/
+            - text: son para incendio en edificaciones, los
+            - link "kits brigadistas" [ref=e668] [cursor=pointer]:
+              - /url: /kits/kit-brigadista/
+            - text: cubren la respuesta que autoriza tu centro de trabajo y los
+            - link "kits forestales" [ref=e669] [cursor=pointer]:
+              - /url: /kits/kit-forestal/
+            - text: van a línea de fuego y trabajo en campo. Cada kit parte de la
+            - link "familia de traje" [ref=e670] [cursor=pointer]:
+              - /url: /trajes/
+            - text: correcta y suma solo lo que esa operación exige.
+          - paragraph [ref=e671]: "La referencia técnica depende del kit: NFPA 1970 para estructural, NFPA 1950 para forestal y NOM-002-STPS-2010 para la dotación de brigadas. El equipo de respiración autónoma se especifica aparte, según la atmósfera y la tarea. Recibes una sola cotización con tallas, códigos y documentación por componente, lista para tu área de compras."
+          - list [ref=e672]:
+            - listitem [ref=e673]:
+              - generic [ref=e676]:
+                - strong [ref=e677]: Kit según la operación
+                - generic [ref=e678]: "Estructural, brigadista o forestal: armamos el kit que pide tu operación."
+            - listitem [ref=e679]:
+              - generic [ref=e682]:
+                - strong [ref=e683]: Todo ajusta
+                - generic [ref=e684]: Casco, monja, guantes, botas y traje se revisan como un solo equipo.
+            - listitem [ref=e685]:
+              - generic [ref=e688]:
+                - strong [ref=e689]: Una sola cotización
+                - generic [ref=e690]: Tallas, códigos y documentación por componente en el mismo documento.
+            - listitem [ref=e691]:
+              - generic [ref=e694]:
+                - strong [ref=e695]: Kit completo o parcial
+                - generic [ref=e696]: Kit completo o solo las piezas que te faltan, con factura CFDI 4.0.
+          - generic [ref=e697]:
+            - link "Kits para bomberos por tipo" [ref=e698] [cursor=pointer]:
+              - /url: /kits/
+            - link "Cotizar kits para bomberos" [ref=e699] [cursor=pointer]:
+              - /url: https://wa.me/525664804962?text=Hola%2C%20quiero%20cotizar%20kits%20para%20bomberos.
+          - paragraph [ref=e700]: Un kit o varios, con cotización formal en día hábil y entrega en los 32 estados.
+        - generic [ref=e701]:
+          - figure "Equipo completo listo para la salida" [ref=e702]:
+            - 'img "Kit completo de bombero listo para la salida: traje estructural, botas, casco, guantes y monja" [ref=e703]'
+          - figure "Kit estructural" [ref=e705]:
+            - img "Kit estructural para bombero con traje, casco, monja, guantes y botas" [ref=e706]
+          - figure "Kit forestal" [ref=e708]:
+            - img "Kit forestal para bombero con overol, casco, goggles, guantes y botas" [ref=e709]
+      - article [ref=e711]:
+        - generic [ref=e712]:
+          - paragraph [ref=e713]:
+            - generic [ref=e714]: "08"
+            - text: Trajes Hazmat
+          - heading "Trajes Hazmat con la barrera química correcta para cada sustancia" [level=2] [ref=e715]
+          - paragraph [ref=e716]:
+            - text: En una fuga química no hay espacio para adivinar. Los
+            - strong [ref=e717]: trajes Hazmat
+            - text: se eligen por la sustancia, su concentración, la forma de contacto y el tiempo de exposición, no por color ni por apariencia. Un nivel de menos deja al personal expuesto; uno de más lo sobrecarga sin necesidad. Por eso definimos el nivel contigo antes de cotizar, con la tabla de compatibilidad del fabricante.
+          - paragraph [ref=e718]:
+            - text: Cotizamos
+            - link "trajes de protección química" [ref=e719] [cursor=pointer]:
+              - /url: /trajes/hazmat/
+            - text: por nivel. El
+            - link "encapsulado nivel A" [ref=e720] [cursor=pointer]:
+              - /url: /trajes/hazmat/traje-encapsulado-nivel-a/
+            - text: es para vapores que exigen encapsular el ERA y el
+            - link "traje químico nivel B" [ref=e721] [cursor=pointer]:
+              - /url: /trajes/hazmat/traje-nivel-b/
+            - text: ", para salpicadura con ERA exterior. El"
+            - link "traje nivel C" [ref=e722] [cursor=pointer]:
+              - /url: /trajes/hazmat/traje-nivel-c/
+            - text: aplica cuando el contaminante permite respiración purificadora y el
+            - link "overol químico desechable" [ref=e723] [cursor=pointer]:
+              - /url: /trajes/hazmat/overol-quimico-desechable/
+            - text: ", en tareas delimitadas. Todo se completa con"
+            - link "guantes químicos" [ref=e724] [cursor=pointer]:
+              - /url: /trajes/hazmat/guantes-quimicos/
+            - text: "y"
+            - link "botas químicas" [ref=e725] [cursor=pointer]:
+              - /url: /trajes/hazmat/botas-quimicas/
+            - text: compatibles.
+          - paragraph [ref=e726]: "Un conjunto Hazmat solo protege si sus uniones cierran: traslape de guantes y botas, talla con movilidad suficiente y un procedimiento claro de descontaminación y retiro. La referencia técnica es NFPA 1990. Cuéntanos qué sustancia manejas y qué tarea harán tus brigadistas, y te enviamos una configuración documentada, lista para revisar al recibirla."
+          - list [ref=e727]:
+            - listitem [ref=e728]:
+              - generic [ref=e731]:
+                - strong [ref=e732]: Nivel según la sustancia
+                - generic [ref=e733]: Definimos contigo el nivel A, B o C según la sustancia y la tarea.
+            - listitem [ref=e734]:
+              - generic [ref=e737]:
+                - strong [ref=e738]: Uniones que cierran
+                - generic [ref=e739]: Guantes, botas y protección respiratoria se cotizan como un solo conjunto.
+            - listitem [ref=e740]:
+              - generic [ref=e743]:
+                - strong [ref=e744]: Compatibilidad por escrito
+                - generic [ref=e745]: Tabla del fabricante y alcance declarado para cada componente.
+            - listitem [ref=e746]:
+              - generic [ref=e749]:
+                - strong [ref=e750]: Por pieza o en conjunto
+                - generic [ref=e751]: Traje, guantes y botas por pieza o en conjunto, sin compra mínima.
+          - generic [ref=e752]:
+            - link "Trajes Hazmat por nivel" [ref=e753] [cursor=pointer]:
+              - /url: /trajes/hazmat/
+            - link "Cotizar trajes Hazmat" [ref=e754] [cursor=pointer]:
+              - /url: https://wa.me/525664804962?text=Hola%2C%20quiero%20cotizar%20trajes%20Hazmat.
+          - paragraph [ref=e755]: Cotización con tabla de compatibilidad del fabricante en día hábil, sin compra mínima.
+        - generic [ref=e756]:
+          - figure "Respuesta química con ERA exterior" [ref=e757]:
+            - img "Brigadistas con trajes químicos y ERA exterior frente a un corredor de descontaminación en planta industrial" [ref=e758]
+          - figure "Traje químico nivel B" [ref=e760]:
+            - img "Traje químico nivel B para respuesta a materiales peligrosos con ERA exterior" [ref=e761]
+          - figure "Traje químico nivel C" [ref=e763]:
+            - img "Traje químico nivel C para protección contra salpicadura y partículas" [ref=e764]
+      - article [ref=e766]:
+        - generic [ref=e767]:
+          - paragraph [ref=e768]:
+            - generic [ref=e769]: "09"
+            - text: Equipo de rescate
+          - heading "Equipo de rescate para bomberos que funciona como un sistema completo" [level=2] [ref=e770]
+          - paragraph [ref=e771]:
+            - text: "En un rescate vehicular o en altura, lo que falla casi nunca es la pieza más cara: es el conector que no corresponde, la cuerda del diámetro equivocado o el arnés que nadie ajustó. Por eso el"
+            - strong [ref=e772]: equipo de rescate para bomberos
+            - text: lo cotizamos como sistema, partiendo de la maniobra que hace tu equipo, de sus anclajes y de su entrenamiento.
+          - paragraph [ref=e773]:
+            - text: Trabajamos
+            - link "equipo de rescate" [ref=e774] [cursor=pointer]:
+              - /url: /rescate/
+            - text: para extricación y cuerda. La
+            - link "herramienta hidráulica de rescate" [ref=e775] [cursor=pointer]:
+              - /url: /rescate/herramienta-hidraulica-de-rescate/
+            - text: separa, corta y empuja. Con
+            - link "arneses de rescate" [ref=e776] [cursor=pointer]:
+              - /url: /rescate/arnes-de-rescate/
+            - text: ","
+            - link "cuerdas de rescate" [ref=e777] [cursor=pointer]:
+              - /url: /rescate/cuerda-de-rescate/
+            - text: estáticas y
+            - link "mosquetones de rescate" [ref=e778] [cursor=pointer]:
+              - /url: /rescate/mosquetones-de-rescate/
+            - text: se arman los sistemas de cuerda, y los
+            - link "kits de rescate vertical" [ref=e779] [cursor=pointer]:
+              - /url: /rescate/kit-de-rescate-vertical/
+            - text: integran todo para una maniobra definida.
+          - paragraph [ref=e780]: La referencia técnica es NFPA 2500 y la declaración concreta la da cada fabricante por modelo. Contigo definimos tallas, puntos de conexión, diámetro y longitud de cuerda, fuente de energía de la herramienta y compatibilidad con el traje de extricación y los guantes. Recibes cada componente identificado, con su documentación y su criterio de inspección y retiro.
+          - list [ref=e781]:
+            - listitem [ref=e782]:
+              - generic [ref=e785]:
+                - strong [ref=e786]: Partimos de la maniobra
+                - generic [ref=e787]: "Partimos de la maniobra: extricación, acceso, descenso o rescate en altura."
+            - listitem [ref=e788]:
+              - generic [ref=e791]:
+                - strong [ref=e792]: Sistema compatible
+                - generic [ref=e793]: Arnés, cuerda, conectores y anclajes se revisan juntos.
+            - listitem [ref=e794]:
+              - generic [ref=e797]:
+                - strong [ref=e798]: Componentes identificados
+                - generic [ref=e799]: Cada pieza llega con su documentación para inspección y resguardo.
+            - listitem [ref=e800]:
+              - generic [ref=e803]:
+                - strong [ref=e804]: Kit o componentes
+                - generic [ref=e805]: Kit completo o componentes sueltos, con factura CFDI 4.0.
+          - generic [ref=e806]:
+            - link "Equipo de rescate por tipo" [ref=e807] [cursor=pointer]:
+              - /url: /rescate/
+            - link "Cotizar equipo de rescate para bomberos" [ref=e808] [cursor=pointer]:
+              - /url: https://wa.me/525664804962?text=Hola%2C%20quiero%20cotizar%20equipo%20de%20rescate%20para%20bomberos.
+          - paragraph [ref=e809]: Componentes sueltos o sistema completo, con cotización en día hábil y envío a todo el país.
+        - generic [ref=e810]:
+          - figure "Extricación con herramienta hidráulica" [ref=e811]:
+            - img "Rescatista operando una herramienta hidráulica de rescate para abrir la puerta de un vehículo accidentado" [ref=e812]
+          - figure "Arnés de rescate" [ref=e814]:
+            - img "Arnés de rescate de cuerpo completo para bomberos en trabajo con cuerda" [ref=e815]
+          - figure "Kit de rescate vertical" [ref=e817]:
+            - img "Kit de rescate vertical con cuerda, poleas, descensores y mosquetones" [ref=e818]
+      - article [ref=e820]:
+        - generic [ref=e821]:
+          - paragraph [ref=e822]:
+            - generic [ref=e823]: "10"
+            - text: Herramientas para bomberos
+          - heading "Herramientas para bomberos que abren paso en los primeros minutos" [level=2] [ref=e824]
+          - paragraph [ref=e825]:
+            - text: "Los primeros minutos de un servicio se ganan con herramienta: abrir una puerta, ventilar o cortar una línea de fuego. Unas"
+            - strong [ref=e826]: herramientas para bomberos
+            - text: con el peso, la longitud o el acero equivocados cansan, se doblan o no entran donde se necesitan. Por eso te ayudamos a elegir cada herramienta de un bombero por la maniobra que va a resolver, no por la foto.
+          - paragraph [ref=e827]:
+            - text: Cotizamos
+            - link "herramientas de entrada forzada y forestales" [ref=e828] [cursor=pointer]:
+              - /url: /herramientas/
+            - text: . Las
+            - link "hachas de bombero" [ref=e829] [cursor=pointer]:
+              - /url: /herramientas/hacha-de-bombero/
+            - text: cortan y golpean, las
+            - link "barras Halligan" [ref=e830] [cursor=pointer]:
+              - /url: /herramientas/barra-halligan/
+            - text: apalancan y fuerzan accesos, y los
+            - link "ganchos bicheros" [ref=e831] [cursor=pointer]:
+              - /url: /herramientas/gancho-bichero/
+            - text: abren plafones y remueven material con alcance. En campo, las
+            - link "herramientas Pulaski" [ref=e832] [cursor=pointer]:
+              - /url: /herramientas/pulaski/
+            - text: cavan y cortan la línea, y las
+            - link "bombas de mochila forestal" [ref=e833] [cursor=pointer]:
+              - /url: /herramientas/bomba-de-mochila-forestal/
+            - text: apoyan la liquidación con agua.
+          - paragraph [ref=e834]: Antes de comprar compara cabeza, acero, mango, longitud y peso, y prueba el agarre con guantes puestos. Las herramientas manuales no tienen una norma común de producto, así que pedimos la especificación del fabricante para cada pieza. Trabajamos la barra Halligan de Romak Fire y cotizamos por pieza o dotación completa, con fundas y soportes para el traslado.
+          - list [ref=e835]:
+            - listitem [ref=e836]:
+              - generic [ref=e839]:
+                - strong [ref=e840]: Herramienta por maniobra
+                - generic [ref=e841]: Te recomendamos la herramienta según la maniobra que vas a resolver.
+            - listitem [ref=e842]:
+              - generic [ref=e845]:
+                - strong [ref=e846]: Agarre probado
+                - generic [ref=e847]: Mango, peso y longitud se revisan con guantes puestos.
+            - listitem [ref=e848]:
+              - generic [ref=e851]:
+                - strong [ref=e852]: Especificación por escrito
+                - generic [ref=e853]: Material, medidas y peso declarados por el fabricante en cada partida.
+            - listitem [ref=e854]:
+              - generic [ref=e857]:
+                - strong [ref=e858]: Pieza o dotación
+                - generic [ref=e859]: Por pieza o dotación completa, con fundas para el traslado.
+          - generic [ref=e860]:
+            - link "Herramientas para bomberos por tipo" [ref=e861] [cursor=pointer]:
+              - /url: /herramientas/
+            - link "Cotizar herramientas para bomberos" [ref=e862] [cursor=pointer]:
+              - /url: https://wa.me/525664804962?text=Hola%2C%20quiero%20cotizar%20herramientas%20para%20bomberos.
+          - paragraph [ref=e863]: Desde una sola herramienta, con ficha del fabricante y cotización en día hábil.
+        - generic [ref=e864]:
+          - figure "Entrada forzada con Halligan y hacha" [ref=e865]:
+            - img "Bombero forzando una puerta metálica con barra Halligan y hacha de bombero en una entrada forzada" [ref=e866]
+          - figure "Hacha de bombero" [ref=e868]:
+            - img "Hacha de bombero para corte y golpe en entrada forzada" [ref=e869]
+          - figure "Bomba de mochila forestal" [ref=e871]:
+            - img "Bomba de mochila forestal para liquidación y apoyo con agua en incendio de vegetación" [ref=e872]
+      - article [ref=e874]:
+        - generic [ref=e875]:
+          - paragraph [ref=e876]:
+            - generic [ref=e877]: "11"
+            - text: Mangueras y accesorios
+          - heading "Mangueras contra incendio y conexiones que acoplan a la primera" [level=2] [ref=e878]
+          - paragraph [ref=e879]:
+            - text: Una
+            - strong [ref=e880]: manguera de bombero
+            - text: solo sirve si conecta. Diámetro, acople, rosca y pitón tienen que coincidir con tu bomba, tus hidrantes y el resto de la línea; si falta un adaptador o la rosca es distinta, el abastecimiento se detiene en plena emergencia. Ese error se descubre en la escena, no en el almacén, y por eso lo revisamos contigo antes de cotizar.
+          - paragraph [ref=e881]:
+            - text: Cotizamos
+            - link "mangueras contra incendio" [ref=e882] [cursor=pointer]:
+              - /url: /mangueras-y-accesorios/
+            - text: "y sus accesorios:"
+            - link "mangueras de ataque" [ref=e883] [cursor=pointer]:
+              - /url: /mangueras-y-accesorios/manguera-de-ataque/
+            - text: de 1 ½ y 2 ½ pulgadas y
+            - link "pitones y boquillas" [ref=e884] [cursor=pointer]:
+              - /url: /mangueras-y-accesorios/piton-boquilla/
+            - text: para chorro directo o niebla. Para operar tomas están las
+            - link "llaves para hidrante" [ref=e885] [cursor=pointer]:
+              - /url: /mangueras-y-accesorios/llave-para-hidrante/
+            - text: ", y las"
+            - link "conexiones y adaptadores" [ref=e886] [cursor=pointer]:
+              - /url: /mangueras-y-accesorios/conexiones-y-adaptadores/
+            - text: resuelven cambios de diámetro o de rosca entre equipos.
+          - paragraph [ref=e887]: Documentamos longitud, chaqueta, diámetro y ambos extremos de cada tramo, e identificamos si la rosca es NH/NST o NPSH antes de pedir. Cada modelo se cotiza con la norma NFPA que declare su fabricante. Recibes la línea completa, con juntas y accesorios, lista para probar los acoples con tu propio equipo desde el primer día.
+          - list [ref=e888]:
+            - listitem [ref=e889]:
+              - generic [ref=e892]:
+                - strong [ref=e893]: Línea según tu bomba
+                - generic [ref=e894]: Diámetro, rosca y pitón se definen según tu bomba y tus hidrantes.
+            - listitem [ref=e895]:
+              - generic [ref=e898]:
+                - strong [ref=e899]: Acople comprobado
+                - generic [ref=e900]: Identificamos NH/NST o NPSH antes de pedir, sin adivinar.
+            - listitem [ref=e901]:
+              - generic [ref=e904]:
+                - strong [ref=e905]: Medidas por escrito
+                - generic [ref=e906]: Longitud, chaqueta y ambos extremos de cada tramo en la cotización.
+            - listitem [ref=e907]:
+              - generic [ref=e910]:
+                - strong [ref=e911]: Tramo o línea completa
+                - generic [ref=e912]: Por tramo o línea completa con pitón, juntas y adaptadores.
+          - generic [ref=e913]:
+            - link "Mangueras contra incendio por tipo" [ref=e914] [cursor=pointer]:
+              - /url: /mangueras-y-accesorios/
+            - link "Cotizar mangueras contra incendio" [ref=e915] [cursor=pointer]:
+              - /url: https://wa.me/525664804962?text=Hola%2C%20quiero%20cotizar%20mangueras%20contra%20incendio.
+          - paragraph [ref=e916]: Un tramo o la línea completa, con cotización en día hábil y envío a los 32 estados.
+        - generic [ref=e917]:
+          - figure "Línea conectada al hidrante" [ref=e918]:
+            - img "Línea de manguera contra incendio conectada a un hidrante con acople de bronce y llave para hidrante" [ref=e919]
+          - figure "Pitón de chorro y niebla" [ref=e921]:
+            - img "Pitón para manguera contra incendio con control de chorro directo y niebla" [ref=e922]
+          - figure "Conexiones y adaptadores" [ref=e924]:
+            - img "Conexiones y adaptadores de bronce para mangueras contra incendio" [ref=e925]
+      - article [ref=e927]:
+        - generic [ref=e928]:
+          - paragraph [ref=e929]:
+            - generic [ref=e930]: "12"
+            - text: Accesorios para bomberos
+          - heading "Accesorios para bomberos que suman luz, visión y alerta sin estorbar" [level=2] [ref=e931]
+          - paragraph [ref=e932]:
+            - text: Una lámpara sin soporte para el casco, unos goggles que chocan con la máscara o una alarma tapada por el arnés dejan de servir justo cuando hacen falta. Los
+            - strong [ref=e933]: accesorios para bomberos
+            - text: tienen que integrarse al equipo que ya usas, no sumarse encima. Por eso los elegimos contigo pensando en el casco, el ERA y la maniobra de tu gente.
+          - paragraph [ref=e934]:
+            - text: Cotizamos
+            - link "accesorios para bombero" [ref=e935] [cursor=pointer]:
+              - /url: /accesorios/
+            - text: "de uso diario:"
+            - link "lámparas de casco" [ref=e936] [cursor=pointer]:
+              - /url: /accesorios/lampara-de-casco/
+            - text: para trabajar con las manos libres,
+            - link "linternas de bombero" [ref=e937] [cursor=pointer]:
+              - /url: /accesorios/linterna-de-bombero/
+            - text: para el chaquetón y
+            - link "goggles para bombero" [ref=e938] [cursor=pointer]:
+              - /url: /accesorios/goggles/
+            - text: para protección ocular. Sumamos
+            - link "cámaras térmicas" [ref=e939] [cursor=pointer]:
+              - /url: /accesorios/camara-termica/
+            - text: para localizar focos y víctimas en el humo,
+            - link "dispositivos PASS" [ref=e940] [cursor=pointer]:
+              - /url: /accesorios/dispositivo-pass/
+            - text: de alerta personal y
+            - link "maletas porta-equipo" [ref=e941] [cursor=pointer]:
+              - /url: /accesorios/maleta-porta-equipo/
+            - text: .
+          - paragraph [ref=e942]: Probamos montaje, controles con guantes, batería y campo visual con tu casco y tu ERA. En alarmas PASS la referencia vigente es NFPA 1970, que absorbió a la NFPA 1982. Trabajamos modelos como la Streamlight Vantage y los goggles ESS Striketeam XTO, con repuestos y cargadores identificados en la misma cotización para que nada se quede sin carga.
+          - list [ref=e943]:
+            - listitem [ref=e944]:
+              - generic [ref=e947]:
+                - strong [ref=e948]: Solo lo que suma
+                - generic [ref=e949]: Te decimos qué accesorio suma a tu operación y cuál no hace falta.
+            - listitem [ref=e950]:
+              - generic [ref=e953]:
+                - strong [ref=e954]: Montaje comprobado
+                - generic [ref=e955]: Soportes, casco, visor y máscara se prueban juntos.
+            - listitem [ref=e956]:
+              - generic [ref=e959]:
+                - strong [ref=e960]: Norma y ficha
+                - generic [ref=e961]: Cada accesorio llega con la referencia que declara su fabricante.
+            - listitem [ref=e962]:
+              - generic [ref=e965]:
+                - strong [ref=e966]: Compra por pieza
+                - generic [ref=e967]: Repuestos, baterías y cargadores van en la misma partida.
+          - generic [ref=e968]:
+            - link "Accesorios para bomberos por tipo" [ref=e969] [cursor=pointer]:
+              - /url: /accesorios/
+            - link "Cotizar accesorios para bomberos" [ref=e970] [cursor=pointer]:
+              - /url: https://wa.me/525664804962?text=Hola%2C%20quiero%20cotizar%20accesorios%20para%20bomberos.
+          - paragraph [ref=e971]: Accesorios sueltos o con repuestos, con ficha técnica y respuesta en día hábil.
+        - generic [ref=e972]:
+          - figure "Cámara térmica en humo" [ref=e973]:
+            - img "Bombero usando una cámara térmica en un cuarto con humo, con lámpara de casco y dispositivo PASS" [ref=e974]
+          - figure "Linterna de bombero" [ref=e976]:
+            - img "Linterna de bombero de ángulo recto para porte en el chaquetón" [ref=e977]
+          - figure "Goggles para bombero" [ref=e979]:
+            - img "Goggles para bombero con banda elástica para uso sobre el casco" [ref=e980]
+    - generic [ref=e983]:
+      - generic [ref=e984]:
+        - generic [ref=e985]:
+          - paragraph [ref=e986]: Trajes para bomberos
+          - heading "Siete familias de trajes para bomberos, una por tipo de riesgo" [level=2] [ref=e987]
+        - generic [ref=e988]:
+          - paragraph [ref=e989]:
+            - text: Los
+            - link "trajes para bomberos" [ref=e990] [cursor=pointer]:
+              - /url: /trajes/
+            - text: "no son un producto único: cada familia se construye para un riesgo distinto. El estructural es para incendio en edificaciones y el de brigadista, para fuego incipiente en industria. El forestal trabaja en línea de fuego; los de aproximación y de entrada, frente a calor radiante y flama. El de extricación sirve para rescate y el Hazmat, para materiales peligrosos. No son intercambiables."
+          - paragraph [ref=e991]: "Elige la categoría que corresponde a tu operación y consulta su ficha técnica: composite por capa, norma de referencia y piezas que se pueden reponer por separado."
+      - list "Tarjetas del catálogo" [ref=e992]:
+        - listitem [ref=e993]:
+          - link [aria-hidden] [ref=e994] [cursor=pointer]:
+            - /url: /trajes/estructural/
+            - generic [ref=e996]: TR-01
+          - generic [ref=e997]:
+            - heading [level=3] [ref=e998]:
+              - link "Trajes estructurales" [ref=e999] [cursor=pointer]:
+                - /url: /trajes/estructural/
+            - paragraph [ref=e1000]: "Chaquetón y pantalón de tres capas: exterior, barrera de humedad y barrera térmica. Para combate de incendio en edificaciones."
+            - list "Subcategorías de Trajes estructurales" [ref=e1001]:
+              - listitem [ref=e1002]:
+                - link "Chaquetón estructural, Trajes estructurales" [ref=e1003] [cursor=pointer]:
+                  - /url: /trajes/estructural/chaqueton/
+                  - generic [ref=e1004]: Chaquetón estructural
+              - listitem [ref=e1005]:
+                - link "Pantalonera estructural, Trajes estructurales" [ref=e1006] [cursor=pointer]:
+                  - /url: /trajes/estructural/pantalonera/
+                  - generic [ref=e1007]: Pantalonera estructural
+              - listitem [ref=e1008]:
+                - link "Monja antipartículas, Trajes estructurales" [ref=e1009] [cursor=pointer]:
+                  - /url: /trajes/estructural/monja/
+                  - generic [ref=e1010]: Monja antipartículas
+              - listitem [ref=e1011]:
+                - link "Arnés de escape, Trajes estructurales" [ref=e1012] [cursor=pointer]:
+                  - /url: /trajes/estructural/arnes-escape/
+                  - generic [ref=e1013]: Arnés de escape
+            - link "Trajes estructurales para bombero" [ref=e1014] [cursor=pointer]:
+              - /url: /trajes/estructural/
+        - listitem [ref=e1015]:
+          - link [aria-hidden] [ref=e1016] [cursor=pointer]:
+            - /url: /trajes/brigadista/
+            - generic [ref=e1018]: TR-02
+          - generic [ref=e1019]:
+            - heading [level=3] [ref=e1020]:
+              - link "Trajes de brigadista" [ref=e1021] [cursor=pointer]:
+                - /url: /trajes/brigadista/
+            - paragraph [ref=e1022]: Equipo para brigada industrial de fuego incipiente. Menor costo que el estructural certificado y distinto alcance de protección.
+            - list "Subcategorías de Trajes de brigadista" [ref=e1023]:
+              - listitem [ref=e1024]:
+                - link "Conjunto de brigada, Trajes de brigadista" [ref=e1025] [cursor=pointer]:
+                  - /url: /trajes/brigadista/conjunto/
+                  - generic [ref=e1026]: Conjunto de brigada
+              - listitem [ref=e1027]:
+                - link "Overol ignífugo, Trajes de brigadista" [ref=e1028] [cursor=pointer]:
+                  - /url: /trajes/brigadista/overol/
+                  - generic [ref=e1029]: Overol ignífugo
+              - listitem [ref=e1030]:
+                - link "Chaquetón de brigadista, Trajes de brigadista" [ref=e1031] [cursor=pointer]:
+                  - /url: /trajes/brigadista/chaqueton/
+                  - generic [ref=e1032]: Chaquetón de brigadista
+              - listitem [ref=e1033]:
+                - link "Pantalonera de brigadista, Trajes de brigadista" [ref=e1034] [cursor=pointer]:
+                  - /url: /trajes/brigadista/pantalonera/
+                  - generic [ref=e1035]: Pantalonera de brigadista
+            - link "Trajes de brigadista industrial" [ref=e1036] [cursor=pointer]:
+              - /url: /trajes/brigadista/
+        - listitem [ref=e1037]:
+          - link [aria-hidden] [ref=e1038] [cursor=pointer]:
+            - /url: /trajes/forestal/
+            - generic [ref=e1040]: TR-03
+          - generic [ref=e1041]:
+            - heading [level=3] [ref=e1042]:
+              - link "Trajes forestales" [ref=e1043] [cursor=pointer]:
+                - /url: /trajes/forestal/
+            - paragraph [ref=e1044]: Camisola y pantalón de una sola capa en tela ignífuga inherente. Ligereza y transpirabilidad para jornadas largas en línea de fuego.
+            - list "Subcategorías de Trajes forestales" [ref=e1045]:
+              - listitem [ref=e1046]:
+                - link "Camisola forestal, Trajes forestales" [ref=e1047] [cursor=pointer]:
+                  - /url: /trajes/forestal/camisola/
+                  - generic [ref=e1048]: Camisola forestal
+              - listitem [ref=e1049]:
+                - link "Pantalón forestal, Trajes forestales" [ref=e1050] [cursor=pointer]:
+                  - /url: /trajes/forestal/pantalon/
+                  - generic [ref=e1051]: Pantalón forestal
+              - listitem [ref=e1052]:
+                - link "Chamarra forestal, Trajes forestales" [ref=e1053] [cursor=pointer]:
+                  - /url: /trajes/forestal/chamarra/
+                  - generic [ref=e1054]: Chamarra forestal
+              - listitem [ref=e1055]:
+                - link "Overol forestal, Trajes forestales" [ref=e1056] [cursor=pointer]:
+                  - /url: /trajes/forestal/overol/
+                  - generic [ref=e1057]: Overol forestal
+            - link "Trajes forestales para bombero" [ref=e1058] [cursor=pointer]:
+              - /url: /trajes/forestal/
+        - listitem [ref=e1059]:
+          - link [aria-hidden] [ref=e1060] [cursor=pointer]:
+            - /url: /trajes/aproximacion/
+            - generic [ref=e1062]: TR-04
+          - generic [ref=e1063]:
+            - heading [level=3] [ref=e1064]:
+              - link "Trajes de aproximación (aluminizados)" [ref=e1065] [cursor=pointer]:
+                - /url: /trajes/aproximacion/
+            - paragraph [ref=e1066]: "Aluminizados para trabajo prolongado cerca de calor radiante intenso: ARFF, refinería y colada de metal. Conservan movilidad."
+            - list "Subcategorías de Trajes de aproximación (aluminizados)" [ref=e1067]:
+              - listitem [ref=e1068]:
+                - link "Chaquetón aluminizado, Trajes de aproximación (aluminizados)" [ref=e1069] [cursor=pointer]:
+                  - /url: /trajes/aproximacion/chaqueton/
+                  - generic [ref=e1070]: Chaquetón aluminizado
+              - listitem [ref=e1071]:
+                - link "Pantalón aluminizado, Trajes de aproximación (aluminizados)" [ref=e1072] [cursor=pointer]:
+                  - /url: /trajes/aproximacion/pantalon/
+                  - generic [ref=e1073]: Pantalón aluminizado
+              - listitem [ref=e1074]:
+                - link "Capucha aluminizada, Trajes de aproximación (aluminizados)" [ref=e1075] [cursor=pointer]:
+                  - /url: /trajes/aproximacion/capucha/
+                  - generic [ref=e1076]: Capucha aluminizada
+              - listitem [ref=e1077]:
+                - link "Guantes aluminizados, Trajes de aproximación (aluminizados)" [ref=e1078] [cursor=pointer]:
+                  - /url: /trajes/aproximacion/guantes/
+                  - generic [ref=e1079]: Guantes aluminizados
+            - link "Trajes aluminizados de aproximación" [ref=e1080] [cursor=pointer]:
+              - /url: /trajes/aproximacion/
+        - listitem [ref=e1081]:
+          - link [aria-hidden] [ref=e1082] [cursor=pointer]:
+            - /url: /trajes/entrada/
+            - generic [ref=e1084]: TR-05
+          - generic [ref=e1085]:
+            - heading [level=3] [ref=e1086]:
+              - link "Trajes de entrada" [ref=e1087] [cursor=pointer]:
+                - /url: /trajes/entrada/
+            - paragraph [ref=e1088]: Aluminizado multicapa para ingreso breve a la flama en horno o incidente térmico severo. No se sustituye con uno de aproximación.
+            - list "Subcategorías de Trajes de entrada" [ref=e1089]:
+              - listitem [ref=e1090]:
+                - link "Traje de penetración, Trajes de entrada" [ref=e1091] [cursor=pointer]:
+                  - /url: /trajes/entrada/conjunto-corta-duracion/
+                  - generic [ref=e1092]: Traje de penetración
+              - listitem [ref=e1093]:
+                - link "Penetración avanzada, Trajes de entrada" [ref=e1094] [cursor=pointer]:
+                  - /url: /trajes/entrada/conjunto-avanzado/
+                  - generic [ref=e1095]: Penetración avanzada
+              - listitem [ref=e1096]:
+                - link "Capucha de penetración, Trajes de entrada" [ref=e1097] [cursor=pointer]:
+                  - /url: /trajes/entrada/capucha/
+                  - generic [ref=e1098]: Capucha de penetración
+              - listitem [ref=e1099]:
+                - link "Traje para hornos, Trajes de entrada" [ref=e1100] [cursor=pointer]:
+                  - /url: /trajes/entrada/hornos/
+                  - generic [ref=e1101]: Traje para hornos
+            - link "Trajes de entrada a la flama" [ref=e1102] [cursor=pointer]:
+              - /url: /trajes/entrada/
+        - listitem [ref=e1103]:
+          - link [aria-hidden] [ref=e1104] [cursor=pointer]:
+            - /url: /trajes/extricacion/
+            - generic [ref=e1106]: TR-06
+          - generic [ref=e1107]:
+            - heading [level=3] [ref=e1108]:
+              - link "Trajes de extricación y rescate" [ref=e1109] [cursor=pointer]:
+                - /url: /trajes/extricacion/
+            - paragraph [ref=e1110]: "Rescate vehicular y técnico: resistencia a corte y punción con barrera contra patógenos. Protege la inversión del traje estructural."
+            - list "Subcategorías de Trajes de extricación y rescate" [ref=e1111]:
+              - listitem [ref=e1112]:
+                - link "Chaqueta de rescate técnico, Trajes de extricación y rescate" [ref=e1113] [cursor=pointer]:
+                  - /url: /trajes/extricacion/chaqueta/
+                  - generic [ref=e1114]: Chaqueta de rescate técnico
+              - listitem [ref=e1115]:
+                - link "Pantalón de rescate técnico, Trajes de extricación y rescate" [ref=e1116] [cursor=pointer]:
+                  - /url: /trajes/extricacion/pantalon/
+                  - generic [ref=e1117]: Pantalón de rescate técnico
+              - listitem [ref=e1118]:
+                - link "Conjunto de extricación, Trajes de extricación y rescate" [ref=e1119] [cursor=pointer]:
+                  - /url: /trajes/extricacion/conjunto/
+                  - generic [ref=e1120]: Conjunto de extricación
+              - listitem [ref=e1121]:
+                - link "Overol de rescate técnico, Trajes de extricación y rescate" [ref=e1122] [cursor=pointer]:
+                  - /url: /trajes/extricacion/overol/
+                  - generic [ref=e1123]: Overol de rescate técnico
+            - link "Trajes de extricación y rescate" [ref=e1124] [cursor=pointer]:
+              - /url: /trajes/extricacion/
+        - listitem [ref=e1125]:
+          - link [aria-hidden] [ref=e1126] [cursor=pointer]:
+            - /url: /trajes/hazmat/
+            - generic [ref=e1128]: TR-07
+          - generic [ref=e1129]:
+            - heading [level=3] [ref=e1130]:
+              - link "Trajes Hazmat (protección química)" [ref=e1131] [cursor=pointer]:
+                - /url: /trajes/hazmat/
+            - paragraph [ref=e1132]: Encapsulado nivel A, químico nivel B y C, overol desechable, botas y guantes. La barrera se elige por sustancia, concentración y tarea.
+            - list "Subcategorías de Trajes Hazmat (protección química)" [ref=e1133]:
+              - listitem [ref=e1134]:
+                - link "Traje encapsulado nivel A, Trajes Hazmat (protección química)" [ref=e1135] [cursor=pointer]:
+                  - /url: /trajes/hazmat/traje-encapsulado-nivel-a/
+                  - generic [ref=e1136]: Traje encapsulado nivel A
+              - listitem [ref=e1137]:
+                - link "Traje químico nivel B, Trajes Hazmat (protección química)" [ref=e1138] [cursor=pointer]:
+                  - /url: /trajes/hazmat/traje-nivel-b/
+                  - generic [ref=e1139]: Traje químico nivel B
+              - listitem [ref=e1140]:
+                - link "Botas químicas, Trajes Hazmat (protección química)" [ref=e1141] [cursor=pointer]:
+                  - /url: /trajes/hazmat/botas-quimicas/
+                  - generic [ref=e1142]: Botas químicas
+              - listitem [ref=e1143]:
+                - link "Guantes para químicos, Trajes Hazmat (protección química)" [ref=e1144] [cursor=pointer]:
+                  - /url: /trajes/hazmat/guantes-quimicos/
+                  - generic [ref=e1145]: Guantes para químicos
+            - link "Trajes Hazmat nivel A, B y C" [ref=e1146] [cursor=pointer]:
+              - /url: /trajes/hazmat/
+        - listitem [ref=e1147]:
+          - link [aria-hidden] [ref=e1148] [cursor=pointer]:
+            - /url: /kits/
+            - generic [ref=e1150]: TR-08
+          - generic [ref=e1151]:
+            - heading [level=3] [ref=e1152]:
+              - link "Conjunto completo y compra por pieza" [ref=e1153] [cursor=pointer]:
+                - /url: /kits/
+            - paragraph [ref=e1154]: "El traje de bombero completo: traje, casco, monja, botas, guantes y ERA cotizados como un solo equipo compatible, o reposición de una sola prenda. Sin compra mínima."
+            - list "Subcategorías de Conjunto completo y compra por pieza" [ref=e1155]:
+              - listitem [ref=e1156]:
+                - link "Kit estructural, Conjunto completo y compra por pieza" [ref=e1157] [cursor=pointer]:
+                  - /url: /kits/kit-estructural/
+                  - generic [ref=e1158]: Kit estructural
+              - listitem [ref=e1159]:
+                - link "Kit brigadista, Conjunto completo y compra por pieza" [ref=e1160] [cursor=pointer]:
+                  - /url: /kits/kit-brigadista/
+                  - generic [ref=e1161]: Kit brigadista
+              - listitem [ref=e1162]:
+                - link "Kit forestal, Conjunto completo y compra por pieza" [ref=e1163] [cursor=pointer]:
+                  - /url: /kits/kit-forestal/
+                  - generic [ref=e1164]: Kit forestal
+              - listitem [ref=e1165]:
+                - link "Tirantes para pantalonera, Conjunto completo y compra por pieza" [ref=e1166] [cursor=pointer]:
+                  - /url: /trajes/estructural/tirantes/
+                  - generic [ref=e1167]: Tirantes para pantalonera
+            - link "Kits de equipo completo para bombero" [ref=e1168] [cursor=pointer]:
+              - /url: /kits/
+      - paragraph [ref=e1169]:
+        - link "Guía completa de familias de trajes para bomberos →" [ref=e1170] [cursor=pointer]:
+          - /url: /trajes/
+    - generic [ref=e1172]:
+      - generic [ref=e1173]:
+        - generic [ref=e1174]:
+          - paragraph [ref=e1175]: Modelos disponibles
+          - heading "Trajes de bomberos Romak Fire, Sköld y Lakeland con ficha técnica" [level=2] [ref=e1176]
+        - generic [ref=e1177]:
+          - paragraph [ref=e1178]:
+            - text: En LORICA cotizamos
+            - link "trajes de bombero profesional" [ref=e1179] [cursor=pointer]:
+              - /url: /trajes/
+            - text: "de Romak Fire, Sköld y Lakeland en cuatro familias: estructural, brigadista, forestal y aproximación. Cada modelo tiene su ficha técnica, foto del fabricante y configuración por escrito antes de cotizar."
+          - paragraph [ref=e1180]: "Cada modelo muestra su estatus normativo tal como lo declara el fabricante: certificado UL con número, declarado, equivalente o solo materiales. Sumamos capa exterior, barreras y tallas para que compares ofertas con el mismo criterio. Nunca presentamos como certificado un modelo que no lo está."
+      - list "Tarjetas del catálogo" [ref=e1181]:
+        - listitem [ref=e1182]:
+          - link [aria-hidden] [ref=e1183] [cursor=pointer]:
+            - /url: /trajes/estructural/modelos/romak-protector/
+            - generic [ref=e1185]: Certificado UL · MH14790
+            - generic [ref=e1186]: TM-01
+          - generic [ref=e1187]:
+            - heading [level=3] [ref=e1188]:
+              - link "Romak Fire Protector" [ref=e1189] [cursor=pointer]:
+                - /url: /trajes/estructural/modelos/romak-protector/
+            - paragraph [ref=e1190]: El Romak Fire Protector es un traje de bombero estructural de tres capas, certificado por UL con el número MH14790 bajo NFPA 1971:2018.
+            - list "Subcategorías de Romak Fire Protector" [ref=e1191]:
+              - listitem [ref=e1192]:
+                - link "Ficha técnica del modelo, Romak Fire Protector" [ref=e1193] [cursor=pointer]:
+                  - /url: /trajes/estructural/modelos/romak-protector/#ficha
+                  - generic [ref=e1194]: Ficha técnica del modelo
+              - listitem [ref=e1195]:
+                - link "Preguntas frecuentes, Romak Fire Protector" [ref=e1196] [cursor=pointer]:
+                  - /url: /trajes/estructural/modelos/romak-protector/#faq
+                  - generic [ref=e1197]: Preguntas frecuentes
+              - listitem [ref=e1198]:
+                - link "Trajes estructurales, Romak Fire Protector" [ref=e1199] [cursor=pointer]:
+                  - /url: /trajes/estructural/
+                  - generic [ref=e1200]: Trajes estructurales
+              - listitem [ref=e1201]:
+                - link "Modelos Romak Fire, Romak Fire Protector" [ref=e1202] [cursor=pointer]:
+                  - /url: /marcas/romak-fire/
+                  - generic [ref=e1203]: Modelos Romak Fire
+            - link "Traje de bombero estructural Romak Fire Protector" [ref=e1204] [cursor=pointer]:
+              - /url: /trajes/estructural/modelos/romak-protector/
+        - listitem [ref=e1205]:
+          - link [aria-hidden] [ref=e1206] [cursor=pointer]:
+            - /url: /trajes/estructural/modelos/romak-profesional/
+            - generic [ref=e1208]: Certificado UL · número al cotizar
+            - generic [ref=e1209]: TM-02
+          - generic [ref=e1210]:
+            - heading [level=3] [ref=e1211]:
+              - link "Romak Fire Profesional" [ref=e1212] [cursor=pointer]:
+                - /url: /trajes/estructural/modelos/romak-profesional/
+            - paragraph [ref=e1213]: El Romak Fire Profesional es un traje de bombero estructural certificado por UL bajo NFPA 1971:2018, con exterior Brigade 7.5 oz, Stedair 3000 y térmica Defender.
+            - list "Subcategorías de Romak Fire Profesional" [ref=e1214]:
+              - listitem [ref=e1215]:
+                - link "Ficha técnica del modelo, Romak Fire Profesional" [ref=e1216] [cursor=pointer]:
+                  - /url: /trajes/estructural/modelos/romak-profesional/#ficha
+                  - generic [ref=e1217]: Ficha técnica del modelo
+              - listitem [ref=e1218]:
+                - link "Preguntas frecuentes, Romak Fire Profesional" [ref=e1219] [cursor=pointer]:
+                  - /url: /trajes/estructural/modelos/romak-profesional/#faq
+                  - generic [ref=e1220]: Preguntas frecuentes
+              - listitem [ref=e1221]:
+                - link "Trajes estructurales, Romak Fire Profesional" [ref=e1222] [cursor=pointer]:
+                  - /url: /trajes/estructural/
+                  - generic [ref=e1223]: Trajes estructurales
+              - listitem [ref=e1224]:
+                - link "Modelos Romak Fire, Romak Fire Profesional" [ref=e1225] [cursor=pointer]:
+                  - /url: /marcas/romak-fire/
+                  - generic [ref=e1226]: Modelos Romak Fire
+            - link "Traje de bombero estructural Romak Fire Profesional" [ref=e1227] [cursor=pointer]:
+              - /url: /trajes/estructural/modelos/romak-profesional/
+        - listitem [ref=e1228]:
+          - link [aria-hidden] [ref=e1229] [cursor=pointer]:
+            - /url: /trajes/estructural/modelos/romak-defender/
+            - generic [ref=e1231]: Certificado UL · número al cotizar
+            - generic [ref=e1232]: TM-03
+          - generic [ref=e1233]:
+            - heading [level=3] [ref=e1234]:
+              - link "Romak Fire Defender" [ref=e1235] [cursor=pointer]:
+                - /url: /trajes/estructural/modelos/romak-defender/
+            - paragraph [ref=e1236]: El Romak Fire Defender BOM1045 es un traje de bombero estructural con exterior Advance 7.0 oz, de 60 % Kevlar y 40 % Nomex, y térmica Defender.
+            - list "Subcategorías de Romak Fire Defender" [ref=e1237]:
+              - listitem [ref=e1238]:
+                - link "Ficha técnica del modelo, Romak Fire Defender" [ref=e1239] [cursor=pointer]:
+                  - /url: /trajes/estructural/modelos/romak-defender/#ficha
+                  - generic [ref=e1240]: Ficha técnica del modelo
+              - listitem [ref=e1241]:
+                - link "Preguntas frecuentes, Romak Fire Defender" [ref=e1242] [cursor=pointer]:
+                  - /url: /trajes/estructural/modelos/romak-defender/#faq
+                  - generic [ref=e1243]: Preguntas frecuentes
+              - listitem [ref=e1244]:
+                - link "Trajes estructurales, Romak Fire Defender" [ref=e1245] [cursor=pointer]:
+                  - /url: /trajes/estructural/
+                  - generic [ref=e1246]: Trajes estructurales
+              - listitem [ref=e1247]:
+                - link "Modelos Romak Fire, Romak Fire Defender" [ref=e1248] [cursor=pointer]:
+                  - /url: /marcas/romak-fire/
+                  - generic [ref=e1249]: Modelos Romak Fire
+            - link "Traje de bombero estructural Romak Fire Defender" [ref=e1250] [cursor=pointer]:
+              - /url: /trajes/estructural/modelos/romak-defender/
+        - listitem [ref=e1251]:
+          - link [aria-hidden] [ref=e1252] [cursor=pointer]:
+            - /url: /trajes/estructural/modelos/romak-vantage/
+            - generic [ref=e1254]: Certificado UL · número al cotizar
+            - generic [ref=e1255]: TM-04
+          - generic [ref=e1256]:
+            - heading [level=3] [ref=e1257]:
+              - link "Romak Fire Vantage" [ref=e1258] [cursor=pointer]:
+                - /url: /trajes/estructural/modelos/romak-vantage/
+            - paragraph [ref=e1259]: El Romak Fire Vantage es un traje de bombero estructural con exterior OMNI Vantage 7.8 oz ripstop, barrera Stedair 3000 y térmica Thermal Liner.
+            - list "Subcategorías de Romak Fire Vantage" [ref=e1260]:
+              - listitem [ref=e1261]:
+                - link "Ficha técnica del modelo, Romak Fire Vantage" [ref=e1262] [cursor=pointer]:
+                  - /url: /trajes/estructural/modelos/romak-vantage/#ficha
+                  - generic [ref=e1263]: Ficha técnica del modelo
+              - listitem [ref=e1264]:
+                - link "Preguntas frecuentes, Romak Fire Vantage" [ref=e1265] [cursor=pointer]:
+                  - /url: /trajes/estructural/modelos/romak-vantage/#faq
+                  - generic [ref=e1266]: Preguntas frecuentes
+              - listitem [ref=e1267]:
+                - link "Trajes estructurales, Romak Fire Vantage" [ref=e1268] [cursor=pointer]:
+                  - /url: /trajes/estructural/
+                  - generic [ref=e1269]: Trajes estructurales
+              - listitem [ref=e1270]:
+                - link "Modelos Romak Fire, Romak Fire Vantage" [ref=e1271] [cursor=pointer]:
+                  - /url: /marcas/romak-fire/
+                  - generic [ref=e1272]: Modelos Romak Fire
+            - link "Traje de bombero estructural Romak Fire Vantage" [ref=e1273] [cursor=pointer]:
+              - /url: /trajes/estructural/modelos/romak-vantage/
+        - listitem [ref=e1274]:
+          - link [aria-hidden] [ref=e1275] [cursor=pointer]:
+            - /url: /trajes/estructural/modelos/romak-maverick-ii/
+            - generic [ref=e1277]: Conforme a EN 469 · NFPA 1970:2025 · NFPA 1971:2018, según el fabricante
+            - generic [ref=e1278]: TM-05
+          - generic [ref=e1279]:
+            - heading [level=3] [ref=e1280]:
+              - link "Romak Fire Maverick II" [ref=e1281] [cursor=pointer]:
+                - /url: /trajes/estructural/modelos/romak-maverick-ii/
+            - paragraph [ref=e1282]: El Romak Fire Maverick II es un traje estructural de tres capas con exterior Panther 210 g/m², barrera Moisture Barrier 125 y térmica Dubai TB205.
+            - list "Subcategorías de Romak Fire Maverick II" [ref=e1283]:
+              - listitem [ref=e1284]:
+                - link "Ficha técnica del modelo, Romak Fire Maverick II" [ref=e1285] [cursor=pointer]:
+                  - /url: /trajes/estructural/modelos/romak-maverick-ii/#ficha
+                  - generic [ref=e1286]: Ficha técnica del modelo
+              - listitem [ref=e1287]:
+                - link "Preguntas frecuentes, Romak Fire Maverick II" [ref=e1288] [cursor=pointer]:
+                  - /url: /trajes/estructural/modelos/romak-maverick-ii/#faq
+                  - generic [ref=e1289]: Preguntas frecuentes
+              - listitem [ref=e1290]:
+                - link "Trajes estructurales, Romak Fire Maverick II" [ref=e1291] [cursor=pointer]:
+                  - /url: /trajes/estructural/
+                  - generic [ref=e1292]: Trajes estructurales
+              - listitem [ref=e1293]:
+                - link "Modelos Romak Fire, Romak Fire Maverick II" [ref=e1294] [cursor=pointer]:
+                  - /url: /marcas/romak-fire/
+                  - generic [ref=e1295]: Modelos Romak Fire
+            - link "Traje de bombero estructural Romak Fire Maverick II" [ref=e1296] [cursor=pointer]:
+              - /url: /trajes/estructural/modelos/romak-maverick-ii/
+        - listitem [ref=e1297]:
+          - link [aria-hidden] [ref=e1298] [cursor=pointer]:
+            - /url: /trajes/estructural/modelos/skold-hero-pbimax/
+            - generic [ref=e1300]: Equivalente a NFPA 1971 ed. 2018 · no certificado
+            - generic [ref=e1301]: TM-06
+          - generic [ref=e1302]:
+            - heading [level=3] [ref=e1303]:
+              - link "Sköld Hero PBI MAX" [ref=e1304] [cursor=pointer]:
+                - /url: /trajes/estructural/modelos/skold-hero-pbimax/
+            - paragraph [ref=e1305]: El Sköld Hero PBI MAX es un traje de bombero estructural con exterior PBI MAX y cuello tipo escudo de cobertura 360°.
+            - list "Subcategorías de Sköld Hero PBI MAX" [ref=e1306]:
+              - listitem [ref=e1307]:
+                - link "Ficha técnica del modelo, Sköld Hero PBI MAX" [ref=e1308] [cursor=pointer]:
+                  - /url: /trajes/estructural/modelos/skold-hero-pbimax/#ficha
+                  - generic [ref=e1309]: Ficha técnica del modelo
+              - listitem [ref=e1310]:
+                - link "Preguntas frecuentes, Sköld Hero PBI MAX" [ref=e1311] [cursor=pointer]:
+                  - /url: /trajes/estructural/modelos/skold-hero-pbimax/#faq
+                  - generic [ref=e1312]: Preguntas frecuentes
+              - listitem [ref=e1313]:
+                - link "Trajes estructurales, Sköld Hero PBI MAX" [ref=e1314] [cursor=pointer]:
+                  - /url: /trajes/estructural/
+                  - generic [ref=e1315]: Trajes estructurales
+              - listitem [ref=e1316]:
+                - link "Modelos Sköld, Sköld Hero PBI MAX" [ref=e1317] [cursor=pointer]:
+                  - /url: /marcas/skold/
+                  - generic [ref=e1318]: Modelos Sköld
+            - link "Traje de bombero estructural Sköld Hero PBI MAX" [ref=e1319] [cursor=pointer]:
+              - /url: /trajes/estructural/modelos/skold-hero-pbimax/
+        - listitem [ref=e1320]:
+          - link [aria-hidden] [ref=e1321] [cursor=pointer]:
+            - /url: /trajes/estructural/modelos/skold-hero-nomex/
+            - generic [ref=e1323]: Certificado UL · MH60435
+            - generic [ref=e1324]: TM-07
+          - generic [ref=e1325]:
+            - heading [level=3] [ref=e1326]:
+              - link "Sköld Hero Nomex IIIA" [ref=e1327] [cursor=pointer]:
+                - /url: /trajes/estructural/modelos/skold-hero-nomex/
+            - paragraph [ref=e1328]: El Sköld Hero Nomex IIIA es un traje de bombero estructural con certificación UL número MH60435 bajo NFPA 1971 edición 2018.
+            - list "Subcategorías de Sköld Hero Nomex IIIA" [ref=e1329]:
+              - listitem [ref=e1330]:
+                - link "Ficha técnica del modelo, Sköld Hero Nomex IIIA" [ref=e1331] [cursor=pointer]:
+                  - /url: /trajes/estructural/modelos/skold-hero-nomex/#ficha
+                  - generic [ref=e1332]: Ficha técnica del modelo
+              - listitem [ref=e1333]:
+                - link "Preguntas frecuentes, Sköld Hero Nomex IIIA" [ref=e1334] [cursor=pointer]:
+                  - /url: /trajes/estructural/modelos/skold-hero-nomex/#faq
+                  - generic [ref=e1335]: Preguntas frecuentes
+              - listitem [ref=e1336]:
+                - link "Trajes estructurales, Sköld Hero Nomex IIIA" [ref=e1337] [cursor=pointer]:
+                  - /url: /trajes/estructural/
+                  - generic [ref=e1338]: Trajes estructurales
+              - listitem [ref=e1339]:
+                - link "Modelos Sköld, Sköld Hero Nomex IIIA" [ref=e1340] [cursor=pointer]:
+                  - /url: /marcas/skold/
+                  - generic [ref=e1341]: Modelos Sköld
+            - link "Traje de bombero estructural Sköld Hero Nomex IIIA" [ref=e1342] [cursor=pointer]:
+              - /url: /trajes/estructural/modelos/skold-hero-nomex/
+        - listitem [ref=e1343]:
+          - link [aria-hidden] [ref=e1344] [cursor=pointer]:
+            - /url: /trajes/brigadista/modelos/romak-combate-basico/
+            - generic [ref=e1346]: Materiales conforme a NFPA 1971
+            - generic [ref=e1347]: Imagen ilustrativa
+            - generic [ref=e1348]: TM-08
+          - generic [ref=e1349]:
+            - heading [level=3] [ref=e1350]:
+              - link "Romak Fire Combate Básico" [ref=e1351] [cursor=pointer]:
+                - /url: /trajes/brigadista/modelos/romak-combate-basico/
+            - paragraph [ref=e1352]: El Romak Fire Combate Básico BOM1001 es un traje para brigadista con exterior Nomex IIIA 7.5 oz/yd² repelente al agua, forro Lining FR desmontable y barrera Neo-Guard de neopreno laminado.
+            - list "Subcategorías de Romak Fire Combate Básico" [ref=e1353]:
+              - listitem [ref=e1354]:
+                - link "Ficha técnica del modelo, Romak Fire Combate Básico" [ref=e1355] [cursor=pointer]:
+                  - /url: /trajes/brigadista/modelos/romak-combate-basico/#ficha
+                  - generic [ref=e1356]: Ficha técnica del modelo
+              - listitem [ref=e1357]:
+                - link "Preguntas frecuentes, Romak Fire Combate Básico" [ref=e1358] [cursor=pointer]:
+                  - /url: /trajes/brigadista/modelos/romak-combate-basico/#faq
+                  - generic [ref=e1359]: Preguntas frecuentes
+              - listitem [ref=e1360]:
+                - link "Trajes de brigadista, Romak Fire Combate Básico" [ref=e1361] [cursor=pointer]:
+                  - /url: /trajes/brigadista/
+                  - generic [ref=e1362]: Trajes de brigadista
+              - listitem [ref=e1363]:
+                - link "Modelos Romak Fire, Romak Fire Combate Básico" [ref=e1364] [cursor=pointer]:
+                  - /url: /marcas/romak-fire/
+                  - generic [ref=e1365]: Modelos Romak Fire
+            - link "Traje de brigadista Romak Fire Combate Básico" [ref=e1366] [cursor=pointer]:
+              - /url: /trajes/brigadista/modelos/romak-combate-basico/
+        - listitem [ref=e1367]:
+          - link [aria-hidden] [ref=e1368] [cursor=pointer]:
+            - /url: /trajes/brigadista/modelos/skold-brigadista-defender/
+            - generic [ref=e1370]: Equivalente a NFPA 1971 ed. 1991 · NOM-002-STPS-2010 · no certificado
+            - generic [ref=e1371]: TM-09
+          - generic [ref=e1372]:
+            - heading [level=3] [ref=e1373]:
+              - link "Sköld Brigadista Defender" [ref=e1374] [cursor=pointer]:
+                - /url: /trajes/brigadista/modelos/skold-brigadista-defender/
+            - paragraph [ref=e1375]: El Sköld Brigadista Defender es un traje para brigadista con cuello de cobertura 360°, bies fotoluminiscente y refuerzos Ultrashield en hombros, codos y rodillas.
+            - list "Subcategorías de Sköld Brigadista Defender" [ref=e1376]:
+              - listitem [ref=e1377]:
+                - link "Ficha técnica del modelo, Sköld Brigadista Defender" [ref=e1378] [cursor=pointer]:
+                  - /url: /trajes/brigadista/modelos/skold-brigadista-defender/#ficha
+                  - generic [ref=e1379]: Ficha técnica del modelo
+              - listitem [ref=e1380]:
+                - link "Preguntas frecuentes, Sköld Brigadista Defender" [ref=e1381] [cursor=pointer]:
+                  - /url: /trajes/brigadista/modelos/skold-brigadista-defender/#faq
+                  - generic [ref=e1382]: Preguntas frecuentes
+              - listitem [ref=e1383]:
+                - link "Trajes de brigadista, Sköld Brigadista Defender" [ref=e1384] [cursor=pointer]:
+                  - /url: /trajes/brigadista/
+                  - generic [ref=e1385]: Trajes de brigadista
+              - listitem [ref=e1386]:
+                - link "Modelos Sköld, Sköld Brigadista Defender" [ref=e1387] [cursor=pointer]:
+                  - /url: /marcas/skold/
+                  - generic [ref=e1388]: Modelos Sköld
+            - link "Traje de brigadista Sköld Brigadista Defender" [ref=e1389] [cursor=pointer]:
+              - /url: /trajes/brigadista/modelos/skold-brigadista-defender/
+        - listitem [ref=e1390]:
+          - link [aria-hidden] [ref=e1391] [cursor=pointer]:
+            - /url: /trajes/brigadista/modelos/lakeland-a10-attack/
+            - generic [ref=e1393]: Conforme a NFPA 1971 ed. 2018, según el fabricante
+            - generic [ref=e1394]: TM-10
+          - generic [ref=e1395]:
+            - heading [level=3] [ref=e1396]:
+              - link "Lakeland OSX A10 Attack" [ref=e1397] [cursor=pointer]:
+                - /url: /trajes/brigadista/modelos/lakeland-a10-attack/
+            - paragraph [ref=e1398]: El Lakeland OSX A10 Attack es un traje para brigadista con exterior Nomex 7.5 oz amarillo, térmica Nomex Quilt Q8 y barrera de humedad Stedair 3000.
+            - list "Subcategorías de Lakeland OSX A10 Attack" [ref=e1399]:
+              - listitem [ref=e1400]:
+                - link "Ficha técnica del modelo, Lakeland OSX A10 Attack" [ref=e1401] [cursor=pointer]:
+                  - /url: /trajes/brigadista/modelos/lakeland-a10-attack/#ficha
+                  - generic [ref=e1402]: Ficha técnica del modelo
+              - listitem [ref=e1403]:
+                - link "Preguntas frecuentes, Lakeland OSX A10 Attack" [ref=e1404] [cursor=pointer]:
+                  - /url: /trajes/brigadista/modelos/lakeland-a10-attack/#faq
+                  - generic [ref=e1405]: Preguntas frecuentes
+              - listitem [ref=e1406]:
+                - link "Trajes de brigadista, Lakeland OSX A10 Attack" [ref=e1407] [cursor=pointer]:
+                  - /url: /trajes/brigadista/
+                  - generic [ref=e1408]: Trajes de brigadista
+              - listitem [ref=e1409]:
+                - link "Marcas que cotizamos, Lakeland OSX A10 Attack" [ref=e1410] [cursor=pointer]:
+                  - /url: /marcas/
+                  - generic [ref=e1411]: Marcas que cotizamos
+            - link "Traje de brigadista Lakeland OSX A10 Attack" [ref=e1412] [cursor=pointer]:
+              - /url: /trajes/brigadista/modelos/lakeland-a10-attack/
+        - listitem [ref=e1413]:
+          - link [aria-hidden] [ref=e1414] [cursor=pointer]:
+            - /url: /trajes/forestal/modelos/romak-fire-ranger-explorer/
+            - generic [ref=e1416]: Conforme a NFPA 1971-2018, según el fabricante
+            - generic [ref=e1417]: TM-11
+          - generic [ref=e1418]:
+            - heading [level=3] [ref=e1419]:
+              - link "Romak Fire Fire Ranger Explorer" [ref=e1420] [cursor=pointer]:
+                - /url: /trajes/forestal/modelos/romak-fire-ranger-explorer/
+            - paragraph [ref=e1421]: El Romak Fire Ranger Explorer BOMW1001 es un overol forestal de una pieza, en Nomex IIIA amarillo de 6 oz/yd² o Brigade 7.5 oz según configuración.
+            - list "Subcategorías de Romak Fire Fire Ranger Explorer" [ref=e1422]:
+              - listitem [ref=e1423]:
+                - link "Ficha técnica del modelo, Romak Fire Fire Ranger Explorer" [ref=e1424] [cursor=pointer]:
+                  - /url: /trajes/forestal/modelos/romak-fire-ranger-explorer/#ficha
+                  - generic [ref=e1425]: Ficha técnica del modelo
+              - listitem [ref=e1426]:
+                - link "Preguntas frecuentes, Romak Fire Fire Ranger Explorer" [ref=e1427] [cursor=pointer]:
+                  - /url: /trajes/forestal/modelos/romak-fire-ranger-explorer/#faq
+                  - generic [ref=e1428]: Preguntas frecuentes
+              - listitem [ref=e1429]:
+                - link "Trajes forestales, Romak Fire Fire Ranger Explorer" [ref=e1430] [cursor=pointer]:
+                  - /url: /trajes/forestal/
+                  - generic [ref=e1431]: Trajes forestales
+              - listitem [ref=e1432]:
+                - link "Modelos Romak Fire, Romak Fire Fire Ranger Explorer" [ref=e1433] [cursor=pointer]:
+                  - /url: /marcas/romak-fire/
+                  - generic [ref=e1434]: Modelos Romak Fire
+            - link "Traje forestal Romak Fire Fire Ranger Explorer" [ref=e1435] [cursor=pointer]:
+              - /url: /trajes/forestal/modelos/romak-fire-ranger-explorer/
+        - listitem [ref=e1436]:
+          - link [aria-hidden] [ref=e1437] [cursor=pointer]:
+            - /url: /trajes/forestal/modelos/romak-fire-ranger-scout/
+            - generic [ref=e1439]: Conforme a NFPA 1971-2018, según el fabricante
+            - generic [ref=e1440]: Imagen ilustrativa
+            - generic [ref=e1441]: TM-12
+          - generic [ref=e1442]:
+            - heading [level=3] [ref=e1443]:
+              - link "Romak Fire Fire Ranger Scout" [ref=e1444] [cursor=pointer]:
+                - /url: /trajes/forestal/modelos/romak-fire-ranger-scout/
+            - paragraph [ref=e1445]: "El Romak Fire Ranger Scout es un traje forestal de dos piezas: chaquetón amarillo en Nomex IIIA de 6 oz/yd² y pantalón azul, ambos con zipper Nomex YKK."
+            - list "Subcategorías de Romak Fire Fire Ranger Scout" [ref=e1446]:
+              - listitem [ref=e1447]:
+                - link "Ficha técnica del modelo, Romak Fire Fire Ranger Scout" [ref=e1448] [cursor=pointer]:
+                  - /url: /trajes/forestal/modelos/romak-fire-ranger-scout/#ficha
+                  - generic [ref=e1449]: Ficha técnica del modelo
+              - listitem [ref=e1450]:
+                - link "Preguntas frecuentes, Romak Fire Fire Ranger Scout" [ref=e1451] [cursor=pointer]:
+                  - /url: /trajes/forestal/modelos/romak-fire-ranger-scout/#faq
+                  - generic [ref=e1452]: Preguntas frecuentes
+              - listitem [ref=e1453]:
+                - link "Trajes forestales, Romak Fire Fire Ranger Scout" [ref=e1454] [cursor=pointer]:
+                  - /url: /trajes/forestal/
+                  - generic [ref=e1455]: Trajes forestales
+              - listitem [ref=e1456]:
+                - link "Modelos Romak Fire, Romak Fire Fire Ranger Scout" [ref=e1457] [cursor=pointer]:
+                  - /url: /marcas/romak-fire/
+                  - generic [ref=e1458]: Modelos Romak Fire
+            - link "Traje forestal Romak Fire Fire Ranger Scout" [ref=e1459] [cursor=pointer]:
+              - /url: /trajes/forestal/modelos/romak-fire-ranger-scout/
+        - listitem [ref=e1460]:
+          - link [aria-hidden] [ref=e1461] [cursor=pointer]:
+            - /url: /trajes/forestal/modelos/romak-bomw1002/
+            - generic [ref=e1463]: Sin norma declarada
+            - generic [ref=e1464]: TM-13
+          - generic [ref=e1465]:
+            - heading [level=3] [ref=e1466]:
+              - link "Romak Fire Saco y pantalón forestal" [ref=e1467] [cursor=pointer]:
+                - /url: /trajes/forestal/modelos/romak-bomw1002/
+            - paragraph [ref=e1468]: El saco y pantalón forestal Romak Fire BOMW1002 es un conjunto amarillo de dos piezas, en Nomex IIIA de 6.0 oz o, en su versión BOMW1002 FR, en algodón 100 % ignífugo.
+            - list "Subcategorías de Romak Fire Saco y pantalón forestal" [ref=e1469]:
+              - listitem [ref=e1470]:
+                - link "Ficha técnica del modelo, Romak Fire Saco y pantalón forestal" [ref=e1471] [cursor=pointer]:
+                  - /url: /trajes/forestal/modelos/romak-bomw1002/#ficha
+                  - generic [ref=e1472]: Ficha técnica del modelo
+              - listitem [ref=e1473]:
+                - link "Preguntas frecuentes, Romak Fire Saco y pantalón forestal" [ref=e1474] [cursor=pointer]:
+                  - /url: /trajes/forestal/modelos/romak-bomw1002/#faq
+                  - generic [ref=e1475]: Preguntas frecuentes
+              - listitem [ref=e1476]:
+                - link "Trajes forestales, Romak Fire Saco y pantalón forestal" [ref=e1477] [cursor=pointer]:
+                  - /url: /trajes/forestal/
+                  - generic [ref=e1478]: Trajes forestales
+              - listitem [ref=e1479]:
+                - link "Modelos Romak Fire, Romak Fire Saco y pantalón forestal" [ref=e1480] [cursor=pointer]:
+                  - /url: /marcas/romak-fire/
+                  - generic [ref=e1481]: Modelos Romak Fire
+            - link "Traje forestal Romak Fire Saco y pantalón forestal" [ref=e1482] [cursor=pointer]:
+              - /url: /trajes/forestal/modelos/romak-bomw1002/
+        - listitem [ref=e1483]:
+          - link [aria-hidden] [ref=e1484] [cursor=pointer]:
+            - /url: /trajes/aproximacion/modelos/romak-mark-one/
+            - generic [ref=e1486]: Certificado UL · MH48840
+            - generic [ref=e1487]: TM-14
+          - generic [ref=e1488]:
+            - heading [level=3] [ref=e1489]:
+              - link "Romak Fire Mark One MPX-8" [ref=e1490] [cursor=pointer]:
+                - /url: /trajes/aproximacion/modelos/romak-mark-one/
+            - paragraph [ref=e1491]: El Romak Fire Mark One MPX-8 BOM1046 es un traje aluminizado de aproximación para calor radiante en aeropuertos e industria, con sistema de cuatro capas.
+            - list "Subcategorías de Romak Fire Mark One MPX-8" [ref=e1492]:
+              - listitem [ref=e1493]:
+                - link "Ficha técnica del modelo, Romak Fire Mark One MPX-8" [ref=e1494] [cursor=pointer]:
+                  - /url: /trajes/aproximacion/modelos/romak-mark-one/#ficha
+                  - generic [ref=e1495]: Ficha técnica del modelo
+              - listitem [ref=e1496]:
+                - link "Preguntas frecuentes, Romak Fire Mark One MPX-8" [ref=e1497] [cursor=pointer]:
+                  - /url: /trajes/aproximacion/modelos/romak-mark-one/#faq
+                  - generic [ref=e1498]: Preguntas frecuentes
+              - listitem [ref=e1499]:
+                - link "Trajes de aproximación, Romak Fire Mark One MPX-8" [ref=e1500] [cursor=pointer]:
+                  - /url: /trajes/aproximacion/
+                  - generic [ref=e1501]: Trajes de aproximación
+              - listitem [ref=e1502]:
+                - link "Modelos Romak Fire, Romak Fire Mark One MPX-8" [ref=e1503] [cursor=pointer]:
+                  - /url: /marcas/romak-fire/
+                  - generic [ref=e1504]: Modelos Romak Fire
+            - link "Traje de aproximación Romak Fire Mark One MPX-8" [ref=e1505] [cursor=pointer]:
+              - /url: /trajes/aproximacion/modelos/romak-mark-one/
+    - generic [ref=e1507]:
+      - generic [ref=e1508]:
+        - generic [ref=e1509]:
+          - paragraph [ref=e1510]: Preguntas frecuentes
+          - heading "Lo que conviene saber antes de cotizar" [level=2] [ref=e1511]
+        - generic [ref=e1512]:
+          - paragraph [ref=e1513]: "Respuestas breves a lo que más nos preguntan al cotizar trajes de bombero: norma vigente, diferencia entre traje estructural y de brigadista, TPP y THL, vida útil y compra por pieza o conjunto."
+          - paragraph [ref=e1514]:
+            - text: También respondemos
+            - link "cuánto cuesta un traje de bombero" [ref=e1515] [cursor=pointer]:
+              - /url: /blog/cuanto-cuesta-un-traje-de-bombero/
+            - text: y qué documentación pide una licitación. Si tu duda no está aquí, escríbenos por WhatsApp con tu operación y el número de elementos, y te respondemos en día hábil.
+      - generic [ref=e1516]:
+        - generic [ref=e1517]:
+          - group [ref=e1518]:
+            - strong [ref=e1520] [cursor=pointer]: ¿Cuál es la norma vigente para trajes de bombero?
+            - paragraph [ref=e1521]: NFPA 1970, edición 2025. Absorbió a la NFPA 1971 junto con las normas 1975, 1981 y 1982; los requisitos del traje estructural son hoy sus capítulos 5 a 9. Muchas licitaciones todavía redactan "NFPA 1971 Edición 2018" y podemos documentar la correspondencia entre ambas.
+          - group [ref=e1522]:
+            - strong [ref=e1524] [cursor=pointer]: ¿La ley mexicana obliga a comprar equipo certificado NFPA?
+          - group [ref=e1525]:
+            - strong [ref=e1527] [cursor=pointer]: ¿Qué diferencia hay entre un traje de brigadista y uno estructural?
+          - group [ref=e1528]:
+            - strong [ref=e1530] [cursor=pointer]: ¿Qué son TPP y THL, y por qué importan?
+          - group [ref=e1531]:
+            - strong [ref=e1533] [cursor=pointer]: ¿Cuánto dura un traje estructural?
+          - group [ref=e1534]:
+            - strong [ref=e1536] [cursor=pointer]: ¿Cuánto cuestan los trajes de bombero?
+          - group [ref=e1537]:
+            - strong [ref=e1539] [cursor=pointer]: ¿Cuánto pesa un traje de bombero?
+          - group [ref=e1540]:
+            - strong [ref=e1542] [cursor=pointer]: ¿Qué tipos de trajes para bomberos existen?
+          - group [ref=e1543]:
+            - strong [ref=e1545] [cursor=pointer]: ¿Cómo se llama el traje que usan los bomberos?
+          - group [ref=e1546]:
+            - strong [ref=e1548] [cursor=pointer]: ¿Cómo es el uniforme de los bomberos?
+          - group [ref=e1549]:
+            - strong [ref=e1551] [cursor=pointer]: ¿Qué necesito para una licitación o compra de gobierno?
+          - group [ref=e1552]:
+            - strong [ref=e1554] [cursor=pointer]: ¿LORICA entrega trajes para bomberos en todo México?
+        - complementary [ref=e1555]:
+          - heading "¿Tu duda no está aquí?" [level=3] [ref=e1556]
+          - paragraph [ref=e1557]: Te respondemos por WhatsApp en el transcurso del día hábil.
+          - generic [ref=e1558]:
+            - generic [ref=e1559]:
+              - generic [ref=e1560]: Nombre (opcional)
+              - textbox "Nombre (opcional)" [ref=e1561]
+            - generic [ref=e1562]:
+              - generic [ref=e1563]: Tipo de organización*
+              - combobox "Tipo de organización*" [ref=e1564]:
+                - option "Elige una opción" [disabled] [selected]
+                - option "Cuerpo de bomberos"
+                - option "Protección civil"
+                - option "Brigada industrial"
+                - option "Empresa privada"
+                - option "Gobierno / licitación"
+                - option "Particular"
+                - option "Otro"
+            - generic [ref=e1565]:
+              - generic [ref=e1566]: Tu pregunta o necesidad*
+              - textbox "Tu pregunta o necesidad*" [ref=e1567]
+              - generic [ref=e1568]: 0/500
+            - generic [aria-hidden] [ref=e1569]:
+              - text: Sitio web
+              - textbox [ref=e1570]
+            - button "Enviar cotización de trajes por WhatsApp" [ref=e1571] [cursor=pointer]
+            - paragraph [ref=e1572]: Al pulsar el botón se abre WhatsApp con tu mensaje. No guardamos ningún dato.
+            - link "Prefiero llamar directamente" [ref=e1573] [cursor=pointer]:
+              - /url: tel:+525664804962
+    - generic [ref=e1575]:
+      - generic [ref=e1576]:
+        - generic [ref=e1577]:
+          - paragraph [ref=e1578]: Blog técnico
+          - heading "Lo que preguntan por teléfono, explicado a fondo" [level=2] [ref=e1579]
+        - generic [ref=e1580]:
+          - paragraph [ref=e1581]: Guías de especificación, normas vigentes, comparativas entre familias y compra pública sobre trajes para bomberos. Las escribe gente del ramo, sin copiar fichas de fabricante, para que decidas con información antes de emitir tu requisición.
+          - paragraph [ref=e1582]:
+            - text: Empieza por
+            - link "cómo elegir un traje para bomberos" [ref=e1583] [cursor=pointer]:
+              - /url: /blog/como-elegir-traje-para-bomberos/
+            - text: o por
+            - link "qué cambió con la NFPA 1970" [ref=e1584] [cursor=pointer]:
+              - /url: /blog/nfpa-1970-que-cambio/
+            - text: . Cada guía enlaza al catálogo correspondiente y te lleva a cotizar por WhatsApp cuando ya sabes qué necesitas.
+      - generic [ref=e1585]:
+        - 'link "Bombero con equipo estructural y ERA sostiene una cámara térmica en un pasillo con humo; la pantalla muestra el contorno caliente de una puerta Equipo de protección Cámara térmica para bomberos: cómo funciona y cómo elegirla Cámara térmica para bomberos: cómo funciona, para qué sirve, qué especificaciones comparar, errores de lectura y cómo entrenar a tu personal antes de usarla. 8 min de lectura Guía: Cámara térmica para bomberos" [ref=e1586] [cursor=pointer]':
+          - /url: /blog/camara-termica-para-bomberos-como-elegir/
+          - generic [ref=e1587]:
+            - img "Bombero con equipo estructural y ERA sostiene una cámara térmica en un pasillo con humo; la pantalla muestra el contorno caliente de una puerta" [ref=e1588]
+            - generic [aria-hidden] [ref=e1589]: BL-01
+          - generic [ref=e1590]:
+            - generic [ref=e1591]: Equipo de protección
+            - generic [ref=e1593]: "Cámara térmica para bomberos: cómo funciona y cómo elegirla"
+            - generic [ref=e1594]: "Cámara térmica para bomberos: cómo funciona, para qué sirve, qué especificaciones comparar, errores de lectura y cómo entrenar a tu personal antes de usarla."
+            - generic [ref=e1595]:
+              - generic [ref=e1596]: 8 min de lectura
+              - generic [ref=e1597]:
+                - generic [ref=e1598]: "Guía: Cámara térmica para bomberos"
+                - generic [aria-hidden] [ref=e1599]: →
+        - 'link "Bombero con traje estructural revisa la abertura facial de una capucha beige entre capuchas blancas y negras que se secan junto a una lavadora extractora Vida útil del traje de bombero Cáncer en bomberos: cómo reducir la exposición Cáncer en bomberos: qué dijo la IARC, por dónde entran los contaminantes y qué hábitos de capucha, ERA y descontaminación reducen la exposición de tu gente. 8 min de lectura Guía: Cáncer en bomberos" [ref=e1600] [cursor=pointer]':
+          - /url: /blog/cancer-en-bomberos-reducir-exposicion/
+          - generic [ref=e1601]:
+            - img "Bombero con traje estructural revisa la abertura facial de una capucha beige entre capuchas blancas y negras que se secan junto a una lavadora extractora" [ref=e1602]
+            - generic [aria-hidden] [ref=e1603]: BL-02
+          - generic [ref=e1604]:
+            - generic [ref=e1605]: Vida útil del traje de bombero
+            - generic [ref=e1607]: "Cáncer en bomberos: cómo reducir la exposición"
+            - generic [ref=e1608]: "Cáncer en bomberos: qué dijo la IARC, por dónde entran los contaminantes y qué hábitos de capucha, ERA y descontaminación reducen la exposición de tu gente."
+            - generic [ref=e1609]:
+              - generic [ref=e1610]: 8 min de lectura
+              - generic [ref=e1611]:
+                - generic [ref=e1612]: "Guía: Cáncer en bomberos"
+                - generic [aria-hidden] [ref=e1613]: →
+        - 'link "Combatiente forestal con pantalón verde y guantes ajusta las agujetas de botas de piel de caña alta y suela de tacos sobre suelo con ceniza y acículas de pino Equipo de protección Cómo elegir bota forestal para combatiente Cómo elegir bota forestal: piel, agujetas, caña alta, suela de tacos, talla en pendiente, domado y cuidado. Lo que necesita saber tu brigada antes de comprar. 7 min de lectura Guía: Cómo elegir bota forestal para combatiente" [ref=e1614] [cursor=pointer]':
+          - /url: /blog/como-elegir-bota-forestal/
+          - generic [ref=e1615]:
+            - img "Combatiente forestal con pantalón verde y guantes ajusta las agujetas de botas de piel de caña alta y suela de tacos sobre suelo con ceniza y acículas de pino" [ref=e1616]
+            - generic [aria-hidden] [ref=e1617]: BL-03
+          - generic [ref=e1618]:
+            - generic [ref=e1619]: Equipo de protección
+            - generic [ref=e1621]: Cómo elegir bota forestal para combatiente
+            - generic [ref=e1622]: "Cómo elegir bota forestal: piel, agujetas, caña alta, suela de tacos, talla en pendiente, domado y cuidado. Lo que necesita saber tu brigada antes de comprar."
+            - generic [ref=e1623]:
+              - generic [ref=e1624]: 7 min de lectura
+              - generic [ref=e1625]:
+                - generic [ref=e1626]: "Guía: Cómo elegir bota forestal para combatiente"
+                - generic [aria-hidden] [ref=e1627]: →
+        - 'link "Bombero con equipo estructural revisa una cuerda estática blanca junto a una cuerda azul, mosquetones, descensor, bolsa y protector de bordes sobre una mesa de la estación Herramientas y rescate Cuerda estática o dinámica: cuál usar en rescate Cuerda estática o dinámica para rescate: en qué se diferencian, cuándo usar cada una, clases NFPA, diámetros, inspección y cómo comprarla sin errores. 8 min de lectura Guía: Cuerda estática o dinámica" [ref=e1628] [cursor=pointer]':
+          - /url: /blog/cuerda-estatica-o-dinamica-rescate/
+          - generic [ref=e1629]:
+            - img "Bombero con equipo estructural revisa una cuerda estática blanca junto a una cuerda azul, mosquetones, descensor, bolsa y protector de bordes sobre una mesa de la estación" [ref=e1630]
+            - generic [aria-hidden] [ref=e1631]: BL-04
+          - generic [ref=e1632]:
+            - generic [ref=e1633]: Herramientas y rescate
+            - generic [ref=e1635]: "Cuerda estática o dinámica: cuál usar en rescate"
+            - generic [ref=e1636]: "Cuerda estática o dinámica para rescate: en qué se diferencian, cuándo usar cada una, clases NFPA, diámetros, inspección y cómo comprarla sin errores."
+            - generic [ref=e1637]:
+              - generic [ref=e1638]: 8 min de lectura
+              - generic [ref=e1639]:
+                - generic [ref=e1640]: "Guía: Cuerda estática o dinámica"
+                - generic [aria-hidden] [ref=e1641]: →
+      - paragraph [ref=e1642]:
+        - 'link "Blog técnico de trajes para bomberos: todas las guías →" [ref=e1643] [cursor=pointer]':
+          - /url: /blog/
+    - region "Cotiza tu equipo con ficha técnica por WhatsApp" [ref=e1644]:
+      - generic [ref=e1646]:
+        - generic [ref=e1647]:
+          - paragraph [ref=e1648]: Cotización con ficha técnica
+          - heading "Cotiza tu equipo con ficha técnica por WhatsApp" [level=2] [ref=e1649]
+          - paragraph [ref=e1650]: "LORICA responde en día hábil con cotización formal, ficha técnica por partida y condiciones de entrega por escrito. Sin compra mínima: por pieza o conjunto completo, con entrega en los 32 estados de la República."
+          - generic [ref=e1651]:
+            - link "Cotizar trajes por WhatsApp" [ref=e1652] [cursor=pointer]:
+              - /url: https://wa.me/525664804962?text=Hola%2C%20quiero%20cotizar%20trajes%20o%20equipo%20para%20bomberos.
+            - 'link "Llamar: +52 56 6480 4962" [ref=e1655] [cursor=pointer]':
+              - /url: tel:+525664804962
+        - generic [ref=e1656]:
+          - heading "Para cotizar más rápido, envíanos:" [level=3] [ref=e1657]
+          - list [ref=e1658]:
+            - listitem [ref=e1659]: Tipo de operación (estructural, forestal, industrial, rescate…)
+            - listitem [ref=e1660]: Número de elementos y tallas
+            - listitem [ref=e1661]: Norma o pliego que debes cumplir, si aplica
+            - listitem [ref=e1662]: Estado y lugar de entrega
+  - contentinfo [ref=e1663]:
+    - region "Cotización de trajes para bomberos" [ref=e1664]:
+      - generic [ref=e1665]:
+        - list "Compromisos de compra" [ref=e1666]:
+          - listitem [ref=e1667]: Más de 35 años de experiencia
+          - listitem [ref=e1670]: Ficha técnica por partida
+          - listitem [ref=e1673]: Factura CFDI 4.0
+          - listitem [ref=e1676]: Envío a los 32 estados
+        - generic [ref=e1679]:
+          - paragraph [ref=e1680]: Cotiza trajes para bomberos con ficha técnica
+          - paragraph [ref=e1681]: Cotización con ficha técnica y condiciones por escrito. Sin compromiso.
+        - generic [ref=e1682]:
+          - link "Cotizar trajes por WhatsApp" [ref=e1683] [cursor=pointer]:
+            - /url: https://wa.me/525664804962?text=Hola%2C%20quiero%20cotizar%20trajes%20o%20equipo%20para%20bomberos.
+          - link "+52 56 6480 4962" [ref=e1684] [cursor=pointer]:
+            - /url: tel:+525664804962
+    - generic [ref=e1686]:
+      - paragraph [ref=e1687]: Catálogo de equipo para bomberos
+      - generic [ref=e1688]:
+        - group [ref=e1689]:
+          - generic "Trajes para bomberos"
+          - navigation "Trajes para bomberos" [ref=e1690]:
+            - list [ref=e1691]:
+              - listitem [ref=e1692]:
+                - link "Trajes estructurales" [ref=e1693] [cursor=pointer]:
+                  - /url: /trajes/estructural/
+              - listitem [ref=e1694]:
+                - link "Trajes de brigadista" [ref=e1695] [cursor=pointer]:
+                  - /url: /trajes/brigadista/
+              - listitem [ref=e1696]:
+                - link "Trajes forestales" [ref=e1697] [cursor=pointer]:
+                  - /url: /trajes/forestal/
+              - listitem [ref=e1698]:
+                - link "Trajes de aproximación" [ref=e1699] [cursor=pointer]:
+                  - /url: /trajes/aproximacion/
+              - listitem [ref=e1700]:
+                - link "Trajes de entrada" [ref=e1701] [cursor=pointer]:
+                  - /url: /trajes/entrada/
+              - listitem [ref=e1702]:
+                - link "Extricación y rescate" [ref=e1703] [cursor=pointer]:
+                  - /url: /trajes/extricacion/
+              - listitem [ref=e1704]:
+                - link "Trajes Hazmat" [ref=e1705] [cursor=pointer]:
+                  - /url: /trajes/hazmat/
+              - listitem [ref=e1706]:
+                - link "Trajes para bomberos por familia" [ref=e1707] [cursor=pointer]:
+                  - /url: /trajes/
+        - group [ref=e1708]:
+          - generic "Piezas del traje"
+          - navigation "Piezas del traje" [ref=e1709]:
+            - list [ref=e1710]:
+              - listitem [ref=e1711]:
+                - link "Chaquetón estructural" [ref=e1712] [cursor=pointer]:
+                  - /url: /trajes/estructural/chaqueton/
+              - listitem [ref=e1713]:
+                - link "Pantalonera estructural" [ref=e1714] [cursor=pointer]:
+                  - /url: /trajes/estructural/pantalonera/
+              - listitem [ref=e1715]:
+                - link "Monja antipartículas" [ref=e1716] [cursor=pointer]:
+                  - /url: /trajes/estructural/monja/
+              - listitem [ref=e1717]:
+                - link "Tirantes para pantalonera" [ref=e1718] [cursor=pointer]:
+                  - /url: /trajes/estructural/tirantes/
+              - listitem [ref=e1719]:
+                - link "Arnés interno de escape" [ref=e1720] [cursor=pointer]:
+                  - /url: /trajes/estructural/arnes-escape/
+              - listitem [ref=e1721]:
+                - link "Overol de brigadista" [ref=e1722] [cursor=pointer]:
+                  - /url: /trajes/brigadista/overol/
+              - listitem [ref=e1723]:
+                - link "Camisola forestal" [ref=e1724] [cursor=pointer]:
+                  - /url: /trajes/forestal/camisola/
+              - listitem [ref=e1725]:
+                - link "Chaquetón aluminizado" [ref=e1726] [cursor=pointer]:
+                  - /url: /trajes/aproximacion/chaqueton/
+        - group [ref=e1727]:
+          - generic "Equipo de protección"
+          - navigation "Equipo de protección" [ref=e1728]:
+            - list [ref=e1729]:
+              - listitem [ref=e1730]:
+                - link "Equipo de protección para bomberos" [ref=e1731] [cursor=pointer]:
+                  - /url: /equipo-de-proteccion/
+              - listitem [ref=e1732]:
+                - link "Cascos para bomberos" [ref=e1733] [cursor=pointer]:
+                  - /url: /cascos/
+              - listitem [ref=e1734]:
+                - link "Equipo de respiración autónoma" [ref=e1735] [cursor=pointer]:
+                  - /url: /equipo-de-respiracion-autonoma/
+              - listitem [ref=e1736]:
+                - link "Botas para bomberos" [ref=e1737] [cursor=pointer]:
+                  - /url: /botas/
+              - listitem [ref=e1738]:
+                - link "Guantes para bomberos" [ref=e1739] [cursor=pointer]:
+                  - /url: /guantes/
+              - listitem [ref=e1740]:
+                - link "Monjas y escafandras" [ref=e1741] [cursor=pointer]:
+                  - /url: /capuchas/
+              - listitem [ref=e1742]:
+                - link "Kits de equipo completo para bombero" [ref=e1743] [cursor=pointer]:
+                  - /url: /kits/
+        - group [ref=e1744]:
+          - generic "Rescate y herramientas"
+          - navigation "Rescate y herramientas" [ref=e1745]:
+            - list [ref=e1746]:
+              - listitem [ref=e1747]:
+                - link "Herramientas y equipo de rescate para bomberos" [ref=e1748] [cursor=pointer]:
+                  - /url: /rescate-y-herramientas/
+              - listitem [ref=e1749]:
+                - link "Equipo de rescate" [ref=e1750] [cursor=pointer]:
+                  - /url: /rescate/
+              - listitem [ref=e1751]:
+                - link "Herramientas para bomberos" [ref=e1752] [cursor=pointer]:
+                  - /url: /herramientas/
+              - listitem [ref=e1753]:
+                - link "Mangueras y accesorios" [ref=e1754] [cursor=pointer]:
+                  - /url: /mangueras-y-accesorios/
+              - listitem [ref=e1755]:
+                - link "Accesorios para bomberos" [ref=e1756] [cursor=pointer]:
+                  - /url: /accesorios/
+              - listitem [ref=e1757]:
+                - link "Modelos de trajes de bomberos" [ref=e1758] [cursor=pointer]:
+                  - /url: /trajes/#modelos
+        - group [ref=e1759]:
+          - generic "Marcas y modelos"
+          - navigation "Marcas y modelos" [ref=e1760]:
+            - list [ref=e1761]:
+              - listitem [ref=e1762]:
+                - link "Romak Fire" [ref=e1763] [cursor=pointer]:
+                  - /url: /marcas/romak-fire/
+              - listitem [ref=e1764]:
+                - link "Sköld" [ref=e1765] [cursor=pointer]:
+                  - /url: /marcas/skold/
+              - listitem [ref=e1766]:
+                - link "Marcas de equipo para bomberos" [ref=e1767] [cursor=pointer]:
+                  - /url: /marcas/
+              - listitem [ref=e1768]:
+                - link "Casco Sköld Viking" [ref=e1769] [cursor=pointer]:
+                  - /url: /cascos/skold-viking/
+              - listitem [ref=e1770]:
+                - link "ERA Sköld Phantöm" [ref=e1771] [cursor=pointer]:
+                  - /url: /equipo-de-respiracion-autonoma/skold-phantom/
+              - listitem [ref=e1772]:
+                - link "Bota Romak Workman Fire" [ref=e1773] [cursor=pointer]:
+                  - /url: /botas/romak-workman-fire/
+        - group [ref=e1774]:
+          - generic "Guías técnicas"
+          - navigation "Guías técnicas" [ref=e1775]:
+            - list [ref=e1776]:
+              - listitem [ref=e1777]:
+                - link "Equipo de protección" [ref=e1778] [cursor=pointer]:
+                  - /url: /blog/categoria/equipo/
+              - listitem [ref=e1779]:
+                - link "Herramientas y rescate" [ref=e1780] [cursor=pointer]:
+                  - /url: /blog/categoria/herramientas-rescate/
+              - listitem [ref=e1781]:
+                - link "Cómo especificar equipo de bombero" [ref=e1782] [cursor=pointer]:
+                  - /url: /blog/categoria/especificacion/
+              - listitem [ref=e1783]:
+                - link "Normas y certificación de trajes" [ref=e1784] [cursor=pointer]:
+                  - /url: /blog/categoria/normas/
+              - listitem [ref=e1785]:
+                - link "Comparativas de trajes de bombero" [ref=e1786] [cursor=pointer]:
+                  - /url: /blog/categoria/comparativas/
+              - listitem [ref=e1787]:
+                - link "Vida útil del traje de bombero" [ref=e1788] [cursor=pointer]:
+                  - /url: /blog/categoria/mantenimiento/
+              - listitem [ref=e1789]:
+                - link "Licitación de trajes de bombero" [ref=e1790] [cursor=pointer]:
+                  - /url: /blog/categoria/licitacion/
+              - listitem [ref=e1791]:
+                - link "Calculadora de vida útil del equipo" [ref=e1792] [cursor=pointer]:
+                  - /url: /calculadora-vida-util-equipo-de-bombero/
+              - listitem [ref=e1793]:
+                - link "Blog técnico de trajes para bomberos" [ref=e1794] [cursor=pointer]:
+                  - /url: /blog/
+    - generic [ref=e1796]:
+      - generic [ref=e1797]:
+        - paragraph [ref=e1798]:
+          - generic [ref=e1799]:
+            - img "LORICA" [ref=e1800]
+            - generic [ref=e1801]: Trajes para bomberos
+        - paragraph [ref=e1802]: LORICA · Más de 35 años equipando bomberos en los 32 estados
+        - paragraph [ref=e1803]: "LORICA equipa a bomberos desde hace más de 35 años: trajes con ficha técnica, factura CFDI 4.0, sin compra mínima y entrega en los 32 estados de la República."
+        - generic [ref=e1804]:
+          - generic [ref=e1805]:
+            - term [ref=e1806]: Dirección
+            - definition [ref=e1807]:
+              - link "Manuel Caballero 161, Col. Obrera Cuauhtémoc, 06800 Ciudad de México, CDMX" [ref=e1808] [cursor=pointer]:
+                - /url: https://www.google.com/maps/search/?api=1&query=Manuel+Caballero+161%2C+Obrera%2C+Cuauht%C3%A9moc%2C+06800+Ciudad+de+M%C3%A9xico%2C+CDMX
+                - text: Manuel Caballero 161, Col. ObreraCuauhtémoc, 06800 Ciudad de México, CDMX
+          - generic [ref=e1809]:
+            - term [ref=e1810]: Teléfono
+            - definition [ref=e1811]:
+              - link "+52 56 6480 4962" [ref=e1812] [cursor=pointer]:
+                - /url: tel:+525664804962
+          - generic [ref=e1813]:
+            - term [ref=e1814]: WhatsApp
+            - definition [ref=e1815]:
+              - link "Cotizar trajes por WhatsApp" [ref=e1816] [cursor=pointer]:
+                - /url: https://wa.me/525664804962?text=Hola%2C%20quiero%20cotizar%20trajes%20o%20equipo%20para%20bomberos.
+          - generic [ref=e1817]:
+            - term [ref=e1818]: Correo
+            - definition [ref=e1819]:
+              - link "trajes.bomberos@gmail.com" [ref=e1820] [cursor=pointer]:
+                - /url: mailto:trajes.bomberos@gmail.com
+          - generic [ref=e1821]:
+            - term [ref=e1822]: Horario
+            - definition [ref=e1823]: Lun–Vie 9:00–18:00
+          - generic [ref=e1824]:
+            - term [ref=e1825]: Cobertura
+            - definition [ref=e1826]: Presencia en los 32 estados
+        - generic [ref=e1827]:
+          - link "Cotizar trajes por WhatsApp" [ref=e1828] [cursor=pointer]:
+            - /url: https://wa.me/525664804962?text=Hola%2C%20quiero%20cotizar%20trajes%20o%20equipo%20para%20bomberos.
+          - link "Llamar +52 56 6480 4962" [ref=e1829] [cursor=pointer]:
+            - /url: tel:+525664804962
+      - generic [ref=e1830]:
+        - group [ref=e1831]:
+          - generic "Guías más consultadas"
+          - navigation "Guías más consultadas" [ref=e1832]:
+            - list [ref=e1833]:
+              - listitem [ref=e1834]:
+                - link "Cómo elegir traje para bomberos" [ref=e1835] [cursor=pointer]:
+                  - /url: /blog/como-elegir-traje-para-bomberos/
+              - listitem [ref=e1836]:
+                - link "Cuánto cuesta un traje de bombero" [ref=e1837] [cursor=pointer]:
+                  - /url: /blog/cuanto-cuesta-un-traje-de-bombero/
+              - listitem [ref=e1838]:
+                - link "Traje estructural o brigadista" [ref=e1839] [cursor=pointer]:
+                  - /url: /blog/traje-estructural-o-brigadista/
+              - listitem [ref=e1840]:
+                - 'link "NFPA 1970: cambios para trajes de bombero" [ref=e1841] [cursor=pointer]':
+                  - /url: /blog/nfpa-1970-que-cambio/
+              - listitem [ref=e1842]:
+                - link "Retiro del traje a los diez años (NFPA 1850)" [ref=e1843] [cursor=pointer]:
+                  - /url: /blog/vida-util-traje-bombero-nfpa-1850/
+        - group [ref=e1844]:
+          - generic "Compra y licitación"
+          - navigation "Compra y licitación" [ref=e1845]:
+            - list [ref=e1846]:
+              - listitem [ref=e1847]:
+                - link "NOM-002-STPS-2010 para brigadas" [ref=e1848] [cursor=pointer]:
+                  - /url: /blog/nom-002-stps-2010-equipo-para-brigadas/
+              - listitem [ref=e1849]:
+                - link "Licitación de trajes de bomberos" [ref=e1850] [cursor=pointer]:
+                  - /url: /blog/licitacion-trajes-bomberos-expediente/
+              - listitem [ref=e1851]:
+                - link "TPP y THL del traje estructural" [ref=e1852] [cursor=pointer]:
+                  - /url: /blog/tpp-y-thl-traje-estructural/
+              - listitem [ref=e1853]:
+                - link "Preguntas frecuentes sobre trajes de bombero" [ref=e1854] [cursor=pointer]:
+                  - /url: /#faq
+              - listitem [ref=e1855]:
+                - link "Solicitar cotización de trajes" [ref=e1856] [cursor=pointer]:
+                  - /url: /#cotizar
+        - group [ref=e1857]:
+          - generic "LORICA · Trajes para bomberos"
+          - navigation "LORICA · Trajes para bomberos" [ref=e1858]:
+            - list [ref=e1859]:
+              - listitem [ref=e1860]:
+                - link "Proveedor de trajes para bomberos" [ref=e1861] [cursor=pointer]:
+                  - /url: /empresa/
+              - listitem [ref=e1862]:
+                - link "Contacto para cotizar trajes" [ref=e1863] [cursor=pointer]:
+                  - /url: /contacto/
+              - listitem [ref=e1864]:
+                - link "Directorio de estaciones de bomberos" [ref=e1865] [cursor=pointer]:
+                  - /url: /estaciones-de-bomberos/
+              - listitem [ref=e1866]:
+                - link "Aviso de privacidad" [ref=e1867] [cursor=pointer]:
+                  - /url: /aviso-de-privacidad/
+              - listitem [ref=e1868]:
+                - link "Términos y condiciones" [ref=e1869] [cursor=pointer]:
+                  - /url: /terminos-y-condiciones/
+    - region "Referencias normativas" [ref=e1870]:
+      - generic [ref=e1871]:
+        - list "Normas de referencia" [ref=e1872]:
+          - listitem [ref=e1873]: NFPA 1970
+          - listitem [ref=e1874]: NFPA 1950
+          - listitem [ref=e1875]: NFPA 1850
+          - listitem [ref=e1876]: NOM-017-STPS-2024
+          - listitem [ref=e1877]: NOM-002-STPS-2010
+          - listitem [ref=e1878]: EN 469
+        - paragraph [ref=e1879]:
+          - text: Trabajamos sobre
+          - strong [ref=e1880]: NFPA 1970
+          - text: (edición 2025, que absorbió a la NFPA 1971) y
+          - strong [ref=e1881]: NFPA 1850
+          - text: para el ciclo de servicio. En México el EPP se rige por la
+          - strong [ref=e1882]: NOM-017-STPS-2024
+          - text: y, para brigadas, por la
+          - strong [ref=e1883]: NOM-002-STPS-2010
+          - text: ". NFPA es referencia técnica voluntaria: se vuelve exigible cuando la incorpora un pliego de licitación."
+    - generic [ref=e1885]:
+      - paragraph [ref=e1886]: © 2026 LORICA Trajes para Bomberos. Todos los derechos reservados. · Presencia en los 32 estados de México
+      - navigation "Enlaces legales" [ref=e1887]:
+        - link "Aviso de privacidad" [ref=e1888] [cursor=pointer]:
+          - /url: /aviso-de-privacidad/
+        - link "Términos y condiciones" [ref=e1889] [cursor=pointer]:
+          - /url: /terminos-y-condiciones/
+  - link "Escríbenos por WhatsApp" [ref=e1891] [cursor=pointer]:
+    - /url: https://wa.me/525664804962?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20equipo%20de%20protecci%C3%B3n%20contra%20incendios.

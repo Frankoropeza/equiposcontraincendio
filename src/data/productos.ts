@@ -361,15 +361,22 @@ export const productosCategoryFeatures: ProductosCategoryFeature[] = [
     },
   },
   {
-    eyebrow: 'EPP · NOM-115-STPS',
+    // 2026-11-20: la versión anterior atribuía a la NOM-115-STPS los guantes,
+    // los trajes y la protección respiratoria. La NOM-115-STPS-2009 se titula
+    // «Cascos de protección» y cubre SOLO cascos. La obligación de dotar de EPP
+    // a la brigada está en el numeral 5.9 de la NOM-002-STPS-2010, y la
+    // selección, verificación y registro, en la NOM-017-STPS-2024 (que sustituyó
+    // a la de 2008 el 28/09/2025). Ninguna NOM fija requisitos de producto para
+    // traje de bombero: ahí el mercado usa NFPA o EN 469 como referencia.
+    eyebrow: 'EPP · NOM-002-STPS-2010',
     title: 'Protección personal para',
     titleAccent: 'tu brigada de respuesta',
     description:
-      'Quien interviene en una emergencia no debe exponerse de más. Surtimos cascos, guantes térmicos, trajes de aproximación y protección respiratoria conforme a la NOM-115-STPS, para que tu brigada interna actúe con seguridad.',
+      'Quien interviene en una emergencia no debe exponerse de más. El numeral 5.9 de la NOM-002-STPS-2010 obliga a dotar de equipo de protección a los integrantes de la brigada según sus funciones y riesgos, y la NOM-017-STPS-2024 pide documentar cómo se seleccionó y se entregó. Surtimos cascos, guantes térmicos, trajes de aproximación y protección respiratoria para cubrirlo.',
     features: [
       {
         label: 'Cascos y caretas',
-        desc: 'Protección de cabeza y rostro frente a calor radiante e impactos.',
+        desc: 'Cabeza y rostro ante impacto y calor; los cascos sí tienen NOM propia.',
       },
       {
         label: 'Guantes térmicos',

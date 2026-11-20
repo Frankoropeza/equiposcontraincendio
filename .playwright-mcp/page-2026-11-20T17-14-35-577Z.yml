@@ -1,0 +1,772 @@
+- generic [active] [ref=f3e1]:
+  - link "Ir al contenido principal" [ref=f3e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=f3e3]:
+    - generic [ref=f3e5]:
+      - generic [ref=f3e6]:
+        - link "55 3493 4812" [ref=f3e7] [cursor=pointer]:
+          - /url: tel:+525534934812
+        - generic [aria-hidden] [ref=f3e8]: "|"
+        - link "ventas@meseci.com.mx" [ref=f3e9] [cursor=pointer]:
+          - /url: mailto:ventas@meseci.com.mx
+        - generic [aria-hidden] [ref=f3e10]: "|"
+        - generic [ref=f3e11]: Lun–Vie 9:00–18:00
+      - generic [ref=f3e12]:
+        - generic [ref=f3e13]: Proveedor Certificado NOM
+        - link "WhatsApp Directo" [ref=f3e14] [cursor=pointer]:
+          - /url: https://wa.me/525534934812?text=Hola%20MESECI%2C%20necesito%20información
+    - banner [ref=f3e15]:
+      - generic [ref=f3e16]:
+        - link "MESECI — Equipo Contra Incendios" [ref=f3e17] [cursor=pointer]:
+          - /url: /
+          - img "MESECI" [ref=f3e18]
+        - navigation "Navegación principal" [ref=f3e19]:
+          - list [ref=f3e20]:
+            - listitem [ref=f3e21]:
+              - link "Nosotros" [ref=f3e22] [cursor=pointer]:
+                - /url: /nosotros
+            - listitem [ref=f3e23]:
+              - link "Productos" [ref=f3e24] [cursor=pointer]:
+                - /url: /productos
+            - listitem [ref=f3e25]:
+              - link "Directorio de Obligaciones" [ref=f3e26] [cursor=pointer]:
+                - /url: /obligaciones-contra-incendios
+            - listitem [ref=f3e27]:
+              - link "Blog" [ref=f3e28] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=f3e29]:
+              - link "Contacto" [ref=f3e30] [cursor=pointer]:
+                - /url: /contacto
+          - generic [ref=f3e31]:
+            - link "Llamar a MESECI" [ref=f3e32] [cursor=pointer]:
+              - /url: tel:+525534934812
+              - text: 55 3493 4812
+            - link "Cotizar Ahora" [ref=f3e33] [cursor=pointer]:
+              - /url: /contacto
+  - main [ref=f3e34]:
+    - region "Equipo contra incendios certificado para tu empresa" [ref=f3e35]:
+      - generic [ref=f3e36]:
+        - generic [ref=f3e37]:
+          - generic [aria-hidden] [ref=f3e38]: Proveedor Certificado NOM & NFPA · Desde 2008
+          - heading [level=1] [ref=f3e40]:
+            - text: Extintores, Hidrantes y
+            - generic [ref=f3e41]: Equipo de BomberosCertificado para tu Empresa
+          - paragraph [ref=f3e42]: Extintores, equipamiento para bomberos, sistemas de rociadores y componentes especializados. Asesoría técnica gratuita, instalación profesional y mantenimiento programado en toda la ZMVM.
+        - generic [ref=f3e43]:
+          - paragraph [ref=f3e44]:
+            - text: En
+            - strong [ref=f3e45]: MESECI
+            - text: somos especialistas en la venta de
+            - link "equipos contra incendio" [ref=f3e46] [cursor=pointer]:
+              - /url: /venta-de-equipo-contra-incendios
+            - text: en México desde 2008, y publicamos nuestra
+            - link "guía de protección contra incendios" [ref=f3e47] [cursor=pointer]:
+              - /url: /contra-incendios
+            - text: "para quien aún está definiendo qué necesita. Nuestra propuesta cubre toda la cadena de protección: extintores certificados"
+            - strong [ref=f3e48]: NOM-154-SCFI
+            - text: ", equipamiento para bomberos bajo norma"
+            - strong [ref=f3e49]: NFPA 1970
+            - text: ", sistemas de rociadores"
+            - strong [ref=f3e50]: NFPA 13
+            - text: ", mangueras, gabinetes, hidrantes e instalación profesional, todo con asesoría técnica gratuita y soporte documental para Protección Civil."
+          - paragraph [ref=f3e51]:
+            - text: Con
+            - strong [ref=f3e52]: dos sucursales físicas en la ZMVM
+            - text: —Benito Juárez CDMX y Tlalnepantla EdoMex— y más de
+            - strong [ref=f3e53]: 500 empresas protegidas
+            - text: en industria, hospitales, corporativos, hoteles y comercios, MESECI integra venta, instalación, mantenimiento y cumplimiento normativo en un solo contrato. Cotización en menos de 2 horas hábiles.
+    - generic "Acceso rápido a categorías" [ref=f3e54]:
+      - generic [ref=f3e55]:
+        - link "Extintores" [ref=f3e56] [cursor=pointer]:
+          - /url: /extintores-contra-incendios
+          - generic [ref=f3e57]:
+            - generic [ref=f3e58]: Extintores
+            - generic [ref=f3e59]: NOM-154-SCFI
+        - link "Equipamiento Bomberos" [ref=f3e60] [cursor=pointer]:
+          - /url: /equipamiento-para-bomberos
+          - generic [ref=f3e61]:
+            - generic [ref=f3e62]: Equipamiento Bomberos
+            - generic [ref=f3e63]: NFPA 1970
+        - link "Combate CI" [ref=f3e64] [cursor=pointer]:
+          - /url: /combate-contra-incendios
+          - generic [ref=f3e65]:
+            - generic [ref=f3e66]: Combate CI
+            - generic [ref=f3e67]: Gabinetes · Mangueras
+        - link "Sistemas CI" [ref=f3e68] [cursor=pointer]:
+          - /url: /sistemas-contra-incendio
+          - generic [ref=f3e69]:
+            - generic [ref=f3e70]: Sistemas CI
+            - generic [ref=f3e71]: Rociadores · NFPA 13
+        - link "Componentes" [ref=f3e72] [cursor=pointer]:
+          - /url: /componentes-contra-incendios
+          - generic [ref=f3e73]:
+            - generic [ref=f3e74]: Componentes
+            - generic [ref=f3e75]: Hidrantes · Herrajes
+        - link "Señalización" [ref=f3e76] [cursor=pointer]:
+          - /url: /senalizacion-contra-incendios
+          - generic [ref=f3e77]:
+            - generic [ref=f3e78]: Señalización
+            - generic [ref=f3e79]: NOM-003-SEGOB
+        - link "Directorio de Obligaciones" [ref=f3e80] [cursor=pointer]:
+          - /url: /obligaciones-contra-incendios
+          - generic [ref=f3e81]:
+            - generic [ref=f3e82]: Directorio de Obligaciones
+            - generic [ref=f3e83]: Por estado y giro
+        - link "Solicitar Cotización" [ref=f3e84] [cursor=pointer]:
+          - /url: /contacto
+          - generic [ref=f3e85]:
+            - generic [ref=f3e86]: Solicitar Cotización
+            - generic [ref=f3e87]: Respuesta en <2h
+    - region "Venta de Equipo Contra Incendios" [ref=f3e88]:
+      - generic [ref=f3e89]:
+        - generic [ref=f3e90]:
+          - generic [ref=f3e91]:
+            - generic [ref=f3e92]: Nuestro Catálogo
+            - heading "Venta de Equipo Contra Incendios" [level=2] [ref=f3e93]
+          - generic [ref=f3e94]:
+            - paragraph [ref=f3e95]:
+              - text: Distribuimos equipo contra incendios certificado
+              - strong [ref=f3e96]: NOM y NFPA
+              - text: para industrias, empresas e instituciones en toda la República Mexicana. Desde extintores ABC hasta sistemas de rociadores automáticos, con documentación técnica oficial para auditorías de Protección Civil sin costo adicional.
+            - paragraph [ref=f3e97]: Con más de 18 años de experiencia y stock permanente en dos sucursales de la ZMVM, garantizamos disponibilidad inmediata, precios competitivos y asesoría técnica especializada. Un solo proveedor para todo tu sistema de protección.
+            - link "Ver catálogo completo" [ref=f3e98] [cursor=pointer]:
+              - /url: /productos
+        - generic [ref=f3e99]:
+          - article "Extintores Contra Incendios" [ref=f3e100]:
+            - generic [ref=f3e101]:
+              - img "Extintores contra incendios certificados NOM-154-SCFI" [ref=f3e102]
+              - generic [ref=f3e103]: NOM-154
+              - generic [ref=f3e104]: 40+ modelos
+            - generic [ref=f3e105]:
+              - heading "Extintores Contra Incendios" [level=3] [ref=f3e106]
+              - paragraph [ref=f3e107]: Primera línea de defensa. Polvo ABC, CO₂, agua, espuma AFFF y agente limpio.
+              - list "Subcategorías de Extintores Contra Incendios" [ref=f3e108]:
+                - listitem [ref=f3e109]:
+                  - link "Polvo ABC (PQS)" [ref=f3e110] [cursor=pointer]:
+                    - /url: /extintores-abc
+                - listitem [ref=f3e111]:
+                  - link "CO₂" [ref=f3e112] [cursor=pointer]:
+                    - /url: /extintores-co2
+                - listitem [ref=f3e113]:
+                  - link "Agua a Presión" [ref=f3e114] [cursor=pointer]:
+                    - /url: /extintores-de-agua
+                - listitem [ref=f3e115]:
+                  - link "Espuma AFFF" [ref=f3e116] [cursor=pointer]:
+                    - /url: /extintores-de-espuma
+                - listitem [ref=f3e117]:
+                  - link "Agente Limpio HFC" [ref=f3e118] [cursor=pointer]:
+                    - /url: /extintores-agente-limpio
+                - listitem [ref=f3e119]:
+                  - link "Polvo PQS" [ref=f3e120] [cursor=pointer]:
+                    - /url: /extintores-de-polvo
+              - link "Ver todos los extintores" [ref=f3e121] [cursor=pointer]:
+                - /url: /extintores-contra-incendios
+          - article "Equipamiento para Bomberos" [ref=f3e122]:
+            - generic [ref=f3e123]:
+              - img "Equipamiento para bomberos certificado NFPA 1970" [ref=f3e124]
+              - generic [ref=f3e125]: NFPA 1970
+              - generic [ref=f3e126]: 25+ productos
+            - generic [ref=f3e127]:
+              - heading "Equipamiento para Bomberos" [level=3] [ref=f3e128]
+              - paragraph [ref=f3e129]: Protección personal certificada NFPA para brigadas industriales y cuerpos de bomberos.
+              - list "Subcategorías de Equipamiento para Bomberos" [ref=f3e130]:
+                - listitem [ref=f3e131]:
+                  - link "Trajes de Bombero" [ref=f3e132] [cursor=pointer]:
+                    - /url: /trajes-de-bombero
+                - listitem [ref=f3e133]:
+                  - link "Cascos de Bombero" [ref=f3e134] [cursor=pointer]:
+                    - /url: /cascos-de-bombero
+                - listitem [ref=f3e135]:
+                  - link "Botas de Bombero" [ref=f3e136] [cursor=pointer]:
+                    - /url: /botas-de-bombero
+                - listitem [ref=f3e137]:
+                  - link "Guantes de Bombero" [ref=f3e138] [cursor=pointer]:
+                    - /url: /guantes-de-bombero
+                - listitem [ref=f3e139]:
+                  - link "Equipo Respiración ERA" [ref=f3e140] [cursor=pointer]:
+                    - /url: /equipamiento-para-bomberos
+                - listitem [ref=f3e141]:
+                  - link "Equipamiento Completo" [ref=f3e142] [cursor=pointer]:
+                    - /url: /equipamiento-para-bomberos
+              - link "Ver equipamiento" [ref=f3e143] [cursor=pointer]:
+                - /url: /equipamiento-para-bomberos
+          - article "Combate Contra Incendios" [ref=f3e144]:
+            - generic [ref=f3e145]:
+              - img "Sistemas de combate contra incendios industriales NFPA 13" [ref=f3e146]
+              - generic [ref=f3e147]: NFPA 13
+              - generic [ref=f3e148]: 50+ soluciones
+            - generic [ref=f3e149]:
+              - heading "Combate Contra Incendios" [level=3] [ref=f3e150]
+              - paragraph [ref=f3e151]: "Infraestructura activa: gabinetes, mangueras, rociadores y tubería certificada."
+              - list "Subcategorías de Combate Contra Incendios" [ref=f3e152]:
+                - listitem [ref=f3e153]:
+                  - link "Gabinetes CI" [ref=f3e154] [cursor=pointer]:
+                    - /url: /gabinetes
+                - listitem [ref=f3e155]:
+                  - link "Mangueras CI" [ref=f3e156] [cursor=pointer]:
+                    - /url: /mangueras-contra-incendios
+                - listitem [ref=f3e157]:
+                  - link "Rociadores Automáticos" [ref=f3e158] [cursor=pointer]:
+                    - /url: /sistemas-de-rociadores-contra-incendios
+                - listitem [ref=f3e159]:
+                  - link "Sistemas CI Completos" [ref=f3e160] [cursor=pointer]:
+                    - /url: /sistemas-contra-incendio
+                - listitem [ref=f3e161]:
+                  - link "Señalización CI" [ref=f3e162] [cursor=pointer]:
+                    - /url: /senalizacion-contra-incendios
+                - listitem [ref=f3e163]:
+                  - link "Seguridad Industrial" [ref=f3e164] [cursor=pointer]:
+                    - /url: /seguridad-industrial
+              - link "Ver soluciones" [ref=f3e165] [cursor=pointer]:
+                - /url: /combate-contra-incendios
+          - article "Componentes y Accesorios" [ref=f3e166]:
+            - generic [ref=f3e167]:
+              - 'img "Componentes contra incendios: herrajes, hidrantes y monitores" [ref=f3e168]'
+              - generic [ref=f3e169]: 30+ referencias
+            - generic [ref=f3e170]:
+              - heading "Componentes y Accesorios" [level=3] [ref=f3e171]
+              - paragraph [ref=f3e172]: Herrajes, hidrantes, monitores y boquillas para completar y mantener tu sistema.
+              - list "Subcategorías de Componentes y Accesorios" [ref=f3e173]:
+                - listitem [ref=f3e174]:
+                  - link "Hidrantes CI" [ref=f3e175] [cursor=pointer]:
+                    - /url: /hidrantes-contra-incendios
+                - listitem [ref=f3e176]:
+                  - link "Herrajes CI" [ref=f3e177] [cursor=pointer]:
+                    - /url: /herrajes-contra-incendios
+                - listitem [ref=f3e178]:
+                  - link "Boquillas para Monitor" [ref=f3e179] [cursor=pointer]:
+                    - /url: /boquillas-contra-incendios
+                - listitem [ref=f3e180]:
+                  - link "Monitores CI" [ref=f3e181] [cursor=pointer]:
+                    - /url: /componentes-contra-incendios
+                - listitem [ref=f3e182]:
+                  - link "Primeros Auxilios" [ref=f3e183] [cursor=pointer]:
+                    - /url: /primeros-auxilios
+                - listitem [ref=f3e184]:
+                  - link "Ver catálogo completo" [ref=f3e185] [cursor=pointer]:
+                    - /url: /productos
+              - link "Ver componentes" [ref=f3e186] [cursor=pointer]:
+                - /url: /componentes-contra-incendios
+    - region "¿Por qué elegir MESECI?" [ref=f3e187]:
+      - generic [ref=f3e188]:
+        - generic [ref=f3e189]:
+          - generic [ref=f3e190]:
+            - generic [ref=f3e191]: Nuestras Ventajas
+            - heading "¿Por qué elegir MESECI?" [level=2] [ref=f3e192]
+            - paragraph [ref=f3e193]: MESECI lleva más de 18 años como proveedor de confianza de industrias, empresas e instituciones en México. Esto es lo que nos diferencia.
+          - generic [ref=f3e194]:
+            - paragraph [ref=f3e195]:
+              - text: En
+              - strong [ref=f3e196]: MESECI
+              - text: "somos especialistas en equipo contra incendios desde 2008 y trabajamos con las normas más exigentes del mercado:"
+              - strong [ref=f3e197]: NOM-154-SCFI
+              - text: para extintores,
+              - strong [ref=f3e198]: NFPA 1970
+              - text: para equipamiento de bomberos y
+              - strong [ref=f3e199]: NFPA 13
+              - text: para sistemas de rociadores. Cada producto que entregamos incluye documentación oficial de cumplimiento para que tus auditorías de
+              - strong [ref=f3e200]: Protección Civil
+              - text: sean sin contratiempos.
+            - paragraph [ref=f3e201]:
+              - text: Un solo proveedor para
+              - strong [ref=f3e202]: venta, instalación profesional, mantenimiento programado y soporte técnico
+              - text: ". MESECI cubre toda la cadena con ingenieros, no vendedores: diagnóstico de riesgo, propuesta técnica, validación normativa, entrega documental y respaldo durante toda la vida útil del equipo. Stock permanente en dos sucursales de la ZMVM con"
+              - strong [ref=f3e203]: despacho el mismo día
+              - text: .
+        - generic [ref=f3e204]:
+          - article [ref=f3e205]:
+            - generic [ref=f3e206]:
+              - generic [ref=f3e207]: NOM · NFPA
+              - heading "Certificación NOM y NFPA garantizada" [level=3] [ref=f3e208]
+              - paragraph [ref=f3e209]: Toda la línea cumple las Normas Oficiales Mexicanas y estándares NFPA. Emitimos documentación oficial para auditorías de Protección Civil sin costo adicional.
+          - article [ref=f3e210]:
+            - generic [ref=f3e211]:
+              - generic [ref=f3e212]: < 2 horas
+              - heading "Cotización técnica en menos de 2 horas" [level=3] [ref=f3e213]
+              - paragraph [ref=f3e214]: Un asesor especializado responde tu solicitud en tiempo récord, con propuesta detallada, especificaciones técnicas y precios competitivos.
+          - article [ref=f3e215]:
+            - generic [ref=f3e216]:
+              - generic [ref=f3e217]: Todo en uno
+              - 'heading "Solución integral: un solo proveedor" [level=3] [ref=f3e218]'
+              - paragraph [ref=f3e219]: Venta, instalación profesional, mantenimiento preventivo y gestión del cumplimiento normativo. Sin dispersión de proveedores ni huecos en tu protección.
+          - article [ref=f3e220]:
+            - generic [ref=f3e221]:
+              - generic [ref=f3e222]: Mismo día
+              - heading "Stock permanente · Entrega el mismo día" [level=3] [ref=f3e223]
+              - paragraph [ref=f3e224]: Dos sucursales físicas en la ZMVM con inventario disponible. Benito Juárez CDMX y Tlalnepantla EdoMex. Enviamos a toda la República en proyectos especiales.
+    - region "De la cotización a la protección completa" [ref=f3e225]:
+      - generic [ref=f3e226]:
+        - generic [ref=f3e227]:
+          - generic [ref=f3e228]:
+            - generic [ref=f3e229]: Nuestro Proceso
+            - heading "De la cotización a la protección completa" [level=2] [ref=f3e230]: De la cotización a laprotección completa
+            - paragraph [ref=f3e231]: MESECI maneja un proceso claro, eficiente y sin sorpresas. Del primer diagnóstico al mantenimiento anual, un solo equipo de especialistas a tu lado.
+          - generic [ref=f3e232]:
+            - paragraph [ref=f3e233]:
+              - text: En
+              - strong [ref=f3e234]: MESECI
+              - text: "no solo vendemos equipo:"
+              - strong [ref=f3e235]: acompañamos todo el ciclo de protección contra incendios
+              - text: . Diagnóstico de riesgo bajo NOM-002-STPS, propuesta técnica certificada NOM/NFPA, instalación con personal propio y programa de mantenimiento preventivo bajo un solo contrato anual.
+            - paragraph [ref=f3e236]:
+              - text: Cada etapa queda documentada para que puedas
+              - strong [ref=f3e237]: aprobar auditorías de Protección Civil y STPS
+              - text: sin contratiempos. MESECI mantiene tu sistema siempre actualizado y siempre en cumplimiento, con ingenieros especialistas que llevan +18 años protegiendo empresas mexicanas.
+        - generic [ref=f3e238]:
+          - generic [ref=f3e239]:
+            - heading "Diagnóstico y Análisis de Riesgo" [level=3] [ref=f3e242]
+            - paragraph [ref=f3e243]: Evaluamos tu instalación, identificamos riesgos potenciales y determinamos el sistema óptimo según tu actividad económica y la normativa vigente.
+          - generic [ref=f3e244]:
+            - heading "Propuesta Técnica y Cotización" [level=3] [ref=f3e247]
+            - paragraph [ref=f3e248]: Entregamos una cotización detallada con equipo certificado, plazos de entrega, garantías claras y el respaldo normativo que tu empresa necesita.
+          - generic [ref=f3e249]:
+            - heading "Suministro e Instalación Profesional" [level=3] [ref=f3e252]
+            - paragraph [ref=f3e253]: Suministramos e instalamos con personal técnico certificado, minimizando la interrupción de tus operaciones y garantizando el correcto funcionamiento.
+          - generic [ref=f3e254]:
+            - heading "Mantenimiento y Respaldo Continuo" [level=3] [ref=f3e255]
+            - paragraph [ref=f3e256]: Programa de mantenimiento preventivo, recargas, inspecciones periódicas y soporte técnico para mantener tu sistema siempre listo y en cumplimiento.
+    - region "Protegemos todo tipo de instalación" [ref=f3e257]:
+      - generic [ref=f3e258]:
+        - generic [ref=f3e259]:
+          - generic [ref=f3e260]:
+            - generic [ref=f3e261]: Sectores Atendidos
+            - heading "Protegemos todo tipo de instalación" [level=2] [ref=f3e262]: Protegemos todo tipode instalación
+            - paragraph [ref=f3e263]: MESECI atiende industrias, corporativos, hospitales, centros comerciales, instituciones educativas y residencias con equipo certificado y asesoría especializada.
+          - generic [ref=f3e264]:
+            - paragraph [ref=f3e265]:
+              - text: En
+              - strong [ref=f3e266]: MESECI
+              - text: "sabemos que cada sector tiene normativa propia: la industria aplica"
+              - strong [ref=f3e267]: NOM-002-STPS
+              - text: ", los hospitales requieren sistemas específicos de rociadores, los centros comerciales deben cumplir con"
+              - strong [ref=f3e268]: Protección Civil municipal
+              - text: y las brigadas industriales necesitan equipamiento certificado
+              - strong [ref=f3e269]: NFPA 1970
+              - text: .
+            - paragraph [ref=f3e270]:
+              - text: Con
+              - strong [ref=f3e271]: +18 años de experiencia
+              - text: en todos estos entornos, nuestros ingenieros conocen los requerimientos técnicos y normativos de cada sector. MESECI te orienta en la solución correcta desde el primer contacto,
+              - strong [ref=f3e272]: sin costo de asesoría
+              - text: ", y acompaña el proyecto con instalación, mantenimiento y documentación para auditorías."
+        - generic [ref=f3e273]:
+          - article [ref=f3e274]:
+            - heading "Industria y Manufactura" [level=3] [ref=f3e275]
+            - paragraph [ref=f3e276]: Plantas industriales, bodegas, líneas de producción y zonas de alto riesgo operativo con cumplimiento NOM-002-STPS.
+          - article [ref=f3e277]:
+            - heading "Corporativos y Oficinas" [level=3] [ref=f3e278]
+            - paragraph [ref=f3e279]: Torres empresariales, parques corporativos y edificios de uso mixto en CDMX y ZMVM con sistemas certificados.
+          - article [ref=f3e280]:
+            - heading "Hospitales e Instituciones" [level=3] [ref=f3e281]
+            - paragraph [ref=f3e282]: Centros médicos, laboratorios clínicos y espacios con requerimientos especiales de protección y alta disponibilidad.
+          - article [ref=f3e283]:
+            - heading "Comercio y Retail" [level=3] [ref=f3e284]
+            - paragraph [ref=f3e285]: Tiendas, centros comerciales, almacenes y superficies de gran formato con alta afluencia de público.
+          - article [ref=f3e286]:
+            - heading "Educación y Gobierno" [level=3] [ref=f3e287]
+            - paragraph [ref=f3e288]: Universidades, escuelas, dependencias públicas e instalaciones gubernamentales con normativa específica.
+          - article [ref=f3e289]:
+            - heading "Residencial y Condominio" [level=3] [ref=f3e290]
+            - paragraph [ref=f3e291]: Casas, condominios y fraccionamientos con cumplimiento de normativa de Protección Civil y tranquilidad familiar.
+        - link "Consulta qué exige la ley contra incendios para tu sector — Directorio de Obligaciones" [ref=f3e293] [cursor=pointer]:
+          - /url: /obligaciones-contra-incendios
+    - region "Especialistas del mismo grupo" [ref=f3e294]:
+      - generic [ref=f3e295]:
+        - generic [ref=f3e296]:
+          - generic [ref=f3e297]:
+            - generic [ref=f3e298]: Sitios del mismo grupo
+            - heading "Especialistas del mismo grupo" [level=2] [ref=f3e299]: Especialistasdel mismo grupo
+            - paragraph [ref=f3e300]: "Empresas especializadas que complementan lo que encuentras en MESECI: seguridad industrial, maquinaria, extintores, monitores y equipo para bomberos."
+            - link "Ver todas las guías" [ref=f3e301] [cursor=pointer]:
+              - /url: /blog
+          - generic [ref=f3e302]:
+            - paragraph [ref=f3e303]: MESECI forma parte de un grupo de sitios especializados en seguridad y equipo para obra e industria. Cada uno atiende un frente distinto, y aquí los reunimos para que encuentres rápido al proveedor adecuado.
+            - paragraph [ref=f3e304]:
+              - text: Para cada empresa publicamos una
+              - strong [ref=f3e305]: guía editorial
+              - text: con su catálogo y sus servicios. Son guías informativas basadas en la información pública de cada sitio, no testimonios de clientes.
+        - generic [ref=f3e306]:
+          - article [ref=f3e307]:
+            - generic [ref=f3e308]:
+              - heading "SEIND" [level=3] [ref=f3e309]
+              - paragraph [ref=f3e310]: Equipo de seguridad industrial
+            - paragraph [ref=f3e311]: EPP certificado, prevención de caídas, señalización, equipos contra incendios y tecnología, con asesoría, capacitación e instalación.
+            - generic [ref=f3e312]:
+              - link "Sitio web de SEIND" [ref=f3e313] [cursor=pointer]:
+                - /url: https://equipo-de-seguridad-industrial.com
+                - text: equipo-de-seguridad-industrial.com
+              - link "Leer la guía en MESECI" [ref=f3e314] [cursor=pointer]:
+                - /url: /blog/equipo-de-seguridad-industrial-guia-seind
+          - article [ref=f3e315]:
+            - generic [ref=f3e316]:
+              - heading "MAQCON" [level=3] [ref=f3e317]
+              - paragraph [ref=f3e318]: Maquinaria de construcción
+            - paragraph [ref=f3e319]: Renta y venta de equipos de excavación, compactación, elevación, carga y transporte, con mantenimiento y logística.
+            - generic [ref=f3e320]:
+              - link "Sitio web de MAQCON" [ref=f3e321] [cursor=pointer]:
+                - /url: https://maquinasdeconstruccion.com
+                - text: maquinasdeconstruccion.com
+              - link "Leer la guía en MESECI" [ref=f3e322] [cursor=pointer]:
+                - /url: /blog/maquinaria-de-construccion-renta-venta-guia-maqcon
+          - article [ref=f3e323]:
+            - generic [ref=f3e324]:
+              - heading "MANEXT" [level=3] [ref=f3e325]
+              - paragraph [ref=f3e326]: "Extintores: venta, recarga y mantenimiento"
+            - paragraph [ref=f3e327]: "Servicio integral de extintores en CDMX y Estado de México: pólizas, prueba hidrostática, señalización y capacitación de brigadas."
+            - generic [ref=f3e328]:
+              - link "Sitio web de MANEXT" [ref=f3e329] [cursor=pointer]:
+                - /url: https://mantenimientodeextintores.mx
+                - text: mantenimientodeextintores.mx
+              - link "Leer la guía en MESECI" [ref=f3e330] [cursor=pointer]:
+                - /url: /blog/mantenimiento-recarga-extintores-cdmx-guia-manext
+          - article [ref=f3e331]:
+            - generic [ref=f3e332]:
+              - heading "LGA Contra Incendios" [level=3] [ref=f3e333]
+              - paragraph [ref=f3e334]: Equipo contra incendios en Querétaro
+            - paragraph [ref=f3e335]: Extintores, monitores, mangueras y equipo para bomberos, con diagnóstico, instalación y capacitación en el Bajío.
+            - generic [ref=f3e336]:
+              - link "Sitio web de LGA Contra Incendios" [ref=f3e337] [cursor=pointer]:
+                - /url: https://lgacontraincendios.com
+                - text: lgacontraincendios.com
+              - link "Leer la guía en MESECI" [ref=f3e338] [cursor=pointer]:
+                - /url: /blog/equipo-contra-incendios-queretaro-guia-lga
+          - article [ref=f3e339]:
+            - generic [ref=f3e340]:
+              - heading "AQUEON" [level=3] [ref=f3e341]
+              - paragraph [ref=f3e342]: Monitores contra incendios industriales
+            - paragraph [ref=f3e343]: Monitores fijos, portátiles y automáticos, con diseño, instalación y mantenimiento preventivo conforme a NFPA 25.
+            - generic [ref=f3e344]:
+              - link "Sitio web de AQUEON" [ref=f3e345] [cursor=pointer]:
+                - /url: https://monitorescontraincendios.com
+                - text: monitorescontraincendios.com
+              - link "Leer la guía en MESECI" [ref=f3e346] [cursor=pointer]:
+                - /url: /blog/monitores-contra-incendios-guia-aqueon
+          - article [ref=f3e347]:
+            - generic [ref=f3e348]:
+              - heading "FIREFIGHTER MX" [level=3] [ref=f3e349]
+              - paragraph [ref=f3e350]: Equipo para bomberos y brigadas
+            - paragraph [ref=f3e351]: Trajes, SCBA, cascos, botas, guantes, mangueras y rescate, con apoyo para compras por licitación.
+            - generic [ref=f3e352]:
+              - link "Sitio web de FIREFIGHTER MX" [ref=f3e353] [cursor=pointer]:
+                - /url: https://firefighter.mx
+                - text: firefighter.mx
+              - link "Leer la guía en MESECI" [ref=f3e354] [cursor=pointer]:
+                - /url: /blog/equipo-para-bomberos-mexico-guia-firefighter-mx
+    - region "Artículos técnicos y guías especializadas" [ref=f3e355]:
+      - generic [ref=f3e356]:
+        - generic [ref=f3e357]:
+          - generic [ref=f3e358]:
+            - generic [ref=f3e359]: Guía Contra Incendios
+            - heading "Artículos técnicos y guías especializadas" [level=2] [ref=f3e360]: Artículos técnicos yguías especializadas
+            - paragraph [ref=f3e361]: Conocimiento técnico aplicado de los ingenieros de MESECI para que decidas mejor sobre la protección contra incendios de tu empresa.
+            - link "Ver todos los artículos" [ref=f3e362] [cursor=pointer]:
+              - /url: /blog
+          - generic [ref=f3e363]:
+            - paragraph [ref=f3e364]:
+              - text: En
+              - strong [ref=f3e365]: MESECI
+              - text: "somos especialistas en equipo contra incendios desde 2008 y publicamos guías prácticas redactadas por nuestros ingenieros: cómo seleccionar el extintor correcto por clase de fuego, qué exige la"
+              - strong [ref=f3e366]: NOM-002-STPS
+              - text: según el giro, cómo armar una brigada certificada
+              - strong [ref=f3e367]: NFPA 1970
+              - text: y cuándo es obligatorio un sistema de rociadores
+              - strong [ref=f3e368]: NFPA 13
+              - text: .
+            - paragraph [ref=f3e369]:
+              - text: Cada artículo nace de proyectos reales con las
+              - strong [ref=f3e370]: +500 empresas
+              - text: que protegemos en la ZMVM y la República. MESECI te acompaña antes, durante y después de la compra con diagnóstico técnico, validación normativa y documentación lista para Protección Civil — la asesoría siempre es gratuita.
+        - generic [ref=f3e371]:
+          - article [ref=f3e372]:
+            - link [aria-hidden] [ref=f3e373] [cursor=pointer]:
+              - /url: /blog/sanciones-incumplimiento-proteccion-civil-baja-california-sur
+              - generic [ref=f3e374]: Normativa Y Cumplimiento
+            - generic [ref=f3e377]:
+              - heading [level=3] [ref=f3e378]:
+                - link "¿Cuánto es la Multa por Incumplir Protección Civil en BCS?" [ref=f3e379] [cursor=pointer]:
+                  - /url: /blog/sanciones-incumplimiento-proteccion-civil-baja-california-sur
+              - paragraph [ref=f3e380]: "Respondemos con la ley en mano: BCS prevé clausura y otras sanciones, pero nunca fija un monto de multa. Qué…"
+              - link "Leer artículo" [ref=f3e381] [cursor=pointer]:
+                - /url: /blog/sanciones-incumplimiento-proteccion-civil-baja-california-sur
+          - article [ref=f3e382]:
+            - link [aria-hidden] [ref=f3e383] [cursor=pointer]:
+              - /url: /blog/comparativo-multas-proteccion-civil-estados-mexico-2026
+              - generic [ref=f3e384]: Normativa Y Cumplimiento
+            - generic [ref=f3e387]:
+              - heading [level=3] [ref=f3e388]:
+                - link "¿Qué Estados Multan Más por Protección Civil en México?" [ref=f3e389] [cursor=pointer]:
+                  - /url: /blog/comparativo-multas-proteccion-civil-estados-mexico-2026
+              - paragraph [ref=f3e390]: "Comparativo de multas por incumplir protección civil en los 32 estados de México: rangos en pesos,…"
+              - link "Leer artículo" [ref=f3e391] [cursor=pointer]:
+                - /url: /blog/comparativo-multas-proteccion-civil-estados-mexico-2026
+          - article [ref=f3e392]:
+            - link [aria-hidden] [ref=f3e393] [cursor=pointer]:
+              - /url: /blog/adaptadores-bronce-equipo-ci-guia-tecnica
+              - generic [ref=f3e394]: Combate Incendios
+            - generic [ref=f3e397]:
+              - heading [level=3] [ref=f3e398]:
+                - link "Adaptadores de Bronce para Equipo Contra Incendio" [ref=f3e399] [cursor=pointer]:
+                  - /url: /blog/adaptadores-bronce-equipo-ci-guia-tecnica
+              - paragraph [ref=f3e400]: "Guía técnica de adaptadores de bronce para equipo contra incendio: compatibilidad de roscas NST, NH e IPT,…"
+              - link "Leer artículo" [ref=f3e401] [cursor=pointer]:
+                - /url: /blog/adaptadores-bronce-equipo-ci-guia-tecnica
+          - article [ref=f3e402]:
+            - link [aria-hidden] [ref=f3e403] [cursor=pointer]:
+              - /url: /blog/conexion-vida-bronce-guardian-hidrantes
+              - generic [ref=f3e404]: Combate Incendios
+            - generic [ref=f3e407]:
+              - heading [level=3] [ref=f3e408]:
+                - 'link "Adaptadores de Bronce: La Conexión de Vida" [ref=f3e409] [cursor=pointer]':
+                  - /url: /blog/conexion-vida-bronce-guardian-hidrantes
+              - paragraph [ref=f3e410]: ¿Por qué invertir en adaptadores de bronce de alta gama para tu equipo contra incendios? El valor de la…
+              - link "Leer artículo" [ref=f3e411] [cursor=pointer]:
+                - /url: /blog/conexion-vida-bronce-guardian-hidrantes
+          - article [ref=f3e412]:
+            - link [aria-hidden] [ref=f3e413] [cursor=pointer]:
+              - /url: /blog/barra-halligan-entrada-forzada-rescate-estructuras-tecnica
+              - generic [ref=f3e414]: Equipamiento Bomberos
+            - generic [ref=f3e417]:
+              - heading [level=3] [ref=f3e418]:
+                - 'link "Barra Halligan para Bomberos: Guía Técnica de Entrada" [ref=f3e419] [cursor=pointer]':
+                  - /url: /blog/barra-halligan-entrada-forzada-rescate-estructuras-tecnica
+              - paragraph [ref=f3e420]: La barra Halligan de forja monolítica en acero 4140 multiplica tu fuerza 15:1 en entrada forzada. Descubre su…
+              - link "Leer artículo" [ref=f3e421] [cursor=pointer]:
+                - /url: /blog/barra-halligan-entrada-forzada-rescate-estructuras-tecnica
+          - article [ref=f3e422]:
+            - link [aria-hidden] [ref=f3e423] [cursor=pointer]:
+              - /url: /blog/barra-halligan-libertad-apertura-entrada-forzada
+              - generic [ref=f3e424]: Equipamiento Bomberos
+            - generic [ref=f3e427]:
+              - heading [level=3] [ref=f3e428]:
+                - 'link "Barra Halligan: Cómo Elegir el Tamaño Correcto" [ref=f3e429] [cursor=pointer]':
+                  - /url: /blog/barra-halligan-libertad-apertura-entrada-forzada
+              - paragraph [ref=f3e430]: "30 pulgadas, más corta o más larga: guía práctica para elegir la barra Halligan según el escenario, del…"
+              - link "Leer artículo" [ref=f3e431] [cursor=pointer]:
+                - /url: /blog/barra-halligan-libertad-apertura-entrada-forzada
+    - region "Preguntas frecuentes y cotización gratuita" [ref=f3e432]:
+      - generic [ref=f3e433]:
+        - generic [ref=f3e434]:
+          - generic [ref=f3e435]: FAQ & Cotización
+          - heading "Preguntas frecuentes y cotización gratuita" [level=2] [ref=f3e436]
+          - paragraph [ref=f3e437]: Respondemos tus dudas más comunes sobre equipo contra incendios en México. ¿No encuentras lo que buscas? Escríbenos y te atendemos ese mismo día.
+        - generic [ref=f3e438]:
+          - generic [ref=f3e439]:
+            - generic [ref=f3e440]:
+              - generic [ref=f3e441]: Preguntas Frecuentes
+              - heading "Lo que nuestros clientes preguntan" [level=3] [ref=f3e442]
+              - paragraph [ref=f3e443]:
+                - text: ¿No encuentras tu respuesta? Escríbenos al
+                - link "WhatsApp 55 3493-4812" [ref=f3e444] [cursor=pointer]:
+                  - /url: https://wa.me/525534934812
+            - generic [ref=f3e445]:
+              - group [ref=f3e446]:
+                - generic "¿Qué tipos de extintores vende MESECI?" [ref=f3e447] [cursor=pointer]
+              - group [ref=f3e449]:
+                - generic "¿Qué extintores exige Protección Civil para mi empresa?" [ref=f3e450] [cursor=pointer]
+              - group [ref=f3e452]:
+                - generic "¿Sus equipos cumplen con NOM y NFPA?" [ref=f3e453] [cursor=pointer]
+              - group [ref=f3e455]:
+                - generic "¿Ofrecen instalación y mantenimiento de sistemas contra incendios?" [ref=f3e456] [cursor=pointer]
+              - group [ref=f3e458]:
+                - generic "¿Cuánto tarda una cotización?" [ref=f3e459] [cursor=pointer]
+              - group [ref=f3e461]:
+                - generic "¿Atienden empresas fuera de la ZMVM?" [ref=f3e462] [cursor=pointer]
+              - group [ref=f3e464]:
+                - generic "¿Pueden equipar brigadas de bomberos industriales?" [ref=f3e465] [cursor=pointer]
+              - group [ref=f3e467]:
+                - generic "¿Manejan precios especiales por volumen?" [ref=f3e468] [cursor=pointer]
+          - generic [ref=f3e470]:
+            - generic [ref=f3e471]:
+              - generic [ref=f3e472]:
+                - generic [ref=f3e473]: Cotización Gratuita
+                - heading "Solicita tu cotización" [level=3] [ref=f3e474]
+                - paragraph [ref=f3e475]: Respuesta en menos de 2 horas. Sin compromiso.
+              - generic [ref=f3e476]:
+                - generic [ref=f3e477]:
+                  - generic [ref=f3e478]: Nombre completo *
+                  - textbox "Nombre completo *" [ref=f3e479]:
+                    - /placeholder: Tu nombre completo
+                - generic [ref=f3e480]:
+                  - generic [ref=f3e481]: Teléfono *
+                  - textbox "Teléfono *" [ref=f3e482]:
+                    - /placeholder: 55 1234 5678
+                - generic [ref=f3e483]:
+                  - generic [ref=f3e484]: Empresa o negocio
+                  - textbox "Empresa o negocio" [ref=f3e485]:
+                    - /placeholder: Nombre de tu empresa u organización
+                - generic [ref=f3e486]:
+                  - generic [ref=f3e487]: ¿Qué necesitas? *
+                  - combobox "¿Qué necesitas? *" [ref=f3e488]:
+                    - option "Selecciona una categoría" [disabled] [selected]
+                    - option "Extintores (portátiles o móviles)"
+                    - option "Equipamiento para Bomberos"
+                    - option "Gabinetes y Sistemas Contra Incendio"
+                    - option "Mangueras y Herrajes"
+                    - option "Señalización de Emergencia"
+                    - option "Rociadores e Hidrantes"
+                    - option "Equipo de Respiración Autónoma (ERA)"
+                    - option "Mantenimiento y Recarga"
+                    - option "Proyecto completo / Varios"
+                - generic [ref=f3e489]:
+                  - generic [ref=f3e490]: Cuéntanos más (opcional)
+                  - textbox "Cuéntanos más (opcional)" [ref=f3e491]:
+                    - /placeholder: Cantidad aproximada, tipo de instalación, urgencia...
+              - generic [ref=f3e492]:
+                - button "Solicitar cotización por WhatsApp" [ref=f3e493] [cursor=pointer]: Solicitar Cotización por WhatsApp
+                - paragraph [ref=f3e494]: Cotización gratuita · Respuesta en menos de 2 h · Equipo certificado NOM y NFPA
+            - generic [ref=f3e495]:
+              - paragraph [ref=f3e496]: ¿Prefieres llamar?
+              - link "55 3493-4812" [ref=f3e497] [cursor=pointer]:
+                - /url: tel:+525534934812
+              - link "ventas@meseci.com.mx" [ref=f3e498] [cursor=pointer]:
+                - /url: mailto:ventas@meseci.com.mx
+    - region "¿Necesitas equipo contra incendios certificado?" [ref=f3e499]:
+      - generic [ref=f3e500]:
+        - generic [ref=f3e501]:
+          - heading "¿Necesitas equipo contra incendios certificado?" [level=2] [ref=f3e502]
+          - paragraph [ref=f3e503]: Mándanos un WhatsApp con lo que necesitas. Un asesor especializado te responde con precios, disponibilidad y tiempos de entrega en menos de 2 horas.
+        - generic [ref=f3e504]:
+          - generic [ref=f3e505]:
+            - link "Cotizar por WhatsApp" [ref=f3e506] [cursor=pointer]:
+              - /url: https://wa.me/525534934812?text=Hola%20MESECI%2C%20quiero%20solicitar%20una%20cotizaci%C3%B3n%20de%20equipo%20contra%20incendios.
+            - link "Ver Catálogo Completo" [ref=f3e507] [cursor=pointer]:
+              - /url: /productos
+          - paragraph [ref=f3e508]: NOM · NFPA · Respuesta en menos de 2 horas · Desde 2008
+  - navigation "Acciones principales" [ref=f3e509]:
+    - generic [ref=f3e511]:
+      - link "Solicitar Cotización Gratis" [ref=f3e512] [cursor=pointer]:
+        - /url: /contacto
+      - link "WhatsApp Directo" [ref=f3e514] [cursor=pointer]:
+        - /url: https://wa.me/525534934812?text=Hola%20MESECI%2C%20necesito%20información
+      - link "Llamar Ahora" [ref=f3e516] [cursor=pointer]:
+        - /url: tel:+525534934812
+      - link "Ver Catálogo Completo" [ref=f3e518] [cursor=pointer]:
+        - /url: /productos
+      - link "Conocer MESECI" [ref=f3e520] [cursor=pointer]:
+        - /url: /nosotros
+  - contentinfo "Pie de página" [ref=f3e522]:
+    - generic [ref=f3e524]:
+      - generic [ref=f3e525]:
+        - link "MESECI — Inicio" [ref=f3e526] [cursor=pointer]:
+          - /url: /
+          - generic [ref=f3e527]: MESECI
+        - paragraph [ref=f3e529]: Especialistas en equipo contra incendios en México desde 2008. Certificados NOM y NFPA.
+        - generic [ref=f3e530]:
+          - generic [ref=f3e531]: NOM-154
+          - generic [ref=f3e532]: NFPA 10
+          - generic [ref=f3e533]: Desde 2008
+        - generic [ref=f3e534]:
+          - link "55 3493 4812" [ref=f3e535] [cursor=pointer]:
+            - /url: tel:+525534934812
+          - link "55 3724 7044" [ref=f3e536] [cursor=pointer]:
+            - /url: tel:+525537247044
+          - link "ventas@meseci.com.mx" [ref=f3e537] [cursor=pointer]:
+            - /url: mailto:ventas@meseci.com.mx
+          - link "meseciventas.hdz@gmail.com" [ref=f3e538] [cursor=pointer]:
+            - /url: mailto:meseciventas.hdz@gmail.com
+          - link "55 5378 3641" [ref=f3e539] [cursor=pointer]:
+            - /url: tel:+525553783641
+          - link "grupo_mesec@gmail.com" [ref=f3e540] [cursor=pointer]:
+            - /url: mailto:grupo_mesec@gmail.com
+      - generic [ref=f3e541]:
+        - heading "Catálogo" [level=4] [ref=f3e542]
+        - list [ref=f3e543]:
+          - listitem [ref=f3e544]:
+            - link "Extintores contra Incendios" [ref=f3e545] [cursor=pointer]:
+              - /url: /extintores-contra-incendios
+          - listitem [ref=f3e546]:
+            - link "Equipamiento para Bomberos" [ref=f3e547] [cursor=pointer]:
+              - /url: /equipamiento-para-bomberos
+          - listitem [ref=f3e548]:
+            - link "Combate contra Incendios" [ref=f3e549] [cursor=pointer]:
+              - /url: /combate-contra-incendios
+          - listitem [ref=f3e550]:
+            - link "Componentes CI" [ref=f3e551] [cursor=pointer]:
+              - /url: /componentes-contra-incendios
+          - listitem [ref=f3e552]:
+            - link "Gabinetes" [ref=f3e553] [cursor=pointer]:
+              - /url: /gabinetes
+          - listitem [ref=f3e554]:
+            - link "Mangueras CI" [ref=f3e555] [cursor=pointer]:
+              - /url: /mangueras-contra-incendios
+          - listitem [ref=f3e556]:
+            - link "Ver catálogo completo" [ref=f3e557] [cursor=pointer]:
+              - /url: /productos
+      - generic [ref=f3e558]:
+        - heading "Empresa" [level=4] [ref=f3e559]
+        - list [ref=f3e560]:
+          - listitem [ref=f3e561]:
+            - link "Quiénes somos" [ref=f3e562] [cursor=pointer]:
+              - /url: /nosotros
+          - listitem [ref=f3e563]:
+            - link "Venta de Equipo CI" [ref=f3e564] [cursor=pointer]:
+              - /url: /venta-de-equipo-contra-incendios
+          - listitem [ref=f3e565]:
+            - link "Guía contra Incendios" [ref=f3e566] [cursor=pointer]:
+              - /url: /blog
+          - listitem [ref=f3e567]:
+            - link "Solicitar Cotización" [ref=f3e568] [cursor=pointer]:
+              - /url: /contacto
+        - heading "Legal" [level=4] [ref=f3e569]
+        - list [ref=f3e570]:
+          - listitem [ref=f3e571]:
+            - link "Aviso de Privacidad" [ref=f3e572] [cursor=pointer]:
+              - /url: /aviso-de-privacidad
+          - listitem [ref=f3e573]:
+            - link "Mapa del Sitio" [ref=f3e574] [cursor=pointer]:
+              - /url: /mapa-del-sitio
+      - generic [ref=f3e575]:
+        - heading "Directorio de Obligaciones" [level=4] [ref=f3e576]
+        - list [ref=f3e577]:
+          - listitem [ref=f3e578]:
+            - link "Qué exige la ley por estado y giro" [ref=f3e579] [cursor=pointer]:
+              - /url: /obligaciones-contra-incendios
+          - listitem [ref=f3e580]:
+            - link "NOM-002-STPS-2010" [ref=f3e581] [cursor=pointer]:
+              - /url: /obligaciones-contra-incendios/nom-002-stps-2010
+          - listitem [ref=f3e582]:
+            - link "Obligaciones en CDMX" [ref=f3e583] [cursor=pointer]:
+              - /url: /obligaciones-contra-incendios/ciudad-de-mexico
+          - listitem [ref=f3e584]:
+            - link "Obligaciones en Estado de México" [ref=f3e585] [cursor=pointer]:
+              - /url: /obligaciones-contra-incendios/estado-de-mexico
+          - listitem [ref=f3e586]:
+            - link "Obligaciones en Jalisco" [ref=f3e587] [cursor=pointer]:
+              - /url: /obligaciones-contra-incendios/jalisco
+          - listitem [ref=f3e588]:
+            - link "Obligaciones en Nuevo León" [ref=f3e589] [cursor=pointer]:
+              - /url: /obligaciones-contra-incendios/nuevo-leon
+          - listitem [ref=f3e590]:
+            - link "Obligaciones en Querétaro" [ref=f3e591] [cursor=pointer]:
+              - /url: /obligaciones-contra-incendios/queretaro
+          - listitem [ref=f3e592]:
+            - link "Obligaciones en Quintana Roo" [ref=f3e593] [cursor=pointer]:
+              - /url: /obligaciones-contra-incendios/quintana-roo
+      - generic [ref=f3e594]:
+        - heading "Sucursales" [level=4] [ref=f3e595]
+        - generic [ref=f3e597]:
+          - strong [ref=f3e598]: Benito Juárez, CDMX
+          - generic [ref=f3e599]: Av. Insurgentes Sur 1650, Col. FloridaC.P. 01030
+          - link "Ver en Google Maps" [ref=f3e600] [cursor=pointer]:
+            - /url: https://www.google.com/maps/search/?api=1&query=Av+Insurgentes+Sur+1650+Florida+Benito+Juarez+01030+CDMX
+        - generic [ref=f3e602]:
+          - strong [ref=f3e603]: Tlalnepantla, EdoMex
+          - generic [ref=f3e604]: C. Benito Juárez 5B, San Lucas TepetlacalcoC.P. 54055
+          - link "Ver en Google Maps" [ref=f3e605] [cursor=pointer]:
+            - /url: https://www.google.com/maps/search/?api=1&query=C+Benito+Juarez+5B+San+Lucas+Tepetlacalco+54055+Tlalnepantla
+        - generic [ref=f3e606]: Lun–Vie 9:00–18:00 · Sáb 9:00–14:00
+    - generic [ref=f3e609]:
+      - paragraph [ref=f3e610]:
+        - text: © 2026
+        - strong [ref=f3e611]: MESECI
+        - text: — Todos los derechos reservados. Venta de equipo contra incendios en México.
+      - navigation "Links legales" [ref=f3e612]:
+        - link "Privacidad" [ref=f3e613] [cursor=pointer]:
+          - /url: /aviso-de-privacidad
+        - link "Sitemap" [ref=f3e614] [cursor=pointer]:
+          - /url: /mapa-del-sitio
+        - link "Contacto" [ref=f3e615] [cursor=pointer]:
+          - /url: /contacto
+  - link "Contactar por WhatsApp" [ref=f3e616] [cursor=pointer]:
+    - /url: https://api.whatsapp.com/send?phone=525534934812&text=Hola%20MESECI%2C%20necesito%20informaci%C3%B3n
+    - text: WhatsApp

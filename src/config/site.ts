@@ -717,9 +717,13 @@ export const SHOWCASE: readonly ShowcaseCategory[] = [
     href: '/productos/#equipo-proteccion-personal',
     image: '/images/showcase/equipo-proteccion-bomberos-epp.avif',
     imageAlt: 'Casco, guantes y equipo de protección personal contra incendio',
-    badge: 'EPP · NOM-115',
+    // 2026-11-20: decía «conforme a la NOM-115-STPS» para cascos, guantes Y
+    // trajes. Falso: la NOM-115-STPS-2009 es «Cascos de protección» y cubre
+    // SOLO cascos. Lo que obliga a dotar de EPP a la brigada es el numeral 5.9
+    // de la NOM-002-STPS-2010.
+    badge: 'EPP · NOM-002-STPS',
     blurb:
-      'Cascos, guantes térmicos y trajes de aproximación conforme a la NOM-115-STPS.',
+      'Cascos, guantes y trajes de aproximación para la brigada que pide la NOM-002.',
     subcategories: [
       { label: 'Cascos y caretas', href: '/productos/#equipo-proteccion-personal' },
       { label: 'Guantes térmicos', href: '/productos/#equipo-proteccion-personal' },
