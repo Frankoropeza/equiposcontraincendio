@@ -107,6 +107,61 @@ const ICONS = {
     <circle cx="400" cy="250" r="58" fill="${C}"/>
     <circle cx="400" cy="250" r="24" fill="#fff"/>
     ${Array.from({ length: 8 }, (_, i) => { const a = (i * Math.PI) / 4; const x = 400 + Math.cos(a) * 78, y = 250 + Math.sin(a) * 78; return `<rect x="${(x - 12).toFixed(1)}" y="${(y - 12).toFixed(1)}" width="24" height="24" rx="6" fill="${D}" transform="rotate(${(i * 45).toFixed(0)} ${x.toFixed(1)} ${y.toFixed(1)})"/>`; }).join('')}`,
+  // Casco de brigadista con visor y protector de nuca
+  casco: `
+    <path d="M300 270 v-26 c0-76 48-122 108-122 h8 c62 0 108 46 108 122 v26 z" fill="${C}"/>
+    <path d="M280 270 h242 v25 H280z" fill="${D}"/>
+    <path d="M322 295 h156 v46 H322z" fill="#fff" opacity="0.84"/>
+    <path d="M314 348 h172 l-18 54 H332z" fill="${C}"/>
+    <path d="M354 146 v82 M446 146 v82" ${stroke}/>
+    <path d="M300 270 v-26 c0-76 48-122 108-122 h8 c62 0 108 46 108 122 v26" ${stroke}/>
+    <path d="M280 295 h242 M322 341 h156" ${stroke}/>` ,
+  // Par de guantes de protección con puño
+  guantes: `
+    <path d="M310 338 v-106 c0-14 20-16 22-2 v42 -68 c0-17 23-17 23 0 v52 -68 c0-17 23-17 23 0 v68 -48 c0-16 23-16 23 0 v75 l20-28 c11-15 33 0 22 16 l-38 58 v61 H330z" fill="${C}"/>
+    <path d="M445 356 v-98 c0-13 19-16 22-2 v34 -54 c0-16 22-16 22 0 v44 -54 c0-16 22-16 22 0 v54 -38 c0-15 22-15 22 0 v58 l17-22 c11-14 30 1 19 15 l-32 48 v55 H465z" fill="${L}"/>
+    <path d="M310 338 h96 v42 h-96z M445 356 h92 v38 h-92z" fill="${D}"/>
+    <path d="M310 338 v-106 c0-14 20-16 22-2 v42 -68 c0-17 23-17 23 0 v52 -68 c0-17 23-17 23 0 v68 -48 c0-16 23-16 23 0 v75 l20-28 c11-15 33 0 22 16 l-38 58 v61 M445 356 v-98 c0-13 19-16 22-2 v34 -54 c0-16 22-16 22 0 v44 -54 c0-16 22-16 22 0 v54 -38 c0-15 22-15 22 0 v58 l17-22 c11-14 30 1 19 15 l-32 48 v55" ${stroke}/>` ,
+  // Bota alta con casquillo reforzado
+  botas: `
+    <path d="M326 128 h114 v122 c0 31 21 58 58 68 l38 10 c18 5 30 20 30 38 v18 H278 v-42 c0-18 15-32 34-32 h14z" fill="${C}"/>
+    <path d="M326 128 h114 v62 H326z" fill="${D}"/>
+    <path d="M278 354 h288 v30 H278z" fill="${D}"/>
+    <path d="M447 287 c18 15 37 24 51 28 l38 10 c18 5 30 20 30 38" ${stroke}/>
+    <path d="M326 230 h114 M326 266 h114" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+    <path d="M326 128 h114 v122 c0 31 21 58 58 68 l38 10 c18 5 30 20 30 38 v18 H278 v-42 c0-18 15-32 34-32 h14z" ${stroke}/>` ,
+  // Capucha de protección que cubre cabeza y cuello
+  capucha: `
+    <path d="M292 394 v-66 c0-90 42-170 108-170 s108 80 108 170 v66z" fill="${C}"/>
+    <ellipse cx="400" cy="257" rx="60" ry="76" fill="#fff"/>
+    <path d="M336 394 v-48 h128 v48" fill="${D}"/>
+    <path d="M292 394 v-66 c0-90 42-170 108-170 s108 80 108 170 v66 M340 257 c0-42 26-76 60-76 s60 34 60 76 -26 76-60 76-60-34-60-76z M336 394 v-48 h128 v48" ${stroke}/>
+    <path d="M318 332 h164" stroke="${L}" stroke-width="12" stroke-linecap="round"/>` ,
+  // Traje aluminizado con reflejos metálicos
+  'traje-aproximacion': `
+    <path d="M346 138 h108 l28 48 -18 46 -8 152 h-44 v-96 h-24 v96 h-44 l-8-152 -18-46z" fill="${C}"/>
+    <path d="M346 138 h108 l28 48 -18 46 -8 152 h-44 v-96 h-24 v96 h-44 l-8-152 -18-46z" ${stroke}/>
+    <path d="M356 146 v74 h88 v-74 M336 232 h128 M344 286 h112" ${stroke}/>
+    <path d="M374 158 l-12 48 M426 158 l-12 48 M354 248 l-10 28 M446 248 l-10 28" stroke="${L}" stroke-width="13" stroke-linecap="round"/>
+    <path d="M388 288 v96 M412 288 v96" stroke="${L}" stroke-width="11" stroke-linecap="round"/>` ,
+  // Chaquetón y pantalón estructurales con cintas reflejantes
+  'traje-estructural': `
+    <path d="M336 146 h128 l36 62 -28 28 -12 92 h-120 l-12-92 -28-28z" fill="${C}"/>
+    <path d="M356 328 h88 l20 56 v24 h-52 v-62 h-24 v62 h-52 v-24z" fill="${C}"/>
+    <path d="M336 146 h128 l36 62 -28 28 -12 92 h-120 l-12-92 -28-28z M356 328 h88 l20 56 v24 h-52 v-62 h-24 v62 h-52 v-24z" ${stroke}/>
+    <path d="M332 258 h136 M348 300 h104 M344 364 h112" stroke="#fff" stroke-width="13" stroke-linecap="round"/>
+    <path d="M400 146 v86 M364 172 l36 34 36-34" ${stroke}/>` ,
+  // Equipo de respiración autónoma: cilindro, arnés y máscara
+  era: `
+    <rect x="336" y="138" width="104" height="204" rx="46" fill="${C}"/>
+    <rect x="368" y="116" width="40" height="30" rx="9" fill="${D}"/>
+    <path d="M336 184 h-44 v126 h44 M440 184 h44 v126 h-44" ${stroke}/>
+    <path d="M318 224 l-48 52 48 52 M462 224 l48 52 -48 52" ${stroke}/>
+    <path d="M388 342 v24 h62" ${stroke}/>
+    <path d="M450 334 c36 0 60 24 60 54 v16 h-120 v-16 c0-30 24-54 60-54z" fill="${L}"/>
+    <path d="M416 366 h68 v24 h-68z" fill="#fff"/>
+    <rect x="336" y="138" width="104" height="204" rx="46" ${stroke}/>
+    <path d="M450 334 c36 0 60 24 60 54 v16 h-120 v-16 c0-30 24-54 60-54z M416 366 h68 v24 h-68z" ${stroke}/>` ,
 };
 
 function svg(icon) {
@@ -144,6 +199,13 @@ const MANIFEST = [
   ['public/images/productos/detector-humo-fotoelectrico.svg', 'detector'],
   ['public/images/productos/gabinete-manguera-contra-incendio.svg', 'gabinete'],
   ['public/images/productos/senalizacion-fotoluminiscente.svg', 'salida'],
+  ['public/images/productos/casco-brigada-contra-incendio.svg', 'casco'],
+  ['public/images/productos/guantes-brigada-contra-incendio.svg', 'guantes'],
+  ['public/images/productos/botas-brigada-contra-incendio.svg', 'botas'],
+  ['public/images/productos/capucha-proteccion-brigada.svg', 'capucha'],
+  ['public/images/productos/traje-aproximacion-aluminizado.svg', 'traje-aproximacion'],
+  ['public/images/productos/conjunto-estructural-chaqueton-pantalon.svg', 'traje-estructural'],
+  ['public/images/productos/equipo-respiracion-autonoma-era.svg', 'era'],
   ['public/images/articulos/elegir-extintor-clase-fuego.svg', 'extintor'],
   ['public/images/articulos/mantenimiento-recarga-extintores-nom.svg', 'mantenimiento'],
   ['public/images/zonas/cobertura-cdmx.svg', 'hidrante'],

@@ -31,21 +31,25 @@ const fichas = data.categoriaProductos
       (a, b) => a.data.order - b.data.order,
     )
   : [];
+// Los SVG son marcadores "Imagen próximamente", no fotos de producto para schema.
+const items = fichas
+  .filter((p) => p.data.image && !p.data.image.endsWith('.svg'))
+  .map((p) => ({
+    name: p.data.title,
+    path: `/productos/${p.id}/`,
+    image: p.data.image,
+    description: p.data.description,
+  }));
 // Un ItemList vacío no representa contenido navegable y empeora el schema.
 const schemaData = data.categoriaProductos
   ? {
-      ...(fichas.length > 0
+      ...(items.length > 0
         ? {
             list: {
               name: data.seo.serviceName,
               description: data.seo.description,
               path: data.path,
-              items: fichas.map((p) => ({
-                name: p.data.title,
-                path: `/productos/${p.id}/`,
-                image: p.data.image,
-                description: p.data.description,
-              })),
+              items,
             },
           }
         : {}),
