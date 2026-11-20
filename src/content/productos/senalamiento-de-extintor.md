@@ -4,7 +4,7 @@ description: "Señalamiento de extintor en rojo con símbolo blanco para ubicar 
 cardTitle: "Señalamiento de extintor"
 cardDescription: "Señal roja para ubicar el extintor desde la circulación."
 category: senalizacion
-image: /images/productos/senalamiento-de-extintor.svg
+image: /images/productos/senalamiento-de-extintor-muro.avif
 price: "Cotizar"
 order: 15
 seoTitle: "Señalamiento de extintor: señalética, medidas y venta"

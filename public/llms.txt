@@ -20,7 +20,7 @@ Idioma: español (es-MX). País: México.
 ## Productos (categorías del catálogo)
 - Extintores: PQS ABC, CO2, tipo K (químico húmedo), agua y espuma AFFF, agente limpio; portátiles y sobre ruedas.
 - Detección y alarmas: detectores de humo fotoeléctricos, temperatura y gas, paneles, estaciones manuales y sirenas.
-- Hidrantes y mangueras: gabinetes con manguera, red de hidrantes, tomas siamesas y válvulas (venta e instalación).
+- Hidrantes y mangueras: gabinetes con manguera, mangueras de 1½ y 2½ pulgadas, válvulas angulares, pitones de chorro y niebla, carretes porta manguera, racores y adaptadores de rosca, llaves spanner, hidrantes de columna exteriores, tomas siamesas y reserva de agua contra incendio.
 - Sistemas fijos de supresión: rociadores automáticos, supresión de cocina con agente húmedo listado UL 300, agente limpio HFC-227ea y FK-5-1-12, CO2, niebla de agua, bombas contra incendio y jockey, válvulas de control, diluvio y preacción, y paneles de liberación de agente.
 - Señalización y emergencia: señalamientos de seguridad industriales (NOM-026) y de protección civil (NOM-003-SSPC), señalización fotoluminiscente y lámparas de emergencia.
 - Rescate y primeros auxilios: botiquines de primeros auxilios para centros de trabajo.
@@ -40,6 +40,15 @@ Idioma: español (es-MX). País: México.
 - [Inicio](https://equiposcontraincendio.com/): presentación del catálogo y servicios.
 - [Productos](https://equiposcontraincendio.com/productos): catálogo de equipo contra incendio.
 - [Equipo para bombero](https://equiposcontraincendio.com/productos/equipo-bombero/): EPP para la brigada contra incendio, seleccionado por riesgo y con expediente para la STPS.
+- [Manguera de 1½ pulgada](https://equiposcontraincendio.com/productos/manguera-contra-incendio-1-5/): la del gabinete, Clase II de NFPA 14, en 15, 22.5 y 30 metros.
+- [Manguera de 2½ pulgadas](https://equiposcontraincendio.com/productos/manguera-contra-incendio-2-5/): la de la toma de cuerpo de bomberos, Clase I de NFPA 14.
+- [Válvula angular](https://equiposcontraincendio.com/productos/valvula-angular-para-hidrante/): de bronce, 1½ y 2½ pulgadas, con tapa y cadena.
+- [Pitón de chorro y niebla](https://equiposcontraincendio.com/productos/piton-boquilla-chorro-niebla/): boquilla ajustable, tipo pistola, nebulizadora y de 2½ pulgadas.
+- [Carrete porta manguera](https://equiposcontraincendio.com/productos/soporte-y-carrete-porta-manguera/): carrete giratorio, rack plegable y canastilla para gabinete o muro.
+- [Racores y adaptadores](https://equiposcontraincendio.com/productos/racores-coples-y-adaptadores/): racores, reducciones, adaptadores de rosca y acople rápido tipo Storz.
+- [Llave spanner](https://equiposcontraincendio.com/productos/llave-spanner-y-herramienta-de-hidrante/): para apretar y aflojar racores sin dañar la rosca; una por gabinete e hidrante.
+- [Hidrante de columna exterior](https://equiposcontraincendio.com/productos/hidrante-de-columna-exterior/): de dos o tres salidas, de columna húmeda o seca, para predio y parque industrial.
+- [Reserva de agua contra incendio](https://equiposcontraincendio.com/productos/reserva-de-agua-contra-incendio/): cisterna dedicada o volumen reservado, con succión independiente.
 - [Sistemas fijos de supresión](https://equiposcontraincendio.com/productos/supresion-fija/): rociadores, cocina UL 300, agente limpio, CO2, niebla de agua, bombas y válvulas.
 - [Supresión para cocina UL 300](https://equiposcontraincendio.com/productos/sistema-supresion-cocina-ul300/): sistema de campana con agente húmedo, corte de gas y protección del ducto.
 - [Agente limpio HFC-227ea](https://equiposcontraincendio.com/productos/sistema-agente-limpio-fm-200/): inundación total para site y cuarto eléctrico, conocido en el mercado como FM-200.

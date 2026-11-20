@@ -4,7 +4,7 @@ description: "Toma siamesa para bomberos que permite alimentar desde la fachada 
 cardTitle: "Toma siamesa"
 cardDescription: "Conexión de fachada para que bomberos alimenten la red, con retención y tapones."
 category: hidrantes-mangueras
-image: /images/productos/toma-siamesa.svg
+image: /images/productos/toma-siamesa-fachada-edificio.avif
 price: "Cotizar"
 order: 13
 seoTitle: "Toma siamesa para bomberos: qué es, medidas y venta"

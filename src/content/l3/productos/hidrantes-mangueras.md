@@ -37,115 +37,171 @@ vitrina:
     - title: Gabinetes con manguera
       href: /productos/gabinete-manguera-contra-incendio/
       image: /images/showcase/gabinetes-estaciones-contra-incendio.avif
-      imageAlt: Gabinete con manguera junto a gabinete de extintor y estación manual en un pasillo
-      badge: Manguera 1½ pulg
-      description: De sobreponer, empotrables o combinados con extintor, con manguera de 15 o 30 m.
+      imageAlt: Gabinete con manguera junto a gabinete de extintor en un pasillo
+      badge: El conjunto
+      description: De sobreponer, empotrable o combinado con extintor, con todo su herraje.
       specs:
-        - label: Manguera
-          value: 1½ pulg
-        - label: Longitud
-          value: 15 o 30 m
         - label: Montaje
           value: Muro o empotrado
-      ctaLabel: Gabinete y manguera
-    - title: Conexiones de manguera
-      href: "#conexiones-manguera"
-      image: /images/showcase/gabinete-manguera-hidrante.avif
-      imageAlt: Hidrante de muro con dos salidas junto a un gabinete abierto en una nave
-      badge: NTC 2024 · 4.4.3
-      description: Salida de 2½ pulg sin manguera instalada, en cubo de escalera protegido.
-      specs:
-        - label: Diámetro
-          value: 2½ pulg
-        - label: Ubicación
-          value: Cubo de escalera
-        - label: Diseño
-          value: NFPA 14 (ref.)
-      ctaLabel: Conexión de manguera
-    - title: Toma siamesa
-      href: "#toma-siamesa"
-      image: /images/servicios/integracion-sistemas-contra-incendio.avif
-      imageAlt: Red contra incendio con tubería roja y gabinete en un pasillo
-      badge: Fachada
-      description: Conexión exterior para que los bomberos inyecten agua a la red desde su unidad.
-      specs:
-        - label: Ubicación
-          value: Fachada
-        - label: Uso
-          value: Bomberos
-        - label: Función
-          value: Alimentar la red
-      ctaLabel: Toma siamesa
-    - title: Mangueras y chiflones
-      href: "#mangueras"
-      image: /images/servicios/prueba-mangueras-contra-incendio.avif
-      imageAlt: Técnico conectando una manguera contra incendio a la red para revisarla
-      badge: Reposición
-      description: Manguera de 1½ pulg y chiflón para reponer lo que falta o está dañado.
-      specs:
-        - label: Diámetro
-          value: 1½ pulg
-        - label: Longitud
-          value: 15 o 30 m
-        - label: Cambio
-          value: Si hay daño
-      ctaLabel: Mangueras
-    - title: Válvulas de la red
-      href: "#valvulas"
-      image: /images/showcase/refacciones-equipo-contra-incendio.avif
-      imageAlt: Válvulas, manómetros, coples y refacciones de una red contra incendio
-      badge: Control
-      description: Angular en el gabinete, de control para sectorizar y check contra el retorno.
-      specs:
-        - label: Angular
-          value: En el gabinete
-        - label: Control
-          value: Sectoriza
-        - label: Check
-          value: Evita el retorno
-      ctaLabel: Válvulas
-    - title: Bomba contra incendio
-      href: "#bombeo"
-      image: /images/servicios/cuarto-bomba-contra-incendio.avif
-      imageAlt: Cuarto de bombas de una red contra incendio con válvulas y manómetros
-      badge: Bajo proyecto
-      description: Bomba principal y jockey que sostienen la presión de toda la red.
-      specs:
-        - label: Principal
-          value: Eléctrica o diésel
-        - label: Jockey
-          value: Mantiene presión
-        - label: Diseño
-          value: PROY-NMX-S-071
-      ctaLabel: Bomba contra incendio
-    - title: Instalación de la red
-      href: /servicios/instalacion/
-      image: /images/servicios/inspeccion-gabinete-hidrante-extintor.avif
-      imageAlt: Técnico revisando la red hidráulica, un gabinete y un extintor en una nave
-      badge: Cálculo hidráulico
-      description: Red calculada para caudal y presión, instalada y probada antes de entregarse.
-      specs:
         - label: Incluye
-          value: Cálculo
-        - label: Tubería
-          value: NOM-026-STPS
-        - label: Entrega
-          value: Planos y pruebas
-      ctaLabel: Instalación de sistemas
+          value: Manguera y válvula
+        - label: Clase
+          value: II o III
+      ctaLabel: Gabinete con manguera
+    - title: Manguera de 1½ pulgada
+      href: /productos/manguera-contra-incendio-1-5/
+      image: /images/productos/manguera-contra-incendio-rollo-1-5.avif
+      imageAlt: Rollo de manguera contra incendio de 1½ pulgada en su carrete
+      badge: Para ocupantes
+      description: La del gabinete, en 15, 22.5 y 30 metros, de poliéster o caucho.
+      specs:
+        - label: Longitudes
+          value: 15, 22.5 y 30 m
+        - label: Cubierta
+          value: Poliéster o caucho
+        - label: Clase
+          value: II
+      ctaLabel: Manguera de 1½
+    - title: Manguera de 2½ pulgadas
+      href: /productos/manguera-contra-incendio-2-5/
+      image: /images/productos/manguera-contra-incendio-2-5-conexion.avif
+      imageAlt: Manguera de 2½ pulgadas conectada a la válvula angular de un montante
+      badge: Caudal alto
+      description: La de la toma del cuerpo de bomberos, en tramos acoplables.
+      specs:
+        - label: Longitudes
+          value: 15, 22.5 y 30 m
+        - label: Uso
+          value: Cuerpo de bomberos
+        - label: Clase
+          value: I
+      ctaLabel: Manguera de 2½
+    - title: Válvula angular
+      href: /productos/valvula-angular-para-hidrante/
+      image: /images/productos/valvula-angular-hidrante-bronce.avif
+      imageAlt: Válvula angular de bronce con su tapa y cadena sobre tubería roja
+      badge: Bronce
+      description: La llave de la toma, en 1½ y 2½, con tapa y cadena que cuidan la rosca.
+      specs:
+        - label: Material
+          value: Bronce
+        - label: Medidas
+          value: 1½ y 2½ pulg
+        - label: Mecanismo
+          value: Globo o compuerta
+      ctaLabel: Válvula angular
+    - title: Pitón y boquilla
+      href: /productos/piton-boquilla-chorro-niebla/
+      image: /images/productos/piton-boquilla-chorro-niebla.avif
+      imageAlt: Pitón ajustable de chorro y niebla para manguera contra incendio
+      badge: Chorro o niebla
+      description: "Decide cómo sale el agua: chorro para alcanzar, niebla para enfriar."
+      specs:
+        - label: Patrón
+          value: Chorro y niebla
+        - label: Medidas
+          value: 1½ y 2½ pulg
+        - label: Material
+          value: Policarbonato o bronce
+      ctaLabel: Pitón de manguera
+    - title: Carrete porta manguera
+      href: /productos/soporte-y-carrete-porta-manguera/
+      image: /images/productos/carrete-porta-manguera-gabinete.avif
+      imageAlt: Carrete giratorio porta manguera montado dentro de un gabinete
+      badge: Herraje
+      description: "Carrete, rack o canastilla: define si la manguera se tiende o se enreda."
+      specs:
+        - label: Tipos
+          value: Carrete, rack
+        - label: Montaje
+          value: Gabinete o muro
+        - label: Material
+          value: Pintado o inoxidable
+      ctaLabel: Carrete porta manguera
+    - title: Racores y adaptadores
+      href: /productos/racores-coples-y-adaptadores/
+      image: /images/productos/racores-coples-storz.avif
+      imageAlt: Racores, coples y adaptadores de bronce y aluminio sobre una mesa de taller
+      badge: Compatibilidad
+      description: Lo que hace que tu toma acople con la manguera que llega a apagar.
+      specs:
+        - label: Medidas
+          value: 1½ y 2½ pulg
+        - label: Incluye
+          value: Reducción y Storz
+        - label: Material
+          value: Bronce o aluminio
+      ctaLabel: Racores y adaptadores
+    - title: Llave spanner
+      href: /productos/llave-spanner-y-herramienta-de-hidrante/
+      image: /images/productos/llave-spanner-hidrante.avif
+      imageAlt: Llaves spanner de acero forjado sobre el racor de una manguera
+      badge: Una por punto
+      description: Para apretar y aflojar racores sin arruinar la rosca con un desarmador.
+      specs:
+        - label: Material
+          value: Acero forjado
+        - label: Dotación
+          value: Una por gabinete
+        - label: Presentación
+          value: Individual o juego
+      ctaLabel: Llave spanner
+    - title: Toma siamesa
+      href: /productos/toma-siamesa/
+      image: /images/productos/toma-siamesa-fachada-edificio.avif
+      imageAlt: Toma siamesa de bronce en la fachada de un edificio
+      badge: Fachada
+      description: Por donde el cuerpo de bomberos mete agua a presión a tu red.
+      specs:
+        - label: Ubicación
+          value: Fachada accesible
+        - label: Entradas
+          value: Dos de 2½ pulg
+        - label: Clave
+          value: Rosca compatible
+      ctaLabel: Toma siamesa
+    - title: Hidrante de columna
+      href: /productos/hidrante-de-columna-exterior/
+      image: /images/productos/hidrante-de-columna-exterior.avif
+      imageAlt: Hidrante de columna rojo de dos salidas en la banqueta de una nave
+      badge: Exterior
+      description: La toma del predio, para atacar desde fuera sin depender de la calle.
+      specs:
+        - label: Salidas
+          value: Dos o tres
+        - label: Columna
+          value: Húmeda o seca
+        - label: Dónde
+          value: Patio y vialidad
+      ctaLabel: Hidrante de columna
+    - title: Reserva de agua
+      href: /productos/reserva-de-agua-contra-incendio/
+      image: /images/productos/cisterna-reserva-agua-contra-incendio.avif
+      imageAlt: Registro de cisterna contra incendio con su succión y válvula en el cuarto de bombas
+      badge: La condición
+      description: El volumen que solo puede usar el sistema, con su succión independiente.
+      specs:
+        - label: Solución
+          value: Cisterna o reserva
+        - label: Clave
+          value: Succión más baja
+        - label: Volumen
+          value: Según cálculo
+      ctaLabel: Reserva de agua
     - title: Revisión de la red
       href: /servicios/inspeccion/
-      image: /images/servicios/inspeccion-gabinete-manguera-contra-incendio.avif
-      imageAlt: Técnica revisando un gabinete con manguera en un almacén
-      badge: Programa anual
-      description: Gabinetes, válvulas y bomba revisados con bitácora, como pide la NOM-002.
+      image: /images/servicios/inspeccion-sistema-alarma-extintor.avif
+      imageAlt: Técnico revisando el equipo contra incendio de un inmueble
+      badge: Servicio
+      description: Prueba de hidrantes, mangueras, válvulas y bombeo, con bitácora.
       specs:
-        - label: Norma
-          value: NOM-002, 7.4
-        - label: Programa
-          value: Anual
-        - label: Evidencia
+        - label: Incluye
+          value: Prueba de caudal
+        - label: Referencia
+          value: NFPA 25
+        - label: Entrega
           value: Bitácora
-      ctaLabel: Inspección y dictamen
+      ctaLabel: Revisión de la red
 tablaPrincipal:
   id: que-integra-la-red
   eyebrow: Qué integra la red
