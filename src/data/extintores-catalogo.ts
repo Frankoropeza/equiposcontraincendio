@@ -207,8 +207,14 @@ export const extFormatoRows: string[][] = [
 // vitrina Ansul (su línea fuerte es la supresión fija de cocinas) y Aipieci
 // Fire (la de menor presencia); ambas siguen verificadas si se quieren volver.
 export type Marca = { nombre: string; tipo: 'Internacional' | 'Fabricante mexicano'; origen: string; productos: string; nota?: string };
+// 2026-11-20 (decisión de Frank): la nota decía «no significa que las
+// distribuyamos», lo que vendía de menos — CONINC sí consigue equipo de las
+// marcas del mercado. Pero tampoco se afirma representación oficial de cada
+// marca: eso es una aseveración sobre un tercero identificable que habría que
+// poder acreditar marca por marca. La redacción describe lo que de verdad hace
+// un integrador: conseguir y confirmar al cotizar.
 export const extMarcasNota =
-  'Estas son marcas reconocidas que se encuentran en el mercado mexicano. Las mencionamos como referencia: no significa que las distribuyamos ni que estén disponibles. La marca y el modelo se confirman al cotizar. Cada marca pertenece a su titular.';
+  'Conseguimos equipo de las marcas reconocidas del mercado mexicano. La marca, el modelo y la disponibilidad se confirman al cotizar, según lo que pida tu inmueble. Cada marca pertenece a su titular.';
 
 export const extMarcas: Marca[] = [
   { nombre: 'Amerex', tipo: 'Internacional', origen: 'Estados Unidos', productos: 'PQS, CO₂, agua, agua nebulizada, clase K, Halotron, clase D y sobre ruedas', nota: 'Con distribuidores en México' },

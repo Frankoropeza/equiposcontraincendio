@@ -24,7 +24,6 @@ hero:
     - "El punto de partida no es un traje o un casco aislado: es el grado de riesgo, la función de cada integrante y la evidencia que debe quedar en el expediente para la STPS."
     - "La NOM-017-STPS-2024 pide identificar los riesgos por puesto y área, seleccionar el EPP conforme a ellos, verificar su certificación, capacitar, señalizar y llevar registros."
   outlineText: Cómo definir el EPP
-# Temporal hasta la Fase 3: estas tarjetas enlazan a servicios y guías que acompañan al EPP; las fichas de producto aún no existen.
 vitrina:
   id: lo-que-acompana-al-epp
   eyebrow: Lo que acompaña al EPP
@@ -35,6 +34,104 @@ vitrina:
     - La obligación de la NOM-002-STPS-2010, numeral 5.9, corresponde al patrón y se ajusta a las funciones y riesgos de los integrantes de la brigada.
     - La NOM-017-STPS-2024 vincula esa selección con la identificación de riesgos, la certificación aplicable, la capacitación, la señalización y los registros.
   tarjetas:
+    - title: Casco para brigada
+      href: /productos/casco-brigada-contra-incendio/
+      image: /images/productos/casco-brigada-contra-incendio.svg
+      imageAlt: Casco para brigada contra incendio
+      badge: EPP para brigada de empresa
+      description: Protección de cabeza para la brigada, según riesgo, función y expediente de EPP.
+      specs:
+        - label: Material
+          value: Fibra de vidrio tipo Thermoglas®
+        - label: Formato
+          value: Formato tradicional
+        - label: Acabado
+          value: Acabado mate disponible
+      ctaLabel: Ver casco para brigada
+    - title: Guantes para brigada
+      href: /productos/guantes-brigada-contra-incendio/
+      image: /images/productos/guantes-brigada-contra-incendio.svg
+      imageAlt: Guantes para brigada contra incendio
+      badge: EPP para brigada de empresa
+      description: Protección de manos para brigada, elegida por el riesgo y la función de cada puesto.
+      specs:
+        - label: Longitud
+          value: 33 cm
+        - label: Tallas
+          value: Tallas M, L y XL
+        - label: Puño
+          value: Puño Kevlar®
+      ctaLabel: Ver guantes para brigada
+    - title: Botas para brigada
+      href: /productos/botas-brigada-contra-incendio/
+      image: /images/productos/botas-brigada-contra-incendio.svg
+      imageAlt: Botas para brigada contra incendio
+      badge: EPP para brigada contra incendio
+      description: Elige entre protección térmica o dieléctrica según el riesgo dominante.
+      specs:
+        - label: Material
+          value: Caucho
+        - label: Altura
+          value: 13 pulg
+        - label: Componentes
+          value: Entresuela, cambrión y puntera de acero
+      ctaLabel: Ver botas para brigada
+    - title: Capucha o monja
+      href: /productos/capucha-proteccion-brigada/
+      image: /images/productos/capucha-proteccion-brigada.svg
+      imageAlt: Capucha de protección para brigada contra incendio
+      badge: EPP para brigada contra incendio
+      description: Protección de cabeza y cuello bajo el casco para la brigada contra incendio.
+      specs:
+        - label: Material
+          value: Nomex
+        - label: Construcción
+          value: Doble capa
+        - label: Longitud
+          value: 21 pulg
+      ctaLabel: Ver capucha o monja
+    - title: Traje aluminizado
+      href: /productos/traje-aproximacion-aluminizado/
+      image: /images/productos/traje-aproximacion-aluminizado.svg
+      imageAlt: Traje aluminizado para brigada industrial
+      badge: EPP para brigada industrial
+      description: EPP aluminizado para exposición a calor radiante en procesos industriales.
+      specs:
+        - label: Material
+          value: Fibra de vidrio aluminizada
+        - label: Peso
+          value: 545 g/m²
+        - label: Barreras
+          value: Sin barreras
+      ctaLabel: Ver traje aluminizado
+    - title: Conjunto estructural
+      href: /productos/conjunto-estructural-chaqueton-pantalon/
+      image: /images/productos/conjunto-estructural-chaqueton-pantalon.svg
+      imageAlt: Conjunto estructural de chaquetón y pantalón para brigada
+      badge: EPP estructural para brigada
+      description: Chaquetón y pantalón de tres barreras para la brigada de tu empresa.
+      specs:
+        - label: Material
+          value: Nomex IIIA
+        - label: TPP
+          value: TPP 38-41
+        - label: Cinta
+          value: Cinta microperforada 3 pulg
+      ctaLabel: Ver conjunto estructural
+    - title: Equipo ERA para brigada
+      href: /productos/equipo-respiracion-autonoma-era/
+      image: /images/productos/equipo-respiracion-autonoma-era.svg
+      imageAlt: Equipo de respiración autónoma para brigada
+      badge: EPP respiratorio para brigada
+      description: ERA o SCBA con opciones de PASS, cilindro y configuración para tu brigada.
+      specs:
+        - label: Circuito
+          value: Circuito abierto
+        - label: Operación
+          value: Presión-demanda
+        - label: PASS
+          value: PASS a 30 s
+      ctaLabel: Ver equipo ERA
     - title: Diagnóstico de riesgo
       href: /servicios/diagnostico-de-riesgo/
       image: /images/servicios/auditoria-seguridad-contra-incendio.avif
@@ -48,49 +145,7 @@ vitrina:
           value: Funciones y EPP
         - label: Sustenta
           value: Selección
-      ctaLabel: Diagnóstico de riesgo
-    - title: Capacitación DC-3
-      href: /servicios/capacitacion-dc3/
-      image: /images/servicios/capacitacion-brigada-extintores.avif
-      imageAlt: Capacitación de brigada contra incendio
-      badge: Capacitación
-      description: Integra la capacitación que la NOM-017-STPS-2024 pide para el uso del EPP.
-      specs:
-        - label: Enfoca
-          value: Uso del EPP
-        - label: Atiende
-          value: Funciones
-        - label: Registra
-          value: Capacitación
-      ctaLabel: Capacitación DC-3
-    - title: Gestión documental
-      href: /servicios/gestion-documental/
-      image: /images/servicios/etiquetado-inspeccion-extintor.avif
-      imageAlt: Etiquetado y registro de equipo contra incendio
-      badge: Expediente
-      description: Ordena la evidencia de selección, certificación, capacitación y registros para STPS.
-      specs:
-        - label: Reúne
-          value: Evidencia
-        - label: Documenta
-          value: Selección
-        - label: Conserva
-          value: Registros
-      ctaLabel: Gestión documental
-    - title: Naves industriales
-      href: /proteccion-civil/naves-industriales/
-      image: /images/servicios/integracion-sistemas-contra-incendio.avif
-      imageAlt: Instalación contra incendio en una nave industrial
-      badge: Protección Civil
-      description: Revisa el contexto de riesgo del inmueble antes de definir el equipo de la brigada.
-      specs:
-        - label: Revisa
-          value: Riesgos
-        - label: Define
-          value: Funciones
-        - label: Vincula
-          value: Expediente
-      ctaLabel: Naves industriales
+      ctaLabel: Revisar mi riesgo
 tablaPrincipal:
   id: seleccion-del-epp
   eyebrow: NOM-002-STPS-2010, numeral 5.9
