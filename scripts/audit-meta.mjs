@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* ============================================================================
- * scripts/audit-meta.mjs — gate de SEO técnico (longitudes title/description)
+ * scripts/audit-meta.mjs — gate de SEO técnico del HTML publicado
  * ----------------------------------------------------------------------------
  * REGLA: cada página publicada debe tener <title> ≤60 chars y meta description
  * ≤155 chars. Espejo de los límites de `src/lib/seo.ts` (META_TITLE_MAX=60,
@@ -20,88 +20,69 @@
  * va enganchado como `postbuild` y no como `prebuild`.
  * ========================================================================== */
 
-import fs from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import fs from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { SITE } from '../src/config/site.ts'
+import {
+  auditHtmlPages,
+  DESC_MAX,
+  NON_PAGE_HTML_FILE,
+  TITLE_MAX,
+} from './lib/html-seo-audit.mjs'
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const ROOT = path.resolve(__dirname, '..');
-const DIST_DIR = path.join(ROOT, 'dist');
-
-// Límites — espejo de src/lib/seo.ts (META_TITLE_MAX, META_DESC_MAX).
-const TITLE_MAX = 60;
-const DESC_MAX = 155;
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const ROOT = path.resolve(__dirname, '..')
+const DIST_DIR = path.join(ROOT, 'dist')
 
 // Archivos del dist que NO son páginas del sitio: verificación de propiedad de
 // Search Console (NO se borra nunca o Google revoca la verificación).
-const NOT_A_PAGE = /^google[0-9a-f]+\.html$/;
-
 function walk(dir) {
-  const out = [];
+  const out = []
   for (const name of fs.readdirSync(dir)) {
-    if (name.startsWith('.')) continue;
-    const full = path.join(dir, name);
-    if (fs.statSync(full).isDirectory()) out.push(...walk(full));
-    else if (name.endsWith('.html') && !NOT_A_PAGE.test(name)) out.push(full);
+    if (name.startsWith('.')) continue
+    const full = path.join(dir, name)
+    if (fs.statSync(full).isDirectory()) out.push(...walk(full))
+    else if (name.endsWith('.html') && !NON_PAGE_HTML_FILE.test(name))
+      out.push(full)
   }
-  return out;
-}
-
-// Entidades que aparecen en el HTML renderizado y cuentan como UN carácter.
-function decode(value) {
-  return value
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&#8209;/g, '-')
-    .replace(/&#(\d+);/g, (_, code) => String.fromCharCode(Number(code)));
-}
-
-function extract(html) {
-  const title = html.match(/<title>([\s\S]*?)<\/title>/i);
-  const desc = html.match(/<meta\s+name="description"\s+content="([^"]*)"/i);
-  return {
-    title: title ? decode(title[1].trim()) : null,
-    description: desc ? decode(desc[1].trim()) : null,
-  };
+  return out
 }
 
 if (!fs.existsSync(DIST_DIR)) {
-  console.error('✗ audit-meta: no hay dist/. Corre `npm run build` primero.');
-  process.exit(1);
+  console.error('✗ audit-meta: no hay dist/. Corre `npm run build` primero.')
+  process.exit(1)
 }
 
-const files = walk(DIST_DIR).sort();
-const rows = [];
-let fails = 0;
+const files = walk(DIST_DIR).sort()
+const pages = files.map((file) => {
+  const relative = path.relative(DIST_DIR, file).replace(/\\/g, '/')
+  return {
+    url:
+      relative === '404.html'
+        ? '/404/'
+        : `/${relative.replace(/index\.html$/, '')}`,
+    html: fs.readFileSync(file, 'utf8'),
+  }
+})
+const { rows, failures } = auditHtmlPages(pages, { siteUrl: SITE.url })
 
-for (const file of files) {
-  const url = '/' + path.relative(DIST_DIR, file).replace(/index\.html$/, '').replace(/\\/g, '/');
-  const { title, description } = extract(fs.readFileSync(file, 'utf8'));
-  const problems = [];
-  if (!title) problems.push('sin <title>');
-  else if (title.length > TITLE_MAX) problems.push(`title ${title.length} > ${TITLE_MAX}`);
-  if (!description) problems.push('sin meta description');
-  else if (description.length > DESC_MAX) problems.push(`description ${description.length} > ${DESC_MAX}`);
-
-  const status = problems.length ? 'FAIL' : 'OK';
-  if (problems.length) fails += 1;
-  rows.push({ status, url, title: title?.length ?? 0, desc: description?.length ?? 0, problems });
+console.log(
+  `audit:meta · dist/ · title ≤${TITLE_MAX} · description ≤${DESC_MAX}`,
+)
+console.log('─'.repeat(100))
+for (const row of failures) {
+  console.log(
+    `FAIL  t:${String(row.title?.length ?? 0).padStart(3)} d:${String(row.description?.length ?? 0).padStart(3)} h1:${row.h1Count}  ${row.url}  · ${row.problems.join('; ')}`,
+  )
 }
+console.log('─'.repeat(100))
+console.log(`${rows.length} páginas auditadas · ${failures.length} fallas`)
 
-console.log(`audit:meta · dist/ · title ≤${TITLE_MAX} · description ≤${DESC_MAX}`);
-console.log('─'.repeat(100));
-for (const row of rows.filter((r) => r.status === 'FAIL')) {
-  console.log(`FAIL  t:${String(row.title).padStart(3)} d:${String(row.desc).padStart(3)}  ${row.url}  · ${row.problems.join('; ')}`);
+if (failures.length > 0) {
+  console.error(
+    `✗ audit-meta falló: ${failures.length} página(s) con problemas SEO.`,
+  )
+  process.exit(1)
 }
-console.log('─'.repeat(100));
-console.log(`${rows.length} páginas auditadas · ${fails} fallas`);
-
-if (fails > 0) {
-  console.error(`✗ audit-meta falló: ${fails} página(s) fuera de los límites.`);
-  process.exit(1);
-}
-console.log('✓ audit-meta — todas las páginas dentro de los límites.');
+console.log('✓ audit-meta — metadatos únicos, canonical y H1 correctos.')

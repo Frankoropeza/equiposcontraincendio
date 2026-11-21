@@ -22,9 +22,9 @@ import { getCollection } from 'astro:content'
 import { waUrl, WA_MESSAGES, blogCategory, BLOG_PAGE_SIZE } from '@config/site'
 
 export async function getStaticPaths() {
-  const posts = (await getCollection('articulos', ({ data }) => !data.draft)).sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-  )
+  const posts = (
+    await getCollection('articulos', ({ data }) => !data.draft)
+  ).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   const cats = [...new Set(posts.map((p) => p.data.category))]
 
   return cats.flatMap((categoria) => {
@@ -35,7 +35,9 @@ export async function getStaticPaths() {
       const page = i + 1
       return {
         // Página 1 → 'extintores'. Página N → 'extintores/pagina/N'.
-        params: { categoria: page === 1 ? categoria : `${categoria}/pagina/${page}` },
+        params: {
+          categoria: page === 1 ? categoria : `${categoria}/pagina/${page}`,
+        },
         props: {
           categoria,
           page,
@@ -63,11 +65,15 @@ const prevUrl = page === 2 ? base : `${base}pagina/${page - 1}/`
 const nextUrl = page < total ? `${base}pagina/${page + 1}/` : null
 
 const pageSuffix = page > 1 ? ` — página ${page}` : ''
+const pageDescription =
+  page === 1
+    ? (cat?.seoDescription ?? intro)
+    : `${label}: página ${page} de ${total} con artículos y guías de protección contra incendios para empresas en México.`
 
 const schemaData = {
   list: {
     name: `${label}${pageSuffix}`,
-    description: cat?.seoDescription ?? intro,
+    description: pageDescription,
     path,
     items: posts.map((a) => ({
       name: a.data.title,
@@ -80,21 +86,36 @@ const schemaData = {
 
 const cierreItems = [
   { label: 'Todo el blog', href: '/blog/', sub: 'Todos los artículos' },
-  { label: 'Servicios', href: '/servicios/', sub: 'Instalación y mantenimiento' },
-  { label: 'Contacto', href: '/contacto/', sub: 'Teléfono, WhatsApp y oficinas' },
+  {
+    label: 'Servicios',
+    href: '/servicios/',
+    sub: 'Instalación y mantenimiento',
+  },
+  {
+    label: 'Contacto',
+    href: '/contacto/',
+    sub: 'Teléfono, WhatsApp y oficinas',
+  },
   { label: 'Inicio', href: '/', sub: 'Volver al inicio' },
 ]
-const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog), sub: 'Te decimos qué necesitas', external: true }
+const cierreCta = {
+  label: 'Cotizar por WhatsApp',
+  href: waUrl(WA_MESSAGES.blog),
+  sub: 'Te decimos qué necesitas',
+  external: true,
+}
 ---
 
 <PageLayout
   title={`${cat?.seoTitle ?? `${label} — blog`}${pageSuffix}`}
-  description={cat?.seoDescription ?? intro}
+  description={pageDescription}
   pageType="category"
   schemaData={schemaData}
   breadcrumbs={[
     { label: 'Blog', href: '/blog/' },
-    ...(page > 1 ? [{ label, href: base }, { label: `Página ${page}` }] : [{ label }]),
+    ...(page > 1
+      ? [{ label, href: base }, { label: `Página ${page}` }]
+      : [{ label }]),
   ]}
   noindex={page > 1}
   follow={true}
@@ -105,12 +126,19 @@ const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog)
   <Hero
     badge="Blog"
     title={`${label}:`}
-    accent={"guías\u00a0para\u00a0empresas"}
+    accent={'guías\u00a0para\u00a0empresas'}
     subtitle={intro}
     descRight={body}
     ctas={[
-      ...(cta ? [{ text: cta.label, href: cta.href, variant: 'outline' as const }] : []),
-      { text: 'Consultar por WhatsApp', href: waUrl(WA_MESSAGES.blog), variant: 'primary' as const, whatsapp: true },
+      ...(cta
+        ? [{ text: cta.label, href: cta.href, variant: 'outline' as const }]
+        : []),
+      {
+        text: 'Consultar por WhatsApp',
+        href: waUrl(WA_MESSAGES.blog),
+        variant: 'primary' as const,
+        whatsapp: true,
+      },
     ]}
   />
 
@@ -125,5 +153,9 @@ const cierreCta = { label: 'Cotizar por WhatsApp', href: waUrl(WA_MESSAGES.blog)
     desc={`Guías sobre ${label.toLowerCase()}, de la más reciente a la más antigua.`}
   />
 
-  <SectionMenu items={cierreItems} cta={cierreCta} ariaLabel="Sigue explorando el blog" />
+  <SectionMenu
+    items={cierreItems}
+    cta={cierreCta}
+    ariaLabel="Sigue explorando el blog"
+  />
 </PageLayout>

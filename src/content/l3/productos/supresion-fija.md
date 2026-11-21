@@ -338,8 +338,8 @@ modulos:
         desc: Lo único que revela si la bomba sigue cumpliendo.
     ctaLabel: Cotizar cuarto de bombas
     ctaMsg: Hola, quiero cotizar el equipo del cuarto de bombas contra incendio de mi inmueble.
-    ctaSecondaryLabel: Hidrantes y mangueras
-    ctaSecondaryHref: /productos/hidrantes-mangueras/
+    ctaSecondaryLabel: Bomba jockey presurizadora
+    ctaSecondaryHref: /productos/bomba-jockey-presurizadora/
     imgMain:
       src: /images/productos/bomba-contra-incendio-cuarto-de-bombas.avif
       alt: Bomba contra incendio de carcasa partida con su tablero de control

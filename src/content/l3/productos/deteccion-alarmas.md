@@ -352,8 +352,8 @@ modulos:
         desc: El panel vigila el circuito y señala la avería o el detector retirado.
     ctaLabel: Cotizar el sistema
     ctaMsg: Hola, quiero cotizar un sistema de alarma contra incendio completo para mi inmueble (detección, panel, sirenas y respaldo).
-    ctaSecondaryLabel: Panel de alarma
-    ctaSecondaryHref: /productos/panel-alarma-contra-incendio/
+    ctaSecondaryLabel: Módulos monitor y control
+    ctaSecondaryHref: /productos/modulo-direccionable-monitor-y-control/
     imgMain:
       src: /images/productos/dispositivos-deteccion-alarma.avif
       alt: Detectores, sirena con estrobo y estación manual de un sistema de alarma
@@ -514,8 +514,8 @@ modulos:
         desc: Arriba de 23 m en CDMX (NTC 2024, 4.4.6.6).
     ctaLabel: Cotizar sirenas
     ctaMsg: Hola, quiero cotizar sirenas y estrobos de alarma contra incendio.
-    ctaSecondaryLabel: Rutas de evacuación
-    ctaSecondaryHref: /blog/senalizacion-rutas-evacuacion-nom/
+    ctaSecondaryLabel: Panel de voz y evacuación
+    ctaSecondaryHref: /productos/panel-de-voz-y-evacuacion/
     imgMain:
       src: /images/servicios/instalacion-deteccion-alarma.avif
       alt: Sirena estroboscópica en el muro de un pasillo de oficinas

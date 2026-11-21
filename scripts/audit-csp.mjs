@@ -1,7 +1,8 @@
 import { readdirSync, readFileSync, statSync } from 'node:fs'
-import { join, relative, resolve } from 'node:path'
+import { basename, join, relative, resolve } from 'node:path'
 
 import { findInlineExecutableScripts } from './lib/csp-audit.mjs'
+import { NON_PAGE_HTML_FILE } from './lib/html-seo-audit.mjs'
 
 const dist = resolve('dist')
 const htmlFiles = []
@@ -10,7 +11,8 @@ function walk(directory) {
   for (const name of readdirSync(directory)) {
     const path = join(directory, name)
     if (statSync(path).isDirectory()) walk(path)
-    else if (name.endsWith('.html')) htmlFiles.push(path)
+    else if (name.endsWith('.html') && !NON_PAGE_HTML_FILE.test(basename(path)))
+      htmlFiles.push(path)
   }
 }
 
@@ -30,4 +32,6 @@ if (failures.length) {
   process.exit(1)
 }
 
-console.log(`✓ audit:csp — ${htmlFiles.length} páginas sin JavaScript inline ejecutable.`)
+console.log(
+  `✓ audit:csp — ${htmlFiles.length} páginas sin JavaScript inline ejecutable.`,
+)
