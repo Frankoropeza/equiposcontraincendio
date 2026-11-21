@@ -18,7 +18,7 @@ Idioma: español (es-MX). País: México.
 - Modelo de venta: fichas de producto con especificaciones y cotización directa (sin carrito).
 
 ## Productos (categorías del catálogo)
-- Extintores: PQS ABC, CO2, tipo K (químico húmedo), agua y espuma AFFF, agente limpio; portátiles y sobre ruedas.
+- Extintores: PQS ABC, polvo químico BC, polvo clase D para metales combustibles, CO2, tipo K (químico húmedo), agua a presión, agua nebulizada, espuma AFFF, agente limpio y halotron; portátiles, vehiculares y sobre ruedas de 25 a 125 kg.
 - Detección y alarmas: detectores de humo fotoeléctricos e iónicos, térmicos de temperatura fija y termovelocimétricos, de gas combustible, de monóxido de carbono, por haz proyectado, por aspiración, lineales por cable termosensible y de flama UV/IR; paneles convencionales y direccionables por lazos, módulos monitor y de control, estaciones manuales, sirenas estroboscópicas y sistemas de voz y evacuación.
 - Hidrantes y mangueras: gabinetes con manguera, mangueras de 1½ y 2½ pulgadas, válvulas angulares, pitones de chorro y niebla, carretes porta manguera, racores y adaptadores de rosca, llaves spanner, hidrantes de columna exteriores, tomas siamesas y reserva de agua contra incendio.
 - Sistemas fijos de supresión: rociadores automáticos, supresión de cocina con agente húmedo listado UL 300, agente limpio HFC-227ea y FK-5-1-12, CO2, niebla de agua, bombas contra incendio y jockey, válvulas de control, diluvio y preacción, y paneles de liberación de agente.
@@ -40,6 +40,14 @@ Idioma: español (es-MX). País: México.
 - [Inicio](https://equiposcontraincendio.com/): presentación del catálogo y servicios.
 - [Productos](https://equiposcontraincendio.com/productos): catálogo de equipo contra incendio.
 - [Equipo para bombero](https://equiposcontraincendio.com/productos/equipo-bombero/): EPP para la brigada contra incendio, seleccionado por riesgo y con expediente para la STPS.
+- [Extintor de espuma AFFF](https://equiposcontraincendio.com/productos/extintor-espuma-afff/): sella la superficie del líquido inflamable y evita el reencendido.
+- [Extintor de agua nebulizada](https://equiposcontraincendio.com/productos/extintor-agua-nebulizada/): gota fina para hospital, museo y archivo, en acero inoxidable.
+- [Extintor de halotron](https://equiposcontraincendio.com/productos/extintor-halotron/): agente limpio sin residuo para site y electrónica, de 2.5 a 15 libras.
+- [Extintor móvil de PQS](https://equiposcontraincendio.com/productos/extintor-movil-pqs/): sobre ruedas de 25 a 125 kg para nave, gasolinera y patio de maniobras.
+- [Extintor móvil de CO2](https://equiposcontraincendio.com/productos/extintor-movil-co2/): sobre ruedas de 20 a 45 kg para subestación y cuarto eléctrico.
+- [Extintor de polvo BC](https://equiposcontraincendio.com/productos/extintor-polvo-quimico-bc/): bicarbonato para líquidos inflamables y gas; no cubre clase A.
+- [Extintor clase D](https://equiposcontraincendio.com/productos/extintor-clase-d-metales/): para metales combustibles como magnesio, titanio y sodio.
+- [Extintor vehicular](https://equiposcontraincendio.com/productos/extintor-vehicular/): de 1 a 4.5 kg con soporte de liberación rápida para flota y montacargas.
 - [Panel de alarma direccionable](https://equiposcontraincendio.com/productos/panel-alarma-direccionable/): identifica el punto exacto por lazos, con control de clima, compuertas y elevadores.
 - [Estación manual de alarma](https://equiposcontraincendio.com/productos/estacion-manual-de-alarma/): de simple o doble acción, para la ruta de evacuación y las salidas.
 - [Sirena estroboscópica](https://equiposcontraincendio.com/productos/sirena-estroboscopica/): notificación audible y visible, con estrobos sincronizados.

@@ -130,7 +130,12 @@ export const ARTICLE_FUNNELS = ['tofu', 'mofu', 'bofu'] as const;
 // de la L3 /productos/extintores/). Son los ejes de los filtros del catálogo:
 // cada presentación declara su agente, formato, clases de fuego y usos. Las
 // etiquetas visibles viven en src/data/extintores.ts (EXT_*_LABEL).
-export const EXT_AGENTES = ['pqs', 'co2', 'clase-k', 'agua', 'agua-nebulizada', 'espuma', 'agente-limpio'] as const;
+// 2026-11-20 (tanda T4): se suman 'polvo-bc' y 'polvo-d'. El PQS del catálogo
+// es ABC multipropósito; el BC es otro agente y confundirlos en el filtro
+// mandaría al comprador equivocado. El polvo D es para fuegos de metales y
+// no tiene nada que ver con los anteriores. El halotron entra como
+// 'agente-limpio', que ya existe.
+export const EXT_AGENTES = ['pqs', 'polvo-bc', 'polvo-d', 'co2', 'clase-k', 'agua', 'agua-nebulizada', 'espuma', 'agente-limpio'] as const;
 export const EXT_FORMATOS = ['portatil', 'movil'] as const;
 export const EXT_CLASES = ['A', 'B', 'C', 'D', 'K'] as const;
 export const EXT_USOS = ['oficina', 'comercio', 'restaurante', 'hotel', 'bodega', 'industria', 'vehiculo', 'site'] as const;

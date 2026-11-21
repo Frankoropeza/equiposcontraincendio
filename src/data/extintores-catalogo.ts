@@ -56,6 +56,8 @@ export const extSeo = {
 // ── Etiquetas de los ejes de filtro ─────────────────────────────────────────
 export const EXT_AGENTE_LABEL: Record<ExtAgente, string> = {
   pqs: 'PQS ABC',
+  'polvo-bc': 'Polvo BC',
+  'polvo-d': 'Polvo clase D',
   co2: 'CO₂',
   'clase-k': 'Clase K',
   agua: 'Agua a presión',
@@ -67,6 +69,8 @@ export const EXT_AGENTE_LABEL: Record<ExtAgente, string> = {
 // filtran juntas: son la misma familia/ficha).
 export const EXT_AGENTE_FILTRO: { key: string; label: string; agentes: ExtAgente[] }[] = [
   { key: 'pqs', label: 'PQS ABC', agentes: ['pqs'] },
+  { key: 'polvo-bc', label: 'Polvo BC', agentes: ['polvo-bc'] },
+  { key: 'polvo-d', label: 'Clase D', agentes: ['polvo-d'] },
   { key: 'co2', label: 'CO₂', agentes: ['co2'] },
   { key: 'clase-k', label: 'Clase K', agentes: ['clase-k'] },
   { key: 'agua', label: 'Agua y espuma', agentes: ['agua', 'agua-nebulizada', 'espuma'] },
@@ -103,11 +107,25 @@ export const EXT_USO_LABEL: Record<ExtUso, string> = {
 // una vez en la nota del catálogo y en la sección de mantenimiento. Repetirlo
 // en las 29 cards era texto duplicado.
 const MANT_BASE = 'Mismo calendario que el resto: revisión mensual, mantenimiento anual y recarga tras cualquier uso.';
+// El Record estricto obliga a documentar TODOS los agentes del enum: si se
+// agrega uno y se olvida su información, el build falla en vez de publicar
+// una card vacía. Se restauró tras la tanda T4 (2026-11-20), que añadió
+// 'polvo-bc' y 'polvo-d' y dejó el tipo temporalmente como Partial.
 export const EXT_AGENTE_INFO: Record<ExtAgente, { ventajas: [string, string]; limitacion: string; mantenimiento: string }> = {
   pqs: {
     ventajas: ['Cubre clases A, B y C con un solo equipo', 'La gama más amplia: de 1 kg a unidades móviles'],
     limitacion: 'Deja un polvo fino que daña electrónica; no apto bajo campana de cocina.',
     mantenimiento: 'Al darle servicio se le coloca collarín, que no se retira sin abrir el extintor.',
+  },
+  'polvo-bc': {
+    ventajas: ['Más eficaz sobre la llama de líquidos y gas que el ABC', 'Presentaciones portátiles y móviles para áreas de trasiego'],
+    limitacion: 'No cubre clase A: donde haya material sólido, el que entra es el ABC.',
+    mantenimiento: MANT_BASE,
+  },
+  'polvo-d': {
+    ventajas: ['El único agente para metales combustibles', 'Aplicación de baja velocidad que deposita la costra sin dispersar'],
+    limitacion: 'Cada formulación se lista para metales concretos: hay que verificarla contra el proceso.',
+    mantenimiento: 'Se revisa que el agente no haya absorbido humedad ni se haya compactado.',
   },
   co2: {
     ventajas: ['No deja residuo ni conduce electricidad', 'Indicado junto a tableros y equipo electrónico'],
