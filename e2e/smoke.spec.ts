@@ -30,6 +30,33 @@ test('una ficha de producto no inventa una oferta sin precio', async ({
   expect(product).not.toHaveProperty('offers')
 })
 
+test('una evidencia de servicio no se presenta como venta independiente', async ({
+  page,
+}) => {
+  await page.goto('/productos/etiqueta-collarin-mantenimiento-extintor/')
+
+  await expect(page.locator('.showcase__price')).toHaveText(
+    'Se atiende dentro del servicio de mantenimiento',
+  )
+  await expect(
+    page.locator('main').getByRole('link', { name: 'Solicitar mantenimiento' }).first(),
+  ).toBeVisible()
+  await expect(page.locator('.pvcard__cta')).toHaveText([
+    'Solicitar servicio',
+    'Solicitar servicio',
+  ])
+
+  const jsonLd = await page
+    .locator('script[type="application/ld+json"]')
+    .allTextContents()
+  const product = jsonLd
+    .map((value) => JSON.parse(value) as Record<string, unknown>)
+    .find((node) => node['@type'] === 'Product')
+
+  expect(product).toBeTruthy()
+  expect(product).not.toHaveProperty('offers')
+})
+
 test('la calculadora entrega un desglose consistente', async ({ page }) => {
   await page.goto('/herramientas/cuantos-extintores-necesito/')
 

@@ -157,6 +157,9 @@ const productos = defineCollection({
       category: z.enum(PRODUCT_CATEGORIES), // enum cerrado — MESECI.
       image: imagePath, // imagen obligatoria — MESECI.
       price: z.string().optional(), // string libre ("Desde $X", "Cotizar"). NO number forzado.
+      // `service` evita presentar como venta suelta piezas que únicamente
+      // acreditan o forman parte del mantenimiento del extintor.
+      conversionMode: z.enum(['quote', 'service']).default('quote'),
       sku: z.string().optional(),
       brand: z.string().optional(),
       gallery: z.array(imagePath).optional(),

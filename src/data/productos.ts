@@ -90,6 +90,13 @@ export const productosOrden = [
   'panel-de-liberacion-de-agente',
   'botiquin-primeros-auxilios',
   'soportes-accesorios-extintor',
+  'base-tripie-porta-extintor-piso',
+  'soporte-vehicular-montacargas-extintor',
+  'gabinete-para-extintor-empotrado',
+  'refacciones-manometro-valvula-extintor',
+  'sello-seguridad-pin-extintor',
+  'etiqueta-collarin-mantenimiento-extintor',
+  'tablero-brigada-emergencia-acrilico',
   'equipo-bombero',
 ];
 
@@ -148,6 +155,13 @@ export const productosBadge: Record<string, string> = {
   'panel-de-liberacion-de-agente': 'Sistemas fijos',
   'botiquin-primeros-auxilios': 'Primeros auxilios',
   'soportes-accesorios-extintor': 'Accesorios',
+  'base-tripie-porta-extintor-piso': 'Accesorios',
+  'soporte-vehicular-montacargas-extintor': 'Accesorios',
+  'gabinete-para-extintor-empotrado': 'Accesorios',
+  'refacciones-manometro-valvula-extintor': 'Accesorios',
+  'sello-seguridad-pin-extintor': 'Accesorios',
+  'etiqueta-collarin-mantenimiento-extintor': 'Accesorios',
+  'tablero-brigada-emergencia-acrilico': 'Accesorios',
   'equipo-bombero': 'Bombero',
 };
 

@@ -23,8 +23,9 @@ interface Item {
 interface Props {
   item: Item;
   index?: number;
+  ctaLabel?: string;
 }
-const { item, index = 0 } = Astro.props as Props;
+const { item, index = 0, ctaLabel = 'Cotizar' } = Astro.props as Props;
 const id = item.id ?? slugify(item.nombre);
 const chips = [...item.specs.split(' · '), item.capacidad, item.formato, ...(item.clases ?? [])].filter(Boolean) as string[];
 ---
@@ -41,7 +42,7 @@ const chips = [...item.specs.split(' · '), item.capacidad, item.formato, ...(it
     <ul class="pvcard__specs" aria-label={`Especificaciones de ${item.nombre}`}>
       {chips.map((chip) => <li>{chip}</li>)}
     </ul>
-    <a class="btn btn--primary pvcard__cta" href={waUrl(item.waText)} target="_blank" rel="noopener noreferrer">Cotizar</a>
+    <a class="btn btn--primary pvcard__cta" href={waUrl(item.waText)} target="_blank" rel="noopener noreferrer">{ctaLabel}</a>
   </div>
 </Card>
 <style>

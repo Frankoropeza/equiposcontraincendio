@@ -33,6 +33,7 @@ export interface Props {
   canonical?: string;
   badge?: string;
   price?: string;
+  conversionMode?: 'quote' | 'service';
   gallery?: { src: string; alt: string }[];
   features?: string[];
   specs?: { label: string; value: string }[];
@@ -52,7 +53,7 @@ export interface Variante {
   clasificacion?: string; usos?: string[]; validacion?: string;
 }
 
-const { slug, title, description, category, seoTitle, seoDescription, image, canonical, price,
+const { slug, title, description, category, seoTitle, seoDescription, image, canonical, price, conversionMode = 'quote',
   faqs = [], related = [], variantes = [], ficha, fichaHeads } = Astro.props;
 const fichaData = {
   ...FICHA_DEFAULT,
@@ -67,9 +68,14 @@ const heads = { ...HEADS_DEFAULT, ...(fichaHeads ?? {}) };
 const extintoresEntry = await getEntry('l3', 'productos/extintores');
 if (!extintoresEntry || extintoresEntry.data.kind !== 'extintores') throw new Error('Falta la entrada L3: productos/extintores');
 const extintoresFichas = extintoresEntry.data.fichas;
-const waLink = waUrl(`Hola, quiero cotizar: ${title}. ¿Precio y disponibilidad?`);
+const serviceOnly = conversionMode === 'service';
+const ctaLabel = serviceOnly ? 'Solicitar mantenimiento' : 'Cotizar por WhatsApp';
+const shortCtaLabel = serviceOnly ? 'Solicitar servicio' : 'Cotizar';
+const waLink = waUrl(serviceOnly
+  ? `Hola, necesito mantenimiento para mi extintor y revisar: ${title}.`
+  : `Hola, quiero cotizar: ${title}. ¿Precio y disponibilidad?`);
 const publicPrice = price && !/^\s*cotizar\s*$/i.test(price) ? price : undefined;
-const menuCta = { label: 'Cotizar por WhatsApp', href: waLink, sub: 'Te decimos cuál conviene', external: true };
+const menuCta = { label: ctaLabel, href: waLink, sub: serviceOnly ? 'Se atiende durante el servicio' : 'Te decimos cuál conviene', external: true };
 const cat = TAXONOMY.categories.find((item) => item.slug === category);
 const breadcrumbs = [
   { label: 'Productos', href: '/productos/' },
@@ -162,9 +168,11 @@ const faqTitleAccent = fichaData.faqAccent;
 // Las fichas que no son extintores no tienen «capacidad» ni «clases de fuego»:
 // el texto de la sección de presentaciones cambia según el tipo (2026-09-16).
 const esExtintor = variantes.some((item) => item.agente);
-const presLabel = esExtintor ? 'Presentaciones y capacidades' : 'Modelos y presentaciones';
-const presAccent = esExtintor ? 'y capacidades' : 'y modelos';
-const presDesc = esExtintor
+const presLabel = serviceOnly ? 'Elementos del servicio' : esExtintor ? 'Presentaciones y capacidades' : 'Modelos y presentaciones';
+const presAccent = serviceOnly ? 'del servicio' : esExtintor ? 'y capacidades' : 'y modelos';
+const presDesc = serviceOnly
+  ? 'Revisa qué se inspecciona o acredita y por qué debe atenderse dentro del mantenimiento realizado.'
+  : esExtintor
   ? 'Compara capacidad, clases de fuego y uso sugerido. Al cotizar, menciona la presentación exacta y la cantidad.'
   : 'Compara modelos, medidas y alcance. Al cotizar, menciona la presentación exacta y la cantidad.';
 // Sin recorte con «…» (regla del sitio): las descripciones que llegan ya son cortas.
@@ -174,11 +182,11 @@ function shortDescription(value?: string) { return value ?? ''; }
 <PageLayout title={seoTitle ?? title} description={seoDescription ?? description} image={image} canonical={canonical} pageType="product" schemaData={schemaData} breadcrumbs={breadcrumbs}>
   <Hero badge={fichaData.heroBadge} title={fichaData.heroTitle} accent={fichaData.heroAccent} subtitle={description} descRight={fichaData.descRight} ctas={[
     { text: presLabel, href: '#presentaciones', variant: 'outline' },
-    { text: 'Cotizar por WhatsApp', href: waLink, variant: 'primary', whatsapp: true },
+    { text: ctaLabel, href: waLink, variant: 'primary', whatsapp: true },
   ]} />
   <SectionMenu items={sectionMenuItems()} cta={menuCta} />
 
-  <ProductShowcase title={title} showcaseTitle={fichaData.showcaseTitle} showcaseAccent={fichaData.showcaseAccent} showcaseDesc={fichaData.showcaseDesc} body={heads.vitrina} image={image} claves={fichaData.claves} capacitySummary={capacitySummary} presentationSummary={presentationSummary} publicPrice={publicPrice} waLink={waLink} presLabel={presLabel} />
+  <ProductShowcase title={title} showcaseTitle={fichaData.showcaseTitle} showcaseAccent={fichaData.showcaseAccent} showcaseDesc={fichaData.showcaseDesc} body={heads.vitrina} image={image} claves={fichaData.claves} capacitySummary={capacitySummary} presentationSummary={presentationSummary} publicPrice={publicPrice} waLink={waLink} presLabel={presLabel} ctaLabel={ctaLabel} statusLabel={serviceOnly ? 'Se atiende dentro del servicio de mantenimiento' : 'Precio bajo cotización'} />
 
   <section class="section section--surface" id="presentaciones">
     <div class="container">
@@ -202,7 +210,7 @@ function shortDescription(value?: string) { return value ?? ''; }
           const item = { ...variante, id, fichaHref: `/productos/${slug}/#${id}`, imagen: variante.imagen };
           return variante.agente
             ? <ExtintorCard item={{ ...item, agente: variante.agente }} index={index} showFicha={false} />
-            : <ProductVariantCard item={item} index={index} />;
+            : <ProductVariantCard item={item} index={index} ctaLabel={shortCtaLabel} />;
         })}
         {cierreVariantes.map((ficha) => <CatalogCierreCard ficha={ficha} visible />)}
       </div>
@@ -214,7 +222,7 @@ function shortDescription(value?: string) { return value ?? ''; }
   <section class="section section--surface">
     <div class="container">
       <SectionHeading layout="duo" eyebrow="Guía de compra" title={fichaData.guia.title} titleAccent={fichaData.guia.titleAccent} desc={fichaData.guia.desc} body={heads.guia} />
-      <div class="guide-grid"><article class="prose"><slot /></article><QuoteCard title={title} price={publicPrice} waLink={waLink} telHref={telUrl()} /></div>
+      <div class="guide-grid"><article class="prose"><slot /></article><QuoteCard title={title} price={publicPrice} waLink={waLink} telHref={telUrl()} eyebrow={serviceOnly ? 'Servicio de mantenimiento' : undefined} items={serviceOnly ? ['Tipo y capacidad del extintor', 'Fotografías del equipo y de la pieza', 'Ubicación del equipo'] : undefined} itemsLabel={serviceOnly ? 'Para revisar tu equipo, envíanos:' : undefined} showPrice={!serviceOnly} ctaLabel={ctaLabel} /></div>
     </div>
   </section>
 

@@ -19,6 +19,33 @@ const DOCUMENTED_EXCEPTIONS = {
     verifiedCount: 3,
     documentation: 'PROJECTS/04-SEO/ECI-Expediente-Variantes-ExtintorClaseK-2026-11-19.md',
   },
+  // T4b: el conteo refleja únicamente las presentaciones que constan en el
+  // contenido editorial o en el activo aprobado. No se rellenan retículas con
+  // capacidades, materiales ni compatibilidades no verificadas.
+  'base-tripie-porta-extintor-piso.md': {
+    verifiedCount: 1,
+    documentation: 'public/images/productos/base-tripie-porta-extintor-piso.avif',
+  },
+  'etiqueta-collarin-mantenimiento-extintor.md': {
+    verifiedCount: 2,
+    documentation: 'src/content/l3/productos/accesorios.md (Etiqueta y collarín)',
+  },
+  'gabinete-para-extintor-empotrado.md': {
+    verifiedCount: 2,
+    documentation: 'src/content/productos/soportes-accesorios-extintor.md (gabinetes)',
+  },
+  'sello-seguridad-pin-extintor.md': {
+    verifiedCount: 2,
+    documentation: 'src/content/l3/productos/accesorios.md (Seguro y marchamo)',
+  },
+  'soporte-vehicular-montacargas-extintor.md': {
+    verifiedCount: 2,
+    documentation: 'src/content/productos/soportes-accesorios-extintor.md (soportes vehiculares)',
+  },
+  'tablero-brigada-emergencia-acrilico.md': {
+    verifiedCount: 1,
+    documentation: 'public/images/productos/tablero-brigada-emergencia-acrilico.avif',
+  },
 };
 
 const result = auditProductVariants(PRODUCT_DIR, DOCUMENTED_EXCEPTIONS);

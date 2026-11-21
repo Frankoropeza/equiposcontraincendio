@@ -32,26 +32,26 @@ vitrina:
   desc: Unas las instalas tú, otras las cambia el taller y dos nunca se compran sueltas.
   body:
     - Los soportes y los gabinetes se eligen por el extintor y el lugar, y se pueden instalar sin abrir el equipo. Las refacciones, las mangueras y el seguro se cambian dentro del mantenimiento, porque tocan la parte presurizada.
-    - "La etiqueta y el collarín no son accesorios: son la prueba de que un taller dio el servicio. Por eso las dos últimas fichas llevan al servicio de mantenimiento y a la señal que acompaña al equipo."
+    - "La etiqueta, el collarín, el pin y el sello no son mercancía independiente: sus fichas explican qué acreditan y dirigen al servicio de mantenimiento que los respalda."
   tarjetas:
-    - title: Soportes de pared
-      href: /productos/soportes-accesorios-extintor/
-      image: /images/servicios/instalacion-equipo-almacen.avif
-      imageAlt: Técnico fijando un extintor a su soporte de pared en un almacén
-      badge: Gancho o abrazadera
-      description: Mantienen el extintor fijo, visible y a la altura correcta sobre un muro firme.
+    - title: Base trípode para extintor
+      href: /productos/base-tripie-porta-extintor-piso/
+      image: /images/productos/base-tripie-porta-extintor-piso.avif
+      imageAlt: Base trípode de piso para colocar un extintor portátil
+      badge: Colocación de piso
+      description: Alternativa autoportante cuando la ubicación no permite fijar el equipo directamente al muro.
       specs:
-        - label: Tipo
-          value: Gancho o correa
-        - label: Altura
-          value: Máx. 1.50 m
-        - label: Se elige
-          value: Por cilindro
-      ctaLabel: Soporte para extintor
+        - label: Formato
+          value: Base autoportante
+        - label: Compatibilidad
+          value: Se confirma
+        - label: Ubicación
+          value: Sin obstrucciones
+      ctaLabel: Ver base trípode
     - title: Soportes vehiculares
-      href: "#soporte-vehicular"
-      image: /images/showcase/extintores-catalogo-profesional.avif
-      imageAlt: Extintores portátiles de distintas capacidades y diámetros
+      href: /productos/soporte-vehicular-montacargas-extintor/
+      image: /images/productos/soporte-vehicular-montacargas-extintor.avif
+      imageAlt: Soporte vehicular para sujetar un extintor en montacargas o maquinaria
       badge: Vehículo y maquinaria
       description: Sujetan el extintor dentro de la unidad y lo liberan sin herramientas.
       specs:
@@ -61,11 +61,11 @@ vitrina:
           value: Correa o bastidor
         - label: Liberación
           value: Sin herramientas
-      ctaLabel: Soporte vehicular
+      ctaLabel: Ver soporte vehicular
     - title: Gabinetes para extintor
-      href: "#gabinetes-extintor"
-      image: /images/productos/extintor-oficina-gabinete.avif
-      imageAlt: Gabinete de extintor con puerta de visor en un pasillo de oficinas
+      href: /productos/gabinete-para-extintor-empotrado/
+      image: /images/productos/gabinete-para-extintor-empotrado.avif
+      imageAlt: Gabinete empotrado con visor para alojar un extintor portátil
       badge: Protección
       description: Protegen el extintor de golpes y manipulación, de sobreponer o empotrables.
       specs:
@@ -75,11 +75,11 @@ vitrina:
           value: Con visor
         - label: Medida
           value: Según extintor
-      ctaLabel: Gabinete para extintor
+      ctaLabel: Ver gabinetes
     - title: Refacciones de servicio
-      href: "#refacciones"
-      image: /images/showcase/refacciones-equipo-contra-incendio.avif
-      imageAlt: Válvulas, manómetros, coples y refacciones para extintor
+      href: /productos/refacciones-manometro-valvula-extintor/
+      image: /images/productos/refacciones-manometro-valvula-extintor.avif
+      imageAlt: Manómetros, válvulas y refacciones utilizadas en servicio de extintores
       badge: Las cambia el taller
       description: Válvula, manómetro y empaques del mismo modelo, cambiados en el servicio.
       specs:
@@ -89,25 +89,25 @@ vitrina:
           value: El taller
         - label: Regla
           value: Mismo modelo
-      ctaLabel: Refacciones
-    - title: Mangueras y boquillas
-      href: "#mangueras-boquillas"
-      image: /images/servicios/inspeccion-recarga-extintores.avif
-      imageAlt: Técnico revisando la válvula y el manómetro de un extintor en el taller
-      badge: Descarga
-      description: Si la descarga sale desviada o débil, se cambian por pieza certificada.
+      ctaLabel: Ver refacciones
+    - title: Pin y sello de seguridad
+      href: /productos/sello-seguridad-pin-extintor/
+      image: /images/productos/sello-seguridad-pin-extintor.avif
+      imageAlt: Pin y sello de seguridad colocados en la válvula de un extintor
+      badge: Solo con el servicio
+      description: Evidencian la integridad del accionamiento después de revisar el extintor.
       specs:
-        - label: Cambio
-          value: Si hay daño
-        - label: Pieza
-          value: Certificada
-        - label: Nunca
-          value: De otro modelo
-      ctaLabel: Mangueras de extintor
+        - label: Incluye
+          value: Pin y sello
+        - label: Quién
+          value: El taller
+        - label: Se obtiene
+          value: Con el servicio
+      ctaLabel: Qué acredita
     - title: Etiqueta y collarín
-      href: "#evidencia-servicio"
-      image: /images/servicios/etiquetado-inspeccion-extintor.avif
-      imageAlt: Técnico revisando la etiqueta de servicio de un extintor en una nave
+      href: /productos/etiqueta-collarin-mantenimiento-extintor/
+      image: /images/productos/etiqueta-collarin-mantenimiento-extintor.avif
+      imageAlt: Etiqueta y collarín colocados durante el mantenimiento de un extintor
       badge: Solo con el servicio
       description: "Son la evidencia del servicio: solo valen si los pone el taller que lo hizo."
       specs:
@@ -117,35 +117,35 @@ vitrina:
           value: PQS con manómetro
         - label: Se obtienen
           value: Con el servicio
-      ctaLabel: Etiqueta y collarín
-    - title: Mantenimiento y recarga
-      href: /servicios/mantenimiento/
-      image: /images/servicios/prueba-hidrostatica-extintor.avif
-      imageAlt: Cilindro de extintor en prueba hidrostática en el taller de servicio
-      badge: NOM-154-SCFI
-      description: Donde se cambian las refacciones y se ponen la etiqueta y el collarín.
+      ctaLabel: Qué acredita
+    - title: Tablero para brigada
+      href: /productos/tablero-brigada-emergencia-acrilico/
+      image: /images/productos/tablero-brigada-emergencia-acrilico.avif
+      imageAlt: Tablero acrílico para organizar información visible de la brigada de emergencia
+      badge: Información visible
+      description: Reúne en un punto la información que la organización defina para su brigada.
       specs:
-        - label: Periodicidad
-          value: Al menos anual
-        - label: Norma
-          value: NOM-002, 7.18
-        - label: Evidencia
-          value: Etiqueta nueva
-      ctaLabel: Mantenimiento de extintores
-    - title: Señal de extintor
-      href: /productos/senalizacion/
-      image: /images/productos/senalizacion-luces-emergencia.avif
-      imageAlt: Gabinete de extintor junto a señales de emergencia en un pasillo
-      badge: Fondo rojo
-      description: La señal roja sobre el equipo, para ubicarlo desde la circulación.
+        - label: Formato
+          value: Tablero acrílico
+        - label: Contenido
+          value: A definir
+        - label: Montaje
+          value: Según ubicación
+      ctaLabel: Ver tablero
+    - title: Soportes y accesorios
+      href: /productos/soportes-accesorios-extintor/
+      image: /images/servicios/instalacion-equipo-almacen.avif
+      imageAlt: Técnico fijando un extintor a un soporte de pared
+      badge: Guía general
+      description: Compara soportes de pared, abrazaderas, bases vehiculares y gabinetes.
       specs:
-        - label: Color
-          value: Rojo
-        - label: Va
-          value: Sobre el equipo
-        - label: Norma
-          value: NOM-003-SSPC
-      ctaLabel: Señalización
+        - label: Montaje
+          value: Muro o vehículo
+        - label: Selección
+          value: Por cilindro
+        - label: Antes de pedir
+          value: Medir y revisar
+      ctaLabel: Ver guía general
 tablaPrincipal:
   id: quien-pone-cada-pieza
   eyebrow: Quién pone cada pieza
