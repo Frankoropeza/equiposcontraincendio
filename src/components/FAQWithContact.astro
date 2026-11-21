@@ -66,7 +66,7 @@ const {
           </div>
 
           <!-- Formulario -->
-          <form id="fwc-form" class="fwc__form" novalidate>
+          <form id="fwc-form" class="fwc__form" data-wa-number={waNumber} novalidate>
 
             <div class="fwc__field">
               <label class="fwc__label" for="fwc-name">
@@ -152,15 +152,17 @@ const {
   </div>
 </section>
 
-<script define:vars={{ waNumber }}>
-  const form     = document.getElementById('fwc-form')
-  const textarea = document.getElementById('fwc-msg')
-  const counter  = document.getElementById('fwc-counter')
-  const errBox   = document.getElementById('fwc-error')
-  const giroSel  = document.getElementById('fwc-giro')
+<script>
+  const form      = document.querySelector<HTMLFormElement>('#fwc-form')!
+  const nameInput = document.querySelector<HTMLInputElement>('#fwc-name')!
+  const textarea  = document.querySelector<HTMLTextAreaElement>('#fwc-msg')!
+  const counter   = document.querySelector<HTMLElement>('#fwc-counter')!
+  const errBox    = document.querySelector<HTMLElement>('#fwc-error')!
+  const giroSel   = document.querySelector<HTMLSelectElement>('#fwc-giro')!
+  const waNumber  = form.dataset.waNumber ?? ''
 
   // Contador de caracteres en tiempo real
-  textarea && textarea.addEventListener('input', function () {
+  textarea.addEventListener('input', function () {
     const n = this.value.length
     counter.textContent = n + ' / 500'
     counter.style.color = n > 420 ? '#d97706' : ''
@@ -169,14 +171,14 @@ const {
   // Marca/limpia el estado invalido del campo. El mensaje es UNO solo (#fwc-error,
   // la live region que ya existia): aria-describedby apunta a ese mismo nodo en vez
   // de duplicar el texto, para que el lector de pantalla no lo lea dos veces.
-  function markInvalid (el) {
+  function markInvalid (el: HTMLElement) {
     if (!el) return
     el.classList.add('fwc__input--error')
     el.setAttribute('aria-invalid', 'true')
     el.setAttribute('aria-describedby', 'fwc-error')
   }
 
-  function clearInvalid (el) {
+  function clearInvalid (el: HTMLElement) {
     if (!el) return
     el.classList.remove('fwc__input--error')
     el.removeAttribute('aria-invalid')
@@ -184,11 +186,11 @@ const {
   }
 
   // Limpiar estado de error al corregir
-  giroSel && giroSel.addEventListener('change', function () {
+  giroSel.addEventListener('change', function () {
     clearInvalid(this)
     hideError()
   })
-  textarea && textarea.addEventListener('input', function () {
+  textarea.addEventListener('input', function () {
     clearInvalid(this)
     hideError()
   })
@@ -198,14 +200,14 @@ const {
   }
 
   // Envío: construir mensaje y abrir WhatsApp
-  form && form.addEventListener('submit', function (e) {
+  form.addEventListener('submit', function (e) {
     e.preventDefault()
-    const name    = document.getElementById('fwc-name').value.trim()
+    const name    = nameInput.value.trim()
     const giro    = giroSel.value
     const message = textarea.value.trim()
     let valid = true
 
-    let primerInvalido = null
+    let primerInvalido: HTMLElement | null = null
 
     if (!giro) {
       markInvalid(giroSel)
@@ -225,7 +227,7 @@ const {
     if (!valid) {
       errBox.hidden = false
       // El foco se queda en el boton si no se mueve: llevarlo al primer campo fallido.
-      primerInvalido && primerInvalido.focus()
+      primerInvalido?.focus()
       return
     }
 

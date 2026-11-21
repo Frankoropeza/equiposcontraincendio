@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "node scripts/check-demo.mjs && node scripts/check-content-references.mjs && astro check && astro build",
-    "postbuild": "node scripts/audit-meta.mjs && node scripts/audit-schema.mjs",
+    "postbuild": "node scripts/audit-meta.mjs && node scripts/audit-schema.mjs && node scripts/audit-csp.mjs",
     "test": "node --test tests/*.test.mjs",
     "test:e2e": "playwright test",
     "lint": "eslint .",
@@ -23,6 +23,7 @@
     "check": "astro check",
     "audit:meta": "node scripts/audit-meta.mjs",
     "audit:schema": "node scripts/audit-schema.mjs",
+    "audit:csp": "node scripts/audit-csp.mjs",
     "astro": "astro",
     "check:demo": "node scripts/check-demo.mjs",
     "check:parity": "node scripts/text-parity.mjs"
