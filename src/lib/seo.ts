@@ -458,8 +458,8 @@ export function orgSchema() {
     name: SITE.organization?.name ?? SITE.name,
     ...(SITE.organization?.legalName ? { legalName: SITE.organization.legalName } : {}),
     url: SITE.url,
-    // width/height REALES del asset (public/images/brand/logo.png → 512×512).
-    logo: { '@type': 'ImageObject', '@id': LOGO_ID, url: absImage(SITE.organization?.logo) ?? `${SITE.url}/logo.png`, width: 512, height: 512 },
+    // Dimensiones reales del logo horizontal optimizado declarado en SITE.
+    logo: { '@type': 'ImageObject', '@id': LOGO_ID, url: absImage(SITE.organization?.logo) ?? `${SITE.url}/logo.png`, width: 600, height: 200 },
     image: { '@id': LOGO_ID },
     description: COMPANY.summary,
     ...(SITE.organization?.alternateName ? { alternateName: SITE.organization.alternateName } : {}),

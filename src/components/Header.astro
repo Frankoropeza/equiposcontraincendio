@@ -23,11 +23,14 @@ const isExact = (item: (typeof NAV)[number]) =>
 <header class="site-header" role="banner">
   <div class="hdr-inner">
     <a href="/" class="hdr-logo">
-      <span class="hdr-logo__mark" aria-hidden="true">{SITE.brand.charAt(0)}</span>
-      <span class="hdr-logo__lockup">
-        <span class="hdr-logo__word">{SITE.brand}</span>
-        <span class="hdr-logo__descriptor">Contra incendios</span>
-      </span>
+      <img
+        class="hdr-logo__image"
+        src={SITE.organization.logo}
+        width="600"
+        height="200"
+        alt="CONINC — equipos contra incendios"
+        decoding="async"
+      />
       <span class="sr-only">, ir al inicio</span>
     </a>
 
@@ -250,44 +253,13 @@ const isExact = (item: (typeof NAV)[number]) =>
 .hdr-logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
   flex-shrink: 0;
   text-decoration: none;
 }
-.hdr-logo__mark {
-  display: grid;
-  place-items: center;
-  width: 38px;
-  height: 38px;
-  border-radius: var(--radius-md);
-  background: var(--c-primary);
-  color: var(--c-white);
-  font-family: var(--font-heading);
-  font-size: var(--text-xl);
-  font-weight: var(--weight-black);
-  line-height: 1;
-  box-shadow: 0 4px 12px rgba(var(--c-primary-rgb), 0.28);
-}
-.hdr-logo__lockup {
-  display: flex;
-  flex-direction: column;
-  gap: 0.18rem;
-}
-.hdr-logo__word {
-  color: var(--c-ink);
-  font-family: var(--font-heading);
-  font-size: 1.35rem;
-  font-weight: var(--weight-black);
-  letter-spacing: -0.02em;
-  line-height: 1;
-}
-.hdr-logo__descriptor {
-  color: var(--c-primary);
-  font-size: var(--text-xs);
-  font-weight: var(--weight-bold);
-  letter-spacing: 0.11em;
-  line-height: 1;
-  text-transform: uppercase;
+.hdr-logo__image {
+  display: block;
+  width: 152px;
+  height: auto;
 }
 .hdr-nav {
   margin-left: auto;
@@ -980,22 +952,15 @@ entre el último enlace y los botones del pie. El overlay cubre el resto. */
   }
 }
 @media (max-width: 1023px) {
+  .hdr-logo__image {
+    width: 138px;
+  }
   .hdr-nav,
   .hdr-cta {
     display: none;
   }
   .hdr-burger {
     display: flex;
-  }
-}
-@media (max-width: 480px) {
-  .hdr-logo__mark {
-    width: 34px;
-    height: 34px;
-    font-size: var(--text-lg);
-  }
-  .hdr-logo__word {
-    font-size: var(--text-lg);
   }
 }
 </style>

@@ -210,10 +210,6 @@ que el inner no apriete el logo contra el burger en pantallas muy chicas. */
   .hdr-inner {
     gap: .75rem !important;
   }
-
-  .hdr-logo__word {
-    font-size: 1.05rem !important;
-  }
 }
 
 /* ── 10) DRAWER MÓVIL ABIERTO · BLOQUEO DE FONDO ────────────────────────────
