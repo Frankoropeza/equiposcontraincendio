@@ -1,0 +1,28 @@
+---
+/**
+ * Sello compacto que informa la fecha de revisión editorial de un contenido.
+ */
+export interface Props {
+  /** Fecha de la última revisión del contenido. */
+  fecha: string | Date;
+  /** Persona responsable de la revisión, únicamente cuando está declarada. */
+  revisadoPor?: string;
+}
+
+const { fecha, revisadoPor } = Astro.props;
+const date = new Date(fecha);
+const fechaLegible = date.toLocaleDateString('es-MX', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC',
+});
+---
+
+<p class="actualizado">
+  Actualizado el <time datetime={date.toISOString()}>{fechaLegible}</time>{revisadoPor && <> · Revisado por {revisadoPor}</>}
+</p>
+
+<style>
+  .actualizado { display: inline-flex; flex-wrap: wrap; gap: var(--space-1); margin: 0; padding: var(--space-1) var(--space-3); border: 1px solid var(--c-border); border-radius: var(--radius-full); background: var(--c-surface); color: var(--c-muted); font-size: var(--text-xs); line-height: var(--leading-normal); }
+</style>

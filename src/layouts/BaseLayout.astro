@@ -100,8 +100,8 @@ const meta = buildMeta({
   type: ogType,
   noindex,
   follow,
-  publishedTime: (schemaData as any)?.article?.datePublished,
-  modifiedTime: (schemaData as any)?.article?.dateModified,
+  publishedTime: schemaData.article?.datePublished,
+  modifiedTime: schemaData.article?.dateModified,
 });
 
 // JSON-LD por tipo de página (firma posicional: pageType, schemaData).

@@ -5,7 +5,8 @@
 #   el/los sitemap(s). Copiar a `public/robots.txt` y reemplazar el dominio.
 # ORIGEN: BOMBERO/public/robots.txt (allowlist de bots IA/GEO + bloqueo de
 #   scrapers) + EVENTECH/public/robots.txt (esquema mínimo) + INFLAPY/PROYECTORED
-#   (Disallow /_astro/ y páginas auxiliares sin valor SEO).
+#   (páginas auxiliares sin valor SEO). Los assets /_astro/ quedan rastreables
+#   para que cualquier bot permitido pueda renderizar la página completa.
 # DECISIÓN: por defecto PERMITIMOS bots de IA. El directorio/contenido busca ser
 #   citado en ChatGPT, Gemini, Claude, Perplexity y AI Overviews. Si el cliente
 #   NO quiere alimentar entrenamiento de IA, mover GPTBot/CCBot/Google-Extended/
@@ -15,7 +16,6 @@
 # ─── Reglas globales ───
 User-agent: *
 Allow: /
-Disallow: /_astro/
 Disallow: /api/
 Disallow: /draft/
 Disallow: /admin/

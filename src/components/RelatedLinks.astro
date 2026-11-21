@@ -2,6 +2,7 @@
 // RelatedLinks.astro — Cross-linking interno data-driven por taxonomía (hub-and-spoke SEO). ORIGEN: PROYECTORED/src/components/sections/CategoriasRelacionadas.astro (excluye la categoría actual, distribuye link equity). Patrón canónico B6 del ecosistema.
 // Por defecto lee PRODUCT_CATEGORIES de config/site y excluye `current`. También acepta `links` manuales (otras taxonomías: servicios, sectores, artículos).
 import Icon from '@components/Icon.astro'
+import SectionHeading from '@components/SectionHeading.astro'
 import { PRODUCT_CATEGORIES } from '@config/site'
 
 interface LinkItem {
@@ -23,10 +24,9 @@ interface Props {
   links?: LinkItem[]
 }
 const { current = '', limit = 4, title = 'Explora también', desc, eyebrow, body = [], links } = Astro.props
-const SectionHeading: any = body.length > 0 ? (await import('@components/SectionHeading.astro')).default : undefined
 
 const source: LinkItem[] = links ?? PRODUCT_CATEGORIES.map((c) => ({
-  slug: c.slug, label: c.label, href: c.href, desc: (c as any).badge ?? undefined,
+  slug: c.slug, label: c.label, href: c.href, desc: c.badge ?? undefined,
 }))
 const limitedItems = source.filter((l) => l.slug !== current).slice(0, limit)
 // Las barras visibles cierran filas de 4; los widgets bare conservan su lista

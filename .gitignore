@@ -105,3 +105,5 @@ scripts/api/
 
 # Dumps de playwright-mcp: artefactos de QA, nunca se versionan
 .playwright-mcp/
+playwright-report/
+test-results/

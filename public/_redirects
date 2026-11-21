@@ -51,3 +51,15 @@
 # 2026-09-17: artículo reorientado a «tipos de extintores» (Ahrefs 7,700/mes).
 /blog/como-elegir-extintor-clase-fuego/ /blog/tipos-de-extintores/ 301
 /blog/como-elegir-extintor-clase-fuego /blog/tipos-de-extintores/ 301
+
+# 2026-11-20 — URL indexada por Google que servía 404. Detectada con un
+# `site:equiposcontraincendio.com` en Apify + verificación HTTP de las 19 URLs
+# indexadas: esta era la única rota. Google la sigue listando con el título
+# «NOM-002-STPS-2010: qué pide y cómo cumplirla en tu negocio», así que la URL
+# tiene historial y NO se tira.
+# DECISIÓN (F2 del plan de blog): se recupera como PILAR de NOM-002 —la keyword
+# `nom-002-stps-2010` está declarada hoy en 7 artículos, que es canibalización
+# pura—. Cuando el pilar se publique en /blog/nom-002-stps/, BORRAR estas dos
+# líneas. Mientras, el 301 va al artículo topicalmente más cercano.
+/blog/nom-002-stps/ /blog/riesgo-de-incendio-tabla-1-nom-002/ 301
+/blog/nom-002-stps /blog/riesgo-de-incendio-tabla-1-nom-002/ 301

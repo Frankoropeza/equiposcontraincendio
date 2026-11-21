@@ -1,0 +1,63 @@
+---
+/**
+ * Conclusiones breves para orientar la lectura al inicio de un artículo.
+ */
+export interface Props {
+  /** Conclusiones puntuales que se mostrarán en forma de lista. */
+  items: string[];
+  /** Etiqueta visible del bloque. */
+  titulo?: string;
+  /** Cuando es true, el título participa como encabezado en la jerarquía del artículo. */
+  comoHeading?: boolean;
+}
+
+const { items, titulo = 'Lo esencial', comoHeading = false } = Astro.props;
+---
+
+{items.length > 0 && (
+  <section class="takeaways" aria-label={titulo}>
+    {comoHeading ? <h2 class="takeaways__t">{titulo}</h2> : <p class="takeaways__t">{titulo}</p>}
+    <ul class="takeaways__list" role="list">
+      {items.map((item) => <li>{item}</li>)}
+    </ul>
+  </section>
+)}
+
+<style>
+  .takeaways {
+    margin-block: var(--space-6);
+    padding: var(--space-5);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    background: var(--c-surface);
+  }
+
+  .takeaways__t {
+    margin: 0 0 var(--space-3);
+    color: var(--c-ink);
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: var(--weight-bold);
+  }
+
+  .takeaways__list {
+    display: grid;
+    gap: var(--space-2);
+    margin: 0;
+    padding: 0;
+    color: var(--c-ink-2);
+    line-height: var(--leading-relaxed);
+    list-style: none;
+  }
+
+  .takeaways__list li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-2);
+  }
+
+  .takeaways__list li::before {
+    content: '•';
+    color: var(--c-primary);
+  }
+</style>

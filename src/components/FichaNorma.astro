@@ -1,0 +1,66 @@
+---
+export interface FuenteNorma {
+  /** Texto visible del vínculo a la fuente oficial o verificable. */
+  label: string;
+  /** URL de la fuente oficial o verificable. */
+  url: string;
+}
+
+/**
+ * Resumen verificable de una norma y la obligación que respalda.
+ */
+export interface Props {
+  /** Identificador y nombre de la norma. */
+  norma: string;
+  /** Requisito concreto que establece la norma. */
+  exige: string;
+  /** Artículo, numeral o apartado aplicable cuando se conoce. */
+  fundamento?: string;
+  /** Fuente verificable de la norma. */
+  fuente: FuenteNorma;
+  /** Fecha en que se verificó la fuente. */
+  verificadoEl: string | Date;
+}
+
+const { norma, exige, fundamento, fuente, verificadoEl } = Astro.props;
+const fecha = new Date(verificadoEl);
+const fechaLegible = fecha.toLocaleDateString('es-MX', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC',
+});
+---
+
+<aside class="ficha-norma" aria-label={`Ficha de ${norma}`}>
+  <p class="ficha-norma__eyebrow">Norma aplicable</p>
+  <p class="ficha-norma__nombre">{norma}</p>
+  <dl class="ficha-norma__datos">
+    <div>
+      <dt>Exige</dt>
+      <dd>{exige}</dd>
+    </div>
+    {fundamento && (
+      <div>
+        <dt>Fundamento</dt>
+        <dd>{fundamento}</dd>
+      </div>
+    )}
+  </dl>
+  <p class="ficha-norma__fuente">
+    <a href={fuente.url} target="_blank" rel="noopener">{fuente.label}</a>
+    <span> · Verificado el <time datetime={fecha.toISOString()}>{fechaLegible}</time></span>
+  </p>
+</aside>
+
+<style>
+  .ficha-norma { margin-block: var(--space-6); padding: var(--space-5); border: 1px solid var(--c-border); border-radius: var(--radius-lg); background: var(--c-surface); }
+  .ficha-norma__eyebrow { margin: 0 0 var(--space-2); color: var(--c-primary); font-size: var(--text-xs); font-weight: var(--weight-bold); letter-spacing: .08em; text-transform: uppercase; }
+  .ficha-norma__nombre { margin: 0; color: var(--c-ink); font-family: var(--font-heading); font-size: var(--text-xl); font-weight: var(--weight-bold); }
+  .ficha-norma__datos { display: grid; gap: var(--space-3); margin: var(--space-4) 0; }
+  .ficha-norma__datos div { display: grid; gap: var(--space-1); }
+  .ficha-norma dt { color: var(--c-ink); font-size: var(--text-sm); font-weight: var(--weight-bold); }
+  .ficha-norma dd { margin: 0; color: var(--c-ink-2); line-height: var(--leading-relaxed); }
+  .ficha-norma__fuente { margin: 0; color: var(--c-muted); font-size: var(--text-sm); line-height: var(--leading-relaxed); }
+  .ficha-norma__fuente a { color: var(--c-primary); }
+</style>

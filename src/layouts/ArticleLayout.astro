@@ -61,6 +61,8 @@ export interface Props {
   headings?: { depth: number; slug: string; text: string }[];
   /** Preguntas frecuentes: se pintan Y se emiten como FAQPage. */
   faqs?: { question: string; answer: string }[];
+  /** Procedimiento visible que se emite como HowTo desde la fuente única de JSON-LD. */
+  howTo?: { name: string; steps: { name: string; text: string; image?: string }[]; totalTime?: string };
   /** Artículos relacionados (interlinking editorial). */
   related?: { label: string; href: string; description?: string }[];
   /** Producto / servicio que resuelve el tema del artículo (ruta comercial). */
@@ -83,6 +85,7 @@ const {
   funnel = 'mofu',
   headings = [],
   faqs = [],
+  howTo,
   related = [],
   commercial = [],
 } = Astro.props;
@@ -122,6 +125,7 @@ const schemaData = {
     ...(category ? { section: catLabel ?? category } : {}),
   },
   ...(faqs.length ? { faqs } : {}),
+  ...(howTo ? { howTo } : {}),
 };
 
 // ── CTA por etapa del embudo ────────────────────────────────────────────────

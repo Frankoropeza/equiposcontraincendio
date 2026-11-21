@@ -1,0 +1,54 @@
+---
+/**
+ * Tabla de comparación que conserva el desplazamiento horizontal en pantallas pequeñas.
+ */
+export interface Props {
+  /** Etiquetas de las columnas, en el mismo orden que las celdas de cada fila. */
+  columnas: string[];
+  /** Filas de contenido; cada celda puede contener HTML editorial controlado. */
+  filas: string[][];
+  /** Descripción breve de la tabla para lectores de pantalla y como caption visible. */
+  caption?: string;
+  /** Índice basado en cero de la columna a resaltar. */
+  destacarColumna?: number;
+}
+
+const { columnas, filas, caption, destacarColumna } = Astro.props;
+const regionLabel = caption ?? 'Tabla comparativa';
+---
+
+<div class="tabla__scroll" tabindex="0" role="region" aria-label={regionLabel}>
+  <table class="tabla">
+    {caption && <caption>{caption}</caption>}
+    <thead>
+      <tr>
+        {columnas.map((columna, index) => (
+          <th class:list={{ 'tabla__destacada': index === destacarColumna }} scope="col" set:html={columna} />
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {filas.map((fila) => (
+        <tr>
+          {fila.map((celda, index) => (
+            index === 0
+              ? <th class:list={{ 'tabla__destacada': index === destacarColumna }} scope="row" set:html={celda} />
+              : <td class:list={{ 'tabla__destacada': index === destacarColumna }} set:html={celda} />
+          ))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .tabla__scroll { margin-block: var(--space-6); overflow-x: auto; border: 1px solid var(--c-border); border-radius: var(--radius-md); background: var(--c-white); }
+  .tabla__scroll:focus-visible { outline: 2px solid var(--c-primary); outline-offset: var(--space-1); }
+  .tabla { width: 100%; min-width: 38rem; border-collapse: collapse; color: var(--c-ink-2); font-size: var(--text-sm); }
+  .tabla caption { padding: var(--space-3) var(--space-4); color: var(--c-ink); font-family: var(--font-heading); font-size: var(--text-base); font-weight: var(--weight-bold); text-align: left; caption-side: top; }
+  .tabla th, .tabla td { padding: var(--space-3) var(--space-4); border-bottom: 1px solid var(--c-border); text-align: left; vertical-align: top; line-height: var(--leading-relaxed); }
+  .tabla thead th { color: var(--c-ink); background: var(--c-surface); font-family: var(--font-heading); font-size: var(--text-xs); letter-spacing: .04em; text-transform: uppercase; }
+  .tabla tbody th { color: var(--c-ink); font-weight: var(--weight-bold); }
+  .tabla tr:last-child th, .tabla tr:last-child td { border-bottom: 0; }
+  .tabla__destacada { background: color-mix(in srgb, var(--c-primary) 8%, var(--c-white)); }
+</style>

@@ -24,7 +24,7 @@ const array = (source, key) => {
   )?.[1];
   return inline
     ? inline.split(",").map((value) => value.trim())
-    : [...list(source, key).matchAll(/^  - ([\\w-]+)$/gm)].map(
+    : [...list(source, key).matchAll(/^ {2}- ([\\w-]+)$/gm)].map(
         (match) => match[1],
       );
 };
@@ -74,7 +74,7 @@ test("enlaces de soporte apuntan a artículos existentes", () => {
   for (const id of ids) {
     const links = [
       ...list(frontmatter(id), "enlacesSoporte").matchAll(
-        /^  - (\/blog\/[^\s]+)$/gm,
+        /^ {2}- (\/blog\/[^\s]+)$/gm,
       ),
     ].map((match) => match[1]);
     for (const href of links)
@@ -112,4 +112,3 @@ test("GiroL3 toma el título y la descripción de cada artículo de soporte", ()
   );
   assert.doesNotMatch(source, /replaceAll\('-', ' '\)/);
 });
-

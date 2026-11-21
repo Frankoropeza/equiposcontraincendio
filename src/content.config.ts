@@ -2,7 +2,7 @@
 // ============================================================================
 // CANÓNICO D1: toda entidad repetible (producto, servicio, artículo, zona, caso)
 // vive en una Content Collection con esquema Zod .strict() — nunca hardcodeada
-// en .astro (anti-patrón D3). Astro 6 valida el frontmatter en build-time.
+// en .astro (anti-patrón D3). Astro 7 valida el frontmatter en build-time.
 //
 // DECISIONES Y SU ORIGEN (cada bloque cita de dónde se extrajo):
 //  • .strict() en todas las colecciones → MESECI/src/content.config.ts:70,82
@@ -26,8 +26,9 @@
 // del cliente. Los slugs DEBEN coincidir con TAXONOMY en src/config/site.ts.
 // ============================================================================
 
-import { defineCollection, reference, z } from 'astro:content';
+import { defineCollection, reference } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 import { SITE } from './config/site';
 import { extintoresL3Schema, serviceL3Schema } from './data/l3-schema';
 import { fichaHeadsSchema, fichaSchema } from './data/ficha-schema';
@@ -325,34 +326,6 @@ const zonas = defineCollection({
     .strict(),
 });
 
-// ── Colección: casos (casos de éxito / testimonios) ──────────────────────────
-// Prueba social. NO se emite aggregateRating fabricado (B4): el `rating` por
-// caso es dato real verificable y se muestra en página, no se agrega a un
-// AggregateRating global inventado. Origen: SEGURIDADPRIVADA testimonios:171-222.
-const casos = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/casos' }),
-  schema: z
-    .object({
-      title: z.string().min(10).max(110),
-      clientName: z.string(),
-      clientRole: z.string().optional(),
-      clientCompany: z.string().optional(),
-      clientLocation: z.string().optional(),
-      quote: z.string(), // testimonio textual real.
-      summary: z.string().optional(), // resumen del caso de éxito.
-      image: imagePath,
-      rating: z.number().min(1).max(5).optional(), // SOLO si es real y verificable.
-      // A qué categoría/servicio/producto pertenece el caso (interlinking).
-      relatedServices: z.array(reference('servicios')).optional(),
-      relatedProducts: z.array(reference('productos')).optional(),
-      date: z.coerce.date().optional(),
-      featured: z.boolean().default(false),
-      approved: z.boolean().default(true), // gate editorial — SEGURIDADPRIVADA.
-      draft: z.boolean().default(false),
-    })
-    .strict(),
-});
-
 // ── Colección: plantillas (formatos descargables) ────────────────────────────
 // Bloque E del plan de activos de utilidad pública (2026-09-09). Entidad
 // repetible con cuerpo propio → colección, nunca .astro sueltos (D1/D3).
@@ -435,10 +408,8 @@ const tramites = defineCollection({
       pending: z.array(z.string()).optional(),
       /** Fuentes oficiales consultadas. Obligatorio. */
       sources: z
-        // Validación de URL absoluta. `z.string().url()` marca un aviso de
-        // deprecación en Zod v4, pero `z.url()` sobre el re-export de astro:content
-        // dispara avisos en cascada: se queda el primero, que es el inocuo.
-        .array(z.object({ label: z.string(), url: z.string().url() }))
+        // Validación de URL absoluta con la API superior de Zod 4.
+        .array(z.object({ label: z.string(), url: z.url() }))
         .min(1),
       /** Fecha de la última verificación contra la fuente. Obligatorio. */
       verifiedAt: z.coerce.date(),
@@ -474,7 +445,7 @@ const giros = defineCollection({
       vitrina: z.array(z.string()).length(8), hermanos: z.array(z.string()).length(4), enlacesSoporte: z.array(z.string()),
       normas: z.array(z.object({ norma: z.string(), alcance: z.string(), aplica: z.string() })),
       faqs: z.array(z.object({ question: z.string(), answer: z.string() })).min(4).max(8),
-      sources: z.array(z.object({ label: z.string(), url: z.string().url() })).min(1), verifiedAt: z.coerce.date(), draft: z.boolean().optional(),
+      sources: z.array(z.object({ label: z.string(), url: z.url() })).min(1), verifiedAt: z.coerce.date(), draft: z.boolean().optional(),
     })
     .strict(),
 });

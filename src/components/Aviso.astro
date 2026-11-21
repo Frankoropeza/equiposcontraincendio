@@ -1,0 +1,51 @@
+---
+/**
+ * Bloque destacado para notas, advertencias y obligaciones visibles dentro de un artículo.
+ */
+export interface Props {
+  /** Variante visual y semántica del aviso. */
+  tipo?: 'nota' | 'advertencia' | 'obligacion';
+  /** Etiqueta breve que antecede al contenido, sin convertirse en encabezado del artículo. */
+  titulo?: string;
+}
+
+const { tipo = 'nota', titulo } = Astro.props;
+---
+
+<aside class:list={['aviso', `aviso--${tipo}`]} role="note">
+  {titulo && <p class="aviso__t">{titulo}</p>}
+  <div class="aviso__contenido"><slot /></div>
+</aside>
+
+<style>
+  .aviso {
+    margin-block: var(--space-6);
+    padding: var(--space-4) var(--space-5);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    background: var(--c-surface);
+    color: var(--c-ink-2);
+  }
+
+  .aviso--advertencia {
+    border-color: color-mix(in srgb, var(--c-primary) 38%, var(--c-border));
+    background: color-mix(in srgb, var(--c-primary) 8%, var(--c-white));
+  }
+
+  .aviso--obligacion {
+    border-color: color-mix(in srgb, var(--c-primary) 58%, var(--c-border));
+    background: color-mix(in srgb, var(--c-primary) 14%, var(--c-white));
+  }
+
+  .aviso__t {
+    margin: 0 0 var(--space-2);
+    color: var(--c-ink);
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    font-weight: var(--weight-bold);
+  }
+
+  .aviso__contenido {
+    line-height: var(--leading-relaxed);
+  }
+</style>

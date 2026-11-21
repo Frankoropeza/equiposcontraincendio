@@ -4,6 +4,7 @@
 // Mantiene secciones estáticas, sin animaciones salvo botones y retículas de cuatro.
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
+import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 import PageLayout from '@layouts/PageLayout.astro';
 import Hero from './Hero.astro';
 import SectionMenu from './SectionMenu.astro';
@@ -31,7 +32,7 @@ import { relDesc } from '@data/related-desc';
 
 interface Props {
   entry: CollectionEntry<'giros'>;
-  Content: any;
+  Content: AstroComponentFactory;
 }
 
 const { entry, Content } = Astro.props as Props;

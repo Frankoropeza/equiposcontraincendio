@@ -200,7 +200,9 @@ function shortDescription(value?: string) { return value ?? ''; }
         {variantes.map((variante, index) => {
           const id = slugify(variante.nombre);
           const item = { ...variante, id, fichaHref: `/productos/${slug}/#${id}`, imagen: variante.imagen };
-          return variante.agente ? <ExtintorCard item={item as any} index={index} showFicha={false} /> : <ProductVariantCard item={item} index={index} />;
+          return variante.agente
+            ? <ExtintorCard item={{ ...item, agente: variante.agente }} index={index} showFicha={false} />
+            : <ProductVariantCard item={item} index={index} />;
         })}
         {cierreVariantes.map((ficha) => <CatalogCierreCard ficha={ficha} visible />)}
       </div>

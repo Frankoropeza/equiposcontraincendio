@@ -1,0 +1,37 @@
+---
+/**
+ * Llamado a la acción para llevar al lector a una herramienta interna del sitio.
+ */
+export interface Props {
+  /** Nombre de la herramienta que se abrirá. */
+  titulo: string;
+  /** Explicación breve de lo que permite resolver la herramienta. */
+  descripcion: string;
+  /** Ruta interna absoluta de la herramienta. */
+  href: string;
+  /** Texto visible del enlace principal. */
+  etiquetaCta?: string;
+}
+
+const { titulo, descripcion, href, etiquetaCta = 'Abrir la calculadora' } = Astro.props;
+
+if (!href.startsWith('/')) {
+  throw new Error('Calculadora.astro: href debe ser una ruta interna que empiece con "/".');
+}
+---
+
+<aside class="calculadora" aria-label={titulo}>
+  <p class="calculadora__eyebrow">Herramienta</p>
+  <h2 class="calculadora__t">{titulo}</h2>
+  <p class="calculadora__d">{descripcion}</p>
+  <a class="calculadora__cta" href={href}>{etiquetaCta}</a>
+</aside>
+
+<style>
+  .calculadora { margin-block: var(--space-6); padding: var(--space-5); border: 1px solid var(--c-primary); border-radius: var(--radius-lg); background: color-mix(in srgb, var(--c-primary) 8%, var(--c-white)); }
+  .calculadora__eyebrow { margin: 0 0 var(--space-2); color: var(--c-primary); font-size: var(--text-xs); font-weight: var(--weight-bold); letter-spacing: .08em; text-transform: uppercase; }
+  .calculadora__t { margin: 0; color: var(--c-ink); font-family: var(--font-heading); font-size: var(--text-2xl); }
+  .calculadora__d { margin: var(--space-2) 0 var(--space-4); color: var(--c-ink-2); line-height: var(--leading-relaxed); }
+  .calculadora__cta { display: inline-flex; padding: var(--space-2) var(--space-4); border-radius: var(--radius-full); background: var(--c-primary); color: var(--c-white); font-weight: var(--weight-bold); text-decoration: none; }
+  .calculadora__cta:focus-visible { outline: 2px solid var(--c-ink); outline-offset: var(--space-1); }
+</style>

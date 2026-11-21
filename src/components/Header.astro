@@ -1147,10 +1147,14 @@ entre el último enlace y los botones del pie. El overlay cubre el resto. */
     const setMenu = (isOpen: boolean) => {
       if (!mobileNav || !burger) return
 
+      // Leer la geometría antes de cambiar `hidden` evita un layout síncrono
+      // forzado al abrir el menú en dispositivos móviles.
+      const headerBottom = isOpen && header
+        ? Math.max(0, Math.round(header.getBoundingClientRect().bottom))
+        : 0
       mobileNav.hidden = !isOpen
       if (isOpen) {
-        const bottom = header ? Math.max(0, Math.round(header.getBoundingClientRect().bottom)) : 0
-        mobileNav.style.top = `${bottom}px`
+        mobileNav.style.top = `${headerBottom}px`
       } else {
         closeMobileAccordions()
       }

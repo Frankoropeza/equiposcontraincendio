@@ -1,4 +1,4 @@
-import { z } from 'astro:content';
+import { z } from 'astro/zod';
 
 export const specSchema = z.object({ label: z.string(), value: z.string() }).strict();
 export const tarjetaSchema = z.object({ title: z.string(), href: z.string(), image: z.string(), imageAlt: z.string(), badge: z.string(), description: z.string(), specs: z.array(specSchema), ctaLabel: z.string() }).strict();

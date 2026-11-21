@@ -1,4 +1,4 @@
-import { z } from 'astro:content';
+import { z } from 'astro/zod';
 import type { z as Zod } from 'astro/zod';
 
 const headBodySchema = z.tuple([z.string(), z.string()]);

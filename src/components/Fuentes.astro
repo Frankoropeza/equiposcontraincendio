@@ -1,0 +1,58 @@
+---
+export interface Fuente {
+  /** Texto visible que identifica la fuente. */
+  label: string;
+  /** URL de la fuente consultada. */
+  url: string;
+  /** Fecha opcional de consulta o verificación. */
+  consultadoEl?: string | Date;
+}
+
+/**
+ * Fuentes de consulta que cierran un artículo con enlaces verificables.
+ */
+export interface Props {
+  /** Fuentes enlazadas utilizadas para elaborar o verificar el artículo. */
+  fuentes: Fuente[];
+  /** Etiqueta visible del bloque de fuentes. */
+  titulo?: string;
+}
+
+const { fuentes, titulo = 'Fuentes' } = Astro.props;
+const formatDate = (value: string | Date) => {
+  const date = new Date(value);
+  return {
+    date,
+    text: date.toLocaleDateString('es-MX', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      timeZone: 'UTC',
+    }),
+  };
+};
+---
+
+{fuentes.length > 0 && (
+  <section class="fuentes" aria-labelledby="fuentes-titulo">
+    <h2 id="fuentes-titulo" class="fuentes__t">{titulo}</h2>
+    <ul class="fuentes__lista" role="list">
+      {fuentes.map((fuente) => {
+        const consultada = fuente.consultadoEl ? formatDate(fuente.consultadoEl) : undefined;
+        return (
+          <li>
+            <a href={fuente.url} target="_blank" rel="noopener">{fuente.label}</a>
+            {consultada && <> <span>· Consultado el </span><time datetime={consultada.date.toISOString()}>{consultada.text}</time></>}
+          </li>
+        );
+      })}
+    </ul>
+  </section>
+)}
+
+<style>
+  .fuentes { margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid var(--c-border); }
+  .fuentes__t { margin: 0 0 var(--space-3); color: var(--c-ink); font-family: var(--font-heading); font-size: var(--text-xl); }
+  .fuentes__lista { display: grid; gap: var(--space-2); margin: 0; padding: 0; color: var(--c-muted); font-size: var(--text-sm); line-height: var(--leading-relaxed); list-style: none; }
+  .fuentes__lista a { color: var(--c-primary); }
+</style>

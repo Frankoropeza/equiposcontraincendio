@@ -5,6 +5,10 @@ on:
     branches: [main]
   workflow_dispatch:
 
+concurrency:
+  group: production-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -12,13 +16,13 @@ jobs:
       contents: read
       deployments: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           # Historia completa: el lastmod dinámico del sitemap usa `git log`
           # por archivo; con depth 1 todas las fechas serían las del HEAD.
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           # Lee .node-version en vez de fijar la mayor aqui: Astro 7 exige
           # Node >= 22.23.4 y el dato debe vivir en un solo lugar del repo.
@@ -27,14 +31,24 @@ jobs:
 
       - run: npm ci
 
+      - run: npm test
+
+      - run: npm run lint
+
       - run: npm run build
+
+      - name: Instalar navegador E2E
+        run: npx playwright install --with-deps chromium
+
+      - run: npm run test:e2e
+
       # Huella del commit DENTRO del artefacto publicado. El gate final se la
       # pide al dominio: si no la devuelve, el deploy no llego a produccion.
       - name: Sellar build-id
         run: echo "${{ github.sha }}" > dist/build-id.txt
 
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/wrangler-action@9acf94ace14e7dc412b076f2c5c20b8ce93c79cd # v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: e083e405e033eaa1228bec70c82ce9b1
@@ -51,8 +65,13 @@ jobs:
             sleep 10
             LIVE=$(curl -fsSL --max-time 15 "https://$DOMINIO/build-id.txt?cb=${RANDOM}${i}" 2>/dev/null | tr -d '[:space:]' || echo "")
             if [ "$LIVE" = "${{ github.sha }}" ]; then
-              echo "OK - $DOMINIO sirve ${GITHUB_SHA:0:12}"
-              exit 0
+              HEADERS=$(curl -fsSI --max-time 15 "https://$DOMINIO/" | tr -d '\r' || echo "")
+              if echo "$HEADERS" | grep -qi '^strict-transport-security: max-age=31536000' \
+                && echo "$HEADERS" | grep -qi '^content-security-policy-report-only:'; then
+                echo "OK - $DOMINIO sirve ${GITHUB_SHA:0:12} con encabezados de seguridad"
+                exit 0
+              fi
+              echo "intento $i/12 - el commit ya está activo, pero faltan HSTS o CSP Report-Only"
             fi
             echo "intento $i/12 - dominio devuelve '${LIVE:0:12}', esperado '${GITHUB_SHA:0:12}'"
           done

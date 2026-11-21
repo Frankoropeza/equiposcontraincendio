@@ -535,10 +535,10 @@ export function websiteSchema() {
  * ['LocalBusiness','SecurityService'] …). areaServed mapea ciudades.
  */
 export function localBusinessSchema(overrides?: { areaServed?: string[] }) {
-  const b = SITE.business ?? {};
-  const a = (b as any).address ?? {};
+  const b = SITE.business;
+  const a = b.address;
   return {
-    '@type': (b as any).type ?? 'LocalBusiness',
+    '@type': b.type,
     '@id': BUSINESS_ID,
     name: SITE.organization?.name ?? SITE.name,
     description: SITE.seo?.description ?? SITE.description ?? '',
@@ -548,7 +548,7 @@ export function localBusinessSchema(overrides?: { areaServed?: string[] }) {
     parentOrganization: { '@id': ORG_ID },
     telephone: CONTACT.phoneRaw ?? CONTACT.phone,
     email: CONTACT.email,
-    priceRange: (b as any).priceRange ?? '$$',
+    priceRange: b.priceRange,
     currenciesAccepted: 'MXN',
     ...(a.street || a.locality
       ? {
@@ -562,25 +562,25 @@ export function localBusinessSchema(overrides?: { areaServed?: string[] }) {
           },
         }
       : {}),
-    ...((b as any).geo
-      ? { geo: { '@type': 'GeoCoordinates', latitude: (b as any).geo.lat ?? (b as any).geo.latitude, longitude: (b as any).geo.lng ?? (b as any).geo.longitude } }
+    ...(b.geo
+      ? { geo: { '@type': 'GeoCoordinates', latitude: b.geo.lat, longitude: b.geo.lng } }
       : {}),
-    ...((b as any).openingHours
+    ...(b.openingHours
       ? {
           openingHoursSpecification: [
             {
               '@type': 'OpeningHoursSpecification',
               dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-              opens: (b as any).openingHours.weekdays?.opens ?? '09:00',
-              closes: (b as any).openingHours.weekdays?.closes ?? '18:00',
+              opens: b.openingHours.weekdays.opens,
+              closes: b.openingHours.weekdays.closes,
             },
-            ...((b as any).openingHours.saturday
-              ? [{ '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: (b as any).openingHours.saturday.opens, closes: (b as any).openingHours.saturday.closes }]
+            ...(b.openingHours.saturday
+              ? [{ '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: b.openingHours.saturday.opens, closes: b.openingHours.saturday.closes }]
               : []),
           ],
         }
       : {}),
-    areaServed: (overrides?.areaServed ?? (b as any).areaServed ?? ['Ciudad de México', 'Estado de México']).map((name: string) => ({ '@type': 'AdministrativeArea', name })),
+    areaServed: (overrides?.areaServed ?? b.areaServed).map((name) => ({ '@type': 'AdministrativeArea', name })),
     ...(SITE.organization?.sameAs?.length ? { sameAs: SITE.organization.sameAs } : {}),
   };
 }
@@ -718,32 +718,26 @@ export type ProductData = {
 };
 
 /**
- * Product + Offer honesto.
- * - Si NO hay `price`, el Offer se emite SIN `price` ni `priceSpecification`:
- *   patrón de negocio WhatsApp-first sin precio público. NUNCA `price: '0'`
- *   (Google lo interpreta como producto gratis).
+ * Product descriptivo y Offer únicamente cuando la oferta es verificable.
+ * - Sin precio público Y disponibilidad explícita, se omite `offers` completo.
+ * - Nunca se infiere `InStock`, vigencia, cobertura nacional ni `price: '0'`.
  * - aggregateRating/Review SOLO si emitReviews() valida reseñas reales.
  */
 export function productSchema(p: ProductData) {
   const url = absUrl(p.path);
-  const offer: Record<string, unknown> = {
-    '@type': 'Offer',
-    url,
-    priceCurrency: 'MXN',
-    availability: `https://schema.org/${p.availability ?? 'InStock'}`,
-    itemCondition: 'https://schema.org/NewCondition',
-    seller: { '@id': BUSINESS_ID },
-    areaServed: 'MX',
-  };
-  if (p.price) {
-    offer.price = p.price;
-    offer.priceValidUntil = `${new Date().getFullYear() + 1}-12-31`;
-  }
-  // Sin precio público NO se emite `price`: un `price: '0'` hace que Google lea
-  // la ficha como producto gratis. Esto impide el rich result de Product y Search
-  // Console marcará la advertencia de precio faltante; es una decisión consciente
-  // porque el negocio cotiza por WhatsApp y no publica precios. El Offer queda con
-  // url/priceCurrency/availability/seller (auditoría 2026-11-19).
+  const normalizedPrice = p.price?.trim() ?? '';
+  const numericPrice = Number(normalizedPrice);
+  const hasVerifiablePrice = normalizedPrice !== '' && Number.isFinite(numericPrice) && numericPrice > 0;
+  const offer = hasVerifiablePrice && p.availability
+    ? {
+        '@type': 'Offer',
+        url,
+        price: normalizedPrice,
+        priceCurrency: 'MXN',
+        availability: `https://schema.org/${p.availability}`,
+        seller: { '@id': BUSINESS_ID },
+      }
+    : undefined;
   return {
     '@type': 'Product',
     '@id': `${url}#product`,
@@ -791,7 +785,7 @@ export function productSchema(p: ProductData) {
     // fabricante —distinta del nombre del sitio— y `manufacturer` desaparece.
     ...(p.brand && p.brand !== SITE.name ? { brand: { '@type': 'Brand', name: p.brand } } : {}),
     url,
-    offers: offer,
+    ...(offer ? { offers: offer } : {}),
     ...emitReviews(p.reviews),
   };
 }
@@ -818,7 +812,7 @@ export function serviceSchema(s: ServiceData) {
     url,
     ...(s.image ? { image: absImage(s.image) } : {}),
     provider: { '@id': BUSINESS_ID },
-    areaServed: (s.areaServed ?? (SITE.business as any)?.areaServed ?? ['Ciudad de México']).map((name: string) => ({ '@type': 'AdministrativeArea', name })),
+    areaServed: (s.areaServed ?? SITE.business.areaServed).map((name) => ({ '@type': 'AdministrativeArea', name })),
     availableChannel: {
       '@type': 'ServiceChannel',
       serviceUrl: url,
@@ -951,6 +945,34 @@ export function faqSchema(items: FaqItem[]) {
       '@type': 'Question',
       name: f.question,
       acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  };
+}
+
+export type HowToData = {
+  name: string;
+  steps: { name: string; text: string; image?: string }[];
+  totalTime?: string;
+};
+
+/**
+ * HowTo — emítelo SOLO si el procedimiento es visible en el artículo.
+ *
+ * CAVEAT (alineado con faqSchema · mayo 2026): Google retiró los rich results
+ * de HowTo. Este nodo no promete snippets de Google; se conserva para Bing,
+ * DuckDuckGo y motores de IA que todavía aprovechan el contexto estructurado.
+ * Es una función pura, sin side effects ni emisión desde componentes.
+ */
+export function howToSchema(data: HowToData) {
+  return {
+    '@type': 'HowTo',
+    name: data.name,
+    ...(data.totalTime ? { totalTime: data.totalTime } : {}),
+    step: data.steps.map((step) => ({
+      '@type': 'HowToStep',
+      name: step.name,
+      text: step.text,
+      ...(step.image ? { image: step.image } : {}),
     })),
   };
 }
@@ -1161,6 +1183,7 @@ export type SchemaData = {
   product?: ProductData;
   service?: ServiceData;
   article?: ArticleData;
+  howTo?: HowToData;
   techArticle?: TechArticleData;  // opt-in: emite TechArticle (docs/módulos)
   faqs?: FaqItem[];
   webPage?: WebPageData;
@@ -1192,6 +1215,7 @@ export function buildSchema(pageType: PageType, data: SchemaData = {}): object[]
       break;
     case 'article':
       if (data.article) out.push({ '@context': CTX, ...articleSchema(data.article) });
+      if (data.howTo) out.push({ '@context': CTX, ...howToSchema(data.howTo) });
       break;
     case 'techArticle':
       // Convivencia: el nodo TechArticle se emite ABAJO (igual que FAQ),

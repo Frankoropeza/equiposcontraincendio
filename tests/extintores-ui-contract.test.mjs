@@ -61,7 +61,7 @@ test('las L3 no usan retículas de 3 ni de 2 columnas', () => {
 });
 
 test('cada vitrina L3 tiene fichas en múltiplos de 4, con 3 specs cada una', () => {
-  for (const { data, list, content } of L3) {
+  for (const { content } of L3) {
     if (content) {
       const frontmatter = readFrontmatter(content);
       const fichas = frontmatter.vitrina?.tarjetas ?? frontmatter.tarjetas;

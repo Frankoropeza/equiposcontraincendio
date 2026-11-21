@@ -1,8 +1,6 @@
 // Datos editoriales repetibles de la HOME.
 // Los valores se mantienen aquí para que index.astro solo componga componentes.
 
-import { COVERAGE_STATES, SERVICES, SHOWCASE } from "@config/site";
-
 export type HomeRiskRow = {
   nivel: string;
   ejemplos: string;
