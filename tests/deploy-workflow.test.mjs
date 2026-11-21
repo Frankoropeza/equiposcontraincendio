@@ -32,5 +32,6 @@ test('los deploys de producción se serializan y cancelan ejecuciones obsoletas'
 
 test('el gate en producción comprueba los encabezados de seguridad', () => {
   assert.match(workflow, /strict-transport-security/i);
-  assert.match(workflow, /content-security-policy-report-only/i);
+  assert.match(workflow, /content-security-policy:/i);
+  assert.doesNotMatch(workflow, /content-security-policy-report-only/i);
 });

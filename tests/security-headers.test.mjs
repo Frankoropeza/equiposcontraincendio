@@ -12,8 +12,9 @@ test('Cloudflare publica HSTS sin afectar subdominios no auditados', () => {
   assert.doesNotMatch(headers, /Strict-Transport-Security:.*includeSubDomains/i);
 });
 
-test('la CSP se despliega primero en modo Report-Only', () => {
-  assert.match(headers, /Content-Security-Policy-Report-Only:/);
+test('la CSP se aplica en modo estricto tras validar producción', () => {
+  assert.match(headers, /^\s*Content-Security-Policy:/m);
+  assert.doesNotMatch(headers, /Content-Security-Policy-Report-Only:/);
   assert.match(headers, /default-src 'self'/);
   assert.match(headers, /object-src 'none'/);
   assert.match(headers, /script-src 'self' https:\/\/static\.cloudflareinsights\.com/);

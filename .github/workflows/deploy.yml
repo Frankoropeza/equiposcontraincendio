@@ -67,11 +67,11 @@ jobs:
             if [ "$LIVE" = "${{ github.sha }}" ]; then
               HEADERS=$(curl -fsSI --max-time 15 "https://$DOMINIO/" | tr -d '\r' || echo "")
               if echo "$HEADERS" | grep -qi '^strict-transport-security: max-age=31536000' \
-                && echo "$HEADERS" | grep -qi '^content-security-policy-report-only:'; then
+                && echo "$HEADERS" | grep -qi '^content-security-policy:'; then
                 echo "OK - $DOMINIO sirve ${GITHUB_SHA:0:12} con encabezados de seguridad"
                 exit 0
               fi
-              echo "intento $i/12 - el commit ya está activo, pero faltan HSTS o CSP Report-Only"
+              echo "intento $i/12 - el commit ya está activo, pero faltan HSTS o CSP estricta"
             fi
             echo "intento $i/12 - dominio devuelve '${LIVE:0:12}', esperado '${GITHUB_SHA:0:12}'"
           done
