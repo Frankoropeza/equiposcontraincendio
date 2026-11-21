@@ -85,6 +85,8 @@ export const SITE = {
     slogan: 'Equipos contra incendios con más de 35 años en el mercado mexicano',
     legalName: undefined as string | undefined, // Razón social PENDIENTE (Frank la enviará). No se emite hasta tenerla.
     logo: '/images/brand/logo-coninc-equipo-contra-incendio.webp',
+    logoSrcset:
+      '/images/brand/logo-coninc-equipo-contra-incendio-300.webp 300w, /images/brand/logo-coninc-equipo-contra-incendio-400.webp 400w, /images/brand/logo-coninc-equipo-contra-incendio-450.webp 450w, /images/brand/logo-coninc-equipo-contra-incendio.webp 600w',
     foundingDate: undefined as string | undefined, // Solo «más de 35 años»: sin año exacto por decisión de Frank.
     sameAs: [] as string[], // Solo perfiles verificados (deja [] si no hay).
   },

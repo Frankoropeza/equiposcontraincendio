@@ -26,6 +26,8 @@ const isExact = (item: (typeof NAV)[number]) =>
       <img
         class="hdr-logo__image"
         src={SITE.organization.logo}
+        srcset={SITE.organization.logoSrcset}
+        sizes="(max-width: 1023px) 138px, 152px"
         width="600"
         height="200"
         alt="CONINC — equipos contra incendios"

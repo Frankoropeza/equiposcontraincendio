@@ -42,6 +42,7 @@
 //   ctaLabel       → texto del botón principal (default "Catálogo completo").
 //   index          → posición en el grid; los primeros cargan la imagen `eager`.
 //   priority       → marca el recurso LCP y añade `fetchpriority="high"`.
+//   loading        → permite forzar `eager` o `lazy` según la posición real.
 //   disabled       → tarjeta sin enlace (módulo "próximo").
 //
 // ESTILO: tokens de src/styles/tokens.css. A11y: filas de 44 px, foco visible.
@@ -61,6 +62,7 @@ interface Props {
   ctaLabel?: string;
   index?: number;
   priority?: boolean;
+  loading?: 'eager' | 'lazy';
   disabled?: boolean;
   external?: boolean;
 }
@@ -75,10 +77,11 @@ const {
   ctaLabel = "Equipos contra incendios",
   index = 99,
   priority = false,
+  loading,
   disabled = false,
   external = false,
 } = Astro.props;
-const eager = priority || index < 4;
+const imageLoading = loading ?? (priority || index < 4 ? 'eager' : 'lazy');
 // 'disabled' (p. ej. módulo 'próximo'): ni la imagen ni las filas enlazan.
 const MediaTag = disabled ? "div" : "a";
 const RowTag = disabled ? "span" : "a";
@@ -92,7 +95,7 @@ const RowTag = disabled ? "span" : "a";
           src={image}
           alt={imageAlt ?? label}
           width="640" height="400"
-          loading={eager ? "eager" : "lazy"}
+          loading={imageLoading}
           decoding="async"
           srcset={srcsetFor(image)}
           sizes="(min-width: 1280px) 21vw, (min-width: 640px) 45vw, 92vw"

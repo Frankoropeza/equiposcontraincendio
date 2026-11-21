@@ -58,6 +58,7 @@ const enFrase = (s: string) => (/^[A-ZÁÉÍÓÚÑ]{2}/.test(s) ? s : s.charAt(0
             blurb={f.data.cardDescription}
             ctaLabel={f.data.ctaLabel}
             index={i}
+            loading="lazy"
           />
         ))}
         <CategoryCard
@@ -69,6 +70,7 @@ const enFrase = (s: string) => (/^[A-ZÁÉÍÓÚÑ]{2}/.test(s) ? s : s.charAt(0
           blurb="Requisitos de Protección Civil por tipo de negocio en CDMX y Edomex."
           ctaLabel="Protección civil por giro"
           index={fichas.length}
+          loading="lazy"
         />
       </div>
     </div>

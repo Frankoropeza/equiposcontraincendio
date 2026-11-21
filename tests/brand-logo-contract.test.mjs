@@ -8,6 +8,13 @@ const assetPath = path.join(
   projectRoot,
   'public/images/brand/logo-coninc-equipo-contra-incendio.webp',
 );
+const responsiveWidths = [300, 400, 450];
+const responsiveAssetPaths = responsiveWidths.map((width) =>
+  path.join(
+    projectRoot,
+    `public/images/brand/logo-coninc-equipo-contra-incendio-${width}.webp`,
+  ),
+);
 const siteSource = fs.readFileSync(path.join(projectRoot, 'src/config/site.ts'), 'utf8');
 const headerSource = fs.readFileSync(path.join(projectRoot, 'src/components/Header.astro'), 'utf8');
 const footerSource = fs.readFileSync(path.join(projectRoot, 'src/components/Footer.astro'), 'utf8');
@@ -41,6 +48,26 @@ test('el logo corporativo optimizado existe y es la fuente de verdad de la marca
   );
 });
 
+test('el logo ofrece variantes responsive más ligeras para la interfaz', () => {
+  for (const [index, responsiveAssetPath] of responsiveAssetPaths.entries()) {
+    const width = responsiveWidths[index];
+    assert.ok(fs.existsSync(responsiveAssetPath), `Falta la variante WebP de ${width}px`);
+    assert.deepEqual(readWebpExtendedDimensions(responsiveAssetPath), {
+      width,
+      height: Math.round(width / 3),
+    });
+    assert.ok(
+      fs.statSync(responsiveAssetPath).size < fs.statSync(assetPath).size,
+      `La variante de ${width}px no reduce el peso del logo original`,
+    );
+  }
+
+  assert.match(
+    siteSource,
+    /logoSrcset:\s*['"][^'"]+-300\.webp 300w,[^'"]+-400\.webp 400w,[^'"]+-450\.webp 450w,[^'"]+\.webp 600w['"]/,
+  );
+});
+
 test('header y footer usan el logo corporativo con dimensiones y texto alternativo', () => {
   for (const [component, source] of [
     ['Header', headerSource],
@@ -51,10 +78,18 @@ test('header y footer usan el logo corporativo con dimensiones y texto alternati
     assert.match(source, /height="200"/, `${component} no declara el alto intrínseco`);
     assert.match(
       source,
+      /srcset=\{SITE\.organization\.logoSrcset\}/,
+      `${component} no ofrece las variantes responsive del logo`,
+    );
+    assert.match(
+      source,
       /alt="CONINC — equipos contra incendios"/,
       `${component} no describe correctamente la marca`,
     );
   }
+
+  assert.match(headerSource, /sizes="\(max-width: 1023px\) 138px, 152px"/);
+  assert.match(footerSource, /sizes="188px"/);
 });
 
 test('los tamaños visuales del logo corresponden al header y footer aprobados', () => {
