@@ -1,6 +1,6 @@
-/productos/extintor-pqs-6kg /productos/extintor-pqs 301
-/productos/extintor-co2-45kg /productos/extintor-co2 301
-/productos/extintor-clase-k-6l /productos/extintor-clase-k 301
+/productos/extintor-pqs-6kg /productos/extintor-pqs/ 301
+/productos/extintor-co2-45kg /productos/extintor-co2/ 301
+/productos/extintor-clase-k-6l /productos/extintor-clase-k/ 301
 # 2026-09-17: las páginas de etiqueta (/blog/tag/) se retiraron (103 URLs noindex, 77 con un solo artículo).
 /blog/tag/* /blog/ 301
 # 2026-11-19: aquí había una regla `https://www.…/*` que Cloudflare Pages IGNORA

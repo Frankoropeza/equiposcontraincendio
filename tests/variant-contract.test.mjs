@@ -45,7 +45,7 @@ test('los extintores usan slugs de familia y conservan redirects 301', () => {
   for (const file of old) assert.equal(fs.existsSync(path.join('src/content/productos', file)), false, `Slug antiguo aún activo: ${file}`);
 
   const redirects = read('public/_redirects');
-  assert.match(redirects, /^\/productos\/extintor-pqs-6kg \/productos\/extintor-pqs 301$/m);
-  assert.match(redirects, /^\/productos\/extintor-co2-45kg \/productos\/extintor-co2 301$/m);
-  assert.match(redirects, /^\/productos\/extintor-clase-k-6l \/productos\/extintor-clase-k 301$/m);
+  assert.match(redirects, /^\/productos\/extintor-pqs-6kg \/productos\/extintor-pqs\/ 301$/m);
+  assert.match(redirects, /^\/productos\/extintor-co2-45kg \/productos\/extintor-co2\/ 301$/m);
+  assert.match(redirects, /^\/productos\/extintor-clase-k-6l \/productos\/extintor-clase-k\/ 301$/m);
 });
