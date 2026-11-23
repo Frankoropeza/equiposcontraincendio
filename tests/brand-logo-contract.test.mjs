@@ -88,7 +88,7 @@ test('header y footer usan el logo corporativo con dimensiones y texto alternati
     );
   }
 
-  assert.match(headerSource, /sizes="\(max-width: 1023px\) 138px, 152px"/);
+  assert.match(headerSource, /sizes="\(max-width: 1023px\) 179\.4px, 197\.6px"/);
   assert.match(footerSource, /sizes="188px"/);
 });
 
@@ -98,8 +98,8 @@ test('los tamaños visuales del logo corresponden al header y footer aprobados',
   const mobileMenuStyles = headerSource.slice(mobileMenuStart, componentStyleEnd);
 
   assert.ok(mobileMenuStart >= 0 && componentStyleEnd > mobileMenuStart);
-  assert.match(headerSource, /\.hdr-logo__image\s*\{[\s\S]*?width:\s*152px;/);
-  assert.match(mobileMenuStyles, /\.hdr-logo__image\s*\{[\s\S]*?width:\s*138px;/);
+  assert.match(headerSource, /\.hdr-logo__image\s*\{[\s\S]*?width:\s*197\.6px;/);
+  assert.match(mobileMenuStyles, /\.hdr-logo__image\s*\{[\s\S]*?width:\s*179\.4px;/);
   assert.match(footerSource, /\.footer__logo-image\s*\{[\s\S]*?width:\s*188px;/);
   assert.match(footerSource, /\.footer__logo\s*\{[\s\S]*?background:\s*#[fF]7[fF]5[fF]2;/);
 });
