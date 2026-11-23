@@ -6,7 +6,6 @@ cardDescription: "Enfría con gota fina, sin el chorro conductor ni el polvo del
 category: extintores
 image: /images/productos/extintor-agua-nebulizada-inoxidable.avif
 price: "Cotizar"
-brand: "CONINC"
 order: 44
 seoTitle: "Extintor de agua nebulizada para hospital"
 seoDescription: "Extintor de agua nebulizada de acero inoxidable, 6 y 9 litros, para hospital, museo y archivo. Venta y recarga en CDMX y Edomex."
@@ -50,38 +49,6 @@ variantes:
     formato: "portatil"
     clases: [A]
     usos: [oficina, hotel]
-  - nombre: "Equipo con boquilla de alcance extendido"
-    desc: "Con lanza o manguera que permite operar a mayor distancia del foco, útil en recintos con mobiliario denso o donde conviene no acercarse, como un archivo de estantería alta."
-    specs: "Agua nebulizada · Lanza o manguera · Mayor distancia de operación · Clase A"
-    resumen: "Lanza o manguera para operar a distancia en recintos de estantería densa."
-    waText: "Hola, quiero cotizar extintores de agua nebulizada con lanza extendida"
-    agente: "agua-nebulizada"
-    capacidad: "9 L"
-    formato: "portatil"
-    clases: [A]
-    usos: [oficina, bodega]
-  - nombre: "Equipo con aditivo para clase K"
-    badge: "Verificar listado"
-    desc: "Versiones con aditivo listadas también para fuegos de aceite de cocina. Solo aplica si el listado del equipo lo declara: no se asume por ser nebulizada, y no sustituye al sistema de campana."
-    specs: "Agua nebulizada con aditivo · Clase A y K según listado · Verificar ficha del equipo"
-    resumen: "Con aditivo y listado para clase K; solo si la ficha del equipo lo declara."
-    waText: "Hola, quiero cotizar extintores de agua nebulizada con aditivo para clase K"
-    agente: "agua-nebulizada"
-    capacidad: "6 L"
-    formato: "portatil"
-    clases: [A, K]
-    usos: [restaurante]
-  - nombre: "Mantenimiento y revisión de boquilla"
-    badge: "Servicio"
-    desc: "Mantenimiento conforme a la NOM-154-SCFI-2005 con revisión específica de la boquilla, cuyos orificios finos son el punto donde se arruina el desempeño del equipo."
-    specs: "Mantenimiento NOM-154 · Revisión de boquilla · Etiqueta y collarín de servicio"
-    resumen: "Mantenimiento con revisión de la boquilla, que es donde se pierde el desempeño."
-    waText: "Hola, quiero cotizar el mantenimiento de mis extintores de agua nebulizada"
-    agente: "agua-nebulizada"
-    capacidad: "Según equipo"
-    formato: "portatil"
-    clases: [A]
-    usos: [oficina]
 relatedProducts:
   - extintor-agua
   - extintor-agente-limpio
@@ -109,7 +76,7 @@ ficha:
       value: 6 y 9 litros
   showcaseTitle: Datos clave
   showcaseAccent: del agua nebulizada
-  showcaseDesc: Capacidades, lanza extendida, aditivo K y revisión de boquilla.
+  showcaseDesc: Presentaciones de agua nebulizada de 6 y 9 litros.
   faqAccent: sobre agua nebulizada
   guia:
     title: Cuándo conviene el
@@ -120,7 +87,7 @@ fichaHeads:
     - "Hay inmuebles donde el daño del remedio importa tanto como el del fuego: un quirófano, un archivo histórico, una sala con obra."
     - La niebla fina enfría igual con mucha menos agua y sin la nube de polvo que obliga a limpiar todo después.
   presentaciones:
-    - Las presentaciones van por capacidad y por accesorio de descarga, más la versión con aditivo para clase K.
+    - "Las presentaciones se distinguen por capacidad: 6 y 9 litros."
     - "El mantenimiento va aparte porque aquí hay un punto propio: la boquilla de orificios finos."
   comparativa:
     - La tabla compara el agua nebulizada con el agua a chorro y con los agentes para equipo energizado.

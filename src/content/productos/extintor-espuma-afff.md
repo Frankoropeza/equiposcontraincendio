@@ -6,7 +6,6 @@ cardDescription: "Sella el líquido inflamable para que no se reencienda. Clases
 category: extintores
 image: /images/productos/extintor-espuma-afff-portatil.avif
 price: "Cotizar"
-brand: "CONINC"
 order: 43
 seoTitle: "Extintor de espuma AFFF para clase A y B"
 seoDescription: "Extintor de espuma AFFF de 6 y 9 litros y móviles sobre ruedas, para líquidos inflamables. Venta y recarga en CDMX y Edomex."
@@ -71,17 +70,6 @@ variantes:
     formato: "movil"
     clases: [A, B]
     usos: [industria]
-  - nombre: "Recarga y reemplazo de concentrado"
-    badge: "Servicio"
-    desc: "Recarga conforme a la NOM-154-SCFI-2005 con reemplazo del concentrado de espuma, que tiene vida útil propia: un manómetro en verde no dice nada sobre el estado del agente."
-    specs: "Recarga NOM-154 · Reemplazo de concentrado · Etiqueta y collarín de servicio"
-    resumen: "Recarga con reemplazo del concentrado, que caduca aunque el manómetro esté en verde."
-    waText: "Hola, quiero cotizar la recarga de mis extintores de espuma"
-    agente: "espuma"
-    capacidad: "Según equipo"
-    formato: "portatil"
-    clases: [A, B]
-    usos: [industria, bodega]
 relatedProducts:
   - extintor-pqs
   - extintor-agua
@@ -109,7 +97,7 @@ ficha:
       value: 50 y 150 litros
   showcaseTitle: Datos clave
   showcaseAccent: del extintor de espuma
-  showcaseDesc: Capacidades, formatos y el reemplazo del concentrado.
+  showcaseDesc: Capacidades portátiles y móviles de espuma AFFF.
   faqAccent: sobre extintores de espuma
   guia:
     title: Cuándo conviene un

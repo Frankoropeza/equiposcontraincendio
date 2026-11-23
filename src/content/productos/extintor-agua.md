@@ -1,6 +1,6 @@
 ---
 title: "Extintores de agua, agua nebulizada y espuma AFFF"
-description: "Extintores de agua a presión (clase A), agua nebulizada (A y C) y espuma AFFF (A y B), portátiles y sobre ruedas, para sólidos y líquidos inflamables."
+description: "Compara agua a presión, agua nebulizada y espuma AFFF. Revisa sus diferencias y confirma agente, clasificación y modelo antes de cotizar en CDMX y Edomex."
 cardTitle: "Extintores de agua y espuma AFFF"
 cardDescription: "Agua a presión, agua nebulizada y espuma AFFF, portátiles y sobre ruedas."
 category: extintores
@@ -12,118 +12,99 @@ seoDescription: "El extintor de agua a presión, el de agua nebulizada y el de e
 variantes:
   - nombre: "Extintor de agua a presión de 9 L"
     badge: "Clase A"
-    desc: "La presentación portátil de referencia para sólidos combustibles: papel, madera, cartón y textiles. Enfría la brasa y reduce la reignición, sin dejar polvo en el área. No debe dirigirse contra equipo eléctrico energizado."
+    desc: "Presentación de 9 L para evaluar según el agente, el combustible y la clasificación del modelo. Confirma peso total, dimensiones, accesorios y disponibilidad en la cotización."
     specs: "Agua a presión · 9 L · Fuego clase A · Portátil · No apto para equipo energizado"
-    waText: "Hola, necesito cotizar un extintor de agua a presión de 9 litros en CDMX"
-    resumen: "Para archivos, bodegas de material seco y carpinterías: apaga sin dejar polvo."
+    waText: "Hola, quiero cotizar: Extintor de agua a presión de 9 L. Cantidad: __. Ubicación: __. Solicito marca, modelo, ficha técnica, accesorios y plazo de entrega."
+    resumen: "Presentación de 9 L; verifica compatibilidad con el combustible y documentación del modelo."
     agente: "agua"
     capacidad: "9 L"
     formato: "portatil"
-    clases: [A]
-    usos: [bodega, oficina, hotel, comercio]
+    clases: [ A ]
+    usos: [ bodega, oficina, hotel, comercio ]
   - nombre: "Unidad móvil de agua a presión de 50 L"
     badge: "Sobre ruedas"
-    desc: "Equipo sobre ruedas para bodegas, patios de maniobra y áreas con acumulación de material combustible, donde un portátil se queda corto. Requiere ruta de acceso libre y personal que sepa desplegar la manguera."
+    desc: "Presentación de 50 L para evaluar según el agente, el combustible y la clasificación del modelo. Confirma peso total, dimensiones, accesorios y disponibilidad en la cotización."
     specs: "Agua a presión · 50 L · Fuego clase A · Móvil · No apto para equipo energizado"
-    waText: "Hola, necesito cotizar una unidad móvil de agua a presión de 50 litros en CDMX"
-    resumen: "Unidad sobre ruedas para naves y patios con mucho material sólido combustible."
+    waText: "Hola, quiero cotizar: Unidad móvil de agua a presión de 50 L. Cantidad: __. Ubicación: __. Solicito marca, modelo, ficha técnica, accesorios y plazo de entrega."
+    resumen: "Presentación de 50 L; verifica compatibilidad con el combustible y documentación del modelo."
     agente: "agua"
     capacidad: "50 L"
     formato: "movil"
-    clases: [A]
-    usos: [bodega, industria]
+    clases: [ A ]
+    usos: [ bodega, industria ]
   - nombre: "Extintor de agua nebulizada de 6 L"
-    badge: "Apto clase C"
-    desc: "Agua desionizada que sale en niebla fina. Esa combinación le da la clasificación 2A:C del fabricante: apaga sólidos y puede usarse donde hay riesgo eléctrico, sin el residuo del polvo. Se usa en hospitales, telecomunicaciones y cuartos limpios."
-    specs: "Agua desionizada nebulizada · 6 L (1.75 gal) · Clasificación 2A:C · Portátil · Sin residuo"
-    waText: "Hola, necesito cotizar un extintor de agua nebulizada de 6 litros en CDMX"
-    resumen: "Agua desionizada en niebla que se puede usar cerca de equipo eléctrico. Para hospitales y telecom."
+    desc: "Agua nebulizada en presentación de 6 L. La aptitud para riesgo eléctrico solo puede confirmarse con la clasificación y las instrucciones del modelo, no por el tamaño de gota o la capacidad."
+    specs: "Agua nebulizada · 6 L · Portátil · Clasificación según modelo"
+    waText: "Hola, quiero cotizar: Extintor de agua nebulizada de 6 L. Cantidad: __. Ubicación: __. Solicito marca, modelo, ficha técnica, accesorios y plazo de entrega."
+    resumen: "Confirma clasificación e instrucciones del modelo antes de considerar su uso junto a equipo eléctrico."
     agente: "agua-nebulizada"
-    capacidad: "6 L (1.75 gal)"
+    capacidad: "6 L"
     formato: "portatil"
-    clases: [A, C]
-    usos: [site, hotel, oficina]
-    clasificacion: "2A:C"
+    usos: [ site, hotel, oficina ]
+    validacion: pendiente
   - nombre: "Extintor de agua nebulizada de 9.46 L"
-    desc: "La versión de mayor carga del agua nebulizada, con la misma clasificación 2A:C. Conviene en áreas amplias con equipo sensible, donde el polvo químico dañaría lo que se quiere proteger y el CO₂ no cubre fuegos de sólidos."
-    specs: "Agua desionizada nebulizada · 9.46 L (2.5 gal) · Clasificación 2A:C · Portátil · Sin residuo"
-    waText: "Hola, necesito cotizar un extintor de agua nebulizada de 9.46 litros en CDMX"
-    resumen: "Más carga de agua nebulizada para áreas amplias con equipo sensible."
+    desc: "Agua nebulizada en presentación de 9.46 L (2.5 gal). La aptitud para riesgo eléctrico solo puede confirmarse con la clasificación y las instrucciones del modelo, no por el tamaño de gota o la capacidad."
+    specs: "Agua nebulizada · 9.46 L (2.5 gal) · Portátil · Clasificación según modelo"
+    waText: "Hola, quiero cotizar: Extintor de agua nebulizada de 9.46 L. Cantidad: __. Ubicación: __. Solicito marca, modelo, ficha técnica, accesorios y plazo de entrega."
+    resumen: "Confirma clasificación e instrucciones del modelo antes de considerar su uso junto a equipo eléctrico."
     agente: "agua-nebulizada"
     capacidad: "9.46 L (2.5 gal)"
     formato: "portatil"
-    clases: [A, C]
-    usos: [site, hotel, industria]
-    clasificacion: "2A:C"
+    usos: [ site, hotel, industria ]
+    validacion: pendiente
   - nombre: "Extintor de espuma AFFF de 9 L"
     badge: "Clases A y B"
-    desc: "Agua con espumante AFFF que forma una película sobre el líquido inflamable y corta el vapor que alimenta la flama. Cubre sólidos y líquidos como gasolina, diésel o aceites. No es apto para alcoholes ni solventes polares."
+    desc: "Presentación de 9 L para evaluar según el agente, el combustible y la clasificación del modelo. Confirma peso total, dimensiones, accesorios y disponibilidad en la cotización."
     specs: "Agua + espumante AFFF · 9 L · Fuegos A y B · Portátil · No apto para equipo energizado"
-    waText: "Hola, necesito cotizar un extintor de espuma AFFF de 9 litros en CDMX"
-    resumen: "Para talleres y áreas con gasolina, diésel o aceites; también cubre sólidos."
+    waText: "Hola, quiero cotizar: Extintor de espuma AFFF de 9 L. Cantidad: __. Ubicación: __. Solicito marca, modelo, ficha técnica, accesorios y plazo de entrega."
+    resumen: "Presentación de 9 L; verifica compatibilidad con el combustible y documentación del modelo."
     agente: "espuma"
     capacidad: "9 L"
     formato: "portatil"
-    clases: [A, B]
-    usos: [industria, bodega]
+    clases: [ A, B ]
+    usos: [ industria, bodega ]
   - nombre: "Unidad móvil de espuma AFFF de 50 L"
     badge: "Sobre ruedas"
-    desc: "Espuma AFFF en volumen para talleres, patios de combustible y almacenes de líquidos inflamables. Da tiempo de descarga suficiente para cubrir un derrame encendido que superaría a un portátil."
+    desc: "Presentación de 50 L para evaluar según el agente, el combustible y la clasificación del modelo. Confirma peso total, dimensiones, accesorios y disponibilidad en la cotización."
     specs: "Agua + espumante AFFF · 50 L · Fuegos A y B · Móvil · No apto para equipo energizado"
-    waText: "Hola, necesito cotizar una unidad móvil de espuma AFFF de 50 litros en CDMX"
-    resumen: "Unidad móvil de espuma para patios de combustible y almacenes de líquidos inflamables."
+    waText: "Hola, quiero cotizar: Unidad móvil de espuma AFFF de 50 L. Cantidad: __. Ubicación: __. Solicito marca, modelo, ficha técnica, accesorios y plazo de entrega."
+    resumen: "Presentación de 50 L; verifica compatibilidad con el combustible y documentación del modelo."
     agente: "espuma"
     capacidad: "50 L"
     formato: "movil"
-    clases: [A, B]
-    usos: [industria]
+    clases: [ A, B ]
+    usos: [ industria ]
 faqs:
-  - question: "¿Qué es un extintor de agua y cuáles son sus características?"
-    answer: "Es el tipo de extintor cuyo agente extintor es agua, con o sin espumante, impulsada por un gas a presión contenida en el mismo cilindro. Sus características son las que explican su uso: enfría el material hasta cortar la combustión, por eso su eficacia está en los sólidos que dejan brasa (papel, cartón, madera y textiles); no deja polvo que limpiar; y en extintor portátil va de 6 a 9.46 L, con unidades sobre ruedas de 50 L. Es el mismo principio con el que trabaja un bombero con la línea de agua, a otra escala. Su límite es claro: el agua a presión y la espuma conducen la corriente, así que no se dirigen a equipo energizado; para eso está la versión nebulizada con agua desionizada."
-  - question: "¿Puedo usar un extintor de agua en un tablero eléctrico?"
-    answer: "El de agua a presión y el de espuma AFFF, no: conducen la corriente y ponen en riesgo a quien los usa. La excepción es el agua nebulizada desionizada, que el fabricante clasifica también para clase C."
-  - question: "¿Qué diferencia hay entre el extintor de agua y el de espuma AFFF?"
-    answer: "Los dos son a base de agua, pero la AFFF lleva un espumante que forma una película sobre el líquido inflamable. Por eso el agua a presión es solo para sólidos (clase A) y la espuma cubre además líquidos inflamables (clase B)."
-  - question: "¿Cuáles son los extintores a base de agua?"
-    answer: "Son tres, dentro de los diferentes tipos de extintores que existen: el de agua a presión, para sólidos combustibles (clase A); el de agua nebulizada, con clase A y la clasificación adicional C del fabricante para cercanía con equipo eléctrico; y el de espuma AFFF, que suma la clase B para líquidos inflamables. Los tres extinguen por el mismo principio: enfriar el material hasta cortar la combustión."
-  - question: "¿Cómo funciona un extintor de agua?"
-    answer: "El agua absorbe una gran cantidad de calor al evaporarse, y el calor es uno de los tres elementos del triángulo del fuego junto con el combustible y el oxígeno. Al enfriar el material por debajo de su temperatura de combustión se logra la extinción. Por eso es eficaz contra sólidos que dejan brasa, pero no basta contra líquidos inflamables ni debe usarse en un incendio eléctrico activo."
-  - question: "¿El agua nebulizada sirve para gasolina o solventes?"
-    answer: "No. Su clasificación es 2A:C: cubre sólidos y equipo eléctrico, pero no líquidos inflamables. Para esos riesgos van espuma AFFF, PQS o CO₂."
-  - question: "¿Qué norma regula los extintores de agua?"
-    answer: "La NOM-103-STPS-1994, que cubre los extintores a base de agua con presión contenida, incluidos los que llevan espumante, para fuegos de clase A y B. El mantenimiento y la recarga se prestan conforme a la NOM-154-SCFI-2005."
-  - question: "¿Qué capacidad de extintor de agua necesito?"
-    answer: "En portátil hay de 6, 9 y 9.46 L según el tipo, y unidades móviles de 50 L para naves y patios. La elección depende de lo que puede arder, la superficie y quién va a operar el equipo."
-  - question: "¿Dónde conviene un extintor de agua a presión?"
-    answer: "En áreas donde domina el sólido combustible: archivos, bodegas de papel y cartón, carpinterías, textileras y almacenes. Es de clase A, así que no se instala frente a tableros energizados ni en zonas con solventes o combustibles líquidos."
-  - question: "¿Qué es el agua nebulizada y en qué se diferencia?"
-    answer: "Es agua descargada en gotas muy finas, que enfrían más rápido y no forman un chorro conductor: por eso queda clasificada para clase A y también para clase C. Es la opción cuando hay sólidos combustibles cerca de equipo eléctrico."
-  - question: "¿La espuma AFFF sirve para gasolina y solventes?"
-    answer: "Sí. La espuma forma una película sobre el líquido que corta el vapor y evita la reignición, por eso cubre clases A y B. Es el agente de talleres, zonas de carga de combustible y bodegas de pinturas o solventes."
-  - question: "¿Los extintores de agua se congelan?"
-    answer: "En la zona metropolitana no suele ser un problema, pero en exteriores fríos o cámaras de refrigeración sí hay que preverlo: un cilindro con agua congelada no descarga. En esos puntos conviene otro agente."
-  - question: "¿Qué mantenimiento pide un extintor de agua o de espuma?"
-    answer: "Revisión visual mensual, mantenimiento al menos anual y recarga tras cualquier uso. El cilindro pasa prueba hidrostática al menos cada cinco años conforme a la NOM-154-SCFI-2005, y al terminar el servicio debe entregarse con etiqueta y collarín."
+  - question: ¿Agua a presión, nebulizada y espuma son equivalentes?
+    answer: No. El agua a presión, la niebla y la espuma tienen características diferentes. Compara el combustible, la clasificación y las instrucciones del modelo antes de elegir.
+  - question: ¿Cualquier extintor de agua nebulizada sirve para riesgo eléctrico?
+    answer: No se debe asumir. La aptitud debe constar en la clasificación y las instrucciones del modelo. No se deduce por usar agua desionizada o por producir gotas finas.
+  - question: ¿La espuma AFFF es adecuada para cualquier solvente?
+    answer: No. Confirma la compatibilidad del agente y del equipo con el combustible concreto. No trates gasolina, alcoholes y otros solventes como riesgos equivalentes.
+  - question: ¿Dónde comparo las presentaciones específicas?
+    answer: Esta ficha reúne las familias para una primera comparación. Las fichas de agua nebulizada y espuma AFFF desarrollan sus presentaciones y criterios de selección.
+  - question: ¿Qué debo incluir al solicitar precio?
+    answer: Indica agente, capacidad, cantidad, ubicación y combustible presente. Pide que se identifiquen modelo, clasificación, accesorios, documentación y condiciones de entrega.
 ficha:
-  heroBadge: Agua, nebulizada y AFFF · NOM-103-STPS
+  heroBadge: Agua a presión · Nebulizada · Espuma
   heroTitle: Extintor de agua a presión
   heroAccent: y de espuma AFFF
   descRight:
-    - "Tres extintores que apagan enfriando: agua a presión para sólidos, agua nebulizada para sólidos junto a equipo eléctrico y espuma AFFF para líquidos inflamables."
-    - El agua a presión y la espuma conducen la electricidad. Abajo comparas los tres y ves cuál conviene en cada caso.
+    - Agua a presión, agua nebulizada y espuma tienen aplicaciones y límites diferentes. Esta página permite comparar las familias antes de entrar a sus fichas específicas.
+    - Confirma el agente, la clasificación y las instrucciones del modelo. No atribuyas aptitud para riesgo eléctrico a cualquier equipo por descargar agua en niebla.
   norma: NOM-103-STPS-1994
   claves:
-    - label: Agentes
-      value: Agua a presión · agua nebulizada · espuma AFFF
-    - label: Clases de fuego
-      value: A · A y C · A y B, según el agente
-    - label: Norma de producto
-      value: NOM-103-STPS-1994
-    - label: Servicio
-      value: NOM-154-SCFI-2005
+    - label: Familias
+      value: Agua a presión, nebulizada y espuma
+    - label: Selección
+      value: Según combustible y clasificación del modelo
+    - label: Equipo energizado
+      value: No usar agua a presión ni asumir aptitud de la niebla
+    - label: Marca y modelo
+      value: Por confirmar en cotización
   showcaseTitle: Datos clave
   showcaseAccent: del extintor de agua para apagar fuego clase A
-  showcaseDesc: Los tres agentes de la familia, las clases que cubre cada uno y su servicio.
+  showcaseDesc: Compara las familias y solicita la documentación del equipo que se proponga.
   faqAccent: sobre extintores de agua
   guia:
     title: Cómo elegir tu extintor de agua,
@@ -131,74 +112,54 @@ ficha:
     desc: Cuál de los tres te conviene, qué capacidad elegir y qué mantenimiento piden.
 fichaHeads:
   vitrina:
-    - "La familia de agua reúne tres agentes distintos: agua a presión para clase A, agua nebulizada que además cubre clase C sin conducir electricidad, y espuma AFFF que sella vapores en líquidos inflamables (clases A y B)."
-    - "Elegir mal aquí es caro: el agua a presión sobre un tablero energizado o sobre solvente es exactamente lo que no debe hacerse. Te decimos cuál va en cada área."
+    - El agua a presión se emplea en equipos para sólidos combustibles. La niebla y la espuma son opciones distintas que requieren revisar su documentación.
+    - La compatibilidad depende del combustible y del equipo. El nombre del agente no sustituye la clasificación del modelo.
   presentaciones:
-    - Las presentaciones van de portátiles a unidades sobre ruedas, en agua a presión, agua nebulizada y espuma AFFF. Cada una cambia las clases de fuego cubiertas, no solo la capacidad.
-    - Bodegas de papel, archivo, textil y madera suelen resolver con agua; donde hay solventes o pinturas entra la espuma AFFF.
+    - Las capacidades permiten preparar una solicitud de cotización. Fabricante, modelo y disponibilidad se confirman en la propuesta.
+    - Elige una presentación e indica cantidad, ubicación y uso previsto. Solicita ficha técnica y accesorios incluidos.
   comparativa:
-    - "La tabla compara agente por agente: capacidad, formato y clases de fuego cubiertas, que es el dato que decide si un extintor de agua sirve o sobra en ese punto del inmueble."
-    - Con clase A el recorrido máximo hasta el extintor es de 23 m; con clase B baja a 15 o 10 m. Ese número define cuántos puntos necesitas cubrir.
+    - La tabla reúne los datos disponibles de las presentaciones. La capacidad no equivale a superficie protegida ni al peso total del equipo.
+    - Antes de comprar, contrasta la clasificación y los límites de uso con la documentación del modelo propuesto.
   guia:
-    - "Aquí está el criterio de compra: cuándo conviene agua a presión, cuándo nebulizada, cuándo espuma AFFF, qué capacidad elegir y dónde NO se instala ninguna de las tres."
-    - Con eso resuelto, la cotización sale a la primera y sin equipo de más en áreas que no lo necesitan.
+    - Comienza por identificar los materiales combustibles y si existe equipo eléctrico energizado. Después revisa los modelos compatibles con ese riesgo.
+    - Las fichas de agua nebulizada y espuma AFFF desarrollan cada alternativa. Esta página mantiene la comparación entre familias.
   giros:
-    - Archivos, bodegas de papel y cartón, carpinterías, textileras y almacenes de sólidos combustibles son los giros donde la ficha de Protección Civil se inclina por agua o espuma.
-    - Revisa la ficha de tu actividad y compárala con lo que hoy tienes montado.
+    - Cada inmueble puede reunir riesgos diferentes. El giro orienta la consulta, pero no determina por sí solo el equipo que necesita cada área.
+    - Revisa las guías por actividad y describe las condiciones reales al solicitar asesoría.
   relacionados:
-    - Los extintores de agua y espuma conviven con el PQS del área eléctrica y con hidrantes y gabinetes de manguera cuando la carga de fuego es alta.
-    - Te armamos el esquema completo del inmueble, con su señalización y su calendario de mantenimiento.
+    - El soporte, la señalización y el mantenimiento deben contemplarse junto con el equipo.
+    - Indica cuáles conceptos necesitas para que queden especificados en la cotización.
   faq:
-    - "Contestamos lo que más se pregunta: si el extintor de agua sirve para equipo eléctrico, en qué se diferencia la nebulizada, qué hace la espuma AFFF y cada cuándo toca recarga."
-    - "Dinos qué almacenas y en qué superficie: te confirmamos el agente antes de cotizar."
+    - Respuestas para comparar alternativas y preparar tu solicitud de cotización.
+    - Los datos de desempeño y seguridad deben corresponder al modelo que se ofrezca.
 ---
 
-La familia de **extintores de agua** reúne tres equipos que se parecen por fuera y trabajan distinto: el de agua a presión, el de agua nebulizada y el de espuma AFFF. Los tres apagan enfriando, que es lo que mejor funciona contra lo que deja brasa, como papel, madera, cartón o tela. La diferencia está en qué más pueden atacar.
+Esta ficha compara **agua a presión, agua nebulizada y espuma AFFF**. Las presentaciones se agrupan para revisar sus diferencias; no deben considerarse intercambiables por compartir una base acuosa.
 
-### Cómo funciona un extintor de agua
+### Agua a presión
 
-Apaga por el mismo principio en los tres casos: el agua absorbe calor al evaporarse y retira uno de los tres elementos del triángulo del fuego —combustible, oxígeno y calor— hasta que el material baja de su temperatura de combustión y se logra la extinción. Esa es también la razón de sus límites: no ataca el combustible ni el oxígeno, así que es poco eficaz si el líquido inflamable sigue expuesto (de ahí la espuma, que sí forma una película) y el chorro no debe dirigirse a un incendio eléctrico activo, porque conduce la corriente.
+Se utiliza en equipos para sólidos combustibles. No debe dirigirse contra equipo eléctrico energizado. Revisa la clasificación, temperatura de operación, peso total y dimensiones del modelo antes de seleccionarlo.
 
-### Tres extintores, tres usos
+### Agua nebulizada
 
-- **Agua a presión (clase A).** Para archivos, bodegas de material seco, carpinterías y áreas con textiles, sin polvo que limpiar después. Una ficha técnica de referencia del mercado reporta, para el portátil de 9 L, 45 segundos de descarga y 9 m de alcance mínimo.
-- **Agua nebulizada (clases A y C).** Agua desionizada que sale en una niebla muy fina. El fabricante la clasifica 2A:C, así que puede usarse donde hay equipo eléctrico. Se ve en hospitales, telecomunicaciones y cuartos limpios. No es para líquidos inflamables.
-- **Espuma AFFF (clases A y B).** El espumante forma una película sobre el líquido y corta los vapores que alimentan la flama. Sirve en talleres, patios de maniobra y almacenes de gasolina, diésel, aceites y otros combustibles líquidos. No es apta para alcoholes ni solventes polares.
+La descarga en niebla no basta para acreditar aptitud frente a riesgo eléctrico. Esa condición debe constar en la documentación del equipo. Consulta la [ficha de agua nebulizada](/productos/extintor-agua-nebulizada/) y solicita la etiqueta del modelo propuesto.
 
-Para decidir de un vistazo cuál cubre tu riesgo:
+### Espuma AFFF
 
-| Extintor | Clase A (sólidos) | Clase B (líquidos inflamables) | Clase C (equipo eléctrico) | Deja residuo |
-|---|---|---|---|---|
-| Agua a presión | Sí | No | No | No |
-| Agua nebulizada | Sí | No | Sí (2A:C) | No |
-| Espuma AFFF | Sí | Sí | No | No |
+Su selección depende del combustible y de la compatibilidad documentada del agente. No asumas que un equipo adecuado para un hidrocarburo también lo es para alcoholes u otros solventes. Revisa las presentaciones de [espuma AFFF](/productos/extintor-espuma-afff/) y comunica el combustible concreto al cotizar.
 
-A diferencia del [extintor de PQS](/productos/extintor-pqs/), que cubre A, B y C en un solo equipo pero deja un polvo fino difícil de limpiar, los extintores de agua no dejan residuo, a cambio de cubrir menos clases por unidad.
+### Capacidad y condiciones de manejo
 
-### La advertencia que no se negocia
+El volumen de agente no determina por sí solo la superficie protegida. Compara clasificación, peso total, dimensiones y equipo de descarga. En unidades móviles, revisa el recorrido de traslado y las condiciones del piso.
 
-El agua a presión y la espuma AFFF conducen la electricidad. Nunca se dirigen a un tablero, un motor o un cable con corriente.
+La [herramienta de estimación](/herramientas/cuantos-extintores-necesito/) sirve para preparar la consulta; no sustituye la evaluación del riesgo y la distribución del inmueble.
 
-Si en la misma zona hay material combustible y equipo eléctrico, se protege por partes: agua o espuma donde está la carga combustible, y un [extintor de CO₂](/productos/extintor-co2/) o agua nebulizada con clasificación C junto al equipo.
+### Instalación, servicio y cotización
 
-### Cómo elegir la capacidad
+Indica agente, capacidad, cantidad, ubicación y materiales presentes. Solicita marca, modelo, ficha técnica y accesorios incluidos. Los [soportes](/productos/soportes-accesorios-extintor/), la [señalización](/productos/senalizacion-fotoluminiscente/) y el [mantenimiento](/servicios/mantenimiento/) deben especificarse cuando formen parte de la propuesta.
 
-- **Agua a presión:** portátil de 9 L o unidad móvil de 50 L para naves y patios.
-- **Agua nebulizada:** 6 L (1.75 gal) o 9.46 L (2.5 gal).
-- **Espuma AFFF:** portátil de 9 L o unidad móvil de 50 L.
+Para equipos existentes, comparte la etiqueta y el historial de servicio. No sustituyas agentes ni agregues aditivos sin las instrucciones correspondientes del fabricante.
 
-Para saber cuántos necesitas según la superficie y el riesgo, usa la calculadora de [cuántos extintores necesitas](/herramientas/cuantos-extintores-necesito/).
+### Referencias para comparar
 
-### Dónde colocarlo
-
-La parte más alta del extintor no debe quedar a más de 1.50 m del piso, y tiene que estar visible, señalizado y sin obstáculos. La distancia máxima de recorrido es de 23 m para riesgos de clase A y C. Si protege líquidos inflamables (clase B), baja a 15 m en riesgo ordinario y a 10 m en riesgo alto, o hasta 15 m si es una unidad móvil. Los [soportes para extintor](/productos/soportes-accesorios-extintor/) y la [señalización](/productos/senalizacion-fotoluminiscente/) completan el punto.
-
-### Mantenimiento y recarga
-
-Se revisan cada mes, llevan mantenimiento al menos una vez al año y se recargan después de cualquier uso. El servicio lo presta un proveedor conforme a la NOM-154-SCFI-2005, y el cilindro pasa [prueba hidrostática](/servicios/prueba-hidrostatica/) al menos cada cinco años. También damos [recarga de extintores](/servicios/mantenimiento/) a los que ya tienes instalados. Revisarlo a tiempo es la parte de prevención que más barato sale, y el manejo correcto en el momento del incendio depende de que el equipo esté listo para descargar.
-
-### Norma aplicable
-
-La **NOM-103-STPS-1994** regula los extintores a base de agua con presión contenida, incluidos los que llevan aditivos espumantes, para fuegos de clase A y B. En el agua nebulizada, la clase C la da la clasificación de su fabricante.
-
-Al cotizar, dinos qué se guarda en el lugar y si hay equipo eléctrico cerca; con eso te decimos cuál de los tres conviene a la protección contra incendios de tu operación.
+Consulta el [catálogo de extintores Amerex](https://amerex-fire.com/products/fire-extinguishers) como referencia de familias y la [NOM-002-STPS-2010 de la STPS](https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/Nom-002.pdf) para el contexto del centro de trabajo. La marca, disponibilidad y documentación de la oferta de CONINC se confirman en la cotización.

@@ -1,12 +1,11 @@
 ---
 title: "Extintor clase D para fuegos de metales combustibles"
-description: "Extintor clase D con polvo especial para fuegos de metales combustibles —magnesio, aluminio en viruta, titanio, sodio y litio metálico—: aplicador de baja velocidad, presentaciones portátiles, móviles y a granel para taller y planta."
+description: "Extintor clase D con polvo especial para fuegos de metales combustibles —magnesio, aluminio en viruta, titanio, sodio y litio metálico—: aplicador de baja velocidad, presentaciones portátiles para taller y planta."
 cardTitle: "Extintor clase D"
 cardDescription: "Metales combustibles: magnesio, aluminio en viruta, titanio, sodio."
 category: extintores
 image: /images/productos/extintor-clase-d-metales.avif
 price: "Cotizar"
-brand: "CONINC"
 order: 49
 seoTitle: "Extintor clase D para fuegos de metales"
 seoDescription: "Extintor clase D para magnesio, aluminio en viruta y titanio, con aplicador de baja velocidad. Venta en CDMX y Edomex."
@@ -47,49 +46,6 @@ variantes:
     formato: "portatil"
     clases: [D]
     usos: [industria]
-  - nombre: "Extintor clase D móvil"
-    badge: "Sobre ruedas"
-    desc: "Equipo sobre carretilla para fundiciones y plantas con volumen importante de metal combustible, donde el conato previsible excede lo que cubre un portátil."
-    specs: "Polvo clase D · Sobre ruedas · Mayor carga · Manguera con aplicador"
-    resumen: "Sobre carretilla para fundición y planta con volumen importante de metal."
-    waText: "Hola, quiero cotizar un extintor clase D móvil sobre ruedas"
-    agente: "polvo-d"
-    capacidad: "Según equipo"
-    formato: "movil"
-    clases: [D]
-    usos: [industria]
-  - nombre: "Agente clase D a granel con cucharón"
-    desc: "Cubeta con agente y cucharón para aplicar manualmente sobre un conato pequeño y localizado, un esquema habitual junto a máquinas herramienta en talleres de maquinado."
-    specs: "Agente a granel en cubeta · Aplicación con cucharón · Para conato localizado"
-    resumen: "Cubeta con cucharón para conato pequeño junto a la máquina herramienta."
-    waText: "Hola, quiero cotizar agente clase D a granel con cucharón"
-    agente: "polvo-d"
-    capacidad: "Según presentación"
-    formato: "portatil"
-    clases: [D]
-    usos: [industria]
-  - nombre: "Verificación de compatibilidad del metal"
-    badge: "Clave"
-    desc: "Revisión de qué metal y en qué forma maneja el proceso, contra la ficha de listado del agente, para confirmar que el equipo instalado está aprobado para ese metal en concreto."
-    specs: "Metal y forma del proceso · Contra ficha de listado · Informe de compatibilidad"
-    resumen: "Confirma que el agente instalado está aprobado para tu metal, no uno genérico."
-    waText: "Hola, quiero verificar que mi extintor clase D sirve para el metal que manejo"
-    agente: "polvo-d"
-    capacidad: "Según equipo"
-    formato: "portatil"
-    clases: [D]
-    usos: [industria]
-  - nombre: "Mantenimiento y control de humedad"
-    badge: "Servicio"
-    desc: "Mantenimiento conforme a la NOM-154-SCFI-2005 con revisión de que el agente no haya absorbido humedad ni se haya compactado, porque eso arruina su capacidad de formar costra."
-    specs: "Mantenimiento NOM-154 · Control de humedad y compactación · Etiqueta de servicio"
-    resumen: "Revisa humedad y compactación, que arruinan la formación de la costra."
-    waText: "Hola, quiero cotizar el mantenimiento de mis extintores clase D"
-    agente: "polvo-d"
-    capacidad: "Según equipo"
-    formato: "portatil"
-    clases: [D]
-    usos: [industria]
 relatedProducts:
   - extintor-pqs
   - extintor-polvo-quimico-bc
@@ -117,7 +73,7 @@ ficha:
       value: Compatibilidad con tu metal
   showcaseTitle: Datos clave
   showcaseAccent: del clase D
-  showcaseDesc: Presentaciones, agente a granel, compatibilidad y control de humedad.
+  showcaseDesc: Presentaciones portátiles de 13 kg y 30 lb.
   faqAccent: sobre extintores clase D
   guia:
     title: Cuándo necesitas un
@@ -128,7 +84,7 @@ fichaHeads:
     - "Si tu proceso genera viruta fina de metal ligero, ningún extintor común de tu inventario sirve para ese fuego."
     - Es la clase que más se omite y la que más daño causa cuando alguien intenta apagarla con lo que tenía a la mano.
   presentaciones:
-    - Las presentaciones van por formato y por forma de aplicación, incluido el agente a granel con cucharón.
+    - "Las presentaciones portátiles se distinguen por capacidad: 13 kg y 30 lb."
     - "La verificación de compatibilidad va aparte porque es el paso que casi nadie da y el que decide si el equipo sirve."
   comparativa:
     - La tabla explica por qué los agentes comunes no solo no apagan, sino que empeoran el escenario.
@@ -175,3 +131,5 @@ Comprar un clase D genérico sin confirmarlo es comprar una falsa tranquilidad. 
 ## En el mantenimiento
 
 Que el agente **no haya absorbido humedad** ni se haya compactado: las dos cosas arruinan su capacidad de formar la costra.
+
+Consulta el servicio de [mantenimiento de extintores](/servicios/mantenimiento/) para la revisión del agente y del equipo.

@@ -6,7 +6,6 @@ cardDescription: "Para auto, camión y montacargas, con soporte de liberación r
 category: extintores
 image: /images/productos/extintor-vehicular-automotriz.avif
 price: "Cotizar"
-brand: "CONINC"
 order: 50
 seoTitle: "Extintor para vehículo, camión y flota"
 seoDescription: "Extintor vehicular de 1 a 4.5 kg con soporte de liberación rápida para auto, camión, autobús y montacargas. CDMX y Edomex."
@@ -58,38 +57,6 @@ variantes:
     formato: "portatil"
     clases: [A, B, C]
     usos: [vehiculo]
-  - nombre: "Soporte de liberación rápida"
-    badge: "Imprescindible"
-    desc: "Soporte con cinchos y mecanismo de liberación inmediata que fija el extintor contra la vibración y permite sacarlo de un movimiento. Sin él, el equipo es un proyectil en una frenada."
-    specs: "Cinchos y liberación rápida · Resiste vibración · Montaje en cabina o estructura"
-    resumen: "Fija contra la vibración y permite sacarlo de un movimiento."
-    waText: "Hola, quiero cotizar soportes de liberación rápida para extintores vehiculares"
-    agente: "pqs"
-    capacidad: "Según equipo"
-    formato: "portatil"
-    clases: [A, B, C]
-    usos: [vehiculo]
-  - nombre: "Equipo para montacargas"
-    desc: "Conjunto de extintor y soporte montado sobre la estructura del montacargas, resistente a impactos y maniobra constante, ubicado donde el operador lo alcance sin bajarse."
-    specs: "Soporte a estructura · Resiste impactos · Al alcance del operador"
-    resumen: "Montado a la estructura y al alcance del operador sin bajarse."
-    waText: "Hola, quiero cotizar extintores con soporte para montacargas"
-    agente: "pqs"
-    capacidad: "2.5 kg"
-    formato: "portatil"
-    clases: [A, B, C]
-    usos: [vehiculo, bodega]
-  - nombre: "Programa de servicio por flota"
-    badge: "Servicio"
-    desc: "Inventario por número económico, fecha de servicio por extintor y revisión programada para que las unidades no queden fuera de norma al mismo tiempo, con la bitácora de la flota."
-    specs: "Inventario por unidad · Fecha de servicio por equipo · Revisión escalonada · Bitácora"
-    resumen: "Inventario por unidad y revisión escalonada, para no detener media flota."
-    waText: "Hola, quiero cotizar el programa de servicio de extintores de mi flota"
-    agente: "pqs"
-    capacidad: "Según unidad"
-    formato: "portatil"
-    clases: [A, B, C]
-    usos: [vehiculo]
 relatedProducts:
   - extintor-pqs
   - soportes-accesorios-extintor
@@ -117,7 +84,7 @@ ficha:
       value: La vibración compacta el polvo
   showcaseTitle: Datos clave
   showcaseAccent: del extintor vehicular
-  showcaseDesc: Capacidades, soporte, montacargas y programa de flota.
+  showcaseDesc: Capacidades vehiculares de 1, 2.5 y 4.5 kg.
   faqAccent: sobre extintores vehiculares
   guia:
     title: Qué extintor lleva
@@ -128,7 +95,7 @@ fichaHeads:
     - "Un extintor suelto en la cajuela no sirve, y en una frenada es un proyectil. El soporte no es el accesorio: es parte del equipo."
     - La capacidad depende del tipo de unidad y de la reglamentación que aplica a tu operación, que conviene revisar antes de comprar.
   presentaciones:
-    - Las presentaciones van por capacidad y por tipo de unidad, más el soporte y el conjunto para montacargas.
+    - "Las presentaciones se distinguen por capacidad: 1, 2.5 y 4.5 kg."
     - "El programa de flota va aparte porque el problema real de una flota no es comprar, sino que no venzan todos a la vez."
   comparativa:
     - La tabla ordena capacidades por tipo de vehículo y señala qué cambia en el montaje de un montacargas.
@@ -163,7 +130,7 @@ El extintor vehicular suele ser un **PQS ABC**: cubre los materiales del habitá
 
 Un extintor suelto en la cajuela o detrás del asiento **no sirve, y en una frenada es un proyectil**.
 
-El soporte de liberación rápida hace tres cosas: lo mantiene fijo, lo protege de la **vibración constante** y permite sacarlo de un movimiento — lo único que importa en el momento.
+El [soporte de liberación rápida](/productos/soportes-accesorios-extintor/) hace tres cosas: lo mantiene fijo, lo protege de la **vibración constante** y permite sacarlo de un movimiento — lo único que importa en el momento.
 
 En montacargas cambia el montaje: va sujeto a la estructura, debe resistir impactos y maniobra constante, y conviene ubicarlo **donde el operador lo alcance sin bajarse**.
 

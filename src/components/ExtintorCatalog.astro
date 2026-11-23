@@ -70,7 +70,6 @@ const groups: FilterGroup[] = [
     key: 'clase',
     label: 'Clase de fuego',
     options: Object.keys(EXT_CLASE_LABEL)
-      .filter((value) => ['A', 'B', 'C', 'K'].includes(value))
       .map((value) => ({
         value,
         label: `Clase ${value}`,
@@ -110,6 +109,7 @@ const groups: FilterGroup[] = [
       </div>
 
       <div class="catalog__meta">
+        <p class="catalog__results" role="status" aria-live="polite" aria-atomic="true">{items.length} de {items.length} presentaciones</p>
         <button class="btn btn--ghost catalog__clear" type="button">Limpiar filtros</button>
       </div>
     </div>
@@ -143,6 +143,7 @@ const groups: FilterGroup[] = [
     const interactive = root.querySelector<HTMLElement>('.catalog__interactive');
     const clear = root.querySelector<HTMLButtonElement>('.catalog__clear');
     const empty = root.querySelector<HTMLElement>('.catalog__empty');
+    const results = root.querySelector<HTMLElement>('.catalog__results');
     const grid = root.querySelector<HTMLElement>('.catalog__grid');
     const cards = [...root.querySelectorAll<HTMLElement>('.ecard')];
     const closureCards = [...root.querySelectorAll<HTMLElement>('[data-cierre]')];
@@ -195,6 +196,7 @@ const groups: FilterGroup[] = [
       });
 
       visibleCount = visible;
+      if (results) results.textContent = `${visible} de ${cards.length} presentaciones`;
       updateClosures(visible);
 
       if (empty) empty.hidden = visible !== 0;

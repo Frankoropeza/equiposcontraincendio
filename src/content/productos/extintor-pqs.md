@@ -1,229 +1,192 @@
 ---
 title: "Extintores de polvo químico seco PQS ABC"
-description: "Extintores PQS ABC para fuegos de sólidos, líquidos inflamables y equipo eléctrico. Del compacto de 1 kg para vehículo a unidades sobre ruedas de 70 kg."
+description: "Compara extintores PQS ABC de 1 a 70 kg, portátiles y sobre ruedas. Solicita modelo, clasificación, accesorios y disponibilidad en tu cotización."
 cardTitle: "Extintores PQS ABC"
-cardDescription: "Polvo químico seco para sólidos, líquidos y equipo eléctrico, de 1 a 70 kg."
+cardDescription: "Compara capacidad y formato; confirma modelo y accesorios en la cotización."
 category: extintores
 image: /images/showcase/extintores-catalogo-profesional.avif
 price: "Cotizar"
 featured: true
 order: 1
-seoTitle: "Extintor PQS de polvo químico seco, 1 a 70 kilogramos | CDMX"
-seoDescription: "Extintor de polvo químico seco (PQS) tipo ABC, de 1 a 70 kilogramos. Venta, instalación y recarga certificada NOM-154 para empresas en CDMX y Edomex."
+seoTitle: "Extintores PQS ABC de 1 a 70 kg | Cotización en CDMX"
+seoDescription: "Compara extintores PQS ABC portátiles y móviles de 1 a 70 kg. Cotiza capacidad, cantidad y accesorios con CONINC en CDMX y Estado de México."
 variantes:
   - nombre: "Extintor PQS ABC de 1 kg"
     badge: "Compacto"
-    desc: "Presentación compacta para riesgos puntuales y espacios donde importa reducir peso y volumen. La selección final debe considerar la clase de fuego y la distribución exigida para el inmueble."
-    specs: "PQS ABC · 1 kg · Fuegos A, B y C · Portátil · Servicio NOM-154"
-    waText: "Hola, necesito cotizar un extintor PQS ABC de 1 kg en CDMX"
-    resumen: "El tamaño de la guantera: para la camioneta de reparto o un punto de riesgo muy acotado."
+    desc: "Presentación compacta. Confirma su clasificación y el soporte compatible antes de elegirla. La marca, el modelo y la disponibilidad se confirman al cotizar."
+    specs: "PQS ABC · 1 kg de agente · Portátil · Modelo por confirmar"
+    waText: "Hola, quiero cotizar un extintor PQS ABC de 1 kg. Cantidad: __. Ubicación: __. Solicito marca, modelo, ficha técnica, accesorios y plazo de entrega."
+    resumen: "Presentación compacta. Confirma su clasificación y el soporte compatible antes de elegirla."
     agente: "pqs"
     capacidad: "1 kg"
     formato: "portatil"
-    clases: [A, B, C]
-    usos: [vehiculo]
+    clases: [ A, B, C ]
+    usos: [ vehiculo ]
   - nombre: "Extintor PQS ABC de 2 kg"
-    desc: "Alternativa portátil para áreas pequeñas y vehículos cuando el análisis de riesgo admite esta capacidad. Ofrece más agente que la presentación de 1 kg sin llegar al volumen de los equipos comerciales mayores."
-    specs: "PQS ABC · 2 kg · Fuegos A, B y C · Portátil · Servicio NOM-154"
-    waText: "Hola, necesito cotizar un extintor PQS ABC de 2 kg en CDMX"
-    resumen: "Un poco más de carga que el compacto sin dejar de ser ligero. Útil en vehículos y locales chicos."
+    desc: "Formato portátil de carga reducida. Revisa el peso total y el sistema de sujeción. La marca, el modelo y la disponibilidad se confirman al cotizar."
+    specs: "PQS ABC · 2 kg de agente · Portátil · Modelo por confirmar"
+    waText: "Hola, quiero cotizar un extintor PQS ABC de 2 kg. Cantidad: __. Ubicación: __. Solicito marca, modelo, ficha técnica, accesorios y plazo de entrega."
+    resumen: "Formato portátil de carga reducida. Revisa el peso total y el sistema de sujeción."
     agente: "pqs"
     capacidad: "2 kg"
     formato: "portatil"
-    clases: [A, B, C]
-    usos: [vehiculo, comercio]
+    clases: [ A, B, C ]
+    usos: [ vehiculo, comercio ]
   - nombre: "Extintor PQS ABC de 4.5 kg"
-    desc: "Capacidad intermedia para oficinas, comercios y áreas de servicio. Conviene cuando se necesita un equipo manejable con mayor carga que las presentaciones compactas."
-    specs: "PQS ABC · 4.5 kg · Fuegos A, B y C · Portátil · Servicio NOM-154"
-    waText: "Hola, necesito cotizar un extintor PQS ABC de 4.5 kg en CDMX"
-    resumen: "Medida intermedia para oficinas y comercios pequeños; casi cualquier persona la descuelga sin esfuerzo."
+    desc: "Capacidad intermedia. Compara clasificación, dimensiones y accesorios del modelo propuesto. La marca, el modelo y la disponibilidad se confirman al cotizar."
+    specs: "PQS ABC · 4.5 kg de agente · Portátil · Modelo por confirmar"
+    waText: "Hola, quiero cotizar un extintor PQS ABC de 4.5 kg. Cantidad: __. Ubicación: __. Solicito marca, modelo, ficha técnica, accesorios y plazo de entrega."
+    resumen: "Capacidad intermedia. Compara clasificación, dimensiones y accesorios del modelo propuesto."
     agente: "pqs"
     capacidad: "4.5 kg"
     formato: "portatil"
-    clases: [A, B, C]
-    usos: [oficina, comercio]
+    clases: [ A, B, C ]
+    usos: [ oficina, comercio ]
   - nombre: "Extintor PQS ABC de 6 kg"
     badge: "Uso general"
-    desc: "Presentación portátil de uso general para oficinas, comercios, escuelas y bodegas. Su capacidad ofrece un equilibrio práctico entre cantidad de agente y manejo por una persona capacitada."
-    specs: "PQS ABC · 6 kg · Fuegos A, B y C · Portátil · Servicio NOM-154"
-    waText: "Hola, necesito cotizar un extintor PQS ABC de 6 kg en CDMX"
-    resumen: "La medida más común en oficinas, comercios, escuelas y bodegas: buen equilibrio entre carga y peso."
+    desc: "Presentación portátil de 6 kg. Solicita la ficha del modelo para comparar su desempeño. La marca, el modelo y la disponibilidad se confirman al cotizar."
+    specs: "PQS ABC · 6 kg de agente · Portátil · Modelo por confirmar"
+    waText: "Hola, quiero cotizar un extintor PQS ABC de 6 kg. Cantidad: __. Ubicación: __. Solicito marca, modelo, ficha técnica, accesorios y plazo de entrega."
+    resumen: "Presentación portátil de 6 kg. Solicita la ficha del modelo para comparar su desempeño."
     agente: "pqs"
     capacidad: "6 kg"
     formato: "portatil"
-    clases: [A, B, C]
-    usos: [oficina, comercio, hotel, bodega]
+    clases: [ A, B, C ]
+    usos: [ oficina, comercio, hotel, bodega ]
   - nombre: "Extintor PQS ABC de 9 kg"
-    desc: "Mayor carga portátil para áreas con riesgo o superficie que requieren más agente disponible. Debe ubicarse y dimensionarse dentro del programa de prevención del centro de trabajo."
-    specs: "PQS ABC · 9 kg · Fuegos A, B y C · Portátil · Servicio NOM-154"
-    waText: "Hola, necesito cotizar un extintor PQS ABC de 9 kg en CDMX"
-    resumen: "La mayor carga que todavía se lleva en la mano. Pensado para bodegas, talleres y naves."
+    desc: "Mayor carga que las presentaciones anteriores. Verifica peso total y facilidad de manejo. La marca, el modelo y la disponibilidad se confirman al cotizar."
+    specs: "PQS ABC · 9 kg de agente · Portátil · Modelo por confirmar"
+    waText: "Hola, quiero cotizar un extintor PQS ABC de 9 kg. Cantidad: __. Ubicación: __. Solicito marca, modelo, ficha técnica, accesorios y plazo de entrega."
+    resumen: "Mayor carga que las presentaciones anteriores. Verifica peso total y facilidad de manejo."
     agente: "pqs"
     capacidad: "9 kg"
     formato: "portatil"
-    clases: [A, B, C]
-    usos: [bodega, industria]
+    clases: [ A, B, C ]
+    usos: [ bodega, industria ]
   - nombre: "Extintor móvil PQS ABC de 35 kg"
     badge: "Sobre ruedas"
-    desc: "Unidad sobre ruedas de menor carga, para naves y patios donde un portátil se queda corto pero el pasillo no admite un equipo mayor. Requiere personal entrenado en su despliegue."
-    specs: "PQS ABC · 35 kg · Fuegos A, B y C · Móvil · Servicio NOM-154"
-    waText: "Hola, necesito cotizar un extintor móvil PQS ABC de 35 kg en CDMX"
-    resumen: "Primera unidad sobre ruedas: más agente para naves y patios con pasillos angostos."
+    desc: "Unidad sobre ruedas de 35 kg. Revisa dimensiones, manguera y ruta de desplazamiento. La marca, el modelo y la disponibilidad se confirman al cotizar."
+    specs: "PQS ABC · 35 kg de agente · Sobre ruedas · Modelo por confirmar"
+    waText: "Hola, quiero cotizar un extintor PQS ABC de 35 kg. Cantidad: __. Ubicación: __. Solicito marca, modelo, ficha técnica, accesorios y plazo de entrega."
+    resumen: "Unidad sobre ruedas de 35 kg. Revisa dimensiones, manguera y ruta de desplazamiento."
     agente: "pqs"
     capacidad: "35 kg"
     formato: "movil"
-    clases: [A, B, C]
-    usos: [industria, bodega]
+    clases: [ A, B, C ]
+    usos: [ industria, bodega ]
   - nombre: "Extintor móvil PQS ABC de 50 kg"
     badge: "Sobre ruedas"
-    desc: "Equipo móvil para instalaciones industriales y riesgos que demandan un volumen de agente muy superior al portátil. La ruta de acceso, ruedas, manguera y capacitación operativa deben revisarse como parte del proyecto."
-    specs: "PQS ABC · 50 kg · Fuegos A, B y C · Móvil · Servicio NOM-154"
-    waText: "Hola, necesito cotizar un extintor móvil PQS ABC de 50 kg en CDMX"
-    resumen: "Unidad móvil para industria y almacenes grandes; pide ruta libre y personal entrenado."
+    desc: "Unidad móvil de 50 kg. Confirma el sistema de presurización y los accesorios incluidos. La marca, el modelo y la disponibilidad se confirman al cotizar."
+    specs: "PQS ABC · 50 kg de agente · Sobre ruedas · Modelo por confirmar"
+    waText: "Hola, quiero cotizar un extintor PQS ABC de 50 kg. Cantidad: __. Ubicación: __. Solicito marca, modelo, ficha técnica, accesorios y plazo de entrega."
+    resumen: "Unidad móvil de 50 kg. Confirma el sistema de presurización y los accesorios incluidos."
     agente: "pqs"
     capacidad: "50 kg"
     formato: "movil"
-    clases: [A, B, C]
-    usos: [industria, bodega]
+    clases: [ A, B, C ]
+    usos: [ industria, bodega ]
   - nombre: "Extintor móvil PQS ABC de 70 kg"
-    desc: "La mayor carga sobre ruedas de esta familia documentada en el mercado mexicano, para industria con carga combustible elevada. Su traslado y operación se planean junto con la ruta de acceso."
-    specs: "PQS ABC · 70 kg · Fuegos A, B y C · Móvil · Servicio NOM-154"
-    waText: "Hola, necesito cotizar un extintor móvil PQS ABC de 70 kg en CDMX"
-    resumen: "La mayor carga sobre ruedas de la familia, para industria con mucho material combustible."
+    desc: "Unidad móvil de 70 kg. La selección requiere revisar el riesgo y las condiciones de operación. La marca, el modelo y la disponibilidad se confirman al cotizar."
+    specs: "PQS ABC · 70 kg de agente · Sobre ruedas · Modelo por confirmar"
+    waText: "Hola, quiero cotizar un extintor PQS ABC de 70 kg. Cantidad: __. Ubicación: __. Solicito marca, modelo, ficha técnica, accesorios y plazo de entrega."
+    resumen: "Unidad móvil de 70 kg. La selección requiere revisar el riesgo y las condiciones de operación."
     agente: "pqs"
     capacidad: "70 kg"
     formato: "movil"
-    clases: [A, B, C]
-    usos: [industria]
+    clases: [ A, B, C ]
+    usos: [ industria ]
 faqs:
-  - question: "¿Qué es un extintor de PQS y de qué está hecho?"
-    answer: "Es un extintor cuyo agente extintor es polvo químico seco. El tipo ABC usa fosfato monoamónico, que funde sobre el material y corta la reacción en cadena del fuego; el polvo BC, de bicarbonato de sodio, no cubre sólidos. El cilindro es de acero, con válvula, manómetro y manguera de descarga."
-  - question: "¿Cuál es la diferencia entre un extintor PQS y uno de CO₂?"
-    answer: "El PQS cubre las clases A, B y C y deja un polvo fino que hay que limpiar. El CO₂ solo cubre B y C, no deja residuo y por eso se instala junto a equipos eléctricos energizados y electrónica. En un mismo inmueble suelen convivir: PQS en las áreas generales y CO₂ en el site o el tablero."
-  - question: "¿Para qué sirve un extintor PQS ABC?"
-    answer: "Para apagar fuegos de sólidos como papel o madera (clase A), de líquidos inflamables como gasolina o solventes (clase B) y de equipo eléctrico con corriente (clase C). Es el más versátil, aunque deja un polvo fino que hay que limpiar después."
-  - question: "¿Qué capacidad de extintor PQS necesito?"
-    answer: "En oficinas y comercios lo habitual es de 4.5 a 6 kg; en bodegas y talleres, de 9 kg; en vehículos, de 1 a 2 kg. La cantidad depende de la superficie y del riesgo, y conviene confirmar que quien lo va a usar pueda cargarlo."
-  - question: "¿Puedo usar un extintor PQS en la cocina?"
-    answer: "En el comedor o los pasillos, sí. Junto a la freidora o la línea de cocción, no: ahí va un extintor tipo K, hecho para aceites y grasas, que complementa el sistema fijo de la campana."
-  - question: "¿El polvo químico seco daña los equipos?"
-    answer: "Puede dañarlos. El polvo se mete en contactos, ventiladores y tarjetas. Junto a servidores o tableros de control conviene un extintor de CO₂ o de agente limpio."
-  - question: "¿Cada cuándo se recarga un extintor PQS?"
-    answer: "Se revisa cada mes, se le da mantenimiento al menos una vez al año y se recarga después de cualquier uso. El cilindro pasa prueba hidrostática al menos cada cinco años y, al terminar el servicio, lleva etiqueta y collarín."
-  - question: "¿Cuántos extintores PQS necesito en mi negocio?"
-    answer: "La NOM-002-STPS-2010 pide al menos un extintor por cada 300 m² en riesgo ordinario y uno por cada 200 m² en riesgo alto, con un mínimo de uno por nivel. Además ningún punto del inmueble debe quedar a más de 23 metros de recorrido del extintor más cercano."
-  - question: "¿A qué altura se instala un extintor PQS?"
-    answer: "La parte superior del extintor no debe quedar a más de 1.50 m del piso, y el equipo tiene que estar visible, libre de obstáculos y con su señalamiento de ubicación. Si va en zona de tránsito de montacargas o a la intemperie, conviene gabinete en lugar de soporte descubierto."
-  - question: "¿Qué significa la clasificación 2A:10B:C de un extintor PQS?"
-    answer: "Es la clasificación de laboratorio del equipo: la letra indica la clase de fuego y el número, cuánto fuego apaga en pruebas normalizadas. Entre dos extintores del mismo peso, el de número mayor rinde más, así que es el dato que conviene comparar antes que el precio."
-  - question: "¿Qué diferencia hay entre PQS ABC y PQS BC?"
-    answer: "El polvo ABC es de fosfato monoamónico y cubre sólidos, líquidos inflamables y equipo eléctrico. El polvo BC, de bicarbonato, no está clasificado para clase A: no sirve para papel, madera ni cartón. Para un negocio promedio, el ABC es el que resuelve las tres situaciones."
-  - question: "¿El extintor PQS caduca?"
-    answer: "El extintor no caduca por fecha, pero sí su servicio: revisión visual mensual, mantenimiento al menos anual conforme a la NOM-002-STPS-2010 y prueba hidrostática del cilindro al menos cada cinco años según la NOM-154-SCFI-2005. Si el manómetro salió del verde o perdió el sello, hay que atenderlo aunque se vea nuevo."
+  - question: ¿Los kilogramos indican el peso total del extintor?
+    answer: No. La capacidad indica la carga de agente. El peso total incluye cilindro, válvula y accesorios; solicita ese dato en la ficha técnica del modelo para revisar su manejo y soporte.
+  - question: ¿Dos extintores de 6 kg ofrecen el mismo desempeño?
+    answer: No se puede deducir solo por la capacidad. Compara la clasificación documentada, el agente, las dimensiones y los accesorios del modelo. La cotización debe identificar fabricante y modelo.
+  - question: ¿Qué incluye la cotización de un extintor PQS?
+    answer: Solicita que se indiquen marca, modelo, capacidad, cantidad, accesorios, impuestos, entrega y vigencia de la propuesta. El soporte, señalamiento, instalación y mantenimiento deben especificarse cuando se incluyan.
+  - question: ¿Cuándo conviene revisar una unidad sobre ruedas?
+    answer: Cuando el análisis del riesgo requiere evaluar una unidad móvil. Además de la carga de agente, deben revisarse la ruta de desplazamiento, dimensiones, manguera y capacitación del personal.
+  - question: ¿Puedo solicitar recarga en lugar de equipo nuevo?
+    answer: Sí. Indica que necesitas servicio y comparte capacidad, ubicación y fotografías de la etiqueta y del estado del equipo. La revisión determina el servicio procedente; consulta la página de mantenimiento.
 ficha:
-  heroBadge: PQS ABC · Clases A, B y C · NOM-100-STPS
-  heroTitle: Extintor PQS tipo ABC de polvo químico seco,
-  heroAccent: de 1 a 70 kilogramos
+  heroBadge: PQS ABC · Portátiles y sobre ruedas
+  heroTitle: Extintores de polvo químico seco ABC
+  heroAccent: compara capacidades de 1 a 70 kg
   descRight:
-    - Con un solo equipo cubres papel y cartón, gasolina o solventes, y equipo eléctrico con corriente. Por eso es el extintor que más se instala en oficinas, comercios, bodegas y vehículos.
-    - Abajo comparas sus ocho presentaciones y encuentras cómo elegir la capacidad, dónde colocarlo y qué mantenimiento pide.
+    - Consulta las presentaciones portátiles y sobre ruedas. La capacidad corresponde al agente; el peso total y las dimensiones dependen del modelo.
+    - Para una propuesta precisa, indica cantidad, ubicación y uso previsto. Confirmamos marca, modelo, accesorios y disponibilidad en la cotización.
   norma: NOM-100-STPS-1994
   claves:
     - label: Agente
       value: Polvo químico seco ABC
-    - label: Clases de fuego
-      value: A, B y C
-    - label: Norma de producto
-      value: NOM-100-STPS-1994
-    - label: Servicio
-      value: NOM-154-SCFI-2005 · con collarín
-  showcaseTitle: Datos clave
-  showcaseAccent: del extintor de polvo químico seco tipo ABC
-  showcaseDesc: Agente, clases de fuego, norma de producto y servicio que pide el equipo.
+    - label: Presentaciones
+      value: Portátiles y sobre ruedas
+    - label: Marca y modelo
+      value: Por confirmar en la cotización
+    - label: Clasificación y documentos
+      value: Según el modelo propuesto
+  showcaseTitle: Información para comparar
+  showcaseAccent: y solicitar tu equipo
+  showcaseDesc: Revisa capacidad y formato; confirma los datos técnicos del modelo antes de comprar.
   faqAccent: sobre extintores PQS
   guia:
-    title: Cómo elegir tu extintor PQS
-    titleAccent: y su capacidad en kilogramos
-    desc: Dónde conviene, qué capacidad elegir, dónde colocarlo y qué mantenimiento pide.
+    title: Cómo comparar
+    titleAccent: extintores PQS ABC
+    desc: "Agente, clasificación, manejo y documentación: los puntos que conviene revisar antes de comprar."
 fichaHeads:
   vitrina:
-    - "El extintor PQS ABC usa polvo químico seco a base de fosfato monoamónico: interrumpe la reacción en fuegos de sólidos (clase A), líquidos inflamables (clase B) y equipo eléctrico energizado (clase C), bajo la NOM-100-STPS-1994."
-    - Es el equipo de arranque de casi cualquier inmueble en CDMX y Edomex. Dinos giro y superficie y te decimos cuántos y de qué capacidad, con entrega e instalación.
+    - El PQS ABC es una opción para riesgos de sólidos combustibles, líquidos inflamables y equipos eléctricos energizados. La selección debe corresponder al riesgo del área.
+    - Esta página organiza presentaciones por capacidad. La clasificación, las dimensiones y los documentos deben corresponder al modelo que se cotice.
   presentaciones:
-    - Los extintores portátiles de PQS van del compacto de 1 kg para vehículo al de 9 kg, y las unidades sobre ruedas llegan a 70 kg. La capacidad define el alcance, el tiempo de descarga y quién puede manejarlo sin entrenamiento previo.
-    - En la práctica, la mayoría de oficinas y comercios resuelve con 4.5 y 6 kg, y deja los equipos móviles para bodega y patio de maniobras. Te armamos la mezcla en una sola cotización.
+    - Elige una presentación para solicitar precio y disponibilidad. La cantidad de agente no equivale al peso total del equipo ni permite deducir su alcance de descarga.
+    - Para equipos sobre ruedas, revisa también la ruta de desplazamiento, el tipo de ruedas y la manguera. La operación requiere personal capacitado.
   comparativa:
-    - "Comparar las ocho presentaciones de PQS de golpe evita el error más común: comprar todo del mismo tamaño. La clasificación UL (2A:10B:C, 4A:60B:C…) dice cuánto fuego apaga realmente cada equipo."
-    - "La distancia máxima de recorrido hasta un extintor es de 23 m para clase A y C, y de 15 o 10 m cuando el riesgo dominante es clase B: esa medida, no el metraje, define cuántos necesitas."
+    - Compara aquí capacidad de agente y formato. No asignamos una clasificación de desempeño sin identificar el modelo y su documentación.
+    - "Si necesitas comparar dos marcas, solicita sus fichas: un mismo peso de agente no garantiza dimensiones, accesorios o desempeño equivalentes."
   guia:
-    - "Elegir extintor PQS se reduce a cuatro decisiones: qué clase de fuego domina en cada área, qué capacidad aguanta quien lo va a usar, a qué altura se monta (máximo 1.50 m del piso a la parte superior) y quién le da el mantenimiento anual."
-    - Resuélvelas antes de pedir precio y la cotización sale en minutos, con el equipo listo para pasar una inspección de Protección Civil sin observaciones.
+    - La selección comienza con el riesgo del área y continúa con la clasificación del equipo, su ubicación y las condiciones de manejo.
+    - "La cotización debe identificar el equipo y especificar qué incluye: soporte, señalamiento, entrega, instalación o servicio, según lo solicitado."
   giros:
-    - "El PQS aparece en casi todas las fichas de Protección Civil porque cubre las tres clases de fuego que conviven en un negocio promedio: papel y cartón, combustibles líquidos y tableros eléctricos."
-    - "Abre la ficha de tu giro y compárala con lo que ya tienes instalado: ahí está el listado completo de equipo, señalización y documentación que revisan."
+    - Oficinas, comercios e industria pueden tener riesgos diferentes dentro de un mismo inmueble. Revisa cada área antes de seleccionar el equipo.
+    - Las guías por giro ayudan a preparar la consulta; la elección final depende de las condiciones del lugar.
   relacionados:
-    - "El extintor PQS rara vez viaja solo: pide su soporte o gabinete, su señalamiento de ubicación y el servicio anual que le imprime etiqueta y collarín conforme a la NOM-154-SCFI-2005."
-    - Cotizarlo todo con el mismo proveedor te deja una sola factura, una visita de instalación y un calendario único de recarga.
+    - Consulta soportes, señalización y mantenimiento como conceptos complementarios a la compra del equipo.
+    - Para una unidad industrial, revisa también la ficha de extintores móviles PQS y confirma sus condiciones de manejo.
   faq:
-    - "Reunimos las preguntas que más nos llegan al cotizar extintores PQS: para qué sirve cada capacidad, cuántos exige la norma, cada cuándo se recarga y qué hacer si el manómetro cayó fuera del verde."
-    - "Si tu caso no está aquí, escríbenos con tu giro y superficie: te orientamos antes de cotizar y sin compromiso."
+    - Estas respuestas te ayudan a preparar una solicitud de cotización con datos comparables.
+    - Si ya tienes un equipo, comparte una fotografía legible de su etiqueta para identificar sus características.
 ---
 
-Los **extintores PQS ABC** son los que más vas a ver en oficinas, comercios, bodegas y camionetas de reparto, y hay una razón práctica: con un solo equipo cubres sólidos como papel o cartón (clase A), líquidos inflamables como gasolina o solventes (clase B) y equipo eléctrico con corriente (clase C). Si en tu negocio hay un poco de todo, casi siempre se empieza por aquí.
+Los **extintores PQS ABC** se comparan por agente, clasificación y formato, además de su capacidad. Las presentaciones de esta página sirven para preparar tu solicitud; la propuesta comercial debe identificar el fabricante y el modelo ofrecido.
 
-### Dónde conviene y dónde no
+### Datos que debes revisar antes de comprar
 
-Es el extintor de área: el que protege el piso de venta, la recepción, los pasillos de una oficina, la bodega con tarimas y el vehículo de trabajo.
+- **Capacidad de agente:** no equivale al peso total del equipo cargado.
+- **Clasificación:** consulta la que corresponde al modelo; no se deduce por los kilogramos.
+- **Dimensiones y peso total:** necesarios para elegir soporte, ubicación y condiciones de manejo.
+- **Documentación:** ficha técnica, instrucciones y evidencia de conformidad que corresponda al equipo.
+- **Alcance de la compra:** confirma accesorios, entrega e instalación por separado.
 
-Hay dos lugares donde no conviene. El primero es junto a servidores, tableros de control o equipo de laboratorio. El polvo es muy fino, se mete en contactos y ventiladores, y después de usarlo hay que limpiar a fondo. Ahí se prefiere un [extintor de CO₂](/productos/extintor-co2/) o de [agente limpio](/productos/extintor-agente-limpio/). El segundo es la línea de cocción de una cocina comercial: contra el aceite de una freidora el PQS no es el agente indicado y va un [extintor tipo K](/productos/extintor-clase-k/).
+### Portátil o sobre ruedas
 
-### Cómo elegir la capacidad
+Las presentaciones portátiles y las unidades móviles tienen condiciones de manejo distintas. Para una unidad sobre ruedas, revisa el recorrido de traslado, las dimensiones, el tipo de ruedas y el equipo de descarga. Consulta la ficha de [extintores móviles PQS](/productos/extintor-movil-pqs/) para preparar esa solicitud.
 
-Piensa primero en quién lo va a usar. Un PQS de 9 kg lleva más agente, pero si en el turno de la noche la persona a cargo no puede descolgarlo con soltura, uno de 6 kg es mejor decisión.
+La capacidad por sí sola no determina cuántos equipos necesita un inmueble. Usa la [herramienta de estimación de extintores](/herramientas/cuantos-extintores-necesito/) como punto de partida y complementa el resultado con la revisión del riesgo y la distribución del lugar.
 
-Como referencia rápida:
+### Aplicaciones y límites del polvo ABC
 
-- **1 y 2 kg:** vehículos y puntos de riesgo muy acotados.
-- **4.5 y 6 kg:** oficinas, comercios, escuelas y áreas de servicio.
-- **9 kg:** bodegas, talleres y naves.
-- **35, 50 y 70 kg sobre ruedas:** industria y patios de maniobra, donde un portátil se queda corto. Necesitan pasillos libres y alguien entrenado para desplegarlos.
+El polvo ABC se utiliza en equipos clasificados para sólidos combustibles, líquidos inflamables y riesgos eléctricos. Deja residuo después de la descarga: si necesitas proteger equipo sensible, compara las alternativas y limitaciones del [CO₂](/productos/extintor-co2/) y del [agente limpio](/productos/extintor-agente-limpio/).
 
-La cantidad la marcan la superficie y el riesgo. La NOM-002-STPS-2010 pide al menos un extintor por cada 300 m² en riesgo ordinario y uno por cada 200 m² en riesgo alto. Para tener un primer número, calcula [cuántos extintores necesitas](/herramientas/cuantos-extintores-necesito/).
+Los riesgos de aceites de cocina y metales combustibles requieren una selección específica. Consulta [extintores clase K](/productos/extintor-clase-k/) y [extintores clase D](/productos/extintor-clase-d-metales/), respectivamente.
 
-### Dónde colocarlo
+### Instalación y servicio
 
-La parte más alta del extintor no debe quedar a más de 1.50 m del piso, y el equipo tiene que estar visible, señalizado y sin nada que lo tape. Parece obvio, pero en una inspección es de lo que más se observa: extintores detrás de cajas, de un exhibidor o de la puerta abierta.
+La ubicación, revisión y mantenimiento forman parte de la protección del inmueble. La NOM-002-STPS-2010 establece condiciones de prevención y protección contra incendios en los centros de trabajo; una ficha comercial no sustituye la evaluación del lugar.
 
-La distancia también cuenta. Según la Tabla 1 de la NOM-002, nadie debería recorrer más de 23 m para llegar a un extintor en áreas con riesgo de clase A o C. Con líquidos inflamables (clase B) el límite es de 15 m en riesgo ordinario y de 10 m en riesgo alto, o hasta 15 m si se trata de una unidad móvil. Para completar el punto, revisa los [soportes para extintor](/productos/soportes-accesorios-extintor/) y la [señalización fotoluminiscente](/productos/senalizacion-fotoluminiscente/).
+Puedes solicitar [soportes y gabinetes](/productos/soportes-accesorios-extintor/), [señalamiento de ubicación](/productos/senalamiento-de-extintor/) y [mantenimiento y recarga](/servicios/mantenimiento/). Indica cuáles necesitas para que queden incluidos expresamente en la propuesta.
 
-### Mantenimiento y recarga
+### Prepara tu cotización
 
-Un extintor que no está al día cuenta como si no existiera. La NOM-002 pide revisarlo cada mes, y esa revisión la puede hacer tu propio personal. También pide darle mantenimiento al menos una vez al año y recargarlo después de cualquier uso, aunque haya sido un disparo corto.
+Envía capacidad o uso previsto, cantidad, municipio o alcaldía y los accesorios que necesitas. Si vas a sustituir un equipo, comparte una fotografía de su etiqueta. Confirma marca, modelo, documentos, plazo de entrega y condiciones comerciales antes de comprar.
 
-El mantenimiento y la [recarga de extintores](/servicios/mantenimiento/) los hace un proveedor conforme a la NOM-154-SCFI-2005. Al terminar, el equipo lleva una etiqueta con los datos del prestador, el agente, la fecha del servicio y la contraseña oficial. En los PQS, además, se coloca un collarín que no se puede quitar sin abrir el extintor: es la prueba física de que se le dio servicio. El cilindro pasa [prueba hidrostática](/servicios/prueba-hidrostatica/) al menos cada cinco años.
+### Referencia para la selección
 
-### Norma aplicable
-
-La norma de producto del polvo químico seco es la **NOM-100-STPS-1994**. La contraseña oficial que identifica al producto certificado se rige por la **NOM-106-SCFI-2017**, y el servicio, por la **NOM-154-SCFI-2005**.
-
-### Qué es y cómo funciona un extintor de PQS
-
-El agente extintor es polvo químico seco. En el **tipo ABC** es fosfato monoamónico, que a la temperatura del fuego se funde sobre el material y forma una costra que lo aísla del oxígeno, además de romper la reacción en cadena de la combustión: por eso la extinción funciona igual sobre un sólido que sobre un líquido inflamable. El polvo BC, de bicarbonato de sodio, actúa solo sobre las clases B y C y no sirve para papel, madera ni cartón, así que en un negocio común conviene seleccionar siempre el ABC.
-
-La descripción técnica del equipo es sencilla: cilindro de acero con el polvo y un gas impulsor, válvula con seguro, manómetro a la vista y manguera o boquilla de descarga. El manómetro es el indicador de que está cargado; si la aguja salió de la franja verde, el extintor no va a responder aunque se vea nuevo.
-
-### Lo que un extintor PQS no apaga
-
-No está clasificado para fuegos de clase D, los de metales combustibles como magnesio o sodio, que piden un agente específico. Tampoco es el indicado sobre aceite de cocción, que es clase K, ni frente a equipos eléctricos energizados delicados, donde el polvo es corrosivo para contactos y tarjetas y conviene un [extintor de CO₂](/productos/extintor-co2/) o de [agente limpio](/productos/extintor-agente-limpio/).
-
-### Certificación, almacenamiento y vida útil
-
-Al comprar conviene exigir dos cosas: que el producto lleve la contraseña oficial de certificación conforme a la NOM-106-SCFI-2017 y que el servicio de recarga entregue su etiqueta y su dictamen técnico conforme a la NOM-154-SCFI-2005. En México ese es el marco aplicable: los criterios de la NFPA 10 son una referencia internacional y no sustituyen a la norma mexicana.
-
-La vida útil del equipo depende del cilindro, no del polvo. Un extintor guardado en un ambiente húmedo o corrosivo —patio, andén, almacenamiento a la intemperie— se deteriora antes, y por eso ahí conviene gabinete. La prueba hidrostática cada cinco años es la que dice si el cilindro sigue siendo seguro para cargar de nuevo.
-
-### Costo, disponibilidad y entrega
-
-Para cotizar, mándanos por WhatsApp el giro, la superficie aproximada y cuántos equipos crees necesitar. Te respondemos con la presentación que conviene, el costo y la disponibilidad; la marca y el modelo se confirman en ese momento. Los tiempos de entrega y la distribución dentro de CDMX y el Estado de México se acuerdan al cerrar la cotización, y la instalación con soporte y señalamiento se puede incluir en la misma visita.
-
-Si el equipo entra a un programa de seguridad industrial, también damos la capacitación del personal que lo va a usar: un extintor efectivo es el que alguien sabe descolgar, verificar y accionar en los primeros segundos.
+Consulta la [NOM-002-STPS-2010 publicada por la STPS](https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/Nom-002.pdf) para el contexto de protección del centro de trabajo. Los datos de desempeño deben verificarse en la documentación del modelo propuesto.

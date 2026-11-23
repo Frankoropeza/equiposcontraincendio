@@ -12,153 +12,127 @@ seoDescription: "Extintor tipo K (clase K) para fuego de aceites y grasas en tu 
 variantes:
   - nombre: "Extintor Clase K de 4 L"
     badge: "Compacto"
-    desc: "Capacidad compacta documentada en el mercado mexicano para áreas de cocción con espacio limitado. La cobertura necesaria debe definirse según equipos, aceites y distribución de la cocina."
-    specs: "Químico húmedo · 4 L · Fuego Clase K · Portátil · Servicio NOM-154"
-    waText: "Hola, necesito cotizar un extintor Clase K de 4 litros en CDMX"
-    resumen: "Para cocinas con poco espacio o una sola freidora."
+    desc: "Presentación de 4 L de agente. Confirma clasificación, dimensiones y modelo antes de elegirla. Solicita fabricante, modelo y ficha técnica; la disponibilidad se confirma al cotizar."
+    specs: "Químico húmedo · 4 L de agente · Portátil · Modelo por confirmar"
+    waText: "Hola, quiero cotizar Extintor Clase K de 4 L. Cantidad: __. Ubicación: __. Solicito fabricante, modelo, ficha técnica, accesorios y plazo de entrega."
+    resumen: "Presentación de 4 L de agente. Confirma clasificación, dimensiones y modelo antes de elegirla."
     agente: "clase-k"
     capacidad: "4 L"
     formato: "portatil"
-    clases: [K]
-    usos: [restaurante, hotel]
+    clases: [ K ]
+    usos: [ restaurante, hotel ]
   - nombre: "Extintor Clase K de 6 L"
     badge: "Cocina comercial"
-    desc: "Presentación común para cocinas comerciales y restaurantes con freidoras, planchas o equipos que usan grasas. La descarga de niebla busca aplicar el agente sin proyectar el aceite en combustión."
-    specs: "Químico húmedo · 6 L · Fuego Clase K · Portátil · Servicio NOM-154"
-    waText: "Hola, necesito cotizar un extintor Clase K de 6 litros en CDMX"
-    resumen: "La medida más común en restaurantes y cocinas comerciales."
+    desc: "Presentación de 6 L de agente. Revisa la ficha técnica y su correspondencia con el riesgo de cocina. Solicita fabricante, modelo y ficha técnica; la disponibilidad se confirma al cotizar."
+    specs: "Químico húmedo · 6 L de agente · Portátil · Modelo por confirmar"
+    waText: "Hola, quiero cotizar Extintor Clase K de 6 L. Cantidad: __. Ubicación: __. Solicito fabricante, modelo, ficha técnica, accesorios y plazo de entrega."
+    resumen: "Presentación de 6 L de agente. Revisa la ficha técnica y su correspondencia con el riesgo de cocina."
     agente: "clase-k"
     capacidad: "6 L"
     formato: "portatil"
-    clases: [K]
-    usos: [restaurante, hotel]
+    clases: [ K ]
+    usos: [ restaurante, hotel ]
   - nombre: "Extintor Clase K de 9.46 L"
     badge: "Mayor capacidad"
-    desc: "Presentación de mayor volumen para cocinas con varios equipos o una carga de aceites superior. Debe seleccionarse junto con el análisis del sistema fijo de campana cuando éste exista."
-    specs: "Químico húmedo · 9.46 L / 2.5 gal · Fuego Clase K · Portátil"
-    waText: "Hola, necesito cotizar un extintor Clase K de 9.46 litros en CDMX"
-    resumen: "Para cocinas con varios equipos de cocción y más aceite en uso."
+    desc: "Presentación de 9.46 L de agente. Compara el peso cargado y las condiciones de manejo. Solicita fabricante, modelo y ficha técnica; la disponibilidad se confirma al cotizar."
+    specs: "Químico húmedo · 9.46 L (2.5 gal) de agente · Portátil · Modelo por confirmar"
+    waText: "Hola, quiero cotizar Extintor Clase K de 9.46 L. Cantidad: __. Ubicación: __. Solicito fabricante, modelo, ficha técnica, accesorios y plazo de entrega."
+    resumen: "Presentación de 9.46 L de agente. Compara el peso cargado y las condiciones de manejo."
     agente: "clase-k"
     capacidad: "9.46 L (2.5 gal)"
     formato: "portatil"
-    clases: [K]
-    usos: [restaurante, hotel]
+    clases: [ K ]
+    usos: [ restaurante, hotel ]
 faqs:
-  - question: "¿Para qué sirve un extintor tipo K?"
-    answer: "Para fuegos de aceites y grasas de cocción, como los de una freidora. Su agente sale en niebla, no salpica el aceite y forma una capa que lo aísla del aire mientras lo enfría."
-  - question: "¿Cómo funciona el agente químico húmedo de un extintor tipo K?"
-    answer: "El agente es una solución acuosa a base de acetato de potasio (en algunos productos, citrato o carbonato de potasio). Al entrar en contacto con el aceite caliente reacciona con los ácidos grasos y forma una capa de jabón (saponificación) que sella la superficie, corta el oxígeno y enfría el aceite por debajo de su punto de reignición."
-  - question: "¿Cuáles son los 5 tipos de extintores y en qué se diferencia el tipo K?"
-    answer: "Los extintores se clasifican por el combustible que apagan: clase A (sólidos como papel o madera), B (líquidos inflamables), C (equipo con corriente eléctrica), D (metales combustibles) y K (aceites y grasas de cocción). El tipo K es el único formulado para saponificar aceite caliente; los demás agentes, incluido el polvo ABC, no enfrían la grasa ni evitan que se vuelva a encender."
-  - question: "¿El extintor clase K sustituye el sistema de la campana?"
-    answer: "No, lo complementa. El sistema fijo protege la campana y el extintor permite que el personal actúe. Se usan juntos."
-  - question: "¿Qué capacidad de extintor tipo K necesito?"
-    answer: "La de 6 L es la más común en restaurantes. La de 4 L sirve en cocinas pequeñas y la de 9.46 L cuando hay varios equipos de cocción o más aceite."
-  - question: "¿A qué distancia debe estar el extintor clase K?"
-    answer: "La NOM-002-STPS-2010 fija 10 m como distancia máxima de recorrido hasta un extintor clase K, que debe colocarse a no más de 1.50 m del piso."
-  - question: "¿Qué norma aplica al extintor clase K?"
-    answer: "No hay una norma mexicana de producto específica. Se toma como referencia la NFPA 10, y el mantenimiento y la recarga se prestan conforme a la NOM-154-SCFI-2005."
-  - question: "¿Cuántos extintores tipo K necesita una cocina?"
-    answer: "Depende del número y tamaño de equipos de cocción, no de los metros del local. La referencia práctica es cubrir la línea caliente con un equipo a la vista y verificar que el recorrido hasta el extintor de clase K no pase de 10 metros, que es la distancia más corta de todas las clases."
-  - question: "¿Dónde se coloca el extintor de clase K en un restaurante?"
-    answer: "En la ruta de salida de la cocina, visible y accesible desde la línea de cocción, pero nunca tan pegado a la freidora que haya que meterse al fuego para alcanzarlo. Se monta con la parte superior a máximo 1.50 m del piso y con su señalamiento."
-  - question: "¿Cómo se usa un extintor tipo K?"
-    answer: "Se aplica desde la distancia recomendada y en abanico sobre la superficie del aceite, nunca con chorro directo, para no salpicar grasa encendida. El agente saponifica el aceite y forma una capa que evita que se reencienda mientras enfría."
-  - question: "¿Puedo usar un extintor de polvo sobre aceite de cocina?"
-    answer: "No es lo indicado. El polvo no enfría el aceite ni evita la reignición, y sobre una freidora puede dispersar grasa ardiendo. La clase K existe justamente porque los agentes convencionales fallan en ese escenario, aunque algún proveedor los haya vendido como equivalentes."
-  - question: "¿Cada cuándo se da servicio a un extintor clase K?"
-    answer: "Revisión visual mensual, mantenimiento al menos una vez al año y recarga después de cualquier uso, aunque haya sido parcial. El cilindro pasa prueba hidrostática al menos cada cinco años y al terminar el servicio debe llevar su etiqueta y collarín."
+  - question: ¿Los litros indican cuánto pesa el extintor?
+    answer: No. Indican el volumen de agente. El peso del equipo cargado depende del recipiente, solución y accesorios; pide ese dato para comparar manejo y soporte.
+  - question: ¿Puedo escoger la capacidad solo por el número de freidoras?
+    answer: No. También se requieren las características de los equipos, aceites utilizados, distribución, riesgo y clasificación documentada del extintor. Una lista de capacidades no establece la cobertura de una línea de cocción.
+  - question: ¿El extintor clase K sustituye el sistema de la campana?
+    answer: No debe tomarse como sustituto del sistema fijo requerido para la cocina. La selección del portátil y la del sistema deben revisarse como parte de la protección del conjunto.
+  - question: ¿Qué debo enviar para sustituir un extintor existente?
+    answer: Envía fotos de la etiqueta y del equipo, capacidad, ubicación y datos de la cocina. Con ello se puede identificar el producto y revisar si la propuesta corresponde al riesgo actual.
+  - question: ¿Qué debe incluir la cotización?
+    answer: Fabricante, modelo, agente, clasificación, ficha técnica, instrucciones, accesorios, cantidad y plazo de entrega. Indica si necesitas soporte, señalamiento, instalación o mantenimiento para que se incluyan expresamente.
 ficha:
-  heroBadge: Agente K · Clase K · Cocinas comerciales
+  heroBadge: Químico húmedo · Clase K
   heroTitle: Extintor tipo K o clase K,
-  heroAccent: para fuego de cocina
+  heroAccent: para aceites y grasas de cocción
   descRight:
-    - El químico húmedo sale en niebla, no salpica el aceite y forma una capa que lo aísla del aire mientras lo enfría. Es el extintor para la freidora y la línea de cocción.
-    - Complementa, no sustituye, el sistema fijo de la campana. Abajo encuentras cómo elegir la capacidad para tu cocina y dónde colocarlo.
-  norma: Referencia técnica NFPA 10
+    - Consulta presentaciones de 4, 6 y 9.46 L de químico húmedo. La selección requiere revisar el riesgo de cocción y la clasificación del modelo.
+    - Los litros expresan volumen de agente. Confirma peso total, dimensiones, accesorios y disponibilidad en la cotización.
+  norma: Selección conforme a NOM-002-STPS-2010
   claves:
     - label: Agente
       value: Químico húmedo
     - label: Clase de fuego
-      value: K (aceites y grasas de cocción)
-    - label: Norma de producto
-      value: Sin NOM específica · ref. NFPA 10
-    - label: Servicio
-      value: NOM-154-SCFI-2005
+      value: "K: aceites y grasas de cocción"
+    - label: Capacidades
+      value: 4, 6 y 9.46 L de agente
+    - label: Marca y modelo
+      value: Por confirmar al cotizar
   showcaseTitle: Datos clave
   showcaseAccent: del extintor clase K
-  showcaseDesc: Agente, clase de fuego, capacidades y servicio que pide en cocina.
+  showcaseDesc: Compara volumen de agente y verifica la documentación del modelo propuesto.
   faqAccent: sobre extintores tipo K
   guia:
     title: Cómo elegir y utilizar tu extintor tipo K
     titleAccent: para grasa y aceite de cocina
-    desc: Dónde va, qué capacidad elegir, dónde colocarlo y qué mantenimiento pide.
+    desc: Datos de la cocina, clasificación del equipo y condiciones de instalación y servicio.
 fichaHeads:
   vitrina:
-    - El extintor tipo K usa químico húmedo (acetato de potasio) que saponifica el aceite de cocción y forma una capa que ahoga las llamas e impide la reignición. Es el único agente diseñado y clasificado para la clase K, la de grasas y aceites vegetales.
-    - Restaurantes, hoteles, comedores industriales y cocinas oscuras lo llevan por norma y por seguro. Te decimos cuántos van según el número de freidoras y planchas.
+    - El químico húmedo se utiliza en equipos clasificados para riesgos de aceites y grasas de cocción. Verifica la formulación y las instrucciones del modelo.
+    - La selección se basa en la evaluación de la cocina; no existe una equivalencia automática entre litros y número de freidoras.
   presentaciones:
-    - Las presentaciones de clase K son de 4, 6 y 9.46 L. El volumen se elige por el tamaño del equipo de cocción a cubrir, no por el tamaño de la cocina.
-    - Lo habitual es un equipo a la vista de la línea caliente y otro cerca de la salida. Si tienes campana con sistema fijo, el extintor K es el complemento, no el sustituto.
+    - Consulta las presentaciones de 4, 6 y 9.46 L. Estas capacidades expresan volumen de agente y no peso del extintor cargado.
+    - Solicita fabricante, modelo y clasificación antes de comparar precio. La disponibilidad debe quedar confirmada en la propuesta.
   comparativa:
-    - La tabla pone frente a frente las tres capacidades de extintor tipo K con su clasificación y su uso sugerido, para que la freidora grande no quede protegida con el equipo más chico.
-    - "El recorrido máximo hasta un extintor de clase K es de 10 m: en una cocina comercial eso suele significar más de una unidad."
+    - La tabla permite comparar las capacidades publicadas sin asignarles una cobertura por línea de cocción.
+    - Revisa además peso total, dimensiones, soporte compatible y documentación de operación.
   guia:
-    - "Aquí va lo que hay que decidir antes de comprar un extintor de cocina: qué litraje por tipo de equipo, dónde montarlo sin que estorbe la operación, cómo se usa (a distancia y en abanico) y qué mantenimiento pide."
-    - "También aclaramos la confusión más cara: el PQS no sustituye al clase K sobre aceite caliente, aunque el proveedor lo haya vendido así."
+    - Para preparar la selección, reúne datos de equipos, aceites utilizados y distribución de la cocina.
+    - La ubicación y el acceso deben revisarse junto con el sistema fijo existente y el plan de respuesta del establecimiento.
   giros:
-    - Restaurantes, cafeterías, panaderías, hoteles, comedores de empresa y cocinas de escuela son los giros donde la ficha de Protección Civil pide clase K junto al extintor de uso general.
-    - Abre la ficha de tu giro y revisa el listado completo antes de la visita de verificación.
+    - Restaurantes, hoteles y comedores pueden tener riesgos diferentes según sus procesos y equipos.
+    - Consulta la guía de tu actividad para preparar la revisión del lugar y su documentación.
   relacionados:
-    - Una cocina comercial completa suma extintor tipo K, extintor de uso general para el resto del local, señalización, detección de gas y el servicio anual de todo el equipo.
-    - Lo cotizamos junto y coordinamos la instalación en un solo día, fuera de tu horario de servicio.
+    - Considera soporte, señalamiento y mantenimiento como conceptos complementarios de la compra.
+    - La protección de otras áreas del establecimiento requiere revisar sus propios materiales y riesgos.
   faq:
-    - "Respondemos las dudas frecuentes del extintor tipo K: por qué el polvo no sirve sobre aceite, cuántos litros necesita tu cocina, si sustituye al sistema de campana y cada cuándo se le da servicio."
-    - Mándanos el número de freidoras, planchas y estufas y te decimos exactamente qué llevas.
+    - Estas respuestas aclaran cómo comparar capacidades y preparar una sustitución o compra.
+    - Comparte fotografías de la etiqueta del equipo existente y un croquis de la cocina para precisar la consulta.
 ---
 
-Una freidora encendida es de los incendios más traicioneros de un negocio: el calor del aceite es tan alto que el agua lo hace saltar y el polvo químico no alcanza a enfriarlo. Para ese escenario existe el **extintor tipo K** (clase K): su agente extintor, un químico húmedo, se descarga en forma de niebla fina, sin causar salpicadura de aceite ardiendo, y forma una capa que lo separa del aire mientras lo enfría.
+El **extintor tipo K** está destinado a riesgos de aceites y grasas de cocción. Esta página reúne capacidades de químico húmedo para preparar tu solicitud; la elección requiere conocer la cocina y verificar la clasificación del equipo ofrecido.
 
 ### Cómo funciona el agente químico húmedo
 
-El agente es una solución acuosa a base de **acetato de potasio** (en algunos productos, citrato o carbonato de potasio). Al salir en niebla fina y entrar en contacto con el aceite caliente, reacciona con los ácidos grasos del aceite en un proceso de saponificación: forma una capa de jabón que sella la superficie, corta el paso de oxígeno y enfría el aceite por debajo de su punto de reignición. Por eso logra extinguir y apagar fuegos de aceite sin que la freidora se vuelva a encender, algo que el agua o el polvo químico no logran hacer.
+El agente está formulado para el riesgo de cocción y aporta un efecto de enfriamiento. Como referencia de fabricante, [Amerex describe sus equipos clase K](https://amerex-fire.com/products/fire-extinguishers/portable-fire-extinguishers/class-k) con agente basado en acetato de potasio. La composición y las instrucciones deben comprobarse para el modelo cotizado; esa referencia no implica que todas las presentaciones de esta página sean de esa marca.
 
 ### Los 5 tipos de extintores y en qué se diferencia el tipo K
 
-Los extintores se clasifican según el combustible que apagan: clase A (sólidos como papel, cartón o madera), B (líquidos inflamables), C (equipo con corriente eléctrica), D (metales combustibles) y K (aceites y grasas de cocción). El tipo K es el único diseñado para saponificar grasa caliente; ni el [extintor PQS ABC](/productos/extintor-pqs/) ni el [extintor de CO2](/productos/extintor-co2/) enfrían el aceite ni evitan la reignición, por eso no sustituyen al clase K en la línea de cocción.
+A, B, C, D y K son clases de fuego, no cinco agentes intercambiables. La [NOM-002-STPS-2010, numeral 4.11](https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/Nom-002.pdf) distingue sólidos combustibles, líquidos y gases inflamables, equipos eléctricos energizados, metales combustibles y aceites o grasas de cocción, respectivamente. No asumas que un [PQS ABC](/productos/extintor-pqs/) o un [CO2](/productos/extintor-co2/) cubre clase K por estar instalado dentro de una cocina.
 
 ### Dónde conviene y dónde no
 
-Va junto a la línea de cocción de restaurantes, cocinas industriales, comedores de empresa, hoteles y cualquier cocina con freidoras, planchas o recipientes con aceite caliente. El resto del restaurante (comedor, pasillos y bodega) se protege con [extintores PQS ABC](/productos/extintor-pqs/).
-
-Lo que no hace es sustituir al sistema fijo de supresión de la campana. Si tu cocina lo tiene, el extintor clase K es el complemento para que el personal actúe mientras el sistema hace su trabajo. Si no lo tiene, conviene revisar el caso completo.
+Evalúa clase K en áreas con aceites y grasas de cocción. El comedor, bodega y otras zonas requieren revisar sus riesgos por separado. El portátil debe considerarse dentro de la protección completa de la cocina, incluido el sistema fijo cuando corresponda; no reemplaza su evaluación.
 
 ### Cómo elegir la capacidad
 
-- **4 L:** cocinas con poco espacio o una sola freidora.
-- **6 L:** la medida común en cocinas comerciales y restaurantes.
-- **9.46 L (2.5 gal):** cocinas con varios equipos de cocción o más volumen de aceite.
+Las presentaciones de **4, 6 y 9.46 L (2.5 gal)** indican volumen de agente. No asignan por sí mismas una cantidad de freidoras ni una superficie protegida.
 
-La elección depende de cuántos equipos hay, cuánto aceite manejan y cómo está distribuida la cocina. Como referencia rápida:
-
-| Tu cocina | Extintor tipo K recomendado |
-|---|---|
-| Una freidora o un equipo de cocción, espacio reducido | 1 de 4 L junto al equipo |
-| Línea de cocción con 2-3 equipos (freidoras, planchas) | 1 de 6 L por línea, a no más de 10 m de recorrido |
-| Cocina grande, varias líneas o alto volumen de aceite | 1 de 9.46 L por línea, o más de un equipo si el recorrido supera los 10 m |
-
-El criterio que manda es la NOM-002-STPS-2010: no más de 10 metros de recorrido hasta el extintor, con un equipo visible por cada línea de cocción caliente.
+Para comparar modelos, reúne tipo y dimensiones de los equipos de cocción, aceites utilizados, distribución y datos del sistema fijo existente. Solicita clasificación, peso total, dimensiones e instrucciones del equipo propuesto. La capacitación debe corresponder al modelo y al plan de respuesta de la cocina.
 
 ### Dónde colocarlo
 
-A la mano de quien cocina, pero no justo encima del equipo de cocción, para que se pueda tomar sin acercarse al aceite encendido. La NOM-002-STPS-2010 fija en 10 m la distancia máxima de recorrido hasta un extintor clase K, y la parte más alta del equipo no debe quedar a más de 1.50 m del piso. Móntalo con su [soporte](/productos/soportes-accesorios-extintor/) y márcalo con [señalización fotoluminiscente](/productos/senalizacion-fotoluminiscente/); si prefieres que te lo dejemos listo, nuestro servicio de [instalación](/servicios/instalacion/) monta el equipo, el soporte y la señalización en una sola visita.
+Revisa los recorridos reales y el acceso al equipo. La NOM-002-STPS-2010 establece en su numeral 7.17 criterios de ubicación; la revisión debe contemplar obstáculos y distribución. Cotiza el [soporte compatible](/productos/soportes-accesorios-extintor/), la [señalización](/productos/senalizacion-fotoluminiscente/) y, si la necesitas, la [instalación](/servicios/instalacion/), con alcance y fecha por confirmar.
 
 ### Mantenimiento y recarga
 
-Se revisa cada mes, se le da mantenimiento al menos una vez al año y se recarga después de cualquier uso. El servicio lo presta un proveedor conforme a la NOM-154-SCFI-2005 y deja la etiqueta con los datos del servicio; el cilindro pasa prueba hidrostática al menos cada cinco años. Puedes cotizar la [recarga de extintores](/servicios/mantenimiento/) junto con el resto del equipo de tu cocina.
+Para solicitar [mantenimiento o recarga](/servicios/mantenimiento/), comparte etiqueta, capacidad, ubicación y antecedentes del equipo. Informa cualquier descarga, daño o pérdida observada. El proveedor debe determinar el servicio procedente y el agente compatible; los requisitos de prueba se verifican para el cilindro y el modelo.
 
 ### Norma aplicable
 
-El clase K no tiene una norma mexicana de producto específica. Como referencia técnica se usa la **NFPA 10**, que no es ley federal, pero define la clase K y cómo seleccionar el extintor. El servicio se rige por la **NOM-154-SCFI-2005** y la colocación, por la **NOM-002-STPS-2010**.
+La NOM-002-STPS-2010 es la referencia para prevención y protección contra incendios en centros de trabajo. La documentación de producto debe corresponder al fabricante y modelo ofrecidos; no se acredita su conformidad únicamente por indicar clase K en una ficha comercial.
 
-Si estás preparando la visita de Protección Civil, revisa también la [ficha de Protección Civil para restaurantes](/proteccion-civil/restaurantes/). Para cotizar, cuéntanos cuántos equipos de cocción tienes y qué tamaño tiene la cocina; te respondemos con el equipo eficaz para la seguridad de tu cocina y tu negocio.
+Consulta también la [guía de Protección Civil para restaurantes](/proteccion-civil/restaurantes/) para preparar la revisión. Al cotizar, indica capacidad o riesgo por evaluar, cantidad y ubicación; confirma fabricante, modelo, accesorios, documentos, impuestos, vigencia y plazo de entrega.

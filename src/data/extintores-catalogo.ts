@@ -133,7 +133,7 @@ export const EXT_AGENTE_INFO: Record<ExtAgente, { ventajas: [string, string]; li
     mantenimiento: 'En la revisión se comprueba que conserve la capacidad nominal de su etiqueta.',
   },
   'clase-k': {
-    ventajas: ['Formulado para aceites y grasas de cocción', 'Descarga suave que no salpica el aceite'],
+    ventajas: ['Formulado para aceites y grasas de cocción', 'Descarga diseñada para aplicación sobre aceites de cocina'],
     limitacion: 'Complementa, no sustituye, el sistema fijo de supresión de la campana.',
     mantenimiento: MANT_BASE,
   },
@@ -143,8 +143,8 @@ export const EXT_AGENTE_INFO: Record<ExtAgente, { ventajas: [string, string]; li
     mantenimiento: MANT_BASE,
   },
   'agua-nebulizada': {
-    ventajas: ['Agua desionizada con clasificación C del fabricante', 'Sin residuo junto a equipo sensible'],
-    limitacion: 'Cubre clases A y C; no es para líquidos inflamables.',
+    ventajas: ['Descarga en niebla; clasificación según el modelo', 'Alternativa sin residuo de polvo'],
+    limitacion: 'No asumir aptitud eléctrica: verificar clasificación e instrucciones del modelo.',
     mantenimiento: MANT_BASE,
   },
   espuma: {
@@ -153,8 +153,8 @@ export const EXT_AGENTE_INFO: Record<ExtAgente, { ventajas: [string, string]; li
     mantenimiento: MANT_BASE,
   },
   'agente-limpio': {
-    ventajas: ['No conduce ni deja residuo', 'Las presentaciones mayores también cubren clase A'],
-    limitacion: 'Las presentaciones chicas solo están clasificadas para clases B y C.',
+    ventajas: ['No conduce ni deja residuo', 'Modelos con distintas clasificaciones de fuego'],
+    limitacion: 'La clasificación depende del modelo; no se deduce por la capacidad.',
     mantenimiento: MANT_BASE,
   },
 };
@@ -184,13 +184,13 @@ export const extUsos: UsoRow[] = [
   { uso: 'bodega', titulo: 'Extintores para bodegas', arde: 'Tarimas, cartón, plástico, montacargas y cargadores', recomendado: 'PQS ABC de 9 kg; unidades móviles de PQS o agua en naves amplias', nota: 'Si la bodega es de riesgo alto, la NOM-002 pide un extintor por cada 200 m² (7.17).' },
   { uso: 'industria', titulo: 'Extintores industriales', arde: 'Procesos, solventes, combustibles y tableros', recomendado: 'PQS ABC de 9 kg y unidades móviles; espuma AFFF donde hay líquidos inflamables; CO₂ en tableros', nota: 'Con riesgo alto y líquidos inflamables, una unidad móvil puede quedar hasta a 15 m (Tabla 1).' },
   { uso: 'vehiculo', titulo: 'Extintores para vehículo', arde: 'Motor, combustible y cableado', recomendado: 'PQS ABC de 1 a 2 kg, bien sujeto con su soporte', nota: 'En el Estado de México el Reglamento de Tránsito pide portar extinguidor (art. 17, fr. V).' },
-  { uso: 'site', titulo: 'Extintores para site y telecom', arde: 'Servidores, UPS, baterías y cableado', recomendado: 'CO₂ o agente limpio; agua nebulizada con clasificación C', nota: 'Con un agente sin residuo, apagar el conato no termina de dañar el equipo.' },
+  { uso: 'site', titulo: 'Extintores para site y telecom', arde: 'Servidores, UPS, baterías y cableado', recomendado: 'CO₂ o agente limpio; agua nebulizada con clasificación C', nota: 'La ausencia de residuo no garantiza ausencia de daños; revisa compatibilidad y condiciones de uso.' },
 ];
 // ── Catálogo por capacidad ───────────────────────────────────────────────────
 export type CapRow = { rango: string; perfil: string; conviene: string; considera: string };
 export const extCapacidades: CapRow[] = [
   { rango: 'PQS de 1 a 2 kg · CO₂ o agente limpio de 2.5 a 5 lb', perfil: 'Compacto', conviene: 'Vehículos, puntos de riesgo muy acotados, equipo específico', considera: 'Descarga corta: complementa al extintor de área, no lo sustituye' },
-  { rango: 'PQS de 4.5 a 6 kg · clase K o agua nebulizada de 6 L · CO₂ de 10 lb', perfil: 'Uso general', conviene: 'Oficinas, comercios, escuelas, consultorios y cocinas', considera: 'Lo maneja sin problema una persona capacitada' },
+  { rango: 'PQS de 4.5 a 6 kg · clase K o agua nebulizada de 6 L · CO₂ de 10 lb', perfil: 'Uso general', conviene: 'Oficinas, comercios, escuelas, consultorios y cocinas', considera: 'Verifica peso total y condiciones de manejo con personal capacitado' },
   { rango: 'PQS de 9 kg · agua o espuma de 9 L · CO₂ de 15 a 20 lb', perfil: 'Mayor carga portátil', conviene: 'Bodegas, talleres, naves y cuartos eléctricos', considera: 'Pesa más: confirma quién lo va a descolgar y operar' },
   { rango: 'PQS de 35 a 70 kg · agua o espuma de 50 L · CO₂ de 50 a 100 lb', perfil: 'Unidad móvil', conviene: 'Industria, patios de maniobra y almacenes de combustibles', considera: 'Necesita pasillos libres y personal entrenado para desplegarla' },
 ];
@@ -206,7 +206,7 @@ export const extAgentesRows: string[][] = [
   ['Agua a presión', 'Archivos, bodegas de material seco, madera y textiles', 'No', 'No: conduce', 'Solo sólidos combustibles'],
   ['Agua nebulizada', 'Hospitales, telecomunicaciones y cuartos limpios', 'No', 'Sí, con clasificación C del fabricante', 'No es para líquidos inflamables'],
   ['Espuma AFFF', 'Talleres, patios de maniobra y combustibles', 'Espuma, se limpia', 'No: conduce', 'No sirve para alcoholes ni solventes polares'],
-  ['Agente limpio', 'Sites, salas de servidores y equipo sensible', 'No', 'Sí', 'Las presentaciones chicas no cubren clase A'],
+  ['Agente limpio', 'Sites, salas de servidores y equipo sensible', 'No', 'Sí', 'Consultar la clasificación del modelo'],
 ];
 
 // ── Portátil vs sobre ruedas (3 columnas) ────────────────────────────────────
@@ -259,7 +259,7 @@ export const extSecciones = {
     titleAccent: 'por agente y clase de fuego',
     desc: 'Cinco familias que reúnen siete agentes, más lo que hace falta para instalarlos, calcularlos y mantenerlos.',
     body: [
-      'Si ya sabes qué agente necesitas, entra directo a su ficha. Si no, el catálogo de abajo se filtra por giro, capacidad y clase de fuego.',
+      'Si ya sabes qué agente necesitas, entra directo a su ficha. El catálogo permite filtrar por agente, formato, giro y clase de fuego.',
       'Las tres últimas fichas cierran el ciclo: el soporte o gabinete para colocarlo, la calculadora para saber cuántos te pide la norma y el servicio que le toca cada año.',
     ],
   },
@@ -269,8 +269,8 @@ export const extSecciones = {
     titleAccent: 'en un solo lugar',
     desc: 'Filtra por agente, formato, giro o clase de fuego y cotiza la presentación que necesitas.',
     body: [
-      'Cada tarjeta es una presentación real: capacidad, clases de fuego que cubre, el negocio donde conviene y la limitación que hay que saber antes de comprar.',
-      'Publicamos las capacidades que se consiguen en el mercado mexicano. La marca y el modelo los confirmamos contigo al cotizar, según disponibilidad.',
+      'Compara presentaciones por agente y formato. La clasificación y los datos de desempeño deben corresponder al modelo que se proponga.',
+      'Marca, modelo, disponibilidad y accesorios se confirman en la cotización. Las fichas generales y las especializadas pueden mostrar una misma presentación.',
     ],
   },
   negocio: {

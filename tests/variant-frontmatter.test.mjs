@@ -45,46 +45,29 @@ test('parseProductFrontmatter informa cuando el bloque variantes no existe', asy
   assert.equal(parsed.variantCount, 0);
 });
 
-test('auditProductVariants falla productos con menos de cinco variantes', async () => {
+test('auditProductVariants admite una presentación real sin exigir relleno', async () => {
   const { auditProductVariants } = await loadSubject();
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'variant-audit-'));
-  fs.writeFileSync(path.join(dir, 'incompleto.md'), product(['Uno real', 'Dos real']));
-
+  fs.writeFileSync(path.join(dir, 'unico.md'), product(['Presentación única']));
   const result = auditProductVariants(dir);
-
-  assert.equal(result.products.length, 1);
-  assert.equal(result.failures.length, 1);
-  assert.match(result.failures[0].message, /2 variantes; mínimo 5/);
-});
-
-test('auditProductVariants admite solo una excepción explícita y documentada', async () => {
-  const { auditProductVariants } = await loadSubject();
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'variant-exception-'));
-  fs.writeFileSync(path.join(dir, 'limitado.md'), product(['Uno real', 'Dos real', 'Tres real']));
-
-  const result = auditProductVariants(dir, {
-    'limitado.md': {
-      verifiedCount: 3,
-      documentation: 'docs/expedientes-variantes.md#excepcion-limitado',
-    },
-  });
-
   assert.equal(result.failures.length, 0);
-  assert.equal(result.products[0].status, 'EXCEPTION');
+  assert.equal(result.products[0].status, 'PASS');
 });
 
-test('una excepción con conteo distinto al medido no oculta el fallo', async () => {
+test('auditProductVariants rechaza un bloque vacío', async () => {
   const { auditProductVariants } = await loadSubject();
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'variant-mismatch-'));
-  fs.writeFileSync(path.join(dir, 'limitado.md'), product(['Uno real', 'Dos real']));
-
-  const result = auditProductVariants(dir, {
-    'limitado.md': {
-      verifiedCount: 3,
-      documentation: 'docs/expedientes-variantes.md#excepcion-limitado',
-    },
-  });
-
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'variant-empty-'));
+  fs.writeFileSync(path.join(dir, 'vacio.md'), product([]));
+  const result = auditProductVariants(dir);
   assert.equal(result.failures.length, 1);
-  assert.match(result.failures[0].message, /no coincide/);
+  assert.match(result.failures[0].message, /al menos una presentación/);
+});
+
+test('auditProductVariants rechaza una ficha sin presentaciones', async () => {
+  const { auditProductVariants } = await loadSubject();
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'variant-missing-'));
+  fs.writeFileSync(path.join(dir, 'sin.md'), '---\ntitle: Sin presentaciones\n---\n');
+  const result = auditProductVariants(dir);
+  assert.equal(result.failures.length, 1);
+  assert.match(result.failures[0].message, /sin bloque variantes/);
 });

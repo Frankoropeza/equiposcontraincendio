@@ -12,187 +12,160 @@ seoDescription: "Extintor de CO2 (dióxido de carbono): no conduce electricidad 
 variantes:
   - nombre: "Extintor CO2 de 2.27 kg (5 lb)"
     badge: "Compacto"
-    desc: "Presentación compacta para riesgos eléctricos puntuales donde un agente con residuo podría dañar el equipo. Su menor carga favorece el manejo, pero limita el tiempo disponible de descarga."
-    specs: "CO2 · 2.27 kg / 5 lb · Fuegos B y C · Portátil · Sin residuo"
-    waText: "Hola, necesito cotizar un extintor CO2 de 2.27 kg en CDMX"
-    resumen: "Para un tablero o un equipo en particular; ligero y fácil de montar junto al riesgo."
+    desc: "Presentación de 5 lb de agente. Revisa el peso total y el soporte compatible con el modelo. Solicita fabricante, modelo y ficha técnica; la disponibilidad se confirma al cotizar."
+    specs: "CO2 · 2.27 kg (5 lb) de agente · Portátil · Modelo por confirmar"
+    waText: "Hola, quiero cotizar Extintor CO2 de 2.27 kg (5 lb). Cantidad: __. Ubicación: __. Solicito fabricante, modelo, ficha técnica, accesorios y plazo de entrega."
+    resumen: "Presentación de 5 lb de agente. Revisa el peso total y el soporte compatible con el modelo."
     agente: "co2"
     capacidad: "2.27 kg (5 lb)"
     formato: "portatil"
-    clases: [B, C]
-    usos: [oficina, site]
+    clases: [ B, C ]
+    usos: [ oficina, site ]
   - nombre: "Extintor CO2 de 4.54 kg (10 lb)"
-    desc: "Capacidad habitual para tableros, laboratorios y áreas con electrónica. Ofrece más agente que el modelo compacto y conserva un formato portátil para personal capacitado."
-    specs: "CO2 · 4.54 kg / 10 lb · Fuegos B y C · Portátil · Sin residuo"
-    waText: "Hola, necesito cotizar un extintor CO2 de 4.54 kg en CDMX"
-    resumen: "La medida habitual junto a tableros, sites y laboratorios."
+    desc: "Presentación de 10 lb de agente. Compara su clasificación documentada y sus dimensiones. Solicita fabricante, modelo y ficha técnica; la disponibilidad se confirma al cotizar."
+    specs: "CO2 · 4.54 kg (10 lb) de agente · Portátil · Modelo por confirmar"
+    waText: "Hola, quiero cotizar Extintor CO2 de 4.54 kg (10 lb). Cantidad: __. Ubicación: __. Solicito fabricante, modelo, ficha técnica, accesorios y plazo de entrega."
+    resumen: "Presentación de 10 lb de agente. Compara su clasificación documentada y sus dimensiones."
     agente: "co2"
     capacidad: "4.54 kg (10 lb)"
     formato: "portatil"
-    clases: [B, C]
-    usos: [oficina, site, comercio]
+    clases: [ B, C ]
+    usos: [ oficina, site, comercio ]
   - nombre: "Extintor CO2 de 6.81 kg (15 lb)"
-    desc: "Presentación portátil de mayor carga para cuartos eléctricos o procesos con líquidos inflamables evaluados. Su peso y dimensiones requieren confirmar quién lo operará y dónde se montará."
-    specs: "CO2 · 6.81 kg / 15 lb · Fuegos B y C · Portátil · Sin residuo"
-    waText: "Hola, necesito cotizar un extintor CO2 de 6.81 kg en CDMX"
-    resumen: "Más carga para cuartos eléctricos grandes o procesos con líquidos inflamables."
+    desc: "Presentación de 15 lb de agente. Verifica el peso cargado y las condiciones de manejo. Solicita fabricante, modelo y ficha técnica; la disponibilidad se confirma al cotizar."
+    specs: "CO2 · 6.81 kg (15 lb) de agente · Portátil · Modelo por confirmar"
+    waText: "Hola, quiero cotizar Extintor CO2 de 6.81 kg (15 lb). Cantidad: __. Ubicación: __. Solicito fabricante, modelo, ficha técnica, accesorios y plazo de entrega."
+    resumen: "Presentación de 15 lb de agente. Verifica el peso cargado y las condiciones de manejo."
     agente: "co2"
     capacidad: "6.81 kg (15 lb)"
     formato: "portatil"
-    clases: [B, C]
-    usos: [industria, site]
+    clases: [ B, C ]
+    usos: [ industria, site ]
   - nombre: "Extintor CO2 de 9.08 kg (20 lb)"
-    desc: "La mayor de las presentaciones portátiles documentadas en esta familia. Se considera cuando se necesita más agente disponible y existe personal capaz de retirar y dirigir el equipo con seguridad."
-    specs: "CO2 · 9.08 kg / 20 lb · Fuegos B y C · Portátil · Sin residuo"
-    waText: "Hola, necesito cotizar un extintor CO2 de 9.08 kg en CDMX"
-    resumen: "El portátil más grande de la familia; confirma que quien lo usará pueda cargarlo."
+    desc: "Presentación de 20 lb de agente. Confirma dimensiones, soporte y facilidad de traslado. Solicita fabricante, modelo y ficha técnica; la disponibilidad se confirma al cotizar."
+    specs: "CO2 · 9.08 kg (20 lb) de agente · Portátil · Modelo por confirmar"
+    waText: "Hola, quiero cotizar Extintor CO2 de 9.08 kg (20 lb). Cantidad: __. Ubicación: __. Solicito fabricante, modelo, ficha técnica, accesorios y plazo de entrega."
+    resumen: "Presentación de 20 lb de agente. Confirma dimensiones, soporte y facilidad de traslado."
     agente: "co2"
     capacidad: "9.08 kg (20 lb)"
     formato: "portatil"
-    clases: [B, C]
-    usos: [industria, bodega]
+    clases: [ B, C ]
+    usos: [ industria, bodega ]
   - nombre: "Extintor móvil CO2 de 22.7 kg (50 lb)"
     badge: "Sobre ruedas"
-    desc: "Equipo móvil para riesgos de mayor escala donde un portátil no aporta suficiente volumen de CO2. Requiere revisar ventilación, acceso, longitud de manguera y condiciones de operación del área."
-    specs: "CO2 · 22.7 kg / 50 lb · Fuegos B y C · Móvil · Sin residuo"
-    waText: "Hola, necesito cotizar un extintor móvil CO2 de 22.7 kg en CDMX"
-    resumen: "Unidad sobre ruedas para áreas industriales donde un portátil no alcanza."
+    desc: "Unidad sobre ruedas de 50 lb. Revisa manguera, ruedas y recorrido de desplazamiento. Solicita fabricante, modelo y ficha técnica; la disponibilidad se confirma al cotizar."
+    specs: "CO2 · 22.7 kg (50 lb) de agente · Sobre ruedas · Modelo por confirmar"
+    waText: "Hola, quiero cotizar Extintor móvil CO2 de 22.7 kg (50 lb). Cantidad: __. Ubicación: __. Solicito fabricante, modelo, ficha técnica, accesorios y plazo de entrega."
+    resumen: "Unidad sobre ruedas de 50 lb. Revisa manguera, ruedas y recorrido de desplazamiento."
     agente: "co2"
     capacidad: "22.7 kg (50 lb)"
     formato: "movil"
-    clases: [B, C]
-    usos: [industria]
+    clases: [ B, C ]
+    usos: [ industria ]
   - nombre: "Extintor móvil CO2 de 45.4 kg (100 lb)"
-    desc: "Unidad sobre ruedas de mayor carga; en algunos modelos se integra con dos cilindros de 50 lb. Para cuartos de máquinas, subestaciones y áreas industriales con riesgo eléctrico o de líquidos inflamables."
-    specs: "CO2 · 45.4 kg / 100 lb · Fuegos B y C · Móvil · Sin residuo"
-    waText: "Hola, necesito cotizar un extintor móvil CO2 de 45.4 kg (100 lb) en CDMX"
-    resumen: "La mayor carga de CO2 del catálogo, para cuartos de máquinas y subestaciones."
+    desc: "Unidad sobre ruedas de 100 lb. Confirma la configuración del equipo y sus accesorios. Solicita fabricante, modelo y ficha técnica; la disponibilidad se confirma al cotizar."
+    specs: "CO2 · 45.4 kg (100 lb) de agente · Sobre ruedas · Modelo por confirmar"
+    waText: "Hola, quiero cotizar Extintor móvil CO2 de 45.4 kg (100 lb). Cantidad: __. Ubicación: __. Solicito fabricante, modelo, ficha técnica, accesorios y plazo de entrega."
+    resumen: "Unidad sobre ruedas de 100 lb. Confirma la configuración del equipo y sus accesorios."
     agente: "co2"
     capacidad: "45.4 kg (100 lb)"
     formato: "movil"
-    clases: [B, C]
-    usos: [industria]
+    clases: [ B, C ]
+    usos: [ industria ]
 faqs:
-  - question: "¿Qué tipo de fuego apaga un extintor de CO2?"
-    answer: "Extingue fuegos de clase B (líquidos inflamables como gasolina, solventes o aceite) y clase C (equipo con corriente eléctrica: tableros, servidores, motores). No apaga fuegos de clase A (papel, madera, tela), porque el gas se disipa antes de sofocar la brasa, ni fuegos clase D (metales) o clase K (aceites de cocina), que piden un agente específico."
-  - question: "¿Cuál es la diferencia entre un extintor de CO2 y uno PQS (ABC)?"
-    answer: "Depende de qué protege: el CO2 es la opción cuando el residuo del polvo dañaría el equipo (sites, tableros, servidores), porque no deja rastro y no conduce electricidad, aunque solo alcanza fuegos B y C. El PQS ABC también cubre sólidos como papel, cartón o madera, a costa de dejar un polvo corrosivo que hay que limpiar de inmediato de superficies y contactos eléctricos. Si en el mismo cuarto hay equipo delicado y también material combustible sólido, lo habitual es combinar ambos: CO2 junto al tablero y PQS para el resto del área."
-  - question: "¿Para qué sirve un extintor de CO2?"
-    answer: "Para fuegos de líquidos inflamables (clase B) y de equipo eléctrico con corriente (clase C). No conduce la electricidad y no deja residuo, por eso se usa junto a tableros, sites y equipo electrónico."
-  - question: "¿El CO2 sirve para papel, madera o cartón?"
-    answer: "No. Apaga la flama, pero la brasa conserva el calor y puede volver a encender. Para sólidos se necesita un agente con clase A, como el PQS, el agua o el agente limpio en sus presentaciones mayores."
-  - question: "¿Es peligroso usar CO2 en un cuarto pequeño?"
-    answer: "Hay que tener cuidado. En espacios pequeños o mal ventilados reduce el oxígeno disponible también para quien lo usa. Además, la descarga es muy fría, así que se sujeta por las zonas de agarre del fabricante."
-  - question: "¿Cada cuándo se da mantenimiento a un extintor de CO2?"
-    answer: "Se revisa cada mes, lleva mantenimiento al menos una vez al año y se recarga después de cualquier uso. En la revisión se comprueba que conserve la capacidad nominal de su etiqueta, y el cilindro pasa prueba hidrostática al menos cada cinco años."
-  - question: "¿Qué capacidad de extintor de CO2 necesito?"
-    answer: "Para un tablero o un rack aislado suele bastar un portátil de 5 a 10 lb; para site, subestación o cuarto de máquinas conviene de 15 a 20 lb, y para áreas grandes con mucho equipo, unidades sobre ruedas de 50 o 100 lb. El peso importa: quien lo vaya a usar tiene que poder descolgarlo."
-  - question: "¿Por qué el extintor de CO2 no deja residuo?"
-    answer: "Porque el agente es un gas que desplaza el oxígeno y se disipa solo, sin polvo ni espuma. Por eso se instala junto a servidores, tableros y equipo de laboratorio, donde la limpieza posterior de un polvo químico costaría más que el propio conato."
-  - question: "¿Se congela la corneta del extintor de CO2?"
-    answer: "Sí. Al descargar, el gas se expande y enfría mucho la corneta y el tubo, por eso se sujeta por el mango aislado y nunca por la boquilla. Es un motivo más para capacitar a quien vaya a usarlo antes de necesitarlo."
-  - question: "¿Cuántos extintores de CO2 debo poner por área eléctrica?"
-    answer: "El criterio práctico es uno por tablero o rack crítico, y verificar que el recorrido hasta el extintor no supere los 15 metros cuando el riesgo dominante es de clase B. En cuartos con papel además de electrónica, se combina con un PQS ABC."
-  - question: "¿El extintor de CO2 sirve en una cocina?"
-    answer: "Sirve para el tablero eléctrico y para el equipo de la cocina, pero no para el aceite caliente: ahí va un extintor tipo K de químico húmedo. El chorro de CO2 además puede salpicar la grasa encendida y ampliar el fuego."
-  - question: "¿Qué mantenimiento pide el cilindro de CO2?"
-    answer: "Revisión visual mensual, mantenimiento al menos anual y pesaje del cilindro para confirmar la carga, porque el CO2 no lleva manómetro confiable. El cilindro pasa prueba hidrostática al menos cada cinco años conforme a la NOM-154-SCFI-2005."
+  - question: ¿Los kilogramos publicados son el peso total?
+    answer: No. Indican la carga de CO2; el peso total incluye recipiente, válvula y accesorios. Pide el peso cargado del modelo para evaluar manejo, soporte y transporte.
+  - question: ¿Un extintor de CO2 por rack es suficiente?
+    answer: No existe una equivalencia automática entre racks y extintores. La cantidad y ubicación requieren evaluar los combustibles, la distribución, los recorridos y la clasificación del equipo.
+  - question: ¿CO2 y agente limpio son intercambiables?
+    answer: No se deben sustituir solo porque ambos eviten residuos de polvo. Compara la clasificación y las restricciones de uso de cada modelo, especialmente si también hay papel, mobiliario u otros sólidos combustibles.
+  - question: ¿Qué información envío si necesito recarga?
+    answer: Comparte fotos legibles de la etiqueta y del cilindro, capacidad, ubicación y fecha del último servicio si la conoces. Indica si se descargó o presenta daños para que el proveedor determine la revisión correspondiente.
+  - question: ¿Qué accesorios debo pedir al cotizar?
+    answer: Especifica soporte o gabinete compatible y señalamiento. Para unidades móviles solicita también dimensiones, características de ruedas y manguera. La propuesta debe indicar qué incluye y el plazo de entrega.
 ficha:
-  heroBadge: CO2 · Clases B y C · NOM-102-STPS
+  heroBadge: CO2 · Clases B y C
   heroTitle: Extintor CO2 (dióxido de carbono),
-  heroAccent: de 2 a 45 kilogramos
+  heroAccent: capacidades de 5 a 100 lb
   descRight:
-    - El CO2 le quita el oxígeno a la flama, no conduce la electricidad y se disipa sin dejar rastro. Es el extintor que va junto a tableros, sites y equipo electrónico.
-    - "Abajo comparas sus presentaciones y encuentras sus límites: no está clasificado para papel, madera ni cartón."
-  norma: NOM-102-STPS-1994
+    - Consulta presentaciones portátiles y sobre ruedas para riesgos B y C. La selección depende del riesgo y de la clasificación documentada del modelo.
+    - Las capacidades indican carga de agente. Confirma peso total, fabricante, modelo, accesorios y plazo de entrega al cotizar.
+  norma: Selección conforme a NOM-002-STPS-2010
   claves:
     - label: Agente
       value: Dióxido de carbono (CO2)
     - label: Clases de fuego
-      value: B y C
-    - label: Norma de producto
-      value: NOM-102-STPS-1994
-    - label: Servicio
-      value: NOM-154-SCFI-2005
+      value: B y C; verificar etiqueta del modelo
+    - label: Presentaciones
+      value: Portátiles y sobre ruedas
+    - label: Documentación
+      value: Ficha e instrucciones del modelo
   showcaseTitle: Datos clave
   showcaseAccent: de los extintores de dióxido de carbono
-  showcaseDesc: Agente, clases cubiertas, norma de producto y servicio del cilindro.
+  showcaseDesc: Compara carga de agente y formato; consulta el peso total en la ficha del modelo.
   faqAccent: sobre extintores de CO2
   guia:
     title: Cómo elegir tu extintor de CO2
-    titleAccent: para fuego tipo BC
-    desc: Dónde conviene, qué capacidad elegir, dónde colocarlo y qué mantenimiento pide.
+    titleAccent: para riesgos B y C
+    desc: Revisa clasificación, condiciones del lugar y manejo antes de seleccionar una capacidad.
 fichaHeads:
   vitrina:
-    - "El agente extintor es dióxido de carbono: desplaza el oxígeno y enfría la zona de la flama sin dejar residuo ni conducir electricidad, por eso es el equipo de tableros, sites y laboratorios. Norma de producto: NOM-102-STPS-1994."
-    - "No está clasificado para clase A: donde hay papel, cartón o madera se combina con un PQS. Te decimos qué mezcla conviene según lo que tengas en cada cuarto."
+    - El CO2 permite evaluar una alternativa sin residuo de polvo para riesgos B y C. Confirma la clasificación en la documentación del equipo.
+    - Su elección también requiere revisar ventilación, ocupación y materiales combustibles presentes en el área.
   presentaciones:
-    - "Las presentaciones de CO₂ van de 5 a 20 lb en portátil y de 50 a 100 lb sobre ruedas. El cilindro es de alta presión, así que el peso sube rápido: importa quién lo va a descolgar y usar."
-    - Para un site pequeño suele bastar un portátil junto a la puerta; para subestación o cuarto de máquinas conviene la unidad móvil. Dinos el área y te damos la combinación.
+    - Consulta cuatro capacidades portátiles y dos sobre ruedas. Los kilogramos y libras expresan carga de agente, no peso total.
+    - La presentación no determina por sí sola el área protegida. Solicita dimensiones y condiciones de operación del modelo propuesto.
   comparativa:
-    - La tabla compara capacidad, formato y clasificación de cada extintor de CO₂ para que elijas por alcance real y no por precio por kilo, que es donde se pierde cobertura.
-    - Con riesgo eléctrico, la referencia práctica es un equipo por tablero o rack crítico, más el recorrido máximo de 15 m que aplica cuando domina la clase B.
+    - La tabla organiza capacidad y formato para preparar una solicitud comparable entre proveedores.
+    - El alcance y la duración de descarga deben consultarse en la ficha técnica; no se deducen de la cantidad de CO2.
   guia:
-    - "Aquí está el criterio completo del CO₂: dónde conviene frente al agente limpio, qué capacidad elegir por tipo de cuarto, por qué no se instala en espacios confinados sin ventilación y qué servicio pide el cilindro."
-    - También te decimos cuándo NO es el equipo indicado, que es la parte que casi ningún proveedor explica antes de facturar.
+    - La guía distingue propiedades del agente, condiciones de selección y datos necesarios para instalar y mantener el equipo.
+    - La ausencia de residuo no equivale a una garantía de que los equipos electrónicos no sufran daños durante un incendio.
   giros:
-    - Sites, subestaciones, cocinas con equipo eléctrico, talleres y laboratorios son los giros donde la ficha de Protección Civil termina pidiendo CO₂ junto al extintor de polvo.
-    - "Revisa la ficha de tu actividad: ahí viene el equipo mínimo, la señalización y el expediente que te van a solicitar en la visita."
+    - Un mismo taller, oficina o laboratorio puede reunir riesgos distintos. Revisa cada área antes de definir el equipo.
+    - Las guías por actividad aportan contexto para la consulta; no sustituyen la evaluación del inmueble.
   relacionados:
-    - El CO₂ convive con el agente limpio, el PQS y la señalización de riesgo eléctrico; y como todo cilindro de alta presión, entra al calendario de mantenimiento anual y prueba hidrostática.
-    - Arma el paquete completo con nosotros y te queda una sola fecha de servicio para todo el inmueble.
+    - Compara también PQS y agente limpio si el área contiene materiales que requieren otra clasificación.
+    - Solicita soporte, señalamiento y servicio como conceptos expresos de la propuesta.
   faq:
-    - "Resolvemos lo que más se pregunta sobre extintores de CO₂: por qué no sirven para papel, si dañan el equipo electrónico, cuánto pesa cada presentación y cada cuándo se recargan."
-    - Cuéntanos qué vas a proteger y te confirmamos si el CO₂ es el agente correcto antes de que gastes.
+    - Estas respuestas ayudan a precisar la compra, comparar alternativas y preparar una solicitud de servicio.
+    - Si vas a sustituir un equipo, una fotografía legible de la etiqueta facilita identificarlo.
 ---
 
-Los **extintores de CO2** son los que se ponen junto a tableros eléctricos, sites y equipo electrónico. El dióxido de carbono le quita el oxígeno a la flama, no conduce la electricidad y se disipa sin dejar residuo. Después de usarlo no hay polvo que limpiar ni equipo dañado por el agente.
+Los **extintores de CO2** se utilizan para riesgos de líquidos inflamables y equipo eléctrico energizado, con clasificación B y C. Antes de elegir capacidad, identifica los combustibles y las condiciones del lugar; el número de tableros o racks no basta para definir la protección.
 
 ### Cómo funciona un extintor de CO2
 
-El cilindro guarda dióxido de carbono comprimido en estado líquido. Al accionar la válvula, el agente se expande a estado gaseoso y sale a muy baja temperatura, cercana a los -78 °C, formando una nube que ayuda a desplazar el oxígeno alrededor de la flama y sofocar la combustión sin dejar residuo ni humedad. Ese principio es lo que hace eficaz la extinción de incendios eléctricos y por qué se usa para extinguir conatos de incendio junto a equipo delicado.
+El dióxido de carbono actúa desplazando el oxígeno alrededor de la flama. Es eléctricamente no conductor y no deja residuo de polvo, según la [descripción técnica de CO2 de Amerex](https://amerex-fire.com/products/fire-extinguishers/portable-fire-extinguishers/co2). Estas propiedades no garantizan ausencia de daños en los equipos expuestos al incendio.
 
 ### Características principales de un extintor de CO2
 
-- No conduce electricidad ni deja residuo tras la descarga.
-- Agente 100% gaseoso: dióxido de carbono comprimido dentro de un cilindro de acero.
-- Clasificado para fuegos de clase B y C; no cubre clase A, D ni K.
-- Se pesa cada mes porque el manómetro no es un indicador confiable en este agente.
-- Su vida útil depende de la prueba hidrostática cada cinco años, conforme a la NOM-154-SCFI-2005.
+Para comparar propuestas, solicita la clasificación del modelo, carga de agente, peso total, dimensiones, instrucciones y accesorios. La duración y el alcance de descarga son datos del modelo; no se deducen de los kilogramos ni se trasladan de una marca a otra.
 
 ### Dónde conviene y dónde no
 
-Rinde en cuartos eléctricos, tableros de distribución, sites, laboratorios y áreas con maquinaria o líquidos inflamables: es un extintor clasificado para fuegos de clase B y C, el tipo de fuego eléctrico y de líquidos inflamables. En una oficina suele ir junto al rack o al no-break, mientras un [extintor PQS ABC](/productos/extintor-pqs/) protege el resto del piso.
+El CO2 puede evaluarse donde interesa evitar residuos de polvo, siempre que corresponda al riesgo. Si hay papel, madera o mobiliario, se requiere revisar también la protección para clase A; compara el [PQS ABC](/productos/extintor-pqs/) y el [agente limpio](/productos/extintor-agente-limpio/) por su clasificación documentada.
 
-No es para papel, cartón, madera ni tela. Sobre sólidos apaga la flama, pero la brasa se queda caliente y puede volver a encender cuando el gas se va; por eso no tiene clasificación A. Si en el mismo cuarto hay equipo y también cajas o mobiliario, revisa el [agente limpio](/productos/extintor-agente-limpio/), que en sus presentaciones mayores cubre las tres clases.
-
-Dos precauciones más. En recintos pequeños o mal ventilados, el CO2 reduce el oxígeno disponible también para quien lo usa. Y la descarga es muy fría, así que el extintor se sujeta por las zonas de agarre que indica el fabricante para su correcta utilización.
+La evaluación debe considerar ventilación y ocupación del recinto. La selección y el uso deben seguir las restricciones del fabricante y la capacitación del personal; una ficha comercial no sustituye las instrucciones de operación.
 
 ### Cómo elegir la capacidad
 
-- **5 lb (2.27 kg):** un tablero o un equipo en particular.
-- **10 lb (4.54 kg):** la medida habitual para tableros, sites y laboratorios.
-- **15 y 20 lb (6.81 y 9.08 kg):** cuartos eléctricos grandes o áreas con líquidos inflamables. Pesan más, así que confirma quién los va a operar.
-- **50 y 100 lb sobre ruedas:** cuartos de máquinas, subestaciones y áreas industriales. En algunos modelos, la de 100 lb se arma con dos cilindros de 50 lb.
+Las presentaciones portátiles de esta página contienen **5, 10, 15 y 20 lb** de agente; las unidades sobre ruedas, **50 y 100 lb**. Estas cantidades no equivalen al peso cargado ni establecen una cobertura por tamaño de cuarto.
 
-La cantidad total la definen la superficie y el grado de riesgo del inmueble. Para un primer cálculo, revisa [cuántos extintores necesitas](/herramientas/cuantos-extintores-necesito/).
+Revisa clasificación, condiciones de manejo y ubicación. En las unidades móviles confirma configuración, manguera, dimensiones y ruta de desplazamiento. La [herramienta de estimación de extintores](/herramientas/cuantos-extintores-necesito/) ayuda a preparar la consulta, pero requiere complementarse con la evaluación del inmueble.
 
 ### Dónde colocarlo
 
-Cerca del riesgo que protege, pero sin estorbar el acceso al tablero ni al rack. La parte más alta del extintor no debe quedar a más de 1.50 m del piso, y tiene que estar visible y señalizado.
-
-La distancia máxima de recorrido hasta el extintor es de 23 m cuando el riesgo es eléctrico (clase C). Con líquidos inflamables (clase B) baja a 15 m en riesgo ordinario y a 10 m en riesgo alto. Completa el punto con un [soporte para extintor](/productos/soportes-accesorios-extintor/) y su [señalización](/productos/senalizacion-fotoluminiscente/).
+La [NOM-002-STPS-2010, numeral 7.17](https://www.stps.gob.mx/bp/secciones/dgsst/normatividad/normas/Nom-002.pdf) establece criterios de selección y ubicación según el riesgo, incluidos los recorridos de acceso. Revisa la distribución real del área y solicita [soporte compatible](/productos/soportes-accesorios-extintor/) y [señalización](/productos/senalizacion-fotoluminiscente/).
 
 ### Mantenimiento y recarga
 
-Como cualquier extintor, el de CO2 se revisa cada mes, lleva mantenimiento al menos una vez al año y se recarga después de cualquier uso. En su caso, la NOM-002-STPS-2010 añade un punto: verificar que conserve la capacidad nominal indicada en la etiqueta.
-
-El servicio lo presta un proveedor conforme a la NOM-154-SCFI-2005, que deja la etiqueta con los datos del servicio. El cilindro pasa [prueba hidrostática](/servicios/prueba-hidrostatica/) al menos cada cinco años, lo que confirma su vida útil. Si ya tienes extintores de CO2 instalados, también les damos [recarga y mantenimiento](/servicios/mantenimiento/).
+Si el equipo se descargó o presenta deterioro, solicita [revisión y mantenimiento](/servicios/mantenimiento/) e informa su condición. El proveedor debe identificar el cilindro y determinar el servicio y las pruebas correspondientes. Si procede una [prueba hidrostática](/servicios/prueba-hidrostatica/), solicita su resultado documentado; no constituye por sí sola una garantía de vida útil indefinida.
 
 ### Norma aplicable
 
-La norma de producto es la **NOM-102-STPS-1994**, que regula los recipientes de los extintores a base de bióxido de carbono. El servicio se rige por la **NOM-154-SCFI-2005**.
+La NOM-002-STPS-2010 establece condiciones de prevención y protección contra incendios en centros de trabajo. Solicita por separado la ficha técnica, instrucciones y evidencia de conformidad aplicable al modelo ofrecido; citar una norma en el catálogo no acredita un equipo específico.
 
 ### Precio y disponibilidad de un extintor de CO2
 
-El precio de un extintor CO2 depende de la capacidad (de 2.27 a 45.4 kilogramos), si es portátil o sobre ruedas, y si incluye soporte e instalación. No publicamos una lista fija porque el costo cambia con el tipo de cambio y el volumen del pedido. Por WhatsApp cotizamos con el equipo que quieres proteger, la superficie y cuántos extintores necesitas; la marca y el modelo, junto con la disponibilidad y el tiempo de entrega en CDMX y el Estado de México, se confirman en ese momento.
+Para cotizar, indica capacidad o riesgo que necesitas evaluar, cantidad y municipio o alcaldía. La propuesta debe identificar fabricante, modelo, clasificación, accesorios, documentación, impuestos, vigencia y plazo de entrega. La disponibilidad se confirma para el equipo propuesto.

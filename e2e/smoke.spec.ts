@@ -39,7 +39,10 @@ test('una evidencia de servicio no se presenta como venta independiente', async 
     'Se atiende dentro del servicio de mantenimiento',
   )
   await expect(
-    page.locator('main').getByRole('link', { name: 'Solicitar mantenimiento' }).first(),
+    page
+      .locator('main')
+      .getByRole('link', { name: 'Solicitar mantenimiento' })
+      .first(),
   ).toBeVisible()
   await expect(page.locator('.pvcard__cta')).toHaveText([
     'Solicitar servicio',
@@ -100,4 +103,31 @@ test('el menú móvil abre con estado accesible', async ({ page }, testInfo) => 
   await expect(
     page.getByRole('dialog', { name: 'Menú principal' }),
   ).toBeVisible()
+})
+
+test('el catálogo permite filtrar clase D y anuncia los resultados', async ({
+  page,
+}) => {
+  await page.goto('/productos/extintores/')
+  const catalog = page.locator('#catalogo')
+  const cards = catalog.locator('.ecard')
+  const total = await cards.count()
+  const results = catalog.getByRole('status')
+
+  await expect(results).toHaveText(`${total} de ${total} presentaciones`)
+  await catalog
+    .locator('[data-filter-group="clase"]')
+    .getByRole('button', { name: 'Clase D', exact: true })
+    .click()
+  const visible = cards.filter({ visible: true })
+  await expect(visible.first()).toBeVisible()
+  for (const card of await visible.all()) {
+    await expect(card).toHaveAttribute('data-clases', /(?:^| )D(?: |$)/)
+  }
+  await expect(results).toHaveText(
+    `${await visible.count()} de ${total} presentaciones`,
+  )
+  await catalog.getByRole('button', { name: 'Limpiar filtros' }).click()
+  await expect(results).toHaveText(`${total} de ${total} presentaciones`)
+  await expect(cards.filter({ visible: true })).toHaveCount(total)
 })

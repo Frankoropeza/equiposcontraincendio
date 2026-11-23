@@ -6,7 +6,6 @@ cardDescription: "Más eficaz sobre llama de líquidos y gas que el ABC. No cubr
 category: extintores
 image: /images/productos/extintor-polvo-quimico-bc.avif
 price: "Cotizar"
-brand: "CONINC"
 order: 48
 seoTitle: "Extintor de polvo químico BC bicarbonato"
 seoDescription: "Extintor de polvo químico BC para líquidos inflamables y gas, portátil y móvil. Venta y recarga en CDMX y Edomex."
@@ -69,17 +68,6 @@ variantes:
     formato: "movil"
     clases: [B, C]
     usos: [industria]
-  - nombre: "Mantenimiento y control de compactación"
-    badge: "Servicio"
-    desc: "Mantenimiento conforme a la NOM-154-SCFI-2005 con revisión de que el polvo no se haya compactado en el fondo del cilindro, que es el modo de falla propio de estos equipos."
-    specs: "Mantenimiento NOM-154 · Revisión de compactación · Etiqueta y collarín de servicio"
-    resumen: "Revisa que el polvo no se haya compactado, el modo de falla propio del agente."
-    waText: "Hola, quiero cotizar el mantenimiento de mis extintores de polvo BC"
-    agente: "polvo-bc"
-    capacidad: "Según equipo"
-    formato: "portatil"
-    clases: [B, C]
-    usos: [industria]
 relatedProducts:
   - extintor-pqs
   - extintor-espuma-afff
@@ -107,7 +95,7 @@ ficha:
       value: Gas y líquidos inflamables
   showcaseTitle: Datos clave
   showcaseAccent: del polvo BC
-  showcaseDesc: Capacidades, versión móvil y control de compactación.
+  showcaseDesc: Capacidades portátiles y móvil de polvo BC.
   faqAccent: sobre extintores de polvo BC
   guia:
     title: BC o ABC

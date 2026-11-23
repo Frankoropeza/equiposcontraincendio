@@ -6,7 +6,6 @@ cardDescription: "Sin residuo y sobre ruedas: subestación y cuarto eléctrico g
 category: extintores
 image: /images/productos/extintor-movil-co2-ruedas.avif
 price: "Cotizar"
-brand: "CONINC"
 order: 47
 seoTitle: "Extintor móvil de CO2 sobre ruedas"
 seoDescription: "Extintor móvil de CO2 de 20, 25 y 45 kg sobre carretilla para subestación y cuarto eléctrico. Venta y recarga en CDMX y Edomex."
@@ -58,27 +57,6 @@ variantes:
     formato: "movil"
     clases: [B, C]
     usos: [industria]
-  - nombre: "Corneta y manguera de repuesto"
-    desc: "Refacción del conjunto de descarga: manguera de alta presión y corneta con mango aislante, que es la pieza que se maltrata y la que protege la mano de quien opera."
-    specs: "Manguera de alta presión · Corneta con mango aislante · Refacción"
-    resumen: "Manguera y corneta con mango aislante, la pieza que más se maltrata."
-    waText: "Hola, quiero cotizar corneta y manguera de repuesto para extintor de CO2"
-    agente: "co2"
-    capacidad: "Según equipo"
-    formato: "movil"
-    clases: [B, C]
-    usos: [industria]
-  - nombre: "Mantenimiento con pesaje"
-    badge: "Servicio"
-    desc: "Mantenimiento conforme a la NOM-154-SCFI-2005 con verificación por peso, porque el cilindro de CO2 no lleva manómetro: pesarlo es la única forma de saber cuánto agente queda."
-    specs: "Mantenimiento NOM-154 · Verificación por peso · Revisión de corneta y ruedas"
-    resumen: "Verificación por peso: el CO2 no tiene manómetro que mirar."
-    waText: "Hola, quiero cotizar el mantenimiento de mis extintores móviles de CO2"
-    agente: "co2"
-    capacidad: "Según equipo"
-    formato: "movil"
-    clases: [B, C]
-    usos: [industria]
 relatedProducts:
   - extintor-co2
   - extintor-movil-pqs
@@ -106,7 +84,7 @@ ficha:
       value: Corneta muy fría al usar
   showcaseTitle: Datos clave
   showcaseAccent: del CO2 móvil
-  showcaseDesc: Capacidades, refacción de corneta y verificación por peso.
+  showcaseDesc: Capacidades móviles de CO2 de 20, 25 y 45 kg.
   faqAccent: sobre extintores móviles de CO2
   guia:
     title: Cuándo va un
@@ -117,7 +95,7 @@ fichaHeads:
     - "Después de una descarga de polvo sobre un tablero hay que limpiarlo y revisarlo pieza por pieza. El CO2 evita exactamente ese costo."
     - El formato móvil aparece cuando el riesgo eléctrico es grande y concentrado, no cuando el área es grande.
   presentaciones:
-    - Las presentaciones van por capacidad, más la refacción del conjunto de descarga.
+    - "Las presentaciones se distinguen por capacidad: 20, 25 y 45 kg."
     - "El mantenimiento va aparte porque el CO2 no tiene manómetro: la verificación es por peso."
   comparativa:
     - "La tabla compara el CO2 con el PQS en lo que decide un cuarto eléctrico: residuo y costo de limpieza posterior."
@@ -158,3 +136,5 @@ Las dos cosas son tema de la [capacitación de brigada](/servicios/capacitacion-
 **No lleva manómetro.** La única forma de saber cuánto agente queda es **pesarlo**. Por eso el [mantenimiento](/servicios/mantenimiento/) conforme a la NOM-154-SCFI-2005 se hace con verificación por peso, y por eso un CO2 "que se ve bien" no dice nada.
 
 Para el portátil está la ficha de [extintor de CO2](/productos/extintor-co2/); cuando el riesgo justifica protección permanente sin nadie presente, lo que entra es un [sistema fijo de CO2](/productos/sistema-de-supresion-por-co2/).
+
+Para la corneta y la manguera, consulta las [refacciones para extintores](/productos/refacciones-manometro-valvula-extintor/) y confirma la compatibilidad con tu equipo.

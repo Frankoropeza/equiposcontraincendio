@@ -6,10 +6,9 @@ cardDescription: "No deja residuo ni conduce: la alternativa al CO2 para electr�
 category: extintores
 image: /images/productos/extintor-halotron-agente-limpio.avif
 price: "Cotizar"
-brand: "CONINC"
 order: 45
 seoTitle: "Extintor de halotron agente limpio"
-seoDescription: "Extintor de halotron para site, cuarto eléctrico y electrónica: 2.5 a 15 lb y móviles. Venta y recarga en CDMX y Edomex."
+seoDescription: "Extintor de halotron para site, cuarto eléctrico y electrónica: 2.5 a 15 lb. Venta y recarga en CDMX y Edomex."
 faqs:
   - question: "¿Qué es el halotron?"
     answer: "Un agente limpio halocarbonado que descarga como una niebla rápida y se evapora sin dejar residuo. Se desarrolló como sustituto del halón, que se retiró por su efecto sobre la capa de ozono. Cubre fuegos clase B y C, y muchos equipos también declaran clase A."
@@ -68,28 +67,6 @@ variantes:
     formato: "portatil"
     clases: [B, C]
     usos: [site, industria]
-  - nombre: "Equipo móvil de agente limpio"
-    badge: "Sobre ruedas"
-    desc: "Equipo sobre carretilla para riesgos mayores de electrónica o proceso, donde la cantidad de agente de un portátil no alcanza y no hay sistema fijo instalado."
-    specs: "Agente limpio · Sobre ruedas · Mayor carga · Manguera larga"
-    resumen: "Sobre carretilla para riesgo mayor donde el portátil no alcanza."
-    waText: "Hola, quiero cotizar un extintor móvil de agente limpio"
-    agente: "agente-limpio"
-    capacidad: "Según equipo"
-    formato: "movil"
-    clases: [B, C]
-    usos: [industria, site]
-  - nombre: "Mantenimiento con verificación de peso"
-    badge: "Servicio"
-    desc: "Mantenimiento conforme a la NOM-154-SCFI-2005 con pesaje del equipo, porque en un agente gaseoso la pérdida por fuga no siempre se refleja en el manómetro."
-    specs: "Mantenimiento NOM-154 · Verificación de peso · Etiqueta y collarín de servicio"
-    resumen: "Con pesaje: en un agente gaseoso la fuga no siempre se ve en el manómetro."
-    waText: "Hola, quiero cotizar el mantenimiento de mis extintores de agente limpio"
-    agente: "agente-limpio"
-    capacidad: "Según equipo"
-    formato: "portatil"
-    clases: [B, C]
-    usos: [site]
 relatedProducts:
   - extintor-agente-limpio
   - extintor-co2
@@ -117,7 +94,7 @@ ficha:
       value: Sin choque térmico extremo
   showcaseTitle: Datos clave
   showcaseAccent: del halotron
-  showcaseDesc: Capacidades, versión móvil y el pesaje del mantenimiento.
+  showcaseDesc: Capacidades portátiles de 2.5, 5, 11 y 15 lb.
   faqAccent: sobre extintores de halotron
   guia:
     title: Cuándo conviene el
@@ -128,7 +105,7 @@ fichaHeads:
     - "Un extintor de polvo descargado sobre un rack obliga a limpiar y revisar cada tarjeta: el daño cuesta más que el conato que se apagó."
     - El halotron existe para evitar exactamente eso, y para hacerlo con menos violencia de descarga que el CO2.
   presentaciones:
-    - Las presentaciones van por capacidad, desde el equipo puntual junto a un tablero hasta el móvil de riesgo mayor.
+    - "Las presentaciones portátiles se distinguen por capacidad: 2.5, 5, 11 y 15 lb."
     - "El mantenimiento va aparte porque en un agente gaseoso se pesa el equipo, no basta con mirar el manómetro."
   comparativa:
     - La tabla compara el halotron con el CO2 y el PQS en residuo, choque térmico y costo de recarga.
@@ -176,7 +153,6 @@ En un site bien protegido conviven, porque **la norma sigue pidiendo portátiles
 |---|---|
 | 2.5 y 5 lb | Un tablero, un rack cerrado, un equipo puntual |
 | 11 y 15 lb | Un site completo, un laboratorio, un cuarto eléctrico grande |
-| Móvil | Riesgo mayor sin sistema fijo instalado |
 
 ## Lo que se revisa en el mantenimiento
 

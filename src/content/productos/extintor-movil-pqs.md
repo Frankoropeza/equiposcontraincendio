@@ -6,7 +6,6 @@ cardDescription: "Cuando el portátil no alcanza: 25 a 125 kg sobre carretilla."
 category: extintores
 image: /images/productos/extintor-movil-pqs-carretilla.avif
 price: "Cotizar"
-brand: "CONINC"
 order: 46
 seoTitle: "Extintor móvil de PQS sobre ruedas 50 kg"
 seoDescription: "Extintor móvil de polvo químico seco de 25, 50, 70 y 125 kg sobre carretilla, con manguera larga. Venta y recarga en CDMX y Edomex."
@@ -68,28 +67,6 @@ variantes:
     formato: "movil"
     clases: [A, B, C]
     usos: [industria]
-  - nombre: "Ruedas neumáticas para terracería"
-    badge: "Patio irregular"
-    desc: "Juego de ruedas neumáticas de mayor diámetro para patios de terracería, andenes y superficies irregulares, donde las ruedas estándar simplemente no avanzan."
-    specs: "Ruedas neumáticas · Mayor diámetro · Para terracería y andén"
-    resumen: "Ruedas neumáticas de mayor diámetro: sin ellas el equipo no llega al punto."
-    waText: "Hola, quiero cotizar ruedas neumáticas para extintores móviles"
-    agente: "pqs"
-    capacidad: "Según equipo"
-    formato: "movil"
-    clases: [A, B, C]
-    usos: [industria]
-  - nombre: "Mantenimiento de equipo móvil"
-    badge: "Servicio"
-    desc: "Mantenimiento conforme a la NOM-154-SCFI-2005 con revisión de la manguera larga, la pitola y las ruedas, además del cilindro: un equipo que no rueda es un equipo que no sirve."
-    specs: "Mantenimiento NOM-154 · Revisión de manguera, pitola y ruedas · Etiqueta y collarín"
-    resumen: "Revisa manguera, pitola y ruedas además del cilindro."
-    waText: "Hola, quiero cotizar el mantenimiento de mis extintores móviles"
-    agente: "pqs"
-    capacidad: "Según equipo"
-    formato: "movil"
-    clases: [A, B, C]
-    usos: [industria]
 relatedProducts:
   - extintor-pqs
   - extintor-movil-co2
@@ -117,7 +94,7 @@ ficha:
       value: A, B y C
   showcaseTitle: Datos clave
   showcaseAccent: del extintor móvil
-  showcaseDesc: Capacidades, ruedas según el piso y mantenimiento del conjunto.
+  showcaseDesc: Capacidades móviles de PQS de 25, 50, 70 y 125 kg.
   faqAccent: sobre extintores móviles
   guia:
     title: Cuándo hace falta un
@@ -128,7 +105,7 @@ fichaHeads:
     - "Un portátil de 9 kg se agota en segundos y obliga a acercarse mucho. El móvil compra tiempo de descarga y distancia."
     - Se suma al parque de portátiles que marca el cálculo; no viene a sustituirlos.
   presentaciones:
-    - Las presentaciones van por capacidad, más el juego de ruedas para piso irregular.
+    - "Las presentaciones se distinguen por capacidad: 25, 50, 70 y 125 kg."
     - "El mantenimiento va aparte porque aquí se revisan manguera, pitola y ruedas además del cilindro."
   comparativa:
     - La tabla ordena las capacidades por tipo de riesgo concentrado y por lo que implica moverlas.
@@ -173,3 +150,5 @@ A mayor carga, más descarga y más alcance — **pero más peso que mover en el
 **Las ruedas.** Para piso liso de nave, las estándar bastan. Para terracería, andén o superficie irregular hacen falta neumáticas de mayor diámetro — sin ellas el equipo simplemente no avanza hasta donde se necesita.
 
 Y es lo primero que se revisa en el [mantenimiento](/servicios/mantenimiento/), junto con la manguera y la pitola: **un equipo que no rueda es un equipo que no sirve**.
+
+Consulta el servicio de [mantenimiento de extintores](/servicios/mantenimiento/) para revisar el estado de las ruedas de tu equipo.

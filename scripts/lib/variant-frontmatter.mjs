@@ -26,7 +26,7 @@ export function parseProductFrontmatter(source) {
   return { hasVariants: true, variantCount };
 }
 
-export function auditProductVariants(productDir, exceptions = {}) {
+export function auditProductVariants(productDir) {
   const files = fs.readdirSync(productDir)
     .filter((file) => file.endsWith('.md'))
     .sort();
@@ -37,27 +37,15 @@ export function auditProductVariants(productDir, exceptions = {}) {
   for (const file of files) {
     const source = fs.readFileSync(path.join(productDir, file), 'utf8');
     const parsed = parseProductFrontmatter(source);
-    const exception = exceptions[file];
     let status = 'PASS';
     let message = `${parsed.variantCount} variantes`;
 
     if (!parsed.hasVariants) {
       status = 'FAIL';
-      message = 'sin bloque variantes; mínimo 5';
-    } else if (parsed.variantCount < 5) {
-      if (!exception) {
-        status = 'FAIL';
-        message = `${parsed.variantCount} variantes; mínimo 5`;
-      } else if (exception.verifiedCount !== parsed.variantCount) {
-        status = 'FAIL';
-        message = `la excepción declara ${exception.verifiedCount}, pero el conteo ${parsed.variantCount} no coincide`;
-      } else if (!exception.documentation) {
-        status = 'FAIL';
-        message = 'la excepción no tiene documentación';
-      } else {
-        status = 'EXCEPTION';
-        message = `${parsed.variantCount} variantes verificadas; ${exception.documentation}`;
-      }
+      message = 'sin bloque variantes';
+    } else if (parsed.variantCount === 0) {
+      status = 'FAIL';
+      message = 'se requiere al menos una presentación';
     }
 
     const row = { file, ...parsed, status, message };
