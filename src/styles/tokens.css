@@ -106,7 +106,7 @@ inmutable en public/_headers). */
   --container-px: clamp(1rem, 4vw, 2rem);
   /* Padding interior dentro del 90%. */
   --topbar-height: 36px;
-  --header-height: 64px;
+  --header-height: 76px;
   /* Alto del «stack» del chrome sticky (topbar + header). Se recalcula solo en
   cada breakpoint porque depende de los dos tokens de arriba. Lo consumen el
   drawer móvil (top), el scroll-padding de anclas y los offsets de sticky. */
@@ -210,7 +210,7 @@ viven en src/styles/mobile.css (se importa DESPUÉS en BaseLayout). Todo en
 ============================================================================ */
 @media (max-width: 1024px) {
   :root {
-    --header-height: 60px;
+    --header-height: 72px;
     --section-py: clamp(2.75rem, 6vw, 4rem);
   }
 }
@@ -226,7 +226,7 @@ viven en src/styles/mobile.css (se importa DESPUÉS en BaseLayout). Todo en
 @media (max-width: 640px) {
   :root {
     --topbar-height: 34px;
-    --header-height: 58px;
+    --header-height: 70px;
     --section-py: clamp(2.5rem, 7vw, 3.25rem);
   }
 }
@@ -240,7 +240,7 @@ viven en src/styles/mobile.css (se importa DESPUÉS en BaseLayout). Todo en
 @media (max-width: 380px) {
   :root {
     --topbar-height: 32px;
-    --header-height: 56px;
+    --header-height: 68px;
     --container-px: clamp(.85rem, 4vw, 1rem);
   }
 }
