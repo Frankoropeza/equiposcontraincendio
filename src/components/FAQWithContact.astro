@@ -4,6 +4,7 @@
 import FAQAccordion, { type FAQItem } from '@components/FAQAccordion.astro'
 import Icon from '@components/Icon.astro'
 import SectionHeading from '@components/SectionHeading.astro'
+import { waUrl } from '@config/site'
 
 interface Props {
   items: FAQItem[]
@@ -27,6 +28,8 @@ const {
     '¿Tu caso es diferente o no encuentras tu duda? Usa el formulario y te respondemos directo por WhatsApp.',
   ],
 } = Astro.props
+// Base del enlace WA construida por waUrl() (D4): «https://wa.me/<num>?text=».
+const waBase = waUrl('')
 ---
 
 <section class="fwc">
@@ -66,7 +69,7 @@ const {
           </div>
 
           <!-- Formulario -->
-          <form id="fwc-form" class="fwc__form" data-wa-number={waNumber} novalidate>
+          <form id="fwc-form" class="fwc__form" data-wa-base={waBase} novalidate>
 
             <div class="fwc__field">
               <label class="fwc__label" for="fwc-name">
@@ -159,7 +162,7 @@ const {
   const counter   = document.querySelector<HTMLElement>('#fwc-counter')!
   const errBox    = document.querySelector<HTMLElement>('#fwc-error')!
   const giroSel   = document.querySelector<HTMLSelectElement>('#fwc-giro')!
-  const waNumber  = form.dataset.waNumber ?? ''
+  const waBase    = form.dataset.waBase ?? ''
 
   // Contador de caracteres en tiempo real
   textarea.addEventListener('input', function () {
@@ -237,7 +240,7 @@ const {
     text += '\nPregunta:\n' + message
 
     window.open(
-      'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(text),
+      waBase + encodeURIComponent(text),
       '_blank', 'noopener,noreferrer'
     )
   })

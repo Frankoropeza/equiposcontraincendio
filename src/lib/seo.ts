@@ -720,7 +720,8 @@ export type ProductData = {
 /**
  * Product descriptivo y Offer únicamente cuando la oferta es verificable.
  * - Sin precio público Y disponibilidad explícita, se omite `offers` completo.
- * - Nunca se infiere `InStock`, vigencia, cobertura nacional ni `price: '0'`.
+ * - Nunca se infiere `InStock`, vigencia, cobertura nacional ni precio cero.
+ * - `price` del Offer se emite como número (Google exige número, no texto).
  * - aggregateRating/Review SOLO si emitReviews() valida reseñas reales.
  */
 export function productSchema(p: ProductData) {
@@ -732,7 +733,7 @@ export function productSchema(p: ProductData) {
     ? {
         '@type': 'Offer',
         url,
-        price: normalizedPrice,
+        price: numericPrice,
         priceCurrency: 'MXN',
         availability: `https://schema.org/${p.availability}`,
         seller: { '@id': BUSINESS_ID },

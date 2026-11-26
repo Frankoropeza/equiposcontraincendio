@@ -91,7 +91,7 @@ const schemaData: SchemaData = {
     ? {
         breadcrumbs: [
           { name: "Inicio", path: "/" },
-          ...breadcrumbs.map((b) => ({ name: b.label, path: b.href ?? "" })),
+          ...breadcrumbs.map((b) => ({ name: b.label, path: b.href ?? Astro.url.pathname })),
         ],
       }
     : {}),
