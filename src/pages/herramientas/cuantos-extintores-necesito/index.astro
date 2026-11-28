@@ -128,7 +128,7 @@ const AREAS = [
 
             <form class="form" id="ext-form" novalidate data-wa={waBase}>
               <fieldset class="step">
-                <legend class="step__t"><span class="step__n">1</span> Tu inmueble</legend>
+                <legend class="step__t"><span class="step__n" aria-hidden="true"></span> Tu inmueble</legend>
                 <div class="grid2">
                   <label class="fld">
                     <span class="fld__l">Superficie construida <em>(m²)</em></span>
@@ -157,7 +157,7 @@ const AREAS = [
               </fieldset>
 
               <fieldset class="step">
-                <legend class="step__t"><span class="step__n">2</span> Áreas con riesgo propio</legend>
+                <legend class="step__t"><span class="step__n" aria-hidden="true"></span> Áreas con riesgo propio</legend>
                 <p class="step__d">Marca las que existan y ajusta cuántas hay. Estos equipos se suman al mínimo por superficie.</p>
                 <ul class="areas" role="list">
                   {AREAS.map((a) => (

@@ -108,7 +108,7 @@ const relatedTramite = Array.from(new Map([
         <SectionHeading layout="duo" eyebrow="Requisitos" title="Lo que debes" titleAccent="reunir" desc="Lo que pide la autoridad para ingresar el trámite." />
         <div class="info-grid">
           {d.requisitos.map((item, index) => (
-            <article class="info-card"><span class="info-card__num">{String(index + 1).padStart(2, '0')}</span><p>{item}</p></article>
+            <article class="info-card"><span class="info-card__num" aria-hidden="true"></span><p>{item}</p></article>
           ))}
         </div>
       </div>
@@ -121,7 +121,7 @@ const relatedTramite = Array.from(new Map([
         <SectionHeading layout="duo" eyebrow="Fundamento jurídico" title="La base del" titleAccent="trámite" desc="Las leyes y reglamentos en los que se apoya." />
         <div class="info-grid">
           {d.fundamento.map((item, index) => (
-            <article class="info-card"><span class="info-card__num">{String(index + 1).padStart(2, '0')}</span><p>{item}</p></article>
+            <article class="info-card"><span class="info-card__num" aria-hidden="true"></span><p>{item}</p></article>
           ))}
         </div>
       </div>
